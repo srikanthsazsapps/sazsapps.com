@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SAZS APPS | All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" property="og:title" content="sazsapps.com">
+    <meta name="description"
+        content="SAZS APPS is the No.1 ERP software solution provider in Tamil Nadu, offering cloud-based ERP for quarry, crusher, bricks, pavers, and RMC (Ready-Mix Cement) plants. We provide seamless management solutions across India with advanced automation and analytics.">
+    <meta name="keywords"
+        content="ERP software, quarry ERP, crusher management software, brick ERP, paver ERP, RMC plant software, cloud-based ERP, SAZS APPS, ERP for construction, best ERP in Tamil Nadu, ERP for manufacturing, ERP for building materials, business automation software">
+    <meta name="author" content="SAZS APPS">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="SAZS APPS | All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants">
+    <meta property="og:description"
+        content="SAZS APPS provides the best cloud-based ERP software for quarry, crusher, bricks, pavers, and RMC plants. No.1 ERP provider in Tamil Nadu, serving businesses all over India.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sazsapps.com">
+    <meta property="og:image" content="../assets/logo/logoblack.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SAZS APPS | Best ERP Software for Quarry, Crusher, Bricks & RMC Plants">
+    <meta name="twitter:description"
+        content="No.1 ERP solution provider in Tamil Nadu for quarry, crusher, brick, paver, and RMC plants. Cloud-based, scalable ERP solutions for businesses across India.">
+    <meta name="twitter:image" content="../assets/logo/logoblack.png">
+    <link rel="icon" type="image/x-icon" href="../assets/logo/logoblack.png">
+    <link rel="stylesheet" href="../css/terms.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+
+
+    <div class="header-nav">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../assets/contentImages/sazsLogo.svg" alt="company logo">
+            </a>
+        </div>
+        <nav class="header-bar-nav">
+            <a href="../../index.html" class="nav-link" data-page="index">Home</a>
+            <a href="./aboutus.html" class="nav-link" data-page="aboutus">About Us</a>
+            <a href="./features.html" class="nav-link" data-page="features">Explore Features</a>
+            <a href="./careers.html" class="nav-link" data-page="careers">Careers</a>
+            <a href="./contact.html" class="nav-link" data-page="contact">Contact Us</a>
+                        <a href="./Signup.html" class="nav-link" data-page="Signup">Sign Up</a>
+
+        </nav>
+        <div class="call">
+            <h4 class="text-bold"> <a href="tel:+917666628000" style="text-decoration: none !important;"><i class="fa fa-phone-volume ringing-icon"></i> 76666 28000</a></h4>
+        </div>
+      
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()" role="button" aria-label="closebtn" style="padding: 0 10px !important;">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <script>
+        // Function to highlight the current page in the navbar
+        function highlightActivePage() {
+            const currentPath = window.location.pathname;
+            const links = document.querySelectorAll(".nav-link");
+
+            links.forEach(link => {
+                // Get the page identifier from the data attribute
+                const page = link.getAttribute("data-page");
+
+                // Check if the current URL includes the page identifier
+                if (currentPath.includes(page)) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        }
+
+        // Run function on page load
+        document.addEventListener("DOMContentLoaded", highlightActivePage);
+    </script>
+    <script>
+
+
+        function toggleNav() {
+            const sidenav = document.getElementById("mySidenav");
+            const isOpen = sidenav.style.width === "250px";
+
+            if (isOpen) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            } else {
+                sidenav.style.width = "250px";
+                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
+            }
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            }
+        }
+    </script>
+
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
+        <a href="../../index.html" class="logo-link">
+            <img src="../assets/logo/sazslogowhite.webp" alt="SAZS ERP App Logo" class="sidenav-logo">
+        </a>
+
+        <a href="../../index.html">Home</a>
+        <a href="./aboutus.html">About Us</a>
+        <a href="./features.html">Explore Features</a>
+        <a href="./careers.html">Careers</a>
+        <a href="./contact.html">Contact Us</a>
+        <div>
+            <a href="tel:+917666628000">
+                <i class="fa fa-phone-volume ringing-icon" style="font-size:small !important; margin: 0 !important;"></i>
+                76666 28000
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header-nav');
+
+
+        window.onscroll = function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                header.classList.add("hide");
+            } else {
+                header.classList.remove("hide");
+            }
+
+            if (currentScroll <= 0) {
+                header.classList.remove("fixed");
+            } else if (currentScroll > 100) {
+                header.classList.add("fixed");
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        };
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.addEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.removeEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+                closeNav();
+            }
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("aboutDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+    </script>
+    <div class="containerTerms">
+
+        <div class="four" id="content-area" role="region" aria-labelledby="section-title">
+            <h1 style="text-align: center;">Terms and Conditions</h1>
+            <h2 id="section-title">AGREEMENT BETWEEN YOU AND SAZS APPS PRIVATE LIMITED</h2>
+            <h2 style="padding-top: 5PX;">THIS AGREEMENT GOVERNS YOUR USE OF THE SOFTWARE AND SERVICES PROVIDED BY SAZS
+                APPS PRIVATE LIMITED ("SAZS APPS"). BY ACCESSING OR USING OUR SERVICES, YOU AGREE TO BE BOUND BY THESE
+                TERMS. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT USE OUR SERVICES.</h2>
+
+
+            <h2> Introduction</h2>
+            <p>This Agreement is between you (either an individual or the entity you represent) and <strong>SAZS Apps
+                    Private Limited</strong> ("SAZS Apps," "we," "us," or "our"). It governs your use of our suite of
+                online business productivity and collaboration tools, including associated mobile and offline
+                applications (collectively, the "Services"). If you are based in India, this Agreement applies to you.
+                For users outside India, our Global Terms of Service will apply.</p>
+            <p>Throughout this Terms and Services Policy, "ERP Software" refers to the software products <strong>Quarry
+                    King, SAZS Bricks, and SAZS RMC</strong> provided by SAZS Apps Private Limited, including its
+                affiliates and subsidiaries (also referred to as "we," "us," or "our").</p>
+
+
+            <h2> Acceptance of Terms</h2>
+            <p>By using our Services, you confirm that you are of legal age to enter into a binding agreement. If you
+                are using the Services on behalf of an organization, you represent that you have the authority to bind
+                that organization to this Agreement. If you do not agree to these terms, you must not use our Services.
+            </p>
+            <p>You accept this Agreement by:</p>
+            <ul>
+                <li>Checking a box or clicking a button indicating your acceptance.</li>
+                <li>Using the Services, which constitutes your agreement to these terms.</li>
+            </ul>
+
+
+            <h2> Description of Services</h2>
+            <p>SAZS Apps provides cloud-based software solutions designed to enhance business productivity and
+                collaboration. Our Services include, but are not limited to, project management tools, communication
+                platforms, and file-sharing applications.You may use the Services for personal or internal business
+                purposes, subject to the terms of this Agreement.</p>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Ensuring you have the necessary hardware and internet connection to access the Services.</li>
+                <li>Maintaining the security of your account and credentials.</li>
+            </ul>
+
+
+            <h2>Beta Services</h2>
+            <p>From time to time, we may offer <strong>Beta Services</strong> for testing and evaluation. These Services
+                are provided "as-is" and may be discontinued at any time without notice. Your use of Beta Services is
+                voluntary, and we make no guarantees about their functionality, reliability, or future availability. You
+                acknowledge that SAZS Apps Private Limited is not liable for any issues arising from your use of Beta
+                Services.</p>
+
+
+            <h2>Free Trial</h2>
+            <p>We may offer a free trial period for certain Services. During the trial, you can access the Services
+                without charge until the earlier of:</p>
+            <ul>
+                <li>The end of the trial period.</li>
+                <li>The start of a paid subscription.</li>
+                <li>Termination by SAZS Apps Private Limited.</li>
+            </ul>
+            <p>Any data or customizations made during the trial will be permanently lost unless you:</p>
+            <ul>
+                <li>Purchase a paid subscription.</li>
+                <li>Export your data before the trial ends.</li>
+            </ul>
+            <p>Free trials are provided "as-is," without warranties or liabilities.</p>
+
+
+            <h2>User Obligations</h2>
+            <p>To use our Services, you must:</p>
+            <ul>
+                <li>Provide accurate and complete information during sign-up.</li>
+                <li>Keep your account information up to date.</li>
+                <li>Notify us immediately of any unauthorized use of your account.</li>
+            </ul>
+            <p>If we suspect that your account information is inaccurate or incomplete, we may suspend or terminate your
+                access to the Services.</p>
+
+
+            <h2> Restrictions on Use</h2>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Share your account credentials or allow unauthorized access to the Services.</li>
+                <li>Reverse engineer, decompile, or disassemble the Services.</li>
+                <li>Use the Services for any illegal or unauthorized purpose.</li>
+                <li>Transmit harmful or malicious content, including viruses or spam.</li>
+                <li>Use the Services in a way that violates applicable laws or infringes on the rights of others.</li>
+            </ul>
+            <p>Violation of these restrictions may result in immediate termination of your account.</p>
+
+
+            <h2> Third-Party Integrations</h2>
+            <p>Our Services may integrate with third-party applications. Your use of these applications is subject to
+                their respective terms and conditions. SAZS Apps Private Limited is not responsible for the
+                functionality, security, or content of third-party applications. We reserve the right to suspend or
+                disable third-party integrations at any time without notice.</p>
+
+
+            <h2> Fees and Payments</h2>
+            <p>Our Services are offered under various subscription plans. By subscribing, you agree to pay the
+                applicable fees. Key terms include:</p>
+            <ul>
+                <li>Automatic renewal of subscriptions unless cancelled.</li>
+                <li>Payment via credit card or other approved methods.</li>
+                <li>Responsibility for any taxes (e.g., GST, VAT) associated with your subscription.</li>
+            </ul>
+            <p>Failure to pay may result in suspension or termination of your account.</p>
+            <h2> Data Ownership and Privacy</h2>
+            <p>You retain ownership of all data you upload or create using our Services. However, you grant SAZS Apps a
+                limited license to use, store, and process your data solely for the purpose of providing the Services.
+            </p>
+            <p>Your use of the Services is also governed by our <strong><a href="./privacyPolicy.html">Privacy
+                        Policy</a></strong>, which outlines how we collect, use, and protect your personal information.
+            </p>
+
+
+            <h2> User-Generated Content</h2>
+            <p>You are solely responsible for any content you create, upload, or share using our Services. By using the
+                Services, you agree not to:</p>
+            <ul>
+                <li>Share content that violates intellectual property rights.</li>
+                <li>Publish defamatory, obscene, or illegal material.</li>
+                <li>Use the Services to harass or harm others.</li>
+            </ul>
+            <p>We reserve the right to remove or block access to any content that violates these terms.</p>
+
+
+            <h2> Termination</h2>
+            <p>We may suspend or terminate your account if:</p>
+            <ul>
+                <li>You violate this Agreement.</li>
+                <li>There is prolonged inactivity on your account.</li>
+                <li>Required by law or government authorities.</li>
+            </ul>
+            <p>You may terminate your account at any time by contacting us. Upon termination, all data associated with
+                your account may be deleted.</p>
+
+
+            <h2> Disclaimer of Warranties</h2>
+            <p>The Services are provided "as-is" and "as-available." SAZS Apps makes no warranties, express or implied,
+                regarding the reliability, accuracy, or availability of the Services. Your use of the Services is at
+                your own risk.</p>
+            <h2> Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, SAZS Apps shall not be liable for any indirect, incidental, or
+                consequential damages arising from your use of the Services. Our total liability to you shall not exceed
+                the fees you paid to us in the past 12 months.</p>
+
+
+            <h2> Governing Law</h2>
+            <p>This Agreement is governed by the laws of India. Any disputes arising from this Agreement shall be
+                resolved exclusively by the courts of [Thoothukudi Jurisdiction].</p>
+
+
+            <h2> Changes to this Agreement</h2>
+            <p>We may update this Agreement from time to time. If we make significant changes, we will notify you at
+                least 30 days in advance. Your continued use of the Services after the changes take effect constitutes
+                your acceptance of the updated Agreement.</p>
+
+
+            <h2> Contact Us</h2>
+            <p>If you have any questions or concerns about this Agreement, please contact us at:</p>
+            <p><strong>Email:</strong> <a href="mailto:info@sazsapps.com">info@sazsapps.com</a></p>
+            <p><strong>Phone:</strong> 04632 294 666</p>
+            <p><strong>Address:</strong> 8D, Arunachalam Pettai Street, Kovilpatti, Tuticorin District, Tamil Nadu,
+                India.</p>
+            <p><strong>Effective Date:</strong> 15-12-2023</p>
+            <p>This Terms and Services Policy was last updated on 06-01-2025.</p>
+
+
+            <p><strong>END OF AGREEMENT</strong></p>
+
+
+
+
+        </div>
+    </div>
+    <footer class="footer-container fade-in">
+        <div class="footer-content">
+            <a href="./contact.html" class="join-button">Contact Us</a>
+        </div>
+    </footer>
+
+    <footer class="a">
+        <div class="b">
+            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/facebook.svg" alt="Facebook" class="d">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+            </a>
+            <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/instagram.svg" alt="Instagram" class="d">
+            </a>
+        </div>
+
+
+
+        <div class="e">
+            <a href="../../index.html" class="f">Home</a>
+            <a href="./aboutus.html" class="f">About Us</a>
+            <a href="./features.html" class="f">Explore Features</a>
+            <a href="./careers.html" class="f">Careers</a>
+            <a href="./contact.html" class="f">Contact Us</a>
+                                    <a href="./Signup.html" class="f">Request a Demo</a>
+
+            <a href="./termsofService.html" class="f">Terms of Service</a>
+            <a href="./privacyPolicy.html" class="f">Privacy Policy</a>
+            <a href="./dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
+        </div>
+    </footer>
+
+    <footer class="footer">
+
+        <!-- <img src="../assets/logo/sazsapps logo wht.png" alt="SAZS ERP App Logo "> -->
+
+        <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+
+        <button class="scroll-top" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+        </button>
+    </footer>
+
+    <script>
+        // Scroll to top functionality
+        document.querySelector('.scroll-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Show/hide scroll button based on scroll position
+        window.addEventListener('scroll', () => {
+            const scrollButton = document.querySelector('.scroll-top');
+            if (window.scrollY > 200) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                threshold: 0.2, // Trigger animation when 20% of the element is visible
+            };
+
+            const animatedElements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, observerOptions);
+
+            animatedElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+/* ============================================
+   CENTERED HERO SECTION WITH BACKGROUND IMAGE
+   ============================================ */
+
+/* Hero Section Container with Background */
+.hero-main-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    /* Background with gradient overlay + image */
+    background: 
+        linear-gradient(135deg, rgba(10, 37, 64, 0.75) 0%, rgba(13, 58, 92, 0.542) 100%),
+        url("/src/assets/contentImages/quarry.png") center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.hero-main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-main-content {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUpStagger {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content Styling */
+.hero-content-left {
+    width: 100%;
+}
+
+.hero-content-left > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUpStagger 0.6s ease forwards;
+}
+
+.hero-content-left > *:nth-child(1) { animation-delay: 0.3s; }
+.hero-content-left > *:nth-child(2) { animation-delay: 0.5s; }
+.hero-content-left > *:nth-child(3) { animation-delay: 0.7s; }
+.hero-content-left > *:nth-child(4) { animation-delay: 0.9s; }
+
+.hero-main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-text-highlight {
+    color: #3E89EC;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 2px 4px rgba(62, 137, 236, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    display: block;
+    line-height: 1.6;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+}
+
+.hero-main-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #ffffff !important;
+    margin-bottom: 40px;
+    text-align: center;
+    /* text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+}
+
+.hero-action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary {
+    padding: 16px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hero-btn-primary {
+    background: #3E89EC;
+    color: white;
+    box-shadow: 0 4px 15px rgba(62, 137, 236, 0.4);
+}
+
+.hero-btn-primary:hover {
+    background: #2C6FCE;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(62, 137, 236, 0.6);
+    color: white;
+}
+
+.hero-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (min-width: 1025px) {
+    .hero-main-container {
+        max-width: 1200px;
+        padding: 60px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .hero-main-section {
+        background-attachment: scroll;
+    }
+    
+    .hero-main-title {
+        font-size: 3rem;
+    }
+    
+    .hero-main-container {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-main-section {
+        padding: 140px 20px 80px;
+        background-attachment: scroll;
+    }
+    
+    .hero-main-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-main-description {
+        font-size: 1.05rem;
+    }
+    
+    .hero-main-container {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-main-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-main-section {
+        padding: 120px 20px 60px;
+        min-height: 100vh;
+        background-attachment: scroll;
+        background-position: center center;
+    }
+    
+    .hero-main-title {
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-main-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+    
+    .hero-action-buttons {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        padding: 14px 32px;
+    }
+    
+    .hero-main-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-main-section {
+        padding: 110px 15px 50px;
+    }
+    
+    .hero-main-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .hero-main-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-main-section {
+        padding: 100px 15px 40px;
+        background-position: center center;
+    }
+    
+    .hero-main-title {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 18px;
+    }
+    
+    .hero-main-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+    
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 359px) {
+    .hero-main-section {
+        background-position: center center;
+    }
+    
+    .hero-main-title {
+        font-size: 1.35rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
+    }
+}

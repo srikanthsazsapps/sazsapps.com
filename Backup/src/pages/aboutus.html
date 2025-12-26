@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SAZS APPS | All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" property="og:title" content="sazsapps.com">
+    <meta name="description"
+        content="SAZS APPS is the No.1 ERP software solution provider in Tamil Nadu, offering cloud-based ERP for quarry, crusher, bricks, pavers, and RMC (Ready-Mix Cement) plants. We provide seamless management solutions across India with advanced automation and analytics.">
+    <meta name="keywords"
+        content="ERP software, quarry ERP, crusher management software, brick ERP, paver ERP, RMC plant software, cloud-based ERP, SAZS APPS, ERP for construction, best ERP in Tamil Nadu, ERP for manufacturing, ERP for building materials, business automation software">
+    <meta name="author" content="SAZS APPS">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="SAZS APPS | All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants">
+    <meta property="og:description"
+        content="SAZS APPS provides the best cloud-based ERP software for quarry, crusher, bricks, pavers, and RMC plants. No.1 ERP provider in Tamil Nadu, serving businesses all over India.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sazsapps.com">
+    <meta property="og:image" content="../assets/logo/logoblack.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SAZS APPS | Best ERP Software for Quarry, Crusher, Bricks & RMC Plants">
+    <meta name="twitter:description"
+        content="No.1 ERP solution provider in Tamil Nadu for quarry, crusher, brick, paver, and RMC plants. Cloud-based, scalable ERP solutions for businesses across India.">
+    <meta name="twitter:image" content="../assets/logo/logoblack.png">
+    <link rel="icon" type="image/x-icon" href="../assets/logo/logoblack.png">
+    <link rel="stylesheet" href="../css/aboutus.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <div class="header-nav">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../assets/contentImages/sazslogo.webp" alt="SAZS ERP App logo">
+            </a>
+        </div>
+        <nav class="header-bar-nav">
+            <a href="../../index.html" class="nav-link" data-page="index">Home</a>
+            <a href="./aboutus.html" class="nav-link" data-page="aboutus">About Us</a>
+            <a href="./features.html" class="nav-link" data-page="features">Explore Features</a>
+            <a href="./careers.html" class="nav-link" data-page="careers">Careers</a>
+            <a href="./contact.html" class="nav-link" data-page="contact">Contact Us</a>
+                        <a href="./Signup.html" class="nav-link" data-page="Signup">Sign Up</a>
+
+        </nav>
+        <div class="call">
+            <h4 class="text-bold"> <a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i> 76666 28000</a></h4>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()" role="button" aria-label="closebtn">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <script>
+        // Function to highlight the current page in the navbar
+        function highlightActivePage() {
+            const currentPath = window.location.pathname;
+            const links = document.querySelectorAll(".nav-link");
+
+            links.forEach(link => {
+                // Get the page identifier from the data attribute
+                const page = link.getAttribute("data-page");
+
+                // Check if the current URL includes the page identifier
+                if (currentPath.includes(page)) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        }
+
+        // Run function on page load
+        document.addEventListener("DOMContentLoaded", highlightActivePage);
+    </script>
+    <script>
+
+
+        function toggleNav() {
+            const sidenav = document.getElementById("mySidenav");
+            const isOpen = sidenav.style.width === "250px";
+
+            if (isOpen) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            } else {
+                sidenav.style.width = "250px";
+                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
+            }
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            }
+        }
+    </script>
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
+        <a href="../../index.html" class="logo-link">
+            <img src="../assets/logo/sazslogowhite.webp" alt="SAZS ERP App Logo" class="sidenav-logo">
+        </a>
+        <a href="../../index.html">Home</a>
+        <a href="./aboutus.html">About Us</a>
+        <a href="./features.html"> Explore Features</a>
+        <a href="./careers.html">Careers</a>
+        <a href="./contact.html">Contact Us</a>
+        <div class="call">
+            <a href="tel:+917666628000">
+                <i class="fa fa-phone-volume ringing-icon"></i>
+                76666 28000
+            </a>
+        </div>
+    </div>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header-nav');
+
+        window.onscroll = function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                header.classList.add("hide");
+            } else {
+                header.classList.remove("hide");
+            }
+
+            if (currentScroll <= 0) {
+                header.classList.remove("fixed");
+            } else if (currentScroll > 100) {
+                header.classList.add("fixed");
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        };
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.addEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.removeEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+                closeNav();
+            }
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("aboutDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+    <section class="procurement-section fade-in">
+        <div class="procurement-content">
+            <h1>A high-octane company that set sail in the year <span class="highlight slide-in">2018</span> as a "<span
+                    class="highlight slide-in">Small Unit Action</span>". </h1>
+            <p>
+                "Embarking on our journey in 2018 as a modest initiative, we've surged ahead, evolving into a dynamic
+                force with an unwavering
+                commitment to excellence. From a humble start of serving two clients, we've now proudly extended our
+                reach to delight over
+                150 customers.
+                Our product has garnered the trust of over 150 delighted customers and continues to grow steadily. This
+                rapidly expanding
+                clientele stands testament to the reliability, efficiency, and satisfaction our software brings to stone
+                crusher and quarry
+                businesses. Trust SAZS Apps ERP to transform your operations seamlessly and reliably."
+            </p>
+
+        </div>
+        <div class="procurement-map zoom-in">
+            <img src="../assets/contentImages/aboutone.svg" alt="SAZS ERP Service locations" />
+        </div>
+    </section>
+
+
+    <div class="connectivity-section fade-in">
+        <header>
+            <h1 class="heading"><span class="highlight slide-in">WHAT</span> WE DO</h1>
+        </header>
+
+        <footer>
+            <p>
+                A team of solutioning artisans in the IT Space who specialize in taking your mines/crusher management
+                processes online with powerful Analytics and monitoring, anywhere anytime. This helps our customers
+                visualize data and Vitals remotely to perform informed decisions and eventual actions. Our solutions are
+                designed to control embezzlement, therefore reduction in operations cost and increase in profit by
+                <strong>10-30%</strong>.
+            </p>
+        </footer>
+        <section class="content">
+            <div class="illustration">
+                <img src="../assets/contentImages/what we do.svg" alt="SAZS ERP representing what we do">
+            </div>
+        </section>
+    </div>
+
+    <section class="connectivity-section fade-in">
+        
+        <h1 class="section-title">Hassle-Free <span class="effortless-text">Experience</span></h1>
+
+        <p class="section-description">
+            we believe that convenience and ease should always come first. That's why we've designed our
+            services/products to deliver a seamless experience from start to finish
+        </p>
+        <section class="content"></section>
+            <div class="illustration">
+                <img src="../assets/contentImages/seamlesseffort.svg" alt="SAZS ERP Easy Integration" />
+            </div>
+        </section>
+        <!-- <div class="connectivity-graphic zoom-in">
+            <div class="central-node">
+                <img src="../assets/contentImages/seamlesseffort.svg" alt="SAZS ERP Easy Integration" />
+            </div>
+
+        </div> -->
+    </section>
+
+
+    <section class="performance-section fade-in">
+        <p class="section-subtitle1"></p>
+        <h1 class="section-title1">Purpose & Aspirations</h1>
+        <div class="cards-container">
+            <div class="card zoom-in">
+                <div class="card-icon">
+                    <img src="../assets/contentImages/mission.svg" alt="SAZS ERP Mission Icon">
+                </div>
+                <h2 class="card-title">Our Mission</h2>
+                <p class="card-description">
+                    At SAZS Apps, our mission is clear: Empower businesses to thrive by streamlining their operations
+                    through state-of-the-art ERP solutions.We believe in simplifying complexities, enhancing
+                    productivity, and fostering growth for organizations across diverse industries.
+                </p>
+            </div>
+            <div class="card zoom-in">
+                <div class="card-icon">
+                    <img src="../assets/contentImages/observation.svg" style="width: 80px !important;"
+                        alt="SAZS ERP Vision Icon">
+                </div>
+                <h2 class="card-title">Our Vision</h2>
+                <p class="card-description">
+                    We strive to improve efficiency by aligning plans with actual results while ensuring safer
+                    operations. Our focus is on optimizing scheduling, material flow, and equipment usage to boost
+                    productivity. Through smart strategies and innovation, we drive sustainable growth and operational
+                    excellence.
+                </p>
+            </div>
+            <div class="card zoom-in">
+                <div class="card-icon">
+                    <img src="../assets/contentImages/commitment.png" alt=" SAZS ERP Vision Icon">
+                </div>
+                <h2 class="card-title">Commitment</h2>
+                <p class="card-description">
+                    At SAZS Apps excellence is not just a goal; it's our standard. We are committed to delivering ERP
+                    solutions that exceed expectations, providing our clients with a competitive edge in today's dynamic
+                    business landscape. Our dedication to quality, innovation, and customer satisfaction sets us apart.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="awesome-erp">
+        <div class="erp-container">
+            <div class="erp-left">
+                <h3>Empowering Your Growth</h3>
+            </div>
+            <div class="erp-divider"></div> 
+            <div class="erp-right">
+                <p>
+                    We strive to provide innovative ERP solutions that streamline operations, enhance productivity, and
+                    support business expansion. </p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer-container fade-in">
+        <div class="footer-content">
+            <h1 class="heading zoom-in">Your <span class="effortless-text">Vision</span> is Our <span
+                    class="effortless-text">Mission</span></h1>
+            <a href="./contact.html" class="join-button">Contact Us</a>
+        </div>
+
+
+
+
+    </footer>
+
+    <footer class="a">
+        <div class="b">
+            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/facebook.svg" alt="Facebook" class="d">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+            </a>
+            <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/instagram.svg" alt="Instagram" class="d">
+            </a>
+        </div>
+
+
+
+
+        <div class="e">
+            <a href="../../index.html" class="f">Home</a>
+            <a href="./aboutus.html" class="f">About Us</a>
+            <a href="./features.html" class="f">Explore Features</a>
+            <a href="./careers.html" class="f">Careers</a>
+            <a href="./contact.html" class="f">Contact Us</a>
+                        <a href="./Signup.html" class="f">Request a Demo</a>
+
+            <a href="./termsofService.html" class="f">Terms of Service</a>
+            <a href="./privacyPolicy.html" class="f">Privacy Policy</a>
+            <a href="./dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
+        </div>
+    </footer>
+
+
+
+    <footer class="footer">
+        <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+            May I help you?
+        </a>
+        <!-- <img src="../assets/logo/sazsapps logo wht.png" alt="SAZS ERP App Logo"> -->
+        <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+
+        <button class="scroll-top" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+        </button>
+    </footer>
+
+    <script>
+        // Scroll to top functionality
+        document.querySelector('.scroll-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Show/hide scroll button based on scroll position
+        window.addEventListener('scroll', () => {
+            const scrollButton = document.querySelector('.scroll-top');
+            if (window.scrollY > 200) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                threshold: 0.2, // Trigger animation when 20% of the element is visible
+            };
+
+            const animatedElements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, observerOptions);
+
+            animatedElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
