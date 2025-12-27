@@ -26,10 +26,12 @@
     <meta name="twitter:image" content="../assets/logo/logoblack.png">
     <link rel="icon" type="image/x-icon" href="../assets/logo/logoblack.png">
     <link rel="stylesheet" href="../css/aboutus.css">
+    <link rel="stylesheet" href="../css/animations.css">
+
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/all.min.css">
     <!-- <link rel="stylesheet" href="../css/style.css"> -->
-    <link rel="stylesheet" href="../css/newstyle.css">
+    <link rel="stylesheet" href="../../newstyle.css">
 
 </head>
 
@@ -39,28 +41,28 @@
     <div class="header-nav">
         <div class="logo-container">
             <a href="../../index.html">
-                <img src="../assets/contentImages/sazsLogo1.png" alt="SAZS ERP App logo">
+                <img src="../assets/contentImages/sazsLogo1.png" alt="SAZS ERP App logo" style="padding-top: 10px;">
             </a>
         </div>
         <nav class="header-bar-nav">
             <a href="../../index.html" class="nav-link" data-page="index">Home</a>
             <a href="./aboutus.html" class="nav-link" data-page="aboutus">About Us</a>
-                        <div class="dropdown-menu-container">
+                                                                        <div class="dropdown-menu-container">
                 <a href="#" class="nav-link dropdown-trigger" data-page="products">
                     Products <i class="fa fa-chevron-down"></i>
                 </a>
                 <div class="dropdown-content">
-                    <a href="#" class="dropdown-item">
+                    <a href="./QuarryCrusher.html" class="dropdown-item">
                         <div>
                             <strong>Quarry & Crusher</strong>
                         </div>
                     </a>
-                    <a href="#" class="dropdown-item">
+                    <a href="./rmc.html" class="dropdown-item">
                         <div>
                             <strong>Ready Mix Concrete (RMC)</strong>
                         </div>
                     </a>
-                    <a href="#" class="dropdown-item">
+                    <a href="./brickspaver.html" class="dropdown-item">
                         <div>
                             <strong>Bricks & Pavers</strong>
                         </div>
@@ -129,6 +131,28 @@
             }
         }
     </script>
+    <script>// Toggle mobile products dropdown
+        function toggleMobileDropdown() {
+            const dropdown = document.getElementById('mobileProductsDropdown');
+            const trigger = document.querySelector('.mobile-dropdown-trigger');
+
+            dropdown.classList.toggle('active');
+            trigger.classList.toggle('active');
+        }
+
+        // Close mobile dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileDropdown = document.querySelector('.mobile-dropdown');
+            if (mobileDropdown && !mobileDropdown.contains(event.target)) {
+                const dropdown = document.getElementById('mobileProductsDropdown');
+                const trigger = document.querySelector('.mobile-dropdown-trigger');
+                if (dropdown && trigger) {
+                    dropdown.classList.remove('active');
+                    trigger.classList.remove('active');
+                }
+            }
+        });</script>
+
 
 
     <div id="mySidenav" class="sidenav">
@@ -138,6 +162,17 @@
         </a>
         <a href="../../index.html">Home</a>
         <a href="./aboutus.html">About Us</a>
+                <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown()" class="mobile-dropdown-trigger">
+                Products <i class="fa fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-content" id="mobileProductsDropdown">
+                <a href="./QuarryCrusher.html">Quarry & Crusher</a>
+                <a href="./rmc.html">Ready Mix Concrete</a>
+                <a href="./brickspaver.html">Bricks & Pavers</a>
+            </div>
+        </div>
+
         <a href="./features.html"> Explore Features</a>
         <a href="./careers.html">Careers</a>
         <a href="./contact.html">Contact Us</a>
@@ -354,6 +389,14 @@
         </a>
     </div>
 </section>
+<script>
+document.querySelector(".dropdown-trigger").addEventListener("click", function(e){
+    e.preventDefault();
+    this.nextElementSibling.style.display =
+    this.nextElementSibling.style.display === "block" ? "none" : "block";
+});
+</script>
+
 
     <section class="connectivity-section fade-in">
         
@@ -476,8 +519,10 @@
             <a href="./features.html" class="f">Explore Features</a>
             <a href="./careers.html" class="f">Careers</a>
             <a href="./contact.html" class="f">Contact Us</a>
-                        <a href="./Signup.html" class="f">Request a Demo</a>
-
+            <a href="./Signup.html" class="f">Request a Demo</a>
+            <a href="./QuarryCrusher.html" class="f">Quarry  & Crusher</a>
+            <a href="./rmc.html" class="f">RMC</a>
+            <a href="./brickspaver.html" class="f">Bricks & Pavers</a>
             <a href="./termsofService.html" class="f">Terms of Service</a>
             <a href="./privacyPolicy.html" class="f">Privacy Policy</a>
             <a href="./dataProtectionPolicy.html" class="f">Data Protection Policy</a>

@@ -2,27 +2,34 @@
 <html lang="en">
 
 <head>
-    <title>ERP Hardware Integrations: ANPR, Weighbridge & Biometrics | SAZS APPS</title>
+    <title>SAZS APPS | All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="title" property="og:title" content="ERP Hardware Integrations: ANPR, Weighbridge & Biometrics">
+    <meta name="title" property="og:title" content="sazsapps.com">
     <meta name="description"
-        content="Connect your quarry operations with advanced hardware. We integrate ANPR cameras, boom barriers, and weighbridges directly into your ERP.">
+        content="SAZS APPS is the No.1 ERP software solution provider in Tamil Nadu, offering cloud-based ERP for quarry, crusher, bricks, pavers, and RMC (Ready-Mix Cement) plants. We provide seamless management solutions across India with advanced automation and analytics.">
     <meta name="keywords"
-        content="ANPR integration, weighbridge automation, biometric attendance, ERP hardware integration, boom barriers, RFID, smart quarry, automated mining, quarry ERP, crusher management software, SAZS APPS">
+        content="ERP software, quarry ERP, crusher management software, brick ERP, paver ERP, RMC plant software, cloud-based ERP, SAZS APPS, ERP for construction, best ERP in Tamil Nadu, ERP for manufacturing, ERP for building materials, business automation software">
     <meta name="author" content="SAZS APPS">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="ERP Hardware Integrations: ANPR, Weighbridge & Biometrics | SAZS APPS">
+    <meta property="og:title" content="SAZS APPS | All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants">
     <meta property="og:description"
-        content="Connect your quarry operations with advanced hardware. We integrate ANPR cameras, boom barriers, and weighbridges directly into your ERP.">
+        content="SAZS APPS provides the best cloud-based ERP software for quarry, crusher, bricks, pavers, and RMC plants. No.1 ERP provider in Tamil Nadu, serving businesses all over India.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sazsapps.com">
     <meta property="og:image" content="../assets/logo/logoblack.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SAZS APPS | Best ERP Software for Quarry, Crusher, Bricks & RMC Plants">
+    <meta name="twitter:description"
+        content="No.1 ERP solution provider in Tamil Nadu for quarry, crusher, brick, paver, and RMC plants. Cloud-based, scalable ERP solutions for businesses across India.">
+    <meta name="twitter:image" content="../assets/logo/logoblack.png">
     <link rel="icon" type="image/x-icon" href="../assets/logo/logoblack.png">
     <link rel="stylesheet" href="../css/features.css">
     <link rel="stylesheet" href="../assets/css/all.min.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+
 </head>
 
 <body>
@@ -30,35 +37,150 @@
     <div class="header-nav">
         <div class="logo-container">
             <a href="../../index.html">
-                <img src="../assets/contentImages/sazsLogo.svg" alt="SAZS ERP App logo">
+                <img src="../assets/contentImages/sazsLogo1.png" alt="SAZS ERP App logo" style="padding-top: 10px;">
             </a>
         </div>
         <nav class="header-bar-nav">
             <a href="../../index.html" class="nav-link" data-page="index">Home</a>
             <a href="./aboutus.html" class="nav-link" data-page="aboutus">About Us</a>
-            <a href="./features.html" class="nav-link active" data-page="features" role="link"
+                                                <div class="dropdown-menu-container">
+                <a href="#" class="nav-link dropdown-trigger" data-page="products">
+                    Products <i class="fa fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="./QuarryCrusher.html" class="dropdown-item">
+                        <div>
+                            <strong>Quarry & Crusher</strong>
+                        </div>
+                    </a>
+                    <a href="./rmc.html" class="dropdown-item">
+                        <div>
+                            <strong>Ready Mix Concrete (RMC)</strong>
+                        </div>
+                    </a>
+                    <a href="./brickspaver.html" class="dropdown-item">
+                        <div>
+                            <strong>Bricks & Pavers</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <a href="./features.html" class="nav-link" data-page="features" role="link"
                 aria-label="Explore the features of Sazs Apps">Explore Features</a>
-            <a href="./careers.html" class="nav-link" data-page="careers">Careers</a>
+                
+                        <a href="./Signup.html" class="nav-link" data-page="Signup">Sign Up</a>
+
             <a href="./contact.html" class="nav-link" data-page="contact">Contact Us</a>
-            <a href="./Signup.html" class="nav-link" data-page="Signup">Sign Up</a>
+
         </nav>
-        <div class="call">
+        <!-- <div class="call">
             <h4 class="text-bold"> <a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i> 76666 28000</a></h4>
-        </div>
+        </div> -->
         <a href="javascript:void(0);" class="icon" onclick="toggleNav()" role="button" aria-label="closebtn">
             <i class="fa fa-bars"></i>
         </a>
     </div>
+    <script>
+document.querySelector(".dropdown-trigger").addEventListener("click", function(e){
+    e.preventDefault();
+    this.nextElementSibling.style.display =
+    this.nextElementSibling.style.display === "block" ? "none" : "block";
+});
+</script>
+
+    <script>
+        // Function to highlight the current page in the navbar
+        function highlightActivePage() {
+            const currentPath = window.location.pathname;
+            const links = document.querySelectorAll(".nav-link");
+
+            links.forEach(link => {
+                // Get the page identifier from the data attribute
+                const page = link.getAttribute("data-page");
+
+                // Check if the current URL includes the page identifier
+                if (currentPath.includes(page)) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        }
+
+        // Run function on page load
+        document.addEventListener("DOMContentLoaded", highlightActivePage);
+    </script>
+    <script>
+
+
+        function toggleNav() {
+            const sidenav = document.getElementById("mySidenav");
+            const isOpen = sidenav.style.width === "250px";
+
+            if (isOpen) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            } else {
+                sidenav.style.width = "250px";
+                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
+            }
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            }
+        }
+    </script>
+
+
+
+    <script>// Toggle mobile products dropdown
+        function toggleMobileDropdown() {
+            const dropdown = document.getElementById('mobileProductsDropdown');
+            const trigger = document.querySelector('.mobile-dropdown-trigger');
+
+            dropdown.classList.toggle('active');
+            trigger.classList.toggle('active');
+        }
+
+        // Close mobile dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileDropdown = document.querySelector('.mobile-dropdown');
+            if (mobileDropdown && !mobileDropdown.contains(event.target)) {
+                const dropdown = document.getElementById('mobileProductsDropdown');
+                const trigger = document.querySelector('.mobile-dropdown-trigger');
+                if (dropdown && trigger) {
+                    dropdown.classList.remove('active');
+                    trigger.classList.remove('active');
+                }
+            }
+        });</script>
+
+
 
     <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button"
-            aria-label="closebtn">&times;</a>
+        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
         <a href="../../index.html" class="logo-link">
-            <img src="../assets/logo/sazslogowhite.webp" alt="SAZS ERP App logo" class="sidenav-logo">
+            <img src="../assets/logo/sazslogowhite.webp" alt="SAZS ERP App Logo" class="sidenav-logo">
         </a>
         <a href="../../index.html">Home</a>
         <a href="./aboutus.html">About Us</a>
-        <a href="./features.html" role="link" aria-label="Explore the features of Sazs Apps">Explore Features</a>
+                <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown()" class="mobile-dropdown-trigger">
+                Products <i class="fa fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-content" id="mobileProductsDropdown">
+                <a href="./QuarryCrusher.html">Quarry & Crusher</a>
+                <a href="./rmc.html">Ready Mix Concrete</a>
+                <a href="./brickspaver.html">Bricks & Pavers</a>
+            </div>
+        </div>
+
+        <a href="./features.html"> Explore Features</a>
         <a href="./careers.html">Careers</a>
         <a href="./contact.html">Contact Us</a>
         <div class="call">
@@ -69,98 +191,58 @@
         </div>
     </div>
 
-    <!-- Hardware Integration Hero Section -->
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header-nav');
+
+        window.onscroll = function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                header.classList.add("hide");
+            } else {
+                header.classList.remove("hide");
+            }
+
+            if (currentScroll <= 0) {
+                header.classList.remove("fixed");
+            } else if (currentScroll > 100) {
+                header.classList.add("fixed");
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        };
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.addEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.removeEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+                closeNav();
+            }
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("aboutDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
     <section class="Quarry">
         <div class="Quarry-text fade-in">
-            <h1 class="in fade-in">
-                Smart <span class="unique-text">Integrations</span> for a Fully Automated Site
-            </h1>
-            <h3 class="subtitle">Software is only half the battle. To truly secure your site, you need hardware that "talks" to your system.</h3>
-            <p class="description">
-                SAZS Apps ERP features <strong>plug-and-play integration</strong> with industry-standard hardware, 
-                transforming your manual site into a smart, automated facility.
-            </p>
-        </div>
-        <div class="Quarry-text zoom-in">
-            <img class="fit-picture" src="../assets/contentImages/feature.svg" alt="Smart Integration Icon">
-        </div>
-    </section>
-
-    <!-- Hardware Integration Suite -->
-    <section class="awesome-erp">
-        <div class="erp-container">
-            <div class="erp-left">
-                <h3>Our Integration Suite</h3>
-            </div>
-            <div class="erp-divider"></div>
-            <div class="erp-right">
-                <p>Industry-leading hardware that seamlessly connects with your ERP system</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hardware Integration Cards -->
-    <div class="grid-container">
-        <div class="feature-card">
-            <div class="hardware-icon-large">
-                <i class="fas fa-camera"></i>
-            </div>
-            <h2 class="feature-title">ANPR (Automatic Number Plate Recognition)</h2>
-            <p class="feature-text">Cameras automatically scan truck plates at the gate, allowing entry only for authorized vehicles and speeding up throughput.</p>
-            <div class="label-container">
-                <span class="label">Gate Automation</span>
-                <span class="label">Vehicle Tracking</span>
-                <span class="label">Security</span>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <div class="hardware-icon-large">
-                <i class="fas fa-weight"></i>
-            </div>
-            <h2 class="feature-title">Smart Weighbridges</h2>
-            <p class="feature-text">Weight data is locked and synced to the cloud instantly—no manual editing allowed. 100% accurate measurements every single time.</p>
-            <div class="label-container">
-                <span class="label">Cloud Synced</span>
-                <span class="label">Zero Errors</span>
-                <span class="label">Auto Billing</span>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <div class="hardware-icon-large">
-                <i class="fas fa-shield-alt"></i>
-            </div>
-            <h2 class="feature-title">Boom Barriers & RFID</h2>
-            <p class="feature-text">Automate gate control to ensure material doesn't leave the premises without a valid digital pass. Complete security automation.</p>
-            <div class="label-container">
-                <span class="label">Access Control</span>
-                <span class="label">RFID Tags</span>
-                <span class="label">Material Security</span>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <div class="hardware-icon-large">
-                <i class="fas fa-fingerprint"></i>
-            </div>
-            <h2 class="feature-title">Biometric Attendance</h2>
-            <p class="feature-text">Link employee payroll directly to fingerprint or Face ID scanners for accurate labor cost tracking. Eliminate buddy punching and time theft.</p>
-            <div class="label-container">
-                <span class="label">Face ID</span>
-                <span class="label">Fingerprint</span>
-                <span class="label">Payroll Integration</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Unique Features Section -->
-    <section class="Quarry" style="margin-top: 80px;">
-        <div class="Quarry-text fade-in">
-            <h1 class="in fade-in">
+            <h1 class=" in fade-in">
                 <span class="unique-text">UNIQUE</span> FEATURES
             </h1>
-            <h3 class="subtitle">MONITOR ALL THE LOADS & VEHICLE INSIDE THE CRUSHER</h3>
+            <h3 class="subtitle fade-in">MONITOR ALL THE LOADS & VEHICLE INSIDE THE CRUSHER</h3>
             <div class="features">
                 <div class="feature zoom-in">
                     <img src="../assets/contentImages/access-control-list.png" alt="Controlled Platform Icon">
@@ -188,8 +270,10 @@
                 </div>
                 <div class="feature zoom-in">
                     <img src="../assets/contentImages/delivery-truck_3806241.png" alt="Camera Integration Icon">
-                    <div class="feature-text">Camera image integration to track the material and vehicle <span class="optional">(Optional)</span></div>
+                    <div class="feature-text">Camera image integration to track the material and vehicle <span
+                            class="optional">(Optional)</span></div>
                 </div>
+
             </div>
             <div class="container1">
                 <div class="specialIntegration zoom-in">
@@ -202,13 +286,15 @@
                 </div>
             </div>
         </div>
-        <div class="Quarry-text zoom-in">
-            <img class="fit-picture" src="../assets/contentImages/feature.svg" alt="icon">
+        <div class="Quarry-text zoom-in ">
+            <img class="fit-picture " src="../assets/contentImages/feature.svg" alt="icon">
+
         </div>
     </section>
 
-    <!-- ERP Features Grid -->
-    <div class="grid-container" style="margin-top: 80px;">
+
+
+    <div class="grid-container">
         <div class="feature-card">
             <img src="../assets/contentImages/rating.png" alt="SAZS ERP Customer Management" class="feature-img">
             <h2 class="feature-title">Customer Management</h2>
@@ -225,7 +311,7 @@
             <img src="../assets/contentImages/interest.png" alt="SAZS ERP Rate Management" class="feature-img">
             <h2 class="feature-title">Rate Management</h2>
             <p class="feature-text">This modules helps the users to define fixed price and discounts for each customer.
-                This is the onetime activity and applied automatically during billing.</p>
+                This is the onetime activity and applied automatically during billing..</p>
             <div class="label-container">
                 <span class="label">Dynamic Pricing</span>
                 <span class="label">Discount Rules</span>
@@ -249,7 +335,7 @@
             <h2 class="feature-title">Sales Management</h2>
             <p class="feature-text">This module helps you for billing and create invoices on the basis of both unit and
                 ton value. This simple & powerful UI with auto intelligence system helps the users to create invoices
-                quickly.</p>
+                quickly..</p>
             <div class="label-container">
                 <span class="label">Invoices</span>
                 <span class="label">Performance</span>
@@ -261,20 +347,22 @@
                 class="feature-img">
             <h2 class="feature-title">Mines Operations</h2>
             <p class="feature-text">The Mines Operations module tracks drilling and blasting activities in mining
-                operations. It records detailed information on a daily, weekly, and monthly basis.</p>
+                operations. It records detailed information on a daily, weekly, and monthly basis. This helps in
+                monitoring and managing mining operations efficiently.</p>
             <div class="label-container">
-                <span class="label">Maintenance Scheduling</span>
+                <span class="label">Maintenance Scheduling </span>
                 <span class="label">Quality Control</span>
                 <span class="label">Safety Compliance</span>
             </div>
         </div>
 
         <div class="feature-card">
-            <img src="../assets/contentImages/material-management.png" alt="SAZS ERP Inventory Management"
+            <img src="../assets/contentImages/material-management.png" alt="ISAZS ERP nventory Management"
                 class="feature-img">
             <h2 class="feature-title">Inventory Management</h2>
             <p class="feature-text">This system handles organization profiles, sales, purchase details, and current
-                stock levels. It allows for inventory updates and transfers between locations.</p>
+                stock levels. It allows for inventory updates and transfers between locations. Additionally, it provides
+                real-time insights into stock balances and transaction details.</p>
             <div class="label-container">
                 <span class="label">Stock Control</span>
                 <span class="label">Warehousing</span>
@@ -283,51 +371,55 @@
         </div>
 
         <div class="feature-card">
-            <img src="../assets/contentImages/diagnostic_1453178.png" alt="SAZS ERP Tyre Monitoring"
+            <img src="../assets/contentImages/diagnostic_1453178.png" alt="SAZS ERP Inventory Management"
                 class="feature-img">
             <h2 class="feature-title">Tyre Monitoring</h2>
-            <p class="feature-text">This module helps to track the tyre consumption of vehicles and machinery. This
-                also helps to track the mileage with auto intelligence reports.</p>
+            <p class="feature-text">This module helps to track the tyre consumption of vechiles and machinaries. This
+                also helps to track the millage with auto inteligence reports.
+            </p>
             <div class="label-container">
-                <span class="label">Fleet Safety</span>
-                <span class="label">Tire Health</span>
-                <span class="label">Wear Analysis</span>
+                <span class="label">Fleet Safety Tire</span>
+                <span class="label">Tire Health Monitoring</span>
+                <span class="label"> Wear Analysis</span>
             </div>
         </div>
 
         <div class="feature-card">
-            <img src="../assets/contentImages/expense.png" alt="SAZS ERP Accounts Management" class="feature-img">
+            <img src="../assets/contentImages/expense.png" alt="SAZS ERP Inventory Management" class="feature-img">
             <h2 class="feature-title">Accounts Management</h2>
             <p class="feature-text">This module helps to track and visualize all the financial transactions and payable
-                and receivable information's</p>
+                and receivable information’s</p>
             <div class="label-container">
-                <span class="label">Financial Tracking</span>
+                <span class="label">Financial Tracking </span>
                 <span class="label">Income Tracking</span>
                 <span class="label">Billing Automation</span>
             </div>
         </div>
 
         <div class="feature-card">
-            <img src="../assets/contentImages/clock_14041639.png" alt="SAZS ERP Employee Management"
+            <img src="../assets/contentImages/clock_14041639.png" alt="SAZS ERP Inventory Management"
                 class="feature-img">
             <h2 class="feature-title">Employee Management</h2>
             <p class="feature-text">Optimize workforce management with Sazs Quarry—automate HR tasks, track attendance,
-                and streamline payroll. Empower your team with self-service tools.</p>
+                and streamline payroll. Empower your team with self-service tools and data-driven insights..</p>
             <div class="label-container">
-                <span class="label">Centralized Reporting</span>
+                <span class="label">Centralized Reporting </span>
                 <span class="label">Attendance Tracking</span>
             </div>
         </div>
     </div>
 
-    <!-- About Section -->
+
     <div class="container2">
         <div class="image fade-in">
             <img src="../assets/contentImages/erp.svg" width="480" alt="SAZS ERP About image">
         </div>
         <div class="content2">
             <div class="fade-in">
-                <h1>About <span class="unique-text">Sazs ERP Software</span></h1>
+                <h1>About
+
+                    <span class="unique-text">Sazs ERP Software</span>
+                </h1>
             </div>
             <div class="list">
                 <div class="list-item zoom-in">Track and monitor every operation from remote</div>
@@ -337,37 +429,44 @@
                 <div class="list-item zoom-in">Reduced manual effort and 0% manual errors</div>
                 <div class="list-item zoom-in">Domain-specific AI-based ERP software</div>
             </div>
+
         </div>
     </div>
 
-    <!-- Tailored Section -->
     <section class="awesome-erp">
         <div class="erp-container">
             <div class="erp-left">
                 <h3>Tailored for You</h3>
             </div>
-            <div class="erp-divider"></div>
+            <div class="erp-divider"></div> <!-- Vertical Line -->
             <div class="erp-right">
-                <p>Our ERP adapts to your business needs, ensuring seamless operations with essential features and updates.</p>
+                <p>
+                    Our ERP adapts to your business needs, ensuring seamless operations with essential features and
+                    updates.
             </div>
         </div>
     </section>
 
-    <!-- Footer CTA -->
+
     <footer class="footer-container fade-in">
         <div class="footer-content">
-            <h1 class="zoom-in">Stronger.<span class="unique-text">Smarter</span>.Moving <span class="unique-text">Forward</span>.</h1>
+            <h1 class=" zoom-in">Stronger.<span class="unique-text">Smarter</span> .Moving <span
+                    class="unique-text">Forward</span>.</h1>
             <a href="./contact.html" class="join-button">Contact Us</a>
         </div>
+
+
+
+
     </footer>
 
-    <!-- Social Footer -->
     <footer class="a">
         <div class="b">
             <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
                 <img src="../assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
             </a>
-            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c" rel="noopener">
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
+                rel="noopener">
                 <img src="../assets/contentImages/facebook.svg" alt="Facebook" class="d">
             </a>
             <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
@@ -376,30 +475,39 @@
             <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
                 <img src="../assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
             </a>
-            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c" rel="noopener">
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                rel="noopener">
                 <img src="../assets/contentImages/instagram.svg" alt="Instagram" class="d">
             </a>
         </div>
 
+
+
         <div class="e">
-            <a href="../../index.html" class="f">Home</a>
+             <a href="../../index.html" class="f">Home</a>
             <a href="./aboutus.html" class="f">About Us</a>
             <a href="./features.html" class="f">Explore Features</a>
             <a href="./careers.html" class="f">Careers</a>
             <a href="./contact.html" class="f">Contact Us</a>
             <a href="./Signup.html" class="f">Request a Demo</a>
+            <a href="./QuarryCrusher.html" class="f">Quarry  & Crusher</a>
+            <a href="./rmc.html" class="f">RMC</a>
+            <a href="./brickspaver.html" class="f">Bricks & Pavers</a>
             <a href="./termsofService.html" class="f">Terms of Service</a>
             <a href="./privacyPolicy.html" class="f">Privacy Policy</a>
             <a href="./dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
         </div>
     </footer>
 
-    <!-- Bottom Footer -->
+
+
     <footer class="footer">
         <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
             May I help you?
         </a>
         <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+
         <button class="scroll-top" aria-label="Scroll to top">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 19V5M5 12l7-7 7 7" />
@@ -408,75 +516,41 @@
     </footer>
 
     <script>
-        function highlightActivePage() {
-            const currentPath = window.location.pathname;
-            const links = document.querySelectorAll(".nav-link");
-            links.forEach(link => {
-                const page = link.getAttribute("data-page");
-                if (currentPath.includes(page)) {
-                    link.classList.add("active");
-                } else {
-                    link.classList.remove("active");
-                }
-            });
-        }
-
-        function toggleNav() {
-            const sidenav = document.getElementById("mySidenav");
-            const isOpen = sidenav.style.width === "250px";
-            if (isOpen) {
-                sidenav.style.width = "0";
-                document.removeEventListener("click", closeNavOnClickOutside);
-            } else {
-                sidenav.style.width = "250px";
-                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
-            }
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-
-        function closeNavOnClickOutside(event) {
-            const sidenav = document.getElementById("mySidenav");
-            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
-                sidenav.style.width = "0";
-                document.removeEventListener("click", closeNavOnClickOutside);
-            }
-        }
-
         document.querySelector('.scroll-top').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
+        // Show/hide scroll button based on scroll position
         window.addEventListener('scroll', () => {
             const scrollButton = document.querySelector('.scroll-top');
-            scrollButton.style.display = window.scrollY > 200 ? 'flex' : 'none';
+            if (window.scrollY > 200) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
+            }
         });
-
+    </script>
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
-            highlightActivePage();
-            const observerOptions = { threshold: 0.2 };
+            const observerOptions = {
+                threshold: 0.2, // Trigger animation when 20% of the element is visible
+            };
+
             const animatedElements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
-            const observer = new IntersectionObserver((entries) => {
+
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("visible");
                     }
                 });
             }, observerOptions);
+
             animatedElements.forEach((el) => observer.observe(el));
         });
-
-        let lastScrollTop = 0;
-        const header = document.querySelector('.header-nav');
-        window.onscroll = function () {
-            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            header.classList.toggle("hide", currentScroll > lastScrollTop);
-            header.classList.toggle("fixed", currentScroll > 100);
-            if (currentScroll <= 0) header.classList.remove("fixed");
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        };
     </script>
 </body>
 

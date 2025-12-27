@@ -33,26 +33,54 @@
     <div class="header-nav">
         <div class="logo-container">
             <a href="../../index.html">
-                <img src="../assets/contentImages/sazsLogo.svg" alt="company logo">
+                <img src="../assets/contentImages/sazsLogo1.png" alt="company logo" style="padding-top: 10px;">
             </a>
         </div>
         <nav class="header-bar-nav">
             <a href="../../index.html" class="nav-link" data-page="index">Home</a>
             <a href="./aboutus.html" class="nav-link" data-page="aboutus">About Us</a>
+                                                <div class="dropdown-menu-container">
+                <a href="#" class="nav-link dropdown-trigger" data-page="products">
+                    Products <i class="fa fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="./QuarryCrusher.html" class="dropdown-item">
+                        <div>
+                            <strong>Quarry & Crusher</strong>
+                        </div>
+                    </a>
+                    <a href="./rmc.html" class="dropdown-item">
+                        <div>
+                            <strong>Ready Mix Concrete (RMC)</strong>
+                        </div>
+                    </a>
+                    <a href="./brickspaver.html" class="dropdown-item">
+                        <div>
+                            <strong>Bricks & Pavers</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
             <a href="./features.html" class="nav-link" data-page="features">Explore Features</a>
-            <a href="./careers.html" class="nav-link" data-page="careers">Careers</a>
-            <a href="./contact.html" class="nav-link" data-page="contact">Contact Us</a>
                         <a href="./Signup.html" class="nav-link" data-page="Signup">Sign Up</a>
+            <a href="./contact.html" class="nav-link" data-page="contact">Contact Us</a>
 
         </nav>
-        <div class="call">
+        <!-- <div class="call">
             <h4 class="text-bold"> <a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i> 76666 28000</a></h4>
-        </div>
+        </div> -->
         <a href="javascript:void(0);" class="icon" onclick="toggleNav()" role="button" aria-label="closebtn">
             <i class="fa fa-bars"></i>
         </a>
     </div>
-
+ <script>
+document.querySelector(".dropdown-trigger").addEventListener("click", function(e){
+    e.preventDefault();
+    this.nextElementSibling.style.display =
+    this.nextElementSibling.style.display === "block" ? "none" : "block";
+});
+</script>
     <script>
         // Function to highlight the current page in the navbar
         function highlightActivePage() {
@@ -101,13 +129,48 @@
     </script>
 
 
+    <script>// Toggle mobile products dropdown
+        function toggleMobileDropdown() {
+            const dropdown = document.getElementById('mobileProductsDropdown');
+            const trigger = document.querySelector('.mobile-dropdown-trigger');
+
+            dropdown.classList.toggle('active');
+            trigger.classList.toggle('active');
+        }
+
+        // Close mobile dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileDropdown = document.querySelector('.mobile-dropdown');
+            if (mobileDropdown && !mobileDropdown.contains(event.target)) {
+                const dropdown = document.getElementById('mobileProductsDropdown');
+                const trigger = document.querySelector('.mobile-dropdown-trigger');
+                if (dropdown && trigger) {
+                    dropdown.classList.remove('active');
+                    trigger.classList.remove('active');
+                }
+            }
+        });</script>
+
+
+
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
         <a href="../../index.html" class="logo-link">
-            <img src="../assets/logo/sazslogowhite.webp" alt="Logo" class="sidenav-logo">
+            <img src="../assets/logo/sazslogowhite.webp" alt="SAZS ERP App Logo" class="sidenav-logo">
         </a>
         <a href="../../index.html">Home</a>
         <a href="./aboutus.html">About Us</a>
+                <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown()" class="mobile-dropdown-trigger">
+                Products <i class="fa fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-content" id="mobileProductsDropdown">
+                <a href="./QuarryCrusher.html">Quarry & Crusher</a>
+                <a href="./rmc.html">Ready Mix Concrete</a>
+                <a href="./brickspaver.html">Bricks & Pavers</a>
+            </div>
+        </div>
+
         <a href="./features.html"> Explore Features</a>
         <a href="./careers.html">Careers</a>
         <a href="./contact.html">Contact Us</a>
@@ -118,6 +181,7 @@
             </a>
         </div>
     </div>
+
 
     <script>
         let lastScrollTop = 0;
@@ -268,13 +332,15 @@
 
 
         <div class="e">
-            <a href="../../index.html" class="f">Home</a>
+             <a href="../../index.html" class="f">Home</a>
             <a href="./aboutus.html" class="f">About Us</a>
             <a href="./features.html" class="f">Explore Features</a>
             <a href="./careers.html" class="f">Careers</a>
             <a href="./contact.html" class="f">Contact Us</a>
-                        <a href="./Signup.html" class="f">Request a Demo</a>
-
+            <a href="./Signup.html" class="f">Request a Demo</a>
+            <a href="./QuarryCrusher.html" class="f">Quarry  & Crusher</a>
+            <a href="./rmc.html" class="f">RMC</a>
+            <a href="./brickspaver.html" class="f">Bricks & Pavers</a>
             <a href="./termsofService.html" class="f">Terms of Service</a>
             <a href="./privacyPolicy.html" class="f">Privacy Policy</a>
             <a href="./dataProtectionPolicy.html" class="f">Data Protection Policy</a>

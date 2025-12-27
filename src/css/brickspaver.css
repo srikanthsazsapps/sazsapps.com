@@ -287,7 +287,7 @@ p {
     overflow: hidden;
     background:
         linear-gradient(135deg, rgba(10,37,64,0.78), rgba(13,58,92,0.6)),
-        url("../assets/contentImages/rmc.png") center/cover no-repeat;
+        url("../assets/contentImages/bricksdrone.png") center/cover no-repeat;
 }
 
 .hero-main-container {
@@ -1193,5 +1193,58 @@ p {
 
     .hero-subheadline {
         font-size: 1.15rem;
+    }
+}
+
+/* ============================================
+   BRICKS & PAVERS SPECIFIC STYLES
+============================================ */
+
+/* Hardware Icon Styling */
+.hardware-icon {
+    font-size: 60px;
+    color: #3E89EC;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card1:hover .hardware-icon,
+.card2:hover .hardware-icon,
+.card3:hover .hardware-icon {
+    transform: scale(1.1);
+}
+
+/* Industry Features Section */
+.industry-features {
+    text-align: left;
+}
+
+.industry-item {
+    padding: 15px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.industry-item h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.industry-item i {
+    font-size: 20px;
+}
+
+/* Responsive adjustments for hardware icons */
+@media (max-width: 768px) {
+    .hardware-icon {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hardware-icon {
+        font-size: 40px;
     }
 }
