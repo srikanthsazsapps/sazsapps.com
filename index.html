@@ -40,136 +40,158 @@
     <div class="header-nav">
         <div class="logo-container">
             <a href="./index.html" aria-label="Go to homepage" role="link">
-                <img src="./src/assets/contentImages/sazsLogo.svg" alt="SAZS ERP App Logo" title="Homepage">
+                <img src="./src/assets/contentImages/sazsLogo1.png" alt="SAZS ERP App Logo" title="Homepage">
             </a>
         </div>
-       <nav class="header-bar-nav">
-    <a href="./index.html" class="nav-link" data-page="index">Home</a>
-    <a href="./src/pages/aboutus.html" class="nav-link" data-page="aboutus" role="link">About Us</a>
-    
-    <!-- Products Dropdown -->
-    <div class="dropdown-menu-container">
-        <a href="#" class="nav-link dropdown-trigger" data-page="products">
-            Products <i class="fa fa-chevron-down"></i>
-        </a>
-        <div class="dropdown-content">
-            <a href="" class="dropdown-item">
-                <div>
-                    <strong>Quarry & Crusher</strong>
+        <nav class="header-bar-nav">
+            <a href="./index.html" class="nav-link" data-page="index">Home</a>
+            <a href="./src/pages/aboutus.html" class="nav-link" data-page="aboutus" role="link">About Us</a>
+
+            <!-- Products Dropdown -->
+            <div class="dropdown-menu-container">
+                <a href="#" class="nav-link dropdown-trigger" data-page="products">
+                    Products <i class="fa fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="/src/pages/QuarryCrusher.html" class="dropdown-item">
+                        <div>
+                            <strong>Quarry & Crusher</strong>
+                        </div>
+                    </a>
+                    <a href="" class="dropdown-item">
+                        <div>
+                            <strong>Ready Mix Concrete (RMC)</strong>
+                        </div>
+                    </a>
+                    <a href="" class="dropdown-item">
+                        <div>
+                            <strong>Bricks & Pavers</strong>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="" class="dropdown-item">
-                <div>
-                    <strong>Ready Mix Concrete (RMC)</strong>
-                </div>
-            </a>
-            <a href="" class="dropdown-item">
-                <div>
-                    <strong>Bricks & Pavers</strong>
-                </div>
-            </a>
-        </div>
-    </div>
-    
-    <a href="./src/pages/features.html" class="nav-link" data-page="features">Explore Features</a>
-    <a href="./src/pages/careers.html" class="nav-link" data-page="careers" role="link">Careers</a>
-    <a href="./src/pages/contact.html" class="nav-link" data-page="contact" role="link">Contact Us</a>
-    <a href="./src/pages/Signup.html" class="nav-link" data-page="Signup" role="link">Sign Up</a>
-</nav>
-        <div class="call">
-            <h4 class="text-bold"> <a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i> 76666 28000</a></h4>
-        </div>
-        
+            </div>
+
+            <a href="./src/pages/features.html" class="nav-link" data-page="features">Explore Features</a>
+            <!-- <a href="./src/pages/careers.html" class="nav-link" data-page="careers" role="link">Careers</a> -->
+            <a href="./src/pages/Signup.html" class="nav-link" data-page="Signup" role="link">Sign Up</a>
+
+            <a href="./src/pages/contact.html" class="nav-link" data-page="contact" role="link">Contact Us</a>
+        </nav>
+        <!-- <div class="call">
+                <h4 class="text-bold"> <a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i> 76666 28000</a></h4>
+            </div> -->
+
         <a href="javascript:void(0);" class="icon" onclick="toggleNav()" role="button" aria-label="closebtn">
             <i class="fa fa-bars"></i>
         </a>
     </div>
     <script>// Toggle mobile products dropdown
-function toggleMobileDropdown() {
-    const dropdown = document.getElementById('mobileProductsDropdown');
-    const trigger = document.querySelector('.mobile-dropdown-trigger');
-    
-    dropdown.classList.toggle('active');
-    trigger.classList.toggle('active');
-}
+        function toggleMobileDropdown() {
+            const dropdown = document.getElementById('mobileProductsDropdown');
+            const trigger = document.querySelector('.mobile-dropdown-trigger');
 
-// Close mobile dropdown when clicking outside
-document.addEventListener('click', function(event) {
-    const mobileDropdown = document.querySelector('.mobile-dropdown');
-    if (mobileDropdown && !mobileDropdown.contains(event.target)) {
-        const dropdown = document.getElementById('mobileProductsDropdown');
-        const trigger = document.querySelector('.mobile-dropdown-trigger');
-        if (dropdown && trigger) {
-            dropdown.classList.remove('active');
-            trigger.classList.remove('active');
+            dropdown.classList.toggle('active');
+            trigger.classList.toggle('active');
         }
-    }
-});</script>
+
+        // Close mobile dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileDropdown = document.querySelector('.mobile-dropdown');
+            if (mobileDropdown && !mobileDropdown.contains(event.target)) {
+                const dropdown = document.getElementById('mobileProductsDropdown');
+                const trigger = document.querySelector('.mobile-dropdown-trigger');
+                if (dropdown && trigger) {
+                    dropdown.classList.remove('active');
+                    trigger.classList.remove('active');
+                }
+            }
+        });</script>
 
 
 
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
-    <a href="./index.html" class="logo-link" aria-label="Go to homepage" role="link">
-        <img src="./src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page" class="sidenav-logo">
-    </a>
-    <a href="./index.html">Home</a>
-    <a href="./src/pages/aboutus.html">About Us</a>
-    
-    <!-- Mobile Products Dropdown -->
-    <div class="mobile-dropdown">
-        <a href="javascript:void(0);" onclick="toggleMobileDropdown()" class="mobile-dropdown-trigger">
-            Products <i class="fa fa-chevron-down"></i>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button"
+            aria-label="closebtn">&times;</a>
+        <a href="./index.html" class="logo-link" aria-label="Go to homepage" role="link">
+            <img src="./src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page" class="sidenav-logo">
         </a>
-        <div class="mobile-dropdown-content" id="mobileProductsDropdown">
-            <a href="./src/pages/quarry-crusher.html">Quarry & Crusher</a>
-            <a href="./src/pages/rmc.html">Ready Mix Concrete</a>
-            <a href="./src/pages/bricks-pavers.html">Bricks & Pavers</a>
-        </div>
-    </div>
-    
-    <a href="./src/pages/features.html" role="link" aria-label="Explore the features of Sazs Apps">Explore Features</a>
-    <a href="./src/pages/careers.html">Careers</a>
-    <a href="./src/pages/contact.html">Contact Us</a>
-    <div class="call">
-        <a href="tel:+917666628000">
-            <i class="fa fa-phone-volume ringing-icon"></i>
-            76666 28000
-        </a>
-    </div>
-</div>
+        <a href="./index.html">Home</a>
+        <a href="./src/pages/aboutus.html">About Us</a>
 
-<section class="hero-main-section">
-    <div class="hero-main-container">
-        <div class="hero-main-content">
-            <div class="hero-content-left">
-                <h1 class="hero-main-title">
-                    The Ultimate <span class="hero-text-highlight">ERP Solution</span> for 
-                    Quarry, Crusher, and RMC Businesses
-                </h1>
-                
-                <span class="hero-subtitle">
-                    Stop losing money to manual errors. Streamline your operations, track every load, 
-                    and automate billing with India's most trusted mining ERP software.
-                </span>
-
-                <p class="hero-main-description">
-                    Managing a stone crusher or quarry unit requires precision, not guesswork. 
-                    SAZS Apps ERP is a fully automated, cloud-based platform designed to handle 
-                    your business end-to-end—from the moment a truck enters your weighbridge to 
-                    the final invoice generation. Built on robust Microsoft technology, our software 
-                    eliminates pilferage, ensures 100% financial accuracy, and gives you a 360-degree 
-                    view of your business from anywhere in the world.
-                </p>
-                
-                <!-- <div class="hero-action-buttons">
-                    <a href="#contact" class="hero-btn-primary">Get Started</a>
-                    <a href="#features" class="hero-btn-secondary">Learn More</a>
-                </div> -->
+        <!-- Mobile Products Dropdown -->
+        <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown()" class="mobile-dropdown-trigger">
+                Products <i class="fa fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-content" id="mobileProductsDropdown">
+                <a href="./src/pages/quarry-crusher.html">Quarry & Crusher</a>
+                <a href="./src/pages/rmc.html">Ready Mix Concrete</a>
+                <a href="./src/pages/bricks-pavers.html">Bricks & Pavers</a>
             </div>
         </div>
+
+        <a href="./src/pages/features.html" role="link" aria-label="Explore the features of Sazs Apps">Explore
+            Features</a>
+        <a href="./src/pages/careers.html">Careers</a>
+        <a href="./src/pages/contact.html">Contact Us</a>
+        <div class="call">
+            <a href="tel:+917666628000">
+                <i class="fa fa-phone-volume ringing-icon"></i>
+                76666 28000
+            </a>
+        </div>
     </div>
-</section>
+
+    <section class="hero-main-section">
+        <div class="hero-main-container">
+            <div class="hero-main-content">
+                <div class="hero-content-left">
+
+                    <!-- MAIN HEADING -->
+                    <h1 class="hero-main-title">
+                        The Ultimate <span class="hero-text-highlight">ERP Solution</span> for
+                        Quarry, Crusher, and RMC Businesses
+                    </h1>
+
+                    <!-- SUB HEADING -->
+                    <h2 class="hero-subheadline">
+                        Stop losing money to manual errors. Streamline your operations,
+                        track every load, and automate billing with India’s most trusted
+                        mining ERP software.
+                    </h2>
+
+                    <!-- INTRO CONTENT -->
+                    <p class="hero-main-description">
+                        <span class="hero-dot"></span>
+                        Managing a stone crusher or quarry unit demands
+                        <strong>precision, not guesswork</strong>.
+                        SAZS Apps ERP is a
+                        <span class="hero-highlight">fully automated, cloud-based platform</span>
+                        designed to manage operations end-to-end.
+                    </p>
+
+                    <p class="hero-main-description">
+                        <span class="hero-dot"></span>
+                        From the moment a truck enters your
+                        <strong>weighbridge</strong> to
+                        <span class="hero-highlight">final invoice generation</span>,
+                        every process is streamlined, monitored, and secured.
+                    </p>
+
+                    <p class="hero-main-description">
+                        <span class="hero-dot"></span>
+                        Built on <strong>robust Microsoft technology</strong>,
+                        our ERP eliminates pilferage, ensures
+                        <span class="hero-highlight">100% financial accuracy</span>,
+                        and delivers a
+                        <strong>360° real-time business view</strong>
+                        from anywhere in the world.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -198,7 +220,7 @@ document.addEventListener('click', function(event) {
         <section class="whyUs-section fade-in">
             <div class="whyUs-container">
                 <div class="whyUs-graphic">
-                    <img src="src/assets/contentImages/homeftr.svg" alt="SAZS ERP Why Us Features" >
+                    <img src="src/assets/contentImages/homeftr.svg" alt="SAZS ERP Why Us Features">
                 </div>
                 <div class="whyUs-content">
                     <div class="whyUs-item">
@@ -265,7 +287,7 @@ document.addEventListener('click', function(event) {
                     </div>
                 </div>
                 <div class="whyUs-graphic">
-                    <img src="src/assets/contentImages/whtugain.svg" alt="Why Us Features" >
+                    <img src="src/assets/contentImages/whtugain.svg" alt="Why Us Features">
                 </div>
             </div>
         </section>
@@ -278,7 +300,7 @@ document.addEventListener('click', function(event) {
         <section class="whyUs-section fade-in">
             <div class="whyUs-container">
                 <div class="whyUs-graphic">
-                    <img src="src/assets/contentImages/yreachus.svg" alt="SAZS ERP Why To Reach Us " >
+                    <img src="src/assets/contentImages/yreachus.svg" alt="SAZS ERP Why To Reach Us ">
                 </div>
                 <div class="whyUs-content">
                     <div class="whyUs-item">
@@ -315,7 +337,7 @@ document.addEventListener('click', function(event) {
         <div class="cards-container">
             <!-- Card 1 -->
             <div class="card1 ">
-                <img src="src/assets/contentImages/camera icon.png" alt=" Data Icon" >
+                <img src="src/assets/contentImages/camera icon.png" alt=" Data Icon">
                 <path fill="currentColor"
                     d="M5.748 9.195c.607.277.992 1.139 1.04 2.342c.033.797-.06 1.399-.303 1.925c-.564 1.209-1.578 1.252-2.163.092c-.25-.488-.358-1.025-.358-1.778c.006-.803.092-1.274.347-1.795c.363-.742.895-1.035 1.437-.786m9.768.076c.591.39.998 1.627.916 2.776c-.092 1.371-.699 2.358-1.436 2.358c-.407 0-.824-.358-1.095-.943c-.45-.976-.423-2.613.065-3.567c.363-.716 1.024-.981 1.55-.624M12.388.029c.223.032.255.06.38.292c.184.336.298.456.64.678c.314.2.314.211.206.726c-.093.434-.039.862.162 1.247c.293.58 1.111 1.187 1.86 1.377c.281.076.395.081.737.022c.222-.033.439-.049.482-.033c.049.022.163.2.26.401c.217.467.76 1.025 1.193 1.226c.705.33 1.47.314 2.206-.05c.206-.102.412-.167.461-.151c.043.016.168.14.276.271c.109.136.326.309.478.385c.249.13.341.146.753.14c.325-.005.488.012.526.06c.157.19.59 2.201.775 3.584c.163 1.241.179 4.017.027 5.23c-.2 1.644-.498 3.053-.91 4.321c-.293.9-.553 1.491-1.09 2.456C20.997 23.675 20.682 24 20.086 24a2 2 0 0 1-.493-.06c-.353-.119-.895-.536-1.73-1.328c-.986-.932-1.404-1.257-1.924-1.512c-.634-.315-1.258-.342-1.8-.076c-.13.065-.498.358-.807.656c-.65.618-.9.753-1.47.791c-.704.044-1.1-.135-2.206-.992c-.471-.363-.818-.526-1.203-.558c-.466-.038-.808.081-1.561.537c-.743.45-1.139.59-1.654.59c-1.073 0-2.006-.66-2.965-2.097C1.205 18.34.424 16.09.17 13.863c-.098-.84-.114-2.537-.033-3.367c.428-4.266 2.494-7.53 5.828-9.193C7.005.783 8.149.419 9.455.197c.976-.163 2.413-.244 2.933-.168m-2.239 1.48C7.64 1.758 5.2 3.113 3.731 5.065c-1.529 2.033-2.38 5.399-2.07 8.19c.2 1.85.964 3.947 1.989 5.487c.52.78.72.997 1.084 1.176c.553.271 1.122.174 1.827-.309c.629-.434 1.28-.623 1.978-.585c.71.043.982.184 2.055 1.1c.634.542 1.182.602 1.794.195c.136-.092.44-.325.678-.52c.764-.634 1.35-.857 2.277-.862c1.16-.006 1.913.428 2.981 1.73c.868 1.05 1.204 1.268 1.68 1.089c.781-.298 1.567-2.082 2.082-4.716c.683-3.48.553-6.522-.352-8.37c-.293-.608-.645-.998-.976-1.095c-.206-.06-.27-.055-.704.086c-.418.136-.564.158-1.106.158c-.51 0-.689-.028-.992-.13c-.58-.196-.84-.434-1.486-1.356c-.298-.428-.558-.569-1.263-.71c-1.3-.25-1.832-.477-2.293-.976c-.434-.466-.71-1.09-.91-2.054c-.055-.282-.152-.591-.212-.689c-.222-.357-.759-.488-1.643-.395" />
 
@@ -326,7 +348,7 @@ document.addEventListener('click', function(event) {
             </div>
             <!-- Card 2 -->
             <div class="card2 ">
-                <img src="src/assets/contentImages/invoice icon.png" alt="Data Icon" >
+                <img src="src/assets/contentImages/invoice icon.png" alt="Data Icon">
                 <h5>E-Invoice
                     Integration</h5>
                 <p>E-Invoice Integration automates the creation and exchange of invoices in a digital format, ensuring
@@ -335,7 +357,7 @@ document.addEventListener('click', function(event) {
             </div>
             <!-- Card 3 -->
             <div class="card4 ">
-                <img src="src/assets/contentImages/weighbridge icon.png" alt="Data Icon" >
+                <img src="src/assets/contentImages/weighbridge icon.png" alt="Data Icon">
                 <h5>Weighbridge and Camera
                     Integration</h5>
                 <p>Weighbridge and Camera Integration combines vehicle weighing with visual monitoring for accurate
@@ -344,7 +366,7 @@ document.addEventListener('click', function(event) {
             </div>
             <!-- Card 1 -->
             <div class="card1 ">
-                <img src="src/assets/contentImages/mobile icon.png" alt="Data Icon" >
+                <img src="src/assets/contentImages/mobile icon.png" alt="Data Icon">
                 <path fill="currentColor"
                     d="M5.748 9.195c.607.277.992 1.139 1.04 2.342c.033.797-.06 1.399-.303 1.925c-.564 1.209-1.578 1.252-2.163.092c-.25-.488-.358-1.025-.358-1.778c.006-.803.092-1.274.347-1.795c.363-.742.895-1.035 1.437-.786m9.768.076c.591.39.998 1.627.916 2.776c-.092 1.371-.699 2.358-1.436 2.358c-.407 0-.824-.358-1.095-.943c-.45-.976-.423-2.613.065-3.567c.363-.716 1.024-.981 1.55-.624M12.388.029c.223.032.255.06.38.292c.184.336.298.456.64.678c.314.2.314.211.206.726c-.093.434-.039.862.162 1.247c.293.58 1.111 1.187 1.86 1.377c.281.076.395.081.737.022c.222-.033.439-.049.482-.033c.049.022.163.2.26.401c.217.467.76 1.025 1.193 1.226c.705.33 1.47.314 2.206-.05c.206-.102.412-.167.461-.151c.043.016.168.14.276.271c.109.136.326.309.478.385c.249.13.341.146.753.14c.325-.005.488.012.526.06c.157.19.59 2.201.775 3.584c.163 1.241.179 4.017.027 5.23c-.2 1.644-.498 3.053-.91 4.321c-.293.9-.553 1.491-1.09 2.456C20.997 23.675 20.682 24 20.086 24a2 2 0 0 1-.493-.06c-.353-.119-.895-.536-1.73-1.328c-.986-.932-1.404-1.257-1.924-1.512c-.634-.315-1.258-.342-1.8-.076c-.13.065-.498.358-.807.656c-.65.618-.9.753-1.47.791c-.704.044-1.1-.135-2.206-.992c-.471-.363-.818-.526-1.203-.558c-.466-.038-.808.081-1.561.537c-.743.45-1.139.59-1.654.59c-1.073 0-2.006-.66-2.965-2.097C1.205 18.34.424 16.09.17 13.863c-.098-.84-.114-2.537-.033-3.367c.428-4.266 2.494-7.53 5.828-9.193C7.005.783 8.149.419 9.455.197c.976-.163 2.413-.244 2.933-.168m-2.239 1.48C7.64 1.758 5.2 3.113 3.731 5.065c-1.529 2.033-2.38 5.399-2.07 8.19c.2 1.85.964 3.947 1.989 5.487c.52.78.72.997 1.084 1.176c.553.271 1.122.174 1.827-.309c.629-.434 1.28-.623 1.978-.585c.71.043.982.184 2.055 1.1c.634.542 1.182.602 1.794.195c.136-.092.44-.325.678-.52c.764-.634 1.35-.857 2.277-.862c1.16-.006 1.913.428 2.981 1.73c.868 1.05 1.204 1.268 1.68 1.089c.781-.298 1.567-2.082 2.082-4.716c.683-3.48.553-6.522-.352-8.37c-.293-.608-.645-.998-.976-1.095c-.206-.06-.27-.055-.704.086c-.418.136-.564.158-1.106.158c-.51 0-.689-.028-.992-.13c-.58-.196-.84-.434-1.486-1.356c-.298-.428-.558-.569-1.263-.71c-1.3-.25-1.832-.477-2.293-.976c-.434-.466-.71-1.09-.91-2.054c-.055-.282-.152-.591-.212-.689c-.222-.357-.759-.488-1.643-.395" />
 
@@ -354,14 +376,14 @@ document.addEventListener('click', function(event) {
             </div>
             <!-- Card 2 -->
             <div class="card2 ">
-                <img src="src/assets/contentImages/boom barrier icon.png" alt="Data Icon" >
+                <img src="src/assets/contentImages/boom barrier icon.png" alt="Data Icon">
                 <h5>Boom Barrier Integration</h5>
                 <p>Boom Barrier Integration automates vehicle access control by linking barriers with systems like ANPR
                     or RFID for secure, efficient entry and exit management.</p>
             </div>
             <!-- Card 3 -->
             <div class="card3 ">
-                <img src="src/assets/contentImages/rb_4140.png" alt="Data Icon" >
+                <img src="src/assets/contentImages/rb_4140.png" alt="Data Icon">
                 <h5>Face ID & Fingerprint Integration</h5>
                 <p>Face ID and fingerprint integration combines biometric authentication methods for enhanced security
                     and user verification. It enables systems to recognize individuals based on their facial features or
@@ -404,7 +426,7 @@ document.addEventListener('click', function(event) {
                 <h2> <span class="succeed-text">
                         176+
                     </span></h2>
-                    <h3>Happy Clients</h3>
+                <h3>Happy Clients</h3>
             </div>
             <div class="feature-card">
 
@@ -412,19 +434,21 @@ document.addEventListener('click', function(event) {
 
                         100000+
                     </span></h2>
-                    <h3>Transaction</h3>
+                <h3>Transaction</h3>
             </div>
             <div class="feature-card">
 
                 <h2><span class="succeed-text">
                         24/7
-                    </span></h2> <h3>Hours Of Support</h3>
+                    </span></h2>
+                <h3>Hours Of Support</h3>
             </div>
             <div class="feature-card">
 
                 <h2><span class="succeed-text">
                         500+
-                    </span></h2> <h3>Users</h3>
+                    </span></h2>
+                <h3>Users</h3>
             </div>
         </div>
     </section>
@@ -432,34 +456,34 @@ document.addEventListener('click', function(event) {
 
     <section class="numberOne-section fade-in">
         <!-- <div class="numberOne-container"> -->
-            <!-- Left Side - Image -->
-            <div class="numberOne-graphic">
-                <img class="slide-in" src="src/assets/contentImages/NumberOne.svg" alt="SAZS ERP Number One Software" >
-            </div>
+        <!-- Left Side - Image -->
+        <div class="numberOne-graphic">
+            <img class="slide-in" src="src/assets/contentImages/NumberOne.svg" alt="SAZS ERP Number One Software">
+        </div>
 
-            <!-- Right Side - Content -->
-            <div class="numberOne-content">
-                <p class="quote-text">"We don't want to push our ideas on to customers, <br>
-                    we simply want to make what they want."</p>
+        <!-- Right Side - Content -->
+        <div class="numberOne-content">
+            <p class="quote-text">"We don't want to push our ideas on to customers, <br>
+                we simply want to make what they want."</p>
 
-                <h1><span class="succeed-text">NO.1</span> ERP SOFTWARE FOR <span class="succeed-text">QUARRY </span>&
-                    <span class="succeed-text">CRUSHER</span>,<span class="succeed-text">BRICKS</span> &
-                    <span class="succeed-text"> RMC </span> Plants
-                </h1>
+            <h1><span class="succeed-text">NO.1</span> ERP SOFTWARE FOR <span class="succeed-text">QUARRY </span>&
+                <span class="succeed-text">CRUSHER</span>,<span class="succeed-text">BRICKS</span> &
+                <span class="succeed-text"> RMC </span> Plants
+            </h1>
 
-                <ul>
-                    <li> <img src="./src//assets/contentImages/safetyicon.svg" width="20" alt="safety icon" > Safe And
-                        Secure</li>
-                    <li><img src="./src//assets/contentImages/userfriendlyicn.svg" width="20" alt="user friently icon" >
-                        User Friendly</li>
-                    <li><img src="./src/assets/contentImages/infiniyicn.svg" width="20" alt="infinity icon" > Unlimited
-                        Logins</li>
-                    <li><img src="./src/assets/contentImages/refreshicn.svg" width="20" alt="icon" > Secured & Domain
-                        Specific</li>
-                </ul>
+            <ul>
+                <li> <img src="./src//assets/contentImages/safetyicon.svg" width="20" alt="safety icon"> Safe And
+                    Secure</li>
+                <li><img src="./src//assets/contentImages/userfriendlyicn.svg" width="20" alt="user friently icon">
+                    User Friendly</li>
+                <li><img src="./src/assets/contentImages/infiniyicn.svg" width="20" alt="infinity icon"> Unlimited
+                    Logins</li>
+                <li><img src="./src/assets/contentImages/refreshicn.svg" width="20" alt="icon"> Secured & Domain
+                    Specific</li>
+            </ul>
 
-                <a href="./src/pages/features.html" class="join-button">Learn More</a>
-            </div>
+            <a href="./src/pages/features.html" class="join-button">Learn More</a>
+        </div>
         <!-- </div> -->
     </section>
 

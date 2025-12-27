@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="../css/aboutus.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/all.min.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="../css/newstyle.css">
 
 </head>
 
@@ -37,21 +39,45 @@
     <div class="header-nav">
         <div class="logo-container">
             <a href="../../index.html">
-                <img src="../assets/contentImages/sazslogo.webp" alt="SAZS ERP App logo">
+                <img src="../assets/contentImages/sazsLogo1.png" alt="SAZS ERP App logo">
             </a>
         </div>
         <nav class="header-bar-nav">
             <a href="../../index.html" class="nav-link" data-page="index">Home</a>
             <a href="./aboutus.html" class="nav-link" data-page="aboutus">About Us</a>
+                        <div class="dropdown-menu-container">
+                <a href="#" class="nav-link dropdown-trigger" data-page="products">
+                    Products <i class="fa fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                        <div>
+                            <strong>Quarry & Crusher</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <div>
+                            <strong>Ready Mix Concrete (RMC)</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <div>
+                            <strong>Bricks & Pavers</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
             <a href="./features.html" class="nav-link" data-page="features">Explore Features</a>
-            <a href="./careers.html" class="nav-link" data-page="careers">Careers</a>
+            <!-- <a href="./careers.html" class="nav-link" data-page="careers">Careers</a> -->
+              <a href="./Signup.html" class="nav-link" data-page="Signup">Sign Up</a>
+
             <a href="./contact.html" class="nav-link" data-page="contact">Contact Us</a>
-                        <a href="./Signup.html" class="nav-link" data-page="Signup">Sign Up</a>
 
         </nav>
-        <div class="call">
+        <!-- <div class="call">
             <h4 class="text-bold"> <a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i> 76666 28000</a></h4>
-        </div>
+        </div> -->
         <a href="javascript:void(0);" class="icon" onclick="toggleNav()" role="button" aria-label="closebtn">
             <i class="fa fa-bars"></i>
         </a>
@@ -191,7 +217,111 @@
         </div>
     </section>
 
+<style>/* Join Our Team CTA Section */
+.join-team-cta {
+    background: linear-gradient(135deg, #007bff 0%, #3E89EC 100%);
+    padding: 60px 20px;
+    text-align: center;
+    margin: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
 
+.join-team-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.cta-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.cta-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95) !important;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.join-team-cta .join-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 35px;
+    background-color: #ffffff;
+    color: #216DCE !important;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    min-width: auto;
+    width: auto;
+}
+
+.join-team-cta .join-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    background-color: #f8f9ff;
+    color: #216DCE !important;
+}
+
+.join-team-cta .join-button svg {
+    transition: transform 0.3s ease;
+}
+
+.join-team-cta .join-button:hover svg {
+    transform: translateX(5px);
+}
+
+/* Responsive Design for Join Team CTA */
+@media (max-width: 768px) {
+    .join-team-cta {
+        padding: 40px 20px;
+        margin: 30px 0;
+    }
+    
+    .cta-title {
+        font-size: 1.8rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .join-team-cta .join-button {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-title {
+        font-size: 1.5rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 0.9rem;
+    }
+}</style>
     <div class="connectivity-section fade-in">
         <header>
             <h1 class="heading"><span class="highlight slide-in">WHAT</span> WE DO</h1>
@@ -212,6 +342,18 @@
             </div>
         </section>
     </div>
+<section class="join-team-cta fade-in">
+    <div class="cta-wrapper">
+        <h2 class="cta-title">Be Part of <span class="highlight-text">Our Journey</span></h2>
+        <p class="cta-subtitle">Join our team of innovative problem-solvers shaping the future of mining technology</p>
+        <a href="/src/pages/careers.html" class="join-button">
+            Join Our Team
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px; vertical-align: middle;">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+</section>
 
     <section class="connectivity-section fade-in">
         
