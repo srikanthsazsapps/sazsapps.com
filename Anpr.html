@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANPR Camera Integration System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            color: #000;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: white;
+            padding: 30px 0;
+            border-bottom: 3px solid #2196F3;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #000;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #000;
+            font-size: 1.1em;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 2px solid #2196F3;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            z-index: 1;
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Camera Image Container */
+        .camera-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            perspective: 1000px;
+        }
+
+        .camera-image {
+            width: 300px;
+            height: 300px;
+            background: white;
+            border: 5px solid #2196F3;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 20px 60px rgba(33, 150, 243, 0.3);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .camera-icon {
+            font-size: 120px;
+        }
+
+        .pulse-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid #2196F3;
+            border-radius: 50%;
+            animation: pulse 2s ease-out infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        /* Cards Section */
+        .cards-section {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin: 60px 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.1);
+        }
+
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Card with Image Layout */
+        .card-with-image {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            gap: 0;
+            transition: all 0.4s ease;
+        }
+
+        .card-with-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(33, 150, 243, 0.2);
+        }
+
+        .card-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card-with-image:hover .card-img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 50px 45px;
+        }
+
+        .card-type {
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 6px;
+            font-size: 0.75em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: #2196F3;
+            color: white;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            color: #000;
+            margin-bottom: 20px;
+            font-size: 2em;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .card-description {
+            color: #666;
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .card-subtitle {
+            color: #000;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .card-features {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card-features li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 35px;
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        .card-features li:hover {
+            color: #2196F3;
+            padding-left: 40px;
+        }
+
+        .card-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 24px;
+            height: 24px;
+            background: #2196F3;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        /* Card with Mission Box */
+        .card-with-mission {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mission-box {
+            background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+            padding: 45px;
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .mission-icon {
+            font-size: 50px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            flex-shrink: 0;
+        }
+
+        .mission-content {
+            flex: 1;
+        }
+
+        .mission-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .mission-text {
+            color: white;
+            font-size: 1.25em;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Interactive Button */
+        .btn-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .btn {
+            background: #2196F3;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(33, 150, 243, 0.5);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 3px solid #2196F3;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeInModal 0.3s;
+        }
+
+        @keyframes fadeInModal {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 40px;
+            border: 3px solid #2196F3;
+            border-radius: 20px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(33, 150, 243, 0.3);
+            animation: slideUp 0.5s;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: #000;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #2196F3;
+        }
+
+        .hero-text {
+            text-align: center;
+            margin: 30px 0;
+            color: #000;
+        }
+
+        .hero-text h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* Floating dots */
+        .floating-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: #2196F3;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: floatDot 6s infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes floatDot {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translate(100px, -500px);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .card-with-image {
+                grid-template-columns: 1fr;
+            }
+
+            .card-image-container {
+                height: 300px;
+            }
+
+            .card-content {
+                padding: 35px 30px;
+            }
+
+            .mission-box {
+                padding: 35px 30px;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .camera-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .camera-icon {
+                font-size: 80px;
+            }
+
+            .hero {
+                padding: 30px 20px;
+            }
+
+            .card h3 {
+                font-size: 1.6em;
+            }
+
+            .mission-text {
+                font-size: 1.1em;
+            }
+        }
+
+        /* Image scan animation */
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #2196F3;
+            animation: scan 3s infinite;
+        }
+
+        @keyframes scan {
+            0%, 100% {
+                top: 0;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎥 ANPR Camera Integration</h1>
+            <p class="subtitle">Automatic Number Plate Recognition System</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <div class="scan-line"></div>
+            <div class="camera-container">
+                <div class="camera-image">
+                    <div class="pulse-ring"></div>
+                    <div class="camera-icon">📷</div>
+                </div>
+            </div>
+            <div class="hero-text">
+                <h2>Advanced Vehicle Recognition Technology</h2>
+                <p>
+                    ANPR systems use optical character recognition to automatically read vehicle license plates, 
+                    providing real-time tracking, security monitoring, and automated access control solutions.
+                </p>
+            </div>
+        </section>
+
+        <div class="cards-section">
+            <!-- Advantages Card with Image -->
+            <div class="card card-with-image">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop" alt="Team collaboration" class="card-img">
+                </div>
+                <div class="card-content">
+                    <span class="card-type">✓ ADVANTAGES</span>
+                    <h3>Benefits & Strengths</h3>
+                    <p class="card-description">
+                        We are a team of experienced and qualified professionals committed to delivering expert ANPR solutions tailored to the needs of individuals, startups, and established businesses.
+                    </p>
+                    <div class="card-subtitle">Why Choose ANPR</div>
+                    <ul class="card-features">
+                        <li>24/7 automated vehicle monitoring</li>
+                        <li>Real-time stolen vehicle detection</li>
+                        <li>Cashless parking & toll systems</li>
+                        <li>Enhanced security & surveillance</li>
+                        <li>Traffic flow analytics</li>
+                        <li>Reduced manual labor costs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Disadvantages Card with Mission Box -->
+            <div class="card card-with-mission">
+                <div class="mission-box">
+                    <div class="mission-icon">💡</div>
+                    <div class="mission-content">
+                        <div class="mission-label">CHALLENGES</div>
+                        <p class="mission-text">Our focus is not just on technology—but understanding the limitations and challenges of ANPR systems to provide realistic solutions that address privacy concerns and operational complexity.</p>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-type">✗ DISADVANTAGES</span>
+                    <h3>Challenges & Limitations</h3>
+                    <ul class="card-features">
+                        <li>Privacy and surveillance concerns</li>
+                        <li>High initial investment costs</li>
+                        <li>Accuracy issues with dirty plates</li>
+                        <li>Weather-dependent performance</li>
+                        <li>Regular maintenance required</li>
+                        <li>Data security vulnerabilities</li>
+                        <li>Complex legal compliance</li>
+                        <li>False positive/negative readings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Queries Card with Image -->
+            <div class="card card-with-image">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Technology solutions" class="card-img">
+                </div>
+                <div class="card-content">
+                    <span class="card-type">? QUERIES</span>
+                    <h3>Common Questions</h3>
+                    <p class="card-description">
+                        Our core mission is to simplify complex technical, implementation, and statutory requirements, helping our clients stay compliant, organized, and focused on their growth.
+                    </p>
+                    <div class="card-subtitle">Frequently Asked</div>
+                    <ul class="card-features">
+                        <li>What is the accuracy rate?</li>
+                        <li>How much does installation cost?</li>
+                        <li>Cloud vs on-premise storage?</li>
+                        <li>Data retention policies?</li>
+                        <li>GDPR compliance requirements?</li>
+                        <li>Integration with existing systems?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn" id="learnMoreBtn">
+                <span>Learn More About ANPR 🚀</span>
+            </button>
+        </div>
+
+        <footer>
+            <p style="font-size: 1.1em; font-weight: bold;">
+                ANPR Technology - Transforming Vehicle Management & Security
+            </p>
+            <p style="margin-top: 10px;">
+                © 2024 ANPR Systems | Advanced Recognition Solutions
+            </p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="margin-bottom: 20px;">📊 ANPR System Overview</h2>
+            <p style="line-height: 1.8; margin-bottom: 15px;">
+                ANPR (Automatic Number Plate Recognition) systems are sophisticated computer vision solutions that 
+                capture and process vehicle registration plates in real-time. These systems typically achieve 
+                <strong style="color: #2196F3;">95-98% accuracy</strong> in optimal conditions and can process multiple vehicles simultaneously.
+            </p>
+            <p style="line-height: 1.8; margin-bottom: 15px;">
+                <strong>Key Applications:</strong><br>
+                • Law enforcement and security<br>
+                • Smart parking management<br>
+                • Toll collection automation<br>
+                • Traffic monitoring & analytics<br>
+                • Access control systems
+            </p>
+            <p style="line-height: 1.8;">
+                Implementation requires careful consideration of privacy laws, data protection regulations, 
+                and integration with existing infrastructure for optimal results.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Create floating dots
+        function createFloatingDots() {
+            for (let i = 0; i < 15; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'floating-dot';
+                dot.style.left = Math.random() * 100 + '%';
+                dot.style.top = Math.random() * 100 + '%';
+                dot.style.animationDelay = Math.random() * 6 + 's';
+                dot.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                document.body.appendChild(dot);
+            }
+        }
+
+        createFloatingDots();
+
+        // Modal functionality
+        const modal = document.getElementById('modal');
+        const btn = document.getElementById('learnMoreBtn');
+        const span = document.getElementsByClassName('close')[0];
+
+        btn.onclick = function() {
+            modal.style.display = 'block';
+        }
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Card animations
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+
+        // Camera rotation on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const camera = document.querySelector('.camera-image');
+            if (camera) {
+                const rotation = Math.sin(st * 0.01) * 10;
+                camera.style.transform = `rotateY(${rotation}deg) translateY(${Math.sin(st * 0.01) * -20}px)`;
+            }
+            lastScrollTop = st <= 0 ? 0 : st;
+        }, false);
+
+        // Button ripple effect
+        const button = document.querySelector('.btn');
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.style.position = 'absolute';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+            ripple.style.transform = 'scale(0)';
+            ripple.style.animation = 'ripple 0.6s ease-out';
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Mouse follow effect on camera
+        const camera = document.querySelector('.camera-image');
+        document.addEventListener('mousemove', function(e) {
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            if (camera) {
+                camera.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
+            }
+        });
+    </script>
+</body>
+</html>
