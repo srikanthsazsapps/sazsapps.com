@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERP Software - Quarry & Crusher</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Arial", sans-serif;
+      line-height: 1.6;
+      color: #111827;
+      background: linear-gradient(135deg, #020617 0%, #0b1120 45%, #020617 100%);
+    }
+
+    /* Hero wrapper */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 16px;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header content */
+    .hero-header {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #f9fafb;
+    }
+
+    .hero-tagline {
+      font-size: 16px;
+      font-style: italic;
+      color: #9ca3af;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+      margin-bottom: 18px;
+    }
+
+    .accent-text {
+      color: #3b82f6;
+    }
+
+    .hero-subtitle {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 15px;
+      color: #d1d5db;
+    }
+
+    /* CTA button */
+    .primary-button {
+      display: inline-block;
+      margin-top: 26px;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      color: #f9fafb;
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(37, 99, 235, 0.55);
+    }
+
+    /* Main layout: circle + features */
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* Circle card */
+    .center-circle {
+      width: 340px;
+      height: 340px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: radial-gradient(circle at 0% 0%, #1e293b, #020617);
+      box-shadow: 0 18px 60px rgba(15, 23, 42, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .center-circle::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      background: conic-gradient(
+        from 180deg,
+        rgba(59, 130, 246, 0.7),
+        transparent,
+        rgba(59, 130, 246, 0.7),
+        transparent
+      );
+      opacity: 0.25;
+      filter: blur(12px);
+    }
+
+    .center-content {
+      position: relative;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .center-content ul {
+      list-style: none;
+    }
+
+    .center-content ul li + li {
+      margin-top: 18px;
+    }
+
+    .related-image {
+      width: 72px;
+      height: auto;
+    }
+
+    .number-one-image {
+      max-width: 180px;
+      height: auto;
+    }
+
+    /* Features list */
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .feature-bar {
+      border-radius: 999px;
+      padding: 14px 26px 14px 26px;
+      background: linear-gradient(120deg, rgba(15, 23, 42, 0.9), rgba(30, 64, 175, 0.9));
+      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.75);
+      color: #e5e7eb;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .feature-bar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+      background: linear-gradient(120deg, rgba(30, 64, 175, 1), rgba(37, 99, 235, 1));
+    }
+
+    .bar-content {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .bar-number {
+      font-size: 26px;
+      font-weight: 700;
+      color: #bfdbfe;
+      min-width: 42px;
+    }
+
+    .bar-text {
+      flex: 1;
+    }
+
+    .bar-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #f9fafb;
+    }
+
+    .bar-description {
+      font-size: 13px;
+      color: #d1d5db;
+    }
+
+    /* Individual bar gradients (for subtle variation) */
+    .bar-1 {
+      background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(37, 99, 235, 0.95));
+    }
+    .bar-2 {
+      background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(59, 130, 246, 0.95));
+    }
+    .bar-3 {
+      background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(37, 99, 235, 0.9));
+    }
+    .bar-4 {
+      background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(30, 64, 175, 0.95));
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .center-circle {
+        width: 260px;
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 40px 12px 50px;
+      }
+
+      .hero-header {
+        margin-bottom: 28px;
+      }
+
+      .hero-tagline {
+        font-size: 14px;
+      }
+
+      .hero-title {
+        font-size: 24px;
+      }
+
+      .hero-subtitle {
+        font-size: 13px;
+      }
+
+      .center-circle {
+        width: 220px;
+        height: 220px;
+      }
+
+      .features {
+        gap: 14px;
+      }
+
+      .feature-bar {
+        padding: 12px 18px;
+      }
+
+      .bar-number {
+        font-size: 22px;
+        min-width: 34px;
+      }
+
+      .bar-title {
+        font-size: 14px;
+      }
+
+      .bar-description {
+        font-size: 12px;
+      }
+
+      .primary-button {
+        padding: 12px 26px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-inner">
+      <header class="hero-header">
+        <p class="hero-tagline">
+          "We don't want to push our ideas on to customers,
+          we simply want to make what they want."
+        </p>
+
+        <h1 class="hero-title">
+          <span class="accent-text">NO.1</span> ERP SOFTWARE FOR
+          <span class="accent-text">QUARRY</span> &
+          <span class="accent-text">CRUSHER</span>,
+          <span class="accent-text">BRICKS</span> &
+          <span class="accent-text">RMC</span> PLANTS
+        </h1>
+
+        <p class="hero-subtitle">
+          A complete, secure and user-friendly ERP tailored for quarry, crusher, brick and RMC plants to streamline operations and boost profitability.
+        </p>
+
+        <a href="./src/pages/features.html" class="primary-button">
+          Learn More
+        </a>
+      </header>
+
+      <div class="hero-layout">
+        <!-- Left Circle with image -->
+        <div class="center-circle">
+          <div class="center-content">
+            <ul>
+              <li>
+                <img
+                  src="src/assets/contentImages/related-icon.svg"
+                  alt="Related Icon"
+                  class="related-image"
+                />
+              </li>
+              <li>
+                <img
+                  class="number-one-image"
+                  src="src/assets/contentImages/NumberOne.svg"
+                  alt="SAZS ERP Number One Software"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Feature Bars -->
+        <div class="features">
+          <div class="feature-bar bar-1">
+            <div class="bar-content">
+              <div class="bar-number">01</div>
+              <div class="bar-text">
+                <div class="bar-title">Safe And Secure</div>
+                <div class="bar-description">
+                  Ensuring data security, backups and regulatory adherence for your business operations.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-bar bar-2">
+            <div class="bar-content">
+              <div class="bar-number">02</div>
+              <div class="bar-text">
+                <div class="bar-title">User Friendly</div>
+                <div class="bar-description">
+                  Intuitive interface for quick onboarding, seamless navigation and enhanced productivity.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-bar bar-3">
+            <div class="bar-content">
+              <div class="bar-number">03</div>
+              <div class="bar-text">
+                <div class="bar-title">Unlimited Logins</div>
+                <div class="bar-description">
+                  Give access to all departments and locations with unlimited user logins.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-bar bar-4">
+            <div class="bar-content">
+              <div class="bar-number">04</div>
+              <div class="bar-text">
+                <div class="bar-title">Domain Specific</div>
+                <div class="bar-description">
+                  Built specifically for quarry, crusher, bricks and RMC workflows with domain-ready modules.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.features -->
+      </div><!-- /.hero-layout -->
+    </div><!-- /.hero-inner -->
+  </section>
+</body>
+</html>

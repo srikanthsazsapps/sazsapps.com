@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>ANPR + Sazs Apps ERP | Smart Automation for Quarries & Crushers</title>
-    <meta name="description" content="Seamless ANPR camera integration with Sazs Apps ERP for automated vehicle tracking, weighbridge, dispatch and billing in quarry, crusher and RMC businesses."/>
-
+    <title>Weighbridge & Camera Integration | SAZS APPS ERP Software</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Automate your weighbridge operations with SAZS APPS camera and ANPR integration. Real-time weight tracking, fraud prevention, and seamless ERP sync for quarry, crusher, and RMC plants.">
+    <meta name="keywords" content="weighbridge integration, ANPR camera, automatic weighing, quarry ERP, crusher management, RMC software, vehicle tracking, SAZS APPS">
+    <meta name="author" content="SAZS APPS">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Weighbridge & Camera Integration | SAZS APPS">
+    <meta property="og:description" content="Automate weighbridge operations with camera integration. Real-time tracking, fraud prevention, instant invoicing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sazsapps.com/weighbridge-integration">
+    <meta property="og:image" content="./src/assets/logo/logoblack.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./src/assets/logo/logoblack.png">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" as="image" href="./src/assets/contentImages/sazsLogo1.png">
+    
     <style>
-        :root {
-            --primary: #3e89ec;
-            --primary-dark: #2c6ec7;
-            --bg: #ffffff;
-            --text: #111111;
-            --text-muted: #444444;
-            --light-gray: #f8f9fa;
-            --border: #e0e0e0;
-        }
-
+        /* ============================================
+           RESET & BASE STYLES
+        ============================================ */
         * {
             margin: 0;
             padding: 0;
@@ -24,252 +37,790 @@
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: var(--bg)
-                            url('./src/assets/contentImages/line2.png') center/cover no-repeat;
-;
-            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* ==================== HERO ==================== */
-        .hero {
-            min-height: 90vh;
-            background: 
-                linear-gradient(135deg, rgba(62,137,236,0.08) 0%, rgba(62,137,236,0.03) 100%),
-                url('./src/assets/contentImages/Anpr.png') center/cover no-repeat;
+        /* ============================================
+           NAVIGATION (Matching Main Website)
+        ============================================ */
+        .sazs-header {
+            background: rgb(255, 255, 255);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .sazs-header-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .sazs-header-main {
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 5rem 1.5rem;
-            text-align: center;
+            justify-content: space-between;
         }
 
-        .hero-content {
-            max-width: 1100px;
-            animation: fadeUp 1.2s ease-out;
+        .sazs-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
         }
 
-        .hero-title {
-            font-size: clamp(2.8rem, 7vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            color: #000;
+        .sazs-brand-image {
+            width: 150px;
+            height: 70px;
+            object-fit: contain;
         }
 
-        .highlight {
-            color: var(--primary);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.3rem, 3.5vw, 1.7rem);
-            font-weight: 600;
-            color: var(--text-muted);
-            max-width: 920px;
-            margin: 0 auto 2.5rem;
-        }
-
-        .hero-subtitle::after {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: var(--primary);
-            margin: 1.5rem auto 0;
-            border-radius: 2px;
-        }
-
-        /* ==================== MAIN CONTENT ==================== */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        section {
-            padding: 100px 0px 0px 0px;
-        }
-
-        h2 {
-            color: #000;
-            text-align: center;
-            font-size: 2.6rem;
-            font-weight: 700;
-            margin-bottom: 3.5rem;
-            position: relative;
-        }
-
-        h2::after {
-            content: "";
-            position: absolute;
-            bottom: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        /* Workflow */
-        .workflow-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 10px;
-        }
-
-        .step-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2.2rem 1.6rem;
-            text-align: center;
-            transition: all 0.35s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-
-        .step-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(62,137,236,0.15);
-            border-color: var(--primary);
-        }
-
-        .step-number {
-            width: 52px;
-            height: 52px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin: 0 auto 1.2rem;
-        }
-
-        /* Features */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        .sazs-menu-list {
+            display: flex;
+            align-items: center;
             gap: 2rem;
+            list-style: none;
         }
 
-        .feature-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        .sazs-menu-link {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
         }
 
-        .feature-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(62,137,236,0.12);
-            transform: translateY(-6px);
+        .sazs-menu-link:hover {
+            color: #3E89EC;
         }
 
-        .feature-card h3 {
-            color: #000;
-            margin-bottom: 1.3rem;
-            font-size: 1.45rem;
+        .sazs-cta-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
-        .feature-list li {
-            padding-left: 1.9rem;
-            position: relative;
-            margin-bottom: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .feature-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* Benefits */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .benefit-pill {
-            background: rgba(62,137,236,0.08);
-            color: #000;
-            padding: 1.2rem 1.6rem;
-            border-radius: 50px;
-            text-align: center;
+        .sazs-button {
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
             font-weight: 600;
-            border: 1px solid rgba(62,137,236,0.2);
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sazs-button-outline {
+            background: transparent;
+            color: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .sazs-button-outline:hover {
+            background: #3E89EC;
+            color: white;
+            border-color: #3E89EC;
+        }
+
+        .sazs-button-primary {
+            background: #3E89EC;
+            color: white;
+        }
+
+        .sazs-button-primary:hover {
+            background: #2C6FCE;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu */
+        .sazs-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .sazs-hamburger span {
+            width: 24px;
+            height: 2px;
+            background: #000000;
             transition: all 0.3s;
         }
 
-        .benefit-pill:hover {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.04);
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero-section {
+            margin-top: 100px;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* CTA */
-        .cta-section {
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(62,137,236,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
             text-align: center;
-            padding: 4rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(62, 137, 236, 0.1);
+            color: #3E89EC;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1f253d;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-highlight {
+            color: #3E89EC;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3E89EC;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        /* ============================================
+           FEATURES SECTION
+        ============================================ */
+        .features-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #3E89EC;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f253d;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
             background: #ffffff;
-            /* border-radius: 24px; */
-            border-top-right-radius: 20px;
-            border-top-left-radius: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 35px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #3E89EC;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(62, 137, 236, 0.15);
+            border-color: #3E89EC;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(62, 137, 236, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1f253d;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #6b7280;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            font-size: 0.95rem;
+            color: #4b5563;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #3E89EC;
+            font-weight: 700;
+        }
+
+        /* ============================================
+           HOW IT WORKS SECTION
+        ============================================ */
+        .how-it-works {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .process-timeline {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #3E89EC;
+            transform: translateX(-50%);
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: #3E89EC;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(62, 137, 236, 0.3);
+        }
+
+        .process-content {
+            width: 45%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .process-step:nth-child(odd) .process-content {
+            margin-right: auto;
+        }
+
+        .process-step:nth-child(even) .process-content {
+            margin-left: auto;
+        }
+
+        .process-content h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1f253d;
+            margin-bottom: 10px;
+        }
+
+        .process-content p {
+            font-size: 1rem;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           BENEFITS SECTION
+        ============================================ */
+        .benefits-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #3E89EC;
+            box-shadow: 0 8px 25px rgba(62, 137, 236, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f253d;
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           CTA SECTION
+        ============================================ */
+        .cta-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #3E89EC 0%, #2C6FCE 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/></svg>');
+            opacity: 0.3;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .cta-title {
-            color: #000;
             font-size: 2.8rem;
-            margin-bottom: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
-        .cta-btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 1.1rem 3rem;
-            border-radius: 50px;
-            font-size: 1.25rem;
-            font-weight: bold;
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
             text-decoration: none;
-            margin-top: 1.8rem;
-            transition: all 0.35s;
-            box-shadow: 0 8px 25px rgba(62,137,236,0.3);
+            transition: all 0.3s;
+            border: 2px solid white;
         }
 
-        .cta-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-4px);
-            box-shadow: 0 14px 35px rgba(62,137,236,0.4);
+        .cta-button-primary {
+            background: white;
+            color: #3E89EC;
         }
 
-        /* Animation */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to   { opacity: 1; transform: translateY(0); }
+        .cta-button-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button-outline {
+            background: transparent;
+            color: white;
+        }
+
+        .cta-button-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            background: #0b0d1f;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 120px;
+            height: auto;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 25px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: #3E89EC;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.2s; }
+        .fade-in-delay-2 { animation-delay: 0.4s; }
+        .fade-in-delay-3 { animation-delay: 0.6s; }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+        ============================================ */
+        @media (max-width: 1024px) {
+            .sazs-menu-list,
+            .sazs-cta-group {
+                display: none;
+            }
+
+            .sazs-hamburger {
+                display: flex;
+            }
+
+            .process-timeline::before {
+                left: 30px;
+            }
+
+            .process-number {
+                left: 30px;
+            }
+
+            .process-step,
+            .process-step:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .process-content,
+            .process-step:nth-child(even) .process-content {
+                width: calc(100% - 100px);
+                margin-left: 100px;
+            }
         }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 3rem; }
-            .hero-subtitle { font-size: 1.4rem; }
-            section { padding: 4.5rem 0; }
-            h2 { font-size: 2.2rem; }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .cta-description {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sazs-brand-image {
+                width: 120px;
+                height: 50px;
+            }
+
+            .hero-section {
+                padding: 60px 15px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .process-timeline::before {
+                left: 15px;
+            }
+
+            .process-number {
+                left: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+
+            .process-content {
+                width: calc(100% - 70px);
+                margin-left: 70px;
+                padding: 20px;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .sazs-header,
+            .footer,
+            .cta-section {
+                display: none;
+            }
         }
     </style>
 </head>
-<body>
 
-<!-- HERO -->
+<body>
   <style>
     * {
     margin: 0;
@@ -1414,189 +1965,309 @@ body {
                 }, 200);
             });
         </script>
-<section class="hero">
-    <div class="hero-content">
-        <h1 class="hero-title">
-            ANPR Camera Integration with <span class="highlight">Sazs Apps ERP</span>
-        </h1>
-        <p class="hero-subtitle">
-            Smart Automation for Vehicle Tracking, Weighbridge & Billing<br>
-            in Quarry, Crusher & RMC Businesses
-        </p>
-    </div>
-</section>
 
-<div class="container">
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <span class="hero-badge">🎯 Industry-Leading Integration</span>
+                
+                <h1 class="hero-title">
+                    Weighbridge & Camera<br>
+                    <span class="hero-highlight">Integration</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Automate weighing, eliminate fraud, and track every vehicle with SAZS APPS integrated weighbridge and ANPR camera solution. Real-time sync with your ERP for complete operational control.
+                </p>
+                
+                <div class="hero-cta-group">
+                    <a href="#features" class="sazs-button sazs-button-primary">Explore Features</a>
+                    <a href="/demo" class="sazs-button sazs-button-outline">Book Demo</a>
+                </div>
 
-    <!-- WORKFLOW -->
-    <section>
-        <h2>How It Works</h2>
-        <div class="workflow-grid">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Vehicle Entry</h3>
-                <p>ANPR camera reads truck number automatically</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h3>Verification</h3>
-                <p>ERP checks authorization, customer & material</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <h3>Weighment</h3>
-                <p>Automatic tare/gross/net weight recording</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">4</div>
-                <h3>Dispatch</h3>
-                <p>ANPR confirms correct material & exit</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">5</div>
-                <h3>Billing</h3>
-                <p>Instant challan, invoice & trip report</p>
+                <div class="hero-stats fade-in-delay-2">
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Zero</span>
+                        <span class="stat-label">Manual Entry</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Operation</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
-    <section>
-        <h2>Key Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>Automated Gate Operations</h3>
-                <ul class="feature-list">
-                    <li>No manual registers</li>
-                    <li>Very fast vehicle movement</li>
-                    <li>Zero identification errors</li>
-                </ul>
+    <!-- FEATURES SECTION -->
+    <section class="features-section" id="features">
+        <div class="features-container">
+            <div class="section-header">
+                <div class="section-subtitle">Complete Automation</div>
+                <h2 class="section-title">Powerful Integration Features</h2>
+                <p class="section-description">
+                    Every component works seamlessly with SAZS APPS ERP to deliver real-time data, prevent errors, and streamline your operations from gate to invoice.
+                </p>
             </div>
 
-            <div class="feature-card">
-                <h3>Weighbridge + ANPR Sync</h3>
-                <ul class="feature-list">
-                    <li>100% accurate weights</li>
-                    <li>No duplicate/fake weighments</li>
-                    <li>Real-time ERP update</li>
-                </ul>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="src/assets/contentImages/weighbridge icon.png" alt="Weighbridge Integration">
+                    </div>
+                    <h3>Smart Weighbridge Integration</h3>
+                    <p>Direct connection to electronic weighbridges for automatic weight capture with zero manual intervention.</p>
+                    <ul class="feature-list">
+                        <li>Automatic gross & tare weight recording</li>
+                        <li>Multi-brand weighbridge support</li>
+                        <li>Real-time data sync to ERP</li>
+                        <li>Digital weighment slip generation</li>
+                        <li>Load tracking & verification</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="src/assets/contentImages/camera icon.png" alt="ANPR Camera">
+                    </div>
+                    <h3>ANPR Camera System</h3>
+                    <p>Automatic Number Plate Recognition cameras capture vehicle details instantly at entry and exit points.</p>
+                    <ul class="feature-list">
+                        <li>Automatic vehicle number detection</li>
+                        <li>Day & night image capture</li>
+                        <li>Entry/exit time stamping</li>
+                        <li>Image-based verification</li>
+                        <li>Fraud prevention & audit trail</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="src/assets/contentImages/invoice icon.png" alt="ERP Integration">
+                    </div>
+                    <h3>Seamless ERP Sync</h3>
+                    <p>All weighbridge and camera data flows directly into SAZS APPS ERP for instant billing and reporting.</p>
+                    <ul class="feature-list">
+                        <li>Real-time inventory updates</li>
+                        <li>Automatic invoice generation</li>
+                        <li>Instant delivery challan creation</li>
+                        <li>Complete dispatch tracking</li>
+                        <li>Financial report automation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+        <div class="features-container">
+            <div class="section-header">
+                <div class="section-subtitle">Simple Process</div>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-description">
+                    From vehicle entry to final invoice, every step is automated and tracked in SAZS APPS ERP.
+                </p>
             </div>
 
-            <div class="feature-card">
-                <h3>Material Dispatch Control</h3>
-                <ul class="feature-list">
-                    <li>M-sand, P-sand, aggregates tracking</li>
-                    <li>Customer-specific permissions</li>
-                    <li>Live dispatch dashboard</li>
-                </ul>
-            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h4>Vehicle Arrives</h4>
+                        <p>ANPR camera automatically captures vehicle number and takes entry photo as the vehicle approaches the weighbridge.</p>
+                    </div>
+                </div>
 
-            <div class="feature-card">
-                <h3>Automatic Billing</h3>
-                <ul class="feature-list">
-                    <li>Instant invoice generation</li>
-                    <li>Prevents revenue leakage</li>
-                    <li>GST compliant</li>
-                </ul>
-            </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h4>Automatic Weighing</h4>
+                        <p>Weighbridge records gross weight automatically. No manual data entry required - all information syncs to ERP instantly.</p>
+                    </div>
+                </div>
 
-            <div class="feature-card">
-                <h3>Fraud Prevention</h3>
-                <ul class="feature-list">
-                    <li>Block unauthorized vehicles</li>
-                    <li>Prevent duplicate trips</li>
-                    <li>Full audit trail</li>
-                </ul>
-            </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h4>Loading/Unloading</h4>
+                        <p>Material is loaded or unloaded while the system tracks the vehicle status and updates inventory in real-time.</p>
+                    </div>
+                </div>
 
-            <div class="feature-card">
-                <h3>Powerful Reports</h3>
-                <ul class="feature-list">
-                    <li>Vehicle / Customer wise analysis</li>
-                    <li>Daily • Monthly • Yearly reports</li>
-                    <li>Management MIS dashboard</li>
-                </ul>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <div class="process-content">
+                        <h4>Exit Weight Capture</h4>
+                        <p>Vehicle returns to weighbridge for tare weight. Camera captures exit photo for verification and audit purposes.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">5</div>
+                    <div class="process-content">
+                        <h4>Instant Invoice</h4>
+                        <p>Net weight is calculated automatically. Digital weighment slip and invoice are generated instantly in SAZS APPS ERP.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">6</div>
+                    <div class="process-content">
+                        <h4>Complete Audit Trail</h4>
+                        <p>All data - weights, images, timestamps, and transactions - are stored securely for compliance and future reference.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- BENEFITS -->
-    <section>
-        <h2>Benefits for Quarry & Crusher Owners</h2>
-        <div class="benefits-grid">
-            <div class="benefit-pill">100% Automated Gates</div>
-            <div class="benefit-pill">Minimum Manpower Required</div>
-            <div class="benefit-pill">Much Faster Turnaround</div>
-            <div class="benefit-pill">Zero Billing Manipulation</div>
-            <div class="benefit-pill">Complete Transparency</div>
-            <div class="benefit-pill">Higher Profitability</div>
+    <section class="benefits-section">
+        <div class="features-container">
+            <div class="section-header">
+                <div class="section-subtitle">Why Choose SAZS APPS</div>
+                <h2 class="section-title">Key Benefits</h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h4>50% Faster Operations</h4>
+                    <p>Reduce vehicle waiting time and speed up the entire weighing process with automation.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h4>Zero Fraud</h4>
+                    <p>Prevent weight manipulation and unauthorized access with camera verification and audit trails.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">✅</div>
+                    <h4>100% Accuracy</h4>
+                    <p>Eliminate manual entry errors with direct digital data capture from weighbridge to ERP.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h4>Reduced Costs</h4>
+                    <p>Lower manpower requirements and eliminate revenue leakage from errors and fraud.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h4>Real-Time Reports</h4>
+                    <p>Access live dashboards and instant reports for better decision-making and control.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h4>Complete Transparency</h4>
+                    <p>Full visibility into all operations with image proof and detailed transaction history.</p>
+                </div>
+            </div>
         </div>
     </section>
-    </div>
 
-    <!-- CTA -->
+    <!-- CTA SECTION -->
     <section class="cta-section">
-        <h2 class="cta-title">Transform Your Operations Today</h2>
-        <p style="font-size:1.35rem; color:#333; margin-bottom:2.2rem; max-width:780px; margin-left:auto; margin-right:auto;">
-            Sazs Apps ERP + ANPR = Complete Digital Control & Transparency
-        </p>
-        <!-- <a href="" class="cta-btn">Contact Us Now →</a> -->
+        <div class="cta-container">
+            <h2 class="cta-title">Ready to Transform Your Weighbridge Operations?</h2>
+            <p class="cta-description">
+                Join 176+ businesses across India that trust SAZS APPS for accurate, fraud-free, and fully automated weighbridge operations.
+            </p>
+            <div class="cta-buttons">
+                <a href="/demo" class="cta-button cta-button-primary">Get Free Demo</a>
+                <a href="tel:7666628000" class="cta-button cta-button-outline">Call: 76666 28000</a>
+            </div>
+        </div>
     </section>
-            <!-- <footer class="footer-container fade-in">
-            <div class="footer-content">
-                <h1 class="heading zoom-in">Together<span class="succeed-text"> We Grow !</span></h1>
-                <a href="./src/pages/contact.html" class="join-button">Contact Us</a>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- <div class="footer-logo">
+                <img src="./src/assets/logo/sazslogowhite.svg" alt="SAZS APPS Logo">
             </div>
-        </footer> -->
+            
+            <p class="footer-text">
+                All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants
+            </p>
 
-        <footer class="a">
-            <div class="b">
-                <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
-                    <img src="src/assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
-                    class="c" rel="noopener">
-                    <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
-                </a>
-                <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
-                    <img src="src/assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
-                </a>
-                <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
-                    <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
-                </a>
-                <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
-                    rel="noopener">
-                    <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
-                </a>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                <a href="#" aria-label="YouTube"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
             </div>
 
-            <div class="e">
-                <a href="./index.html" class="f">Home</a>
-                <a href="./src/pages/aboutus.html" class="f">About Us</a>
-                <a href="./src/pages/features.html" class="f">Explore Features</a>
-                <a href="./src/pages/careers.html" class="f">Careers</a>
-                <a href="./src/pages/contact.html" class="f">Contact Us</a>
-                <a href="./src/pages/Signup.html " class="f">Request a Demo</a>
-                <a href="./src/pages/termsofService.html" class="f">Terms of Service</a>
-                <a href="./src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
-                <a href="./src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/about">About Us</a>
+                <a href="/features">Features</a>
+                <a href="/contact">Contact</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div> -->
 
+            <div class="footer-bottom">
+                © 2025 SAZS APPS Pvt. Ltd. All Rights Reserved.
             </div>
-        </footer>
-        <footer class="footerbottom">
-            <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
-                May I help you?
-            </a> -->
-            <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
-            <button class="scroll-top" aria-label="Scroll to top">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 19V5M5 12l7-7 7 7" />
-                </svg>
-            </button>
-        </footer>
+        </div>
+    </footer>
 
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
+        // Hide header on scroll down, show on scroll up
+        let lastScroll = 0;
+        const header = document.querySelector('.sazs-header');
 
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.style.transform = 'translateY(0)';
+            } else if (currentScroll > lastScroll && currentScroll > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else if (currentScroll < lastScroll) {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.sazs-hamburger');
+        const menuList = document.querySelector('.sazs-menu-list');
+        const ctaGroup = document.querySelector('.sazs-cta-group');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                if (menuList) menuList.classList.toggle('active');
+                if (ctaGroup) ctaGroup.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
+
 </html>

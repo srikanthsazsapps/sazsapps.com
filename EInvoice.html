@@ -1,22 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>ANPR + Sazs Apps ERP | Smart Automation for Quarries & Crushers</title>
-    <meta name="description" content="Seamless ANPR camera integration with Sazs Apps ERP for automated vehicle tracking, weighbridge, dispatch and billing in quarry, crusher and RMC businesses."/>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Invoice Integration | SAZS Apps ERP</title>
     <style>
-        :root {
-            --primary: #3e89ec;
-            --primary-dark: #2c6ec7;
-            --bg: #ffffff;
-            --text: #111111;
-            --text-muted: #444444;
-            --light-gray: #f8f9fa;
-            --border: #e0e0e0;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -24,252 +12,595 @@
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: var(--bg)
-                            url('./src/assets/contentImages/line2.png') center/cover no-repeat;
-;
-            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #ffffff;
+            color: #212529;
             line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 90px;
         }
 
-        /* ==================== HERO ==================== */
-        .hero {
-            min-height: 90vh;
-            background: 
-                linear-gradient(135deg, rgba(62,137,236,0.08) 0%, rgba(62,137,236,0.03) 100%),
-                url('./src/assets/contentImages/Anpr.png') center/cover no-repeat;
+        /* Animated Background - WORKING */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .bg-animation::before,
+        .bg-animation::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: floatBg 20s infinite ease-in-out;
+        }
+
+        .bg-animation::before {
+            width: 600px;
+            height: 600px;
+            background: #3E89EC;
+            top: -200px;
+            left: -200px;
+        }
+
+        .bg-animation::after {
+            width: 800px;
+            height: 800px;
+            background: #2C6FCE;
+            bottom: -300px;
+            right: -300px;
+            animation-delay: 5s;
+        }
+
+        @keyframes floatBg {
+            0%, 100% { 
+                transform: translate(0, 0) scale(1); 
+            }
+            33% { 
+                transform: translate(100px, -100px) scale(1.1); 
+            }
+            66% { 
+                transform: translate(-50px, 100px) scale(0.9); 
+            }
+        }
+
+        /* Navigation */
+        .sazs-header {
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .sazs-header-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        .sazs-header-main {
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 5rem 1.5rem;
-            text-align: center;
+            justify-content: space-between;
         }
 
-        .hero-content {
-            max-width: 1100px;
-            animation: fadeUp 1.2s ease-out;
+        .sazs-brand-image {
+            width: 150px;
+            height: 70px;
         }
 
-        .hero-title {
-            font-size: clamp(2.8rem, 7vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            color: #000;
+        .sazs-menu-list {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
 
-        .highlight {
-            color: var(--primary);
+        .sazs-menu-link {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+        .sazs-menu-link:hover {
+            color: #3E89EC;
+        }
+
+        .sazs-button {
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: var(--text-muted);
-            max-width: 920px;
-            margin: 0 auto 2.5rem;
+            text-decoration: none;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background: transparent;
+            color: rgba(0, 0, 0, 0.8);
+            transition: all 0.3s;
         }
 
-        .hero-subtitle::after {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: var(--primary);
-            margin: 1.5rem auto 0;
-            border-radius: 2px;
+        .sazs-button:hover {
+            background: rgba(62, 137, 236, 0.1);
+            border-color: #3E89EC;
+            color: #3E89EC;
         }
 
-        /* ==================== MAIN CONTENT ==================== */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        section {
-            padding: 100px 0px 0px 0px;
-        }
-
-        h2 {
-            color: #000;
-            text-align: center;
-            font-size: 2.6rem;
-            font-weight: 700;
-            margin-bottom: 3.5rem;
+        /* Hero Section - ANIMATED */
+        .hero {
             position: relative;
-        }
-
-        h2::after {
-            content: "";
-            position: absolute;
-            bottom: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        /* Workflow */
-        .workflow-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 10px;
-        }
-
-        .step-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2.2rem 1.6rem;
+            padding: 8rem 5% 6rem;
             text-align: center;
-            transition: all 0.35s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            background: linear-gradient(135deg, rgba(62, 137, 236, 0.05) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(44, 111, 206, 0.05) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            overflow: hidden;
         }
 
-        .step-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(62,137,236,0.15);
-            border-color: var(--primary);
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        .step-number {
-            width: 52px;
-            height: 52px;
-            background: var(--primary);
-            color: white;
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(62, 137, 236, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(44, 111, 206, 0.08) 0%, transparent 50%);
+            z-index: -1;
+            animation: bgPulse 10s ease infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(62, 137, 236, 0.03) 2px, rgba(62, 137, 236, 0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(62, 137, 236, 0.03) 2px, rgba(62, 137, 236, 0.03) 4px);
+            background-size: 50px 50px;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        /* Floating Shapes - ANIMATED */
+        .hero-decorative-elements {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
             border-radius: 50%;
-            display: grid;
-            place-items: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin: 0 auto 1.2rem;
+            filter: blur(60px);
+            opacity: 0.4;
         }
 
-        /* Features */
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3E89EC, #2C6FCE);
+            top: -100px;
+            right: 10%;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #2C6FCE, #3E89EC);
+            bottom: -50px;
+            left: 5%;
+            animation: float2 15s ease-in-out infinite;
+        }
+
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #3E89EC, rgba(62, 137, 236, 0.5));
+            top: 50%;
+            left: 50%;
+            animation: float3 18s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(20px, -40px) scale(1.1); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+            33% { transform: translate(-45%, -55%) rotate(120deg) scale(0.9); }
+            66% { transform: translate(-55%, -45%) rotate(240deg) scale(1.1); }
+        }
+
+        /* Hero Content - ANIMATED */
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(62, 137, 236, 0.1);
+            border: 1px solid #3E89EC;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #212529, #3E89EC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #3E89EC, #2C6FCE);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 50px rgba(62, 137, 236, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.8s both, ctaPulse 2s ease-in-out 1s infinite;
+            transition: all 0.3s;
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 20px 70px rgba(62, 137, 236, 0.6);
+            animation: ctaPulse 0.5s ease-in-out;
+        }
+
+        /* Features - ANIMATED ON SCROLL */
+        .features {
+            padding: 6rem 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: rgba(62, 137, 236, 0.1);
+            border: 1px solid #3E89EC;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+        }
+
         .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .feature-card {
             background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
         }
 
         .feature-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(62,137,236,0.12);
-            transform: translateY(-6px);
+            transform: translateY(-10px);
+            border-color: #3E89EC;
+            box-shadow: 0 20px 50px rgba(62, 137, 236, 0.15);
         }
 
-        .feature-card h3 {
-            color: #000;
-            margin-bottom: 1.3rem;
-            font-size: 1.45rem;
-        }
-
-        .feature-list li {
-            padding-left: 1.9rem;
-            position: relative;
-            margin-bottom: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .feature-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* Benefits */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .benefit-pill {
-            background: rgba(62,137,236,0.08);
-            color: #000;
-            padding: 1.2rem 1.6rem;
-            border-radius: 50px;
-            text-align: center;
-            font-weight: 600;
-            border: 1px solid rgba(62,137,236,0.2);
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(62, 137, 236, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             transition: all 0.3s;
         }
 
-        .benefit-pill:hover {
-            background: var(--primary);
+        .feature-card:hover .feature-icon {
+            background: #3E89EC;
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Scroll Fade Animation - WORKING */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animations */
+        .features-grid .feature-card:nth-child(1) { transition-delay: 0.1s; }
+        .features-grid .feature-card:nth-child(2) { transition-delay: 0.2s; }
+        .features-grid .feature-card:nth-child(3) { transition-delay: 0.3s; }
+        .features-grid .feature-card:nth-child(4) { transition-delay: 0.4s; }
+        .features-grid .feature-card:nth-child(5) { transition-delay: 0.5s; }
+        .features-grid .feature-card:nth-child(6) { transition-delay: 0.6s; }
+        .features-grid .feature-card:nth-child(7) { transition-delay: 0.7s; }
+        .features-grid .feature-card:nth-child(8) { transition-delay: 0.8s; }
+
+        /* Benefits */
+        .benefits {
+            padding: 6rem 5%;
+            background: linear-gradient(180deg, transparent, rgba(62, 137, 236, 0.03));
+        }
+
+        .benefits-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .benefits-content h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-list {
+            list-style: none;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .benefits-list li {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .benefits-list li:hover {
+            border-color: #3E89EC;
+            transform: translateX(10px);
+        }
+
+        .benefit-check {
+            min-width: 28px;
+            height: 28px;
+            background: #3E89EC;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            transform: scale(1.04);
+            font-weight: 700;
+        }
+
+        .benefits-visual {
+            position: relative;
+            height: 500px;
+        }
+
+        .visual-card {
+            position: absolute;
+            background: white;
+            border: 2px solid #3E89EC;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(62, 137, 236, 0.2);
+            animation: floatVisual 4s ease-in-out infinite;
+        }
+
+        @keyframes floatVisual {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .visual-card:nth-child(1) { top: 0; left: 0; animation-delay: 0s; }
+        .visual-card:nth-child(2) { top: 50%; right: 0; transform: translateY(-50%); animation-delay: 1.3s; }
+        .visual-card:nth-child(3) { bottom: 0; left: 20%; animation-delay: 2.6s; }
+
+        .visual-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .visual-card-text {
+            font-weight: 700;
         }
 
         /* CTA */
         .cta-section {
+            padding: 8rem 5%;
             text-align: center;
-            padding: 4rem 1.5rem;
-            background: #ffffff;
-            /* border-radius: 24px; */
-            border-top-right-radius: 20px;
-            border-top-left-radius: 20px;
         }
 
-        .cta-title {
-            color: #000;
-            font-size: 2.8rem;
-            margin-bottom: 1.6rem;
+        .cta-box {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+            background: linear-gradient(135deg, #2C6FCE, #3E89EC);
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(62, 137, 236, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
-        .cta-btn {
-            display: inline-block;
-            background: var(--primary);
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotateGlow 20s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-box h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
             color: white;
-            padding: 1.1rem 3rem;
-            border-radius: 50px;
-            font-size: 1.25rem;
-            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.3rem 3.5rem;
+            background: white;
+            color: #3E89EC;
             text-decoration: none;
-            margin-top: 1.8rem;
-            transition: all 0.35s;
-            box-shadow: 0 8px 25px rgba(62,137,236,0.3);
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
         }
 
-        .cta-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-4px);
-            box-shadow: 0 14px 35px rgba(62,137,236,0.4);
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
         }
 
-        /* Animation */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to   { opacity: 1; transform: translateY(0); }
+        /* Footer */
+        footer {
+            background: #0b0d1f;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-title { font-size: 3rem; }
-            .hero-subtitle { font-size: 1.4rem; }
-            section { padding: 4.5rem 0; }
-            h2 { font-size: 2.2rem; }
+            body { padding-top: 70px; }
+            .hero { padding: 5rem 5% 4rem; }
+            .benefits-container { grid-template-columns: 1fr; }
+            .benefits-visual { height: 350px; }
         }
     </style>
 </head>
 <body>
+    <div class="bg-animation"></div>
 
-<!-- HERO -->
   <style>
     * {
     margin: 0;
@@ -1414,189 +1745,165 @@ body {
                 }, 200);
             });
         </script>
-<section class="hero">
-    <div class="hero-content">
-        <h1 class="hero-title">
-            ANPR Camera Integration with <span class="highlight">Sazs Apps ERP</span>
-        </h1>
-        <p class="hero-subtitle">
-            Smart Automation for Vehicle Tracking, Weighbridge & Billing<br>
-            in Quarry, Crusher & RMC Businesses
-        </p>
-    </div>
-</section>
 
-<div class="container">
-
-    <!-- WORKFLOW -->
-    <section>
-        <h2>How It Works</h2>
-        <div class="workflow-grid">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Vehicle Entry</h3>
-                <p>ANPR camera reads truck number automatically</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h3>Verification</h3>
-                <p>ERP checks authorization, customer & material</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <h3>Weighment</h3>
-                <p>Automatic tare/gross/net weight recording</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">4</div>
-                <h3>Dispatch</h3>
-                <p>ANPR confirms correct material & exit</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">5</div>
-                <h3>Billing</h3>
-                <p>Instant challan, invoice & trip report</p>
-            </div>
+    <section class="hero">
+        <div class="hero-decorative-elements">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
         </div>
+        <div class="hero-badge">GST Compliant • IRN Certified</div>
+        <h1>E-Invoice Integration<br>for Modern Industries</h1>
+        <p>GST-compliant E-Invoice Integration specially built for Quarry, Crusher, Ready Mix Concrete (RMC), Bricks, and Pavers industries.</p>
+        <a href="./src/pages/contact.html" class="hero-cta">
+            Start Integration Now →
+        </a>
     </section>
 
-    <!-- FEATURES -->
-    <section>
-        <h2>Key Features</h2>
+    <section class="features">
+        <div class="section-header scroll-fade">
+            <div class="section-badge">Key Features</div>
+            <h2>Simple & Automatic E-Invoicing</h2>
+        </div>
         <div class="features-grid">
-            <div class="feature-card">
-                <h3>Automated Gate Operations</h3>
-                <ul class="feature-list">
-                    <li>No manual registers</li>
-                    <li>Very fast vehicle movement</li>
-                    <li>Zero identification errors</li>
-                </ul>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>One-Click Generation</h3>
+                <p>Create invoices with automatic IRN and QR code generation.</p>
             </div>
-
-            <div class="feature-card">
-                <h3>Weighbridge + ANPR Sync</h3>
-                <ul class="feature-list">
-                    <li>100% accurate weights</li>
-                    <li>No duplicate/fake weighments</li>
-                    <li>Real-time ERP update</li>
-                </ul>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>GST Schema Validation</h3>
+                <p>Built-in validation ensures GST compliance.</p>
             </div>
-
-            <div class="feature-card">
-                <h3>Material Dispatch Control</h3>
-                <ul class="feature-list">
-                    <li>M-sand, P-sand, aggregates tracking</li>
-                    <li>Customer-specific permissions</li>
-                    <li>Live dispatch dashboard</li>
-                </ul>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Real-Time IRP API</h3>
+                <p>Direct integration with Government GST Portal.</p>
             </div>
-
-            <div class="feature-card">
-                <h3>Automatic Billing</h3>
-                <ul class="feature-list">
-                    <li>Instant invoice generation</li>
-                    <li>Prevents revenue leakage</li>
-                    <li>GST compliant</li>
-                </ul>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>E-Way Bill Auto-Gen</h3>
+                <p>Automatically generate e-way bills.</p>
             </div>
-
-            <div class="feature-card">
-                <h3>Fraud Prevention</h3>
-                <ul class="feature-list">
-                    <li>Block unauthorized vehicles</li>
-                    <li>Prevent duplicate trips</li>
-                    <li>Full audit trail</li>
-                </ul>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Credit & Debit Notes</h3>
+                <p>Full support for credit and debit notes.</p>
             </div>
-
-            <div class="feature-card">
-                <h3>Powerful Reports</h3>
-                <ul class="feature-list">
-                    <li>Vehicle / Customer wise analysis</li>
-                    <li>Daily • Monthly • Yearly reports</li>
-                    <li>Management MIS dashboard</li>
-                </ul>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Audit-Ready Records</h3>
+                <p>Complete audit trail for compliance.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Weight-Based Billing</h3>
+                <p>Specialized weight-based calculations.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Seamless Integration</h3>
+                <p>Connects with all ERP modules.</p>
             </div>
         </div>
     </section>
 
-    <!-- BENEFITS -->
-    <section>
-        <h2>Benefits for Quarry & Crusher Owners</h2>
-        <div class="benefits-grid">
-            <div class="benefit-pill">100% Automated Gates</div>
-            <div class="benefit-pill">Minimum Manpower Required</div>
-            <div class="benefit-pill">Much Faster Turnaround</div>
-            <div class="benefit-pill">Zero Billing Manipulation</div>
-            <div class="benefit-pill">Complete Transparency</div>
-            <div class="benefit-pill">Higher Profitability</div>
+    <section class="benefits">
+        <div class="benefits-container">
+            <div class="benefits-content scroll-fade">
+                <h2>Benefits for Your Business</h2>
+                <ul class="benefits-list">
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>100% GST Compliance</strong><br>Stay fully compliant</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Faster Billing</strong><br>Reduce time from hours to seconds</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Zero Manual Errors</strong><br>Automated validation</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Time & Cost Savings</strong><br>Streamline operations</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>High-Volume Ready</strong><br>Process hundreds daily</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Complete Integration</strong><br>Works seamlessly</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="benefits-visual scroll-fade">
+                <div class="visual-card">
+                    <div class="visual-card-icon"> </div>
+                    <div class="visual-card-text">Real-Time Processing</div>
+                </div>
+                <div class="visual-card">
+                    <div class="visual-card-icon"> </div>
+                    <div class="visual-card-text">100% Accuracy</div>
+                </div>
+                <div class="visual-card">
+                    <div class="visual-card-icon"> </div>
+                    <div class="visual-card-text">Instant IRN</div>
+                </div>
+            </div>
         </div>
     </section>
-    </div>
 
-    <!-- CTA -->
     <section class="cta-section">
-        <h2 class="cta-title">Transform Your Operations Today</h2>
-        <p style="font-size:1.35rem; color:#333; margin-bottom:2.2rem; max-width:780px; margin-left:auto; margin-right:auto;">
-            Sazs Apps ERP + ANPR = Complete Digital Control & Transparency
-        </p>
-        <!-- <a href="" class="cta-btn">Contact Us Now →</a> -->
+        <div class="cta-box scroll-fade">
+            <h2>Automate Your Billing. Stay GST Ready.</h2>
+            <p>Enable E-Invoice Integration with Sazs Apps ERP today.</p>
+            <a href="" class="cta-button" id="contact">
+                 Contact SAZS Apps →
+            </a>
+        </div>
     </section>
-            <!-- <footer class="footer-container fade-in">
-            <div class="footer-content">
-                <h1 class="heading zoom-in">Together<span class="succeed-text"> We Grow !</span></h1>
-                <a href="./src/pages/contact.html" class="join-button">Contact Us</a>
 
-            </div>
-        </footer> -->
+    <footer>
+        <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+    </footer>
 
-        <footer class="a">
-            <div class="b">
-                <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
-                    <img src="src/assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
-                    class="c" rel="noopener">
-                    <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
-                </a>
-                <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
-                    <img src="src/assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
-                </a>
-                <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
-                    <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
-                </a>
-                <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
-                    rel="noopener">
-                    <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
-                </a>
-            </div>
+    <script>
+        // SCROLL ANIMATIONS - WORKING
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-            <div class="e">
-                <a href="./index.html" class="f">Home</a>
-                <a href="./src/pages/aboutus.html" class="f">About Us</a>
-                <a href="./src/pages/features.html" class="f">Explore Features</a>
-                <a href="./src/pages/careers.html" class="f">Careers</a>
-                <a href="./src/pages/contact.html" class="f">Contact Us</a>
-                <a href="./src/pages/Signup.html " class="f">Request a Demo</a>
-                <a href="./src/pages/termsofService.html" class="f">Terms of Service</a>
-                <a href="./src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
-                <a href="./src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-            </div>
-        </footer>
-        <footer class="footerbottom">
-            <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
-                May I help you?
-            </a> -->
-            <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
-            <button class="scroll-top" aria-label="Scroll to top">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 19V5M5 12l7-7 7 7" />
-                </svg>
-            </button>
-        </footer>
+        // Wait for DOM to load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Observe all scroll-fade elements
+            document.querySelectorAll('.scroll-fade').forEach(el => {
+                observer.observe(el);
+            });
+        });
 
-
-
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
