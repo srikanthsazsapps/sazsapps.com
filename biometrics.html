@@ -1,0 +1,3192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Automate employee attendance with Sazs Apps ERP Biometric Integration. Fingerprint and face recognition for accurate workforce management.">
+    <title>Biometric Integration | Sazs Apps ERP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --dark: #1a1a1a;
+            --gray: #333333;
+            --light-gray: #666666;
+            --border: #e5e5e5;
+            --white: #ffffff;
+            --off-white: #f8f8f8;
+            --blue: #0066FF;
+            --blue-light: #3385FF;
+            --blue-dark: #0052CC;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        /* Header - Minimal with Underline Effect */
+        .header {
+            background: rgba(0, 0, 0, 0.98);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+
+        .logo::first-letter {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--blue);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            background: var(--blue);
+            color: var(--white);
+            padding: 0.7rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-nav:hover {
+            background: var(--blue-dark);
+            transform: scale(1.05);
+        }
+
+        /* Hero - Asymmetric Split Layout */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            min-height: 85vh;
+            align-items: center;
+            gap: 4rem;
+            padding: 0 4rem;
+            background: var(--white);
+        }
+
+        .hero-text {
+            padding-right: 3rem;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--blue);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 102, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            letter-spacing: -2px;
+        }
+
+        .hero h1 .text-blue {
+            display: block;
+            color: var(--blue);
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--light-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .btn-large {
+            padding: 1.2rem 3rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-blue {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .btn-blue:hover {
+            background: var(--blue-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border: 2px solid var(--black);
+        }
+
+        .btn-outline:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .hero-visual {
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
+            height: 500px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+
+        .hero-visual i {
+            font-size: 12rem;
+            color: rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Common Styles */
+        .section {
+            padding: 5rem 4rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--blue);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--light-gray);
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        /* How It Works - Horizontal Flow */
+        .workflow-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .workflow-flow::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 100%);
+        }
+
+        .flow-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .flow-circle {
+            width: 100px;
+            height: 100px;
+            background: var(--white);
+            border: 4px solid var(--blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s;
+        }
+
+        .flow-step:hover .flow-circle {
+            background: var(--blue);
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.4);
+        }
+
+        .flow-circle i {
+            font-size: 2.5rem;
+            color: var(--blue);
+            transition: all 0.3s;
+        }
+
+        .flow-step:hover .flow-circle i {
+            color: var(--white);
+        }
+
+        .flow-step h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .flow-step p {
+            font-size: 1rem;
+            color: var(--light-gray);
+            line-height: 1.7;
+            padding: 0 1rem;
+        }
+
+        /* Key Features - Asymmetric Grid */
+        .features-asymmetric {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-tile {
+            background: var(--off-white);
+            padding: 3rem 2.5rem;
+            border-radius: 25px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-tile::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--blue);
+            transition: top 0.4s;
+        }
+
+        .feature-tile:hover::before {
+            top: 0;
+        }
+
+        .feature-tile:hover {
+            color: var(--white);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-tile.wide {
+            grid-column: span 2;
+        }
+
+        .feature-tile > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-tile i {
+            font-size: 3rem;
+            color: var(--blue);
+            margin-bottom: 1.5rem;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .feature-tile:hover i {
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .feature-tile h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .feature-tile p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* Biometric Systems - Side by Side Blocks */
+        .systems-blocks {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 4rem;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .system-block {
+            background: var(--black);
+            padding: 5rem 3rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s;
+        }
+
+        .system-block::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--blue);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .system-block:hover::after {
+            opacity: 1;
+        }
+
+        .system-block > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .system-block i {
+            font-size: 5rem;
+            color: var(--blue);
+            margin-bottom: 2rem;
+            transition: all 0.4s;
+        }
+
+        .system-block:hover i {
+            color: var(--white);
+            transform: rotateY(360deg) scale(1.2);
+        }
+
+        .system-block h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.4;
+        }
+
+        /* Use Cases - Stacked Cards */
+        .usecases-stack {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .usecase-box {
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
+            padding: 3.5rem 3rem;
+            border-radius: 20px;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .usecase-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .usecase-box:hover {
+            transform: translateX(10px);
+            box-shadow: 0 25px 60px rgba(0, 102, 255, 0.4);
+        }
+
+        .usecase-box > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .usecase-icon-box {
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .usecase-icon-box i {
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+
+        .usecase-box h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        /* Reports - Grid Cards with Top Accent */
+        .reports-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .report-box {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .report-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--blue);
+            border-radius: 15px 15px 0 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+
+        .report-box:hover {
+            border-color: var(--blue);
+            box-shadow: 0 20px 50px rgba(0, 102, 255, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .report-box:hover::before {
+            transform: scaleX(1);
+        }
+
+        .report-box i {
+            font-size: 3.5rem;
+            color: var(--blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .report-box h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .report-box p {
+            font-size: 0.95rem;
+            color: var(--light-gray);
+            line-height: 1.6;
+        }
+
+        /* Benefits - Two Column with Icons Left */
+        .benefits-rows {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .benefit-row {
+            background: var(--off-white);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            transition: all 0.4s;
+            border: 2px solid transparent;
+        }
+
+        .benefit-row:hover {
+            background: var(--blue);
+            color: var(--white);
+            border-color: var(--blue-dark);
+            transform: translateX(15px);
+            box-shadow: 0 20px 50px rgba(0, 102, 255, 0.3);
+        }
+
+        .benefit-icon-circle {
+            width: 80px;
+            height: 80px;
+            background: var(--blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .benefit-row:hover .benefit-icon-circle {
+            background: var(--white);
+            transform: rotate(360deg);
+        }
+
+        .benefit-icon-circle i {
+            font-size: 2.2rem;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+
+        .benefit-row:hover .benefit-icon-circle i {
+            color: var(--blue);
+        }
+
+        .benefit-text h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+            transition: color 0.3s;
+        }
+
+        .benefit-row:hover .benefit-text h3 {
+            color: var(--white);
+        }
+
+        .benefit-text p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--light-gray);
+            transition: color 0.3s;
+        }
+
+        .benefit-row:hover .benefit-text p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Stats Banner - Full Width Dark */
+        .stats-banner {
+            background: var(--black);
+            padding: 4rem 4rem;
+            margin: 5rem 0;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            width: 1px;
+            height: 60%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item:last-child::after {
+            display: none;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--blue);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CTA Section - Centered Block */
+        .cta-block {
+            background: var(--off-white);
+            padding: 6rem 4rem;
+            text-align: center;
+        }
+
+        .cta-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            letter-spacing: -1px;
+        }
+
+        .cta-inner h2 .highlight {
+            color: var(--blue);
+        }
+
+        .cta-inner p {
+            font-size: 1.3rem;
+            color: var(--light-gray);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 4rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--blue);
+        }
+
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--blue);
+        }
+
+        .social-row {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 9999;
+            padding: 2rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-nav ul li {
+            margin: 2rem 0;
+        }
+
+        .mobile-nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Tablet Responsive (768px - 1024px) */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 4rem 2rem;
+                gap: 3rem;
+            }
+
+            .hero-text {
+                padding-right: 0;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-visual {
+                height: 400px;
+            }
+
+            .section {
+                padding: 4rem 2rem;
+            }
+
+            .section-title {
+                font-size: 3rem;
+            }
+
+            .features-asymmetric {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .feature-tile.wide {
+                grid-column: span 1;
+            }
+
+            .usecases-stack {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-rows {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Mobile Responsive (max-width: 768px) */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .header {
+                padding: 1rem 0;
+            }
+
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+                letter-spacing: 2px;
+            }
+
+            /* Hero Section */
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 3rem 1.5rem;
+                min-height: auto;
+                gap: 2rem;
+            }
+
+            .hero-tag {
+                font-size: 0.75rem;
+                padding: 0.4rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                letter-spacing: -1px;
+                margin-bottom: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1.05rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-large {
+                width: 100%;
+                text-align: center;
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .hero-visual {
+                height: 300px;
+                border-radius: 20px;
+            }
+
+            .hero-visual i {
+                font-size: 8rem;
+            }
+
+            /* Stats Banner */
+            .stats-banner {
+                padding: 3rem 1.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+            }
+
+            .stat-item::after {
+                display: none;
+            }
+
+            /* Section Styles */
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+
+            .section-label {
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                letter-spacing: -0.5px;
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.05rem;
+            }
+
+            /* Workflow Flow */
+            .workflow-flow {
+                flex-direction: column;
+                gap: 3rem;
+                padding: 0;
+            }
+
+            .workflow-flow::before {
+                display: none;
+            }
+
+            .flow-circle {
+                width: 80px;
+                height: 80px;
+            }
+
+            .flow-circle i {
+                font-size: 2rem;
+            }
+
+            .flow-step h3 {
+                font-size: 1.2rem;
+            }
+
+            .flow-step p {
+                font-size: 0.95rem;
+                padding: 0;
+            }
+
+            /* Features Grid */
+            .features-asymmetric {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-tile {
+                padding: 2rem 1.5rem;
+                border-radius: 15px;
+            }
+
+            .feature-tile.wide {
+                grid-column: span 1;
+            }
+
+            .feature-tile i {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .feature-tile h3 {
+                font-size: 1.3rem;
+            }
+
+            .feature-tile p {
+                font-size: 0.95rem;
+            }
+
+            /* Biometric Systems */
+            .systems-blocks {
+                grid-template-columns: 1fr;
+                border-radius: 15px;
+            }
+
+            .system-block {
+                padding: 3rem 2rem;
+            }
+
+            .system-block i {
+                font-size: 3.5rem;
+            }
+
+            .system-block h3 {
+                font-size: 1.2rem;
+            }
+
+            /* Use Cases */
+            .usecases-stack {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .usecase-box {
+                padding: 2.5rem 2rem;
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .usecase-icon-box {
+                width: 80px;
+                height: 80px;
+            }
+
+            .usecase-icon-box i {
+                font-size: 2rem;
+            }
+
+            .usecase-box h3 {
+                font-size: 1.3rem;
+            }
+
+            /* Reports */
+            .reports-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .report-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .report-box i {
+                font-size: 2.5rem;
+            }
+
+            .report-box h3 {
+                font-size: 1.1rem;
+            }
+
+            .report-box p {
+                font-size: 0.9rem;
+            }
+
+            /* Benefits */
+            .benefits-rows {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .benefit-row {
+                padding: 2rem 1.5rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .benefit-icon-circle {
+                width: 70px;
+                height: 70px;
+                margin: 0 auto;
+            }
+
+            .benefit-icon-circle i {
+                font-size: 2rem;
+            }
+
+            .benefit-text h3 {
+                font-size: 1.3rem;
+            }
+
+            .benefit-text p {
+                font-size: 0.95rem;
+            }
+
+            /* CTA Section */
+            .cta-block {
+                padding: 4rem 1.5rem;
+            }
+
+            .cta-inner h2 {
+                font-size: 2.2rem;
+                letter-spacing: -0.5px;
+            }
+
+            .cta-inner p {
+                font-size: 1.05rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-col h3 {
+                font-size: 1.1rem;
+            }
+
+            .footer-col p,
+            .footer-col a {
+                font-size: 0.95rem;
+            }
+
+            .social-row {
+                justify-content: center;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .footer-bottom {
+                font-size: 0.85rem;
+                padding-top: 1.5rem;
+            }
+        }
+
+        /* Small Mobile (max-width: 480px) */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .flow-circle {
+                width: 70px;
+                height: 70px;
+            }
+
+            .hero-visual {
+                height: 250px;
+            }
+
+            .hero-visual i {
+                font-size: 6rem;
+            }
+
+            .btn-large {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .usecase-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .benefit-row {
+                padding: 1.5rem;
+            }
+
+            .cta-inner h2 {
+                font-size: 1.8rem;
+            }
+
+            .feature-tile {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .system-block {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+
+        /* Landscape Mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 2rem 1.5rem;
+            }
+
+            .stats-banner {
+                padding: 2rem 1.5rem;
+            }
+
+            .section {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+ <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: rgb(255, 255, 255);
+    color: #333;
+}
+        .sazs-header {
+            background: rgb(255, 255, 255) !important;
+            /* border-radius: 50px !important; */
+            margin: 0 auto !important;
+            /* max-width: 1500px !important; */
+            position: fixed !important;
+            /* top: 10px !important; */
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 1000 !important;
+            transition: transform 0.3s ease-in-out !important;
+
+        }
+
+        .sazs-header.expanded {
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .sazs-header-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5px 0px;
+        }
+
+        .sazs-header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sazs-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sazs-brand-image {
+            width: 150px;
+            height: 70px;
+            margin-top: 10px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            z-index: 1001 !important;
+            justify-content: center;
+        }
+
+        .sazs-menu-list {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            padding-left: 70px;
+        }
+
+        .sazs-menu-item {
+            position: relative;
+        }
+
+        .sazs-menu-link {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .sazs-menu-link:hover {
+            color: #000000;
+        }
+
+        .sazs-menu-link.active {
+            color: #000000;
+        }
+
+        .sazs-arrow-svg {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.3s;
+        }
+
+        .sazs-menu-item.active .sazs-arrow-svg {
+            transform: rotate(45deg);
+        }
+
+        .sazs-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 2rem;
+        }
+
+        .sazs-submenu.active {
+            max-height: 800px;
+            padding: 2rem;
+        }
+
+        .sazs-submenu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .sazs-submenu-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .sazs-col-heading {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .sazs-product-card {
+            background: transparent;
+            border: none;
+            border-radius: 12px;
+            padding: 0;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .sazs-submenu.active .sazs-product-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sazs-submenu.active .sazs-submenu-col:nth-child(1) .sazs-product-card {
+            transition-delay: 0.1s;
+        }
+
+        .sazs-submenu.active .sazs-submenu-col:nth-child(2) .sazs-product-card {
+            transition-delay: 0.2s;
+        }
+
+        .sazs-submenu.active .sazs-submenu-col:nth-child(3) .sazs-product-card {
+            transition-delay: 0.3s;
+        }
+
+        .sazs-product-card:hover {
+            transform: translateY(-4px);
+            opacity: 1;
+        }
+
+        .sazs-card-img-wrapper {
+            width: 100%;
+            height: 200px;
+            background: #000000;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .sazs-card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sazs-card-img-wrapper svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sazs-card-heading {
+            color: #000000;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            padding: 0 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sazs-card-text {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            padding: 0 0.75rem 0.75rem;
+        }
+
+        .sazs-external-svg {
+            width: 12px;
+            height: 12px;
+            opacity: 0.5;
+        }
+
+        .sazs-label {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+            font-size: 0.65rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sazs-label.new {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+        }
+
+        .sazs-label.year {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .sazs-cta-group {
+            padding-left: 400px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .sazs-button {
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sazs-button-outline {
+            background: transparent;
+            color: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .sazs-button-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #000000;
+            border-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .sazs-button-gradient {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            color: #000000;
+        }
+
+        .sazs-button-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .sazs-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .sazs-hamburger span {
+            width: 24px;
+            height: 2px;
+            background: #000000;
+            transition: all 0.3s;
+        }
+
+        .sazs-courses-area {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .sazs-courses-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Features Dropdown Styles */
+        .features-dropdown {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            max-width: 1200px;
+        }
+
+        .features-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .features-section-title {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .features-link {
+            color: rgba(0, 0, 0, 0.9);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: all 0.2s;
+            display: block;
+        }
+
+        .features-link:hover {
+            color: #000000;
+            padding-left: 0.5rem;
+        }
+
+        .features-right {
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            padding-left: 3rem;
+        }
+
+        .features-case-studies-title {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .features-case-studies-subtitle {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-case-studies-link {
+            color: rgba(0, 0, 0, 0.9);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-case-studies-link:hover {
+            color: #000000;
+        }
+
+        .features-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .features-case-card {
+            background: transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .features-case-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .features-case-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            background: #f5f5f5;
+        }
+
+        .features-case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .features-case-title {
+            color: #000000;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1400px) {
+            .sazs-cta-group {
+                padding-left: 200px;
+            }
+
+            .sazs-header-wrapper {
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .sazs-menu-list {
+                padding-left: 40px;
+                gap: 1.5rem;
+            }
+
+            .sazs-cta-group {
+                padding-left: 100px;
+            }
+
+            .sazs-menu-link {
+                font-size: 16px;
+            }
+
+            .sazs-submenu-grid {
+                gap: 1.5rem;
+            }
+
+            .features-dropdown {
+                grid-template-columns: 1fr;
+            }
+
+            .features-right {
+                border-left: none;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                padding-left: 0;
+                padding-top: 2rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+
+            .sazs-menu-list,
+            .sazs-cta-group {
+                display: none;
+            }
+
+            .sazs-hamburger {
+                display: flex;
+            }
+
+            .sazs-header-wrapper {
+                padding: 1rem;
+            }
+
+            .sazs-brand-image {
+                width: 120px;
+                height: 40px;
+            }
+
+            .sazs-submenu-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .sazs-submenu {
+                padding: 0 1rem;
+            }
+
+            .sazs-submenu.active {
+                padding: 1.5rem 1rem;
+            }
+
+            .sazs-card-img-wrapper {
+                height: 180px;
+            }
+
+            .sazs-card-heading {
+                font-size: 0.9rem;
+            }
+
+            .sazs-card-text {
+                font-size: 0.8rem;
+            }
+
+            .features-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .sazs-header {
+                top: 10px !important;
+            }
+
+            .sazs-header-wrapper {
+                padding: 0.75rem 1rem;
+            }
+
+            .sazs-brand-image {
+                width: 100px;
+                height: 35px;
+            }
+
+            .sazs-submenu-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .sazs-submenu.active {
+                max-height: 2000px;
+                padding: 1rem;
+            }
+
+            .sazs-card-img-wrapper {
+                height: 160px;
+            }
+
+            .sazs-card-heading {
+                font-size: 0.85rem;
+                padding: 0 0.5rem;
+            }
+
+            .sazs-card-text {
+                font-size: 0.75rem;
+                padding: 0 0.5rem 0.5rem;
+            }
+
+            .features-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 50px;
+            }
+
+            .sazs-header {
+                top: 5px !important;
+            }
+
+            .sazs-header-wrapper {
+                padding: 0.5rem 0.75rem;
+            }
+
+            .sazs-brand-image {
+                width: 80px;
+                height: 30px;
+            }
+
+            .sazs-hamburger {
+                padding: 0.25rem;
+            }
+
+            .sazs-hamburger span {
+                width: 20px;
+            }
+
+            .sazs-submenu.active {
+                padding: 0.75rem;
+            }
+
+            .sazs-card-img-wrapper {
+                height: 140px;
+                border-radius: 8px;
+            }
+
+            .sazs-product-card {
+                border-radius: 8px;
+            }
+
+            .sazs-card-heading {
+                font-size: 0.8rem;
+            }
+
+            .sazs-card-text {
+                font-size: 0.7rem;
+                line-height: 1.4;
+            }
+        }
+
+
+
+        /* General Background & Base Styles */
+        .orbit-section {
+            background-color: #000000;
+            /* Dark Midnight */
+            padding: 80px 5%;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            /* Responsive font size */
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+
+        .highlight-text {
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(62, 137, 236, 0.3);
+        }
+
+        /* Orbit Grid - Desktop View */
+        .orbit-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* Three equal columns */
+            align-items: center;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Feature Text Styling */
+        .feature-text {
+            margin-bottom: 45px;
+            transition: 0.3s ease;
+        }
+
+        .feature-text h5 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .feature-text p {
+            color: rgba(255, 255, 255, 0.8);
+            /* Muted grey for readability */
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Text Alignment Logic */
+        .left-side {
+            text-align: right;
+        }
+
+        .right-side {
+            text-align: left;
+        }
+
+        /* Center Image Styles */
+        .orbit-center {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-graphic {
+            width: 100%;
+            max-width: 400px;
+            z-index: 2;
+            /* filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2)); */
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .glow-effect {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            /* background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, transparent 70%); */
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* --- RESPONSIVE BREAKPOINTS --- */
+
+        /* Tablet View (Max 1024px) */
+        @media (max-width: 1024px) {
+            .orbit-container {
+                grid-template-columns: 1fr 1fr;
+                /* Split into 2 columns, image stays in flow */
+                gap: 40px;
+            }
+
+            .orbit-center {
+                grid-column: span 2;
+                /* Center image takes full width in middle */
+                order: -1;
+                /* Move image to top */
+                margin-bottom: 40px;
+            }
+
+            .left-side,
+            .right-side {
+                text-align: center;
+                /* Center text for tablet */
+            }
+        }
+
+        /* Mobile View (Max 768px) */
+        @media (max-width: 768px) {
+            .orbit-container {
+                grid-template-columns: 1fr;
+                /* Single column stack */
+                gap: 20px;
+            }
+
+            .orbit-center {
+                grid-column: span 1;
+            }
+
+            .main-graphic {
+                max-width: 280px;
+                /* Smaller image for mobile */
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .feature-text {
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+        }
+
+
+
+
+
+        /* General Background & Base Styles */
+        .orbit-section {
+            background-color: #ffffff;
+            /* Dark Midnight */
+            padding: 80px 5%;
+            color: #000000;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            /* Responsive font size */
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+
+        .highlight-text {
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: 0 0 10px rgba(62, 137, 236, 0.3);
+        }
+
+        /* Orbit Grid - Desktop View */
+        .orbit-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* Three equal columns */
+            align-items: center;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Feature Text Styling */
+        .feature-text {
+            margin-bottom: 45px;
+            transition: 0.3s ease;
+        }
+
+        .feature-text h5 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .feature-text p {
+            color: rgba(0, 0, 0, 0.8);
+            /* Muted grey for readability */
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Text Alignment Logic */
+        .left-side {
+            text-align: right;
+        }
+
+        .right-side {
+            text-align: left;
+        }
+
+        /* Center Image Styles */
+        .orbit-center {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-graphic {
+            width: 100%;
+            max-width: 400px;
+            z-index: 2;
+            /* filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2)); */
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .glow-effect {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            /* background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, transparent 70%); */
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* --- RESPONSIVE BREAKPOINTS --- */
+
+        /* Tablet View (Max 1024px) */
+        @media (max-width: 1024px) {
+            .orbit-container {
+                grid-template-columns: 1fr 1fr;
+                /* Split into 2 columns, image stays in flow */
+                gap: 40px;
+            }
+
+            .orbit-center {
+                grid-column: span 2;
+                /* Center image takes full width in middle */
+                order: -1;
+                /* Move image to top */
+                margin-bottom: 40px;
+            }
+
+            .left-side,
+            .right-side {
+                text-align: center;
+                /* Center text for tablet */
+            }
+        }
+
+        /* Mobile View (Max 768px) */
+        @media (max-width: 768px) {
+            .orbit-container {
+                grid-template-columns: 1fr;
+                /* Single column stack */
+                gap: 20px;
+            }
+
+            .orbit-center {
+                grid-column: span 1;
+            }
+
+            .main-graphic {
+                max-width: 280px;
+                /* Smaller image for mobile */
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .feature-text {
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+        }
+    </style>
+    </head>
+
+    <body>
+        <nav class="sazs-header">
+            <div class="sazs-header-wrapper">
+                <div class="sazs-header-main">
+                    <a href="/" class="sazs-brand">
+                        <div class="sazs-brand-image">
+                            <img src="./src/assets/contentImages/sazsLogo1.png" alt="SAZS ERP App Logo Home page"
+                                class="sazs-brand-image">
+                        </div>
+                    </a>
+
+                    <ul class="sazs-menu-list">
+                        <li class="sazs-menu-item">
+                            <a class="sazs-menu-link" data-dropdown="platform">
+                                Platform
+                                <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                    <path
+                                        d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="sazs-menu-item">
+                            <a class="sazs-menu-link" data-dropdown="Features">
+                                Features
+                                <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                    <path
+                                        d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="sazs-menu-item">
+                            <a class="sazs-menu-link" data-dropdown="resources">
+                                Media & Events
+                                <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                    <path
+                                        d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="sazs-cta-group">
+                        <a href="./src/pages/contact.html" class="sazs-button sazs-button-outline">Contact Sales</a>
+                        <a href="#" class="sazs-button sazs-button-outline">Sign in</a>
+                    </div>
+
+                    <div class="sazs-hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- Platform Dropdown -->
+                <div class="sazs-submenu" id="platform">
+                    <div class="sazs-submenu-grid">
+                        <div class="sazs-submenu-col">
+                            <a href="./src/pages/QuarryCrusher.html" class="sazs-product-card">
+                                <div class="sazs-card-img-wrapper">
+                                    <img src="./src/assets/contentImages/quarrydrone.png"
+                                        alt="Stone Crusher Management Software" />
+                                </div>
+                                <div class="sazs-card-heading">End-to-End Management Software for Stone Crushers &
+                                    Quarries</div>
+                                <div class="sazs-card-text">In the rugged environment of stone crushing, efficiency is
+                                    currency. Transform your quarry operations with intelligent automation.</div>
+                            </a>
+                        </div>
+
+
+
+                        <div class="sazs-submenu-col">
+                            <a href="./src/pages/brickspaver.html" class="sazs-product-card">
+                                <div class="sazs-card-img-wrapper">
+                                    <img src="./src/assets/contentImages/bricksdrone.png"
+                                        alt="Brick Manufacturing ERP Software" />
+                                </div>
+                                <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
+                                    Plants</div>
+                                <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage
+                                    of Your Production</div>
+                            </a>
+                        </div>
+                        <div class="sazs-submenu-col">
+                            <a href="./src/pages/brickspaver.html" class="sazs-product-card">
+                                <div class="sazs-card-img-wrapper">
+                                    <img src="./src/assets/contentImages/bricksdrone.png"
+                                        alt="Brick Manufacturing ERP Software" />
+                                </div>
+                                <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
+                                    Plants</div>
+                                <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage
+                                    of Your Production</div>
+                            </a>
+                        </div>
+
+                        <div class="sazs-submenu-col">
+                            <a href="./src/pages/brickspaver.html" class="sazs-product-card">
+                                <div class="sazs-card-img-wrapper">
+                                    <img src="./src/assets/contentImages/bricksdrone.png"
+                                        alt="Brick Manufacturing ERP Software" />
+                                </div>
+                                <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
+                                    Plants</div>
+                                <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage
+                                    of Your Production</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Dropdown -->
+                <div class="sazs-submenu" id="Features">
+                    <div class="features-dropdown">
+                        <!-- Left Side - Solutions List -->
+                        <div class="features-left">
+                            <div class="features-section-title">Features — tailored to every Crushers & Quarries</div>
+                                                        <a href="./Anprs.html" class="features-link">ANPR Camera Integration</a>
+                            <a href="./EInvoice.html" class="features-link">E-Invoice Integration</a>
+                            <a href="Weighbridge.html" class="features-link">Weighbridge and Camera Integration</a>
+                            <a href="Boombarrier.html" class="features-link">Boom Barrier Integration</a>
+                            <a href="biometrics.html" class="features-link">biometrics </a>
+
+                            <!-- <a href="#" class="features-link"></a>
+                            <a href="#" class="features-link"></a> -->
+                        </div>
+
+                        <!-- Right Side - Case Studies -->
+                        <div class="features-right">
+                            <div class="features-case-studies-title">Case Studies — </div>
+                            <a href="#" class="features-case-studies-link">
+                                Case Studies
+                                <svg width="12" height="12" viewBox="0 0 10 10" fill="currentColor">
+                                    <path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                                </svg>
+                            </a>
+
+                            <div class="features-cards-grid">
+                                <a href="#" class="features-case-card">
+                                    <div class="features-case-image">
+                                        <img src="./src/assets/contentImages/quarrydrone.png" alt="Case Study 1" />
+                                    </div>
+                                    <div class="features-case-title">1</div>
+                                </a>
+
+                                <a href="#" class="features-case-card">
+                                    <div class="features-case-image">
+                                        <img src="./src/assets/contentImages/bricksdrone.png" alt="Case Study 2" />
+                                    </div>
+                                    <div class="features-case-title">2</div>
+                                </a>
+
+                                <a href="#" class="features-case-card">
+                                    <div class="features-case-image">
+                                        <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 3" />
+                                    </div>
+                                    <div class="features-case-title">3</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+
+
+        <script>
+            const navLinks = document.querySelectorAll('[data-dropdown]');
+            const navbar = document.querySelector('.sazs-header-wrapper');
+            let currentActive = null;
+            let hoverTimeout = null;
+
+            navLinks.forEach(link => {
+                const navItem = link.closest('.sazs-menu-item');
+                const dropdownId = link.getAttribute('data-dropdown');
+                const dropdown = document.getElementById(dropdownId);
+
+                // Hover on nav link
+                navItem.addEventListener('mouseenter', () => {
+                    clearTimeout(hoverTimeout);
+
+                    // Close all dropdowns
+                    document.querySelectorAll('.sazs-submenu').forEach(d => {
+                        d.classList.remove('active');
+                    });
+                    document.querySelectorAll('.sazs-menu-item').forEach(n => {
+                        n.classList.remove('active');
+                    });
+
+                    // Open hovered dropdown
+                    dropdown.classList.add('active');
+                    navItem.classList.add('active');
+                    currentActive = dropdown;
+                });
+
+                // Keep dropdown open when hovering over it
+                dropdown.addEventListener('mouseenter', () => {
+                    clearTimeout(hoverTimeout);
+                });
+
+                dropdown.addEventListener('mouseleave', () => {
+                    hoverTimeout = setTimeout(() => {
+                        dropdown.classList.remove('active');
+                        navItem.classList.remove('active');
+                        currentActive = null;
+                    }, 200);
+                });
+            });
+
+            // Close dropdown when leaving navbar
+            navbar.addEventListener('mouseleave', () => {
+                hoverTimeout = setTimeout(() => {
+                    document.querySelectorAll('.sazs-submenu').forEach(d => {
+                        d.classList.remove('active');
+                    });
+                    document.querySelectorAll('.sazs-menu-item').forEach(n => {
+                        n.classList.remove('active');
+                    });
+                    currentActive = null;
+                }, 200);
+            });
+        </script>
+
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-close" id="mobileClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/platform">Platform</a></li>
+            <li><a href="/solutions">Solutions</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/contact">Contact Sales</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding-top: 100px;">
+        <div class="hero-text">
+            <div class="hero-tag">
+                <i class="fas fa-fingerprint"></i>
+                Smart Attendance Solution
+            </div>
+            <h1>
+                <span class="text-blue">Biometric Integration</span>
+                with Sazs Apps ERP
+            </h1>
+            <p class="hero-description">
+                Automate employee attendance and access management with high accuracy and security. By connecting biometric devices directly to the ERP system, organizations can eliminate manual attendance processes, prevent proxy entries, and maintain reliable workforce records.
+            </p>
+            <div class="hero-actions">
+                <a href="#demo" class="btn-large btn-blue">Get Started Now</a>
+                <a href="#features" class="btn-large btn-outline">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <i class="fas fa-fingerprint"></i>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Accurate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Zero</div>
+                <div class="stat-label">Proxy Entries</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Real-Time</div>
+                <div class="stat-label">Sync</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Monitoring</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">HOW IT WORKS</div>
+                <h2 class="section-title">Simple, Secure, and Automated</h2>
+                <p class="section-subtitle">Employees authenticate using biometric methods such as fingerprint or face recognition. The biometric device securely captures the data and synchronizes it in real time with Sazs Apps ERP.</p>
+            </div>
+
+            <div class="workflow-flow">
+                <div class="flow-step">
+                    <div class="flow-circle">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Employee Authentication</h3>
+                    <p>Employees use fingerprint or face recognition to authenticate their identity</p>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-circle">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Real-Time Sync</h3>
+                    <p>Data is securely captured and synchronized instantly with Sazs Apps ERP</p>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-circle">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Automatic Recording</h3>
+                    <p>Attendance details and working hours are automatically managed in ERP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="section" style="background: var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">KEY FEATURES</div>
+                <h2 class="section-title">Powerful Attendance Features</h2>
+            </div>
+
+            <div class="features-asymmetric">
+                <div class="feature-tile wide">
+                    <i class="fas fa-clock"></i>
+                    <h3>Real-time biometric attendance synchronization</h3>
+                    <p>Instant synchronization between biometric devices and ERP system for accurate attendance tracking</p>
+                </div>
+
+                <div class="feature-tile">
+                    <i class="fas fa-fingerprint"></i>
+                    <h3>Fingerprint and face recognition support</h3>
+                    <p>Multiple biometric authentication methods</p>
+                </div>
+
+                <div class="feature-tile">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Accurate shift calculation</h3>
+                    <p>Automated working hour and shift tracking</p>
+                </div>
+
+                <div class="feature-tile">
+                    <i class="fas fa-business-time"></i>
+                    <h3>Overtime tracking</h3>
+                    <p>Late entry, early exit monitoring</p>
+                </div>
+
+                <div class="feature-tile">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>Centralized employee data management</h3>
+                    <p>All workforce data in one unified platform</p>
+                </div>
+
+                <div class="feature-tile">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Role-based access control</h3>
+                    <p>Secure access management system</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biometric Systems -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">BIOMETRIC SYSTEMS</div>
+                <h2 class="section-title">Supported Biometric Devices</h2>
+                <p class="section-subtitle">Compatible with industry-leading biometric technologies</p>
+            </div>
+
+            <div class="systems-blocks">
+                <div class="system-block">
+                    <i class="fas fa-fingerprint"></i>
+                    <h3>Fingerprint Scanners</h3>
+                </div>
+
+                <div class="system-block">
+                    <i class="fas fa-face-smile"></i>
+                    <h3>Face Recognition Devices</h3>
+                </div>
+
+                <div class="system-block">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Multi-location Biometric Device Integration</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="section" style="background: var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">IDEAL USE CASES</div>
+                <h2 class="section-title">Perfect For Every Industry</h2>
+            </div>
+
+            <div class="usecases-stack">
+                <div class="usecase-box">
+                    <div class="usecase-icon-box">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Industrial Units and Factories</h3>
+                </div>
+
+                <div class="usecase-box">
+                    <div class="usecase-icon-box">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Quarry, Crusher, and RMC Plants</h3>
+                </div>
+
+                <div class="usecase-box">
+                    <div class="usecase-icon-box">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Corporate Offices</h3>
+                </div>
+
+                <div class="usecase-box">
+                    <div class="usecase-icon-box">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Warehouses and Logistics Centers</h3>
+                </div>
+
+                <div class="usecase-box">
+                    <div class="usecase-icon-box">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>Educational Institutions</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">REPORTS & ANALYTICS</div>
+                <h2 class="section-title">Comprehensive Insights</h2>
+                <p class="section-subtitle">Detailed attendance reports for better workforce management</p>
+            </div>
+
+            <div class="reports-cards">
+                <div class="report-box">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Attendance Reports</h3>
+                    <p>Daily, weekly, and monthly attendance reports</p>
+                </div>
+
+                <div class="report-box">
+                    <i class="fas fa-user-clock"></i>
+                    <h3>Employee Analysis</h3>
+                    <p>Employee-wise attendance analysis</p>
+                </div>
+
+                <div class="report-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Shift Summaries</h3>
+                    <p>Shift and overtime summaries</p>
+                </div>
+
+                <div class="report-box">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Audit Logs</h3>
+                    <p>Complete attendance audit logs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section" style="background: var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">SECURITY & BENEFITS</div>
+                <h2 class="section-title">Transform Your Workforce Management</h2>
+            </div>
+
+            <div class="benefits-rows">
+                <div class="benefit-row">
+                    <div class="benefit-icon-circle">
+                        <i class="fas fa-user-slash"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>Eliminates proxy attendance</h3>
+                        <p>Prevent buddy punching and ensure only authorized employees mark attendance</p>
+                    </div>
+                </div>
+
+                <div class="benefit-row">
+                    <div class="benefit-icon-circle">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>Reduces manual errors and paperwork</h3>
+                        <p>Automated tracking eliminates manual attendance processes</p>
+                    </div>
+                </div>
+
+                <div class="benefit-row">
+                    <div class="benefit-icon-circle">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>Improves payroll accuracy</h3>
+                        <p>Accurate attendance data ensures precise payroll calculations</p>
+                    </div>
+                </div>
+
+                <div class="benefit-row">
+                    <div class="benefit-icon-circle">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>Enhances workforce discipline</h3>
+                        <p>Transparent attendance monitoring improves employee discipline</p>
+                    </div>
+                </div>
+
+                <div class="benefit-row">
+                    <div class="benefit-icon-circle">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>Secure and reliable data synchronization</h3>
+                        <p>Encrypted data transfer ensures security and reliability</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-block">
+        <div class="cta-inner">
+            <h2>Ready to <span class="highlight">Automate</span> Your Attendance?</h2>
+            <p>Join hundreds of organizations already using Sazs Apps ERP for accurate, secure biometric attendance management. Get started today.</p>
+            <div class="cta-buttons">
+                <a href="/demo" class="btn-large btn-blue">Request a Demo</a>
+                <a href="/contact" class="btn-large btn-outline">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <!-- Footer -->
+   <style>
+    /* Footer: "Together We Grow" Section */
+.footer-container {
+    position: relative;
+    background-color: rgb(255, 255, 253);
+    padding: 0px 20px;
+    padding-top: 30px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(255, 255, 253);
+    border-radius: 50% 50% 0 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.heading {
+    color: #2d3748;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    letter-spacing: 10px;
+}
+
+.succeed-text {
+    color: #3E89EC;
+}
+
+.join-button {
+    display: inline-block;
+    background-color: #216DCE;
+    color: #fafbfc !important;
+    padding: 12px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.join-button:hover {
+    background-color: #333;
+}
+
+/* Social Links & Navigation Section */
+.a {
+    background-color: rgb(255, 255, 253);
+    color: #333;
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+
+.b {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.c {
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.c:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.d {
+    width: 30px;
+    transition: filter 0.3s ease;
+}
+
+.d:hover {
+    filter: brightness(1.2);
+}
+
+.e {
+    font-size: 14px;
+    color: #333;
+    padding: 30px 0 0;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.f {
+    color: #333;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.f:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.f:not(:last-child)::after {
+    content: " | ";
+    color: #333;
+}
+
+/* Animations for footer links and icons */
+.c,
+.f {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bottom Footer (Copyright + Help Button) */
+.footerbottom {
+    padding: 40px 0 40px;
+    background: #0b0d1f;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footerbottom span {
+    font-size: 14px;
+}
+
+/* WhatsApp Help Button */
+.help-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border: 2px solid #6aa5ff;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(99, 91, 255, 0.3);
+}
+
+.help-btn:hover {
+    background-color: #1f78fc;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+    display: none; /* Shown via JS when scrolling */
+}
+
+.scroll-top:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Adjustments for Footer */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 36px;
+    }
+
+    .join-button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .help-btn {
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .scroll-top {
+        display: none;
+    }
+
+    .footer-container {
+        padding: 12px 15px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .help-btn {
+        width: auto;
+        left: 5%;
+        bottom: 5%;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .heading {
+        font-size: 28px;
+        letter-spacing: 6px;
+    }
+
+    .b {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .d {
+        width: 28px;
+    }
+}
+   </style>
+            <!-- <footer class="footer-container ">
+                <div class="footer-content">
+                    <h1 class="heading zoom-in">Together<span class="succeed-text"> We Grow !</span></h1>
+                    <a href="./src/pages/contact.html" class="join-button">Contact Us</a>
+
+                </div>
+            </footer> -->
+
+            <footer class="a">
+                <div class="b">
+                    <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                        <img src="src/assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
+                        class="c" rel="noopener">
+                        <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+                    </a>
+                    <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c"
+                        rel="noopener">
+                        <img src="src/assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+                    </a>
+                    <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
+                        <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+                    </a>
+                    <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                        rel="noopener">
+                        <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+                    </a>
+                </div>
+
+                <div class="e">
+                    <a href="./index.html" class="f">Home</a>
+                    <a href="./src/pages/aboutus.html" class="f">About Us</a>
+                    <a href="./src/pages/features.html" class="f">Explore Features</a>
+                    <a href="./src/pages/careers.html" class="f">Careers</a>
+                    <a href="./src/pages/contact.html" class="f">Contact Us</a>
+                    <a href="./src/pages/Signup.html " class="f">Request a Demo</a>
+                    <a href="./src/pages/termsofService.html" class="f">Terms of Service</a>
+                    <a href="./src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
+                    <a href="./src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
+                </div>
+            </footer>
+            <footer class="footerbottom">
+                <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+                    May I help you?
+                </a>
+                <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+                <button class="scroll-top" aria-label="Scroll to top">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                    </svg>
+                </button>
+            </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileClose = document.getElementById('mobileClose');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileNav.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (mobileClose) {
+            mobileClose.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
