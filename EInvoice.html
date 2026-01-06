@@ -1643,7 +1643,7 @@ body {
                             <a href="./EInvoice.html" class="features-link">E-Invoice Integration</a>
                             <a href="Weighbridge.html" class="features-link">Weighbridge and Camera Integration</a>
                             <a href="Boombarrier.html" class="features-link">Boom Barrier Integration</a>
-                            <a href="biometrics.html" class="features-link">biometrics </a>
+                            <a href="biometrics.html" class="features-link">Biometrics </a>
                             <!-- <a href="#" class="features-link"></a>
                             <a href="#" class="features-link"></a> -->
                         </div>
@@ -1867,9 +1867,316 @@ body {
         </div>
     </section>
 
-    <footer>
-        <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
-    </footer>
+       <!-- Footer -->
+   <style>
+    /* Footer: "Together We Grow" Section */
+.footer-container {
+    position: relative;
+    background-color: rgb(255, 255, 253);
+    padding: 0px 20px;
+    padding-top: 30px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(255, 255, 253);
+    border-radius: 50% 50% 0 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.heading {
+    color: #2d3748;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    letter-spacing: 10px;
+}
+
+.succeed-text {
+    color: #3E89EC;
+}
+
+.join-button {
+    display: inline-block;
+    background-color: #216DCE;
+    color: #fafbfc !important;
+    padding: 12px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.join-button:hover {
+    background-color: #333;
+}
+
+/* Social Links & Navigation Section */
+.a {
+    background-color: rgb(255, 255, 253);
+    color: #333;
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+
+.b {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.c {
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.c:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.d {
+    width: 30px;
+    transition: filter 0.3s ease;
+}
+
+.d:hover {
+    filter: brightness(1.2);
+}
+
+.e {
+    font-size: 14px;
+    color: #333;
+    padding: 30px 0 0;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.f {
+    color: #333;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.f:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.f:not(:last-child)::after {
+    content: " | ";
+    color: #333;
+}
+
+/* Animations for footer links and icons */
+.c,
+.f {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bottom Footer (Copyright + Help Button) */
+.footerbottom {
+    padding: 40px 0 40px;
+    background: #0b0d1f;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footerbottom span {
+    font-size: 14px;
+}
+
+/* WhatsApp Help Button */
+.help-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border: 2px solid #6aa5ff;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(99, 91, 255, 0.3);
+}
+
+.help-btn:hover {
+    background-color: #1f78fc;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+    display: none; /* Shown via JS when scrolling */
+}
+
+.scroll-top:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Adjustments for Footer */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 36px;
+    }
+
+    .join-button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .help-btn {
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .scroll-top {
+        display: none;
+    }
+
+    .footer-container {
+        padding: 12px 15px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .help-btn {
+        width: auto;
+        left: 5%;
+        bottom: 5%;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .heading {
+        font-size: 28px;
+        letter-spacing: 6px;
+    }
+
+    .b {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .d {
+        width: 28px;
+    }
+}
+   </style>
+            <!-- <footer class="footer-container ">
+                <div class="footer-content">
+                    <h1 class="heading zoom-in">Together<span class="succeed-text"> We Grow !</span></h1>
+                    <a href="./src/pages/contact.html" class="join-button">Contact Us</a>
+
+                </div>
+            </footer> -->
+
+            <footer class="a">
+                <div class="b">
+                    <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                        <img src="src/assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
+                        class="c" rel="noopener">
+                        <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+                    </a>
+                    <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c"
+                        rel="noopener">
+                        <img src="src/assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+                    </a>
+                    <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
+                        <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+                    </a>
+                    <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                        rel="noopener">
+                        <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+                    </a>
+                </div>
+
+                <div class="e">
+                    <a href="./index.html" class="f">Home</a>
+                    <a href="./src/pages/aboutus.html" class="f">About Us</a>
+                    <a href="./src/pages/features.html" class="f">Explore Features</a>
+                    <a href="./src/pages/careers.html" class="f">Careers</a>
+                    <a href="./src/pages/contact.html" class="f">Contact Us</a>
+                    <a href="./src/pages/Signup.html " class="f">Request a Demo</a>
+                    <a href="./src/pages/termsofService.html" class="f">Terms of Service</a>
+                    <a href="./src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
+                    <a href="./src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
+                </div>
+            </footer>
+            <footer class="footerbottom">
+                <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+                    May I help you?
+                </a>
+                <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+                <button class="scroll-top" aria-label="Scroll to top">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                    </svg>
+                </button>
+            </footer>
 
     <script>
         // SCROLL ANIMATIONS - WORKING
