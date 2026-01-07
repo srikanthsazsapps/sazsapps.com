@@ -181,7 +181,7 @@
         }
 
         /* Floating Shapes - ANIMATED */
-        .hero-decorative-elements {
+        /* .hero-decorative-elements {
             position: absolute;
             inset: 0;
             overflow: hidden;
@@ -239,7 +239,6 @@
             66% { transform: translate(-55%, -45%) rotate(240deg) scale(1.1); }
         }
 
-        /* Hero Content - ANIMATED */
         .hero > * {
             position: relative;
             z-index: 1;
@@ -318,7 +317,7 @@
             transform: translateY(-3px) scale(1.08);
             box-shadow: 0 20px 70px rgba(62, 137, 236, 0.6);
             animation: ctaPulse 0.5s ease-in-out;
-        }
+        } */
 
         /* Features - ANIMATED ON SCROLL */
         .features {
@@ -1745,8 +1744,395 @@ body {
                 }, 200);
             });
         </script>
+        <style>/* ============================================
+   HERO SECTION
+============================================ */
 
-    <section class="hero">
+.hero-main-section {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    /* padding-top: 100px; */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) ),
+        url("/src/assets/contentImages/quarry.png") center/cover no-repeat;
+
+}
+
+.hero-main-container {
+    /* max-width: 1200px; */
+    width: 100%;
+    padding: 00px 0px 40px 0px;
+    z-index: 2;
+}
+
+.hero-main-content {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content-left > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.hero-content-left > *:nth-child(1) { animation-delay: 0.3s; }
+.hero-content-left > *:nth-child(2) { animation-delay: 0.5s; }
+.hero-content-left > *:nth-child(3) { animation-delay: 0.7s; }
+.hero-content-left > *:nth-child(4) { animation-delay: 0.9s; }
+.hero-content-left > *:nth-child(5) { animation-delay: 1.1s; }
+
+/* ============================================
+   TEXT STYLES
+============================================ */
+
+.hero-main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+.hero-text-highlight {
+    color: #3E89EC;
+    text-shadow: 0 3px 6px rgba(62,137,236,0.5);
+}
+
+/* SUB HEADING */
+.hero-subheadline {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #EAF2FF;
+    max-width: 920px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    position: relative;
+}
+
+.hero-subheadline::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #3E89EC;
+    margin: 16px auto 0;
+    border-radius: 2px;
+}
+
+/* INTRO TEXT */
+.hero-main-description {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #fff !important;
+    max-width: 900px;
+    margin: 0 auto 18px;
+    text-align: center;
+}
+
+/* DOT */
+.hero-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #3E89EC;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    top: -2px;
+}
+
+/* HIGHLIGHT WORDS */
+.hero-highlight {
+    color: #ffffff;
+    font-weight: 800;
+    /* background: rgba(62,137,236,0.18); */
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+
+@media (max-width: 991px) {
+    .hero-main-title { font-size: 2.6rem; }
+    .hero-subheadline { font-size: 1.15rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-main-title { font-size: 2rem; }
+    .hero-subheadline { font-size: 1rem; }
+    .hero-main-description { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+    .hero-main-title { font-size: 1.6rem; }
+    .hero-subheadline { font-size: 0.9rem; }
+}
+
+/* Container adjustment for centered content */
+.hero-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Feature Grid Design */
+.hero-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.hero-feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.hero-feature-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-icon-circle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-feature-item p {
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Action Buttons */
+.hero-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background: #3E89EC;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(62, 137, 236, 0.4);
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { background: #2c6ec7; }
+.btn-secondary:hover { background: #fff; color: #333; }
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+    .hero-features-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+
+/* ============================================
+   EXTRA RESPONSIVE FIXES (APPEND ONLY)
+============================================ */
+
+/* Ultra-wide screens (2K / 4K) */
+@media (min-width: 1600px) {
+    .hero-main-title {
+        font-size: 4.2rem;
+    }
+
+    .hero-subheadline {
+        font-size: 1.6rem;
+    }
+
+    .hero-main-description {
+        font-size: 1.2rem;
+    }
+
+    .hero-main-content {
+        max-width: 1400px;
+    }
+}
+
+/* Large laptops */
+@media (max-width: 1200px) {
+    .hero-main-content {
+        padding: 0 20px;
+    }
+
+    .hero-features-grid {
+        gap: 16px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .hero-main-section {
+        padding-top: 80px;
+    }
+
+    .hero-main-title {
+        margin-bottom: 40px;
+    }
+
+    .hero-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile landscape & small tablets */
+@media (max-width: 768px) {
+    .hero-main-section {
+        min-height: auto;
+        padding: 80px 0 60px;
+    }
+
+    .hero-main-title {
+        line-height: 1.3;
+        margin-bottom: 30px;
+    }
+
+    .hero-subheadline::after {
+        width: 60px;
+    }
+
+    .hero-feature-item p {
+        font-size: 1.05rem;
+    }
+}
+
+/* Mobile portrait */
+@media (max-width: 576px) {
+    .hero-main-content {
+        padding: 0 16px;
+    }
+
+    .hero-main-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subheadline {
+        font-size: 0.95rem;
+    }
+
+    .hero-main-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .hero-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-feature-item {
+        padding: 16px;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 400px) {
+    .hero-main-title {
+        font-size: 1.35rem;
+    }
+
+    .hero-subheadline {
+        font-size: 0.85rem;
+    }
+
+    .hero-feature-item p {
+        font-size: 0.95rem;
+    }
+}
+
+</style>
+
+        <section class="hero-main-section">
+            <div class="hero-main-container">
+                <div class="hero-main-content">
+                    <div class="hero-content-left">
+
+                        <!-- MAIN HEADING -->
+                        <h1 class="hero-main-title">
+                           <span class="hero-text-highlight">E-Invoice Integration<br></span> for Modern Industries
+                        </h1>
+
+                        <!-- SUB HEADING -->
+                        <h2 class="hero-subheadline">
+                           GST-compliant E-Invoice Integration specially built for Quarry, Crusher, Ready Mix Concrete (RMC), Bricks, and Pavers industries.
+                        </h2>
+                        <!-- <div class="hero-features-grid">
+                            <div class="hero-feature-item">
+                                <p class="hero-main-description">
+                                    Managing a stone crusher or quarry unit demands
+                                    <strong>precision, not guesswork</strong>.
+                                    SAZS Apps ERP is a
+                                    <span class="hero-highlight">fully automated, cloud-based platform</span>
+                                    designed to manage operations end-to-end.
+                                </p>
+                            </div>
+                            <div class="hero-feature-item">
+                                <p class="hero-main-description">
+                                    From the moment a truck enters your
+                                    <strong>weighbridge</strong> to
+                                    <span class="hero-highlight">final invoice generation</span>,
+                                    every process is streamlined, monitored, and secured.
+                                </p>
+                            </div>
+                            <div class="hero-feature-item">
+                                <p class="hero-main-description">
+                                    Built on <strong>robust Microsoft technology</strong>,
+                                    our ERP eliminates pilferage, ensures
+                                    <span class="hero-highlight">100% financial accuracy</span>,
+                                    and delivers a
+                                    <strong>360° real-time business view</strong>
+                                    from anywhere in the world.
+                                </p>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- <section class="hero">
         <div class="hero-decorative-elements">
             <div class="floating-shape shape-1"></div>
             <div class="floating-shape shape-2"></div>
@@ -1758,7 +2144,7 @@ body {
         <a href="./src/pages/contact.html" class="hero-cta">
             Start Integration Now →
         </a>
-    </section>
+    </section> -->
 
     <section class="features">
         <div class="section-header scroll-fade">
