@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SAZS APPS | All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" property="og:title" content="sazsapps.com">
+    <meta name="description"
+        content="SAZS APPS is the No.1 ERP software solution provider in Tamil Nadu, offering cloud-based ERP for quarry, crusher, bricks, pavers, and RMC (Ready-Mix Cement) plants. We provide seamless management solutions across India with advanced automation and analytics.">
+    <meta name="keywords"
+        content="ERP software, quarry ERP, crusher management software, brick ERP, paver ERP, RMC plant software, cloud-based ERP, SAZS APPS, ERP for construction, best ERP in Tamil Nadu, ERP for manufacturing, ERP for building materials, business automation software">
+    <meta name="author" content="SAZS APPS">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="SAZS APPS | All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants">
+    <meta property="og:description"
+        content="SAZS APPS provides the best cloud-based ERP software for quarry, crusher, bricks, pavers, and RMC plants. No.1 ERP provider in Tamil Nadu, serving businesses all over India.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sazsapps.com">
+    <meta property="og:image" content="../assets/logo/logoblack.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SAZS APPS | Best ERP Software for Quarry, Crusher, Bricks & RMC Plants">
+    <meta name="twitter:description"
+        content="No.1 ERP solution provider in Tamil Nadu for quarry, crusher, brick, paver, and RMC plants. Cloud-based, scalable ERP solutions for businesses across India.">
+    <meta name="twitter:image" content="../assets/logo/logoblack.png">
+    <link rel="icon" type="image/x-icon" href="../assets/logo/logoblack.png">
+    <link rel="stylesheet" href="../css/Signup.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+
+    <div class="header-nav">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../assets/contentImages/sazsLogo1.png" alt="company logo" style="padding-top: 10px;">
+            </a>
+        </div>
+        <nav class="header-bar-nav">
+            <a href="../../index.html" class="nav-link" data-page="index">Home</a>
+            <a href="./aboutus.html" class="nav-link" data-page="aboutus">About Us</a>
+                                                                                    <div class="dropdown-menu-container">
+                <a href="#" class="nav-link dropdown-trigger" data-page="products">
+                    Products <i class="fa fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="./QuarryCrusher.html" class="dropdown-item">
+                        <div>
+                            <strong>Quarry & Crusher</strong>
+                        </div>
+                    </a>
+                    <a href="./rmc.html" class="dropdown-item">
+                        <div>
+                            <strong>Ready Mix Concrete (RMC)</strong>
+                        </div>
+                    </a>
+                    <a href="./brickspaver.html" class="dropdown-item">
+                        <div>
+                            <strong>Bricks & Pavers</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <a href="./features.html" class="nav-link" data-page="features">Explore Features</a>
+                        <a href="./Signup.html" class="nav-link" data-page="Signup">Sign Up</a>
+            <a href="./contact.html" class="nav-link" data-page="contact">Contact Us</a>
+
+        </nav>
+        <!-- <div class="call">
+            <h4 class="text-bold"> <a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i> 76666 28000</a></h4>
+        </div> -->
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()" role="button" aria-label="closebtn">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+       <script>
+document.querySelector(".dropdown-trigger").addEventListener("click", function(e){
+    e.preventDefault();
+    this.nextElementSibling.style.display =
+    this.nextElementSibling.style.display === "block" ? "none" : "block";
+});
+</script>
+
+    <script>// Toggle mobile products dropdown
+        function toggleMobileDropdown() {
+            const dropdown = document.getElementById('mobileProductsDropdown');
+            const trigger = document.querySelector('.mobile-dropdown-trigger');
+
+            dropdown.classList.toggle('active');
+            trigger.classList.toggle('active');
+        }
+
+        // Close mobile dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileDropdown = document.querySelector('.mobile-dropdown');
+            if (mobileDropdown && !mobileDropdown.contains(event.target)) {
+                const dropdown = document.getElementById('mobileProductsDropdown');
+                const trigger = document.querySelector('.mobile-dropdown-trigger');
+                if (dropdown && trigger) {
+                    dropdown.classList.remove('active');
+                    trigger.classList.remove('active');
+                }
+            }
+        });</script>
+
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
+        <a href="../../index.html" class="logo-link">
+            <img src="../assets/logo/sazslogowhite.webp" alt="SAZS ERP App Logo" class="sidenav-logo">
+        </a>
+        <a href="../../index.html">Home</a>
+        <a href="./aboutus.html">About Us</a>
+                <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown()" class="mobile-dropdown-trigger">
+                Products <i class="fa fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-content" id="mobileProductsDropdown">
+                <a href="./QuarryCrusher.html">Quarry & Crusher</a>
+                <a href="./rmc.html">Ready Mix Concrete</a>
+                <a href="./brickspaver.html">Bricks & Pavers</a>
+            </div>
+        </div>
+
+        <a href="./features.html"> Explore Features</a>
+        <a href="./careers.html">Careers</a>
+        <a href="./contact.html">Contact Us</a>
+        <div class="call">
+            <a href="tel:+917666628000">
+                <i class="fa fa-phone-volume ringing-icon"></i>
+                76666 28000
+            </a>
+        </div>
+    </div>
+   <style>
+    .captcha-container {
+        margin: 20px 0;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .captcha-display {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+
+    .captcha-code {
+        background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+        color: black;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 6px;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        user-select: none;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        min-width: 160px;
+        text-align: center;
+        border: 2px solid #333;
+        /* flex: 1; */
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .refresh-captcha {
+        background: #3E89EC;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        min-height: 50px;
+    }
+
+    .refresh-captcha:hover {
+        background: #2c6ec4;
+        transform: scale(1.05);
+    }
+
+    .captcha-input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .captcha-input-group label {
+        font-weight: 600;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .captcha-input-group input {
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-size: 16px;
+        width: 100%;
+        max-width: 100%;
+        transition: border-color 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .captcha-input-group input:focus {
+        outline: none;
+        border-color: #3E89EC;
+    }
+
+    .captcha-error {
+        color: #d32f2f;
+        font-size: 14px;
+        margin-top: 5px;
+        display: none;
+        font-weight: 500;
+    }
+
+    .submit-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* Tablet Styles (768px and below) */
+    @media (max-width: 768px) {
+        .captcha-container {
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .captcha-display {
+            gap: 12px;
+        }
+
+        .captcha-code {
+            font-size: 18px;
+            padding: 10px 15px;
+            letter-spacing: 5px;
+            min-width: 140px;
+            min-height: 45px;
+        }
+
+        .refresh-captcha {
+            padding: 10px 16px;
+            font-size: 14px;
+            min-height: 45px;
+        }
+
+        .captcha-input-group label {
+            font-size: 13px;
+        }
+
+        .captcha-input-group input {
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        .captcha-error {
+            font-size: 13px;
+        }
+    }
+
+    /* Mobile Styles (480px and below) */
+    @media (max-width: 480px) {
+        .captcha-container {
+            padding: 10px;
+            margin: 12px 0;
+        }
+
+        .captcha-display {
+            flex-direction: column;
+            gap: 10px;
+            align-items: stretch;
+        }
+
+        .captcha-code {
+            font-size: 16px;
+            padding: 12px 10px;
+            letter-spacing: 4px;
+            min-width: 100%;
+            width: 100%;
+            min-height: 50px;
+        }
+
+        .refresh-captcha {
+            padding: 12px 15px;
+            font-size: 14px;
+            width: 100%;
+            min-height: 45px;
+        }
+
+        .captcha-input-group label {
+            font-size: 13px;
+        }
+
+        .captcha-input-group input {
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .captcha-error {
+            font-size: 12px;
+        }
+    }
+
+    /* Small Mobile Styles (360px and below) */
+    @media (max-width: 360px) {
+        .captcha-code {
+            font-size: 14px;
+            padding: 10px 8px;
+            letter-spacing: 3px;
+        }
+
+        .refresh-captcha {
+            padding: 10px 12px;
+            font-size: 13px;
+        }
+
+        .captcha-input-group input {
+            padding: 10px;
+            font-size: 15px;
+        }
+    }
+</style>
+   
+   
+    </head>
+
+
+    <div class="contact-us-section zoom-in">
+
+        <div class="contact-info">
+            <div class="join">
+                <h1 class="size">Talk To Us For   <span class="unique-text">New Implementations</span></h1>
+                <!-- <p>
+                   At SAZS APPS, we deliver powerful, cloud-based ERP solutions that simplify operations, 
+                   boost efficiency, and drive real growth. Whether you’re ready to get started or just exploring options,
+                    our team is here to guide you every step of the way. <b>SAZS</b> APPS .
+                </p> -->
+            </div>
+            <!-- <h1 class="section-title">Talk to
+                <span class="unique-text"> Us</span>
+            </h1>
+            <p class="section-description">
+                We’re here to help! Reach out with your questions, and our team will get back to you as soon as
+                possible. Simply fill out the form, and we’ll be in touch!
+            </p> -->
+
+
+
+            <div class="contact-us-section">
+                <div class="tabs">
+                    <button class="tab active">* This field is marked as Required</button>
+                </div>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <div class="form-field">
+                            <label for="first-name">First name <span>*</span></label>
+                            <input type="text" id="first-name" name="first_name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="last-name">Last name <span>*</span></label>
+                            <input type="text" id="last-name" name="last_name" placeholder="Enter your surname"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-field">
+                            <label for="email">Email <span>*</span></label>
+                            <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone-number">Phone number <span></span></label>
+                            <input type="tel" id="phone-number" name="phone" placeholder="+91 00000 00000" required>
+                 
+<small style="color:#777;">Phone number is required so we can contact you regarding your enquiry and provide support.</small>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-field">
+                            <label for="company-name">Company name</label>
+                            <input type="text" id="company-name" name="company_name"
+                                placeholder="Enter your company name">
+                        </div>
+                        <div class="form-field">
+                            <label for="gst-number">GST number</label>
+                            <input type="text" id="gst-number" name="gst_number" placeholder="Enter GST number">
+                        </div>
+                    </div>
+                    <div class="form-field full-width">
+                        <label for="message">Message <span>*</span></label>
+                        <textarea id="message" name="message" rows="4" placeholder="Leave here your message"
+                            required></textarea>
+                    </div>
+                    <!-- Checkbox Section -->
+                    <div class="form-footer" style="margin-top: 10px;margin-bottom: 10px;">
+                        <label>
+                            <input type="checkbox" id="confirm-checkbox">
+                            *I confirm that I have read and accepted Sazs Apps Pvt. Ltd <a
+                                href="../pages/termsofService.html">Privacy Policy</a>.
+                        </label>
+                    </div>
+               <div class="captcha-display">
+                <div class="captcha-input-group">
+                <label for="captcha-answer">Enter the code below <span>*</span></label>
+                </div>
+        <input type="text" id="captcha-answer"  style="padding: 10px; border-radius: 10px;" placeholder="Enter CAPTCHA code" required>
+        <span id="captcha-error" class="captcha-error">❌ Incorrect CAPTCHA. Please try again.</span>
+        <div id="captcha-code" class="captcha-code"></div>
+        <button type="button" id="refresh-captcha" class="refresh-captcha">
+            <i class="fa fa-refresh"></i> Refresh
+        </button>
+    </div>
+    <!-- <div class="captcha-input-group">
+        <label for="captcha-answer">Enter the code above <span>*</span></label>
+        <input type="text" id="captcha-answer" placeholder="Enter CAPTCHA code" required>
+        <span id="captcha-error" class="captcha-error">❌ Incorrect CAPTCHA. Please try again.</span>
+    </div> -->
+</div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-button" class="submit-button" disabled>Send message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Message -->
+    <div id="popupa-message" class="popupa">
+
+        <p> Thanks for visiting us</p>
+        <img src="../assets/contentImages/mailthank.gif" alt="SAZS ERP mail Success image" class="popupa-image">
+        <p class="mb-3">We will get back you soon!</p>
+    </div>
+
+    <!-- Styles -->
+
+  
+
+
+    <!-- <section class="contact-details-section fade-in">
+        <div class="contact-heading">
+            <h1 class="section-title zoom-in">We are <span class="unique-text">here!</span> For <span
+                    class="unique-text">You</span></h1>
+            <p class="section-description">
+                Connect with us for insights, feedback, and opportunities to contribute to Sazs Apps Pvt. Ltd.
+            </p>
+        </div>
+
+        <div class="contact-details">
+            <div class="contact-item card">
+                <i class="fa fa-envelope contact-icon"></i>
+                <h3>Email</h3>
+                <p><a href="mailto:sazsapps@gmail.com">sazsapps@gmail.com</a></p>
+            </div>
+            <div class="contact-item card">
+                <i class="fa fa-phone contact-icon"></i>
+                <h3>Phone</h3>
+                <p><a href="tel:+917666628000">+91 76666 28000</a> <br>
+                    <a href="tel:+9104632294666">+91 04632 294666</a>
+                </p>
+            </div>
+            <div class="contact-item card">
+                <i class="fa fa-map-marker contact-icon"></i>
+                <h3>Address</h3>
+                <p>
+                    8D, Arunachalam Pettai Street,<br>
+                    Kovilpatti, Tuticorin Dist, Tamil Nadu.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="awesome-erp">
+        <div class="erp-container">
+            <div class="erp-left">
+                <h3>24/7 Customer Support, Always Here for You</h3>
+            </div>
+            <div class="erp-divider"></div>
+            <div class="erp-right">
+                <p>
+                    Our dedicated support team is available around the clock to ensure your business runs smoothly,
+                    providing instant assistance whenever you need it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-container fade-in">
+        <div class="footer-content">
+            <h1 class="heading zoom-in">Join <span class="unique-text">Us</span>, Grow <span
+                    class="unique-text">Together</span></h1>
+            <a href="./contact.html" class="join-button">Contact Us</a>
+
+        </div>
+
+
+
+
+    </footer> -->
+
+    <footer class="a">
+        <div class="b">
+            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/facebook.svg" alt="Facebook" class="d">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+            </a>
+            <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/instagram.svg" alt="Instagram" class="d">
+            </a>
+        </div>
+
+
+
+        <div class="e">
+            <a href="../../index.html" class="f">Home</a>
+            <a href="./aboutus.html" class="f">About Us</a>
+            <a href="./features.html" class="f">Explore Features</a>
+            <a href="./careers.html" class="f">Careers</a>
+            <a href="./contact.html" class="f">Contact Us</a>
+            <a href="./Signup.html" class="f">Request a Demo</a>
+            <a href="./QuarryCrusher.html" class="f">Quarry  & Crusher</a>
+            <a href="./rmc.html" class="f">RMC</a>
+            <a href="./brickspaver.html" class="f">Bricks & Pavers</a>
+            <a href="./termsofService.html" class="f">Terms of Service</a>
+            <a href="./privacyPolicy.html" class="f">Privacy Policy</a>
+            <a href="./dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
+        </div>
+    </footer>
+
+
+
+    <footer class="footer">
+        <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+            May I help you?
+        </a>
+        <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+
+        <button class="scroll-top" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+        </button>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    
+    <script>
+// Replace your entire <script> section with this clean version:
+
+let captchaCode = '';
+let isSubmitting = false;
+
+// Generate random CAPTCHA
+function generateCaptcha() {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789';
+    let code = '';
+    for (let i = 0; i < 6; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    captchaCode = code;
+    document.getElementById('captcha-code').textContent = code;
+    document.getElementById('captcha-answer').value = '';
+    document.getElementById('captcha-error').style.display = 'none';
+}
+
+// Initialize EmailJS and CAPTCHA when page loads
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("ZMIzgf2-RU-Yn8hZR");
+    generateCaptcha();
+});
+
+// Refresh CAPTCHA button
+document.getElementById('refresh-captcha').addEventListener('click', generateCaptcha);
+
+// Checkbox enable/disable submit button
+document.getElementById("confirm-checkbox").addEventListener("change", function () {
+    document.getElementById("submit-button").disabled = !this.checked;
+});
+
+// Form submit with CAPTCHA validation
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (isSubmitting) return;
+
+    // Validate CAPTCHA first
+    const userAnswer = document.getElementById('captcha-answer').value.trim();
+    if (userAnswer !== captchaCode) {
+        document.getElementById('captcha-error').style.display = 'block';
+        generateCaptcha();
+        return;
+    }
+
+    // If CAPTCHA is correct, proceed with form submission
+    isSubmitting = true;
+    const submitBtn = document.getElementById('submit-button');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    var popupa = document.getElementById("popupa-message");
+    popupa.classList.add("show");
+
+    // Send form via EmailJS
+    emailjs.sendForm("service_a8w4ua2", "template_a17upwn", this)
+        .then(function (response) {
+            console.log("EmailJS Response:", response);
+            document.getElementById("contact-form").reset();
+            document.getElementById("confirm-checkbox").checked = false;
+            generateCaptcha();
+
+            setTimeout(function () {
+                popupa.classList.add("hide");
+                setTimeout(() => popupa.classList.remove("show", "hide"), 3000);
+                isSubmitting = false;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Send message';
+            }, 3000);
+        })
+        .catch(function (error) {
+            console.error("EmailJS Error:", error);
+            setTimeout(function () {
+                popupa.classList.add("hide");
+                setTimeout(() => popupa.classList.remove("show", "hide"), 3000);
+                isSubmitting = false;
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send message';
+            }, 3000);
+        });
+});
+
+// Header scroll effects
+let lastScrollTop = 0;
+const header = document.querySelector('.header-nav');
+
+window.onscroll = function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        header.classList.add("hide");
+    } else {
+        header.classList.remove("hide");
+    }
+
+    if (currentScroll <= 0) {
+        header.classList.remove("fixed");
+    } else if (currentScroll > 100) {
+        header.classList.add("fixed");
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+};
+
+// Navigation functions
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.addEventListener("click", closeNavOnClickOutside);
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.removeEventListener("click", closeNavOnClickOutside);
+}
+
+function toggleNav() {
+    const sidenav = document.getElementById("mySidenav");
+    const isOpen = sidenav.style.width === "250px";
+
+    if (isOpen) {
+        sidenav.style.width = "0";
+        document.removeEventListener("click", closeNavOnClickOutside);
+    } else {
+        sidenav.style.width = "250px";
+        setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
+    }
+}
+
+function closeNavOnClickOutside(event) {
+    const sidenav = document.getElementById("mySidenav");
+    if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+        sidenav.style.width = "0";
+        document.removeEventListener("click", closeNavOnClickOutside);
+    }
+}
+
+// Highlight active page in navbar
+function highlightActivePage() {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll(".nav-link");
+
+    links.forEach(link => {
+        const page = link.getAttribute("data-page");
+        if (currentPath.includes(page)) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", highlightActivePage);
+
+// Scroll to top functionality
+document.querySelector('.scroll-top').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Show/hide scroll button based on scroll position
+window.addEventListener('scroll', () => {
+    const scrollButton = document.querySelector('.scroll-top');
+    if (window.scrollY > 200) {
+        scrollButton.style.display = 'flex';
+    } else {
+        scrollButton.style.display = 'none';
+    }
+});
+
+// Fade-in animations
+document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = {
+        threshold: 0.2,
+    };
+
+    const animatedElements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, observerOptions);
+
+    animatedElements.forEach((el) => observer.observe(el));
+});
+    </script>
+</body>
+
+</html>

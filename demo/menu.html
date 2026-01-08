@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: rgb(255, 255, 255);
+    color: #333;
+}
+        .sazs-header {
+            background: rgb(255, 255, 255) !important;
+            /* border-radius: 50px !important; */
+            margin: 0 auto !important;
+            /* max-width: 1500px !important; */
+            position: fixed !important;
+            /* top: 10px !important; */
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 1000 !important;
+            transition: transform 0.3s ease-in-out !important;
+
+        }
+
+        .sazs-header.expanded {
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .sazs-header-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5px 0px;
+        }
+
+        .sazs-header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sazs-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sazs-brand-image {
+            width: 150px;
+            height: 70px;
+            margin-top: 10px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            z-index: 1001 !important;
+            justify-content: center;
+        }
+
+        .sazs-menu-list {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            padding-left: 70px;
+        }
+
+        .sazs-menu-item {
+            position: relative;
+        }
+
+        .sazs-menu-link {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .sazs-menu-link:hover {
+            color: #000000;
+        }
+
+        .sazs-menu-link.active {
+            color: #000000;
+        }
+
+        .sazs-arrow-svg {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.3s;
+        }
+
+        .sazs-menu-item.active .sazs-arrow-svg {
+            transform: rotate(45deg);
+        }
+
+        .sazs-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 2rem;
+        }
+
+        .sazs-submenu.active {
+            max-height: 800px;
+            padding: 2rem;
+        }
+
+        .sazs-submenu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .sazs-submenu-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .sazs-col-heading {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .sazs-product-card {
+            background: transparent;
+            border: none;
+            border-radius: 12px;
+            padding: 0;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .sazs-submenu.active .sazs-product-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sazs-submenu.active .sazs-submenu-col:nth-child(1) .sazs-product-card {
+            transition-delay: 0.1s;
+        }
+
+        .sazs-submenu.active .sazs-submenu-col:nth-child(2) .sazs-product-card {
+            transition-delay: 0.2s;
+        }
+
+        .sazs-submenu.active .sazs-submenu-col:nth-child(3) .sazs-product-card {
+            transition-delay: 0.3s;
+        }
+
+        .sazs-product-card:hover {
+            transform: translateY(-4px);
+            opacity: 1;
+        }
+
+        .sazs-card-img-wrapper {
+            width: 100%;
+            height: 200px;
+            background: #000000;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .sazs-card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sazs-card-img-wrapper svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sazs-card-heading {
+            color: #000000;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            padding: 0 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sazs-card-text {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            padding: 0 0.75rem 0.75rem;
+        }
+
+        .sazs-external-svg {
+            width: 12px;
+            height: 12px;
+            opacity: 0.5;
+        }
+
+        .sazs-label {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+            font-size: 0.65rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sazs-label.new {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+        }
+
+        .sazs-label.year {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .sazs-cta-group {
+            padding-left: 400px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .sazs-button {
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sazs-button-outline {
+            background: transparent;
+            color: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .sazs-button-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #000000;
+            border-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .sazs-button-gradient {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            color: #000000;
+        }
+
+        .sazs-button-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .sazs-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .sazs-hamburger span {
+            width: 24px;
+            height: 2px;
+            background: #000000;
+            transition: all 0.3s;
+        }
+
+        .sazs-courses-area {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .sazs-courses-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Features Dropdown Styles */
+        .features-dropdown {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            max-width: 1200px;
+        }
+
+        .features-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .features-section-title {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .features-link {
+            color: rgba(0, 0, 0, 0.9);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: all 0.2s;
+            display: block;
+        }
+
+        .features-link:hover {
+            color: #000000;
+            padding-left: 0.5rem;
+        }
+
+        .features-right {
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            padding-left: 3rem;
+        }
+
+        .features-case-studies-title {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .features-case-studies-subtitle {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-case-studies-link {
+            color: rgba(0, 0, 0, 0.9);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-case-studies-link:hover {
+            color: #000000;
+        }
+
+        .features-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .features-case-card {
+            background: transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .features-case-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .features-case-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            background: #f5f5f5;
+        }
+
+        .features-case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .features-case-title {
+            color: #000000;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1400px) {
+            .sazs-cta-group {
+                padding-left: 200px;
+            }
+
+            .sazs-header-wrapper {
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .sazs-menu-list {
+                padding-left: 40px;
+                gap: 1.5rem;
+            }
+
+            .sazs-cta-group {
+                padding-left: 100px;
+            }
+
+            .sazs-menu-link {
+                font-size: 16px;
+            }
+
+            .sazs-submenu-grid {
+                gap: 1.5rem;
+            }
+
+            .features-dropdown {
+                grid-template-columns: 1fr;
+            }
+
+            .features-right {
+                border-left: none;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                padding-left: 0;
+                padding-top: 2rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+
+            .sazs-menu-list,
+            .sazs-cta-group {
+                display: none;
+            }
+
+            .sazs-hamburger {
+                display: flex;
+            }
+
+            .sazs-header-wrapper {
+                padding: 1rem;
+            }
+
+            .sazs-brand-image {
+                width: 120px;
+                height: 40px;
+            }
+
+            .sazs-submenu-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .sazs-submenu {
+                padding: 0 1rem;
+            }
+
+            .sazs-submenu.active {
+                padding: 1.5rem 1rem;
+            }
+
+            .sazs-card-img-wrapper {
+                height: 180px;
+            }
+
+            .sazs-card-heading {
+                font-size: 0.9rem;
+            }
+
+            .sazs-card-text {
+                font-size: 0.8rem;
+            }
+
+            .features-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .sazs-header {
+                top: 10px !important;
+            }
+
+            .sazs-header-wrapper {
+                padding: 0.75rem 1rem;
+            }
+
+            .sazs-brand-image {
+                width: 100px;
+                height: 35px;
+            }
+
+            .sazs-submenu-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .sazs-submenu.active {
+                max-height: 2000px;
+                padding: 1rem;
+            }
+
+            .sazs-card-img-wrapper {
+                height: 160px;
+            }
+
+            .sazs-card-heading {
+                font-size: 0.85rem;
+                padding: 0 0.5rem;
+            }
+
+            .sazs-card-text {
+                font-size: 0.75rem;
+                padding: 0 0.5rem 0.5rem;
+            }
+
+            .features-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 50px;
+            }
+
+            .sazs-header {
+                top: 5px !important;
+            }
+
+            .sazs-header-wrapper {
+                padding: 0.5rem 0.75rem;
+            }
+
+            .sazs-brand-image {
+                width: 80px;
+                height: 30px;
+            }
+
+            .sazs-hamburger {
+                padding: 0.25rem;
+            }
+
+            .sazs-hamburger span {
+                width: 20px;
+            }
+
+            .sazs-submenu.active {
+                padding: 0.75rem;
+            }
+
+            .sazs-card-img-wrapper {
+                height: 140px;
+                border-radius: 8px;
+            }
+
+            .sazs-product-card {
+                border-radius: 8px;
+            }
+
+            .sazs-card-heading {
+                font-size: 0.8rem;
+            }
+
+            .sazs-card-text {
+                font-size: 0.7rem;
+                line-height: 1.4;
+            }
+        }
+
+
+
+        /* ================= DEMO CONTENT STYLES ================= */
+        .demo-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .demo-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .demo-content p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .content-placeholder {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .placeholder-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .placeholder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .placeholder-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .placeholder-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="sazs-header">
+        <div class="sazs-header-wrapper">
+            <div class="sazs-header-main">
+                <a href="/" class="sazs-brand">
+                    <div class="sazs-brand-image">
+                        <!-- Replace with your logo -->
+                        <img src="https://via.placeholder.com/150x70/3E89EC/FFFFFF?text=SAZS+LOGO" alt="SAZS ERP App Logo Home page">
+                    </div>
+                </a>
+
+                <ul class="sazs-menu-list">
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="platform">
+                            Platform
+                            <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                <path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="Features">
+                            Features
+                            <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                <path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="resources">
+                            Media & Events
+                            <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                <path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="sazs-cta-group">
+                    <a href="./src/pages/contact.html" class="sazs-button sazs-button-outline">Contact Sales</a>
+                    <a href="#" class="sazs-button sazs-button-outline">Sign in</a>
+                </div>
+
+                <div class="sazs-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- Platform Dropdown -->
+            <div class="sazs-submenu" id="platform">
+                <div class="sazs-submenu-grid">
+                    <div class="sazs-submenu-col">
+                        <a href="./src/pages/QuarryCrusher.html" class="sazs-product-card">
+                            <div class="sazs-card-img-wrapper">
+                                <img src="https://via.placeholder.com/400x200/3E89EC/FFFFFF?text=Quarry+Management" alt="Stone Crusher Management Software" />
+                            </div>
+                            <div class="sazs-card-heading">End-to-End Management Software for Stone Crushers & Quarries</div>
+                            <div class="sazs-card-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
+                        </a>
+                    </div>
+
+                    <div class="sazs-submenu-col">
+                        <a href="./src/pages/rmc.html" class="sazs-product-card">
+                            <div class="sazs-card-img-wrapper">
+                                <img src="https://via.placeholder.com/400x200/3E89EC/FFFFFF?text=RMC+Plants" alt="RMC Plant Software" />
+                            </div>
+                            <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing Plants</div>
+                            <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage of Your Production</div>
+                        </a>
+                    </div>
+                    
+                    <div class="sazs-submenu-col">
+                        <a href="./src/pages/brickspaver.html" class="sazs-product-card">
+                            <div class="sazs-card-img-wrapper">
+                                <img src="https://via.placeholder.com/400x200/3E89EC/FFFFFF?text=Bricks+%26+Pavers" alt="Brick Manufacturing ERP Software" />
+                            </div>
+                            <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing Plants</div>
+                            <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage of Your Production</div>
+                        </a>
+                    </div>
+
+                    <div class="sazs-submenu-col">
+                        <a href="./src/pages/brickspaver.html" class="sazs-product-card">
+                            <div class="sazs-card-img-wrapper">
+                                <img src="https://via.placeholder.com/400x200/3E89EC/FFFFFF?text=Additional+Product" alt="Additional ERP Software" />
+                            </div>
+                            <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing Plants</div>
+                            <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage of Your Production</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Dropdown -->
+            <div class="sazs-submenu" id="Features">
+                <div class="features-dropdown">
+                    <!-- Left Side - Solutions List -->
+                    <div class="features-left">
+                        <div class="features-section-title">Features — tailored to every Crushers & Quarries</div>
+                        <a href="./Anprs.html" class="features-link">ANPR Camera Integration</a>
+                        <a href="./EInvoice.html" class="features-link">E-Invoice Integration</a>
+                        <a href="Weighbridge.html" class="features-link">Weighbridge and Camera Integration</a>
+                        <a href="Boombarrier.html" class="features-link">Boom Barrier Integration</a>
+                        <a href="biometrics.html" class="features-link">Biometrics</a>
+                    </div>
+
+                    <!-- Right Side - Case Studies -->
+                    <div class="features-right">
+                        <div class="features-case-studies-title">Case Studies —</div>
+                        <a href="#" class="features-case-studies-link">
+                            Case Studies
+                            <svg width="12" height="12" viewBox="0 0 10 10" fill="currentColor">
+                                <path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg>
+                        </a>
+
+                        <div class="features-cards-grid">
+                            <a href="#" class="features-case-card">
+                                <div class="features-case-image">
+                                    <img src="https://via.placeholder.com/400x180/3E89EC/FFFFFF?text=Case+Study+1" alt="Case Study 1" />
+                                </div>
+                                <div class="features-case-title">Case Study 1: Quarry Automation</div>
+                            </a>
+
+                            <a href="#" class="features-case-card">
+                                <div class="features-case-image">
+                                    <img src="https://via.placeholder.com/400x180/3E89EC/FFFFFF?text=Case+Study+2" alt="Case Study 2" />
+                                </div>
+                                <div class="features-case-title">Case Study 2: RMC Plant Efficiency</div>
+                            </a>
+
+                            <a href="#" class="features-case-card">
+                                <div class="features-case-image">
+                                    <img src="https://via.placeholder.com/400x180/3E89EC/FFFFFF?text=Case+Study+3" alt="Case Study 3" />
+                                </div>
+                                <div class="features-case-title">Case Study 3: Brick Manufacturing</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Content -->
+    <div class="demo-content">
+        <h1>Navigation Bar Demo</h1>
+        <p>This is a demonstration of the responsive navigation bar with dropdown menus. Hover over "Platform" or "Features" to see the dropdown menus.</p>
+        
+        <div class="content-placeholder">
+            <div class="placeholder-card">
+                <h3>Responsive Design</h3>
+                <p>The navigation bar is fully responsive and will adapt to different screen sizes. On mobile devices, the menu items are hidden and replaced with a hamburger menu.</p>
+            </div>
+            <div class="placeholder-card">
+                <h3>Dropdown Menus</h3>
+                <p>Hover over "Platform" or "Features" to see animated dropdown menus with product cards and feature links.</p>
+            </div>
+            <div class="placeholder-card">
+                <h3>Smooth Animations</h3>
+                <p>All dropdown animations are smooth and include staggered animations for better user experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const navLinks = document.querySelectorAll('[data-dropdown]');
+        const navbar = document.querySelector('.sazs-header-wrapper');
+        let currentActive = null;
+        let hoverTimeout = null;
+
+        navLinks.forEach(link => {
+            const navItem = link.closest('.sazs-menu-item');
+            const dropdownId = link.getAttribute('data-dropdown');
+            const dropdown = document.getElementById(dropdownId);
+
+            // Hover on nav link
+            navItem.addEventListener('mouseenter', () => {
+                clearTimeout(hoverTimeout);
+
+                // Close all dropdowns
+                document.querySelectorAll('.sazs-submenu').forEach(d => {
+                    d.classList.remove('active');
+                });
+                document.querySelectorAll('.sazs-menu-item').forEach(n => {
+                    n.classList.remove('active');
+                });
+
+                // Open hovered dropdown
+                dropdown.classList.add('active');
+                navItem.classList.add('active');
+                currentActive = dropdown;
+            });
+
+            // Keep dropdown open when hovering over it
+            dropdown.addEventListener('mouseenter', () => {
+                clearTimeout(hoverTimeout);
+            });
+
+            dropdown.addEventListener('mouseleave', () => {
+                hoverTimeout = setTimeout(() => {
+                    dropdown.classList.remove('active');
+                    navItem.classList.remove('active');
+                    currentActive = null;
+                }, 200);
+            });
+        });
+
+        // Close dropdown when leaving navbar
+        navbar.addEventListener('mouseleave', () => {
+            hoverTimeout = setTimeout(() => {
+                document.querySelectorAll('.sazs-submenu').forEach(d => {
+                    d.classList.remove('active');
+                });
+                document.querySelectorAll('.sazs-menu-item').forEach(n => {
+                    n.classList.remove('active');
+                });
+                currentActive = null;
+            }, 200);
+        });
+
+        // Hamburger menu toggle (for mobile)
+        const hamburger = document.querySelector('.sazs-hamburger');
+        const menuList = document.querySelector('.sazs-menu-list');
+        const ctaGroup = document.querySelector('.sazs-cta-group');
+
+        hamburger.addEventListener('click', () => {
+            const isMobile = window.innerWidth <= 1024;
+            
+            if (isMobile) {
+                menuList.style.display = menuList.style.display === 'flex' ? 'none' : 'flex';
+                ctaGroup.style.display = ctaGroup.style.display === 'flex' ? 'none' : 'flex';
+                
+                if (menuList.style.display === 'flex') {
+                    menuList.style.flexDirection = 'column';
+                    menuList.style.position = 'absolute';
+                    menuList.style.top = '100%';
+                    menuList.style.left = '0';
+                    menuList.style.right = '0';
+                    menuList.style.background = 'white';
+                    menuList.style.padding = '1rem';
+                    menuList.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                    
+                    ctaGroup.style.position = 'absolute';
+                    ctaGroup.style.top = 'calc(100% + 200px)';
+                    ctaGroup.style.left = '0';
+                    ctaGroup.style.right = '0';
+                    ctaGroup.style.background = 'white';
+                    ctaGroup.style.padding = '1rem';
+                    ctaGroup.style.justifyContent = 'center';
+                    ctaGroup.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                }
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                if (!e.target.closest('.sazs-header-main') && 
+                    !e.target.closest('.sazs-menu-list') && 
+                    !e.target.closest('.sazs-cta-group')) {
+                    menuList.style.display = 'none';
+                    ctaGroup.style.display = 'none';
+                }
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                menuList.style.display = 'flex';
+                ctaGroup.style.display = 'flex';
+                menuList.style.flexDirection = 'row';
+                menuList.style.position = 'static';
+                menuList.style.background = 'transparent';
+                menuList.style.padding = '0';
+                menuList.style.boxShadow = 'none';
+                
+                ctaGroup.style.position = 'static';
+                ctaGroup.style.background = 'transparent';
+                ctaGroup.style.padding = '0';
+                ctaGroup.style.boxShadow = 'none';
+            } else {
+                menuList.style.display = 'none';
+                ctaGroup.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

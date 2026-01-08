@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SAZS APPS | All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" property="og:title" content="sazsapps.com">
+    <meta name="description"
+        content="SAZS APPS is the No.1 ERP software solution provider in Tamil Nadu, offering cloud-based ERP for quarry, crusher, bricks, pavers, and RMC (Ready-Mix Cement) plants. We provide seamless management solutions across India with advanced automation and analytics.">
+    <meta name="keywords"
+        content="ERP software, quarry ERP, crusher management software, brick ERP, paver ERP, RMC plant software, cloud-based ERP, SAZS APPS, ERP for construction, best ERP in Tamil Nadu, ERP for manufacturing, ERP for building materials, business automation software">
+    <meta name="author" content="SAZS APPS">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="SAZS APPS | All-in-One ERP Software for Quarry, Crusher, Brick, and RMC Plants">
+    <meta property="og:description"
+        content="SAZS APPS provides the best cloud-based ERP software for quarry, crusher, bricks, pavers, and RMC plants. No.1 ERP provider in Tamil Nadu, serving businesses all over India.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sazsapps.com">
+    <meta property="og:image" content="../assets/logo/logoblack.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SAZS APPS | Best ERP Software for Quarry, Crusher, Bricks & RMC Plants">
+    <meta name="twitter:description"
+        content="No.1 ERP solution provider in Tamil Nadu for quarry, crusher, brick, paver, and RMC plants. Cloud-based, scalable ERP solutions for businesses across India.">
+    <meta name="twitter:image" content="../assets/logo/logoblack.png">
+    <link rel="icon" type="image/x-icon" href="../assets/logo/logoblack.png">
+    <link rel="stylesheet" href="../css/dataProtectionPolicy.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+
+    <div class="header-nav">
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../assets/contentImages/sazsLogo1.png" alt="company logo" style="padding-top: 10px;">
+            </a>
+        </div>
+        <nav class="header-bar-nav">
+            <a href="../../index.html" class="nav-link" data-page="index">Home</a>
+            <a href="./aboutus.html" class="nav-link" data-page="aboutus">About Us</a>
+                                                <div class="dropdown-menu-container">
+                <a href="#" class="nav-link dropdown-trigger" data-page="products">
+                    Products <i class="fa fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="./QuarryCrusher.html" class="dropdown-item">
+                        <div>
+                            <strong>Quarry & Crusher</strong>
+                        </div>
+                    </a>
+                    <a href="./rmc.html" class="dropdown-item">
+                        <div>
+                            <strong>Ready Mix Concrete (RMC)</strong>
+                        </div>
+                    </a>
+                    <a href="./brickspaver.html" class="dropdown-item">
+                        <div>
+                            <strong>Bricks & Pavers</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <a href="./features.html" class="nav-link" data-page="features">Explore Features</a>
+                        <a href="./Signup.html" class="nav-link" data-page="Signup">Sign Up</a>
+            <a href="./contact.html" class="nav-link" data-page="contact">Contact Us</a>
+
+        </nav>
+        <!-- <div class="call">
+            <h4 class="text-bold"> <a href="tel:+917666628000" style="text-decoration: none !important;"><i class="fa fa-phone-volume ringing-icon"></i> 76666 28000</a></h4>
+        </div> -->
+       
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()" role="button" aria-label="closebtn" style="padding: 0 10px !important;">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+ <script>
+document.querySelector(".dropdown-trigger").addEventListener("click", function(e){
+    e.preventDefault();
+    this.nextElementSibling.style.display =
+    this.nextElementSibling.style.display === "block" ? "none" : "block";
+});
+</script>
+    <script>
+        // Function to highlight the current page in the navbar
+        function highlightActivePage() {
+            const currentPath = window.location.pathname;
+            const links = document.querySelectorAll(".nav-link");
+
+            links.forEach(link => {
+                // Get the page identifier from the data attribute
+                const page = link.getAttribute("data-page");
+
+                // Check if the current URL includes the page identifier
+                if (currentPath.includes(page)) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        }
+
+        // Run function on page load
+        document.addEventListener("DOMContentLoaded", highlightActivePage);
+    </script>
+    <script>
+
+
+        function toggleNav() {
+            const sidenav = document.getElementById("mySidenav");
+            const isOpen = sidenav.style.width === "250px";
+
+            if (isOpen) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            } else {
+                sidenav.style.width = "250px";
+                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
+            }
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            }
+        }
+    </script>
+    <script>// Toggle mobile products dropdown
+        function toggleMobileDropdown() {
+            const dropdown = document.getElementById('mobileProductsDropdown');
+            const trigger = document.querySelector('.mobile-dropdown-trigger');
+
+            dropdown.classList.toggle('active');
+            trigger.classList.toggle('active');
+        }
+
+        // Close mobile dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileDropdown = document.querySelector('.mobile-dropdown');
+            if (mobileDropdown && !mobileDropdown.contains(event.target)) {
+                const dropdown = document.getElementById('mobileProductsDropdown');
+                const trigger = document.querySelector('.mobile-dropdown-trigger');
+                if (dropdown && trigger) {
+                    dropdown.classList.remove('active');
+                    trigger.classList.remove('active');
+                }
+            }
+        });</script>
+
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
+        <a href="../../index.html" class="logo-link">
+            <img src="../assets/logo/sazslogowhite.webp" alt="Logo" class="sidenav-logo">
+        </a>
+
+        <a href="../../index.html">Home</a>
+        <a href="./aboutus.html">About Us</a>
+                        <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown()" class="mobile-dropdown-trigger">
+                Products <i class="fa fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-content" id="mobileProductsDropdown">
+                <a href="./QuarryCrusher.html">Quarry & Crusher</a>
+                <a href="./rmc.html">Ready Mix Concrete</a>
+                <a href="./brickspaver.html">Bricks & Pavers</a>
+            </div>
+        </div>
+
+        <a href="./features.html"> Explore Features</a>
+        <a href="./careers.html">Careers</a>
+        <a href="./contact.html">Contact Us</a>
+        <div>
+            <a href="tel:+917666628000">
+                <i class="fa fa-phone-volume ringing-icon" style="font-size:small !important; margin: 0 !important;"></i>
+                76666 28000
+            </a>
+        </div>
+    </div>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header-nav');
+
+
+        window.onscroll = function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                header.classList.add("hide");
+            } else {
+                header.classList.remove("hide");
+            }
+
+            if (currentScroll <= 0) {
+                header.classList.remove("fixed");
+            } else if (currentScroll > 100) {
+                header.classList.add("fixed");
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        };
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.addEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.removeEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+                closeNav();
+            }
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("aboutDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+    </script>
+    <div class="containerTerms">
+
+        <div class="four" id="content-area" role="region" aria-labelledby="section-title">
+
+            <h1 style="text-align: center;">Data Protection Policy</h1>
+            <h2>Introduction:</h2>
+            <p>Sazs Apps Private Limited ("Company") is committed to safeguarding the privacy and security of customer
+                data within our ERP Billing Software. This Data Protection Policy outlines the principles and procedures
+                for handling, storing, and securing data to protect customer information effectively.</p>
+            <p>Throughout this Data Protection Policy, "ERP Software" refers to the software products <strong>Quarry
+                    King, SAZS Bricks, and SAZS RMC</strong> provided by Sazs Apps Private Limited, including its
+                affiliates and subsidiaries (also referred to as “we,” “us,” or “our”).</p>
+            <h3>Scope:</h3>
+            <p>This policy applies to all employees, contractors, vendors, and third-party service providers who handle
+                customer data within the ERP Billing Software, including data collected, stored, processed, and
+                transmitted through the system.</p>
+            <h3>Data Collection & Processing</h3>
+            <ul>
+                <li>We collect only necessary data required for billing, customer management, and operational purposes.
+                </li>
+                <li>Customer data is collected transparently, with explicit consent where required.</li>
+                <li>Processing is restricted to lawful purposes as specified in agreements with customers.</li>
+                <li>Sensitive Personal Data is handled with heightened security measures and is processed only with
+                    prior consent or as per business needs.</li>
+            </ul>
+            <h3>Data Security Measures</h3>
+            <ul>
+                <li>All customer data is encrypted in transit and at rest using industry-standard encryption protocols.
+                </li>
+                <li>Secure access controls, including multi-factor authentication (MFA), are implemented to prevent
+                    unauthorized access.</li>
+                <li>Regular security audits, vulnerability assessments, and penetration testing are conducted.</li>
+                <li>Firewalls, anti-virus software, and intrusion detection systems are employed to protect against
+                    cyber threats.</li>
+                <li>Employees and stakeholders handling sensitive data undergo regular security training and compliance
+                    checks.</li>
+            </ul>
+            <h3>Data Retention & Deletion</h3>
+            <ul>
+                <li>Data is retained only for the period necessary for business and operational requirements.</li>
+                <li>Upon the expiration of the retention period, data is securely deleted using industry-standard data
+                    sanitization techniques.</li>
+                <li>Customers may request data deletion, subject to applicable business constraints.</li>
+            </ul>
+            <h3>Data Access & Sharing</h3>
+            <ul>
+                <li>Data access is strictly limited to authorized personnel on a need-to-know basis.</li>
+                <li>Third-party service providers handling data must adhere to security standards and sign
+                    confidentiality agreements.</li>
+                <li>Data is never shared with unauthorized entities or used for purposes other than those agreed upon
+                    with customers.</li>
+                <li>Any external request for customer data will be fulfilled only upon receiving proper authorization.
+                </li>
+            </ul>
+            <h3>Incident Management & Breach Response</h3>
+            <ul>
+                <li>Any suspected data breach is investigated immediately, and appropriate measures are taken to
+                    mitigate risks.</li>
+                <li>In case of a breach involving sensitive personal data, the Company will notify the affected
+                    customers.</li>
+                <li>A dedicated response team will handle security incidents, ensuring swift corrective actions are
+                    implemented to prevent future breaches.</li>
+            </ul>
+            <h3>Customer Rights & Data Requests</h3>
+            <ul>
+                <li>Customers have the right to access, modify, or request deletion of their data.</li>
+                <li>Requests for data access, rectification, or portability must be submitted through official channels
+                    and will be processed in a timely manner.</li>
+                <li>Customers have the right to file complaints regarding data misuse, which will be addressed
+                    accordingly.</li>
+            </ul>
+            <h3>Policy Review & Updates</h3>
+            <ul>
+                <li>This policy is reviewed biannually and updated as necessary.</li>
+                <li>Employees, vendors, and stakeholders are required to undergo mandatory training on data protection
+                    practices.</li>
+            </ul>
+            <h3>SAZS Apps Private Limited</h3>
+
+            <p>
+
+                8D, Arunachalam Pettai Street,<br>
+                Kovilpatti, Tuticorin District,<br>
+                Tamil Nadu, India.<br>
+                <strong>Phone:</strong> 04632 294 666<br>
+                <strong>Email:</strong> info@sazsapps.com<br>
+                <strong>Effective Date:</strong> 15-12-2023
+            </p>
+            <p>This Privacy Statement was last updated on 06-01-2025.</p>
+
+
+
+
+        </div>
+    </div>
+
+
+    <footer class="footer-container fade-in">
+        <div class="footer-content">
+            <a href="./contact.html" class="join-button">Contact Us</a>
+        </div>
+    </footer>
+
+    <footer class="a">
+        <div class="b">
+            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/facebook.svg" alt="Facebook" class="d">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+            </a>
+            <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/instagram.svg" alt="Instagram" class="d">
+            </a>
+        </div>
+
+
+
+        <div class="e">
+             <a href="../../index.html" class="f">Home</a>
+            <a href="./aboutus.html" class="f">About Us</a>
+            <a href="./features.html" class="f">Explore Features</a>
+            <a href="./careers.html" class="f">Careers</a>
+            <a href="./contact.html" class="f">Contact Us</a>
+            <a href="./Signup.html" class="f">Request a Demo</a>
+            <a href="./QuarryCrusher.html" class="f">Quarry  & Crusher</a>
+            <a href="./rmc.html" class="f">RMC</a>
+            <a href="./brickspaver.html" class="f">Bricks & Pavers</a>
+            <a href="./termsofService.html" class="f">Terms of Service</a>
+            <a href="./privacyPolicy.html" class="f">Privacy Policy</a>
+            <a href="./dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
+        </div>
+    </footer>
+    <footer class="footer">
+
+        <!-- <img src="../assets/logo/sazsapps logo wht.png" alt="SAZS ERP App Logo"> -->
+        <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+
+        <button class="scroll-top" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+        </button>
+    </footer>
+
+    <script>
+        // Scroll to top functionality
+        document.querySelector('.scroll-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Show/hide scroll button based on scroll position
+        window.addEventListener('scroll', () => {
+            const scrollButton = document.querySelector('.scroll-top');
+            if (window.scrollY > 200) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                threshold: 0.2, // Trigger animation when 20% of the element is visible
+            };
+
+            const animatedElements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, observerOptions);
+
+            animatedElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+
+
+</body>
+
+</html>

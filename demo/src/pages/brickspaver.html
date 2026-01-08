@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bricks & Pavers ERP Software | Manufacturing Management System</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" property="og:title" content="Bricks & Pavers ERP Software | SAZS Apps">
+    <meta name="description"
+        content="Complete ERP solution for brick and paver manufacturing plants. Manage production, inventory, sales, and quality control with one integrated system.">
+    <meta name="keywords"
+        content="brick manufacturing software, paver plant ERP, brick production management, paver inventory system, brick factory software, concrete paver ERP, manufacturing ERP, SAZS APPS">
+    <meta name="author" content="SAZS APPS">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Bricks & Pavers ERP Software | Manufacturing Management System">
+    <meta property="og:description"
+        content="Complete ERP solution for brick and paver manufacturing plants. Manage production, inventory, sales, and quality control with one integrated system.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sazsapps.com/bricks-pavers">
+    <link rel="icon" type="image/x-icon" href="../../src/assets/logo/logoblack.png">
+    <link rel="stylesheet" href="../css/brickspaver.css">
+    <link rel="stylesheet" href="../../src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../src/assets/css/all.min.css">
+
+    <script src="../../src/js/jquery-3.7.1.slim.min.js" defer></script>
+    <script src="../../src/js/bootstrap.bundle.min.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <div class="header-nav">
+        <div class="logo-container">
+            <a href="../../index.html" aria-label="Go to homepage" role="link">
+                <img src="../../src/assets/contentImages/sazsLogo1.png" alt="SAZS ERP App Logo" title="Homepage">
+            </a>
+        </div>
+        <nav class="header-bar-nav">
+            <a href="../../index.html" class="nav-link" data-page="index">Home</a>
+            <a href="../pages/aboutus.html" class="nav-link" data-page="aboutus" role="link">About Us</a>
+
+            <!-- Products Dropdown -->
+                                                <div class="dropdown-menu-container">
+                <a href="#" class="nav-link dropdown-trigger" data-page="products">
+                    Products <i class="fa fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="./QuarryCrusher.html" class="dropdown-item">
+                        <div>
+                            <strong>Quarry & Crusher</strong>
+                        </div>
+                    </a>
+                    <a href="./rmc.html" class="dropdown-item">
+                        <div>
+                            <strong>Ready Mix Concrete (RMC)</strong>
+                        </div>
+                    </a>
+                    <a href="./brickspaver.html" class="dropdown-item">
+                        <div>
+                            <strong>Bricks & Pavers</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <a href="../pages/features.html" class="nav-link" data-page="features">Explore Features</a>
+            <a href="../pages/Signup.html" class="nav-link" data-page="Signup" role="link">Sign Up</a>
+            <a href="../pages/contact.html" class="nav-link" data-page="contact" role="link">Contact Us</a>
+        </nav>
+
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()" role="button" aria-label="Menu">
+            <i class="fa fa-bars" style="color: black !important;"></i>
+        </a>
+    </div>
+
+      <script>// Toggle mobile products dropdown
+        function toggleMobileDropdown() {
+            const dropdown = document.getElementById('mobileProductsDropdown');
+            const trigger = document.querySelector('.mobile-dropdown-trigger');
+
+            dropdown.classList.toggle('active');
+            trigger.classList.toggle('active');
+        }
+
+        // Close mobile dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileDropdown = document.querySelector('.mobile-dropdown');
+            if (mobileDropdown && !mobileDropdown.contains(event.target)) {
+                const dropdown = document.getElementById('mobileProductsDropdown');
+                const trigger = document.querySelector('.mobile-dropdown-trigger');
+                if (dropdown && trigger) {
+                    dropdown.classList.remove('active');
+                    trigger.classList.remove('active');
+                }
+            }
+        });</script>
+
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
+        <a href="../../index.html" class="logo-link">
+            <img src="../assets/logo/sazslogowhite.webp" alt="SAZS ERP App Logo" class="sidenav-logo">
+        </a>
+        <a href="../../index.html">Home</a>
+        <a href="./aboutus.html">About Us</a>
+                <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown()" class="mobile-dropdown-trigger">
+                Products <i class="fa fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-content" id="mobileProductsDropdown">
+                <a href="./QuarryCrusher.html">Quarry & Crusher</a>
+                <a href="./rmc.html">Ready Mix Concrete</a>
+                <a href="./brickspaver.html">Bricks & Pavers</a>
+            </div>
+        </div>
+
+        <a href="./features.html"> Explore Features</a>
+        <a href="./careers.html">Careers</a>
+        <a href="./contact.html">Contact Us</a>
+        <div class="call">
+            <a href="tel:+917666628000">
+                <i class="fa fa-phone-volume ringing-icon"></i>
+                76666 28000
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section class="hero-main-section">
+        <div class="hero-main-container">
+            <div class="hero-main-content">
+                <div class="hero-content-left">
+                    <h1 class="hero-main-title">
+                        Complete <span class="hero-text-highlight">ERP Solution</span> for Brick & Paver Manufacturing Plants
+                    </h1>
+
+                    <h2 class="hero-subheadline">
+                        From Raw Materials to Finished Products—Manage Every Stage of Your Production
+                    </h2>
+
+                    <p class="hero-main-description">
+                        <span class="hero-dot"></span>
+                        SAZS Apps Bricks & Pavers ERP is a 
+                        <strong>comprehensive management system</strong>
+                        designed specifically for brick and concrete paver manufacturing operations.
+                    </p>
+
+                    <p class="hero-main-description">
+                        <span class="hero-dot"></span>
+                        Track production batches, manage 
+                        <span class="hero-highlight">raw material inventory</span>, 
+                        monitor quality control, and automate sales—all from a single integrated platform.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="awesome-erp mb-5">
+        <div class="erp-container">
+            <div class="erp-left">
+                <h2>Why Brick & Paver Manufacturers Choose Us</h2>
+            </div>
+            <div class="erp-divider"></div>
+            <div class="erp-right">
+                <p>Industry-specific features built for the unique challenges of brick and paver production</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits Cards -->
+    <section class="why-us">
+        <div class="cards-container">
+            <div class="card1 fade-in">
+                <div class="hardware-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <h5>Production Management</h5>
+                <p>Track every batch from mixing to curing. Monitor machine performance, batch quality, and production efficiency in real-time.</p>
+            </div>
+
+            <div class="card2 fade-in">
+                <div class="hardware-icon">
+                    <i class="fas fa-boxes"></i>
+                </div>
+                <h5>Inventory Control</h5>
+                <p>Manage raw materials (cement, sand, aggregates, pigments) and finished goods inventory. Automatic reorder alerts prevent production delays.</p>
+            </div>
+
+            <div class="card3 fade-in">
+                <div class="hardware-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h5>Quality Assurance</h5>
+                <p>Document quality checks at every production stage. Maintain compliance with BIS standards and track batch-wise quality reports.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Overview -->
+    <section class="sections-container fade-in">
+        <div class="top-line">COMPLETE MANUFACTURING SOLUTION</div>
+        <h1>End-to-End <span class="succeed-text">Production Management</span></h1>
+        <p>
+            Brick and paver manufacturing involves complex production cycles, strict quality standards, and precise inventory management. 
+            Our ERP system integrates all aspects of your operations—from raw material procurement to finished goods dispatch—giving 
+            you complete visibility and control over your manufacturing process.
+        </p>
+    </section>
+
+    <!-- Key Features Grid -->
+    <section class="technology-section slide-in">
+        <div class="content">
+            <h3>POWERFUL FEATURES</h3>
+            <h1>Built for <span class="succeed-text">Manufacturing Excellence</span></h1>
+            <p>
+                Specialized modules designed for brick and paver plants to handle production scheduling, 
+                quality control, inventory management, and sales operations.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-calendar-check"></i></div>
+                <h4>Production Scheduling</h4>
+                <p>Plan daily production runs</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-chart-line"></i></div>
+                <h4>Batch Tracking</h4>
+                <p>Monitor every production batch</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-cube"></i></div>
+                <h4>Material Management</h4>
+                <p>Track raw material consumption</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                <h4>Quality Control</h4>
+                <p>BIS compliance documentation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Capabilities -->
+    <section class="awesome-erp" style="background: linear-gradient(135deg, #2C6FCE 0%, #3E89EC 100%);">
+        <div class="erp-container">
+            <div class="erp-left">
+                <h2>Comprehensive Management Tools</h2>
+            </div>
+            <div class="erp-divider"></div>
+            <div class="erp-right">
+                <p>Everything you need to run an efficient brick and paver manufacturing operation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Features -->
+    <section class="why-us">
+        <div class="cards-container">
+            <div class="card1 fade-in">
+                <div class="hardware-icon">
+                    <i class="fas fa-cash-register"></i>
+                </div>
+                <h5>Sales & Billing</h5>
+                <p>Create GST-compliant invoices, manage customer orders, and track payments. Handle bulk orders and dealer pricing seamlessly.</p>
+            </div>
+
+            <div class="card2 fade-in">
+                <div class="hardware-icon">
+                    <i class="fas fa-warehouse"></i>
+                </div>
+                <h5>Warehouse Management</h5>
+                <p>Track finished goods across multiple storage locations. Manage stock transfers, loading operations, and inventory levels.</p>
+            </div>
+
+            <div class="card3 fade-in">
+                <div class="hardware-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h5>Production Analytics</h5>
+                <p>Monitor production efficiency, machine utilization, wastage rates, and cost per unit with detailed analytics and reports.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry-Specific Features -->
+    <section class="sections-container fade-in" style="background-color: #f8f9fa;">
+        <div class="top-line">INDUSTRY EXPERTISE</div>
+        <h1>Built for <span class="succeed-text">Brick & Paver</span> Manufacturing</h1>
+        <p>
+            Our ERP understands the nuances of brick and paver production—curing times, batch variations, 
+            quality grades, color batches, size specifications, and seasonal demand patterns. We've worked with 
+            manufacturers to build features that address real production challenges, not generic workflows.
+        </p>
+        
+        <div class="industry-features" style="margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <div class="industry-item">
+                <h4 style="color: #333; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #3E89EC;"></i> Multi-Product Support</h4>
+                <p style="color: #666;">Manage different types: solid bricks, hollow blocks, fly ash bricks, concrete pavers, interlocking tiles</p>
+            </div>
+            <div class="industry-item" style="margin-top: 20px;">
+                <h4 style="color: #333; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #3E89EC;"></i> Curing Schedule Management</h4>
+                <p style="color: #666;">Track curing periods for different products and automatically update inventory when ready for sale</p>
+            </div>
+            <div class="industry-item" style="margin-top: 20px;">
+                <h4 style="color: #333; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #3E89EC;"></i> Color & Size Variants</h4>
+                <p style="color: #666;">Manage multiple color batches, sizes, and specifications with separate inventory tracking</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Footer -->
+    <footer class="footer-container fade-in">
+        <div class="footer-content">
+            <h1 class="heading">Ready to <span class="succeed-text">Optimize</span> Your Production?</h1>
+            <a href="../pages/contact.html" class="join-button">Request a Demo</a>
+        </div>
+    </footer>
+
+    <!-- Social Footer -->
+    <footer class="a">
+        <div class="b">
+            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                <img src="../../src/assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
+                rel="noopener">
+                <img src="../../src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                <img src="../../src/assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+            </a>
+            <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
+                <img src="../../src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                rel="noopener">
+                <img src="../../src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+            </a>
+        </div>
+
+        <div class="e">
+       <a href="../../index.html" class="f">Home</a>
+            <a href="./aboutus.html" class="f">About Us</a>
+            <a href="./features.html" class="f">Explore Features</a>
+            <a href="./careers.html" class="f">Careers</a>
+            <a href="./contact.html" class="f">Contact Us</a>
+            <a href="./Signup.html" class="f">Request a Demo</a>
+            <a href="./QuarryCrusher.html" class="f">Quarry  & Crusher</a>
+            <a href="./rmc.html" class="f">RMC</a>
+            <a href="./brickspaver.html" class="f">Bricks & Pavers</a>
+            <a href="./termsofService.html" class="f">Terms of Service</a>
+            <a href="./privacyPolicy.html" class="f">Privacy Policy</a>
+            <a href="./dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+        </div>
+    </footer>
+
+    <footer class="footerbottom">
+        <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+            May I help you?
+        </a>
+        <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+        <button class="scroll-top" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+        </button>
+    </footer>
+
+    <script>
+        // Mobile dropdown toggle
+        function toggleMobileDropdown() {
+            const dropdown = document.getElementById('mobileProductsDropdown');
+            const trigger = document.querySelector('.mobile-dropdown-trigger');
+            dropdown.classList.toggle('active');
+            trigger.classList.toggle('active');
+        }
+
+        // Close mobile dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileDropdown = document.querySelector('.mobile-dropdown');
+            if (mobileDropdown && !mobileDropdown.contains(event.target)) {
+                const dropdown = document.getElementById('mobileProductsDropdown');
+                const trigger = document.querySelector('.mobile-dropdown-trigger');
+                if (dropdown && trigger) {
+                    dropdown.classList.remove('active');
+                    trigger.classList.remove('active');
+                }
+            }
+        });
+
+        // Navigation functions
+        function toggleNav() {
+            const sidenav = document.getElementById("mySidenav");
+            const isOpen = sidenav.style.width === "250px";
+            if (isOpen) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            } else {
+                sidenav.style.width = "250px";
+                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
+            }
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.removeEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            }
+        }
+
+        // Highlight active page
+        function highlightActivePage() {
+            const currentPath = window.location.pathname;
+            const links = document.querySelectorAll(".nav-link");
+            links.forEach(link => {
+                const page = link.getAttribute("data-page");
+                if (currentPath.includes(page)) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        }
+
+        // Scroll to top
+        document.querySelector('.scroll-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Show/hide scroll button
+        window.addEventListener('scroll', () => {
+            const scrollButton = document.querySelector('.scroll-top');
+            scrollButton.style.display = window.scrollY > 200 ? 'flex' : 'none';
+        });
+
+        // Scroll animations
+        document.addEventListener("DOMContentLoaded", () => {
+            highlightActivePage();
+            const observerOptions = { threshold: 0.2 };
+            const animatedElements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, observerOptions);
+            animatedElements.forEach((el) => observer.observe(el));
+        });
+
+        // Header hide/show on scroll
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header-nav');
+        window.onscroll = function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            header.classList.toggle("hide", currentScroll > lastScrollTop);
+            header.classList.toggle("fixed", currentScroll > 100);
+            if (currentScroll <= 0) header.classList.remove("fixed");
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        };
+    </script>
+</body>
+
+</html>
