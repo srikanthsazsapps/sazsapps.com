@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <title>Case Study: Optimizing Quarry Profitability via Automated Theft Prevention</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="common.css"rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <meta name="description" content="Case study on how SAZS Apps ERP for Crusher & Quarry eliminated material theft, automated weighbridge operations, and boosted quarry profitability with secure stock tracking." />
   <meta name="keywords" content="Crusher ERP theft prevention, Quarry material loss control, Automated weighbridge integration, SAZS Apps ERP security, Quarry stock tracking software, Prevent weighbridge malpractice" />
@@ -582,9 +584,6 @@ section {
   border-radius: var(--radius-lg);
   background: #000000;
   border: 1px solid #373636;
-  /* background-image: url('./src/assets/contentImages/5429296.jpg'); */
-
-  /* box-shadow: 0 14px 40px rgba(0,0,0,0.9); */
 }
 
 section.compact {
@@ -905,724 +904,31 @@ section:nth-child(3) { animation-delay: 0.3s; }
 section:nth-child(4) { animation-delay: 0.4s; }
 
 </style>
-
-     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            background-color: rgb(255, 255, 255);
-            color: #333;
-        }
-        .sazs-header {
-            background: rgb(255, 255, 255) !important;
-            margin: 0 auto !important;
-            position: fixed !important;
-            left: 0 !important;
-            right: 0 !important;
-            z-index: 1000 !important;
-            transition: transform 0.3s ease-in-out !important;
-        }
-
-        .sazs-header.expanded {
-            background: rgba(255, 255, 255, 0.98);
-        }
-
-        .sazs-header-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 5px 0px;
-        }
-
-        .sazs-header-main {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .sazs-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .sazs-brand-image {
-            width: 150px;
-            height: 70px;
-            margin-top: 10px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            z-index: 1001 !important;
-            justify-content: center;
-        }
-
-        .sazs-menu-list {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-            padding-left: 70px;
-        }
-
-        .sazs-menu-item {
-            position: relative;
-        }
-
-        .sazs-menu-link {
-            color: rgba(0, 0, 0, 0.8);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-
-        .sazs-menu-link:hover {
-            color: #000000;
-        }
-
-        .sazs-menu-link.active {
-            color: #000000;
-        }
-
-        .sazs-arrow-svg {
-            width: 12px;
-            height: 12px;
-            transition: transform 0.3s;
-        }
-
-        .sazs-menu-item.active .sazs-arrow-svg {
-            transform: rotate(45deg);
-        }
-
-        .sazs-submenu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            padding: 0 2rem;
-        }
-
-        .sazs-submenu.active {
-            max-height: 800px;
-            padding: 2rem;
-        }
-
-        .sazs-submenu-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .sazs-submenu-col {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .sazs-col-heading {
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-        }
-
-        .sazs-product-card {
-            background: transparent;
-            border: none;
-            border-radius: 12px;
-            padding: 0;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: block;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-
-        .sazs-submenu.active .sazs-product-card {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .sazs-submenu.active .sazs-submenu-col:nth-child(1) .sazs-product-card {
-            transition-delay: 0.1s;
-        }
-
-        .sazs-submenu.active .sazs-submenu-col:nth-child(2) .sazs-product-card {
-            transition-delay: 0.2s;
-        }
-
-        .sazs-submenu.active .sazs-submenu-col:nth-child(3) .sazs-product-card {
-            transition-delay: 0.3s;
-        }
-
-        .sazs-product-card:hover {
-            transform: translateY(-4px);
-            opacity: 1;
-        }
-
-        .sazs-card-img-wrapper {
-            width: 100%;
-            height: 200px;
-            background: #000000;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-
-        .sazs-card-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .sazs-card-img-wrapper svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .sazs-card-heading {
-            color: #000000;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            padding: 0 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .sazs-card-text {
-            color: rgba(0, 0, 0, 0.5);
-            font-size: 0.85rem;
-            line-height: 1.5;
-            padding: 0 0.75rem 0.75rem;
-        }
-
-        .sazs-external-svg {
-            width: 12px;
-            height: 12px;
-            opacity: 0.5;
-        }
-
-        .sazs-label {
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
-            background: rgba(139, 92, 246, 0.2);
-            color: #a78bfa;
-            font-size: 0.65rem;
-            font-weight: 700;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .sazs-label.new {
-            background: rgba(239, 68, 68, 0.2);
-            color: #f87171;
-        }
-
-        .sazs-label.year {
-            background: rgba(255, 255, 255, 0.1);
-            color: rgba(0, 0, 0, 0.6);
-        }
-
-        .sazs-cta-group {
-            padding-left: 400px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .sazs-button {
-            padding: 0.65rem 1.5rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .sazs-button-outline {
-            background: transparent;
-            color: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.2);
-        }
-
-        .sazs-button-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: #000000;
-            border-color: rgba(0, 0, 0, 0.3);
-        }
-
-        .sazs-button-gradient {
-            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
-            color: #000000;
-        }
-
-        .sazs-button-gradient:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
-        }
-
-        .sazs-hamburger {
-            display: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .sazs-hamburger i {
-            font-size: 24px;
-            color: #000000;
-        }
-
-        .sazs-courses-area {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .sazs-courses-layout {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        /* Features Dropdown Styles */
-        .features-dropdown {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            max-width: 1200px;
-        }
-
-        .features-left {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .features-section-title {
-            color: rgba(0, 0, 0, 0.5);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .features-link {
-            color: rgba(0, 0, 0, 0.9);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            transition: all 0.2s;
-            display: block;
-        }
-
-        .features-link:hover {
-            color: #000000;
-            padding-left: 0.5rem;
-        }
-
-        .features-right {
-            border-left: 1px solid rgba(0, 0, 0, 0.1);
-            padding-left: 3rem;
-        }
-
-        .features-case-studies-title {
-            color: rgba(0, 0, 0, 0.5);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .features-case-studies-subtitle {
-            color: rgba(0, 0, 0, 0.7);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-
-        .features-case-studies-link {
-            color: rgba(0, 0, 0, 0.9);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .features-case-studies-link:hover {
-            color: #000000;
-        }
-
-        .features-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .features-case-card {
-            background: transparent;
-            border-radius: 12px;
-            overflow: hidden;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: block;
-        }
-
-        .features-case-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .features-case-image {
-            width: 100%;
-            height: 180px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-            background: #f5f5f5;
-        }
-
-        .features-case-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .features-case-title {
-            color: #000000;
-            font-size: 0.9rem;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-
-        /* ================= SIDENAV STYLES ================= */
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 1);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: white !important;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            padding: 8px 8px 8px 32px;
-        }
-
-        .sidenav-logo {
-            width: 130px;
-            margin-bottom: 20px;
-            margin-left: 50px;
-        }
-
-        .mobile-dropdown {
-            position: relative;
-        }
-
-        .mobile-dropdown-trigger {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 8px 8px 32px;
-            font-size: 25px;
-            color: white !important;
-            cursor: pointer;
-        }
-
-        .mobile-dropdown-trigger i {
-            font-size: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .mobile-dropdown-trigger.active i {
-            transform: rotate(180deg);
-        }
-
-        .mobile-dropdown-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding-left: 50px;
-        }
-
-        .mobile-dropdown-content.active {
-            max-height: 300px;
-        }
-
-        .mobile-dropdown-content a {
-            font-size: 20px !important;
-            padding: 8px 0 !important;
-        }
-
-        .call {
-            padding: 10px 0;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            color: white !important;
-            font-weight: bold;
-            font-size: 27px !important;
-        }
-
-        .call a {
-            text-decoration: none !important;
-            color: white !important;
-            padding: 8px 8px 8px 32px;
-        }
-
-        .ringing-icon {
-            font-size: 22px !important;
-            color: white;
-            animation: ring 1s infinite ease-in-out;
-            margin: 0 20px 7px 0 !important;
-        }
-
-        @keyframes ring {
-            0% { transform: rotate(0deg); }
-            10% { transform: rotate(15deg); }
-            20% { transform: rotate(-15deg); }
-            30% { transform: rotate(10deg); }
-            40% { transform: rotate(-10deg); }
-            50% { transform: rotate(5deg); }
-            60% { transform: rotate(-5deg); }
-            100% { transform: rotate(0deg); }
-        }
-
-        /* ================= RESPONSIVE STYLES ================= */
-        @media (max-width: 1400px) {
-            .sazs-cta-group {
-                padding-left: 200px;
-            }
-
-            .sazs-header-wrapper {
-                padding: 1rem 1.5rem;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .sazs-menu-list {
-                padding-left: 40px;
-                gap: 1.5rem;
-            }
-
-            .sazs-cta-group {
-                padding-left: 100px;
-            }
-
-            .sazs-menu-link {
-                font-size: 16px;
-            }
-
-            .sazs-submenu-grid {
-                gap: 1.5rem;
-            }
-
-            .features-dropdown {
-                grid-template-columns: 1fr;
-            }
-
-            .features-right {
-                border-left: none;
-                border-top: 1px solid rgba(0, 0, 0, 0.1);
-                padding-left: 0;
-                padding-top: 2rem;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .sazs-menu-list,
-            .sazs-cta-group {
-                display: none;
-            }
-
-            .sazs-hamburger {
-                display: block;
-            }
-
-            .sazs-header-wrapper {
-                padding: 1rem;
-            }
-
-            .sazs-brand-image {
-                width: 120px;
-                height: 40px;
-            }
-
-            .sazs-submenu-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-
-            .sazs-submenu {
-                padding: 0 1rem;
-            }
-
-            .sazs-submenu.active {
-                padding: 1.5rem 1rem;
-            }
-
-            .sazs-card-img-wrapper {
-                height: 180px;
-            }
-
-            .sazs-card-heading {
-                font-size: 0.9rem;
-            }
-
-            .sazs-card-text {
-                font-size: 0.8rem;
-            }
-
-            .features-cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding-top: 60px;
-            }
-
-            .sazs-header {
-                top: 10px !important;
-            }
-
-            .sazs-header-wrapper {
-                padding: 0.75rem 1rem;
-            }
-
-            .sazs-brand-image {
-                width: 100px;
-                height: 35px;
-            }
-
-            .sazs-submenu-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .sazs-submenu.active {
-                max-height: 2000px;
-                padding: 1rem;
-            }
-
-            .sazs-card-img-wrapper {
-                height: 160px;
-            }
-
-            .sazs-card-heading {
-                font-size: 0.85rem;
-                padding: 0 0.5rem;
-            }
-
-            .sazs-card-text {
-                font-size: 0.75rem;
-                padding: 0 0.5rem 0.5rem;
-            }
-
-            .features-cards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding-top: 50px;
-            }
-
-            .sazs-header {
-                top: 5px !important;
-            }
-
-            .sazs-header-wrapper {
-                padding: 0.5rem 0.75rem;
-            }
-
-            .sazs-brand-image {
-                width: 80px;
-                height: 30px;
-            }
-
-            .sazs-hamburger {
-                padding: 0.25rem;
-            }
-
-            .sazs-submenu.active {
-                padding: 0.75rem;
-            }
-
-            .sazs-card-img-wrapper {
-                height: 140px;
-                border-radius: 8px;
-            }
-
-            .sazs-product-card {
-                border-radius: 8px;
-            }
-
-            .sazs-card-heading {
-                font-size: 0.8rem;
-            }
-
-            .sazs-card-text {
-                font-size: 0.7rem;
-                line-height: 1.4;
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="sazs-header">
+<div class="page-wrap">
+    <!-- 
+    
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div>
+          <div class="brand-text-main">SAZS Apps ERP</div>
+          <div class="brand-text-sub">Crusher • Quarry • RMC • Bricks</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#challenge">Challenge</a>
+        <a href="#solution">Solution</a>
+        <a href="#results">Results</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="nav-pill">Security & Stock Control</div>
+        <button class="nav-button" onclick="scrollToSection('results')">
+          Book a demo
+        </button>
+      </div>
+    </div> -->
+  <nav class="sazs-header">
         <div class="sazs-header-wrapper">
             <div class="sazs-header-main">
                 <a href="/" class="sazs-brand">
@@ -1756,26 +1062,38 @@ section:nth-child(4) { animation-delay: 0.4s; }
                         </a>
 
                         <div class="features-cards-grid">
-                            <a href="#" class="features-case-card">
+                            <a href="CaseStudies1.html" class="features-case-card">
                                 <div class="features-case-image">
                                     <img src="./src/assets/contentImages/quarrydrone.png" alt="Case Study 1" />
                                 </div>
                                 <div class="features-case-title">1.Optimizing Quarry Profitability via Automated Theft Prevention</div>
                             </a>
 
-                            <a href="#" class="features-case-card">
+                            <a href="CaseStudies2.html" class="features-case-card">
                                 <div class="features-case-image">
                                     <img src="./src/assets/contentImages/bricksdrone.png" alt="Case Study 2" />
                                 </div>
-                                <div class="features-case-title">2</div>
+                                <div class="features-case-title">2.Transforming Customer Experience & Order Speed in Heavy Building Materials </div>
                             </a>
 
-                            <a href="#" class="features-case-card">
+                            <a href="CaseStudies3.html" class="features-case-card">
                                 <div class="features-case-image">
                                     <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 3" />
                                 </div>
-                                <div class="features-case-title">3</div>
+                                <div class="features-case-title">3.Automating E-Invoicing & GST Compliance in Building Materials </div>
                             </a>
+                             <a href="CaseStudies4.html" class="features-case-card">
+                                <div class="features-case-image">
+                                    <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 4" />
+                                </div>
+                                <div class="features-case-title">4.Real-Time Vehicle & Trip Management for High-Volume Operations</div>
+                            </a>
+                               <a href="CaseStudies5.html" class="features-case-card">
+                                    <div class="features-case-image">
+                                        <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 5" />
+                                    </div>
+                                    <div class="features-case-title">5.Complete Financial Control & Profit Analysis for Quarry & RMC Owners</div>
+                                </a>
                         </div>
                     </div>
                 </div>
@@ -1784,37 +1102,172 @@ section:nth-child(4) { animation-delay: 0.4s; }
     </nav>
 
     <!-- Mobile Side Navigation -->
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
-        <a href="./index.html" class="logo-link" aria-label="Go to homepage" role="link">
-            <img src="./src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page" class="sidenav-logo">
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
+
+    <a href="./index.html" class="logo-link" aria-label="Go to homepage" role="link">
+        <img src="./src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page" class="sidenav-logo">
+    </a>
+
+    <a href="./index.html">Home</a>
+    <a href="./src/pages/aboutus.html">About Us</a>
+
+    <!-- Mobile Products Dropdown -->
+    <div class="mobile-dropdown">
+        <a href="javascript:void(0);" onclick="toggleMobileDropdown(this)" class="mobile-dropdown-trigger">
+            Products <i class="fa fa-chevron-down"></i>
         </a>
-        <a href="./index.html">Home</a>
-        <a href="./src/pages/aboutus.html">About Us</a>
-
-        <!-- Mobile Products Dropdown -->
-        <div class="mobile-dropdown">
-            <a href="javascript:void(0);" onclick="toggleMobileDropdown()" class="mobile-dropdown-trigger">
-                Products <i class="fa fa-chevron-down"></i>
-            </a>
-            <div class="mobile-dropdown-content" id="mobileProductsDropdown">
-                <a href="./src/pages/QuarryCrusher.html">Quarry & Crusher</a>
-                <a href="./src/pages/rmc.html">Ready Mix Concrete</a>
-                <a href="./src/pages/brickspaver.html">Bricks & Pavers</a>
-            </div>
-        </div>
-
-        <a href="./src/pages/features.html" role="link" aria-label="Explore the features of Sazs Apps">Explore Features</a>
-        <a href="./src/pages/careers.html">Careers</a>
-        <a href="./src/pages/Signup.html">Sign Up</a>
-        <a href="./src/pages/contact.html">Contact Us</a>
-        <div class="call">
-            <a href="tel:+917666628000">
-                <i class="fa fa-phone-volume ringing-icon"></i>
-                76666 28000
-            </a>
+        <div class="mobile-dropdown-content">
+            <a href="./src/pages/QuarryCrusher.html">Quarry & Crusher</a>
+            <a href="./src/pages/rmc.html">Ready Mix Concrete</a>
+            <a href="./src/pages/brickspaver.html">Bricks & Pavers</a>
         </div>
     </div>
+
+    <a href="./src/pages/features.html">Explore Features</a>
+
+    <!-- Mobile Case Studies Dropdown -->
+    <div class="mobile-dropdown">
+        <a href="javascript:void(0);" onclick="toggleMobileDropdown(this)" class="mobile-dropdown-trigger">
+            Case Studies <i class="fa fa-chevron-down"></i>
+        </a>
+        <div class="mobile-dropdown-content">
+            <a href="CaseStudies1.html">Case Study 1</a>
+            <a href="CaseStudies2.html">Case Study 2</a>
+            <a href="CaseStudies3.html">Case Study 3</a>
+            <a href="CaseStudies4.html">Case Study 4</a>
+            <a href="CaseStudies5.html">Case Study 5</a>
+        </div>
+    </div>
+
+    <a href="./src/pages/careers.html">Careers</a>
+    <a href="./src/pages/Signup.html">Sign Up</a>
+    <a href="./src/pages/contact.html">Contact Us</a>
+
+    <div class="call">
+        <a href="tel:+917666628000">
+            <i class="fa fa-phone-volume ringing-icon"></i>
+            76666 28000
+        </a>
+    </div>
+</div>
+
+
+    <script>
+        function toggleMobileDropdown(trigger) {
+    const dropdown = trigger.nextElementSibling;
+
+    // Close other dropdowns
+    document.querySelectorAll('.mobile-dropdown-content').forEach(d => {
+        if (d !== dropdown) d.classList.remove('active');
+    });
+
+    document.querySelectorAll('.mobile-dropdown-trigger').forEach(t => {
+        if (t !== trigger) t.classList.remove('active');
+    });
+
+    // Toggle current
+    dropdown.classList.toggle('active');
+    trigger.classList.toggle('active');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function (event) {
+    if (!event.target.closest('.mobile-dropdown')) {
+        document.querySelectorAll('.mobile-dropdown-content').forEach(d => d.classList.remove('active'));
+        document.querySelectorAll('.mobile-dropdown-trigger').forEach(t => t.classList.remove('active'));
+    }
+});
+
+        const navLinks = document.querySelectorAll('[data-dropdown]');
+        const navbar = document.querySelector('.sazs-header-wrapper');
+        let currentActive = null;
+        let hoverTimeout = null;
+
+        navLinks.forEach(link => {
+            const navItem = link.closest('.sazs-menu-item');
+            const dropdownId = link.getAttribute('data-dropdown');
+            const dropdown = document.getElementById(dropdownId);
+
+            // Hover on nav link
+            navItem.addEventListener('mouseenter', () => {
+                clearTimeout(hoverTimeout);
+
+                // Close all dropdowns
+                document.querySelectorAll('.sazs-submenu').forEach(d => {
+                    d.classList.remove('active');
+                });
+                document.querySelectorAll('.sazs-menu-item').forEach(n => {
+                    n.classList.remove('active');
+                });
+
+                // Open hovered dropdown
+                dropdown.classList.add('active');
+                navItem.classList.add('active');
+                currentActive = dropdown;
+            });
+
+            // Keep dropdown open when hovering over it
+            dropdown.addEventListener('mouseenter', () => {
+                clearTimeout(hoverTimeout);
+            });
+
+            dropdown.addEventListener('mouseleave', () => {
+                hoverTimeout = setTimeout(() => {
+                    dropdown.classList.remove('active');
+                    navItem.classList.remove('active');
+                    currentActive = null;
+                }, 200);
+            });
+        });
+
+        // Close dropdown when leaving navbar
+        navbar.addEventListener('mouseleave', () => {
+            hoverTimeout = setTimeout(() => {
+                document.querySelectorAll('.sazs-submenu').forEach(d => {
+                    d.classList.remove('active');
+                });
+                document.querySelectorAll('.sazs-menu-item').forEach(n => {
+                    n.classList.remove('active');
+                });
+                currentActive = null;
+            }, 200);
+        });
+
+        // Mobile sidenav functions
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.addEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.removeEventListener("click", closeNavOnClickOutside);
+        }
+
+        function toggleNav() {
+            const sidenav = document.getElementById("mySidenav");
+            const isOpen = sidenav.style.width === "250px";
+
+            if (isOpen) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            } else {
+                sidenav.style.width = "250px";
+                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
+            }
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".sazs-hamburger")) {
+                closeNav();
+            }
+        }
+
+     
+      
+    </script>
 
   <main>
     <div class="topsection">
@@ -1828,6 +1281,8 @@ section:nth-child(4) { animation-delay: 0.4s; }
       <p class="hero-subtitle">
         This case study highlights how SAZS Apps ERP transformed security and operational integrity for a leading crusher and quarry business. By replacing vulnerable manual processes with advanced digital oversight, the company eliminated systemic leaks and secured its bottom line.
       </p>
+            <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=Financial+Intelligence+Dashboard" alt="Real-time financial control and profit analysis dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" />
+
       <div class="hero-badges">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
@@ -1846,18 +1301,7 @@ section:nth-child(4) { animation-delay: 0.4s; }
         <button class="hero-cta-primary" onclick="scrollToSection('solution')">
           Explore the solution
         </button>
-        <!-- <button class="hero-cta-secondary" onclick="scrollToSection('comparison')">
-          View before / after <span class="icon">↗</span>
-        </button> -->
       </div>
-    </div>
-
-    <!-- HERO IMAGE SECTION - New strategic placement -->
-    <div class="hero-image-section">
-      <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=600&fit=crop" 
-           alt="Modern quarry operations with trucks and weighbridge system" 
-           loading="eager">
-      <div class="image-caption">Advanced quarry operations with integrated weighbridge and GPS tracking systems</div>
     </div>
 
     <section class="hero">
@@ -2103,25 +1547,6 @@ section:nth-child(4) { animation-delay: 0.4s; }
               <li>Multi-site operators managing weighbridges</li>
             </ul>
           </section>
-
-          <!-- <section class="compact">
-            <div class="section-kicker">SEO focus</div>
-            <h2>Target search themes</h2>
-            <p class="section-intro">
-              This case study is optimized around queries that reflect the pain of quarry material loss and the need for secure, integrated weighbridge software.
-            </p>
-            <div class="badge-list">
-              <span class="badge-chip">Crusher ERP theft prevention</span>
-              <span class="badge-chip">Quarry material loss control</span>
-              <span class="badge-chip">Automated weighbridge integration</span>
-              <span class="badge-chip">SAZS Apps ERP security</span>
-              <span class="badge-chip">Quarry stock tracking software</span>
-              <span class="badge-chip">Prevent weighbridge malpractice</span>
-            </div>
-            <p class="seo-foot">
-              Internal links can point from this page to product deep‑dives, demo signup, and feature comparisons for weighbridge automation.
-            </p>
-          </section> -->
         </aside>
         </aside>
       </div>
@@ -2137,111 +1562,354 @@ section:nth-child(4) { animation-delay: 0.4s; }
 </div>
 
 <script>
-  const navLinks = document.querySelectorAll('[data-dropdown]');
-  const navbar = document.querySelector('.sazs-header-wrapper');
-  let currentActive = null;
-  let hoverTimeout = null;
-
-  navLinks.forEach(link => {
-      const navItem = link.closest('.sazs-menu-item');
-      const dropdownId = link.getAttribute('data-dropdown');
-      const dropdown = document.getElementById(dropdownId);
-
-      navItem.addEventListener('mouseenter', () => {
-          clearTimeout(hoverTimeout);
-
-          document.querySelectorAll('.sazs-submenu').forEach(d => {
-              d.classList.remove('active');
-          });
-          document.querySelectorAll('.sazs-menu-item').forEach(n => {
-              n.classList.remove('active');
-          });
-
-          dropdown.classList.add('active');
-          navItem.classList.add('active');
-          currentActive = dropdown;
-      });
-
-      dropdown.addEventListener('mouseenter', () => {
-          clearTimeout(hoverTimeout);
-      });
-
-      dropdown.addEventListener('mouseleave', () => {
-          hoverTimeout = setTimeout(() => {
-              dropdown.classList.remove('active');
-              navItem.classList.remove('active');
-              currentActive = null;
-          }, 200);
-      });
-  });
-
-  navbar.addEventListener('mouseleave', () => {
-      hoverTimeout = setTimeout(() => {
-          document.querySelectorAll('.sazs-submenu').forEach(d => {
-              d.classList.remove('active');
-          });
-          document.querySelectorAll('.sazs-menu-item').forEach(n => {
-              n.classList.remove('active');
-          });
-          currentActive = null;
-      }, 200);
-  });
-
-  function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.addEventListener("click", closeNavOnClickOutside);
-  }
-
-  function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.removeEventListener("click", closeNavOnClickOutside);
-  }
-
-  function toggleNav() {
-      const sidenav = document.getElementById("mySidenav");
-      const isOpen = sidenav.style.width === "250px";
-
-      if (isOpen) {
-          sidenav.style.width = "0";
-          document.removeEventListener("click", closeNavOnClickOutside);
-      } else {
-          sidenav.style.width = "250px";
-          setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
-      }
-  }
-
-  function closeNavOnClickOutside(event) {
-      const sidenav = document.getElementById("mySidenav");
-      if (!sidenav.contains(event.target) && !event.target.closest(".sazs-hamburger")) {
-          closeNav();
-      }
-  }
-
-  function toggleMobileDropdown() {
-      const dropdown = document.getElementById('mobileProductsDropdown');
-      const trigger = document.querySelector('.mobile-dropdown-trigger');
-
-      dropdown.classList.toggle('active');
-      trigger.classList.toggle('active');
-  }
-
-  document.addEventListener('click', function(event) {
-      const mobileDropdown = document.querySelector('.mobile-dropdown');
-      if (mobileDropdown && !mobileDropdown.contains(event.target)) {
-          const dropdown = document.getElementById('mobileProductsDropdown');
-          const trigger = document.querySelector('.mobile-dropdown-trigger');
-          if (dropdown && trigger) {
-              dropdown.classList.remove('active');
-              trigger.classList.remove('active');
-          }
-      }
-  });
-
   function scrollToSection(id) {
     const el = document.getElementById(id);
     if (!el) return;
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 </script>
+ <style>
+    /* Footer: "Together We Grow" Section */
+.footer-container {
+    position: relative;
+    background-color: rgb(255, 255, 253);
+    padding: 0px 20px;
+    padding-top: 30px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(255, 255, 253);
+    border-radius: 50% 50% 0 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.heading {
+    color: #2d3748;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    letter-spacing: 10px;
+}
+
+.succeed-text {
+    color: #3E89EC;
+}
+
+.join-button {
+    display: inline-block;
+    background-color: #216DCE;
+    color: #fafbfc !important;
+    padding: 12px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.join-button:hover {
+    background-color: #333;
+}
+
+/* Social Links & Navigation Section */
+.a {
+    background-color: rgb(255, 255, 253);
+    color: #333;
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+
+.b {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.c {
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.c:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.d {
+    width: 30px;
+    transition: filter 0.3s ease;
+}
+
+.d:hover {
+    filter: brightness(1.2);
+}
+
+.e {
+    font-size: 14px;
+    color: #333;
+    padding: 30px 0 0;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.f {
+    color: #333;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.f:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.f:not(:last-child)::after {
+    content: " | ";
+    color: #333;
+}
+
+/* Animations for footer links and icons */
+.c,
+.f {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bottom Footer (Copyright + Help Button) */
+.footerbottom {
+    padding: 40px 0 40px;
+    background: #0b0d1f;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footerbottom span {
+    font-size: 14px;
+}
+
+/* WhatsApp Help Button */
+.help-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border: 2px solid #6aa5ff;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(99, 91, 255, 0.3);
+}
+
+.help-btn:hover {
+    background-color: #1f78fc;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+    display: none; /* Shown via JS when scrolling */
+}
+
+.scroll-top:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Adjustments for Footer */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 36px;
+    }
+
+    .join-button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .help-btn {
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .scroll-top {
+        display: none;
+    }
+
+    .footer-container {
+        padding: 12px 15px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .help-btn {
+        width: auto;
+        left: 5%;
+        bottom: 5%;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .heading {
+        font-size: 28px;
+        letter-spacing: 6px;
+    }
+
+    .b {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .d {
+        width: 28px;
+    }
+}
+   </style>
+            <!-- <footer class="footer-container ">
+                <div class="footer-content">
+                    <h1 class="heading zoom-in">Together<span class="succeed-text"> We Grow !</span></h1>
+                    <a href="./src/pages/contact.html" class="join-button">Contact Us</a>
+
+                </div>
+            </footer> -->
+
+            <footer class="a">
+                <div class="b">
+                    <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                        <img src="src/assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
+                        class="c" rel="noopener">
+                        <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+                    </a>
+                    <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c"
+                        rel="noopener">
+                        <img src="src/assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+                    </a>
+                    <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
+                        <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+                    </a>
+                    <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                        rel="noopener">
+                        <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+                    </a>
+                </div>
+
+                <div class="e">
+                    <a href="./index.html" class="f">Home</a>
+                    <a href="./src/pages/aboutus.html" class="f">About Us</a>
+                    <a href="./src/pages/features.html" class="f">Explore Features</a>
+                    <a href="./src/pages/careers.html" class="f">Careers</a>
+                    <a href="./src/pages/contact.html" class="f">Contact Us</a>
+                    <a href="./src/pages/Signup.html " class="f">Request a Demo</a>
+                    <a href="./src/pages/termsofService.html" class="f">Terms of Service</a>
+                    <a href="./src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
+                    <a href="./src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
+                </div>
+            </footer>
+            <footer class="footerbottom">
+                <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+                    May I help you?
+                </a> -->
+                <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+                <button class="scroll-top" aria-label="Scroll to top">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                    </svg>
+                </button>
+            </footer>
+
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.workflow-card, .feature-card, .method-card, .app-card, .report-card, .benefit-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s, transform 0.6s';
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>

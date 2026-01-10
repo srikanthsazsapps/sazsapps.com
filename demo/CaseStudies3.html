@@ -468,9 +468,18 @@
     }
 
     .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+   position: sticky;
+  top: 100px;
+  border-radius: var(--radius-xl);
+  background: var(--grad-section);
+  border: 1px solid #262626;
+  box-shadow: var(--shadow-soft);
+  padding: 20px 20px 18px;
+  overflow: hidden;
+  align-self: start;
+
+
+
     }
 
     .badge-list {
@@ -765,7 +774,7 @@
             </div>
           </section>
 
-          <section class="compact">
+          <!-- <section class="compact">
             <div class="section-kicker">SEO focus</div>
             <h2>Target search themes</h2>
             <p class="section-intro">
@@ -780,7 +789,7 @@
               <span class="badge-chip">Automated E-way bill for quarries</span>
               <span class="badge-chip">GST compliant crusher software</span>
             </div>
-          </section>
+          </section> -->
         </aside>
       </div>
     </section>

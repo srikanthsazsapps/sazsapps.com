@@ -1,683 +1,1635 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Study: How SAZS Apps ERP Scaled Vehicle Management with Real-Time Analytics</title>
+  <meta charset="UTF-8" />
+  <title>Case Study: Real-Time Vehicle & Trip Management for High-Volume Operations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="common.css"rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2a6df5;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --dark: #111827;
-            --light: #f9fafb;
-            --gray: #6b7280;
-            --gray-light: #e5e7eb;
-            --radius-xl: 12px;
-            --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --grad-section: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #374151;
-            background-color: #ffffff;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        .site-header {
-            padding: 16px 0;
-            border-bottom: 1px solid var(--gray-light);
-            position: sticky;
-            top: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .logo span {
-            color: var(--primary);
-        }
-        
-        .main-nav ul {
-            display: flex;
-            list-style: none;
-            gap: 32px;
-        }
-        
-        .main-nav a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .main-nav a:hover {
-            color: var(--primary);
-        }
-        
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .search-btn {
-            background: none;
-            border: none;
-            color: var(--gray);
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-        
-        .cta-button {
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-        
-        .cta-button:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        /* Hero Section */
-        .case-study-hero {
-            padding: 80px 0 60px;
-            border-bottom: 1px solid var(--gray-light);
-        }
-        
-        .case-study-meta {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-        
-        .category-tag {
-            background-color: #e0f2fe;
-            color: #0369a1;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-        
-        .case-study-hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.1;
-            color: var(--dark);
-            margin-bottom: 24px;
-            font-family: 'Merriweather', serif;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--gray);
-            margin-bottom: 40px;
-            max-width: 800px;
-        }
-        
-        
-        /* AI Summary Section */
-        .ai-summary {
-            background-color: #f0f9ff;
-            padding: 40px;
-            border-radius: 12px;
-            margin: 60px 0;
-            border-left: 4px solid var(--primary);
-        }
-        
-        .ai-summary h2 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .ai-summary h2 i {
-            color: var(--primary);
-        }
-        
-        .summary-points {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 24px;
-        }
-        
-        .summary-point {
-            background-color: white;
-            padding: 24px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .summary-point h3 {
-            margin-bottom: 12px;
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .summary-point h3 i {
-            color: var(--secondary);
-        }
-        
-        /* Main Content */
-        .case-study-content {
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 40px;
-            padding: 60px 0;
-            max-width: 1400px;
-            margin: 0 auto;
-            background-color: #000000;
-            padding: 60px 40px;
-            border-radius: 12px;
-        }
-        
-        .article-content {
-            max-width: none;
-            color: #ffffff;
-        }
-        
-        .content-section {
-            margin-bottom: 60px;
-        }
-        
-        .content-section h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: #ffffff;
-            font-family: 'Merriweather', serif;
-        }
-        
-        .content-section p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #e5e7eb;
-        }
-        
-        .content-section h3 {
-            color: #ffffff;
-        }
-        
-        .content-section ul {
-            color: #d1d5db;
-        }
-        
-        .content-section strong {
-            color: #ffffff;
-        }
-        
-        .highlight-box {
-            background-color: #1a1a1a;
-            border-left: 4px solid #f59e0b;
-            padding: 24px;
-            margin: 32px 0;
-            border-radius: 0 8px 8px 0;
-            border: 1px solid #333333;
-            border-left: 4px solid #f59e0b;
-        }
-        
-        .highlight-box p {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #fbbf24;
-            margin: 0;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 24px;
-            margin: 40px 0;
-        }
-        
-        .stat-card {
-            background-color: #1a1a1a;
-            border: 1px solid #333333;
-            border-radius: 8px;
-            padding: 32px 24px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-        
-        .stat-label {
-            color: #d1d5db;
-            font-weight: 500;
-        }
-        
-        /* Table of Contents */
-        .table-of-contents {
-            position: sticky;
-            top: 100px;
-            border-radius: var(--radius-xl);
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            border: 1px solid #333333;
-            box-shadow: var(--shadow-soft);
-            padding: 20px 20px 18px;
-            overflow: hidden;
-            align-self: start;
-            max-height: calc(100vh - 120px);
-        }
-        
-        .toc-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-        
-        .toc-header h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #ffffff;
-        }
-        
-        .toc-list {
-            list-style: none;
-        }
-        
-        .toc-list li {
-            margin-bottom: 14px;
-            padding-bottom: 14px;
-            border-bottom: 1px solid #333333;
-        }
-        
-        .toc-list li:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .toc-list a {
-            text-decoration: none;
-            color: #d1d5db;
-            font-weight: 500;
-            font-size: 0.875rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s;
-            line-height: 1.4;
-        }
-        
-        .toc-list a:hover {
-            color: var(--primary);
-        }
-        
-        .toc-list i {
-            color: var(--primary);
-            font-size: 0.75rem;
-            flex-shrink: 0;
-        }
-        
-        /* Footer */
-        .site-footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 40px;
-            margin-top: 80px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-column a {
-            color: #d1d5db;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid #374151;
-            color: #9ca3af;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .case-study-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .table-of-contents {
-                position: static;
-            }
-            
-            .case-study-hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .main-nav ul {
-                gap: 20px;
-            }
-            
-            .case-study-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .summary-points {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .main-nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .case-study-hero {
-                padding: 40px 0;
-            }
-            
-            .ai-summary {
-                padding: 24px;
-            }
-        }
-    </style>
+
+  <!-- SEO -->
+  <meta name="description" content="How SAZS Apps ERP eliminated ghost trips and transformed logistics operations with GPS-integrated tracking and weighbridge validation for crusher, quarry, RMC, and brick plant operations." />
+  <meta name="keywords" content="Crusher ERP logistics, Quarry vehicle management software, Readymix RMC trip tracking, SAZS Apps ERP GPS, Brick plant fleet management" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0b0b0b;
+      --card: #050505;
+      --accent: #ffffff;
+      --accent-soft: #e5e5e5;
+      --accent-strong: #ffffff;
+      --text-main: #f5f5f5;
+      --text-soft: #d4d4d4;
+      --text-muted: #ffffff;
+      --border-subtle: #262626;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.9);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --radius-full: 999px;
+      --grad-main: linear-gradient(135deg,#000000,#111111);
+      --grad-pill: linear-gradient(135deg,#f5f5f5,#ffffff);
+      --grad-section: radial-gradient(circle at top,#050505,#000000 55%);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: #000000;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-wrap {
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+      color: var(--text-main);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom,rgba(0,0,0,0.96),rgba(0,0,0,0.7),transparent);
+      border-bottom: 1px solid #262626;
+    }
+
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 30%;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: inherit;
+      background: #000000;
+    }
+
+    .brand-text-main {
+      font-size: 1.05rem;
+      font-weight: 650;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-text-sub {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: var(--accent-strong);
+      border-radius: 999px;
+      transition: width 160ms ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-pill {
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      border: 1px solid #404040;
+      color: var(--text-soft);
+      background: #000000;
+    }
+
+    .nav-button {
+      padding: 7px 18px;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: var(--grad-pill);
+      color: #000000;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 0 1px #171717, 0 14px 25px rgba(0,0,0,0.8);
+    }
+
+    .nav-button:hover {
+      filter: brightness(0.9);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        padding-inline: 16px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .nav-cta {
+        display: none;
+      }
+      .brand-text-main {
+        font-size: 0.95rem;
+      }
+      .brand-text-sub {
+        font-size: 0.68rem;
+      }
+    }
+
+    main {
+      margin: 0 auto;
+      padding: 32px 18px 64px;
+    }
+
+    .topsection {
+      max-width: 780px;
+      margin: 80px auto 28px auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 10px 3px 3px;
+      border-radius: 999px;
+      background: #000000;
+      border: 1px solid #404040;
+      margin-bottom: 14px;
+    }
+
+    .hero-k-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    .hero-k-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem,2.7vw,2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      color: #101010;
+    }
+
+    .hero-title span.accent {
+      color: #000000;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: #000000;
+      margin-bottom: 18px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      border: 1px solid #333333;
+      font-size: 0.8rem;
+      color: #f5f5f5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.2s ease;
+    }
+    
+    .hero-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .hero-cta-primary {
+      padding: 11px 22px;
+      border-radius: 999px;
+      border: none;
+      background: var(--grad-pill);
+      color: #000000;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.9);
+    }
+
+    .hero-cta-primary:hover {
+      filter: brightness(0.9);
+      transform: translateY(-1px);
+    }
+
+    .hero-footnote {
+      font-size: 0.77rem;
+      color: #000000;
+    }
+
+    .hero-footnote strong {
+      color: #000000;
+    }
+
+    .layout-main {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,3fr);
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 920px) {
+      .layout-main {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    .content-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    section {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+
+    section.compact {
+      padding-block: 14px;
+    }
+
+    section.alt {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
+      border: 1px solid #333333;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    h2 {
+      font-size: 1.22rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      margin-top: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    ul li {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .pill-metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .pill-metric {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      border: 1px solid #333333;
+      font-size: 0.76rem;
+      color: var(--text-soft);
+      transition: all 0.2s ease;
+    }
+    
+    .pill-metric:hover {
+      border-color: #505050;
+      transform: translateY(-1px);
+    }
+
+    .result-metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .result-metric-card {
+      flex: 1 1 150px;
+      padding: 16px 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      border: 1px solid #2a2a2a;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .result-metric-card:hover {
+      transform: translateY(-4px);
+      border-color: #404040;
+      box-shadow: 0 8px 24px rgba(255,255,255,0.1);
+    }
+
+    .result-metric-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .result-metric-value {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .result-metric-note {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+    }
+
+    .sidebar {
+      /* display: flex; */
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .badge-chip {
+      font-size: 0.74rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #404040;
+      color: var(--text-soft);
+      background: #050505;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+      border-left: 4px solid #f59e0b;
+      padding: 20px;
+      margin: 24px 0;
+      border-radius: 0 12px 12px 0;
+      border: 1px solid #333333;
+      border-left: 4px solid #f59e0b;
+    }
+
+    .highlight-box p {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fbbf24;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .feature-box {
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      border: 1px solid #333333;
+    }
+
+    .feature-box h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .feature-box h3 i {
+      font-size: 1rem;
+    }
+
+    .feature-box.blue {
+      background: linear-gradient(135deg, #1e3a5f 0%, #0f1f3a 100%);
+      border-left: 4px solid #3b82f6;
+    }
+
+    .feature-box.blue h3 i {
+      color: #3b82f6;
+    }
+
+    .feature-box.green {
+      background: linear-gradient(135deg, #1e3a2f 0%, #0f1f1a 100%);
+      border-left: 4px solid #10b981;
+    }
+
+    .feature-box.green h3 i {
+      color: #10b981;
+    }
+
+    .feature-box.yellow {
+      background: linear-gradient(135deg, #3a2e1e 0%, #1f1a0f 100%);
+      border-left: 4px solid #f59e0b;
+    }
+
+    .feature-box.yellow h3 i {
+      color: #f59e0b;
+    }
+
+    .feature-box.purple {
+      background: linear-gradient(135deg, #2e1e3a 0%, #1a0f1f 100%);
+      border-left: 4px solid #7c3aed;
+    }
+
+    .feature-box.purple h3 i {
+      color: #7c3aed;
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+      .hero-badges {
+        gap: 8px;
+      }
+      .hero-badge {
+        font-size: 0.72rem;
+        padding: 4px 8px;
+      }
+      main {
+        padding: 24px 14px 48px;
+      }
+      section {
+        padding: 14px;
+      }
+      .result-metric-row {
+        gap: 12px;
+      }
+      .result-metric-card {
+        flex: 1 1 100%;
+      }
+    }
+
+    .table-of-contents {
+      position: sticky;
+      top: 100px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+      border: 1px solid #333333;
+      box-shadow: var(--shadow-soft);
+      padding: 20px 20px 18px;
+      overflow: hidden;
+      align-self: start;
+      max-height: calc(100vh - 120px);
+    }
+    
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    
+    .toc-header h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    
+    .toc-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .toc-list li {
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #333333;
+    }
+    
+    .toc-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .toc-list a {
+      text-decoration: none;
+      color: #d1d5db;
+      font-weight: 500;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s;
+      line-height: 1.4;
+    }
+    
+    .toc-list a:hover {
+      color: #3b82f6;
+    }
+    
+    .toc-list a.active {
+      color: #3b82f6;
+      font-weight: 600;
+    }
+    
+    .toc-list i {
+      color: #3b82f6;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 992px) {
+      .case-study-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .table-of-contents {
+        position: static;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="case-study-hero">
-        <div class="container">
-            <div class="case-study-meta">
-                <span class="category-tag">ERP Case Study</span>
-                <span>May 15, 2025</span>
+<div class="page-wrap">
+  <!-- <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div>
+          <div class="brand-text-main">SAZS Apps ERP</div>
+          <div class="brand-text-sub">Crusher • Quarry • RMC • Bricks</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#challenge">Challenge</a>
+        <a href="#solution">Solution</a>
+        <a href="#results">Results</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="nav-pill">GPS & Logistics Suite</div>
+        <button class="nav-button" onclick="document.getElementById('results').scrollIntoView({behavior:'smooth'})">
+          Book a demo
+        </button>
+      </div>
+    </div>
+  </header> -->
+ <nav class="sazs-header">
+        <div class="sazs-header-wrapper">
+            <div class="sazs-header-main">
+                <a href="/" class="sazs-brand">
+                    <div class="sazs-brand-image">
+                        <img src="./src/assets/contentImages/sazsLogo1.png" alt="SAZS ERP App Logo Home page"
+                            class="sazs-brand-image">
+                    </div>
+                </a>
+
+                <ul class="sazs-menu-list">
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="platform">
+                            Platform
+                            <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="Features">
+                            Features
+                            <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="resources">
+                            Media & Events
+                            <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="sazs-cta-group">
+                    <a href="./src/pages/contact.html" class="sazs-button sazs-button-outline">Contact Sales</a>
+                    <a href="#" class="sazs-button sazs-button-outline">Sign in</a>
+                </div>
+
+                <div class="sazs-hamburger">
+                    <a href="javascript:void(0);" onclick="toggleNav()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
             </div>
-            
-            <h1>Real-Time Vehicle & Trip Management for High-Volume Operations</h1>
-            
-            <p class="hero-subtitle">
-                Case Study 4: How SAZS Apps ERP eliminated ghost trips and transformed logistics operations for construction material businesses
-            </p>
-            
-            <div class="ai-summary">
-                <h2><i class="fas fa-robot"></i> Case Study Summary:</h2>
-                <p>SAZS Apps ERP transformed logistics operations for construction material businesses operating across Crusher, Quarry, RMC, and Brick Plant sites by implementing GPS-integrated tracking with weighbridge validation, eliminating ghost trips and achieving 30% improvement in vehicle utilization.</p>
-                
-                <div class="summary-points">
-                    <div class="summary-point">
-                        <h3><i class="fas fa-exclamation-triangle"></i> The Problem</h3>
-                        <p>Fake trips, duplicate entries, low asset utilization, and constant billing disputes made transport the largest unmanaged cost center.</p>
+
+            <!-- Platform Dropdown -->
+            <div class="sazs-submenu" id="platform">
+                <div class="sazs-submenu-grid">
+                    <div class="sazs-submenu-col">
+                        <a href="./src/pages/QuarryCrusher.html" class="sazs-product-card">
+                            <div class="sazs-card-img-wrapper">
+                                <img src="./src/assets/contentImages/quarrydrone.png"
+                                    alt="Stone Crusher Management Software" />
+                            </div>
+                            <div class="sazs-card-heading">End-to-End Management Software for Stone Crushers &
+                                Quarries</div>
+                            <div class="sazs-card-text">In the rugged environment of stone crushing, efficiency is
+                                currency. Transform your quarry operations with intelligent automation.</div>
+                        </a>
                     </div>
-                    <div class="summary-point">
-                        <h3><i class="fas fa-check-circle"></i> The Solution</h3>
-                        <p>GPS tracking combined with weighbridge validation created an automated "double-check" system that verifies every trip against actual tonnage data.</p>
+
+                    <div class="sazs-submenu-col">
+                        <a href="./src/pages/rmc.html" class="sazs-product-card">
+                            <div class="sazs-card-img-wrapper">
+                                <img src="./src/assets/contentImages/bricksdrone.png"
+                                    alt="Brick Manufacturing ERP Software" />
+                            </div>
+                            <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
+                                Plants</div>
+                            <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage
+                                of Your Production</div>
+                        </a>
                     </div>
-                    <div class="summary-point">
-                        <h3><i class="fas fa-trophy"></i> The Results</h3>
-                        <p>100% elimination of fake trips, zero billing disputes, 30% better vehicle utilization, and transparent automated billing for all transport operations.</p>
+                    <div class="sazs-submenu-col">
+                        <a href="./src/pages/brickspaver.html" class="sazs-product-card">
+                            <div class="sazs-card-img-wrapper">
+                                <img src="./src/assets/contentImages/bricksdrone.png"
+                                    alt="Brick Manufacturing ERP Software" />
+                            </div>
+                            <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
+                                Plants</div>
+                            <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage
+                                of Your Production</div>
+                        </a>
+                    </div>
+
+                    <div class="sazs-submenu-col">
+                        <a href="./src/pages/brickspaver.html" class="sazs-product-card">
+                            <div class="sazs-card-img-wrapper">
+                                <img src="./src/assets/contentImages/bricksdrone.png"
+                                    alt="Brick Manufacturing ERP Software" />
+                            </div>
+                            <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
+                                Plants</div>
+                            <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage
+                                of Your Production</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Dropdown -->
+            <div class="sazs-submenu" id="Features">
+                <div class="features-dropdown">
+                    <!-- Left Side - Solutions List -->
+                    <div class="features-left">
+                        <div class="features-section-title">Features — tailored to every Crushers & Quarries</div>
+                        <a href="./Anprs.html" class="features-link">ANPR Camera Integration</a>
+                        <a href="./EInvoice.html" class="features-link">E-Invoice Integration</a>
+                        <a href="Weighbridge.html" class="features-link">Weighbridge and Camera Integration</a>
+                        <a href="Boombarrier.html" class="features-link">Boom Barrier Integration</a>
+                        <a href="biometrics.html" class="features-link">Biometrics </a>
+                    </div>
+
+                    <!-- Right Side - Case Studies -->
+                    <div class="features-right">
+                        <div class="features-case-studies-title">Case Studies — </div>
+                        <a href="#" class="features-case-studies-link">
+                            Case Studies
+                            <svg width="12" height="12" viewBox="0 0 10 10" fill="currentColor">
+                                <path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg>
+                        </a>
+
+                        <div class="features-cards-grid">
+                            <a href="CaseStudies1.html" class="features-case-card">
+                                <div class="features-case-image">
+                                    <img src="./src/assets/contentImages/quarrydrone.png" alt="Case Study 1" />
+                                </div>
+                                <div class="features-case-title">1.Optimizing Quarry Profitability via Automated Theft Prevention</div>
+                            </a>
+
+                            <a href="CaseStudies2.html" class="features-case-card">
+                                <div class="features-case-image">
+                                    <img src="./src/assets/contentImages/bricksdrone.png" alt="Case Study 2" />
+                                </div>
+                                <div class="features-case-title">2.Transforming Customer Experience & Order Speed in Heavy Building Materials </div>
+                            </a>
+
+                            <a href="CaseStudies3.html" class="features-case-card">
+                                <div class="features-case-image">
+                                    <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 3" />
+                                </div>
+                                <div class="features-case-title">3.Automating E-Invoicing & GST Compliance in Building Materials </div>
+                            </a>
+                             <a href="CaseStudies4.html" class="features-case-card">
+                                <div class="features-case-image">
+                                    <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 4" />
+                                </div>
+                                <div class="features-case-title">4.Real-Time Vehicle & Trip Management for High-Volume Operations</div>
+                            </a>
+                               <a href="CaseStudies5.html" class="features-case-card">
+                                    <div class="features-case-image">
+                                        <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 5" />
+                                    </div>
+                                    <div class="features-case-title">5.Complete Financial Control & Profit Analysis for Quarry & RMC Owners</div>
+                                </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- Main Content -->
-    <div class="container case-study-content">
-        <!-- Table of Contents -->
-        <aside class="table-of-contents">
-            <div class="toc-header">
-                <i class="fas fa-list-ul"></i>
-                <h3>Contents</h3>
-            </div>
-            <ul class="toc-list">
-                <li><a href="#challenge"><i class="fas fa-chevron-right"></i> The Challenge: Logistic Blind Spots</a></li>
-                <li><a href="#solution"><i class="fas fa-chevron-right"></i> GPS-Integrated Logistics Solution</a></li>
-                <li><a href="#results"><i class="fas fa-chevron-right"></i> Streamlined Logistics & Results</a></li>
-                <li><a href="#implementation"><i class="fas fa-chevron-right"></i> Key Technologies & Integration</a></li>
-                <li><a href="#conclusion"><i class="fas fa-chevron-right"></i> Why This Matters</a></li>
-            </ul>
-        </aside>
-        
-        <!-- Article Content -->
-        <article class="article-content">
-            <section id="challenge" class="content-section">
-                <h2>The Challenge: Logistic Blind Spots and "Ghost Trips"</h2>
-                <p>For businesses operating across multiple Crusher, Quarry, RMC, and Brick Plant sites, transport is often the largest unmanaged cost. This client faced severe logistical challenges, including:</p>
-                
-                <div style="margin: 30px 0;">
-                    <h3 style="color: var(--dark); font-size: 1.3rem; margin-bottom: 16px; font-weight: 600;">Critical Pain Points:</h3>
-                    <ul style="margin: 0 0 0 40px; color: var(--gray); line-height: 1.8;">
-                        <li style="margin-bottom: 12px;"><strong>Fake Trips:</strong> Drivers or contractors claiming "ghost trips" that never occurred.</li>
-                        <li style="margin-bottom: 12px;"><strong>Duplicate Entries:</strong> Manual trip logs leading to double-billing and accounting confusion.</li>
-                        <li style="margin-bottom: 12px;"><strong>Low Asset Utilization:</strong> No data on which vehicles were idle or which drivers were underperforming.</li>
-                        <li style="margin-bottom: 12px;"><strong>Billing Disputes:</strong> Constant friction with transport contractors over inaccurate trip counts.</li>
-                    </ul>
-                </div>
-                
-                <div class="highlight-box">
-                    <p>"Without visibility into actual vehicle movements and trip validation, logistics costs can spiral out of control—costing businesses millions annually."</p>
-                </div>
-            </section>
-            
-            <section id="solution" class="content-section">
-                <h2>The Solution: GPS-Integrated Logistics & Weighbridge Validation</h2>
-                <p>SAZS Apps ERP implemented a rigorous Trip Management System that turned logistical guesswork into a precise science:</p>
-                
-                <div style="margin: 30px 0;">
-                    <div style="background-color: #f0f9ff; padding: 24px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--dark); font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <i class="fas fa-map-marker-alt" style="color: var(--primary);"></i>
-                            GPS-Based Tracking
-                        </h3>
-                        <p style="margin: 0; color: var(--gray);">Real-time movement monitoring of every vehicle across all sites.</p>
-                    </div>
-                    
-                    <div style="background-color: #f0fdf4; padding: 24px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--secondary);">
-                        <h3 style="color: var(--dark); font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <i class="fas fa-check-double" style="color: var(--secondary);"></i>
-                            The "Double-Check" System
-                        </h3>
-                        <p style="margin: 0; color: var(--gray);">Every trip is automatically validated against weighbridge data; if no weight was recorded, the trip isn't counted.</p>
-                    </div>
-                    
-                    <div style="background-color: #fef3c7; padding: 24px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #f59e0b;">
-                        <h3 style="color: var(--dark); font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <i class="fas fa-file-invoice-dollar" style="color: #f59e0b;"></i>
-                            Automated Billing
-                        </h3>
-                        <p style="margin: 0; color: var(--gray);">The ERP generates transport invoices based on verified trips and actual tonnage, eliminating manual errors and malpractice.</p>
-                    </div>
-                    
-                    <div style="background-color: #f5f3ff; padding: 24px; border-radius: 8px; border-left: 4px solid #7c3aed;">
-                        <h3 style="color: var(--dark); font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <i class="fas fa-chart-bar" style="color: #7c3aed;"></i>
-                            Performance Dashboards
-                        </h3>
-                        <p style="margin: 0; color: var(--gray);">Detailed reports on driver behavior and vehicle-wise productivity.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="results" class="content-section">
-                <h2>Results: Streamlined Logistics & Verified Billing</h2>
-                
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value">30%</div>
-                        <div class="stat-label">Improvement in Vehicle Utilization</div>
-                        <p style="margin-top: 12px; font-size: 0.9rem; color: var(--gray);">Smarter scheduling reduced idle time for trucks and RMC transit mixers</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">100%</div>
-                        <div class="stat-label">Ironclad Trip Verification</div>
-                        <p style="margin-top: 12px; font-size: 0.9rem; color: var(--gray);">Complete elimination of fake or duplicate trip entries</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Billing Disputes</div>
-                        <p style="margin-top: 12px; font-size: 0.9rem; color: var(--gray);">Transparent, automated, dispute-free payments to contractors and drivers</p>
-                    </div>
-                    <div class="stat-card">
-                     <div class="stat-value">Data-Driven</div>
-                        <div class="stat-label">Fleet Planning</div>
-                        <p style="margin-top: 12px; font-size: 0.9rem; color: var(--gray);">Accurate logistics data for better fleet expansion decisions</p>
-                    </div>
-                </div>
-                
-                <div class="highlight-box" style="margin-top: 40px;">
-                    <p>"The transformation was remarkable. We eliminated ghost trips entirely, reduced billing disputes to zero, and our transport contractors actually thank us for the transparency. Our logistics operation went from a cost center to a competitive advantage." — Operations Director, Multi-Site Construction Materials Provider</p>
-                </div>
-            </section>
-            
-            <section id="implementation" class="content-section">
-                <h2>Key Technologies & Integration</h2>
-                <p>The GPS-integrated logistics system seamlessly connects with existing operations:</p>
-                
-                <ul style="margin: 20px 0 20px 40px; color: var(--gray); line-height: 1.8;">
-                    <li style="margin-bottom: 12px;"><strong>Real-time GPS tracking</strong> on all vehicles across Crusher, Quarry, RMC, and Brick Plant sites</li>
-                    <li style="margin-bottom: 12px;"><strong>Weighbridge integration</strong> for automatic trip validation and tonnage recording</li>
-                    <li style="margin-bottom: 12px;"><strong>Automated billing workflows</strong> that eliminate manual entry and human error</li>
-                    <li style="margin-bottom: 12px;"><strong>Mobile dashboards</strong> for managers to monitor fleet performance in real-time</li>
-                    <li style="margin-bottom: 12px;"><strong>Driver performance analytics</strong> for identifying top performers and training opportunities</li>
-                </ul>
-            </section>
-            
-            <section id="conclusion" class="content-section">
-                <h2>Why This Matters for Construction Material Operations</h2>
-                <p>For high-volume operations running Crushers, Quarries, RMC plants, and Brick manufacturing facilities, logistics visibility isn't optional—it's essential for profitability. The combination of GPS tracking and weighbridge validation creates an ironclad verification system that:</p>
-                
-                <ul style="margin: 20px 0 20px 40px; color: var(--gray); line-height: 1.8;">
-                    <li style="margin-bottom: 12px;">Eliminates revenue leakage from ghost trips and billing errors</li>
-                    <li style="margin-bottom: 12px;">Improves contractor relationships through transparent, timely payments</li>
-                    <li style="margin-bottom: 12px;">Maximizes vehicle utilization and reduces idle time</li>
-                    <li style="margin-bottom: 12px;">Provides data-driven insights for fleet expansion and route optimization</li>
-                </ul>
-                
-                <p style="margin-top: 30px;">The result? Logistics transforms from an unmanaged cost center into a source of competitive advantage and operational excellence.</p>
-            </section>
-        </article>
+    <!-- Mobile Side Navigation -->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
+
+    <a href="./index.html" class="logo-link" aria-label="Go to homepage" role="link">
+        <img src="./src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page" class="sidenav-logo">
+    </a>
+
+    <a href="./index.html">Home</a>
+    <a href="./src/pages/aboutus.html">About Us</a>
+
+    <!-- Mobile Products Dropdown -->
+    <div class="mobile-dropdown">
+        <a href="javascript:void(0);" onclick="toggleMobileDropdown(this)" class="mobile-dropdown-trigger">
+            Products <i class="fa fa-chevron-down"></i>
+        </a>
+        <div class="mobile-dropdown-content">
+            <a href="./src/pages/QuarryCrusher.html">Quarry & Crusher</a>
+            <a href="./src/pages/rmc.html">Ready Mix Concrete</a>
+            <a href="./src/pages/brickspaver.html">Bricks & Pavers</a>
+        </div>
     </div>
 
+    <a href="./src/pages/features.html">Explore Features</a>
+
+    <!-- Mobile Case Studies Dropdown -->
+    <div class="mobile-dropdown">
+        <a href="javascript:void(0);" onclick="toggleMobileDropdown(this)" class="mobile-dropdown-trigger">
+            Case Studies <i class="fa fa-chevron-down"></i>
+        </a>
+        <div class="mobile-dropdown-content">
+            <a href="CaseStudies1.html">Case Study 1</a>
+            <a href="CaseStudies2.html">Case Study 2</a>
+            <a href="CaseStudies3.html">Case Study 3</a>
+            <a href="CaseStudies4.html">Case Study 4</a>
+            <a href="CaseStudies5.html">Case Study 5</a>
+        </div>
+    </div>
+
+    <a href="./src/pages/careers.html">Careers</a>
+    <a href="./src/pages/Signup.html">Sign Up</a>
+    <a href="./src/pages/contact.html">Contact Us</a>
+
+    <div class="call">
+        <a href="tel:+917666628000">
+            <i class="fa fa-phone-volume ringing-icon"></i>
+            76666 28000
+        </a>
+    </div>
+</div>
+
+
     <script>
-        // Smooth scrolling for table of contents links
-        document.querySelectorAll('.toc-list a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
+        function toggleMobileDropdown(trigger) {
+    const dropdown = trigger.nextElementSibling;
+
+    // Close other dropdowns
+    document.querySelectorAll('.mobile-dropdown-content').forEach(d => {
+        if (d !== dropdown) d.classList.remove('active');
+    });
+
+    document.querySelectorAll('.mobile-dropdown-trigger').forEach(t => {
+        if (t !== trigger) t.classList.remove('active');
+    });
+
+    // Toggle current
+    dropdown.classList.toggle('active');
+    trigger.classList.toggle('active');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function (event) {
+    if (!event.target.closest('.mobile-dropdown')) {
+        document.querySelectorAll('.mobile-dropdown-content').forEach(d => d.classList.remove('active'));
+        document.querySelectorAll('.mobile-dropdown-trigger').forEach(t => t.classList.remove('active'));
+    }
+});
+
+        const navLinks = document.querySelectorAll('[data-dropdown]');
+        const navbar = document.querySelector('.sazs-header-wrapper');
+        let currentActive = null;
+        let hoverTimeout = null;
+
+        navLinks.forEach(link => {
+            const navItem = link.closest('.sazs-menu-item');
+            const dropdownId = link.getAttribute('data-dropdown');
+            const dropdown = document.getElementById(dropdownId);
+
+            // Hover on nav link
+            navItem.addEventListener('mouseenter', () => {
+                clearTimeout(hoverTimeout);
+
+                // Close all dropdowns
+                document.querySelectorAll('.sazs-submenu').forEach(d => {
+                    d.classList.remove('active');
                 });
+                document.querySelectorAll('.sazs-menu-item').forEach(n => {
+                    n.classList.remove('active');
+                });
+
+                // Open hovered dropdown
+                dropdown.classList.add('active');
+                navItem.classList.add('active');
+                currentActive = dropdown;
+            });
+
+            // Keep dropdown open when hovering over it
+            dropdown.addEventListener('mouseenter', () => {
+                clearTimeout(hoverTimeout);
+            });
+
+            dropdown.addEventListener('mouseleave', () => {
+                hoverTimeout = setTimeout(() => {
+                    dropdown.classList.remove('active');
+                    navItem.classList.remove('active');
+                    currentActive = null;
+                }, 200);
             });
         });
+
+        // Close dropdown when leaving navbar
+        navbar.addEventListener('mouseleave', () => {
+            hoverTimeout = setTimeout(() => {
+                document.querySelectorAll('.sazs-submenu').forEach(d => {
+                    d.classList.remove('active');
+                });
+                document.querySelectorAll('.sazs-menu-item').forEach(n => {
+                    n.classList.remove('active');
+                });
+                currentActive = null;
+            }, 200);
+        });
+
+        // Mobile sidenav functions
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.addEventListener("click", closeNavOnClickOutside);
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.removeEventListener("click", closeNavOnClickOutside);
+        }
+
+        function toggleNav() {
+            const sidenav = document.getElementById("mySidenav");
+            const isOpen = sidenav.style.width === "250px";
+
+            if (isOpen) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            } else {
+                sidenav.style.width = "250px";
+                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
+            }
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".sazs-hamburger")) {
+                closeNav();
+            }
+        }
+
+     
+      
+    </script>
+  <main>
+    <div class="topsection">
+      <div class="hero-kicker">
+        <div class="hero-k-dot"></div>
+        <div class="hero-k-label">Case study • Real-time vehicle & trip management</div>
+      </div>
+      <h1 class="hero-title">
+        Real-Time Vehicle & Trip Management for <span class="accent">High-Volume Operations</span>
+      </h1>
+      <p class="hero-subtitle">
+        How SAZS Apps ERP eliminated ghost trips and transformed logistics operations with GPS-integrated tracking and weighbridge validation across crusher, quarry, RMC, and brick plant sites.
+      </p>
+
+      <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=GPS+Vehicle+Tracking+Dashboard" alt="Real-time GPS vehicle tracking and trip management dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" />
+
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          100% trip verification
+        </div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Zero billing disputes
+        </div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          30% better utilization
+        </div>
+      </div>
+      <div class="hero-cta-row">
+        <button class="hero-cta-primary" onclick="document.getElementById('solution').scrollIntoView({behavior:'smooth'})">
+          See the system
+        </button>
+      </div>
+      <div class="hero-footnote">
+        <strong>Industries:</strong> Crusher, Quarry, Readymix (RMC), Brick Plants
+      </div>
+    </div>
+    
+    <section class="hero">
+      <div class="layout-main">
+        <aside class="sidebar">
+          <aside class="table-of-contents">
+            <div class="toc-header">
+              <i class="fas fa-list-ul"></i>
+              <h3>Contents</h3>
+            </div>
+            <ul class="toc-list">
+              <li><a href="#challenge"><i class="fas fa-chevron-right"></i> The Challenge: Logistic Blind Spots</a></li>
+              <li><a href="#solution"><i class="fas fa-chevron-right"></i> The Solution: GPS-Integrated Logistics</a></li>
+              <li><a href="#results"><i class="fas fa-chevron-right"></i> The Results: Streamlined Logistics</a></li>
+              <li><a href="#implementation"><i class="fas fa-chevron-right"></i> Key Technologies & Integration</a></li>
+              <li><a href="#conclusion"><i class="fas fa-chevron-right"></i> Why This Matters</a></li>
+            </ul>
+          </aside>
+        </aside>
+
+        <div class="content-flow">
+          <section id="challenge" class="content-section">
+            <div class="section-kicker">The challenge</div>
+            <h2>Logistic Blind Spots and "Ghost Trips"</h2>
+
+            <img src="https://placehold.co/1000x500/0a0a0a/ffffff?text=Logistics+Challenges" alt="Logistics blind spots and ghost trips challenges" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+            <p class="section-intro">
+              For businesses operating across multiple Crusher, Quarry, RMC, and Brick Plant sites, transport is often the largest unmanaged cost. This client faced severe logistical challenges:
+            </p>
+            
+            <h3>Critical Pain Points:</h3>
+            <ul>
+              <li><strong>Fake Trips:</strong> Drivers or contractors claiming "ghost trips" that never occurred.</li>
+              <li><strong>Duplicate Entries:</strong> Manual trip logs leading to double-billing and accounting confusion.</li>
+              <li><strong>Low Asset Utilization:</strong> No data on which vehicles were idle or which drivers were underperforming.</li>
+              <li><strong>Billing Disputes:</strong> Constant friction with transport contractors over inaccurate trip counts.</li>
+            </ul>
+
+            <div class="highlight-box">
+              <p>"Without visibility into actual vehicle movements and trip validation, logistics costs can spiral out of control—costing businesses millions annually."</p>
+            </div>
+          </section>
+
+          <section id="solution" class="alt content-section">
+            <div class="section-kicker">The solution</div>
+            <h2>GPS-Integrated Logistics & Weighbridge Validation</h2>
+
+            <img src="https://placehold.co/1000x500/0a0a0a/ffffff?text=GPS+Logistics+Solution" alt="SAZS Apps ERP GPS-integrated logistics solution" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+            <p class="section-intro">
+              SAZS Apps ERP implemented a rigorous Trip Management System that turned logistical guesswork into a precise science:
+            </p>
+            
+            <div class="pill-metric-row">
+              <div class="pill-metric">GPS-Based Tracking</div>
+              <div class="pill-metric">Double-Check System</div>
+              <div class="pill-metric">Automated Billing</div>
+              <div class="pill-metric">Performance Dashboards</div>
+            </div>
+
+            <div class="feature-box blue">
+              <h3><i class="fas fa-map-marker-alt"></i> GPS-Based Tracking</h3>
+              <p>Real-time movement monitoring of every vehicle across all sites.</p>
+            </div>
+
+            <div class="feature-box green">
+              <h3><i class="fas fa-check-double"></i> The "Double-Check" System</h3>
+              <p>Every trip is automatically validated against weighbridge data; if no weight was recorded, the trip isn't counted.</p>
+            </div>
+
+            <div class="feature-box yellow">
+              <h3><i class="fas fa-file-invoice-dollar"></i> Automated Billing</h3>
+              <p>The ERP generates transport invoices based on verified trips and actual tonnage, eliminating manual errors and malpractice.</p>
+            </div>
+
+            <div class="feature-box purple">
+              <h3><i class="fas fa-chart-bar"></i> Performance Dashboards</h3>
+              <p>Detailed reports on driver behavior and vehicle-wise productivity.</p>
+            </div>
+          </section>
+
+          <section id="results" class="content-section">
+            <div class="section-kicker">The results</div>
+            <h2>Streamlined Logistics & Verified Billing</h2>
+
+            <img src="https://placehold.co/1000x500/0a0a0a/ffffff?text=Logistics+Results" alt="Logistics optimization and billing results" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+            <p class="section-intro">
+              The GPS-integrated logistics system transformed the client's ability to manage their fleet:
+            </p>
+
+            <div class="result-metric-row">
+              <div class="result-metric-card">
+                <div class="result-metric-title">Vehicle Utilization</div>
+                <div class="result-metric-value">30%</div>
+                <div class="result-metric-note">Improvement through smarter scheduling and reduced idle time.</div>
+              </div>
+              <div class="result-metric-card">
+                <div class="result-metric-title">Trip Verification</div>
+                <div class="result-metric-value">100%</div>
+                <div class="result-metric-note">Complete elimination of fake or duplicate trip entries.</div>
+              </div>
+              <div class="result-metric-card">
+                <div class="result-metric-title">Billing Disputes</div>
+                <div class="result-metric-value">Zero</div>
+                <div class="result-metric-note">Transparent, automated, dispute-free contractor payments.</div>
+              </div>
+              <div class="result-metric-card">
+                <div class="result-metric-title">Fleet Planning</div>
+                <div class="result-metric-value">Data-Driven</div>
+                <div class="result-metric-note">Accurate logistics data for better expansion decisions.</div>
+              </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 32px;">
+              <p>"The transformation was remarkable. We eliminated ghost trips entirely, reduced billing disputes to zero, and our transport contractors actually thank us for the transparency. Our logistics operation went from a cost center to a competitive advantage." — Operations Director</p>
+            </div>
+          </section>
+
+          <section id="implementation" class="alt content-section">
+            <div class="section-kicker">Implementation</div>
+            <h2>Key Technologies & Integration</h2>
+
+            <p class="section-intro">
+              The GPS-integrated logistics system seamlessly connects with existing operations:
+            </p>
+
+            <ul>
+              <li><strong>Real-time GPS tracking</strong> on all vehicles across Crusher, Quarry, RMC, and Brick Plant sites</li>
+              <li><strong>Weighbridge integration</strong> for automatic trip validation and tonnage recording</li>
+              <li><strong>Automated billing workflows</strong> that eliminate manual entry and human error</li>
+              <li><strong>Mobile dashboards</strong> for managers to monitor fleet performance in real-time</li>
+              <li><strong>Driver performance analytics</strong> for identifying top performers and training opportunities</li>
+            </ul>
+          </section>
+
+          <section id="conclusion" class="content-section">
+            <div class="section-kicker">Conclusion</div>
+            <h2>Why This Matters for Construction Material Operations</h2>
+
+            <p>
+              For high-volume operations running Crushers, Quarries, RMC plants, and Brick manufacturing facilities, logistics visibility isn't optional—it's essential for profitability. The combination of GPS tracking and weighbridge validation creates an ironclad verification system that:
+            </p>
+
+            <ul>
+              <li>Eliminates revenue leakage from ghost trips and billing errors</li>
+              <li>Improves contractor relationships through transparent, timely payments</li>
+              <li>Maximizes vehicle utilization and reduces idle time</li>
+              <li>Provides data-driven insights for fleet expansion and route optimization</li>
+            </ul>
+
+            <p style="margin-top: 20px;">
+              The result? Logistics transforms from an unmanaged cost center into a source of competitive advantage and operational excellence.
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Smooth scrolling for table of contents links
+    document.querySelectorAll('.toc-list a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
         
-        // Highlight current section in TOC on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.content-section');
-            const tocLinks = document.querySelectorAll('.toc-list a');
-            
-            let currentSection = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 150;
-                if (window.pageYOffset >= sectionTop) {
-                    currentSection = '#' + section.getAttribute('id');
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Highlight current section in TOC on scroll
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('.content-section');
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      
+      let currentSection = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.pageYOffset >= sectionTop) {
+          currentSection = '#' + section.getAttribute('id');
+        }
+      });
+      
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === currentSection) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</div>
+<style>
+    /* Footer: "Together We Grow" Section */
+.footer-container {
+    position: relative;
+    background-color: rgb(255, 255, 253);
+    padding: 0px 20px;
+    padding-top: 30px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(255, 255, 253);
+    border-radius: 50% 50% 0 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.heading {
+    color: #2d3748;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    letter-spacing: 10px;
+}
+
+.succeed-text {
+    color: #3E89EC;
+}
+
+.join-button {
+    display: inline-block;
+    background-color: #216DCE;
+    color: #fafbfc !important;
+    padding: 12px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.join-button:hover {
+    background-color: #333;
+}
+
+/* Social Links & Navigation Section */
+.a {
+    background-color: rgb(255, 255, 253);
+    color: #333;
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+
+.b {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.c {
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.c:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.d {
+    width: 30px;
+    transition: filter 0.3s ease;
+}
+
+.d:hover {
+    filter: brightness(1.2);
+}
+
+.e {
+    font-size: 14px;
+    color: #333;
+    padding: 30px 0 0;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.f {
+    color: #333;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.f:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.f:not(:last-child)::after {
+    content: " | ";
+    color: #333;
+}
+
+/* Animations for footer links and icons */
+.c,
+.f {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bottom Footer (Copyright + Help Button) */
+.footerbottom {
+    padding: 40px 0 40px;
+    background: #0b0d1f;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footerbottom span {
+    font-size: 14px;
+}
+
+/* WhatsApp Help Button */
+.help-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border: 2px solid #6aa5ff;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(99, 91, 255, 0.3);
+}
+
+.help-btn:hover {
+    background-color: #1f78fc;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+    display: none; /* Shown via JS when scrolling */
+}
+
+.scroll-top:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Adjustments for Footer */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 36px;
+    }
+
+    .join-button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .help-btn {
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .scroll-top {
+        display: none;
+    }
+
+    .footer-container {
+        padding: 12px 15px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .help-btn {
+        width: auto;
+        left: 5%;
+        bottom: 5%;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .heading {
+        font-size: 28px;
+        letter-spacing: 6px;
+    }
+
+    .b {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .d {
+        width: 28px;
+    }
+}
+   </style>
+            <!-- <footer class="footer-container ">
+                <div class="footer-content">
+                    <h1 class="heading zoom-in">Together<span class="succeed-text"> We Grow !</span></h1>
+                    <a href="./src/pages/contact.html" class="join-button">Contact Us</a>
+
+                </div>
+            </footer> -->
+
+            <footer class="a">
+                <div class="b">
+                    <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                        <img src="src/assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
+                        class="c" rel="noopener">
+                        <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+                    </a>
+                    <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c"
+                        rel="noopener">
+                        <img src="src/assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+                    </a>
+                    <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
+                        <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+                    </a>
+                    <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                        rel="noopener">
+                        <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+                    </a>
+                </div>
+
+                <div class="e">
+                    <a href="./index.html" class="f">Home</a>
+                    <a href="./src/pages/aboutus.html" class="f">About Us</a>
+                    <a href="./src/pages/features.html" class="f">Explore Features</a>
+                    <a href="./src/pages/careers.html" class="f">Careers</a>
+                    <a href="./src/pages/contact.html" class="f">Contact Us</a>
+                    <a href="./src/pages/Signup.html " class="f">Request a Demo</a>
+                    <a href="./src/pages/termsofService.html" class="f">Terms of Service</a>
+                    <a href="./src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
+                    <a href="./src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
+                </div>
+            </footer>
+            <footer class="footerbottom">
+                <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+                    May I help you?
+                </a> -->
+                <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+                <button class="scroll-top" aria-label="Scroll to top">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                    </svg>
+                </button>
+            </footer>
+
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
-            
-            tocLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === currentSection) {
-                    link.classList.add('active');
-                    // Add active style
-                    link.style.color = 'var(--primary)';
-                    link.style.fontWeight = '600';
-                } else {
-                    link.style.color = '';
-                    link.style.fontWeight = '';
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
+            });
+        }, { threshold: 0.1 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.workflow-card, .feature-card, .method-card, .app-card, .report-card, .benefit-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s, transform 0.6s';
+                observer.observe(card);
             });
         });
     </script>
