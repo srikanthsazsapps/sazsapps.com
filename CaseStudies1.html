@@ -25,7 +25,7 @@
   --radius-full: 999px;
   --grad-main: linear-gradient(135deg,#000000,#111111);
   --grad-pill: linear-gradient(135deg,#f5f5f5,#ffffff);
-  --grad-section: radial-gradient(circle at top,#b6b2b2,#2f3d4e 55%);
+  --grad-section: radial-gradient(circle at top,#b6b2b2,#000000 55%);
   --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
 }
 
@@ -195,7 +195,7 @@ main {
 /* TOP HERO TEXT – FIXED */
 .topsection {
   max-width: 800px;
-  margin: 30px auto 24px auto;
+  margin: 70px auto 24px auto;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -238,18 +238,21 @@ main {
 }
 
 .hero-k-label {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: var(--text-soft);
 }
 
 .hero-title {
-  font-size: clamp(2.15rem,2.7vw,2.7rem);
+  font-size: clamp(1.98rem, 1.556rem + 2.12vw, 3.25rem);
+;
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.03em;
   margin-bottom: 14px;
   color: #000000;
+  text-wrap: balance;
 }
 
 .hero-title span.accent {
@@ -410,6 +413,12 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.16em;
 }
+@media (max-width: 468px) {
+  .panel-tag {
+    font-size: 0.4rem;
+  }
+}
+
 
 .panel-highlight {
   padding: 6px 12px;
@@ -421,6 +430,11 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 7px;
+}
+@media (max-width: 468px) {
+  .panel-highlight {
+    font-size: 0.4rem;
+  }
 }
 
 .panel-highlight span.pill-dot {
@@ -566,8 +580,10 @@ main {
 section {
   padding: 18px 18px 18px;
   border-radius: var(--radius-lg);
-  background: #2c3846;
-  border: 1px solid #262626;
+  background: #000000;
+  border: 1px solid #373636;
+  /* background-image: url('./src/assets/contentImages/5429296.jpg'); */
+
   /* box-shadow: 0 14px 40px rgba(0,0,0,0.9); */
 }
 
@@ -576,7 +592,7 @@ section.compact {
 }
 
 section.alt {
-  background: #2c3846;
+  background: #000000;
 }
 
 .section-kicker {
@@ -659,46 +675,119 @@ ul li {
 
 /* TABLE + RESULTS AS YOU HAD */
 .comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 8px;
-  font-size: 0.86rem;
-}
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.86rem;
+    }
 
-.comparison-table thead {
-  background: #000000;
-}
+    .comparison-table thead {
+      background: #000000;
+    }
 
-.comparison-table th,
-.comparison-table td {
-  border: 1px solid #262626;
-  padding: 8px 9px;
-  vertical-align: top;
-  color: #f5f5f5;
-}
+    .comparison-table th,
+    .comparison-table td {
+      border: 1px solid #262626;
+      padding: 8px 9px;
+      vertical-align: top;
+      color: #f5f5f5;
+    }
 
-.comparison-table th {
-  font-weight: 600;
-  text-align: left;
-  color: #f5f5f5;
-}
+    .comparison-table th {
+      font-weight: 600;
+      text-align: left;
+      color: #f5f5f5;
+    }
 
-.comparison-table tbody tr:nth-child(odd) {
-  background: #050505;
-}
+    .comparison-table tbody tr:nth-child(odd) {
+      background: #050505;
+    }
 
-.comparison-table tbody tr:nth-child(even) {
-  background: #000000;
-}
+    .comparison-table tbody tr:nth-child(even) {
+      background: #000000;
+    }
 
-.comparison-label {
-  font-weight: 500;
-  color: var(--text-soft);
-  font-size: 0.83rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
+    .comparison-label {
+      font-weight: 500;
+      color: var(--text-soft);
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
 
+    @media screen and (max-width: 768px) {
+      .comparison-table {
+        table-layout: auto;
+        border: 0;
+      }
+
+      .comparison-table thead {
+        display: none;
+      }
+
+      .comparison-table tbody tr {
+        display: block;
+        margin-bottom: 1.6rem;
+        border: 1px solid #262626;
+        border-radius: 10px;
+        background: #050505;
+        overflow: hidden;
+      }
+
+      .comparison-table tbody tr:nth-child(odd),
+      .comparison-table tbody tr:nth-child(even) {
+        background: #050505;
+      }
+
+      .comparison-table td {
+        display: block;
+        text-align: right;
+        position: relative;
+        padding: 0.9rem 1rem 0.9rem 48%;
+        border: none;
+        border-bottom: 1px solid #262626;
+      }
+
+      .comparison-table td:last-child {
+        border-bottom: none;
+      }
+
+      .comparison-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-weight: 600;
+        text-align: left;
+        color: #ffffff;
+        background: #111;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .comparison-table .comparison-label {
+        font-weight: 700;
+        color: #ccc;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.82rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .comparison-table td {
+        padding-left: 52%;
+        font-size: 10px;
+      }
+
+      .comparison-table td:before {
+        width: 35%;
+        font-size: 10px;
+      }
+    }
 .result-metric-row {
   display: flex;
   flex-wrap: wrap;
@@ -1757,9 +1846,9 @@ section:nth-child(4) { animation-delay: 0.4s; }
         <button class="hero-cta-primary" onclick="scrollToSection('solution')">
           Explore the solution
         </button>
-        <button class="hero-cta-secondary" onclick="scrollToSection('comparison')">
+        <!-- <button class="hero-cta-secondary" onclick="scrollToSection('comparison')">
           View before / after <span class="icon">↗</span>
-        </button>
+        </button> -->
       </div>
     </div>
 
@@ -1880,63 +1969,63 @@ section:nth-child(4) { animation-delay: 0.4s; }
             </ul>
           </section>
 
-          <section id="comparison">
-            <div class="section-kicker">Before vs after</div>
-            <h2>Manual vs. Automated Quarry Operations</h2>
-            <p class="section-intro">
-              To illustrate the impact of SAZS Apps ERP, here is a comparison between traditional manual operations and the automated, integrated environment.
-            </p>
+        <section id="comparison">
+      <div class="section-kicker">Before vs after</div>
+      <h2>Manual vs. Automated Quarry Operations</h2>
+      <p class="section-intro">
+        To illustrate the impact of SAZS Apps ERP, here is a comparison between traditional manual operations and the automated, integrated environment.
+      </p>
 
-            <table class="comparison-table">
-              <thead>
-                <tr>
-                  <th class="comparison-label">Feature</th>
-                  <th>Manual Operations (Before)</th>
-                  <th>SAZS Apps ERP (After)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="comparison-label">Data Integrity</td>
-                  <td>Prone to manual error and intentional manipulation.</td>
-                  <td>Tamper-proof; data flows directly from equipment to ERP.</td>
-                </tr>
-                <tr>
-                  <td class="comparison-label">Weighbridge Process</td>
-                  <td>Slips can be overwritten or falsified by operators.</td>
-                  <td>Automated Integration captures weight without human input.</td>
-                </tr>
-                <tr>
-                  <td class="comparison-label">Vehicle Tracking</td>
-                  <td>Limited to manual gate registers; easy to bypass.</td>
-                  <td>GPS & RFID tracking ensure 100% visibility of all movements.</td>
-                </tr>
-                <tr>
-                  <td class="comparison-label">Dispatches</td>
-                  <td>High risk of unauthorized material leaving the site.</td>
-                  <td>Zero unauthorized dispatches; system validates every load.</td>
-                </tr>
-                <tr>
-                  <td class="comparison-label">Stock Accuracy</td>
-                  <td>85–90% accuracy; frequent reconciliation disputes.</td>
-                  <td>98–99% accuracy; real-time stock sync.</td>
-                </tr>
-                <tr>
-                  <td class="comparison-label">Processing Time</td>
-                  <td>10–15 minutes per truck (manual logs & slips).</td>
-                  <td>Under 2 minutes with automated weighing & gate control.</td>
-                </tr>
-              </tbody>
-            </table>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th class="comparison-label">Feature</th>
+            <th>Manual Operations (Before)</th>
+            <th>SAZS Apps ERP (After)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="comparison-label" data-label="Feature">Data Integrity</td>
+            <td data-label="Manual Operations (Before)">Prone to manual error and intentional manipulation.</td>
+            <td data-label="SAZS Apps ERP (After)">Tamper-proof; data flows directly from equipment to ERP.</td>
+          </tr>
+          <tr>
+            <td class="comparison-label" data-label="Feature">Weighbridge Process</td>
+            <td data-label="Manual Operations (Before)">Slips can be overwritten or falsified by operators.</td>
+            <td data-label="SAZS Apps ERP (After)">Automated Integration captures weight without human input.</td>
+          </tr>
+          <tr>
+            <td class="comparison-label" data-label="Feature">Vehicle Tracking</td>
+            <td data-label="Manual Operations (Before)">Limited to manual gate registers; easy to bypass.</td>
+            <td data-label="SAZS Apps ERP (After)">GPS & RFID tracking ensure 100% visibility of all movements.</td>
+          </tr>
+          <tr>
+            <td class="comparison-label" data-label="Feature">Dispatches</td>
+            <td data-label="Manual Operations (Before)">High risk of unauthorized material leaving the site.</td>
+            <td data-label="SAZS Apps ERP (After)">Zero unauthorized dispatches; system validates every load.</td>
+          </tr>
+          <tr>
+            <td class="comparison-label" data-label="Feature">Stock Accuracy</td>
+            <td data-label="Manual Operations (Before)">85–90% accuracy; frequent reconciliation disputes.</td>
+            <td data-label="SAZS Apps ERP (After)">98–99% accuracy; real-time stock sync.</td>
+          </tr>
+          <tr>
+            <td class="comparison-label" data-label="Feature">Processing Time</td>
+            <td data-label="Manual Operations (Before)">10–15 minutes per truck (manual logs & slips).</td>
+            <td data-label="SAZS Apps ERP (After)">Under 2 minutes with automated weighing & gate control.</td>
+          </tr>
+        </tbody>
+      </table>
 
-            <!-- Comparison Visual -->
-            <div class="content-image-wrapper" style="margin-top: 24px;">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop" 
-                   alt="Dashboard showing before and after metrics comparison" 
-                   loading="lazy">
-              <div class="image-caption">Real-time analytics dashboard showing operational improvements and theft reduction metrics</div>
-            </div>
-          </section>
+      <!-- Comparison Visual -->
+      <div class="content-image-wrapper" style="margin-top: 24px;">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop" 
+             alt="Dashboard showing before and after metrics comparison" 
+             loading="lazy">
+        <div class="image-caption">Real-time analytics dashboard showing operational improvements and theft reduction metrics</div>
+      </div>
+    </section>
 
           <section>
             <div class="section-kicker">Key benefits</div>
@@ -2015,7 +2104,7 @@ section:nth-child(4) { animation-delay: 0.4s; }
             </ul>
           </section>
 
-          <section class="compact">
+          <!-- <section class="compact">
             <div class="section-kicker">SEO focus</div>
             <h2>Target search themes</h2>
             <p class="section-intro">
@@ -2032,7 +2121,7 @@ section:nth-child(4) { animation-delay: 0.4s; }
             <p class="seo-foot">
               Internal links can point from this page to product deep‑dives, demo signup, and feature comparisons for weighbridge automation.
             </p>
-          </section>
+          </section> -->
         </aside>
         </aside>
       </div>

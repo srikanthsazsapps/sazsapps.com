@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case Study: Optimizing Quarry Profitability via Automated Theft Prevention</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Case study on how SAZS Apps ERP for Crusher & Quarry eliminated material theft, automated weighbridge operations, and boosted quarry profitability with secure stock tracking." />
+  <meta name="keywords" content="Crusher ERP theft prevention, Quarry material loss control, Automated weighbridge integration, SAZS Apps ERP security, Quarry stock tracking software, Prevent weighbridge malpractice" />
+
+ <style>:root {
+  --bg: #ffffff;
+  --bg-soft: #ffffff;
+  --card: #050505;
+  --accent: #000000;
+  --accent-soft: #555555;
+  --accent-strong: #000000;
+  --text-main: #000000;
+  --text-soft: #c4c4c4;
+  --text-muted: #777777;
+  --border-subtle: #262626;
+  --shadow-soft: 0 18px 40px rgba(0,0,0,0.15);
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-full: 999px;
+  --grad-main: linear-gradient(135deg,#000000,#111111);
+  --grad-pill: linear-gradient(135deg,#f5f5f5,#ffffff);
+  --grad-section: radial-gradient(circle at top,#050505,#000000 55%);
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background: #ffffff;
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-wrap {
+  min-height: 100vh;
+  background: #000000;
+  color: var(--text-main);
+}
+
+/* HEADER AS IS */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(to bottom,rgba(0,0,0,0.96),rgba(0,0,0,0.7),transparent);
+  border-bottom: 1px solid #262626;
+}
+
+.nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 30%;
+  background: #ffffff;
+  position: relative;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: inherit;
+  background: #000000;
+}
+
+.brand-text-main {
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+}
+
+.brand-text-sub {
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-size: 0.86rem;
+  color: var(--text-soft);
+}
+
+.nav-links a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--accent-strong);
+  border-radius: 999px;
+  transition: width 160ms ease-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  border: 1px solid #404040;
+  color: var(--text-soft);
+  background: #000000;
+}
+
+.nav-button {
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background: var(--grad-pill);
+  color: #000000;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px #171717, 0 14px 25px rgba(0,0,0,0.8);
+}
+
+.nav-button:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .nav-inner {
+    padding-inline: 16px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-cta {
+    display: none;
+  }
+}
+
+/* MAIN LAYOUT */
+main {
+  margin: 0 auto;
+  padding: 32px 18px 64px;
+  background-color: #ffffff;
+}
+
+/* TOP HERO TEXT – FIXED */
+.topsection {
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HERO GRID */
+.hero-grid {
+  /* display: grid; */
+  grid-template-columns: minmax(0,1.6fr) minmax(0,1.1fr);
+  gap: 28px;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 840px) {
+  .hero-grid {
+    grid-template-columns: minmax(0,1fr);
+  }
+}
+
+/* HERO ELEMENTS */
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 10px 3px 3px;
+  border-radius: 999px;
+  background: #000000;
+  border: 1px solid #404040;
+  margin-bottom: 14px;
+}
+
+.hero-k-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.hero-k-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-soft);
+}
+
+.hero-title {
+  font-size: clamp(2.15rem,2.7vw,2.7rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+  color: #000000;
+}
+
+.hero-title span.accent {
+  color: #000000;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--text-soft);
+  margin-bottom: 18px;
+}
+
+/* restore flex so badges center nicely */
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #000000;
+  border: 1px solid #404040;
+  font-size: 0.78rem;
+  color: #f5f5f5;
+}
+
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+/* restore flex so buttons align */
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.hero-cta-primary {
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: none;
+  background: var(--grad-pill);
+  color: #000000;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 16px 35px rgba(0,0,0,0.3);
+}
+
+.hero-cta-primary:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+.hero-cta-secondary {
+  font-size: 0.86rem;
+  color: var(--accent-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 4px;
+  cursor: pointer;
+}
+
+.hero-cta-secondary span.icon {
+  font-size: 0.95rem;
+  transform: translateY(1px);
+}
+
+.hero-footnote {
+  font-size: 0.77rem;
+  color: #6f6d6d;
+}
+
+.hero-footnote strong {
+  color: #000000;
+}
+
+/* RIGHT HERO PANEL (dark card) */
+.hero-panel {
+  position: relative;
+  border-radius: var(--radius-xl);
+  background: var(--grad-section);
+  border: 1px solid #262626;
+  box-shadow: var(--shadow-soft);
+  padding: 20px 20px 18px;
+  overflow: hidden;
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: transparent;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.panel-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  gap: 10px;
+}
+
+.panel-tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #404040;
+  background: #000000;
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.panel-highlight {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #000000;
+  border: 1px solid #525252;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.panel-highlight span.pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.panel-metric-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.panel-metric {
+  flex: 1 1 120px;
+  padding: 10px 11px;
+  border-radius: 16px;
+  background: #000000;
+  border: 1px solid #262626;
+}
+
+.panel-metric-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.panel-metric-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.panel-metric-sub {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+}
+
+.panel-divider {
+  height: 1px;
+  background: #262626;
+  margin-bottom: 12px;
+}
+
+.panel-quote {
+  font-size: 0.84rem;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+
+.panel-quote span.quote-mark {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-right: 4px;
+}
+
+.panel-quote-attrib {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* MAIN CONTENT + SIDEBAR (dark cards on black) */
+.layout-main {
+  display: grid;
+  grid-template-columns: minmax(0,1.55fr) minmax(0,1fr);
+  gap: 28px;
+  margin-top: 8px;
+}
+
+@media (max-width: 920px) {
+  .layout-main {
+    grid-template-columns: minmax(0,1fr);
+  }
+}
+
+.content-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+section {
+  padding: 18px 18px 18px;
+  border-radius: var(--radius-lg);
+  background: #050505;
+  border: 1px solid #262626;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.9);
+}
+
+section.compact {
+  padding-block: 14px;
+}
+
+section.alt {
+  background: #000000;
+}
+
+.section-kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 1.22rem;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.section-intro {
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  margin-bottom: 10px;
+}
+
+.pill-metric-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.pill-metric {
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #000000;
+  border: 1px solid #404040;
+  font-size: 0.76rem;
+  color: var(--text-soft);
+}
+
+p {
+  font-size: 0.9rem;
+  color: #f5f5f5;
+  margin-bottom: 8px;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 18px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+ul li {
+  font-size: 0.9rem;
+  color: #f5f5f5;
+  margin-bottom: 4px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.badge-chip {
+  font-size: 0.74rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid #404040;
+  color: var(--text-soft);
+  background: #000000;
+}
+
+/* TABLE + RESULTS AS YOU HAD */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.86rem;
+}
+
+.comparison-table thead {
+  background: #000000;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #262626;
+  padding: 8px 9px;
+  vertical-align: top;
+  color: #f5f5f5;
+}
+
+.comparison-table th {
+  font-weight: 600;
+  text-align: left;
+  color: #f5f5f5;
+}
+
+.comparison-table tbody tr:nth-child(odd) {
+  background: #050505;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background: #000000;
+}
+
+.comparison-label {
+  font-weight: 500;
+  color: var(--text-soft);
+  font-size: 0.83rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.result-metric-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.result-metric-card {
+  flex: 1 1 150px;
+  padding: 10px 11px;
+  border-radius: 16px;
+  background: #000000;
+  border: 1px solid #262626;
+}
+
+.result-metric-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.result-metric-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.result-metric-note {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.seo-foot {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* FLOATING CTA */
+.floating-cta {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.floating-badge {
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: #000000;
+  border: 1px solid #404040;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+}
+
+.floating-cta button {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: none;
+  background: var(--grad-pill);
+  color: #000000;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.9);
+  cursor: pointer;
+}
+
+.floating-cta button:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .floating-cta {
+    right: 12px;
+    bottom: 12px;
+  }
+  .floating-badge {
+    display: none;
+  }
+}
+
+</style>
+
+</head>
+<body>
+<div class="page-wrap">
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div>
+          <div class="brand-text-main">SAZS Apps ERP</div>
+          <div class="brand-text-sub">Crusher &amp; Quarry </div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#challenge">Challenge</a>
+        <a href="#solution">Solution</a>
+        <a href="#comparison">Before vs After</a>
+        <a href="#results">Results</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="nav-pill">Quarry Profitability OS</div>
+        <button class="nav-button" onclick="scrollToSection('results')">
+          Book a demo
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+            <div class="topsection">
+          <div class="hero-kicker">
+            <div class="hero-k-dot"></div>
+            <div class="hero-k-label">Case study &nbsp;•&nbsp; Theft prevention at scale</div>
+          </div>
+          <h1 class="hero-title">
+            Optimizing Quarry Profitability via <span class="accent">Automated Theft Prevention</span>
+          </h1>
+          <p class="hero-subtitle">
+            A leading crusher and quarry operation replaced vulnerable manual processes with a secure, automated weighment layer and achieved verifiable control over every tonne leaving the gate.
+          </p>
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              95% reduction in material theft
+            </div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Zero unauthorized dispatches
+            </div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Sub‑2 minute truck processing
+            </div>
+          </div>
+          <div class="hero-cta-row">
+            <button class="hero-cta-primary" onclick="scrollToSection('solution')">
+              Explore the solution
+            </button>
+            <button class="hero-cta-secondary" onclick="scrollToSection('comparison')">
+              View before / after <span class="icon">↗</span>
+            </button>
+          </div>
+          <div class="hero-footnote">
+            <strong>Industry:</strong> Crusher &amp; Quarry • Multi-location operation with high daily truck throughput
+          </div>
+        </div>
+    <section class="hero">
+      <div class="hero-grid">
+
+
+        <aside class="hero-panel" aria-label="Impact summary">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-tag">Security &amp; Stock Integrity</div>
+              <div class="panel-highlight">
+                <span class="pill-dot"></span>
+                From manual leaks to closed-loop control
+              </div>
+            </div>
+            <div class="panel-metric-row">
+              <div class="panel-metric">
+                <div class="panel-metric-label">Material theft</div>
+                <div class="panel-metric-value">↓ 95%</div>
+                <div class="panel-metric-sub">Within 3 months of going live</div>
+              </div>
+              <div class="panel-metric">
+                <div class="panel-metric-label">Dispatch integrity</div>
+                <div class="panel-metric-value">0</div>
+                <div class="panel-metric-sub">Unauthorized loads leaving the quarry</div>
+              </div>
+            </div>
+            <div class="panel-divider"></div>
+            <div class="panel-metric-row">
+              <div class="panel-metric">
+                <div class="panel-metric-label">Stock accuracy</div>
+                <div class="panel-metric-value">98–99%</div>
+                <div class="panel-metric-sub">Real-time sync with physical inventory</div>
+              </div>
+              <div class="panel-metric">
+                <div class="panel-metric-label">Truck cycle time</div>
+                <div class="panel-metric-value">&lt; 2 min</div>
+                <div class="panel-metric-sub">Auto weighment &amp; digital gate pass</div>
+              </div>
+            </div>
+            <div class="panel-divider"></div>
+            <div class="panel-quote">
+              <span class="quote-mark">“</span>
+              Once weighment moved directly from load cell to ERP, the scope for manipulation at the weighbridge vanished.
+            </div>
+            <div class="panel-quote-attrib">
+              QUARRY DIRECTOR • SAZS APPS ERP CUSTOMER
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="layout-main">
+        <div class="content-flow">
+          <section id="challenge">
+            <div class="section-kicker">The challenge</div>
+            <h2>Manual vulnerabilities and invisible leaks</h2>
+            <p class="section-intro">
+              The quarry processed hundreds of trucks daily using paper registers, standalone weighbridges, and delayed Excel updates. This created a blind spot where small manipulations quietly added up to major margin loss.
+            </p>
+            <div class="pill-metric-row">
+              <div class="pill-metric">Manual gate registers &amp; paper slips</div>
+              <div class="pill-metric">Decentralized weighbridge operations</div>
+              <div class="pill-metric">Delayed entry in back-office systems</div>
+            </div>
+            <p>
+              Material theft was driven by two recurring patterns: unauthorized vehicle dispatches and subtle manipulation of weighbridge slips before they were recorded in systems of record. Supervisors had no real-time way to validate the actual weight, route, and billing against what physically left the yard.
+            </p>
+            <p>
+              Because the stock position was reconciled only at the end of the day or week, shortages surfaced late and were hard to trace back to individual trips. Each manual touchpoint—slip writing, data entry, and gate logging—became a potential opportunity for error or deliberate malpractice.
+            </p>
+          </section>
+
+          <section id="solution" class="alt">
+            <div class="section-kicker">The solution</div>
+            <h2>Automated weighment with GPS‑locked dispatch</h2>
+            <p class="section-intro">
+              SAZS Apps ERP for Crusher &amp; Quarry introduced a secure, centralized control layer where every tonne is weighed, validated, and tracked from load cell to delivery point with no manual re‑keying of data.
+            </p>
+            <p>
+              Automated weighbridge integration captures gross, tare, and net weights directly from the load cells and streams them into the ERP in real time. This removes the human element from the weighing process so that slips cannot be overwritten, under‑reported, or reconstructed after the truck has left.
+            </p>
+            <ul>
+              <li><strong>Real-time tracking</strong> of vehicle entry and exit, with every movement stamped against a specific order, product, and customer.</li>
+              <li><strong>GPS monitoring</strong> on outbound trips to verify that the vehicle follows the authorized route and reaches the intended delivery location.</li>
+              <li><strong>Role-based security</strong> that restricts who can view, edit, or approve dispatch records, closing the door on unauthorized overrides.</li>
+              <li><strong>Digital verification</strong> where every weighment and gate pass is time-stamped, archived, and available in a tamper‑proof audit trail.</li>
+            </ul>
+            <p>
+              Together, these controls convert the weighbridge from a weak point into a secure sensor network, allowing management to trace any disputed invoice, shortage, or claim back to a specific, verified transaction.
+            </p>
+          </section>
+
+          <section id="comparison">
+            <div class="section-kicker">Before vs after</div>
+            <h2>Manual vs automated quarry operations</h2>
+            <p class="section-intro">
+              The table below contrasts the quarry’s previous manual workflow with the SAZS Apps ERP environment, highlighting how each risk surface is replaced with a closed‑loop digital control.
+            </p>
+
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th class="comparison-label">Feature</th>
+                  <th>Manual operations (before)</th>
+                  <th>SAZS Apps ERP (after)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="comparison-label">Data integrity</td>
+                  <td>Prone to manual error, overwritten entries, and intentional manipulation of figures across registers and spreadsheets.</td>
+                  <td>Tamper‑proof, with weight data flowing directly from the weighbridge equipment into ERP without intermediate editing.</td>
+                </tr>
+                <tr>
+                  <td class="comparison-label">Weighbridge process</td>
+                  <td>Operators can adjust slip values, reprint slips, or issue duplicates with limited traceability or approval history.</td>
+                  <td>Automated integration captures every weighment event with digital signatures and prevents unapproved slip changes.</td>
+                </tr>
+                <tr>
+                  <td class="comparison-label">Vehicle tracking</td>
+                  <td>Gate entry noted in paper registers; dispatches can bypass checks when the yard is busy or staff is overloaded.</td>
+                  <td>GPS and RFID‑based identification ensure that each truck movement is visible, recorded, and linked to a valid document.</td>
+                </tr>
+                <tr>
+                  <td class="comparison-label">Dispatch authorization</td>
+                  <td>High risk of unauthorized material leaving the site under vaguely documented trips or reused paper documents.</td>
+                  <td>Every load is system‑validated against order, rate, and customer, blocking unauthorized dispatches at the weighbridge.</td>
+                </tr>
+                <tr>
+                  <td class="comparison-label">Stock accuracy</td>
+                  <td>85–90% stock accuracy with frequent reconciliation disputes between yard, accounts, and management.</td>
+                  <td>98–99% stock accuracy via real‑time updates as trucks are weighed, billed, and closed in the ERP.</td>
+                </tr>
+                <tr>
+                  <td class="comparison-label">Processing time</td>
+                  <td>10–15 minutes per truck due to manual logging, slip writing, and re-entry into back‑office systems.</td>
+                  <td>Under 2 minutes per truck using auto weighment, digital gate passes, and one‑click document printing.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <div class="section-kicker">Why weighment integration matters</div>
+            <h2>Removing the weakest link: manual weighing</h2>
+            <p class="section-intro">
+              For most quarries, the weighbridge is the point where value is created or lost. Even small mis‑entries across hundreds of trucks can silently erode profitability month after month.
+            </p>
+            <p>
+              By capturing weights directly from the load cells and pushing them into SAZS Apps ERP, the quarry eliminated the two largest threats to its margins: under‑reported weights that facilitate theft, and fat‑finger errors that distort invoices and stock ledgers. Every tonne invoiced now corresponds to a digitally signed event at the weighbridge.
+            </p>
+            <p>
+              The same integration powers real‑time dashboards for management, enabling proactive monitoring of anomalies such as unusually low average tonnage per truck, repeated route deviations, or sudden shifts in product mix across dispatches.
+            </p>
+          </section>
+
+          <section id="results" class="compact">
+            <div class="section-kicker">The outcome</div>
+            <h2>Enhanced security and rapid ROI</h2>
+            <p class="section-intro">
+              Within three months of going live on SAZS Apps ERP, the quarry turned a previously opaque, leakage‑prone setup into an accountable digital operation with measurable financial impact.
+            </p>
+            <div class="result-metric-row">
+              <div class="result-metric-card">
+                <div class="result-metric-title">Material theft</div>
+                <div class="result-metric-value">95% reduction</div>
+                <div class="result-metric-note">Shrinkage traced and prevented through closed‑loop controls.</div>
+              </div>
+              <div class="result-metric-card">
+                <div class="result-metric-title">Unauthorized dispatches</div>
+                <div class="result-metric-value">Reduced to zero</div>
+                <div class="result-metric-note">System‑validated loads only, with clear approvals and audit trail.</div>
+              </div>
+              <div class="result-metric-card">
+                <div class="result-metric-title">Profitability</div>
+                <div class="result-metric-value">Margins restored</div>
+                <div class="result-metric-note">Accurate stock, clean billing, and full visibility on every trip.</div>
+              </div>
+            </div>
+            <p style="margin-top:10px;">
+              With theft contained and disputes falling sharply, leadership could finally trust on‑screen inventory and dispatch data, using it to drive pricing, contract strategy, and production planning instead of firefighting losses.
+            </p>
+          </section>
+        </div>
+
+        <aside class="sidebar" aria-label="Context and SEO">
+          <section class="compact">
+            <div class="section-kicker">Use case fit</div>
+            <h2>Who this approach serves</h2>
+            <p class="section-intro">
+              The same control framework applies to any high‑throughput bulk material business where every truck movement translates directly into revenue and risk.
+            </p>
+            <ul>
+              <li>Stone crusher, quarry, and crusher‑cum‑hot‑mix plants</li>
+              <li>Ready‑mix concrete, sand mining, and aggregate yards</li>
+              <li>Multi‑site operators managing dozens of weighbridges</li>
+            </ul>
+          </section>
+
+          <section class="compact">
+            <div class="section-kicker">SEO focus</div>
+            <h2>Target search themes</h2>
+            <p class="section-intro">
+              This case study is optimized around queries that reflect the pain of quarry material loss and the need for secure, integrated weighbridge software.
+            </p>
+            <div class="badge-list">
+              <span class="badge-chip">Crusher ERP theft prevention</span>
+              <span class="badge-chip">Quarry material loss control</span>
+              <span class="badge-chip">Automated weighbridge integration</span>
+              <span class="badge-chip">SAZS Apps ERP security</span>
+              <span class="badge-chip">Quarry stock tracking software</span>
+              <span class="badge-chip">Prevent weighbridge malpractice</span>
+            </div>
+            <p class="seo-foot">
+              Internal links can point from this page to product deep‑dives, demo signup, and feature comparisons for weighbridge automation.
+            </p>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-cta">
+    <div class="floating-badge">Ready to secure your weighbridge?</div>
+    <button onclick="scrollToSection('results')">
+      Talk to SAZS Apps
+    </button>
+  </div>
+</div>
+
+<script>
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+</body>
+</html>

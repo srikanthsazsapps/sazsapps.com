@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case Study: Transforming Customer Experience & Order Speed in Heavy Building Materials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
+  <meta name="description" content="How SAZS Apps ERP transformed customer experience and order speed for crusher, quarry, RMC, and brick plant operations through unified customer management, credit control, and real-time tracking." />
+  <meta name="keywords" content="Crusher ERP customer management, Quarry ERP CRM, Readymix order fulfillment software, SAZS Apps ERP customer handling, Brick plant sales automation, Automated quotation for quarries, Building material credit control" />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0b0b0b;
+      --card: #050505;
+      --accent: #ffffff;
+      --accent-soft: #e5e5e5;
+      --accent-strong: #ffffff;
+      --text-main: #f5f5f5;
+      --text-soft: #d4d4d4;
+      --text-muted: #ffffff;
+      --border-subtle: #262626;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.9);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --radius-full: 999px;
+      --grad-main: linear-gradient(135deg,#000000,#111111);
+      --grad-pill: linear-gradient(135deg,#f5f5f5,#ffffff);
+      --grad-section: radial-gradient(circle at top,#050505,#000000 55%);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+      font-family: var(--font-main);
+      background: #000000;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    .page-wrap {
+      min-height: 100vh;
+      background: #ffffff;
+      color: var(--text-main);
+    }
+
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom,rgba(0,0,0,0.96),rgba(0,0,0,0.7),transparent);
+      border-bottom: 1px solid #262626;
+    }
+
+
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 30%;
+      background: #ffffff;
+      position: relative;
+    }
+
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: inherit;
+      background: #000000;
+    }
+
+
+    .brand-text-main {
+      font-size: 1.05rem;
+      font-weight: 650;
+      letter-spacing: 0.03em;
+    }
+
+
+    .brand-text-sub {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: var(--accent-strong);
+      border-radius: 999px;
+      transition: width 160ms ease-out;
+    }
+
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+
+    .nav-pill {
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      border: 1px solid #404040;
+      color: var(--text-soft);
+      background: #000000;
+    }
+
+
+    .nav-button {
+      padding: 7px 18px;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: var(--grad-pill);
+      color: #000000;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 0 1px #171717, 0 14px 25px rgba(0,0,0,0.8);
+    }
+
+
+    .nav-button:hover {
+      filter: brightness(0.9);
+      transform: translateY(-1px);
+    }
+
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        padding-inline: 16px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .nav-cta {
+        display: none;
+      }
+    }
+
+
+    main {
+      /* max-width: 1080px; */
+      margin: 0 auto;
+      padding: 32px 18px 64px;
+    }
+
+
+    .topsection {
+      max-width: 780px;
+      margin: 0 auto 28px auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 10px 3px 3px;
+      border-radius: 999px;
+      background: #000000;
+      border: 1px solid #404040;
+      margin-bottom: 14px;
+    }
+
+
+    .hero-k-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+
+    .hero-k-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+    }
+
+
+    .hero-title {
+      font-size: clamp(2.1rem,2.7vw,2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      color: #101010;
+    }
+
+
+    .hero-title span.accent {
+      color: #000000;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: #000000;
+      margin-bottom: 18px;
+    }
+
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #000000;
+      border: 1px solid #404040;
+      font-size: 0.78rem;
+      color: #f5f5f5;
+    }
+
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+
+    .hero-cta-primary {
+      padding: 11px 22px;
+      border-radius: 999px;
+      border: none;
+      background: var(--grad-pill);
+      color: #000000;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.9);
+    }
+
+
+    .hero-cta-primary:hover {
+      filter: brightness(0.9);
+      transform: translateY(-1px);
+    }
+
+
+    .hero-cta-secondary {
+      font-size: 0.86rem;
+      color: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 4px;
+      cursor: pointer;
+    }
+
+
+    .hero-cta-secondary span.icon {
+      font-size: 0.95rem;
+      transform: translateY(1px);
+    }
+
+
+    .hero-footnote {
+      font-size: 0.77rem;
+      color: #000000;
+    }
+
+
+    .hero-footnote strong {
+      color: #000000;
+    }
+
+
+    .layout-main {
+      display: grid;
+      grid-template-columns: minmax(0,1.7fr) minmax(0,1fr);
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+
+    @media (max-width: 920px) {
+      .layout-main {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+
+    .content-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+
+    section {
+      padding: 18px 18px 18px;
+      border-radius: var(--radius-lg);
+      background: #050505;
+      border: 1px solid #262626;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.9);
+    }
+
+
+    section.compact {
+      padding-block: 14px;
+    }
+
+
+    section.alt {
+      background: #000000;
+    }
+
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+
+    h2 {
+      font-size: 1.22rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+
+    .section-intro {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+
+    p {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+
+    ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+
+    ul li {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+
+    .pill-metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+
+    .pill-metric {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #000000;
+      border: 1px solid #404040;
+      font-size: 0.76rem;
+      color: var(--text-soft);
+    }
+
+
+    .result-metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+
+    .result-metric-card {
+      flex: 1 1 150px;
+      padding: 10px 11px;
+      border-radius: 16px;
+      background: #000000;
+      border: 1px solid #262626;
+    }
+
+
+    .result-metric-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+
+    .result-metric-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+
+    .result-metric-note {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+    }
+
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+
+    .badge-chip {
+      font-size: 0.74rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #404040;
+      color: var(--text-soft);
+      background: #000000;
+    }
+
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.86rem;
+    }
+
+
+    .comparison-table thead {
+      background: #000000;
+    }
+
+
+    .comparison-table th,
+    .comparison-table td {
+      border: 1px solid #262626;
+      padding: 8px 9px;
+      vertical-align: top;
+    }
+
+
+    .comparison-table th {
+      font-weight: 600;
+      text-align: left;
+      color: #f5f5f5;
+    }
+
+
+    .comparison-table tbody tr:nth-child(odd) {
+      background: #050505;
+    }
+
+
+    .comparison-table tbody tr:nth-child(even) {
+      background: #000000;
+    }
+
+
+    .comparison-label {
+      font-weight: 500;
+      color: var(--text-soft);
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    section {
+  padding: 18px 18px 18px;
+  border-radius: var(--radius-lg);
+  background: #000000;
+  border: 1px solid #373636;
+  /* background-image: url('./src/assets/contentImages/5429296.jpg'); */
+
+
+  /* box-shadow: 0 14px 40px rgba(0,0,0,0.9); */
+}
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div>
+          <div class="brand-text-main">SAZS Apps ERP</div>
+          <div class="brand-text-sub">Crusher • Quarry • RMC • Bricks</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#challenge">Challenge</a>
+        <a href="#solution">Solution</a>
+        <a href="#results">Results</a>
+        <a href="#industry">Industry impact</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="nav-pill">Customer Experience OS</div>
+        <button class="nav-button" onclick="document.getElementById('results').scrollIntoView({behavior:'smooth'})">
+          Book a demo
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+    <div class="topsection">
+      <div class="hero-kicker">
+        <div class="hero-k-dot"></div>
+        <div class="hero-k-label">Case study • Customer experience & order speed</div>
+      </div>
+      <h1 class="hero-title">
+        Transforming Customer Experience & Order Speed in <span class="accent">Heavy Building Materials</span>
+      </h1>
+      <p class="hero-subtitle">
+        How one crusher, quarry, RMC, and brick plant operation moved from siloed spreadsheets and slow dispatches to a unified, high-speed customer lifecycle with SAZS Apps ERP.
+      </p>
+
+      <!-- IMAGE ADDED: hero visual (e.g., trucks + dashboard) -->
+      <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=Heavy+Materials+Logistics+%26+ERP+Dashboard" alt="Heavy building materials logistics with ERP dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" />
+
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          40% higher customer satisfaction
+        </div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          60% faster quote-to-delivery
+        </div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          25% lower outstanding dues
+        </div>
+      </div>
+      <div class="hero-cta-row">
+        <button class="hero-cta-primary" onclick="document.getElementById('solution').scrollIntoView({behavior:'smooth'})">
+          Explore the workflow
+        </button>
+        <!-- <button class="hero-cta-secondary" onclick="document.getElementById('results').scrollIntoView({behavior:'smooth'})">
+          View results <span class="icon">↗</span>
+        </button> -->
+      </div>
+      <div class="hero-footnote">
+        <strong>Sectors:</strong> Crusher, Quarry, Readymix (RMC), Brick Plants
+      </div>
+    </div>
+    <section class="hero">
+
+
+    <div class="layout-main">
+      <div class="content-flow">
+        <section id="challenge">
+          <div class="section-kicker">The challenge</div>
+          <h2>Siloed data, slow deliveries, unhappy customers</h2>
+
+          <!-- IMAGE ADDED: show spreadsheets / chaos -->
+          <img src="https://placehold.co/1000x500/0a0a0a/ffffff?text=Manual+Spreadsheet+Bottlenecks" alt="Manual spreadsheet-based process creating bottlenecks" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+          <p class="section-intro">
+            In high‑throughput materials supply, a few hours of delay can cost a project or a customer. This operation relied on scattered spreadsheets and manual checks that could not keep up with demand.
+          </p>
+          <ul>
+            <li><strong>Manual bottlenecks:</strong> Customer records and quotations were spread across Excel files, turning every quote and update into hours of low‑value typing.</li>
+            <li><strong>Revenue leakage:</strong> Without automated credit checks, loads were dispatched to customers with high outstanding balances, increasing risk.</li>
+            <li><strong>Fragmented visibility:</strong> No single source of truth for order history meant teams struggled to answer basic questions during customer calls.</li>
+            <li><strong>Order fulfilment lag:</strong> The time between a customer request and actual dispatch was too long, putting construction timelines under pressure.</li>
+          </ul>
+        </section>
+
+
+        <section id="solution" class="alt">
+          <div class="section-kicker">The solution</div>
+          <h2>A unified customer lifecycle with SAZS Apps ERP</h2>
+
+          <!-- IMAGE ADDED: ERP customer lifecycle / dashboard -->
+          <img src="https://placehold.co/1000x500/0a0a0a/ffffff?text=SAZS+ERP+Customer+Lifecycle+Dashboard" alt="SAZS Apps ERP customer lifecycle dashboard" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+          <p class="section-intro">
+            The SAZS Apps ERP Customer Management Module replaced disconnected tools with an end‑to‑end workflow: from first quote to final dispatch, everything lives in one system.
+          </p>
+          <div class="pill-metric-row">
+            <div class="pill-metric">Automated quotations & orders</div>
+            <div class="pill-metric">Credit limit control</div>
+            <div class="pill-metric">Weighbridge integration</div>
+            <div class="pill-metric">Real-time tracking</div>
+          </div>
+          <p><strong>1. Automated quotation & order management</strong><br>
+            Sales teams now generate professional, branded quotations in seconds instead of manually building them in spreadsheets. Once approved, each quotation converts to a confirmed order instantly, notifying production teams at the crusher, quarry, RMC, or brick plant in real time.
+          </p>
+          <p><strong>2. Intelligent credit control & alerts</strong><br>
+            The ERP continuously monitors credit limits and ageing. If a customer exceeds the allowed limit or has long‑overdue invoices, new dispatches are automatically blocked until finance clears the account, protecting cash flow without manual policing.
+          </p>
+          <p><strong>3. Integrated weighbridge & dispatch sync</strong><br>
+            Customer orders are linked directly to automated weighbridge entries, ensuring every load is captured against the right order and rate. This removes manual data entry at the scale and closes gaps where errors or malpractice could occur.
+          </p>
+          <p><strong>4. Real-time order tracking</strong><br>
+            Customers in RMC and quarry segments now receive clear status from "Order Confirmed" through "In‑Transit" to "Delivered", giving both internal teams and clients live visibility on critical deliveries.
+          </p>
+        </section>
+
+
+        <section id="results">
+          <div class="section-kicker">The results</div>
+          <h2>Peak efficiency and scalable growth</h2>
+
+          <!-- IMAGE ADDED: growth / KPI improvement -->
+          <img src="https://placehold.co/1000x500/0a0a0a/ffffff?text=KPI+Growth+%26+Improvements" alt="KPIs showing improved customer satisfaction, speed, and cash flow" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+          <p class="section-intro">
+            Within months of going live, the operation saw measurable gains in customer satisfaction, process speed, and financial discipline.
+          </p>
+          <div class="result-metric-row">
+            <div class="result-metric-card">
+              <div class="result-metric-title">Customer experience</div>
+              <div class="result-metric-value">+40% satisfaction</div>
+              <div class="result-metric-note">More professional documents and proactive updates increased trust and loyalty.</div>
+            </div>
+            <div class="result-metric-card">
+              <div class="result-metric-title">Order speed</div>
+              <div class="result-metric-value">60% faster cycle</div>
+              <div class="result-metric-note">Automation removed manual "waiting gaps" between quote, approval, and dispatch.</div>
+            </div>
+            <div class="result-metric-card">
+              <div class="result-metric-title">Repeat business</div>
+              <div class="result-metric-value">Higher retention</div>
+              <div class="result-metric-note">Accurate billing and on‑time deliveries converted one‑time buyers into long‑term accounts.</div>
+            </div>
+            <div class="result-metric-card">
+              <div class="result-metric-title">Financial health</div>
+              <div class="result-metric-value">25% less dues</div>
+              <div class="result-metric-note">Stronger credit control and automatic blocking reduced outstanding receivables.</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <aside class="sidebar" aria-label="Industry & SEO">
+        <section id="industry" class="compact">
+          <div class="section-kicker">Industry-specific impact</div>
+          <h2>How each segment benefited</h2>
+
+          <!-- IMAGE ADDED: collage of crusher, quarry, RMC, bricks -->
+          <img src="https://placehold.co/800x400/0a0a0a/ffffff?text=Crusher+Quarry+RMC+%26+Brick+Plants" alt="Crusher, quarry, RMC, and brick plants served by SAZS Apps ERP" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+          <p class="section-intro">
+            The same customer workflow produced different tangible wins across crusher, quarry, RMC, and brick operations.
+          </p>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th class="comparison-label">Industry</th>
+                <th>Specific benefit realized</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="comparison-label">Crusher &amp; Quarry</td>
+                <td>Rapid handling of high‑volume truck dispatches with instant, order‑linked invoicing.</td>
+              </tr>
+              <tr>
+                <td class="comparison-label">Readymix (RMC)</td>
+                <td>Precise scheduling and tracking of time‑sensitive concrete deliveries to construction sites.</td>
+              </tr>
+              <tr>
+                <td class="comparison-label">Brick plants</td>
+                <td>Streamlined order management and tracking across different grades and batches of bricks.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+
+        <section class="compact">
+          <div class="section-kicker">SEO focus</div>
+          <h2>Target search themes</h2>
+          <p class="section-intro">
+            Use these phrases as on‑page keywords and internal anchor text when linking this case study from your product pages.
+          </p>
+          <div class="badge-list">
+            <span class="badge-chip">Crusher ERP customer management</span>
+            <span class="badge-chip">Quarry ERP CRM</span>
+            <span class="badge-chip">Readymix order fulfillment software</span>
+            <span class="badge-chip">SAZS Apps ERP customer handling</span>
+            <span class="badge-chip">Brick plant sales automation</span>
+            <span class="badge-chip">Automated quotation for quarries</span>
+            <span class="badge-chip">Building material credit control</span>
+          </div>
+        </section>
+      </aside>
+    </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

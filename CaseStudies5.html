@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case Study: Complete Financial Control & Profit Analysis for Quarry & RMC Owners</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
+  <meta name="description" content="How SAZS Apps ERP transformed fragmented accounting into real-time financial intelligence with site-wise profit visibility and automated voucher posting for crusher, quarry, RMC, and brick plant operations." />
+  <meta name="keywords" content="Crusher ERP accounting, Quarry financial management software, Readymix RMC accounting ERP, SAZS Apps ERP finance, Brick plant profit analysis" />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0b0b0b;
+      --card: #050505;
+      --accent: #ffffff;
+      --accent-soft: #e5e5e5;
+      --accent-strong: #ffffff;
+      --text-main: #f5f5f5;
+      --text-soft: #d4d4d4;
+      --text-muted: #ffffff;
+      --border-subtle: #262626;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.9);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --radius-full: 999px;
+      --grad-main: linear-gradient(135deg,#000000,#111111);
+      --grad-pill: linear-gradient(135deg,#f5f5f5,#ffffff);
+      --grad-section: radial-gradient(circle at top,#050505,#000000 55%);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: #000000;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-wrap {
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+      color: var(--text-main);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom,rgba(0,0,0,0.96),rgba(0,0,0,0.7),transparent);
+      border-bottom: 1px solid #262626;
+    }
+
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 30%;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: inherit;
+      background: #000000;
+    }
+
+    .brand-text-main {
+      font-size: 1.05rem;
+      font-weight: 650;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-text-sub {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: var(--accent-strong);
+      border-radius: 999px;
+      transition: width 160ms ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-pill {
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      border: 1px solid #404040;
+      color: var(--text-soft);
+      background: #000000;
+    }
+
+    .nav-button {
+      padding: 7px 18px;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: var(--grad-pill);
+      color: #000000;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 0 1px #171717, 0 14px 25px rgba(0,0,0,0.8);
+    }
+
+    .nav-button:hover {
+      filter: brightness(0.9);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        padding-inline: 16px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .nav-cta {
+        display: none;
+      }
+      .brand-text-main {
+        font-size: 0.95rem;
+      }
+      .brand-text-sub {
+        font-size: 0.68rem;
+      }
+    }
+
+    main {
+      margin: 0 auto;
+      padding: 32px 18px 64px;
+    }
+
+    .topsection {
+      max-width: 780px;
+      margin: 0 auto 28px auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 10px 3px 3px;
+      border-radius: 999px;
+      background: #000000;
+      border: 1px solid #404040;
+      margin-bottom: 14px;
+    }
+
+    .hero-k-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    .hero-k-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem,2.7vw,2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      color: #101010;
+    }
+
+    .hero-title span.accent {
+      color: #000000;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: #000000;
+      margin-bottom: 18px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      border: 1px solid #333333;
+      font-size: 0.8rem;
+      color: #f5f5f5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.2s ease;
+    }
+    
+    .hero-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .hero-cta-primary {
+      padding: 11px 22px;
+      border-radius: 999px;
+      border: none;
+      background: var(--grad-pill);
+      color: #000000;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.9);
+    }
+
+    .hero-cta-primary:hover {
+      filter: brightness(0.9);
+      transform: translateY(-1px);
+    }
+
+    .hero-footnote {
+      font-size: 0.77rem;
+      color: #000000;
+    }
+
+    .hero-footnote strong {
+      color: #000000;
+    }
+
+    .layout-main {
+      display: grid;
+      grid-template-columns: minmax(0,1.7fr) minmax(0,1fr);
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 920px) {
+      .layout-main {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    .content-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    section {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+
+    section.compact {
+      padding-block: 14px;
+    }
+
+    section.alt {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
+      border: 1px solid #333333;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    h2 {
+      font-size: 1.22rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    ul li {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .pill-metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .pill-metric {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      border: 1px solid #333333;
+      font-size: 0.76rem;
+      color: var(--text-soft);
+      transition: all 0.2s ease;
+    }
+    
+    .pill-metric:hover {
+      border-color: #505050;
+      transform: translateY(-1px);
+    }
+
+    .result-metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .result-metric-card {
+      flex: 1 1 150px;
+      padding: 16px 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      border: 1px solid #2a2a2a;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .result-metric-card:hover {
+      transform: translateY(-4px);
+      border-color: #404040;
+      box-shadow: 0 8px 24px rgba(255,255,255,0.1);
+    }
+
+    .result-metric-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .result-metric-value {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .result-metric-note {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .badge-chip {
+      font-size: 0.74rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #404040;
+      color: var(--text-soft);
+      background: #050505;
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+      .hero-badges {
+        gap: 8px;
+      }
+      .hero-badge {
+        font-size: 0.72rem;
+        padding: 4px 8px;
+      }
+      main {
+        padding: 24px 14px 48px;
+      }
+      section {
+        padding: 14px;
+      }
+      .result-metric-row {
+        gap: 12px;
+      }
+      .result-metric-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div>
+          <div class="brand-text-main">SAZS Apps ERP</div>
+          <div class="brand-text-sub">Crusher • Quarry • RMC • Bricks</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#challenge">Challenge</a>
+        <a href="#solution">Solution</a>
+        <a href="#results">Results</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="nav-pill">Finance & Accounting Suite</div>
+        <button class="nav-button" onclick="document.getElementById('results').scrollIntoView({behavior:'smooth'})">
+          Book a demo
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="topsection">
+      <div class="hero-kicker">
+        <div class="hero-k-dot"></div>
+        <div class="hero-k-label">Case study • Complete financial control & profit analysis</div>
+      </div>
+      <h1 class="hero-title">
+        Complete Financial Control & Profit Analysis for <span class="accent">Quarry & RMC Owners</span>
+      </h1>
+      <p class="hero-subtitle">
+        How SAZS Apps ERP transformed fragmented accounting into real-time financial intelligence with site-wise profit visibility and automated voucher posting across crusher, quarry, RMC, and brick plant operations.
+      </p>
+
+      <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=Financial+Intelligence+Dashboard" alt="Real-time financial control and profit analysis dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" />
+
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Real-time profit visibility
+        </div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          90% fewer accounting errors
+        </div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Site-wise P&L reports
+        </div>
+      </div>
+      <div class="hero-cta-row">
+        <button class="hero-cta-primary" onclick="document.getElementById('solution').scrollIntoView({behavior:'smooth'})">
+          See the system
+        </button>
+      </div>
+      <div class="hero-footnote">
+        <strong>Industries:</strong> Crusher, Quarry, Readymix (RMC), Brick Plants
+      </div>
+    </div>
+    
+    <section class="hero">
+      <div class="layout-main">
+        <div class="content-flow">
+          <section id="challenge">
+            <div class="section-kicker">The challenge</div>
+            <h2>Fragmented Data and Hidden Losses</h2>
+
+            <img src="https://placehold.co/1000x500/0a0a0a/ffffff?text=Fragmented+Financial+Data" alt="Fragmented accounting and hidden financial losses" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+            <p class="section-intro">
+              Many Quarry and Brick Plant owners struggle to know their exact profit until the end of the year. This client faced a "visibility gap" caused by:
+            </p>
+            <ul>
+              <li><strong>Site-Wise Confusion:</strong> Inability to see which specific quarry or RMC plant was profitable and which was losing money.</li>
+              <li><strong>Manual Accounting Leaks:</strong> Cash and bank transactions were recorded late, leading to "disappearing" funds.</li>
+              <li><strong>Operational Silos:</strong> Sales, purchases, and payroll were all in separate files, making a total financial overview impossible.</li>
+            </ul>
+          </section>
+
+          <section id="solution" class="alt">
+            <div class="section-kicker">The solution</div>
+            <h2>Integrated Financial Intelligence</h2>
+
+            <img src="https://placehold.co/1000x500/0a0a0a/ffffff?text=Integrated+Financial+System" alt="SAZS Apps ERP integrated financial intelligence system" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+            <p class="section-intro">
+              SAZS Apps ERP Finance & Accounting Module was deployed to act as the central "brain" of the operation, linking every physical movement to a financial entry:
+            </p>
+            
+            <div class="pill-metric-row">
+              <div class="pill-metric">Automated Voucher Posting</div>
+              <div class="pill-metric">Site-Wise P&L Reports</div>
+              <div class="pill-metric">Real-Time Cash Tracking</div>
+              <div class="pill-metric">Unified Payroll</div>
+            </div>
+
+            <p><strong>Automated Voucher Posting</strong><br>
+              When a truck is weighed and an invoice is generated, the accounting entry is posted instantly without human intervention—eliminating delays and errors.
+            </p>
+
+            <p><strong>Site-Wise P&L Reports</strong><br>
+              Owners can now view a Profit & Loss statement for each specific site (Crusher vs. RMC vs. Bricks) at the click of a button.
+            </p>
+
+            <p><strong>Real-Time Cash & Bank Tracking</strong><br>
+              Live monitoring of all collections and expenses prevents cash leakage and provides complete financial transparency.
+            </p>
+
+            <p><strong>Unified Payroll & Procurement</strong><br>
+              Integration with purchase orders and labor attendance (crucial for Brick Plant piece-rate labor) ensures every rupee is accounted for.
+            </p>
+          </section>
+
+          <section id="results">
+            <div class="section-kicker">The results</div>
+            <h2>Total Financial Transparency</h2>
+
+            <img src="https://placehold.co/1000x500/0a0a0a/ffffff?text=Financial+Performance+Results" alt="Financial control and profit analysis results" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+            <p class="section-intro">
+              The integrated financial system transformed the client's ability to understand and control their business:
+            </p>
+
+            <div class="result-metric-row">
+              <div class="result-metric-card">
+                <div class="result-metric-title">Profit Visibility</div>
+                <div class="result-metric-value">Real-Time</div>
+                <div class="result-metric-note">Owners can monitor margins daily, not just annually.</div>
+              </div>
+              <div class="result-metric-card">
+                <div class="result-metric-title">Cost Control</div>
+                <div class="result-metric-value">Optimized</div>
+                <div class="result-metric-note">Identification of high-cost areas led to immediate waste reduction.</div>
+              </div>
+              <div class="result-metric-card">
+                <div class="result-metric-title">Accounting Errors</div>
+                <div class="result-metric-value">90% Reduction</div>
+                <div class="result-metric-note">Automation eliminated manual mistakes and reconciliation issues.</div>
+              </div>
+              <div class="result-metric-card">
+                <div class="result-metric-title">Business Growth</div>
+                <div class="result-metric-value">Smarter Scaling</div>
+                <div class="result-metric-note">Accurate financial data gave confidence to invest in new machinery and sites.</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="sidebar">
+          <!-- SEO Keywords (hidden from display, kept for reference)
+          <section class="compact">
+            <div class="section-kicker">SEO Keywords</div>
+            <h2>Target search themes</h2>
+            <p class="section-intro">
+              Primary keywords for financial management and accounting.
+            </p>
+            <div class="badge-list">
+              <span class="badge-chip">Crusher ERP accounting</span>
+              <span class="badge-chip">Quarry financial management software</span>
+              <span class="badge-chip">Readymix RMC accounting ERP</span>
+              <span class="badge-chip">SAZS Apps ERP finance</span>
+              <span class="badge-chip">Brick plant profit analysis</span>
+            </div>
+          </section>
+          -->
+        </aside>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
