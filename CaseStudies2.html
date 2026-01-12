@@ -204,13 +204,25 @@
     }
 
     .topsection {
-      max-width: 780px;
+      /* max-width: 780px; */
       margin: 80px auto 28px auto;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+    .topsection {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Keep title & subtitle visually centered if needed */
+.hero-title,
+.hero-subtitle,
+.hero-badges,.hero-footnote {
+  align-self: center;
+  text-align: center;
+}
 
     .hero-kicker {
       display: inline-flex;
@@ -218,23 +230,24 @@
       gap: 8px;
       padding: 3px 10px 3px 3px;
       border-radius: 999px;
-      background: #000000;
-      border: 1px solid #404040;
+      /* background: #000000;
+      border: 1px solid #404040; */
       margin-bottom: 14px;
     }
 
-    .hero-k-dot {
+    /* .hero-k-dot {
       width: 18px;
       height: 18px;
       border-radius: 999px;
       background: #ffffff;
-    }
+    } */
 
     .hero-k-label {
-      font-size: 0.7rem;
+      font-size: 0.90rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--text-soft);
+      color: #000000;
+      font-weight: 700;
     }
 
     .hero-title {
@@ -875,7 +888,7 @@ document.addEventListener('click', function (event) {
         How one crusher, quarry, RMC, and brick plant operation moved from siloed spreadsheets and slow dispatches to a unified, high-speed customer lifecycle with SAZS Apps ERP.
       </p>
 
-      <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=Heavy+Materials+Logistics+%26+ERP+Dashboard" alt="Heavy building materials logistics with ERP dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" />
+      <!-- <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=Heavy+Materials+Logistics+%26+ERP+Dashboard" alt="Heavy building materials logistics with ERP dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" /> -->
 
       <div class="hero-badges">
         <div class="hero-badge">
@@ -891,11 +904,11 @@ document.addEventListener('click', function (event) {
           25% lower outstanding dues
         </div>
       </div>
-      <div class="hero-cta-row">
+      <!-- <div class="hero-cta-row">
         <button class="hero-cta-primary" onclick="document.getElementById('solution').scrollIntoView({behavior:'smooth'})">
           Explore the workflow
         </button>
-      </div>
+      </div> -->
       <div class="hero-footnote">
         <strong>Sectors:</strong> Crusher, Quarry, Readymix (RMC), Brick Plants
       </div>

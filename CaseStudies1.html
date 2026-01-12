@@ -196,7 +196,7 @@ main {
 
 /* TOP HERO TEXT – FIXED */
 .topsection {
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 70px auto 24px auto;
   text-align: center;
   display: flex;
@@ -219,6 +219,19 @@ main {
     grid-template-columns: minmax(0,1fr);
   }
 }
+/* Left-align only the case study kicker */
+.topsection {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Keep title & subtitle visually centered if needed */
+.hero-title,
+.hero-subtitle,
+.hero-badges {
+  align-self: center;
+  text-align: center;
+}
 
 /* HERO ELEMENTS */
 .hero-kicker {
@@ -227,23 +240,26 @@ main {
   gap: 8px;
   padding: 3px 10px 3px 3px;
   border-radius: 999px;
-  background: #000000;
-  border: 1px solid #404040;
+  /* color: #000000; */
+  /* background: #000000; */
+  /* border: 1px solid #404040; */
   margin-bottom: 14px;
+  margin-left: 10px;
 }
 
 .hero-k-dot {
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: #ffffff;
+  /* background: #000000; */
 }
 
 .hero-k-label {
-  font-size: 0.6rem;
+  font-size: 0.90rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: var(--text-soft);
+  color: #000000;
+  font-weight: 700;
 }
 
 .hero-title {
@@ -265,8 +281,8 @@ main {
 }
 
 .hero-subtitle {
-  font-size: 1rem;
-  color: var(--text-soft);
+  font-size: 1.4rem;
+  color: #000000;
   margin-bottom: 18px;
 }
 
@@ -275,7 +291,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 80px;
   margin-bottom: 18px;
 }
 
@@ -287,7 +303,7 @@ main {
   border-radius: 999px;
   background: #000000;
   border: 1px solid #404040;
-  font-size: 0.78rem;
+  font-size: 1.25rem;
   color: #f5f5f5;
 }
 
@@ -1281,7 +1297,7 @@ document.addEventListener('click', function (event) {
       <p class="hero-subtitle">
         This case study highlights how SAZS Apps ERP transformed security and operational integrity for a leading crusher and quarry business. By replacing vulnerable manual processes with advanced digital oversight, the company eliminated systemic leaks and secured its bottom line.
       </p>
-            <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=Financial+Intelligence+Dashboard" alt="Real-time financial control and profit analysis dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" />
+            <!-- <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=Financial+Intelligence+Dashboard" alt="Real-time financial control and profit analysis dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" /> -->
 
       <div class="hero-badges">
         <div class="hero-badge">
@@ -1294,14 +1310,14 @@ document.addEventListener('click', function (event) {
         </div>
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          Sub‑2 minute truck processing
+          2 minute truck processing
         </div>
       </div>
-      <div class="hero-cta-row">
+      <!-- <div class="hero-cta-row">
         <button class="hero-cta-primary" onclick="scrollToSection('solution')">
           Explore the solution
         </button>
-      </div>
+      </div> -->
     </div>
 
     <section class="hero">
