@@ -201,7 +201,7 @@
     }
 
     .topsection {
-      max-width: 780px;
+      /* max-width: 780px; */
       margin: 80px auto 28px auto;
       text-align: center;
       display: flex;
@@ -215,10 +215,23 @@
       gap: 8px;
       padding: 3px 10px 3px 3px;
       border-radius: 999px;
-      background: #000000;
-      border: 1px solid #404040;
+      /* background: #000000;
+      border: 1px solid #404040; */
       margin-bottom: 14px;
     }
+            .topsection {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Keep title & subtitle visually centered if needed */
+.hero-title,
+.hero-subtitle,
+.hero-badges,.hero-footnote {
+  align-self: center;
+  text-align: center;
+}
+
 
     .hero-k-dot {
       width: 18px;
@@ -228,10 +241,11 @@
     }
 
     .hero-k-label {
-      font-size: 0.7rem;
+      font-size: 0.90rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--text-soft);
+      color: #000000;
+      font-weight: 700;
     }
 
     .hero-title {
@@ -1065,7 +1079,7 @@ document.addEventListener('click', function (event) {
         How SAZS Apps ERP eliminated ghost trips and transformed logistics operations with GPS-integrated tracking and weighbridge validation across crusher, quarry, RMC, and brick plant sites.
       </p>
 
-      <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=GPS+Vehicle+Tracking+Dashboard" alt="Real-time GPS vehicle tracking and trip management dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" />
+      <!-- <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=GPS+Vehicle+Tracking+Dashboard" alt="Real-time GPS vehicle tracking and trip management dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" /> -->
 
       <div class="hero-badges">
         <div class="hero-badge">
@@ -1081,11 +1095,11 @@ document.addEventListener('click', function (event) {
           30% better utilization
         </div>
       </div>
-      <div class="hero-cta-row">
+      <!-- <div class="hero-cta-row">
         <button class="hero-cta-primary" onclick="document.getElementById('solution').scrollIntoView({behavior:'smooth'})">
           See the system
         </button>
-      </div>
+      </div> -->
       <div class="hero-footnote">
         <strong>Industries:</strong> Crusher, Quarry, Readymix (RMC), Brick Plants
       </div>
