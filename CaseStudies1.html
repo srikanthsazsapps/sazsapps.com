@@ -1132,6 +1132,7 @@ section:nth-child(4) { animation-delay: 0.4s; }
         </div>
     </nav>
 
+
     <!-- Mobile Side Navigation -->
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button" aria-label="closebtn">&times;</a>
@@ -1299,11 +1300,168 @@ document.addEventListener('click', function (event) {
      
       
     </script>
+    
 
   <main>
+      <style>/* =============================================
+   HEADER & NAVIGATION STYLES
+============================================= */
+
+.header11 {
+  position: fixed;
+  top: 0;
+  z-index: 5000;
+  /* backdrop-filter: blur(18px); */
+  margin-top: 70px;
+}
+
+.nav-innern {
+  max-width: 1880px;
+  margin: 0 auto;
+  padding: 14px  20px ;
+  margin-left: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;  
+  gap: 16px;
+  border-radius: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 30%;
+  background: #ffffff00;
+  position: relative;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: inherit;
+  background: #000000;
+}
+
+.brand-text-main {
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+}
+
+.brand-text-sub {
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-size: 0.86rem;
+  color: var(--text-soft);
+}
+
+.nav-links a {
+  position: relative;
+  padding-bottom: 4px;
+  color: #000000;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--accent-strong);
+  border-radius: 999px;
+  transition: width 160ms ease-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  border: 1px solid #404040;
+  color: var(--text-soft);
+  background: #000000;
+}
+
+.nav-button {
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background: var(--grad-pill);
+  color: #000000;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px #171717, 0 14px 25px rgba(0,0,0,0.8);
+}
+
+.nav-button:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+/* Mobile responsiveness for header */
+@media (max-width: 720px) {
+  .nav-innern {
+    padding-inline: 16px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-cta {
+    display: none;
+  }
+}</style>
+      <div id="header11" class="header11">
+    <div class="nav-innern">
+      <div class="brand">
+      
+      </div>
+      <nav class="nav-links">
+        <a href="#challenge">Challenge</a>
+        <a href="#solution">Solution</a>
+        <a href="#comparison">Before vs After</a>
+        <a href="#results">Results</a>
+      </nav>
+     
+    </div>
+  </div>
+  
     <div class="topsection">
       <div class="hero-kicker">
-        <div class="hero-k-dot"></div>
+        <div class="hero-k-dot">
+          
+        </div>
         <div class="hero-k-label">Case study &nbsp;•&nbsp; Theft prevention at scale</div>
       </div>
       <h1 class="hero-title">
@@ -1333,9 +1491,11 @@ document.addEventListener('click', function (event) {
           Explore the solution
         </button>
       </div> -->
+      
     </div>
 
     <section class="hero">
+      
       <div class="hero-grid">
         <!-- Challenge Section on Left -->
         <div style="display: flex; flex-direction: column; gap: 32px;">
