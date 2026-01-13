@@ -366,6 +366,14 @@
             transition: all 0.4s;
             position: relative;
             overflow: hidden;
+            background: rgba(255, 255, 255, 0.288);
+    backdrop-filter: blur(2px);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(47, 47, 47, 0.053);
+    transition: transform 0.3s ease;
+    border-width: 1px;
+    border-color: #8989894a;
         }
 
         .feature-tile::before {
@@ -390,7 +398,7 @@
         }
 
         .feature-tile.wide {
-            grid-column: span 1;
+            /* grid-column: span 1; */
         }
 
         .feature-tile > * {
@@ -408,7 +416,7 @@
 
         .feature-tile:hover i {
             color: var(--white);
-            transform: scale(1.1);
+            /* transform: scale(1.1); */
         }
 
         .feature-tile h3 {
@@ -2272,11 +2280,11 @@ body {
             }
         }
         .key-features{
-                background:
-        /* linear-gradient(400deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8)  ), */
-        url("/src/assets/contentImages/bg1.webp") center/cover no-repeat;
-border-radius: 120px;
-                color: #000000;
+              background:
+    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url("/src/assets/contentImages/bg1.webp") center/cover no-repeat;
+  border-radius: 120px;
+  color: #000;
                 
         }
     </style>
