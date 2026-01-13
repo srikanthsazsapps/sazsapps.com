@@ -243,6 +243,7 @@
         /* Section Common Styles */
         .section {
             padding: 5rem 4rem;
+
         }
 
         .container {
@@ -359,7 +360,7 @@
         }
 
         .feature-tile {
-            background: var(--off-white);
+            /* background: var(--off-white); */
             padding: 3rem 2.5rem;
             border-radius: 25px;
             transition: all 0.4s;
@@ -389,7 +390,7 @@
         }
 
         .feature-tile.wide {
-            grid-column: span 2;
+            grid-column: span 1;
         }
 
         .feature-tile > * {
@@ -2270,6 +2271,14 @@ body {
                 padding: 0 10px;
             }
         }
+        .key-features{
+                background:
+        /* linear-gradient(400deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8)  ), */
+        url("/src/assets/contentImages/bg1.webp") center/cover no-repeat;
+border-radius: 120px;
+                color: #000000;
+                
+        }
     </style>
     </head>
 
@@ -2600,7 +2609,8 @@ body {
     </section>
 
     <!-- Key Features -->
-    <section class="section" style="background: var(--off-white);">
+     <div class="key-features">
+    <section class="section" style="">
         <div class="container">
             <div class="section-header">
                 <div class="section-label">KEY FEATURES</div>
@@ -2646,6 +2656,7 @@ body {
             </div>
         </div>
     </section>
+    </div>
 
     <!-- Biometric Systems -->
     <section class="section">
