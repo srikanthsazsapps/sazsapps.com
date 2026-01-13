@@ -9,14 +9,14 @@
 
   <style>
     :root {
-      --primary: #0f172a;      /* dark blue‑black */
-      --primary-dark: #020617;
-      --accent: #2563eb;       /* blue highlight */
-      --bg: #f9fafb;           /* page background */
-      --bg-soft: #f3f4f6;
+      --primary: #ffffff;      /* white */
+      --primary-dark: #000000; /* black */
+      --accent: #3b82f6;       /* blue highlight */
+      --bg: #ffffff;           /* page background */
+      --bg-soft: #f8f9fa;
       --bg-light: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
+      --text: #000000;
+      --muted: #4b5563;
       --border: #e5e7eb;
     }
 
@@ -51,23 +51,23 @@
       justify-content: center;
       align-items: flex-start;
       padding: 1.25rem;
-      background: #020617;
+      background: #ffffff;
     }
 
     .page {
       width: 100%;
-      max-width: 1120px;
+      /* max-width: 1120px; */
       padding: 1.5rem 1.5rem 2.5rem;
-      background: var(--bg-light);
+      background: #ffffff;
       border-radius: 1.25rem;
-      border: 1px solid var(--border);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+      border: 2px solid #e5e7eb;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
     h1, h2, h3 {
       margin: 0;
       font-weight: 700;
-      color: #020617;
+      color: #000000;
     }
 
     p {
@@ -81,13 +81,11 @@
       gap: 1.75rem;
       padding: 2.25rem 1.5rem 2rem;
       border-radius: 1.1rem;
-      background: radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.2) 0, transparent 60%),
-                  radial-gradient(circle at 100% 100%, rgba(29, 78, 216, 0.2) 0, transparent 60%),
-                  linear-gradient(rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.95)),
-                  url('https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1200&q=80') center/cover;
-      color: #e5e7eb;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: #ffffff;
       position: relative;
-      box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+      border: 2px solid #3b82f6;
     }
 
     .hero-badge {
@@ -96,12 +94,12 @@
       gap: .5rem;
       padding: .4rem .9rem;
       border-radius: 999px;
-      border: 1.5px solid rgba(37, 99, 235, 0.8);
-      background: rgba(2, 6, 23, 0.98);
+      border: 2px solid #3b82f6;
+      background: rgba(59, 130, 246, 0.1);
       font-size: .78rem;
-      color: #f9fafb;
+      color: #ffffff;
       margin-bottom: .6rem;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
       font-weight: 500;
     }
 
@@ -112,10 +110,10 @@
       width: 20px;
       height: 20px;
       border-radius: 999px;
-      background: rgba(34, 197, 94, 0.15);
-      color: #22c55e;
+      background: #3b82f6;
+      color: #ffffff;
       font-size: .75rem;
-      box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
     }
 
     .hero h1 {
@@ -152,12 +150,12 @@
     .pill {
       padding: .3rem .8rem;
       border-radius: 999px;
-      background: rgba(2, 6, 23, 0.95);
-      border: 1.5px solid rgba(59, 130, 246, 0.5);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1.5px solid #3b82f6;
       font-size: .76rem;
-      color: #f3f4f6;
+      color: #ffffff;
       font-weight: 500;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
     }
 
     .hero-cta {
@@ -194,9 +192,9 @@
     /* OUTLINE BUTTON */
     .btn-ghost {
       padding: .75rem 1.3rem;
-      border: 1.5px solid rgba(148, 163, 184, 0.8);
-      background: rgba(2, 6, 23, 0.6);
-      color: #f3f4f6;
+      border: 2px solid #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
       display: inline-flex;
       align-items: center;
       gap: .4rem;
@@ -205,24 +203,24 @@
     }
 
     .btn-ghost:hover {
-      background: rgba(37, 99, 235, 0.15);
-      border-color: rgba(59, 130, 246, 0.8);
+      background: rgba(59, 130, 246, 0.2);
+      border-color: #3b82f6;
       transform: translateY(-1px);
     }
 
     .trust-text {
       font-size: .8rem;
-      color: #9ca3af;
+      color: #d1d5db;
     }
 
     /* HERO RIGHT PANEL */
     .hero-right {
-      background: linear-gradient(135deg, rgba(2, 6, 23, 0.98), rgba(15, 23, 42, 0.98));
+      background: linear-gradient(135deg, #000000, #1a1a1a);
       border-radius: 1.2rem;
       padding: 1.4rem;
-      border: 1.5px solid rgba(59, 130, 246, 0.3);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(37, 99, 235, 0.2);
-      color: #e5e7eb;
+      border: 2px solid #3b82f6;
+      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+      color: #ffffff;
       backdrop-filter: blur(10px);
     }
 
@@ -248,16 +246,16 @@
       font-size: .72rem;
       padding: .2rem .6rem;
       border-radius: 999px;
-      background: rgba(37, 99, 235, 0.15);
-      border: 1px solid rgba(59, 130, 246, 0.5);
-      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.2);
+      border: 1px solid #3b82f6;
+      color: #60a5fa;
       font-weight: 500;
     }
 
     .card-right {
       text-align: right;
       font-size: .72rem;
-      color: #9ca3af;
+      color: #d1d5db;
     }
 
     .metric-grid {
@@ -270,14 +268,14 @@
     .metric {
       padding: .75rem .85rem;
       border-radius: .8rem;
-      background: linear-gradient(135deg, rgba(2, 6, 23, 0.8), rgba(15, 23, 42, 0.8));
-      border: 1.5px solid rgba(31, 41, 55, 1);
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(59, 130, 246, 0.3);
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .metric-label {
       font-size: .7rem;
-      color: #9ca3af;
+      color: #d1d5db;
       margin-bottom: .15rem;
     }
 
@@ -290,15 +288,15 @@
 
     .metric-tag {
       font-size: .68rem;
-      color: #22c55e;
+      color: #60a5fa;
     }
 
     .timeline {
       margin-top: .7rem;
       padding-top: .7rem;
-      border-top: 1px dashed rgba(55, 65, 81, 1);
+      border-top: 1px dashed rgba(59, 130, 246, 0.4);
       font-size: .75rem;
-      color: #9ca3af;
+      color: #d1d5db;
     }
 
     .timeline-step {
@@ -312,8 +310,9 @@
       width: 6px;
       height: 6px;
       border-radius: 999px;
-      background: #22c55e;
+      background: #3b82f6;
       margin-top: .25rem;
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
     }
 
     /* SECTIONS */
@@ -325,7 +324,7 @@
       font-size: 1.5rem;
       margin-bottom: .5rem;
       font-weight: 800;
-      color: #020617;
+      color: #000000;
     }
 
     .section-sub {
@@ -343,10 +342,10 @@
     }
 
     .feature-card {
-      background: var(--bg-light);
+      background: #ffffff;
       border-radius: .9rem;
       padding: 1rem;
-      border: 1.5px solid var(--border);
+      border: 2px solid #e5e7eb;
       overflow: hidden;
       transition: all .3s ease;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -354,8 +353,8 @@
 
     .feature-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-      border-color: rgba(37, 99, 235, 0.3);
+      box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
+      border-color: #3b82f6;
     }
 
     .feature-image {
@@ -374,10 +373,11 @@
 
     .feature-tag {
       font-size: .7rem;
-      color: var(--accent);
+      color: #3b82f6;
       text-transform: uppercase;
       letter-spacing: .08em;
       margin-bottom: .3rem;
+      font-weight: 600;
     }
 
     .feature-card h3 {
@@ -405,15 +405,16 @@
 
     .feature-card li::before {
       content: "•";
-      color: var(--accent);
+      color: #3b82f6;
       margin-right: .3rem;
+      font-weight: bold;
     }
 
     /* TABLE */
     .table-wrap {
       overflow-x: auto;
       border-radius: .9rem;
-      border: 1px solid var(--border);
+      border: 2px solid #e5e7eb;
       background: #ffffff;
     }
 
@@ -431,23 +432,26 @@
 
     th {
       text-align: left;
-      background: #f9fafb;
+      background: #f8f9fa;
       font-size: .78rem;
-      color: var(--muted);
+      color: #000000;
       text-transform: uppercase;
       letter-spacing: .06em;
+      font-weight: 700;
     }
 
     tr:nth-child(even) td {
-      background: #f9fafb;
+      background: #f8f9fa;
     }
 
     .col-good {
-      color: #16a34a;
+      color: #3b82f6;
+      font-weight: 600;
     }
 
     .col-bad {
-      color: #b91c1c;
+      color: #000000;
+      font-weight: 500;
     }
 
     /* CHECKLIST & FORM */
@@ -462,7 +466,7 @@
       background: #ffffff;
       border-radius: .9rem;
       padding: 1rem;
-      border: 1px solid var(--border);
+      border: 2px solid #e5e7eb;
       font-size: .85rem;
       color: var(--muted);
     }
@@ -481,36 +485,37 @@
     }
 
     .check-card li span {
-      color: #16a34a;
+      color: #3b82f6;
       margin-top: .05rem;
+      font-weight: bold;
     }
 
     /* Blue highlight CTA card */
     .cta-side {
-      background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
-      color: #f9fafb;
-      border: 1.5px solid #2563eb;
-      box-shadow: 0 0 30px rgba(37, 99, 235, 0.5), 0 8px 24px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: #ffffff;
+      border: 2px solid #3b82f6;
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), 0 8px 24px rgba(0, 0, 0, 0.4);
     }
 
     .cta-side h3 {
       font-size: 1rem;
       margin-bottom: .4rem;
-      color: #f9fafb;
+      color: #ffffff;
     }
 
     .cta-side p {
       margin-bottom: .6rem;
-      color: #e5e7eb;
+      color: #d1d5db;
     }
 
     .small-input {
       width: 100%;
       padding: .55rem .6rem;
       border-radius: .45rem;
-      border: 1px solid #4b5563;
-      background: #020617;
-      color: #f9fafb;
+      border: 2px solid #3b82f6;
+      background: rgba(0, 0, 0, 0.4);
+      color: #ffffff;
       font-size: .8rem;
       margin-bottom: .55rem;
     }
@@ -671,6 +676,96 @@
         </div>
       </header>
 
+      <!-- KEY BENEFITS SECTION -->
+      <section id="benefits">
+        <h2 class="section-heading">Why Choose SAZS Apps ERP?</h2>
+        <p class="section-sub">
+          In the Crusher, Quarry, Readymix (RMC), and Brick Plant industries, profitability depends on tight security and operational speed. SAZS Apps ERP provides a "Hard-Wired" security and management ecosystem.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-tag">🛡️ Security</div>
+            <h3>Unlocked Security: Boom Barrier &amp; Weighment Integration</h3>
+            <p>
+              We don't just record data; we control the physical movement of your stock.
+            </p>
+            <ul>
+              <li><strong>Automated Weighment:</strong> Direct connection to weighbridge load cells eliminates manual entry errors</li>
+              <li><strong>Boom Barrier Integration:</strong> ERP acts as digital gateman - barrier opens only with valid weighment, invoice, and credit</li>
+              <li><strong>Result:</strong> 100% "closed-loop" system where material cannot leave unaccounted</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-tag">📦 Inventory</div>
+            <h3>Effective Inventory &amp; Stock Control</h3>
+            <p>
+              Stop the guesswork in your stockyard. Track every unit of aggregates, cement, or finished bricks.
+            </p>
+            <ul>
+              <li><strong>Real-Time Stockpiles:</strong> Automatic deduction during RMC batching or brick production</li>
+              <li><strong>Live Reconciliation:</strong> Compare physical stock with digital records instantly</li>
+              <li><strong>Result:</strong> Accurate inventory prevents over-ordering or stock-outs</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-tag">🚀 Sales</div>
+            <h3>High-Speed Sales &amp; Customer Management</h3>
+            <p>
+              Professionalize the way you sell. Our ERP moves as fast as your trucks do.
+            </p>
+            <ul>
+              <li><strong>Instant Quotation to Invoice:</strong> Convert orders to GST invoices in under 60 seconds</li>
+              <li><strong>Smart Credit Control:</strong> Auto-block billing for overdue payments or exhausted limits</li>
+              <li><strong>Result:</strong> Improved cash flow and 40% boost in customer trust</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-grid" style="margin-top: 1rem;">
+          <div class="feature-card">
+            <div class="feature-tag">📈 Accounts</div>
+            <h3>Integrated Accounts &amp; Financial Intelligence</h3>
+            <p>
+              Eliminate the gap between your site operations and your balance sheet.
+            </p>
+            <ul>
+              <li><strong>Auto-Accounting:</strong> Every sale, purchase, and expense auto-posted to ledgers</li>
+              <li><strong>Site-Wise P&amp;L:</strong> Real-time profit/loss reports for Quarry, RMC, or Brick Unit</li>
+              <li><strong>Result:</strong> Total financial transparency and 90% reduction in accounting errors</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-tag">Industry Specific</div>
+            <h3>Tailored for Crusher &amp; Quarry</h3>
+            <p>
+              Built specifically for your industry's unique challenges.
+            </p>
+            <ul>
+              <li>Boom Barrier control for high-volume truck traffic</li>
+              <li>Automated Weighment to stop material theft</li>
+              <li>Production tracking by size and quality</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-tag">Complete Solution</div>
+            <h3>RMC &amp; Brick Plant Ready</h3>
+            <p>
+              Handle the complexities of concrete batching and brick production.
+            </p>
+            <ul>
+              <li>Raw material tracking vs Output reconciliation</li>
+              <li>Transit Mixer trip and time-slot management</li>
+              <li>Piece-rate payroll and kiln production tracking</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- SECURITY SECTION -->
       <section id="security">
         <h2 class="section-heading">Hard-Wired Security at Gate &amp; Weighbridge</h2>
@@ -771,6 +866,40 @@
               <li>Breakage &amp; wastage tracking</li>
               <li>Integrated piece-rate payroll</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY GENERAL SOFTWARE FAILS SECTION -->
+      <section id="why-generic-fails">
+        <h2 class="section-heading">Why "General" Software Fails Your Industry</h2>
+        <p class="section-sub">
+          Most software is designed for trading or retail, but Crusher, Quarry, and Readymix businesses operate in "Real-Time." Here is why you need a specialized ERP:
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-tag">Risk</div>
+            <h3>The "Human Element" Risk</h3>
+            <p>
+              Generic software relies on your staff to type in the correct weight. If they make a "mistake" (or commit malpractice), the software cannot stop it. SAZS Apps ERP pulls the weight directly from the load cells.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-tag">Security</div>
+            <h3>The Gate Leak</h3>
+            <p>
+              Standard software doesn't know if a truck has actually left the gate or if it left with 20 tons instead of 10. Our Boom Barrier integration ensures that the physical gate only opens when the digital data is 100% correct.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-tag">Loss</div>
+            <h3>Revenue Leakage</h3>
+            <p>
+              In Brick Plants or RMC units, raw material consumption must match output. Generic software doesn't track "breakage" or "slump," leading to hidden losses. We track every unit from raw material to finished product.
+            </p>
           </div>
         </div>
       </section>
@@ -882,6 +1011,9 @@
         </div>
       </section>
 
+      <footer>
+        © <span id="year"></span> SAZS Apps ERP. All rights reserved.
+      </footer>
     </div>
   </div>
 
@@ -909,6 +1041,273 @@
         metric.textContent = (value < 10 ? "0" : "") + value + " sec";
       }, 2500);
     })();
+
+    // ==================== NEW ANIMATIONS ====================
+
+    // 1. SCROLL REVEAL ANIMATION
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.dataset.revealed = 'true'; // Mark as revealed
+        }
+      });
+    }, observerOptions);
+
+    // Apply scroll reveal to sections and cards (only animate once)
+    document.querySelectorAll('section, .feature-card, .check-card, .cta-side').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    // 2. COUNTER ANIMATION FOR METRICS
+    function animateCounter(element, target, suffix = '', duration = 2000) {
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        
+        if (suffix === '%') {
+          element.textContent = '↓ ' + Math.round(current) + suffix;
+        } else if (suffix === '+') {
+          element.textContent = '+ ' + Math.round(current) + '%';
+        } else {
+          element.textContent = Math.round(current) + suffix;
+        }
+      }, 16);
+    }
+
+    // Trigger counter animations when metrics come into view
+    const metricsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          entry.target.dataset.animated = 'true';
+          const metrics = entry.target.querySelectorAll('.metric-value');
+          
+          // Animate each metric
+          setTimeout(() => animateCounter(metrics[1], 95, '%'), 200);
+          setTimeout(() => animateCounter(metrics[2], 90, '%'), 400);
+          setTimeout(() => animateCounter(metrics[3], 40, '+'), 600);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const metricsGrid = document.querySelector('.metric-grid');
+    if (metricsGrid) {
+      metricsObserver.observe(metricsGrid);
+    }
+
+    // 3. TYPING EFFECT FOR HERO HEADING
+    const heroHeading = document.querySelector('.hero h1');
+    const originalText = heroHeading.innerHTML;
+    
+    function typeWriter(element, html, speed = 50) {
+      let i = 0;
+      element.innerHTML = '';
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+      const text = tempDiv.textContent;
+      
+      function type() {
+        if (i < text.length) {
+          const char = text.charAt(i);
+          if (html.includes('<span>') && text.substring(i).startsWith('SAZS Apps ERP')) {
+            element.innerHTML += '<span>SAZS Apps ERP</span>';
+            i += 'SAZS Apps ERP'.length;
+          } else {
+            element.innerHTML += char;
+            i++;
+          }
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    // Start typing effect after a short delay
+    setTimeout(() => {
+      typeWriter(heroHeading, originalText, 30);
+    }, 500);
+
+    // 4. FLOATING ANIMATION FOR HERO PILLS
+    const pills = document.querySelectorAll('.pill');
+    pills.forEach((pill, index) => {
+      pill.style.animation = `float 3s ease-in-out ${index * 0.2}s infinite`;
+    });
+
+    // 5. PROGRESS BAR ANIMATION FOR TIMELINE
+    const timelineSteps = document.querySelectorAll('.timeline-step');
+    timelineSteps.forEach((step, index) => {
+      step.style.opacity = '0';
+      step.style.transform = 'translateX(-20px)';
+      step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      
+      setTimeout(() => {
+        step.style.opacity = '1';
+        step.style.transform = 'translateX(0)';
+      }, 1500 + (index * 300));
+    });
+
+    // 6. PULSE ANIMATION FOR CTA BUTTONS
+    const ctaButtons = document.querySelectorAll('.btn-primary');
+    ctaButtons.forEach(btn => {
+      setInterval(() => {
+        btn.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+          btn.style.transform = 'scale(1)';
+        }, 200);
+      }, 3000);
+    });
+
+    // 7. PARALLAX EFFECT FOR HERO (REMOVED - caused sections to go white on scroll back)
+    // Parallax disabled to prevent fade-out effect when scrolling
+
+    // 8. TABLE ROW HIGHLIGHT ANIMATION
+    const tableRows = document.querySelectorAll('tbody tr');
+    tableRows.forEach((row, index) => {
+      row.style.opacity = '0';
+      row.style.transform = 'translateX(-20px)';
+      
+      const rowObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              row.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+              row.style.opacity = '1';
+              row.style.transform = 'translateX(0)';
+            }, index * 50);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      rowObserver.observe(row);
+    });
+
+    // 9. CHECKLIST ITEMS CHECK ANIMATION
+    const checkItems = document.querySelectorAll('.check-card li');
+    checkItems.forEach((item, index) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateX(-10px)';
+      
+      const checkObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+              item.style.opacity = '1';
+              item.style.transform = 'translateX(0)';
+              
+              // Add checkmark animation
+              const checkmark = item.querySelector('span');
+              if (checkmark) {
+                checkmark.style.display = 'inline-block';
+                checkmark.style.animation = 'checkPop 0.3s ease';
+              }
+            }, index * 100);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      checkObserver.observe(item);
+    });
+
+    // 10. INPUT FOCUS EFFECTS
+    const inputs = document.querySelectorAll('.small-input');
+    inputs.forEach(input => {
+      input.addEventListener('focus', function() {
+        this.style.transform = 'scale(1.02)';
+        this.style.borderColor = '#3b82f6';
+        this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+      });
+      
+      input.addEventListener('blur', function() {
+        this.style.transform = 'scale(1)';
+        this.style.borderColor = '#4b5563';
+        this.style.boxShadow = 'none';
+      });
+    });
+
+    // 11. FEATURE CARDS STAGGER ANIMATION
+    const featureCards = document.querySelectorAll('.feature-card');
+    const featureObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          entry.target.dataset.animated = 'true';
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0) scale(1)';
+          }, index * 150);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    featureCards.forEach(card => {
+      card.style.transform = 'translateY(30px) scale(0.95)';
+      featureObserver.observe(card);
+    });
+
+    // 12. BADGE GLOW PULSE
+    const badge = document.querySelector('.hero-badge');
+    if (badge) {
+      setInterval(() => {
+        badge.style.boxShadow = '0 4px 20px rgba(37, 99, 235, 0.6)';
+        setTimeout(() => {
+          badge.style.boxShadow = '0 4px 14px rgba(37, 99, 235, 0.3)';
+        }, 500);
+      }, 2000);
+    }
+
+    // Add CSS animations via style tag
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+      }
+      
+      @keyframes checkPop {
+        0% { transform: scale(0); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      
+      .btn-primary {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .small-input {
+        transition: all 0.3s ease;
+      }
+      
+      .hero-badge {
+        transition: box-shadow 0.5s ease;
+      }
+      
+      .feature-image {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    `;
+    document.head.appendChild(style);
+
   </script>
 </body>
 </html>
