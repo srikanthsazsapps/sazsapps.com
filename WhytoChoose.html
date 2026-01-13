@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Why Choose SAZS Apps ERP | Automated Weighbridge ERP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Automated Weighbridge ERP with Boom Barrier integration for Crusher, Quarry, RMC and Brick Plants. Stop weighbridge malpractice and control inventory in real time." />
+
+  <style>
+    :root {
+      --primary: #0f172a;      /* dark blue‑black */
+      --primary-dark: #020617;
+      --accent: #2563eb;       /* blue highlight */
+      --bg: #f9fafb;           /* page background */
+      --bg-soft: #f3f4f6;
+      --bg-light: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+    }
+
+    /* RESET & BASE */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* CENTERED LAYOUT */
+    .site {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.25rem;
+      background: #020617;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1120px;
+      padding: 1.5rem 1.5rem 2.5rem;
+      background: var(--bg-light);
+      border-radius: 1.25rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 700;
+      color: #020617;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      padding: 2.25rem 1.5rem 2rem;
+      border-radius: 1.1rem;
+      background: radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.2) 0, transparent 60%),
+                  radial-gradient(circle at 100% 100%, rgba(29, 78, 216, 0.2) 0, transparent 60%),
+                  linear-gradient(rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.95)),
+                  url('https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1200&q=80') center/cover;
+      color: #e5e7eb;
+      position: relative;
+      box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem .9rem;
+      border-radius: 999px;
+      border: 1.5px solid rgba(37, 99, 235, 0.8);
+      background: rgba(2, 6, 23, 0.98);
+      font-size: .78rem;
+      color: #f9fafb;
+      margin-bottom: .6rem;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+      font-weight: 500;
+    }
+
+    .hero-badge span:first-child {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.15);
+      color: #22c55e;
+      font-size: .75rem;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5.3vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: .9rem;
+      color: #ffffff;
+      font-weight: 800;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h1 span {
+      color: #3b82f6;
+      text-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+    }
+
+    .hero-sub {
+      color: #e5e7eb;
+      max-width: 34rem;
+      margin-bottom: 1.3rem;
+      font-size: .96rem;
+      line-height: 1.7;
+      font-weight: 400;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pill {
+      padding: .3rem .8rem;
+      border-radius: 999px;
+      background: rgba(2, 6, 23, 0.95);
+      border: 1.5px solid rgba(59, 130, 246, 0.5);
+      font-size: .76rem;
+      color: #f3f4f6;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: .65rem;
+      font-size: .9rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    /* BLUE PRIMARY BUTTON */
+    .btn-primary {
+      padding: .8rem 1.6rem;
+      background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.6), 0 6px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    /* OUTLINE BUTTON */
+    .btn-ghost {
+      padding: .75rem 1.3rem;
+      border: 1.5px solid rgba(148, 163, 184, 0.8);
+      background: rgba(2, 6, 23, 0.6);
+      color: #f3f4f6;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-weight: 500;
+      transition: all .2s ease;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(37, 99, 235, 0.15);
+      border-color: rgba(59, 130, 246, 0.8);
+      transform: translateY(-1px);
+    }
+
+    .trust-text {
+      font-size: .8rem;
+      color: #9ca3af;
+    }
+
+    /* HERO RIGHT PANEL */
+    .hero-right {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.98), rgba(15, 23, 42, 0.98));
+      border-radius: 1.2rem;
+      padding: 1.4rem;
+      border: 1.5px solid rgba(59, 130, 246, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(37, 99, 235, 0.2);
+      color: #e5e7eb;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-right-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      gap: .75rem;
+    }
+
+    .card-title {
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .card-label {
+      font-size: .72rem;
+      padding: .2rem .6rem;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      color: #93c5fd;
+      font-weight: 500;
+    }
+
+    .card-right {
+      text-align: right;
+      font-size: .72rem;
+      color: #9ca3af;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: .75rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .metric {
+      padding: .75rem .85rem;
+      border-radius: .8rem;
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.8), rgba(15, 23, 42, 0.8));
+      border: 1.5px solid rgba(31, 41, 55, 1);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .metric-label {
+      font-size: .7rem;
+      color: #9ca3af;
+      margin-bottom: .15rem;
+    }
+
+    .metric-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    }
+
+    .metric-tag {
+      font-size: .68rem;
+      color: #22c55e;
+    }
+
+    .timeline {
+      margin-top: .7rem;
+      padding-top: .7rem;
+      border-top: 1px dashed rgba(55, 65, 81, 1);
+      font-size: .75rem;
+      color: #9ca3af;
+    }
+
+    .timeline-step {
+      display: flex;
+      align-items: flex-start;
+      gap: .4rem;
+      margin-bottom: .3rem;
+    }
+
+    .timeline-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      margin-top: .25rem;
+    }
+
+    /* SECTIONS */
+    section {
+      margin-top: 2.4rem;
+    }
+
+    .section-heading {
+      font-size: 1.5rem;
+      margin-bottom: .5rem;
+      font-weight: 800;
+      color: #020617;
+    }
+
+    .section-sub {
+      font-size: .9rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* FEATURE GRID */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .feature-card {
+      background: var(--bg-light);
+      border-radius: .9rem;
+      padding: 1rem;
+      border: 1.5px solid var(--border);
+      overflow: hidden;
+      transition: all .3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    .feature-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: .6rem;
+      margin-bottom: .75rem;
+      transition: transform .3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card:hover .feature-image {
+      transform: scale(1.02);
+    }
+
+    .feature-tag {
+      font-size: .7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .3rem;
+    }
+
+    .feature-card h3 {
+      font-size: .98rem;
+      margin-bottom: .4rem;
+    }
+
+    .feature-card p {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: .55rem;
+    }
+
+    .feature-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    .feature-card li {
+      margin-bottom: .3rem;
+    }
+
+    .feature-card li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: .3rem;
+    }
+
+    /* TABLE */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: .9rem;
+      border: 1px solid var(--border);
+      background: #ffffff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      font-size: .8rem;
+    }
+
+    th, td {
+      padding: .6rem .75rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      text-align: left;
+      background: #f9fafb;
+      font-size: .78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    tr:nth-child(even) td {
+      background: #f9fafb;
+    }
+
+    .col-good {
+      color: #16a34a;
+    }
+
+    .col-bad {
+      color: #b91c1c;
+    }
+
+    /* CHECKLIST & FORM */
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .check-card,
+    .cta-side {
+      background: #ffffff;
+      border-radius: .9rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    .check-card ul {
+      list-style: none;
+      margin-top: .5rem;
+      padding-left: 0;
+    }
+
+    .check-card li {
+      margin-bottom: .4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: .3rem;
+    }
+
+    .check-card li span {
+      color: #16a34a;
+      margin-top: .05rem;
+    }
+
+    /* Blue highlight CTA card */
+    .cta-side {
+      background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
+      color: #f9fafb;
+      border: 1.5px solid #2563eb;
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.5), 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .cta-side h3 {
+      font-size: 1rem;
+      margin-bottom: .4rem;
+      color: #f9fafb;
+    }
+
+    .cta-side p {
+      margin-bottom: .6rem;
+      color: #e5e7eb;
+    }
+
+    .small-input {
+      width: 100%;
+      padding: .55rem .6rem;
+      border-radius: .45rem;
+      border: 1px solid #4b5563;
+      background: #020617;
+      color: #f9fafb;
+      font-size: .8rem;
+      margin-bottom: .55rem;
+    }
+
+    .small-input::placeholder {
+      color: #9ca3af;
+    }
+
+    .btn-full {
+      width: 100%;
+      margin-top: .15rem;
+    }
+
+    .fine-print {
+      font-size: .7rem;
+      color: #d1d5db;
+      margin-top: .4rem;
+    }
+
+    /* FOOTER */
+    footer {
+      font-size: .75rem;
+      color: var(--muted);
+      padding: 2rem 0 1rem;
+      text-align: center;
+    }
+
+    /* RESPONSIVE */
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .hero > div:first-child,
+      .hero > .hero-right {
+        flex: 1;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .checklist {
+        flex-direction: row;
+      }
+
+      .check-card {
+        flex: 2;
+      }
+
+      .cta-side {
+        flex: 1.2;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .page {
+        padding-inline: 2rem;
+      }
+
+      .hero {
+        padding-inline: 2rem;
+        padding-top: 2.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site">
+    <div class="page">
+
+      <!-- HERO -->
+      <header class="hero">
+        <div>
+          <div class="hero-badge">
+            <span>●</span>
+            <span>Automated Weighbridge ERP for Crusher, Quarry, RMC &amp; Brick Plants</span>
+          </div>
+
+          <h1>
+            Protect Every Ton with <span>SAZS Apps ERP</span>
+          </h1>
+
+          <p class="hero-sub">
+            Hard-wired security that connects weighbridge load cells, boom barriers, and GST-ready accounts so no truck, no slip, and no rupee can escape unnoticed.
+          </p>
+
+          <div class="hero-pills">
+            <div class="pill">Automated Weighbridge ERP</div>
+            <div class="pill">Boom Barrier Integration</div>
+            <div class="pill">Crusher Inventory Management</div>
+            <div class="pill">RMC &amp; Brick Plant Automation</div>
+          </div>
+
+          <div class="hero-cta">
+            <button class="btn-primary" id="demoBtn">Book a Free Demo</button>
+            <button class="btn-ghost" id="checklistBtn">Download ROI Checklist →</button>
+            <p class="trust-text">
+              Built for Indian Crusher, Quarry, RMC &amp; Brick entrepreneurs.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-right-inner">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Live Dispatch Control</div>
+                <div class="card-label">Weighbridge + Boom Barrier</div>
+              </div>
+              <div class="card-right">
+                <div>Truck: TN 76 AB 4321</div>
+                <div>Material: 20mm Aggregate</div>
+              </div>
+            </div>
+
+            <div class="metric-grid">
+              <div class="metric">
+                <div class="metric-label">Weighment to Invoice</div>
+                <div class="metric-value" id="metricSpeed">00:29 sec</div>
+                <div class="metric-tag">Under 60 seconds</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Weighbridge Malpractice</div>
+                <div class="metric-value">↓ 95%</div>
+                <div class="metric-tag">Closed-loop dispatch</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Accounting Errors</div>
+                <div class="metric-value">↓ 90%</div>
+                <div class="metric-tag">Auto-ledger posting</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Repeat Customers</div>
+                <div class="metric-value">+ 40%</div>
+                <div class="metric-tag">Faster, accurate billing</div>
+              </div>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-step">
+                <div class="timeline-dot"></div>
+                <span>1. Truck weighed: 28.340 MT (Auto from load cells)</span>
+              </div>
+              <div class="timeline-step">
+                <div class="timeline-dot"></div>
+                <span>2. GST invoice generated &amp; credit limit rechecked</span>
+              </div>
+              <div class="timeline-step">
+                <div class="timeline-dot"></div>
+                <span>3. Boom barrier opens – gate log updated in ERP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- SECURITY SECTION -->
+      <section id="security">
+        <h2 class="section-heading">Hard-Wired Security at Gate &amp; Weighbridge</h2>
+        <p class="section-sub">
+          Generic accounting tools only record what staff type. SAZS Apps ERP controls the physical gate, talks to your weighbridge, and enforces credit limits in real time.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <img src="https://images.unsplash.com/photo-1559223607-c3f08c3f8b55?w=600&q=80" alt="Weighbridge system" class="feature-image" />
+            <div class="feature-tag">Weighbridge</div>
+            <h3>Direct Load Cell Integration</h3>
+            <p>
+              Capture gross, tare, and net weight automatically from the weighbridge – no manual typing, no "adjustments".
+            </p>
+            <ul>
+              <li>Auto-read from indicator / load cells</li>
+              <li>Single source of truth for tonnage</li>
+              <li>Blocks invoices without valid weight</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80" alt="Boom barrier gate control" class="feature-image" />
+            <div class="feature-tag">Boom Barrier</div>
+            <h3>"No Slip, No Exit" Control</h3>
+            <p>
+              The boom barrier opens only when the ERP confirms weighment, invoice, and credit checks – closing your gate leak.
+            </p>
+            <ul>
+              <li>Linked with weighment &amp; billing</li>
+              <li>Stops under-billing &amp; over-loading</li>
+              <li>Digital gate log for every trip</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Security monitoring system" class="feature-image" />
+            <div class="feature-tag">Theft</div>
+            <h3>Material Theft &amp; Leakage Control</h3>
+            <p>
+              Real-time tracking and cross-checks between stock, weighbridge, and dispatch reduce theft by design, not by suspicion.
+            </p>
+            <ul>
+              <li>Instant alerts for mismatch</li>
+              <li>Driver / truck history per site</li>
+              <li>Audit-ready trip records</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- INVENTORY / ACCOUNTS SECTION -->
+      <section id="inventory">
+        <h2 class="section-heading">Inventory, RMC &amp; Brick Production Under Control</h2>
+        <p class="section-sub">
+          Track aggregates, cement, admixtures, and bricks from raw material to dispatch. Every batch and every kiln firing flows into accounts automatically.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <img src="https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=600&q=80" alt="Quarry crusher operations" class="feature-image" />
+            <div class="feature-tag">Crusher &amp; Quarry</div>
+            <h3>From Blast to Stockpile</h3>
+            <p>
+              Map output by size and quality while reconciling production against diesel, explosives, and loader hours.
+            </p>
+            <ul>
+              <li>Daily and shift-wise production</li>
+              <li>Stock by size (6mm, 12mm, 20mm)</li>
+              <li>Site-wise P&amp;L dashboards</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="RMC concrete mixer truck" class="feature-image" />
+            <div class="feature-tag">RMC</div>
+            <h3>Batching &amp; Slump Tracking</h3>
+            <p>
+              Auto-deduct material during batching, track slump and returns, and compare planned vs actual cement usage.
+            </p>
+            <ul>
+              <li>Transit mixer trip &amp; slot control</li>
+              <li>Recipe-wise consumption</li>
+              <li>Wastage &amp; return concrete log</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <img src="https://images.unsplash.com/photo-1582735689495-bbe40c51c3a8?w=600&q=80" alt="Brick manufacturing plant" class="feature-image" />
+            <div class="feature-tag">Bricks</div>
+            <h3>Kiln &amp; Piece-Rate Automation</h3>
+            <p>
+              Connect production, breakage, and piece-rate payroll so your brick unit stops leaking bricks or labour cost.
+            </p>
+            <ul>
+              <li>Grade-wise stock and pricing</li>
+              <li>Breakage &amp; wastage tracking</li>
+              <li>Integrated piece-rate payroll</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPARISON TABLE -->
+      <section id="comparison">
+        <h2 class="section-heading">SAZS Apps ERP vs Manual / Generic Software</h2>
+        <p class="section-sub">
+          Use this table in meetings, proposals, and on your website to show exactly where your current system is leaking profit.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature / Capability</th>
+                <th>Manual / Generic Software</th>
+                <th>SAZS Apps ERP</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Direct Weighbridge Sync</td>
+                <td class="col-bad">Manual entry (high fraud risk)</td>
+                <td class="col-good">Automated integration (zero retyping)</td>
+              </tr>
+              <tr>
+                <td>Physical Gate Security</td>
+                <td class="col-bad">Paper slips &amp; logbooks</td>
+                <td class="col-good">Boom barrier integration ("No slip, No exit")</td>
+              </tr>
+              <tr>
+                <td>Material Theft Control</td>
+                <td class="col-bad">Easy to bypass and hide</td>
+                <td class="col-good">Real-time closed-loop dispatch</td>
+              </tr>
+              <tr>
+                <td>Invoicing Speed</td>
+                <td class="col-bad">10 – 20 minutes per truck</td>
+                <td class="col-good">Under 60 seconds</td>
+              </tr>
+              <tr>
+                <td>Credit Limit Enforcement</td>
+                <td class="col-bad">Manual checking (slow)</td>
+                <td class="col-good">Automatic hard stop on dispatch</td>
+              </tr>
+              <tr>
+                <td>Trip Verification</td>
+                <td class="col-bad">Based on driver's word</td>
+                <td class="col-good">GPS + weighbridge cross-check</td>
+              </tr>
+              <tr>
+                <td>GST &amp; E-Invoicing</td>
+                <td class="col-bad">Separate portal workflow</td>
+                <td class="col-good">One-click direct API sync</td>
+              </tr>
+              <tr>
+                <td>Site-Wise P&amp;L</td>
+                <td class="col-bad">Manual Excel reports</td>
+                <td class="col-good">Instant real-time dashboards</td>
+              </tr>
+              <tr>
+                <td>Inventory Tracking</td>
+                <td class="col-bad">Monthly physical counts</td>
+                <td class="col-good">Live stock reconciliation</td>
+              </tr>
+              <tr>
+                <td>Industry Specifics</td>
+                <td class="col-bad">Generic trading / retail focus</td>
+                <td class="col-good">Custom for Quarry, RMC &amp; Bricks</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CHECKLIST & FORM -->
+      <section id="checklist">
+        <h2 class="section-heading">Is Your Current System Protecting Your Profit?</h2>
+        <p class="section-sub">
+          Turn this checklist into your sales weapon: use it on your website, in client meetings, and inside proposals to prove the ROI of SAZS Apps ERP.
+        </p>
+
+        <div class="checklist">
+          <div class="check-card">
+            <strong>Profit Protection Checklist</strong>
+            <ul>
+              <li><span>✓</span> Weighbridge connected directly to ERP (no manual entry)</li>
+              <li><span>✓</span> Boom barrier linked to invoice &amp; credit limit</li>
+              <li><span>✓</span> Live stock view for aggregates, cement &amp; bricks</li>
+              <li><span>✓</span> Site-wise P&amp;L for Quarry, RMC &amp; Brick Plant</li>
+              <li><span>✓</span> Automatic GST &amp; e-invoice generation</li>
+              <li><span>✓</span> Piece-rate payroll automated for brick workers</li>
+            </ul>
+          </div>
+
+          <div class="cta-side" id="contact">
+            <h3>Get a Live Demo</h3>
+            <p>See your own Crusher, Quarry, RMC or Brick Plant running on SAZS Apps ERP in a 30-minute remote session.</p>
+            <input class="small-input" type="text" placeholder="Your Name" />
+            <input class="small-input" type="tel" placeholder="Mobile Number" />
+            <input class="small-input" type="text" placeholder="City / Plant Location" />
+            <button class="btn-primary btn-full">Request Demo</button>
+            <p class="fine-print">
+              SEO keywords: Automated Weighbridge ERP, Boom Barrier integration software, Crusher Inventory Management,
+              Quarry sales and accounts software, RMC management system, Brick plant automation, Stop weighbridge malpractice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    // Set year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Smooth scroll to checklist
+    document.getElementById("checklistBtn").addEventListener("click", function () {
+      document.getElementById("checklist").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // Smooth scroll to contact/demo form
+    document.getElementById("demoBtn").addEventListener("click", function () {
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // Small animation: update the metric time value with slight "jitter"
+    (function () {
+      const metric = document.getElementById("metricSpeed");
+      let base = 29;
+      setInterval(() => {
+        const jitter = Math.random() > 0.5 ? 1 : -1;
+        const value = Math.max(24, Math.min(40, base + jitter));
+        metric.textContent = (value < 10 ? "0" : "") + value + " sec";
+      }, 2500);
+    })();
+  </script>
+</body>
+</html>
