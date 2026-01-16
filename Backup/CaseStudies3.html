@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Case Study: Transforming Customer Experience & Order Speed in Heavy Building Materials</title>
+  <title>Case Study: Automating E-Invoicing & GST Compliance in Building Materials</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="common.css"rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- SEO (only in meta, not visible on page) -->
-  <meta name="description" content="How SAZS Apps ERP transformed customer experience and order speed for crusher, quarry, RMC, and brick plant operations through unified customer management, credit control, and real-time tracking." />
-  <meta name="keywords" content="Crusher ERP customer management, Quarry ERP CRM, Readymix order fulfillment software, SAZS Apps ERP customer handling, Brick plant sales automation, Automated quotation for quarries, Building material credit control" />
+  <!-- SEO -->
+  <meta name="description" content="How SAZS Apps ERP automated e-invoicing and GST compliance for crusher, quarry, RMC, and brick plant operations, achieving 100% accuracy and 97% faster invoicing." />
+  <meta name="keywords" content="Crusher e-invoice software, Quarry GST ERP, Readymix RMC billing software, SAZS Apps ERP e-invoice solution, Brick plant GST automation, Automated E-way bill for quarries, GST compliant crusher software" />
 
   <style>
     :root {
@@ -56,9 +56,6 @@
       min-height: 100vh;
       background: #ffffff;
       color: var(--text-main);
-      display: flex;
-      flex-direction: column;
-      align-items: center;       /* center horizontally */
     }
 
     header {
@@ -68,9 +65,6 @@
       backdrop-filter: blur(18px);
       background: linear-gradient(to bottom,rgba(0,0,0,0.96),rgba(0,0,0,0.7),transparent);
       border-bottom: 1px solid #262626;
-      width: 100%;
-      display: flex;
-      justify-content: center;
     }
 
     .nav-inner {
@@ -192,15 +186,45 @@
       .nav-cta {
         display: none;
       }
+      .brand-text-main {
+        font-size: 0.95rem;
+      }
+      .brand-text-sub {
+        font-size: 0.68rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+      .hero-badges {
+        gap: 8px;
+      }
+      .hero-badge {
+        font-size: 0.72rem;
+        padding: 4px 8px;
+      }
+      main {
+        padding: 24px 14px 48px;
+      }
+      section {
+        padding: 14px;
+      }
+      .result-metric-row {
+        gap: 12px;
+      }
+      .result-metric-card {
+        flex: 1 1 100%;
+      }
     }
 
     main {
-      /* max-width: 1080px; */
       margin: 0 auto;
       padding: 32px 18px 64px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;    /* center main content block */
     }
 
     .topsection {
@@ -211,7 +235,8 @@
       flex-direction: column;
       align-items: center;
     }
-    .topsection {
+
+        .topsection {
   align-items: flex-start;
   text-align: left;
 }
@@ -223,24 +248,23 @@
   align-self: center;
   text-align: center;
 }
-
     .hero-kicker {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 3px 10px 3px 3px;
       border-radius: 999px;
-      /* background: #000000;
-      border: 1px solid #404040; */
+      /* background: #000000; */
+      /* border: 1px solid #404040; */
       margin-bottom: 14px;
     }
 
-    /* .hero-k-dot {
+    .hero-k-dot {
       width: 18px;
       height: 18px;
       border-radius: 999px;
       background: #ffffff;
-    } */
+    }
 
     .hero-k-label {
       font-size: 0.90rem;
@@ -331,12 +355,15 @@
       color: #000000;
     }
 
+    .hero-footnote strong {
+      color: #000000;
+    }
+
     .layout-main {
       display: grid;
       grid-template-columns: minmax(0,1.7fr) minmax(0,1fr);
       gap: 28px;
       margin-top: 24px;
-      align-items: flex-start;
     }
 
     @media (max-width: 920px) {
@@ -349,7 +376,6 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
-      text-align: left;
     }
 
     section {
@@ -364,7 +390,7 @@
     }
 
     section.alt {
-      background: #000000;
+      background: #050505;
     }
 
     .section-kicker {
@@ -373,28 +399,24 @@
       letter-spacing: 0.18em;
       color: var(--text-muted);
       margin-bottom: 4px;
-      text-align: left;
     }
 
     h2 {
       font-size: 1.22rem;
       margin-bottom: 6px;
       letter-spacing: -0.01em;
-      text-align: left;
     }
 
     .section-intro {
       font-size: 0.92rem;
       color: var(--text-soft);
       margin-bottom: 10px;
-      text-align: left;
     }
 
     p {
       font-size: 0.9rem;
       color: var(--text-main);
       margin-bottom: 8px;
-      text-align: left;
     }
 
     ul {
@@ -402,7 +424,6 @@
       padding-left: 18px;
       margin-top: 4px;
       margin-bottom: 6px;
-      text-align: left;
     }
 
     ul li {
@@ -421,7 +442,7 @@
     .pill-metric {
       padding: 4px 9px;
       border-radius: 999px;
-      background: #000000;
+      background: #050505;
       border: 1px solid #404040;
       font-size: 0.76rem;
       color: var(--text-soft);
@@ -438,9 +459,8 @@
       flex: 1 1 150px;
       padding: 10px 11px;
       border-radius: 16px;
-      background: #000000;
+      background: #050505;
       border: 1px solid #262626;
-      text-align: left;
     }
 
     .result-metric-title {
@@ -463,7 +483,7 @@
     }
 
     .sidebar {
-        position: sticky;
+   position: sticky;
   top: 100px;
   border-radius: var(--radius-xl);
   background: var(--grad-section);
@@ -473,18 +493,49 @@
   overflow: hidden;
   align-self: start;
 
+
+
     }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .badge-chip {
+      font-size: 0.74rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #404040;
+      color: var(--text-soft);
+      background: #050505;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+
+         -webkit-scrollbar: none;
+      margin-top: 8px;
+    }
+    .table-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 
     .comparison-table {
       width: 100%;
+      min-width: 500px;
       border-collapse: collapse;
-      margin-top: 8px;
       font-size: 0.86rem;
-      text-align: left;
     }
 
     .comparison-table thead {
-      background: #000000;
+      background: #050505;
     }
 
     .comparison-table th,
@@ -498,14 +549,38 @@
       font-weight: 600;
       text-align: left;
       color: #f5f5f5;
+      white-space: nowrap;
     }
 
     .comparison-table tbody tr:nth-child(odd) {
-      background: #050505;
+      background: #000000;
     }
 
     .comparison-table tbody tr:nth-child(even) {
-      background: #000000;
+      background: #050505;
+    }
+
+    .comparison-label {
+      font-weight: 500;
+      color: var(--text-soft);
+      font-size: 0.83rem;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .comparison-table {
+        font-size: 0.8rem;
+        min-width: 450px;
+      }
+      
+      .comparison-table th,
+      .comparison-table td {
+        padding: 6px 7px;
+      }
+      
+      .comparison-label {
+        font-size: 0.78rem;
+      }
     }
   </style>
 </head>
@@ -517,24 +592,24 @@
         <div class="brand-mark"></div>
         <div>
           <div class="brand-text-main">SAZS Apps ERP</div>
-          <div class="brand-text-sub">Crusher -  Quarry -  RMC -  Bricks</div>
+          <div class="brand-text-sub">Crusher • Quarry • RMC • Bricks</div>
         </div>
       </div>
       <nav class="nav-links">
         <a href="#challenge">Challenge</a>
         <a href="#solution">Solution</a>
         <a href="#results">Results</a>
-        <a href="#industry">Industry impact</a>
+        <a href="#comparison">Comparison</a>
       </nav>
       <div class="nav-cta">
-        <div class="nav-pill">Customer Experience OS</div>
+        <div class="nav-pill">GST Compliance Suite</div>
         <button class="nav-button" onclick="document.getElementById('results').scrollIntoView({behavior:'smooth'})">
           Book a demo
         </button>
       </div>
     </div>
   </header> -->
-    <nav class="sazs-header">
+ <nav class="sazs-header">
         <div class="sazs-header-wrapper">
             <div class="sazs-header-main">
                 <a href="/" class="sazs-brand">
@@ -670,33 +745,33 @@
                         <div class="features-cards-grid">
                             <a href="CaseStudies1.html" class="features-case-card">
                                 <div class="features-case-image">
-                                    <img src="./src/assets/contentImages/head1.webp" alt="Case Study 1" />
+                                    <img src="./src/assets/contentImages/quarrydrone.png" alt="Case Study 1" />
                                 </div>
                                 <div class="features-case-title">1.Optimizing Quarry Profitability via Automated Theft Prevention</div>
                             </a>
 
                             <a href="CaseStudies2.html" class="features-case-card">
                                 <div class="features-case-image">
-                                    <img src="./src/assets/contentImages/head2.webp" alt="Case Study 2" />
+                                    <img src="./src/assets/contentImages/bricksdrone.png" alt="Case Study 2" />
                                 </div>
                                 <div class="features-case-title">2.Transforming Customer Experience & Order Speed in Heavy Building Materials </div>
                             </a>
 
                             <a href="CaseStudies3.html" class="features-case-card">
                                 <div class="features-case-image">
-                                    <img src=" ./src/assets/contentImages/head3.webp" alt="Case Study 3" />
+                                    <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 3" />
                                 </div>
                                 <div class="features-case-title">3.Automating E-Invoicing & GST Compliance in Building Materials </div>
                             </a>
                              <a href="CaseStudies4.html" class="features-case-card">
                                 <div class="features-case-image">
-                                    <img src=" ./src/assets/contentImages/head4.webp" alt="Case Study 4" />
+                                    <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 4" />
                                 </div>
                                 <div class="features-case-title">4.Real-Time Vehicle & Trip Management for High-Volume Operations</div>
                             </a>
                                <a href="CaseStudies5.html" class="features-case-card">
                                     <div class="features-case-image">
-                                        <img src=" ./src/assets/contentImages/head5.webp" alt="Case Study 5" />
+                                        <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 5" />
                                     </div>
                                     <div class="features-case-title">5.Complete Financial Control & Profit Analysis for Quarry & RMC Owners</div>
                                 </a>
@@ -874,162 +949,201 @@ document.addEventListener('click', function (event) {
      
       
     </script>
-
   <main>
     <div class="topsection">
       <div class="hero-kicker">
         <div class="hero-k-dot"></div>
-        <div class="hero-k-label">Case study -  Customer experience & order speed</div>
+        <div class="hero-k-label">Case study • E-Invoicing & GST Compliance</div>
       </div>
       <h1 class="hero-title">
-        Transforming Customer Experience & Order Speed in <span class="accent">Heavy Building Materials</span>
+        Automating E-Invoicing & GST Compliance in <span class="accent">Building Materials</span>
       </h1>
       <p class="hero-subtitle">
-        How one crusher, quarry, RMC, and brick plant operation moved from siloed spreadsheets and slow dispatches to a unified, high-speed customer lifecycle with SAZS Apps ERP.
+        How SAZS Apps ERP transformed compliance operations for crushers, quarries, RMC, and brick plants—achieving 100% accuracy and 97% faster invoicing through seamless government portal integration.
       </p>
 
-      <!-- <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=Heavy+Materials+Logistics+%26+ERP+Dashboard" alt="Heavy building materials logistics with ERP dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" /> -->
+      <!-- <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=E-Invoice+%26+GST+Automation" alt="E-invoicing and GST compliance automation" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" /> -->
 
       <div class="hero-badges">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          40% higher customer satisfaction
+          100% GST Compliance
         </div>
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          60% faster quote-to-delivery
+          97% Faster Invoicing
         </div>
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          25% lower outstanding dues
+          Zero Document Rejections
         </div>
       </div>
       <!-- <div class="hero-cta-row">
         <button class="hero-cta-primary" onclick="document.getElementById('solution').scrollIntoView({behavior:'smooth'})">
-          Explore the workflow
+          Explore the solution
         </button>
       </div> -->
       <div class="hero-footnote">
-        <strong>Sectors:</strong> Crusher, Quarry, Readymix (RMC), Brick Plants
+        <strong>Industries:</strong> Crusher, Quarry, Readymix (RMC), Brick Plants
       </div>
     </div>
-
+    
     <section class="hero">
       <div class="layout-main">
         <div class="content-flow">
           <section id="challenge">
             <div class="section-kicker">The challenge</div>
-            <h2>Siloed data, slow deliveries, unhappy customers</h2>
+            <h2>Compliance Risks and Manual Bottlenecks</h2>
 
-            <img src="./src/assets/contentImages/case21.webp" alt="Manual spreadsheet-based process creating bottlenecks" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+            <img src="./src/assets/contentImages/case31.webp" alt="Manual GST compliance creating operational risks" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
 
             <p class="section-intro">
-              In high‑throughput materials supply, a few hours of delay can cost a project or a customer. This operation relied on scattered spreadsheets and manual checks that could not keep up with demand.
+              In the high-volume industries of Crushers, Quarries, Readymix (RMC), and Brick Plants, managing tax compliance manually is a major operational risk. This client faced several critical hurdles:
             </p>
             <ul>
-              <li><strong>Manual bottlenecks:</strong> Customer records and quotations were spread across Excel files, turning every quote and update into hours of low‑value typing.</li>
-              <li><strong>Revenue leakage:</strong> Without automated credit checks, loads were dispatched to customers with high outstanding balances, increasing risk.</li>
-              <li><strong>Fragmented visibility:</strong> No single source of truth for order history meant teams struggled to answer basic questions during customer calls.</li>
-              <li><strong>Order fulfilment lag:</strong> The time between a customer request and actual dispatch was too long, putting construction timelines under pressure.</li>
+              <li><strong>Human Error in Taxation:</strong> Manual calculation of GST led to frequent errors in tax rates and HSN codes.</li>
+              <li><strong>Slow E-Invoice Turnaround:</strong> Accountants had to manually log into government portals to generate IRNs, leading to long queues of trucks waiting at the dispatch gate.</li>
+              <li><strong>Payment Delays:</strong> Customers often rejected invoices due to formatting errors or missing QR codes, leading to stalled cash flow.</li>
+              <li><strong>High Admin Costs:</strong> A heavy dependency on senior accountants for basic invoicing increased overheads.</li>
             </ul>
           </section>
 
           <section id="solution" class="alt">
             <div class="section-kicker">The solution</div>
-            <h2>A unified customer lifecycle with SAZS Apps ERP</h2>
+            <h2>Real-Time GST & E-Invoice Integration</h2>
 
-            <img src="./src/assets/contentImages/case22.webp" alt="SAZS Apps ERP customer lifecycle dashboard" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+            <img src="./src/assets/contentImages/case32.webp" alt="SAZS Apps ERP GST portal integration" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
 
             <p class="section-intro">
-              The SAZS Apps ERP Customer Management Module replaced disconnected tools with an end‑to‑end workflow: from first quote to final dispatch, everything lives in one system.
+              SAZS Apps ERP implemented a seamless, "one-click" compliance framework that integrated the weighing process directly with the government's tax infrastructure.
             </p>
+            
             <div class="pill-metric-row">
-              <div class="pill-metric">Automated quotations & orders</div>
-              <div class="pill-metric">Credit limit control</div>
-              <div class="pill-metric">Weighbridge integration</div>
-              <div class="pill-metric">Real-time tracking</div>
+              <div class="pill-metric">Direct GST Portal Integration</div>
+              <div class="pill-metric">Instant IRN Generation</div>
+              <div class="pill-metric">Auto E-Way Bills</div>
+              <div class="pill-metric">Zero Manual Entry</div>
             </div>
-            <p><strong>1. Automated quotation & order management</strong><br>
-              Sales teams now generate professional, branded quotations in seconds instead of manually building them in spreadsheets. Once approved, each quotation converts to a confirmed order instantly, notifying production teams at the crusher, quarry, RMC, or brick plant in real time.
+
+            <p><strong>1. Direct GST Portal Integration</strong><br>
+              The ERP was linked directly to the GST portal via a secure API. As soon as a truck leaves the automated weighbridge, the system pulls the data and prepares the invoice instantly—no manual typing required.
             </p>
-            <p><strong>2. Intelligent credit control & alerts</strong><br>
-              The ERP continuously monitors credit limits and ageing. If a customer exceeds the allowed limit or has long‑overdue invoices, new dispatches are automatically blocked until finance clears the account, protecting cash flow without manual policing.
+
+            <p><strong>2. Instant IRN & QR Code Generation</strong><br>
+              The module automatically generates the Invoice Reference Number (IRN) and QR codes required for legal E-Invoicing. These are printed directly onto the dispatch slip/invoice in real-time.
             </p>
-            <p><strong>3. Integrated weighbridge & dispatch sync</strong><br>
-              Customer orders are linked directly to automated weighbridge entries, ensuring every load is captured against the right order and rate. This removes manual data entry at the scale and closes gaps where errors or malpractice could occur.
+
+            <p><strong>3. Integrated E-Way Bill Creation</strong><br>
+              For the Quarry and RMC sectors, where transportation is constant, the system generates the E-Way Bill simultaneously with the invoice. This ensures that no vehicle leaves the premises without 100% legal documentation.
             </p>
-            <p><strong>4. Real-time order tracking</strong><br>
-              Customers in RMC and quarry segments now receive clear status from "Order Confirmed" through "In‑Transit" to "Delivered", giving both internal teams and clients live visibility on critical deliveries.
+
+            <p><strong>4. Precision for Brick Plants & RMC</strong><br>
+              Whether it's the piece-rate billing for Brick Plants or the cubic-meter calculations for Readymix, the system applies the correct GST slabs automatically based on the product category.
             </p>
           </section>
 
           <section id="results">
             <div class="section-kicker">The results</div>
-            <h2>Peak efficiency and scalable growth</h2>
+            <h2>100% Accuracy and Zero Delays</h2>
 
-            <img src="./src/assets/contentImages/case23.webp" alt="KPIs showing improved customer satisfaction, speed, and cash flow" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+            <img src="./src/assets/contentImages/case33.webp" alt="GST compliance results and performance metrics" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
 
             <p class="section-intro">
-              Within months of going live, the operation saw measurable gains in customer satisfaction, process speed, and financial discipline.
+              The transition from manual filing to SAZS Apps ERP yielded immediate operational benefits:
             </p>
+
             <div class="result-metric-row">
               <div class="result-metric-card">
-                <div class="result-metric-title">Customer experience</div>
-                <div class="result-metric-value">+40% satisfaction</div>
-                <div class="result-metric-note">More professional documents and proactive updates increased trust and loyalty.</div>
+                <div class="result-metric-title">GST Compliance</div>
+                <div class="result-metric-value">100% Accuracy</div>
+                <div class="result-metric-note">Every invoice generated is legally verified and error-free.</div>
               </div>
               <div class="result-metric-card">
-                <div class="result-metric-title">Order speed</div>
-                <div class="result-metric-value">60% faster cycle</div>
-                <div class="result-metric-note">Automation removed manual "waiting gaps" between quote, approval, and dispatch.</div>
+                <div class="result-metric-title">Invoicing Speed</div>
+                <div class="result-metric-value">97% Faster</div>
+                <div class="result-metric-note">Invoice time dropped from 20 minutes to just 30 seconds.</div>
               </div>
               <div class="result-metric-card">
-                <div class="result-metric-title">Repeat business</div>
-                <div class="result-metric-value">Higher retention</div>
-                <div class="result-metric-note">Accurate billing and on‑time deliveries converted one‑time buyers into long‑term accounts.</div>
+                <div class="result-metric-title">Document Quality</div>
+                <div class="result-metric-value">Zero Rejections</div>
+                <div class="result-metric-note">Clean, QR-coded invoices ensure faster customer approvals and payments.</div>
               </div>
               <div class="result-metric-card">
-                <div class="result-metric-title">Financial health</div>
-                <div class="result-metric-value">25% less dues</div>
-                <div class="result-metric-note">Stronger credit control and automatic blocking reduced outstanding receivables.</div>
+                <div class="result-metric-title">Independence</div>
+                <div class="result-metric-value">Site-Level Control</div>
+                <div class="result-metric-note">Site supervisors can now generate compliant invoices without back-office dependency.</div>
               </div>
             </div>
           </section>
         </div>
 
-        <aside class="sidebar" aria-label="Industry impact">
-          <section id="industry" class="compact">
-            <div class="section-kicker">Industry-specific impact</div>
-            <h2>How each segment benefited</h2>
+        <aside class="sidebar" aria-label="Comparison & SEO">
+          <section id="comparison" class="compact">
+            <div class="section-kicker">Efficiency comparison</div>
+            <h2>Manual vs Automated</h2>
 
-            <img src="./src/assets/contentImages/case24.webp" alt="Crusher, quarry, RMC, and brick plants served by SAZS Apps ERP" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+            <img src="./src/assets/contentImages/case34.webp" alt="Manual compliance vs SAZS Apps ERP automation comparison" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
 
             <p class="section-intro">
-              The same customer workflow produced different tangible wins across crusher, quarry, RMC, and brick operations.
+              See the dramatic difference automation makes in day-to-day compliance operations.
             </p>
-            <table class="comparison-table">
-              <thead>
-                <tr>
-                  <th>Industry</th>
-                  <th>Specific benefit realized</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Crusher &amp; Quarry</td>
-                  <td>Rapid handling of high‑volume truck dispatches with instant, order‑linked invoicing.</td>
-                </tr>
-                <tr>
-                  <td>Readymix (RMC)</td>
-                  <td>Precise scheduling and tracking of time‑sensitive concrete deliveries to construction sites.</td>
-                </tr>
-                <tr>
-                  <td>Brick plants</td>
-                  <td>Streamlined order management and tracking across different grades and batches of bricks.</td>
-                </tr>
-              </tbody>
-            </table>
+
+            <div class="table-wrapper">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th class="comparison-label">Task</th>
+                    <th>Manual Compliance</th>
+                    <th>SAZS Apps ERP</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="comparison-label">Data Entry</td>
+                    <td>Manual entry of weight/rates</td>
+                    <td>Fetched from Weighbridge Integration</td>
+                  </tr>
+                  <tr>
+                    <td class="comparison-label">GST Calculation</td>
+                    <td>Calculated on paper or Excel</td>
+                    <td>Auto-calculated based on HSN/SAC</td>
+                  </tr>
+                  <tr>
+                    <td class="comparison-label">E-Invoice Generation</td>
+                    <td>Manual upload to Gov portal</td>
+                    <td>Direct API sync in 1-click</td>
+                  </tr>
+                  <tr>
+                    <td class="comparison-label">E-Way Bill</td>
+                    <td>Separate login and entry</td>
+                    <td>Generated instantly with invoice</td>
+                  </tr>
+                  <tr>
+                    <td class="comparison-label">Truck Wait Time</td>
+                    <td>High (15+ minutes)</td>
+                    <td>Minimal (under 1 minute)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </section>
+
+          <!-- <section class="compact">
+            <div class="section-kicker">SEO focus</div>
+            <h2>Target search themes</h2>
+            <p class="section-intro">
+              Primary and secondary keywords for search optimization.
+            </p>
+            <div class="badge-list">
+              <span class="badge-chip">Crusher e-invoice software</span>
+              <span class="badge-chip">Quarry GST ERP</span>
+              <span class="badge-chip">Readymix RMC billing software</span>
+              <span class="badge-chip">SAZS Apps ERP e-invoice solution</span>
+              <span class="badge-chip">Brick plant GST automation</span>
+              <span class="badge-chip">Automated E-way bill for quarries</span>
+              <span class="badge-chip">GST compliant crusher software</span>
+            </div>
+          </section> -->
         </aside>
       </div>
     </section>
@@ -1337,7 +1451,7 @@ document.addEventListener('click', function (event) {
                 <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
                     May I help you?
                 </a> -->
-                <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+                <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
                 <button class="scroll-top" aria-label="Scroll to top">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 19V5M5 12l7-7 7 7" />

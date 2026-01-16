@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Automate vehicle access control with Sazs Apps ERP Boom Barrier Integration. Secure, efficient, and intelligent gate management.">
-    <title>Boom Barrier Integration | Sazs Apps ERP</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>E-Invoice Integration | SAZS Apps ERP</title>
     <style>
         * {
             margin: 0;
@@ -13,741 +11,256 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --black: #000000;
-            --dark: #1a1a1a;
-            --gray: #333333;
-            --light-gray: #666666;
-            --border: #e5e5e5;
-            --white: #ffffff;
-            --off-white: #f8f8f8;
-            --blue: #3E89EC;
-            --blue-light: #6BA6F3;
-            --blue-dark: #3E89EC;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #ffffff;
+            color: #212529;
             line-height: 1.6;
-            color: var(--dark);
-            background: var(--white);
+            overflow-x: hidden;
+            padding-top: 90px;
         }
 
-        /* Header */
-        .header {
-            background: var(--black);
-            padding: 1.5rem 0;
-            position: sticky;
+        /* Animated Background - WORKING */
+        .bg-animation {
+            position: fixed;
             top: 0;
-            z-index: 1000;
-            border-bottom: 4px solid var(--blue);
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.05;
+            pointer-events: none;
         }
 
-        .nav-container {
+        .bg-animation::before,
+        .bg-animation::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: floatBg 20s infinite ease-in-out;
+        }
+
+        .bg-animation::before {
+            width: 600px;
+            height: 600px;
+            background: #3E89EC;
+            top: -200px;
+            left: -200px;
+        }
+
+        .bg-animation::after {
+            width: 800px;
+            height: 800px;
+            background: #2C6FCE;
+            bottom: -300px;
+            right: -300px;
+            animation-delay: 5s;
+        }
+
+        @keyframes floatBg {
+            0%, 100% { 
+                transform: translate(0, 0) scale(1); 
+            }
+            33% { 
+                transform: translate(100px, -100px) scale(1.1); 
+            }
+            66% { 
+                transform: translate(-50px, 100px) scale(0.9); 
+            }
+        }
+
+        /* Navigation */
+        .sazs-header {
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .sazs-header-wrapper {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 10px 20px;
+        }
+
+        .sazs-header-main {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--white);
-            text-decoration: none;
-            letter-spacing: -1px;
+        .sazs-brand-image {
+            width: 150px;
+            height: 70px;
         }
 
-        .logo span {
-            color: var(--blue);
-        }
-
-        .nav-links {
+        .sazs-menu-list {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
             list-style: none;
-            align-items: center;
         }
 
-        .nav-links a {
-            color: var(--white);
+        .sazs-menu-link {
+            color: rgba(0, 0, 0, 0.8);
             text-decoration: none;
+            font-size: 18px;
             font-weight: 500;
+            cursor: pointer;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--blue);
+        .sazs-menu-link:hover {
+            color: #3E89EC;
         }
 
-        .btn-header {
-            background: var(--blue);
-            color: var(--white);
-            padding: 0.75rem 2rem;
-            border-radius: 0;
+        .sazs-button {
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: 700;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background: transparent;
+            color: rgba(0, 0, 0, 0.8);
             transition: all 0.3s;
-            border: 2px solid var(--blue);
         }
 
-        .btn-header:hover {
-            background: var(--blue-dark);
-            border-color: var(--blue-dark);
+        .sazs-button:hover {
+            background: rgba(62, 137, 236, 0.1);
+            border-color: #3E89EC;
+            color: #3E89EC;
         }
 
-        /* Hero Section - Black Background with Blue Accents */
+        /* Hero Section - ANIMATED */
         .hero {
-            background: var(--black);
-            color: var(--white);
-            padding: 8rem 2rem;
-            text-align: center;
             position: relative;
+            padding: 8rem 5% 6rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(62, 137, 236, 0.05) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(44, 111, 206, 0.05) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
             overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background: var(--blue);
-            opacity: 0.1;
-            border-radius: 50%;
-            top: -200px;
-            right: -100px;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(62, 137, 236, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(44, 111, 206, 0.08) 0%, transparent 50%);
+            z-index: -1;
+            animation: bgPulse 10s ease infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
         }
 
         .hero::after {
             content: '';
             position: absolute;
-            width: 400px;
-            height: 400px;
-            background: var(--blue);
-            opacity: 0.08;
-            border-radius: 50%;
-            bottom: -150px;
-            left: -100px;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(62, 137, 236, 0.03) 2px, rgba(62, 137, 236, 0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(62, 137, 236, 0.03) 2px, rgba(62, 137, 236, 0.03) 4px);
+            background-size: 50px 50px;
+            opacity: 0.5;
+            z-index: -1;
         }
 
-        .hero-content {
-            max-width: 1000px;
-            margin: 0 auto;
+        /* Floating Shapes - ANIMATED */
+        /* .hero-decorative-elements {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3E89EC, #2C6FCE);
+            top: -100px;
+            right: 10%;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #2C6FCE, #3E89EC);
+            bottom: -50px;
+            left: 5%;
+            animation: float2 15s ease-in-out infinite;
+        }
+
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #3E89EC, rgba(62, 137, 236, 0.5));
+            top: 50%;
+            left: 50%;
+            animation: float3 18s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(20px, -40px) scale(1.1); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+            33% { transform: translate(-45%, -55%) rotate(120deg) scale(0.9); }
+            66% { transform: translate(-55%, -45%) rotate(240deg) scale(1.1); }
+        }
+
+        .hero > * {
             position: relative;
             z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            letter-spacing: -2px;
-        }
-
-        .hero h1 span {
-            color: var(--blue);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: var(--blue);
-            color: var(--white);
-            padding: 1.2rem 3rem;
-            font-size: 1.1rem;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            border: 3px solid var(--blue);
-        }
-
-        .btn-primary:hover {
-            background: var(--blue-dark);
-            border-color: var(--blue-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            padding: 1.2rem 3rem;
-            font-size: 1.1rem;
-            text-decoration: none;
-            font-weight: 700;
-            border: 3px solid var(--white);
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        /* Section */
-        .section {
-            padding: 6rem 2rem;
-        }
-
-        .section-white {
-            background: var(--white);
-        }
-
-        .section-black {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .section-gray {
-            background: var(--off-white);
-        }
-
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
+        .hero-badge {
             display: inline-block;
-            background: var(--blue);
-            color: var(--white);
             padding: 0.5rem 1.5rem;
+            background: rgba(62, 137, 236, 0.1);
+            border: 1px solid #3E89EC;
+            border-radius: 50px;
             font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
-        .section-title {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-
-        .section-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.8;
-            max-width: 700px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-
-        /* WORKFLOW CARDS - Numbered with Blue Borders */
-        .workflow-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .workflow-card {
-            background: var(--white);
-            border: 3px solid var(--blue);
-            padding: 3rem 2rem;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .workflow-card:hover {
-            background: var(--blue);
-            color: var(--white);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.3);
-        }
-
-        .workflow-number {
-            position: absolute;
-            top: -20px;
-            left: 2rem;
-            width: 60px;
-            height: 60px;
-            background: var(--blue);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 900;
-        }
-
-        .workflow-card:hover .workflow-number {
-            background: var(--white);
-            color: var(--blue);
-        }
-
-        .workflow-card h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-        }
-
-        .workflow-card p {
-            font-size: 1rem;
-            line-height: 1.7;
-            opacity: 0.8;
-        }
-
-        /* FEATURE CARDS - Minimal with Blue Icons on Side */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 0;
-            margin-top: 4rem;
-            border: 1px solid var(--border);
-        }
-
-        .feature-card {
-            background: var(--white);
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 3rem;
-            display: flex;
-            gap: 2rem;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            background: var(--off-white);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--blue);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            flex-shrink: 0;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover .feature-icon {
-            background: var(--blue-dark);
-            transform: scale(1.1);
-        }
-
-        .feature-content h3 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-        }
-
-        .feature-content p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--light-gray);
-        }
-
-        /* ACCESS METHOD CARDS - Circular Blue Icons */
-        .methods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .method-card {
-            background: var(--black);
-            color: var(--white);
-            padding: 3rem 2rem;
-            text-align: center;
-            transition: all 0.3s;
-            border: 3px solid var(--black);
-        }
-
-        .method-card:hover {
-            background: var(--blue);
-            border-color: var(--blue);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.3);
-        }
-
-        .method-icon {
-            width: 100px;
-            height: 100px;
-            background: var(--blue);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin: 0 auto 1.5rem;
-            transition: all 0.3s;
-        }
-
-        .method-card:hover .method-icon {
-            background: var(--white);
-            color: var(--blue);
-            transform: scale(1.1);
-        }
-
-        .method-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        /* APPLICATION CARDS - List Style with Blue Left Border */
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 0;
-            margin-top: 4rem;
-        }
-
-        .app-card {
-            background: var(--white);
-            /* border-left: 8px solid var(--blue); */
-            border-bottom: 1px solid var(--border);
-            padding: 2.5rem 2rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            transition: all 0.3s;
-        }
-
-        .app-card:hover {
-            padding-left: 3rem;
-            background: var(--off-white);
-            border-left-color: var(--blue-dark);
-        }
-
-        .app-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--blue);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            flex-shrink: 0;
-            transition: all 0.3s;
-        }
-
-        .app-card:hover .app-icon {
-            background: var(--blue-dark);
-            transform: rotate(5deg) scale(1.05);
-        }
-
-        .app-card h3 {
-            font-size: 1.3rem;
-            font-weight: 800;
-        }
-
-        /* REPORT CARDS - White Cards with Blue Shadow */
-        .reports-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 4rem;
-        }
-
-        .report-card {
-            background: var(--white);
-            padding: 3rem;
-            box-shadow: 15px 15px 0 var(--blue);
-            transition: all 0.3s;
-            border: 2px solid var(--border);
-        }
-
-        .report-card:hover {
-            transform: translate(5px, 5px);
-            box-shadow: 10px 10px 0 var(--blue-dark);
-            border-color: var(--blue);
-        }
-
-        .report-card i {
-            font-size: 3rem;
-            color: var(--blue);
-            margin-bottom: 1.5rem;
-        }
-
-        .report-card h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .report-card p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--light-gray);
-        }
-
-        /* BENEFIT CARDS - Blue Diagonal Triangle */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .benefit-card {
-            background: var(--white);
-            padding: 3rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-            border: 2px solid var(--border);
-        }
-
-        .benefit-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 100px 100px 0;
-            border-color: transparent var(--blue) transparent transparent;
-            transition: all 0.3s;
-        }
-
-        .benefit-card:hover {
-            background: var(--blue);
-            color: var(--white);
-            border-color: var(--blue);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.3);
-        }
-
-        .benefit-card:hover::before {
-            border-width: 0 150px 150px 0;
-            border-color: transparent var(--blue-dark) transparent transparent;
-        }
-
-        .benefit-card i {
-            font-size: 3rem;
-            color: var(--blue);
-            margin-bottom: 1.5rem;
-            display: block;
-            transition: all 0.3s;
-        }
-
-        .benefit-card:hover i {
-            color: var(--white);
-        }
-
-        .benefit-card h3 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .benefit-card p {
-            font-size: 1rem;
-            line-height: 1.7;
-            opacity: 0.8;
-        }
-
-        /* Stats Bar */
-        .stats-bar {
-            background: var(--blue);
-            color: var(--white);
-            padding: 1rem 0rem;
-        }
-
-        .stats-grid {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 2rem;
-            font-weight: 900;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: var(--black);
-            color: var(--white);
-            padding: 8rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: var(--blue);
-            opacity: 0.1;
-            border-radius: 50%;
-            top: -300px;
-            left: -200px;
-        }
-
-        .cta-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-content h2 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
-
-        .cta-content h2 span {
-            color: var(--blue);
-        }
-
-        .cta-content p {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--white);
-            border-top: 4px solid var(--blue);
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--blue);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-section a {
-            color: var(--light-gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: var(--blue);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            background: var(--blue);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            background: var(--blue-dark);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--light-gray);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .features-grid,
-            .apps-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -755,13 +268,339 @@
             }
         }
 
-        .animate {
-            animation: fadeIn 0.6s ease-out;
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #212529, #3E89EC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #3E89EC, #2C6FCE);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 50px rgba(62, 137, 236, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.8s both, ctaPulse 2s ease-in-out 1s infinite;
+            transition: all 0.3s;
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 20px 70px rgba(62, 137, 236, 0.6);
+            animation: ctaPulse 0.5s ease-in-out;
+        } */
+
+        /* Features - ANIMATED ON SCROLL */
+        .features {
+            padding: 6rem 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: rgba(62, 137, 236, 0.1);
+            border: 1px solid #3E89EC;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #3E89EC;
+            box-shadow: 0 20px 50px rgba(62, 137, 236, 0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(62, 137, 236, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: #3E89EC;
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Scroll Fade Animation - WORKING */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animations */
+        .features-grid .feature-card:nth-child(1) { transition-delay: 0.1s; }
+        .features-grid .feature-card:nth-child(2) { transition-delay: 0.2s; }
+        .features-grid .feature-card:nth-child(3) { transition-delay: 0.3s; }
+        .features-grid .feature-card:nth-child(4) { transition-delay: 0.4s; }
+        .features-grid .feature-card:nth-child(5) { transition-delay: 0.5s; }
+        .features-grid .feature-card:nth-child(6) { transition-delay: 0.6s; }
+        .features-grid .feature-card:nth-child(7) { transition-delay: 0.7s; }
+        .features-grid .feature-card:nth-child(8) { transition-delay: 0.8s; }
+
+        /* Benefits */
+        .benefits {
+            padding: 6rem 5%;
+            background: linear-gradient(180deg, transparent, rgba(62, 137, 236, 0.03));
+        }
+
+        .benefits-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .benefits-content h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-list {
+            list-style: none;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .benefits-list li {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .benefits-list li:hover {
+            border-color: #3E89EC;
+            transform: translateX(10px);
+        }
+
+        .benefit-check {
+            min-width: 28px;
+            height: 28px;
+            background: #3E89EC;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .benefits-visual {
+            position: relative;
+            height: 500px;
+        }
+
+        .visual-card {
+            position: absolute;
+            background: white;
+            border: 2px solid #3E89EC;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(62, 137, 236, 0.2);
+            animation: floatVisual 4s ease-in-out infinite;
+        }
+
+        @keyframes floatVisual {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .visual-card:nth-child(1) { top: 0; left: 0; animation-delay: 0s; }
+        .visual-card:nth-child(2) { top: 50%; right: 0; transform: translateY(-50%); animation-delay: 1.3s; }
+        .visual-card:nth-child(3) { bottom: 0; left: 20%; animation-delay: 2.6s; }
+
+        .visual-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .visual-card-text {
+            font-weight: 700;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 8rem 5%;
+            text-align: center;
+        }
+
+        .cta-box {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+            background: linear-gradient(135deg, #2C6FCE, #3E89EC);
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(62, 137, 236, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotateGlow 20s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-box h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.3rem 3.5rem;
+            background: white;
+            color: #3E89EC;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0b0d1f;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body { padding-top: 70px; }
+            .hero { padding: 5rem 5% 4rem; }
+            .benefits-container { grid-template-columns: 1fr; }
+            .benefits-visual { height: 350px; }
         }
     </style>
 </head>
 <body>
-<style>
+    <div class="bg-animation"></div>
+
+  <style>
     * {
     margin: 0;
     padding: 0;
@@ -1678,7 +1517,9 @@ body {
             }
         }
     </style>
+    </head>
 
+    <body>
         <nav class="sazs-header">
             <div class="sazs-header-wrapper">
                 <div class="sazs-header-main">
@@ -1797,12 +1638,11 @@ body {
                         <!-- Left Side - Solutions List -->
                         <div class="features-left">
                             <div class="features-section-title">Features — tailored to every Crushers & Quarries</div>
-                                                        <a href="./Anprs.html" class="features-link">ANPR Camera Integration</a>
+                            <a href="./Anprs.html" class="features-link">ANPR Camera Integration</a>
                             <a href="./EInvoice.html" class="features-link">E-Invoice Integration</a>
                             <a href="Weighbridge.html" class="features-link">Weighbridge and Camera Integration</a>
                             <a href="Boombarrier.html" class="features-link">Boom Barrier Integration</a>
                             <a href="biometrics.html" class="features-link">Biometrics </a>
-
                             <!-- <a href="#" class="features-link"></a>
                             <a href="#" class="features-link"></a> -->
                         </div>
@@ -1904,35 +1744,22 @@ body {
                 }, 200);
             });
         </script>
-
-
-    <!-- Hero Section -->
-        <!-- <section class="hero">
-            <div class="hero-content">
-                <h1><span>Boom Barrier Integration</span> with Sazs Apps ERP</h1>
-                <p>Automate vehicle entry and exit with seamless boom barrier integration. Secure, efficient, and intelligent gate management for modern facilities.</p>
-                <div class="hero-buttons">
-                    <a href="#demo" class="btn-primary">Get Started Now</a>
-                    <a href="#features" class="btn-secondary">Explore Features</a>
-                </div>
-            </div>
-        </section> -->
-
-    <!-- Stats Bar -->
-       <style>
+        <style>/* ============================================
+   HERO SECTION
+============================================ */
 
 .hero-main-section {
     position: relative;
     min-height: 80vh;
     display: flex;
-    padding-top: 100px !important;
-    /* margin-top: 90px; */
+    /* padding-top: 100px; */
     align-items: center;
     justify-content: center;
     overflow: hidden;
     background:
         linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) ),
-        url("/src/assets/contentImages/boombarrierf.png") center/cover no-repeat;
+        url("/src/assets/contentImages/Einvoicef.png") center/cover no-repeat;
+
 }
 
 .hero-main-container {
@@ -1970,12 +1797,11 @@ body {
 ============================================ */
 
 .hero-main-title {
-    font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 60px;
 }
 
 .hero-text-highlight {
@@ -2265,32 +2091,39 @@ body {
 
                         <!-- MAIN HEADING -->
                         <h1 class="hero-main-title">
-                           <span class="hero-text-highlight">Boom Barrier Integration <br></span> with Sazs Apps ERP
+                           <span class="hero-text-highlight">E-Invoice Integration<br></span> for Modern Industries
                         </h1>
 
                         <!-- SUB HEADING -->
                         <h2 class="hero-subheadline">
-Automate vehicle entry and exit with seamless boom barrier integration. Secure, efficient, and intelligent gate management for modern facilities.                        </h2>
+                           GST-compliant E-Invoice Integration specially built for Quarry, Crusher, Ready Mix Concrete (RMC), Bricks, and Pavers industries.
+                        </h2>
                         <!-- <div class="hero-features-grid">
                             <div class="hero-feature-item">
                                 <p class="hero-main-description">
-                                    <strong>100%</strong>
-                                    <span class="hero-highlight">Accuracy</span>
+                                    Managing a stone crusher or quarry unit demands
+                                    <strong>precision, not guesswork</strong>.
+                                    SAZS Apps ERP is a
+                                    <span class="hero-highlight">fully automated, cloud-based platform</span>
+                                    designed to manage operations end-to-end.
                                 </p>
                             </div>
                             <div class="hero-feature-item">
                                 <p class="hero-main-description">
-                                    
-                                    <strong>Zero</strong> 
-                                    <span class="hero-highlight">Manual Entry</span>
-                                    
+                                    From the moment a truck enters your
+                                    <strong>weighbridge</strong> to
+                                    <span class="hero-highlight">final invoice generation</span>,
+                                    every process is streamlined, monitored, and secured.
                                 </p>
                             </div>
                             <div class="hero-feature-item">
                                 <p class="hero-main-description">
-                                    <strong>24/7</strong>
-                                    <span class="hero-highlight">Operation</span>
-                                 
+                                    Built on <strong>robust Microsoft technology</strong>,
+                                    our ERP eliminates pilferage, ensures
+                                    <span class="hero-highlight">100% financial accuracy</span>,
+                                    and delivers a
+                                    <strong>360° real-time business view</strong>
+                                    from anywhere in the world.
                                 </p>
                             </div>
                         </div> -->
@@ -2299,330 +2132,128 @@ Automate vehicle entry and exit with seamless boom barrier integration. Secure, 
                 </div>
             </div>
         </section>
-    <section class="stats-bar">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Automated Control</p>
+    <!-- <section class="hero">
+        <div class="hero-decorative-elements">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="hero-badge">GST Compliant • IRN Certified</div>
+        <h1>E-Invoice Integration<br>for Modern Industries</h1>
+        <p>GST-compliant E-Invoice Integration specially built for Quarry, Crusher, Ready Mix Concrete (RMC), Bricks, and Pavers industries.</p>
+        <a href="./src/pages/contact.html" class="hero-cta">
+            Start Integration Now →
+        </a>
+    </section> -->
+
+    <section class="features">
+        <div class="section-header scroll-fade">
+            <div class="section-badge">Key Features</div>
+            <h2>Simple & Automatic E-Invoicing</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>One-Click Generation</h3>
+                <p>Create invoices with automatic IRN and QR code generation.</p>
             </div>
-            <div class="stat-item">
-                <h3>24/7</h3>
-                <p>Real-Time Monitoring</p>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>GST Schema Validation</h3>
+                <p>Built-in validation ensures GST compliance.</p>
             </div>
-            <div class="stat-item">
-                <h3>Zero</h3>
-                <p>Unauthorized Access</p>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Real-Time IRP API</h3>
+                <p>Direct integration with Government GST Portal.</p>
             </div>
-            <div class="stat-item">
-                <h3>Instant</h3>
-                <p>Entry Logging</p>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>E-Way Bill Auto-Gen</h3>
+                <p>Automatically generate e-way bills.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Credit & Debit Notes</h3>
+                <p>Full support for credit and debit notes.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Audit-Ready Records</h3>
+                <p>Complete audit trail for compliance.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Weight-Based Billing</h3>
+                <p>Specialized weight-based calculations.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Seamless Integration</h3>
+                <p>Connects with all ERP modules.</p>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">How It Works</span>
-                <h2 class="section-title">Simple Workflow. Maximum Security.</h2>
-                <p class="section-subtitle">When a vehicle approaches, credentials are verified instantly through Sazs Apps ERP. The boom barrier responds automatically based on authorization rules.</p>
+    <section class="benefits">
+        <div class="benefits-container">
+            <div class="benefits-content scroll-fade">
+                <h2>Benefits for Your Business</h2>
+                <ul class="benefits-list">
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>100% GST Compliance</strong><br>Stay fully compliant</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Faster Billing</strong><br>Reduce time from hours to seconds</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Zero Manual Errors</strong><br>Automated validation</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Time & Cost Savings</strong><br>Streamline operations</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>High-Volume Ready</strong><br>Process hundreds daily</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Complete Integration</strong><br>Works seamlessly</div>
+                    </li>
+                </ul>
             </div>
-
-            <div class="workflow-grid">
-                <div class="workflow-card">
-                    <div class="workflow-number">1</div>
-                    <h3>Vehicle Approaches</h3>
-                    <p>Vehicle arrives at the gate with RFID, QR code, or license plate credentials ready for verification.</p>
+            <div class="benefits-visual scroll-fade">
+                <div class="visual-card">
+                    <div class="visual-card-icon"> </div>
+                    <div class="visual-card-text">Real-Time Processing</div>
                 </div>
-
-                <div class="workflow-card">
-                    <div class="workflow-number">2</div>
-                    <h3>Instant Verification</h3>
-                    <p>ERP system validates credentials in real-time against predefined authorization database.</p>
+                <div class="visual-card">
+                    <div class="visual-card-icon"> </div>
+                    <div class="visual-card-text">100% Accuracy</div>
                 </div>
-
-                <div class="workflow-card">
-                    <div class="workflow-number">3</div>
-                    <h3>Authorization Check</h3>
-                    <p>System applies role-based, time-based, and vehicle-based access rules automatically.</p>
-                </div>
-
-                <div class="workflow-card">
-                    <div class="workflow-number">4</div>
-                    <h3>Automated Access</h3>
-                    <p>Boom barrier opens for authorized vehicles. All activity logged with complete audit trail.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Features Section -->
-    <section class="section section-gray">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Key Features</span>
-                <h2 class="section-title">Everything You Need for Smart Access Control</h2>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Automated Operation</h3>
-                        <p>Boom barriers operate automatically through ERP authorization, eliminating manual intervention.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Real-Time Logging</h3>
-                        <p>Every vehicle entry and exit is logged instantly with timestamp and vehicle details.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Centralized Control</h3>
-                        <p>Manage single or multiple gates from one centralized ERP dashboard.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Role-Based Access</h3>
-                        <p>Different access levels for employees, vendors, and visitors with customizable permissions.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Time-Based Rules</h3>
-                        <p>Set access permissions based on time schedules, shift timings, and working hours.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Live Monitoring</h3>
-                        <p>Monitor gate status, vehicle activity, and system health in real-time from dashboard.</p>
-                    </div>
+                <div class="visual-card">
+                    <div class="visual-card-icon"> </div>
+                    <div class="visual-card-text">Instant IRN</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Access Methods Section -->
-    <section class="section section-black">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Access Methods</span>
-                <h2 class="section-title">Multiple Authentication Options</h2>
-                <p class="section-subtitle">Flexible and secure authentication methods for every use case</p>
-            </div>
-
-            <div class="methods-grid">
-                <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <h3>RFID Cards or Tags</h3>
-                </div>
-
-                <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-qrcode"></i>
-                    </div>
-                    <h3>QR Code Scanning</h3>
-                </div>
-
-                <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h3>ANPR (License Plate)</h3>
-                </div>
-
-                <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-hand-pointer"></i>
-                    </div>
-                    <h3>Manual ERP Approval</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Applications Section -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Applications</span>
-                <h2 class="section-title">Perfect For Every Industry</h2>
-            </div>
-
-            <div class="apps-grid">
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-mountain"></i>
-                    </div>
-                    <h3>Quarry and Crusher Plants</h3>
-                </div>
-
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-truck-loading"></i>
-                    </div>
-                    <h3>Ready Mix Concrete (RMC) Plants</h3>
-                </div>
-
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <h3>Industrial Units and Factories</h3>
-                </div>
-
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Corporate Offices and Campuses</h3>
-                </div>
-
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-parking"></i>
-                    </div>
-                    <h3>Parking Areas and Warehouses</h3>
-                </div>
-
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-warehouse"></i>
-                    </div>
-                    <h3>Distribution Centers</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reports Section -->
-    <section class="section section-gray">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Analytics</span>
-                <h2 class="section-title">Comprehensive Reports & Insights</h2>
-                <p class="section-subtitle">Data-driven decisions with powerful analytics and reporting</p>
-            </div>
-
-            <div class="reports-grid">
-                <div class="report-card">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Vehicle Movement Reports</h3>
-                    <p>Daily and monthly comprehensive reports on vehicle entry and exit patterns.</p>
-                </div>
-
-                <div class="report-card">
-                    <i class="fas fa-stopwatch"></i>
-                    <h3>Entry & Exit Time Analysis</h3>
-                    <p>Detailed analysis of entry and exit times for optimization and planning.</p>
-                </div>
-
-                <div class="report-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Security Alerts</h3>
-                    <p>Track and analyze unauthorized access attempts with detailed logs.</p>
-                </div>
-
-                <div class="report-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Gate-wise Activity</h3>
-                    <p>Individual gate performance tracking and vehicle activity analysis.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Benefits</span>
-                <h2 class="section-title">Security & Operational Excellence</h2>
-                <p class="section-subtitle">Advanced security features combined with operational efficiency</p>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-lock"></i>
-                    <h3>Prevents Unauthorized Entry</h3>
-                    <p>Advanced verification prevents unauthorized vehicles from entering premises</p>
-                </div>
-
-                <div class="benefit-card">
-                    <i class="fas fa-hand-paper"></i>
-                    <h3>Reduces Manual Operations</h3>
-                    <p>Eliminate manual gate operations and reduce human error</p>
-                </div>
-
-                <div class="benefit-card">
-                    <i class="fas fa-shield-virus"></i>
-                    <h3>Improves Site Security</h3>
-                    <p>Enhanced security protocols ensure complete site safety</p>
-                </div>
-
-                <div class="benefit-card">
-                    <i class="fas fa-file-alt"></i>
-                    <h3>Complete Audit Trail</h3>
-                    <p>Detailed logs provide full audit trail for compliance</p>
-                </div>
-
-                <div class="benefit-card">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <h3>Enhanced Efficiency</h3>
-                    <p>Streamlined operations improve overall operational efficiency</p>
-                </div>
-
-                <div class="benefit-card">
-                    <i class="fas fa-chart-pie"></i>
-                    <h3>Data-Driven Insights</h3>
-                    <p>Generate insights from vehicle movement data for better planning</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to <span>Automate</span> Your Access Control?</h2>
-            <p>Join hundreds of facilities already using Sazs Apps ERP for smarter, more secure boom barrier integration. Get started today.</p>
-            <div class="cta-buttons">
-                <a href="/demo" class="btn-primary">Request a Demo</a>
-                <a href="/contact" class="btn-secondary">Contact Sales</a>
-            </div>
+        <div class="cta-box scroll-fade">
+            <h2>Automate Your Billing. Stay GST Ready.</h2>
+            <p>Enable E-Invoice Integration with Sazs Apps ERP today.</p>
+            <a href="" class="cta-button" id="contact">
+                 Contact SAZS Apps →
+            </a>
         </div>
     </section>
 
-    <!-- Footer -->
+       <!-- Footer -->
    <style>
     /* Footer: "Together We Grow" Section */
 .footer-container {
@@ -2925,7 +2556,7 @@ Automate vehicle entry and exit with seamless boom barrier integration. Secure, 
                 <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
                     May I help you?
                 </a>
-                <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+                <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
                 <button class="scroll-top" aria-label="Scroll to top">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 19V5M5 12l7-7 7 7" />
@@ -2933,8 +2564,29 @@ Automate vehicle entry and exit with seamless boom barrier integration. Secure, 
                 </button>
             </footer>
 
-
     <script>
+        // SCROLL ANIMATIONS - WORKING
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Wait for DOM to load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Observe all scroll-fade elements
+            document.querySelectorAll('.scroll-fade').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -2943,26 +2595,6 @@ Automate vehicle entry and exit with seamless boom barrier integration. Secure, 
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
-            });
-        });
-
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.workflow-card, .feature-card, .method-card, .app-card, .report-card, .benefit-card');
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s, transform 0.6s';
-                observer.observe(card);
             });
         });
     </script>

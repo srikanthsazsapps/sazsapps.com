@@ -310,8 +310,8 @@ h1 {
     /* display: table; */
     justify-content: space-between;
     align-items: flex-start;
-    padding: 20px 70px;
-    margin: 20px 10px;
+    padding: 100px 70px;
+    /* margin: 20px 10px; */
     gap: 30px;
 }
 

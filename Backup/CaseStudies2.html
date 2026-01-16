@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Case Study: Real-Time Vehicle & Trip Management for High-Volume Operations</title>
+  <title>Case Study: Transforming Customer Experience & Order Speed in Heavy Building Materials</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="common.css"rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- SEO -->
-  <meta name="description" content="How SAZS Apps ERP eliminated ghost trips and transformed logistics operations with GPS-integrated tracking and weighbridge validation for crusher, quarry, RMC, and brick plant operations." />
-  <meta name="keywords" content="Crusher ERP logistics, Quarry vehicle management software, Readymix RMC trip tracking, SAZS Apps ERP GPS, Brick plant fleet management" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- SEO (only in meta, not visible on page) -->
+  <meta name="description" content="How SAZS Apps ERP transformed customer experience and order speed for crusher, quarry, RMC, and brick plant operations through unified customer management, credit control, and real-time tracking." />
+  <meta name="keywords" content="Crusher ERP customer management, Quarry ERP CRM, Readymix order fulfillment software, SAZS Apps ERP customer handling, Brick plant sales automation, Automated quotation for quarries, Building material credit control" />
 
   <style>
     :root {
@@ -55,8 +54,11 @@
 
     .page-wrap {
       min-height: 100vh;
-      background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+      background: #ffffff;
       color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;       /* center horizontally */
     }
 
     header {
@@ -66,6 +68,9 @@
       backdrop-filter: blur(18px);
       background: linear-gradient(to bottom,rgba(0,0,0,0.96),rgba(0,0,0,0.7),transparent);
       border-bottom: 1px solid #262626;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
 
     .nav-inner {
@@ -187,17 +192,15 @@
       .nav-cta {
         display: none;
       }
-      .brand-text-main {
-        font-size: 0.95rem;
-      }
-      .brand-text-sub {
-        font-size: 0.68rem;
-      }
     }
 
     main {
+      /* max-width: 1080px; */
       margin: 0 auto;
       padding: 32px 18px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;    /* center main content block */
     }
 
     .topsection {
@@ -208,18 +211,7 @@
       flex-direction: column;
       align-items: center;
     }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 3px 10px 3px 3px;
-      border-radius: 999px;
-      /* background: #000000;
-      border: 1px solid #404040; */
-      margin-bottom: 14px;
-    }
-            .topsection {
+    .topsection {
   align-items: flex-start;
   text-align: left;
 }
@@ -232,13 +224,23 @@
   text-align: center;
 }
 
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 10px 3px 3px;
+      border-radius: 999px;
+      /* background: #000000;
+      border: 1px solid #404040; */
+      margin-bottom: 14px;
+    }
 
-    .hero-k-dot {
+    /* .hero-k-dot {
       width: 18px;
       height: 18px;
       border-radius: 999px;
       background: #ffffff;
-    }
+    } */
 
     .hero-k-label {
       font-size: 0.90rem;
@@ -281,19 +283,12 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 7px 14px;
+      padding: 5px 10px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-      border: 1px solid #333333;
-      font-size: 0.8rem;
+      background: #000000;
+      border: 1px solid #404040;
+      font-size: 0.78rem;
       color: #f5f5f5;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: all 0.2s ease;
-    }
-    
-    .hero-badge:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
     }
 
     .hero-badge-dot {
@@ -336,15 +331,12 @@
       color: #000000;
     }
 
-    .hero-footnote strong {
-      color: #000000;
-    }
-
     .layout-main {
       display: grid;
-      grid-template-columns: minmax(0,1fr) minmax(0,3fr);
+      grid-template-columns: minmax(0,1.7fr) minmax(0,1fr);
       gap: 28px;
       margin-top: 24px;
+      align-items: flex-start;
     }
 
     @media (max-width: 920px) {
@@ -357,20 +349,14 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
+      text-align: left;
     }
 
     section {
-      padding: 24px;
+      padding: 18px 18px 18px;
       border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-      border: 1px solid #2a2a2a;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    
-    section:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      background: #000000;
+      border: 1px solid #373636;
     }
 
     section.compact {
@@ -378,8 +364,7 @@
     }
 
     section.alt {
-      background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
-      border: 1px solid #333333;
+      background: #000000;
     }
 
     .section-kicker {
@@ -388,31 +373,28 @@
       letter-spacing: 0.18em;
       color: var(--text-muted);
       margin-bottom: 4px;
+      text-align: left;
     }
 
     h2 {
       font-size: 1.22rem;
       margin-bottom: 6px;
       letter-spacing: -0.01em;
-    }
-
-    h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      margin-top: 16px;
-      letter-spacing: -0.01em;
+      text-align: left;
     }
 
     .section-intro {
       font-size: 0.92rem;
       color: var(--text-soft);
       margin-bottom: 10px;
+      text-align: left;
     }
 
     p {
       font-size: 0.9rem;
       color: var(--text-main);
       margin-bottom: 8px;
+      text-align: left;
     }
 
     ul {
@@ -420,6 +402,7 @@
       padding-left: 18px;
       margin-top: 4px;
       margin-bottom: 6px;
+      text-align: left;
     }
 
     ul li {
@@ -436,18 +419,12 @@
     }
 
     .pill-metric {
-      padding: 6px 12px;
+      padding: 4px 9px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-      border: 1px solid #333333;
+      background: #000000;
+      border: 1px solid #404040;
       font-size: 0.76rem;
       color: var(--text-soft);
-      transition: all 0.2s ease;
-    }
-    
-    .pill-metric:hover {
-      border-color: #505050;
-      transform: translateY(-1px);
     }
 
     .result-metric-row {
@@ -459,18 +436,11 @@
 
     .result-metric-card {
       flex: 1 1 150px;
-      padding: 16px 14px;
+      padding: 10px 11px;
       border-radius: 16px;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-      border: 1px solid #2a2a2a;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .result-metric-card:hover {
-      transform: translateY(-4px);
-      border-color: #404040;
-      box-shadow: 0 8px 24px rgba(255,255,255,0.1);
+      background: #000000;
+      border: 1px solid #262626;
+      text-align: left;
     }
 
     .result-metric-title {
@@ -482,13 +452,9 @@
     }
 
     .result-metric-value {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-      background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 2px;
     }
 
     .result-metric-note {
@@ -497,208 +463,49 @@
     }
 
     .sidebar {
-      /* display: flex; */
-      flex-direction: column;
-      gap: 18px;
+        position: sticky;
+  top: 100px;
+  border-radius: var(--radius-xl);
+  background: var(--grad-section);
+  border: 1px solid #262626;
+  box-shadow: var(--shadow-soft);
+  padding: 20px 20px 18px;
+  overflow: hidden;
+  align-self: start;
+
     }
 
-    .badge-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 6px;
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.86rem;
+      text-align: left;
     }
 
-    .badge-chip {
-      font-size: 0.74rem;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid #404040;
-      color: var(--text-soft);
+    .comparison-table thead {
+      background: #000000;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      border: 1px solid #262626;
+      padding: 8px 9px;
+      vertical-align: top;
+    }
+
+    .comparison-table th {
+      font-weight: 600;
+      text-align: left;
+      color: #f5f5f5;
+    }
+
+    .comparison-table tbody tr:nth-child(odd) {
       background: #050505;
     }
 
-    .highlight-box {
-      background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-      border-left: 4px solid #f59e0b;
-      padding: 20px;
-      margin: 24px 0;
-      border-radius: 0 12px 12px 0;
-      border: 1px solid #333333;
-      border-left: 4px solid #f59e0b;
-    }
-
-    .highlight-box p {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #fbbf24;
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .feature-box {
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 16px;
-      border: 1px solid #333333;
-    }
-
-    .feature-box h3 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-
-    .feature-box h3 i {
-      font-size: 1rem;
-    }
-
-    .feature-box.blue {
-      background: linear-gradient(135deg, #1e3a5f 0%, #0f1f3a 100%);
-      border-left: 4px solid #3b82f6;
-    }
-
-    .feature-box.blue h3 i {
-      color: #3b82f6;
-    }
-
-    .feature-box.green {
-      background: linear-gradient(135deg, #1e3a2f 0%, #0f1f1a 100%);
-      border-left: 4px solid #10b981;
-    }
-
-    .feature-box.green h3 i {
-      color: #10b981;
-    }
-
-    .feature-box.yellow {
-      background: linear-gradient(135deg, #3a2e1e 0%, #1f1a0f 100%);
-      border-left: 4px solid #f59e0b;
-    }
-
-    .feature-box.yellow h3 i {
-      color: #f59e0b;
-    }
-
-    .feature-box.purple {
-      background: linear-gradient(135deg, #2e1e3a 0%, #1a0f1f 100%);
-      border-left: 4px solid #7c3aed;
-    }
-
-    .feature-box.purple h3 i {
-      color: #7c3aed;
-    }
-
-    @media (max-width: 480px) {
-      .hero-title {
-        font-size: 1.8rem;
-      }
-      .hero-subtitle {
-        font-size: 0.9rem;
-      }
-      .hero-badges {
-        gap: 8px;
-      }
-      .hero-badge {
-        font-size: 0.72rem;
-        padding: 4px 8px;
-      }
-      main {
-        padding: 24px 14px 48px;
-      }
-      section {
-        padding: 14px;
-      }
-      .result-metric-row {
-        gap: 12px;
-      }
-      .result-metric-card {
-        flex: 1 1 100%;
-      }
-    }
-
-    .table-of-contents {
-      position: sticky;
-      top: 100px;
-      border-radius: var(--radius-xl);
-      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-      border: 1px solid #333333;
-      box-shadow: var(--shadow-soft);
-      padding: 20px 20px 18px;
-      overflow: hidden;
-      align-self: start;
-      max-height: calc(100vh - 120px);
-    }
-    
-    .toc-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 20px;
-      color: #ffffff;
-    }
-    
-    .toc-header h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #ffffff;
-    }
-    
-    .toc-list {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .toc-list li {
-      margin-bottom: 14px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid #333333;
-    }
-    
-    .toc-list li:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    
-    .toc-list a {
-      text-decoration: none;
-      color: #d1d5db;
-      font-weight: 500;
-      font-size: 0.875rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color 0.3s;
-      line-height: 1.4;
-    }
-    
-    .toc-list a:hover {
-      color: #3b82f6;
-    }
-    
-    .toc-list a.active {
-      color: #3b82f6;
-      font-weight: 600;
-    }
-    
-    .toc-list i {
-      color: #3b82f6;
-      font-size: 0.75rem;
-      flex-shrink: 0;
-    }
-    
-    @media (max-width: 992px) {
-      .case-study-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      
-      .table-of-contents {
-        position: static;
-      }
+    .comparison-table tbody tr:nth-child(even) {
+      background: #000000;
     }
   </style>
 </head>
@@ -710,23 +517,24 @@
         <div class="brand-mark"></div>
         <div>
           <div class="brand-text-main">SAZS Apps ERP</div>
-          <div class="brand-text-sub">Crusher • Quarry • RMC • Bricks</div>
+          <div class="brand-text-sub">Crusher -  Quarry -  RMC -  Bricks</div>
         </div>
       </div>
       <nav class="nav-links">
         <a href="#challenge">Challenge</a>
         <a href="#solution">Solution</a>
         <a href="#results">Results</a>
+        <a href="#industry">Industry impact</a>
       </nav>
       <div class="nav-cta">
-        <div class="nav-pill">GPS & Logistics Suite</div>
+        <div class="nav-pill">Customer Experience OS</div>
         <button class="nav-button" onclick="document.getElementById('results').scrollIntoView({behavior:'smooth'})">
           Book a demo
         </button>
       </div>
     </div>
   </header> -->
- <nav class="sazs-header">
+    <nav class="sazs-header">
         <div class="sazs-header-wrapper">
             <div class="sazs-header-main">
                 <a href="/" class="sazs-brand">
@@ -862,33 +670,33 @@
                         <div class="features-cards-grid">
                             <a href="CaseStudies1.html" class="features-case-card">
                                 <div class="features-case-image">
-                                    <img src="./src/assets/contentImages/quarrydrone.png" alt="Case Study 1" />
+                                    <img src="./src/assets/contentImages/head1.webp" alt="Case Study 1" />
                                 </div>
                                 <div class="features-case-title">1.Optimizing Quarry Profitability via Automated Theft Prevention</div>
                             </a>
 
                             <a href="CaseStudies2.html" class="features-case-card">
                                 <div class="features-case-image">
-                                    <img src="./src/assets/contentImages/bricksdrone.png" alt="Case Study 2" />
+                                    <img src="./src/assets/contentImages/head2.webp" alt="Case Study 2" />
                                 </div>
                                 <div class="features-case-title">2.Transforming Customer Experience & Order Speed in Heavy Building Materials </div>
                             </a>
 
                             <a href="CaseStudies3.html" class="features-case-card">
                                 <div class="features-case-image">
-                                    <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 3" />
+                                    <img src=" ./src/assets/contentImages/head3.webp" alt="Case Study 3" />
                                 </div>
                                 <div class="features-case-title">3.Automating E-Invoicing & GST Compliance in Building Materials </div>
                             </a>
                              <a href="CaseStudies4.html" class="features-case-card">
                                 <div class="features-case-image">
-                                    <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 4" />
+                                    <img src=" ./src/assets/contentImages/head4.webp" alt="Case Study 4" />
                                 </div>
                                 <div class="features-case-title">4.Real-Time Vehicle & Trip Management for High-Volume Operations</div>
                             </a>
                                <a href="CaseStudies5.html" class="features-case-card">
                                     <div class="features-case-image">
-                                        <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 5" />
+                                        <img src=" ./src/assets/contentImages/head5.webp" alt="Case Study 5" />
                                     </div>
                                     <div class="features-case-title">5.Complete Financial Control & Profit Analysis for Quarry & RMC Owners</div>
                                 </a>
@@ -1066,243 +874,166 @@ document.addEventListener('click', function (event) {
      
       
     </script>
+
   <main>
     <div class="topsection">
       <div class="hero-kicker">
         <div class="hero-k-dot"></div>
-        <div class="hero-k-label">Case study • Real-time vehicle & trip management</div>
+        <div class="hero-k-label">Case study -  Customer experience & order speed</div>
       </div>
       <h1 class="hero-title">
-        Real-Time Vehicle & Trip Management for <span class="accent">High-Volume Operations</span>
+        Transforming Customer Experience & Order Speed in <span class="accent">Heavy Building Materials</span>
       </h1>
       <p class="hero-subtitle">
-        How SAZS Apps ERP eliminated ghost trips and transformed logistics operations with GPS-integrated tracking and weighbridge validation across crusher, quarry, RMC, and brick plant sites.
+        How one crusher, quarry, RMC, and brick plant operation moved from siloed spreadsheets and slow dispatches to a unified, high-speed customer lifecycle with SAZS Apps ERP.
       </p>
 
-      <!-- <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=GPS+Vehicle+Tracking+Dashboard" alt="Real-time GPS vehicle tracking and trip management dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" /> -->
+      <!-- <img src="https://placehold.co/1200x600/0a0a0a/ffffff?text=Heavy+Materials+Logistics+%26+ERP+Dashboard" alt="Heavy building materials logistics with ERP dashboard" style="max-width:100%;border-radius:16px;margin:10px 0 18px;" /> -->
 
       <div class="hero-badges">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          100% trip verification
+          40% higher customer satisfaction
         </div>
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          Zero billing disputes
+          60% faster quote-to-delivery
         </div>
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          30% better utilization
+          25% lower outstanding dues
         </div>
       </div>
       <!-- <div class="hero-cta-row">
         <button class="hero-cta-primary" onclick="document.getElementById('solution').scrollIntoView({behavior:'smooth'})">
-          See the system
+          Explore the workflow
         </button>
       </div> -->
       <div class="hero-footnote">
-        <strong>Industries:</strong> Crusher, Quarry, Readymix (RMC), Brick Plants
+        <strong>Sectors:</strong> Crusher, Quarry, Readymix (RMC), Brick Plants
       </div>
     </div>
-    
+
     <section class="hero">
       <div class="layout-main">
-        <aside class="sidebar">
-          <aside class="table-of-contents">
-            <div class="toc-header">
-              <i class="fas fa-list-ul"></i>
-              <h3>Contents</h3>
-            </div>
-            <ul class="toc-list">
-              <li><a href="#challenge"><i class="fas fa-chevron-right"></i> The Challenge: Logistic Blind Spots</a></li>
-              <li><a href="#solution"><i class="fas fa-chevron-right"></i> The Solution: GPS-Integrated Logistics</a></li>
-              <li><a href="#results"><i class="fas fa-chevron-right"></i> The Results: Streamlined Logistics</a></li>
-              <li><a href="#implementation"><i class="fas fa-chevron-right"></i> Key Technologies & Integration</a></li>
-              <li><a href="#conclusion"><i class="fas fa-chevron-right"></i> Why This Matters</a></li>
-            </ul>
-          </aside>
-        </aside>
-
         <div class="content-flow">
-          <section id="challenge" class="content-section">
+          <section id="challenge">
             <div class="section-kicker">The challenge</div>
-            <h2>Logistic Blind Spots and "Ghost Trips"</h2>
+            <h2>Siloed data, slow deliveries, unhappy customers</h2>
 
-            <img src="./src/assets/contentImages/case41.webp" alt="Logistics blind spots and ghost trips challenges" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+            <img src="./src/assets/contentImages/case21.webp" alt="Manual spreadsheet-based process creating bottlenecks" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
 
             <p class="section-intro">
-              For businesses operating across multiple Crusher, Quarry, RMC, and Brick Plant sites, transport is often the largest unmanaged cost. This client faced severe logistical challenges:
+              In high‑throughput materials supply, a few hours of delay can cost a project or a customer. This operation relied on scattered spreadsheets and manual checks that could not keep up with demand.
             </p>
-            
-            <h3>Critical Pain Points:</h3>
             <ul>
-              <li><strong>Fake Trips:</strong> Drivers or contractors claiming "ghost trips" that never occurred.</li>
-              <li><strong>Duplicate Entries:</strong> Manual trip logs leading to double-billing and accounting confusion.</li>
-              <li><strong>Low Asset Utilization:</strong> No data on which vehicles were idle or which drivers were underperforming.</li>
-              <li><strong>Billing Disputes:</strong> Constant friction with transport contractors over inaccurate trip counts.</li>
+              <li><strong>Manual bottlenecks:</strong> Customer records and quotations were spread across Excel files, turning every quote and update into hours of low‑value typing.</li>
+              <li><strong>Revenue leakage:</strong> Without automated credit checks, loads were dispatched to customers with high outstanding balances, increasing risk.</li>
+              <li><strong>Fragmented visibility:</strong> No single source of truth for order history meant teams struggled to answer basic questions during customer calls.</li>
+              <li><strong>Order fulfilment lag:</strong> The time between a customer request and actual dispatch was too long, putting construction timelines under pressure.</li>
             </ul>
-
-            <div class="highlight-box">
-              <p>"Without visibility into actual vehicle movements and trip validation, logistics costs can spiral out of control—costing businesses millions annually."</p>
-            </div>
           </section>
 
-          <section id="solution" class="alt content-section">
+          <section id="solution" class="alt">
             <div class="section-kicker">The solution</div>
-            <h2>GPS-Integrated Logistics & Weighbridge Validation</h2>
+            <h2>A unified customer lifecycle with SAZS Apps ERP</h2>
 
-            <img src="./src/assets/contentImages/case42.webp" alt="SAZS Apps ERP GPS-integrated logistics solution" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+            <img src="./src/assets/contentImages/case22.webp" alt="SAZS Apps ERP customer lifecycle dashboard" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
 
             <p class="section-intro">
-              SAZS Apps ERP implemented a rigorous Trip Management System that turned logistical guesswork into a precise science:
+              The SAZS Apps ERP Customer Management Module replaced disconnected tools with an end‑to‑end workflow: from first quote to final dispatch, everything lives in one system.
             </p>
-            
             <div class="pill-metric-row">
-              <div class="pill-metric">GPS-Based Tracking</div>
-              <div class="pill-metric">Double-Check System</div>
-              <div class="pill-metric">Automated Billing</div>
-              <div class="pill-metric">Performance Dashboards</div>
+              <div class="pill-metric">Automated quotations & orders</div>
+              <div class="pill-metric">Credit limit control</div>
+              <div class="pill-metric">Weighbridge integration</div>
+              <div class="pill-metric">Real-time tracking</div>
             </div>
-
-            <div class="feature-box blue">
-              <h3><i class="fas fa-map-marker-alt"></i> GPS-Based Tracking</h3>
-              <p>Real-time movement monitoring of every vehicle across all sites.</p>
-            </div>
-
-            <div class="feature-box green">
-              <h3><i class="fas fa-check-double"></i> The "Double-Check" System</h3>
-              <p>Every trip is automatically validated against weighbridge data; if no weight was recorded, the trip isn't counted.</p>
-            </div>
-
-            <div class="feature-box yellow">
-              <h3><i class="fas fa-file-invoice-dollar"></i> Automated Billing</h3>
-              <p>The ERP generates transport invoices based on verified trips and actual tonnage, eliminating manual errors and malpractice.</p>
-            </div>
-
-            <div class="feature-box purple">
-              <h3><i class="fas fa-chart-bar"></i> Performance Dashboards</h3>
-              <p>Detailed reports on driver behavior and vehicle-wise productivity.</p>
-            </div>
+            <p><strong>1. Automated quotation & order management</strong><br>
+              Sales teams now generate professional, branded quotations in seconds instead of manually building them in spreadsheets. Once approved, each quotation converts to a confirmed order instantly, notifying production teams at the crusher, quarry, RMC, or brick plant in real time.
+            </p>
+            <p><strong>2. Intelligent credit control & alerts</strong><br>
+              The ERP continuously monitors credit limits and ageing. If a customer exceeds the allowed limit or has long‑overdue invoices, new dispatches are automatically blocked until finance clears the account, protecting cash flow without manual policing.
+            </p>
+            <p><strong>3. Integrated weighbridge & dispatch sync</strong><br>
+              Customer orders are linked directly to automated weighbridge entries, ensuring every load is captured against the right order and rate. This removes manual data entry at the scale and closes gaps where errors or malpractice could occur.
+            </p>
+            <p><strong>4. Real-time order tracking</strong><br>
+              Customers in RMC and quarry segments now receive clear status from "Order Confirmed" through "In‑Transit" to "Delivered", giving both internal teams and clients live visibility on critical deliveries.
+            </p>
           </section>
 
-          <section id="results" class="content-section">
+          <section id="results">
             <div class="section-kicker">The results</div>
-            <h2>Streamlined Logistics & Verified Billing</h2>
+            <h2>Peak efficiency and scalable growth</h2>
 
-            <img src="./src/assets/contentImages/case43.webp" alt="Logistics optimization and billing results" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+            <img src="./src/assets/contentImages/case23.webp" alt="KPIs showing improved customer satisfaction, speed, and cash flow" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
 
             <p class="section-intro">
-              The GPS-integrated logistics system transformed the client's ability to manage their fleet:
+              Within months of going live, the operation saw measurable gains in customer satisfaction, process speed, and financial discipline.
             </p>
-
             <div class="result-metric-row">
               <div class="result-metric-card">
-                <div class="result-metric-title">Vehicle Utilization</div>
-                <div class="result-metric-value">30%</div>
-                <div class="result-metric-note">Improvement through smarter scheduling and reduced idle time.</div>
+                <div class="result-metric-title">Customer experience</div>
+                <div class="result-metric-value">+40% satisfaction</div>
+                <div class="result-metric-note">More professional documents and proactive updates increased trust and loyalty.</div>
               </div>
               <div class="result-metric-card">
-                <div class="result-metric-title">Trip Verification</div>
-                <div class="result-metric-value">100%</div>
-                <div class="result-metric-note">Complete elimination of fake or duplicate trip entries.</div>
+                <div class="result-metric-title">Order speed</div>
+                <div class="result-metric-value">60% faster cycle</div>
+                <div class="result-metric-note">Automation removed manual "waiting gaps" between quote, approval, and dispatch.</div>
               </div>
               <div class="result-metric-card">
-                <div class="result-metric-title">Billing Disputes</div>
-                <div class="result-metric-value">Zero</div>
-                <div class="result-metric-note">Transparent, automated, dispute-free contractor payments.</div>
+                <div class="result-metric-title">Repeat business</div>
+                <div class="result-metric-value">Higher retention</div>
+                <div class="result-metric-note">Accurate billing and on‑time deliveries converted one‑time buyers into long‑term accounts.</div>
               </div>
               <div class="result-metric-card">
-                <div class="result-metric-title">Fleet Planning</div>
-                <div class="result-metric-value">Data-Driven</div>
-                <div class="result-metric-note">Accurate logistics data for better expansion decisions.</div>
+                <div class="result-metric-title">Financial health</div>
+                <div class="result-metric-value">25% less dues</div>
+                <div class="result-metric-note">Stronger credit control and automatic blocking reduced outstanding receivables.</div>
               </div>
             </div>
-
-            <div class="highlight-box" style="margin-top: 32px;">
-              <p>"The transformation was remarkable. We eliminated ghost trips entirely, reduced billing disputes to zero, and our transport contractors actually thank us for the transparency. Our logistics operation went from a cost center to a competitive advantage." — Operations Director</p>
-            </div>
-          </section>
-
-          <section id="implementation" class="alt content-section">
-            <div class="section-kicker">Implementation</div>
-            <h2>Key Technologies & Integration</h2>
-
-            <p class="section-intro">
-              The GPS-integrated logistics system seamlessly connects with existing operations:
-            </p>
-
-            <ul>
-              <li><strong>Real-time GPS tracking</strong> on all vehicles across Crusher, Quarry, RMC, and Brick Plant sites</li>
-              <li><strong>Weighbridge integration</strong> for automatic trip validation and tonnage recording</li>
-              <li><strong>Automated billing workflows</strong> that eliminate manual entry and human error</li>
-              <li><strong>Mobile dashboards</strong> for managers to monitor fleet performance in real-time</li>
-              <li><strong>Driver performance analytics</strong> for identifying top performers and training opportunities</li>
-            </ul>
-          </section>
-
-          <section id="conclusion" class="content-section">
-            <div class="section-kicker">Conclusion</div>
-            <h2>Why This Matters for Construction Material Operations</h2>
-
-            <p>
-              For high-volume operations running Crushers, Quarries, RMC plants, and Brick manufacturing facilities, logistics visibility isn't optional—it's essential for profitability. The combination of GPS tracking and weighbridge validation creates an ironclad verification system that:
-            </p>
-
-            <ul>
-              <li>Eliminates revenue leakage from ghost trips and billing errors</li>
-              <li>Improves contractor relationships through transparent, timely payments</li>
-              <li>Maximizes vehicle utilization and reduces idle time</li>
-              <li>Provides data-driven insights for fleet expansion and route optimization</li>
-            </ul>
-
-            <p style="margin-top: 20px;">
-              The result? Logistics transforms from an unmanaged cost center into a source of competitive advantage and operational excellence.
-            </p>
           </section>
         </div>
+
+        <aside class="sidebar" aria-label="Industry impact">
+          <section id="industry" class="compact">
+            <div class="section-kicker">Industry-specific impact</div>
+            <h2>How each segment benefited</h2>
+
+            <img src="./src/assets/contentImages/case24.webp" alt="Crusher, quarry, RMC, and brick plants served by SAZS Apps ERP" style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+            <p class="section-intro">
+              The same customer workflow produced different tangible wins across crusher, quarry, RMC, and brick operations.
+            </p>
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Industry</th>
+                  <th>Specific benefit realized</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Crusher &amp; Quarry</td>
+                  <td>Rapid handling of high‑volume truck dispatches with instant, order‑linked invoicing.</td>
+                </tr>
+                <tr>
+                  <td>Readymix (RMC)</td>
+                  <td>Precise scheduling and tracking of time‑sensitive concrete deliveries to construction sites.</td>
+                </tr>
+                <tr>
+                  <td>Brick plants</td>
+                  <td>Streamlined order management and tracking across different grades and batches of bricks.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </aside>
       </div>
     </section>
   </main>
-
-  <script>
-    // Smooth scrolling for table of contents links
-    document.querySelectorAll('.toc-list a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - 100,
-          behavior: 'smooth'
-        });
-      });
-    });
-    
-    // Highlight current section in TOC on scroll
-    window.addEventListener('scroll', function() {
-      const sections = document.querySelectorAll('.content-section');
-      const tocLinks = document.querySelectorAll('.toc-list a');
-      
-      let currentSection = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        if (window.pageYOffset >= sectionTop) {
-          currentSection = '#' + section.getAttribute('id');
-        }
-      });
-      
-      tocLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === currentSection) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
-
 </div>
 <style>
     /* Footer: "Together We Grow" Section */
@@ -1606,7 +1337,7 @@ document.addEventListener('click', function (event) {
                 <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
                     May I help you?
                 </a> -->
-                <div>© 2025, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+                <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
                 <button class="scroll-top" aria-label="Scroll to top">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 19V5M5 12l7-7 7 7" />

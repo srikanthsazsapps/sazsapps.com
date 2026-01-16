@@ -257,8 +257,8 @@ h1 {
 @media (min-width: 768px) {
     .team-section {
         
-        padding: 20px 70px;
-        margin: 20px 100px;
+        padding: 100px 70px;
+        /* margin: 20px 100px; */
         
     }
 }

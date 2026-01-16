@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Invoice Integration | SAZS Apps ERP</title>
+        <link href="../css/EInvoice.css" rel="stylesheet" />
+            <link href="../css/comman.css" rel="stylesheet" />
+
+
+
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+        <nav class="sazs-header">
+            <div class="sazs-header-wrapper">
+                <div class="sazs-header-main">
+                    <a href="/" class="sazs-brand">
+                        <div class="sazs-brand-image">
+                            <img src="../assets/contentImages/sazsLogo1.png" alt="SAZS ERP App Logo Home page"
+                                class="sazs-brand-image">
+                        </div>
+                    </a>
+
+                    <ul class="sazs-menu-list">
+                        <li class="sazs-menu-item">
+                            <a class="sazs-menu-link" data-dropdown="platform">
+                                Product
+                                <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                    <path
+                                        d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="sazs-menu-item">
+                            <a class="sazs-menu-link" data-dropdown="Features">
+                                Features
+                                <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                    <path
+                                        d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="sazs-menu-item">
+                            <a class="sazs-menu-link" data-dropdown="resources">
+                                Media & Events
+                                <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+                                    <path
+                                        d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="sazs-cta-group">
+                        <a href="ProfitCalculator.html" class="sazs-button sazs-button-outline"
+                            style="background-color: #000000; color: #ffffff;">Profit Calc</a>
+
+                        <a href="contact.html" class="sazs-button sazs-button-outline">Contact Sales</a>
+                        <!-- <a href="#" class="sazs-button sazs-button-outline">Sign in</a> -->
+                    </div>
+
+                    <div class="sazs-hamburger">
+                        <a href="javascript:void(0);" onclick="toggleNav()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Platform Dropdown -->
+                <div class="sazs-submenu" id="platform">
+                    <div class="product-dropdown">
+                        <!-- Left Side - Links -->
+                        <div class="product-left">
+                            <div class="product-section-title">Quick Links</div>
+                            <a href="../../index.html" class="product-link">Home</a>
+                            <a href="aboutus.html" class="product-link">About Us</a>
+                            <a href="careers.html" class="product-link">Careers</a>
+                            <a href="Signup.html" class="product-link">Sign in</a>
+                            <a href="WhytoChoose.html" class="product-link">WhytoChoose</a>
+                            <a href="Questions.html" class="product-link"> FAQ</a>
+
+
+                        </div>
+
+                        <!-- Right Side - Products Grid -->
+                        <div class="product-right">
+                            <div class="product-grid-title">Our Products</div>
+
+                            <div class="sazs-submenu-grid">
+
+                                <div class="sazs-submenu-col">
+                                    <a href="QuarryCrusher.html" class="sazs-product-card">
+                                        <div class="sazs-card-img-wrapper">
+                                            <img src="../assets/contentImages/quarrydrone.png"
+                                                alt="Stone Crusher Management Software" />
+                                        </div>
+                                        <div class="sazs-card-heading">End-to-End Management Software for Stone Crushers
+                                        </div>
+                                        <div class="sazs-card-text">In the rugged environment of stone crushing,
+                                            efficiency
+                                            is
+                                            currency. Transform your quarry operations with intelligent automation.
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="sazs-submenu-col">
+                                    <a href="QuarryCrusher.html" class="sazs-product-card">
+                                        <div class="sazs-card-img-wrapper">
+                                            <img src="../assets/contentImages/quarrydrone.png"
+                                                alt="Brick Manufacturing ERP Software" />
+                                        </div>
+                                        <div class="sazs-card-heading">End-to-End Management Software for Stone
+                                            Quarries</div>
+                                        <div class="sazs-card-text">In the rugged environment of stone crushing,
+                                            efficiency
+                                            is
+                                            currency. Transform your quarry operations with intelligent automation.
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="sazs-submenu-col">
+                                    <a href="rmc.html" class="sazs-product-card">
+                                        <div class="sazs-card-img-wrapper">
+                                            <img src="../assets/contentImages/rmc.png"
+                                                alt="Brick Manufacturing ERP Software" />
+                                        </div>
+                                        <div class="sazs-card-heading">Next-Gen Billing Software for Ready Mix Concrete
+                                            (RMC) Plants</div>
+                                        <div class="sazs-card-text">The Future of Fast, Accurate & Automated RMC Billing
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="sazs-submenu-col">
+                                    <a href="brickspaver.html" class="sazs-product-card">
+                                        <div class="sazs-card-img-wrapper">
+                                            <img src="../assets/contentImages/bricksdrone.png"
+                                                alt="Brick Manufacturing ERP Software" />
+                                        </div>
+                                        <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver
+                                            Manufacturing
+                                            Plants</div>
+                                        <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every
+                                            Stage
+                                            of Your Production</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Dropdown -->
+                <div class="sazs-submenu" id="Features">
+                    <div class="features-dropdown">
+                        <!-- Left Side - Solutions List -->
+                        <div class="features-left">
+                            <div class="features-section-title">Features — tailored to every Crushers & Quarries</div>
+                            <a href="Anprs.html" class="features-link">ANPR Camera Integration</a>
+                            <a href="EInvoice.html" class="features-link">E-Invoice Integration</a>
+                            <a href="Weighbridge.html" class="features-link">Weighbridge and Camera Integration</a>
+                            <a href="Boombarrier.html" class="features-link">Boom Barrier Integration</a>
+                            <a href="biometrics.html" class="features-link">Biometrics </a>
+                        </div>
+
+                        <!-- Right Side - Case Studies -->
+                        <div class="features-right">
+                            <!-- <div class="features-case-studies-title">Case Studies — </div> -->
+                            <a href="#" class="features-case-studies-link">
+                                Case Studies
+                                <svg width="12" height="12" viewBox="0 0 10 10" fill="currentColor">
+                                    <path
+                                        d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                                </svg>
+                            </a>
+
+                            <div class="features-cards-grid">
+                                <a href="CaseStudies1.html" class="features-case-card">
+                                    <!-- <div class="features-case-image">
+                                    <img src="./src/assets/contentImages/quarrydrone.png" alt="Case Study 1" />
+                                </div> -->
+                                    <div class="features-case-title">1. Optimizing Quarry Profitability & Theft
+                                        Prevention
+                                    </div>
+                                </a>
+
+                                <a href="CaseStudies2.html" class="features-case-card">
+                                    <!-- <div class="features-case-image">
+                                    <img src="./src/assets/contentImages/bricksdrone.png" alt="Case Study 2" />
+                                </div> -->
+                                    <div class="features-case-title">2. Transforming Customer Experience & Order Speed
+                                    </div>
+                                </a>
+
+                                <a href="CaseStudies3.html" class="features-case-card">
+                                    <!-- <div class="features-case-image">
+                                    <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 3" />
+                                </div> -->
+                                    <div class="features-case-title">3. Automating E-Invoicing & GST Compliance </div>
+                                </a>
+                                <a href="CaseStudies4.html" class="features-case-card">
+                                    <!-- <div class="features-case-image">
+                                    <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 4" />
+                                </div> -->
+                                    <div class="features-case-title">4. Real-Time Vehicle & Trip Management </div>
+                                </a>
+                                <a href="CaseStudies5.html" class="features-case-card">
+                                    <!-- <div class="features-case-image">
+                                        <img src=" ./src/assets/contentImages/bricksdrone.png" alt="Case Study 5" />
+                                    </div> -->
+                                    <div class="features-case-title">5. Complete Financial Control & Profit Analysis
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media & Events Dropdown -->
+                <div class="sazs-submenu" id="resources">
+                    <div class="media-events-dropdown">
+                        <!-- Header Section -->
+                        <div class="media-events-header">
+                            <h2 class="media-events-title">Media & Events <span class="media-title-separator">—</span>
+                                <span class="media-title-subtitle">Stay Connected, Stay Informed</span></h2>
+                            <div class="media-events-badges">
+                                <span class="media-badge-intro">Explore our</span>
+                                <span class="media-badge google-badge">
+                                    <span class="badge-icon">📰</span> Press Releases
+                                </span>
+                                <span class="media-badge gemini-badge">
+                                    <span class="badge-icon">🎤</span> Webinars
+                                </span>
+                                <span class="media-badge chatgpt-badge">
+                                    <span class="badge-icon">📅</span> Events
+                                </span>
+                                <span class="media-badge perplexity-badge">
+                                    <span class="badge-icon">📰</span> News
+                                </span>
+                                <span class="media-badge-outro">and more.</span>
+                            </div>
+                            <div class="media-events-ai-tracker">
+                                <span class="ai-tracker-label">Latest Updates</span>
+                                <span class="ai-tracker-beta">NEW</span>
+                                <span class="ai-tracker-text">Industry Insights & Success Stories</span>
+                                <span class="ai-tracker-separator">/</span>
+                                <a href="#" class="ai-tracker-changelog">View All</a>
+                            </div>
+                        </div>
+
+                        <!-- Cards Grid -->
+                        <div class="media-events-grid">
+                            <a href="#" class="media-event-card">
+                                <div class="media-card-image">
+                                    <img src="./src/assets/contentImages/quarrydrone.png" alt="Press Releases" />
+                                </div>
+                                <div class="media-card-content">
+                                    <div class="media-card-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners
+                                        Association Expo 2023 </div>
+                                    <!-- <div class="media-card-description">Latest announcements and company news from SAZS ERP.</div> -->
+                                </div>
+                            </a>
+
+                            <a href="#" class="media-event-card">
+                                <div class="media-card-image">
+                                    <img src="./src/assets/contentImages/quarrydrone.png" alt="Upcoming Events" />
+                                </div>
+                                <div class="media-card-content">
+                                    <div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)
+                                    </div>
+                                    <!-- <div class="media-card-description">Join us at industry conferences, webinars, and product demos.</div> -->
+                                </div>
+                            </a>
+
+                            <a href="#" class="media-event-card">
+                                <div class="media-card-image">
+                                    <img src="./src/assets/contentImages/quarrydrone.png" alt="Blog & Articles" />
+                                </div>
+                                <div class="media-card-content">
+                                    <div class="media-card-title">Tamil Nadu Mines Safety Association – Chennai Zone
+                                        Meet
+                                        2024 </div>
+                                    <!-- <div class="media-card-description">Industry insights, tips, and best practices for crushing operations.</div> -->
+                                </div>
+                            </a>
+
+                            <a href="#" class="media-event-card">
+                                <div class="media-card-image">
+                                    <!-- <img src="./src/assets/contentImages/chennaibnr2.png" alt="Customer Stories" /> -->
+                                </div>
+                                <div class="media-card-content">
+                                    <div class="media-card-title">IEMS – International Mining Expo & Conclave 2024
+                                    </div>
+                                    <!-- <div class="media-card-description">Real success stories from businesses using SAZS ERP solutions.</div> -->
+                                </div>
+                            </a>
+
+                            <a href="#" class="media-event-card">
+                                <div class="media-card-image">
+                                    <!-- <img src="./src/assets/contentImages/chennaibnr1.png" alt="Media Kit" /> -->
+                                </div>
+                                <div class="media-card-content">
+                                    <div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)
+                                    </div>
+                                    <!-- <div class="media-card-description">Download logos, brand guidelines, and press materials.</div> -->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Side Navigation -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0);" class="closebtn" onclick="closeNav()" role="button"
+                aria-label="closebtn">&times;</a>
+
+            <a href="/" class="logo-link" aria-label="Go to homepage" role="link">
+                <img src="../assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page" class="sidenav-logo">
+            </a>
+
+            <a href="/">Home</a>
+            <a href="aboutus.html">About Us</a>
+
+            <!-- Mobile Products Dropdown -->
+            <div class="mobile-dropdown">
+                <a href="javascript:void(0);" onclick="toggleMobileDropdown(this, event)"
+                    class="mobile-dropdown-trigger">
+                    Products <i class="fa fa-chevron-down"></i>
+                </a>
+                <div class="mobile-dropdown-content">
+                    <a href="QuarryCrusher.html">Quarry & Crusher</a>
+                    <a href="rmc.html">Ready Mix Concrete</a>
+                    <a href="brickspaver.html">Bricks & Pavers</a>
+                </div>
+            </div>
+
+            <div class="mobile-dropdown">
+                <a href="javascript:void(0);" onclick="toggleMobileDropdown(this, event)"
+                    class="mobile-dropdown-trigger">
+                    Explore Features <i class="fa fa-chevron-down"></i>
+                </a>
+                <div class="mobile-dropdown-content">
+                    <a href="features.html">Features</a>
+                    <a href="Anprs.html">ANPR Camera Integration</a>
+                    <a href="EInvoice.html">E-Invoice Integration</a>
+                    <a href="Weighbridge.html">Weighbridge and Camera Integration</a>
+                    <a href="Boombarrier.html">Boom Barrier Integration</a>
+                    <a href="biometrics.html">Biometrics</a>
+                </div>
+            </div>
+
+            <!-- Mobile Case Studies Dropdown -->
+            <div class="mobile-dropdown">
+                <a href="javascript:void(0);" onclick="toggleMobileDropdown(this, event)"
+                    class="mobile-dropdown-trigger">
+                    Case Studies <i class="fa fa-chevron-down"></i>
+                </a>
+                <div class="mobile-dropdown-content">
+                    <a href="CaseStudies1.html">Case Study 1</a>
+                    <a href="CaseStudies2.html">Case Study 2</a>
+                    <a href="CaseStudies3.html">Case Study 3</a>
+                    <a href="CaseStudies4.html">Case Study 4</a>
+                    <a href="CaseStudies5.html">Case Study 5</a>
+                </div>
+            </div>
+            <a href="ProfitCalculator.html">Profit Calc</a>
+
+            <a href="careers.html">Careers</a>
+            <a href="Signup.html">Sign Up</a>
+            <a href="contact.html">Contact Us</a>
+                        <a href="Weighbridge.html">Why to Choose Sazs</a>
+
+                                    <a href="Questions.html">FAQ</a>
+
+
+            <div class="call">
+                <a href="tel:+917666628000">
+                    <i class="fa fa-phone-volume ringing-icon"></i>
+                    76666 28000
+                </a>
+            </div>
+        </div>
+
+
+        <script>
+            /* =========================
+               MOBILE DROPDOWN LOGIC
+            ========================= */
+
+            function toggleMobileDropdown(trigger, event) {
+                if (event) event.stopPropagation();
+
+                const dropdown = trigger.nextElementSibling;
+
+                // Close other dropdowns
+                document.querySelectorAll('.mobile-dropdown-content').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('active');
+                });
+
+                document.querySelectorAll('.mobile-dropdown-trigger').forEach(t => {
+                    if (t !== trigger) t.classList.remove('active');
+                });
+
+                // Toggle current
+                dropdown.classList.toggle('active');
+                trigger.classList.toggle('active');
+            }
+
+            /* Stop clicks inside sidenav from bubbling */
+            const sidenav = document.getElementById("mySidenav");
+            if (sidenav) {
+                sidenav.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                });
+            }
+
+            /* Close mobile dropdown when clicking outside */
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.mobile-dropdown')) {
+                    document.querySelectorAll('.mobile-dropdown-content').forEach(d => d.classList.remove('active'));
+                    document.querySelectorAll('.mobile-dropdown-trigger').forEach(t => t.classList.remove('active'));
+                }
+            });
+
+            /* =========================
+               DESKTOP DROPDOWN (HOVER)
+            ========================= */
+
+            if (window.innerWidth > 991) {
+                const navLinks = document.querySelectorAll('[data-dropdown]');
+                const navbar = document.querySelector('.sazs-header-wrapper');
+                let hoverTimeout = null;
+
+                navLinks.forEach(link => {
+                    const navItem = link.closest('.sazs-menu-item');
+                    const dropdownId = link.getAttribute('data-dropdown');
+                    const dropdown = document.getElementById(dropdownId);
+
+                    if (!dropdown || !navItem) return;
+
+                    navItem.addEventListener('mouseenter', () => {
+                        clearTimeout(hoverTimeout);
+
+                        document.querySelectorAll('.sazs-submenu').forEach(d => d.classList.remove('active'));
+                        document.querySelectorAll('.sazs-menu-item').forEach(n => n.classList.remove('active'));
+
+                        dropdown.classList.add('active');
+                        navItem.classList.add('active');
+                    });
+
+                    dropdown.addEventListener('mouseenter', () => {
+                        clearTimeout(hoverTimeout);
+                    });
+
+                    dropdown.addEventListener('mouseleave', () => {
+                        hoverTimeout = setTimeout(() => {
+                            dropdown.classList.remove('active');
+                            navItem.classList.remove('active');
+                        }, 200);
+                    });
+                });
+
+                if (navbar) {
+                    navbar.addEventListener('mouseleave', () => {
+                        hoverTimeout = setTimeout(() => {
+                            document.querySelectorAll('.sazs-submenu').forEach(d => d.classList.remove('active'));
+                            document.querySelectorAll('.sazs-menu-item').forEach(n => n.classList.remove('active'));
+                        }, 200);
+                    });
+                }
+            }
+
+            /* =========================
+               SIDENAV CONTROLS
+            ========================= */
+
+            function openNav() {
+                // Close all dropdowns before opening
+                document.querySelectorAll('.mobile-dropdown-content').forEach(d => d.classList.remove('active'));
+                document.querySelectorAll('.mobile-dropdown-trigger').forEach(t => t.classList.remove('active'));
+
+                sidenav.style.width = "250px";
+                document.addEventListener("click", closeNavOnClickOutside);
+            }
+
+            function closeNav() {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            }
+
+            function toggleNav() {
+                const isOpen = sidenav.style.width === "250px";
+
+                if (isOpen) {
+                    closeNav();
+                } else {
+                    openNav();
+                }
+            }
+
+            function closeNavOnClickOutside(event) {
+                if (!sidenav.contains(event.target) && !event.target.closest(".sazs-hamburger")) {
+                    closeNav();
+                }
+            }
+        </script>
+ 
+        <style>/* ============================================
+   HERO SECTION
+============================================ */
+
+.hero-main-section {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    /* padding-top: 100px; */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) ),
+        url("/src/assets/contentImages/Einvoicef.png") center/cover no-repeat;
+
+}
+
+.hero-main-container {
+    /* max-width: 1200px; */
+    width: 100%;
+    padding: 00px 0px 40px 0px;
+    z-index: 2;
+}
+
+.hero-main-content {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content-left > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.hero-content-left > *:nth-child(1) { animation-delay: 0.3s; }
+.hero-content-left > *:nth-child(2) { animation-delay: 0.5s; }
+.hero-content-left > *:nth-child(3) { animation-delay: 0.7s; }
+.hero-content-left > *:nth-child(4) { animation-delay: 0.9s; }
+.hero-content-left > *:nth-child(5) { animation-delay: 1.1s; }
+
+/* ============================================
+   TEXT STYLES
+============================================ */
+
+.hero-main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+.hero-text-highlight {
+    color: #3E89EC;
+    text-shadow: 0 3px 6px rgba(62,137,236,0.5);
+}
+
+/* SUB HEADING */
+.hero-subheadline {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #EAF2FF;
+    max-width: 920px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    position: relative;
+}
+
+.hero-subheadline::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #3E89EC;
+    margin: 16px auto 0;
+    border-radius: 2px;
+}
+
+/* INTRO TEXT */
+.hero-main-description {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #fff !important;
+    max-width: 900px;
+    margin: 0 auto 18px;
+    text-align: center;
+}
+
+/* DOT */
+.hero-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #3E89EC;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    top: -2px;
+}
+
+/* HIGHLIGHT WORDS */
+.hero-highlight {
+    color: #ffffff;
+    font-weight: 800;
+    /* background: rgba(62,137,236,0.18); */
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+
+@media (max-width: 991px) {
+    .hero-main-title { font-size: 2.6rem; }
+    .hero-subheadline { font-size: 1.15rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-main-title { font-size: 2rem; }
+    .hero-subheadline { font-size: 1rem; }
+    .hero-main-description { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+    .hero-main-title { font-size: 1.6rem; }
+    .hero-subheadline { font-size: 0.9rem; }
+}
+
+/* Container adjustment for centered content */
+.hero-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Feature Grid Design */
+.hero-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.hero-feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.hero-feature-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-icon-circle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-feature-item p {
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Action Buttons */
+.hero-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background: #3E89EC;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(62, 137, 236, 0.4);
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { background: #2c6ec7; }
+.btn-secondary:hover { background: #fff; color: #333; }
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+    .hero-features-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+
+/* ============================================
+   EXTRA RESPONSIVE FIXES (APPEND ONLY)
+============================================ */
+
+/* Ultra-wide screens (2K / 4K) */
+@media (min-width: 1600px) {
+    .hero-main-title {
+        font-size: 4.2rem;
+    }
+
+    .hero-subheadline {
+        font-size: 1.6rem;
+    }
+
+    .hero-main-description {
+        font-size: 1.2rem;
+    }
+
+    .hero-main-content {
+        max-width: 1400px;
+    }
+}
+
+/* Large laptops */
+@media (max-width: 1200px) {
+    .hero-main-content {
+        padding: 0 20px;
+    }
+
+    .hero-features-grid {
+        gap: 16px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .hero-main-section {
+        padding-top: 80px;
+    }
+
+    .hero-main-title {
+        margin-bottom: 40px;
+    }
+
+    .hero-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile landscape & small tablets */
+@media (max-width: 768px) {
+    .hero-main-section {
+        min-height: auto;
+        padding: 80px 0 60px;
+    }
+
+    .hero-main-title {
+        line-height: 1.3;
+        margin-bottom: 30px;
+    }
+
+    .hero-subheadline::after {
+        width: 60px;
+    }
+
+    .hero-feature-item p {
+        font-size: 1.05rem;
+    }
+}
+
+/* Mobile portrait */
+@media (max-width: 576px) {
+    .hero-main-content {
+        padding: 0 16px;
+    }
+
+    .hero-main-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subheadline {
+        font-size: 0.95rem;
+    }
+
+    .hero-main-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .hero-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-feature-item {
+        padding: 16px;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 400px) {
+    .hero-main-title {
+        font-size: 1.35rem;
+    }
+
+    .hero-subheadline {
+        font-size: 0.85rem;
+    }
+
+    .hero-feature-item p {
+        font-size: 0.95rem;
+    }
+}
+
+</style>
+
+        <section class="hero-main-section">
+            <div class="hero-main-container">
+                <div class="hero-main-content">
+                    <div class="hero-content-left">
+
+                        <!-- MAIN HEADING -->
+                        <h1 class="hero-main-title">
+                           <span class="hero-text-highlight">E-Invoice Integration<br></span> for Modern Industries
+                        </h1>
+
+                        <!-- SUB HEADING -->
+                        <h2 class="hero-subheadline">
+                           GST-compliant E-Invoice Integration specially built for Quarry, Crusher, Ready Mix Concrete (RMC), Bricks, and Pavers industries.
+                        </h2>
+                        <!-- <div class="hero-features-grid">
+                            <div class="hero-feature-item">
+                                <p class="hero-main-description">
+                                    Managing a stone crusher or quarry unit demands
+                                    <strong>precision, not guesswork</strong>.
+                                    SAZS Apps ERP is a
+                                    <span class="hero-highlight">fully automated, cloud-based platform</span>
+                                    designed to manage operations end-to-end.
+                                </p>
+                            </div>
+                            <div class="hero-feature-item">
+                                <p class="hero-main-description">
+                                    From the moment a truck enters your
+                                    <strong>weighbridge</strong> to
+                                    <span class="hero-highlight">final invoice generation</span>,
+                                    every process is streamlined, monitored, and secured.
+                                </p>
+                            </div>
+                            <div class="hero-feature-item">
+                                <p class="hero-main-description">
+                                    Built on <strong>robust Microsoft technology</strong>,
+                                    our ERP eliminates pilferage, ensures
+                                    <span class="hero-highlight">100% financial accuracy</span>,
+                                    and delivers a
+                                    <strong>360° real-time business view</strong>
+                                    from anywhere in the world.
+                                </p>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- <section class="hero">
+        <div class="hero-decorative-elements">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="hero-badge">GST Compliant • IRN Certified</div>
+        <h1>E-Invoice Integration<br>for Modern Industries</h1>
+        <p>GST-compliant E-Invoice Integration specially built for Quarry, Crusher, Ready Mix Concrete (RMC), Bricks, and Pavers industries.</p>
+        <a href="./src/pages/contact.html" class="hero-cta">
+            Start Integration Now →
+        </a>
+    </section> -->
+
+    <section class="features">
+        <div class="section-header scroll-fade">
+            <div class="section-badge">Key Features</div>
+            <h2>Simple & Automatic E-Invoicing</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>One-Click Generation</h3>
+                <p>Create invoices with automatic IRN and QR code generation.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>GST Schema Validation</h3>
+                <p>Built-in validation ensures GST compliance.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Real-Time IRP API</h3>
+                <p>Direct integration with Government GST Portal.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>E-Way Bill Auto-Gen</h3>
+                <p>Automatically generate e-way bills.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Credit & Debit Notes</h3>
+                <p>Full support for credit and debit notes.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Audit-Ready Records</h3>
+                <p>Complete audit trail for compliance.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Weight-Based Billing</h3>
+                <p>Specialized weight-based calculations.</p>
+            </div>
+            <div class="feature-card scroll-fade">
+                <div class="feature-icon"> </div>
+                <h3>Seamless Integration</h3>
+                <p>Connects with all ERP modules.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="benefits-container">
+            <div class="benefits-content scroll-fade">
+                <h2>Benefits for Your Business</h2>
+                <ul class="benefits-list">
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>100% GST Compliance</strong><br>Stay fully compliant</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Faster Billing</strong><br>Reduce time from hours to seconds</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Zero Manual Errors</strong><br>Automated validation</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Time & Cost Savings</strong><br>Streamline operations</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>High-Volume Ready</strong><br>Process hundreds daily</div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div><strong>Complete Integration</strong><br>Works seamlessly</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="benefits-visual scroll-fade">
+                <div class="visual-card">
+                    <div class="visual-card-icon"> </div>
+                    <div class="visual-card-text">Real-Time Processing</div>
+                </div>
+                <div class="visual-card">
+                    <div class="visual-card-icon"> </div>
+                    <div class="visual-card-text">100% Accuracy</div>
+                </div>
+                <div class="visual-card">
+                    <div class="visual-card-icon"> </div>
+                    <div class="visual-card-text">Instant IRN</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-box scroll-fade">
+            <h2>Automate Your Billing. Stay GST Ready.</h2>
+            <p>Enable E-Invoice Integration with Sazs Apps ERP today.</p>
+            <a href="" class="cta-button" id="contact">
+                 Contact SAZS Apps →
+            </a>
+        </div>
+    </section>
+
+   
+
+    <script>
+        // SCROLL ANIMATIONS - WORKING
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Wait for DOM to load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Observe all scroll-fade elements
+            document.querySelectorAll('.scroll-fade').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+
+<!-- <footer class="footer-container ">
+                <div class="footer-content">
+                    <h1 class="heading zoom-in">Together<span class="succeed-text"> We Grow !</span></h1>
+                    <a href="./src/pages/contact.html" class="join-button">Contact Us</a>
+
+                </div>
+            </footer> -->
+
+    <footer class="a">
+        <div class="b">
+            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/facebook.svg" alt="Facebook" class="d">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+            </a>
+            <a href="https://in.linkedin.com/" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/instagram.svg" alt="Instagram" class="d">
+            </a>
+        </div>
+
+        <div class="e">
+            <a href="/" class="f">Home</a>
+            <a href="aboutus.html" class="f">About Us</a>
+            <a href="features.html" class="f">Explore Features</a>
+            <a href="careers.html" class="f">Careers</a>
+            <a href="contact.html" class="f">Contact Us</a>
+            <a href="Signup.html " class="f">Request a Demo</a>
+            <a href="termsofService.html" class="f">Terms of Service</a>
+            <a href="privacyPolicy.html" class="f">Privacy Policy</a>
+            <a href="dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
+        </div>
+    </footer>
+    <footer class="footerbottom">
+        <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+                    May I help you?
+                </a> -->
+        <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+        <button class="scroll-top" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+        </button>
+    </footer>
+
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.workflow-card, .feature-card, .method-card, .app-card, .report-card, .benefit-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s, transform 0.6s';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
