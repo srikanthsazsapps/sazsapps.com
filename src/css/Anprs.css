@@ -18,7 +18,7 @@
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
             background: var(--bg)
-                            url('../assets/contentImages/line2.png') center/cover no-repeat;
+                            url('../assets/contentImages/background4.webp') center/cover no-repeat;
 ;
             color: var(--text);
             line-height: 1.6;
