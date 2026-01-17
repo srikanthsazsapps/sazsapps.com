@@ -818,7 +818,44 @@
 
 
     <script>
-        // Smooth scroll
+        /* =========================
+           FAQ SCROLL & TOGGLE FUNCTIONALITY
+        ========================= */
+
+        // Function to scroll to FAQ section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Function to toggle FAQ answers
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const toggle = element.querySelector('.faq-toggle');
+            
+            // Close other open FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-toggle').textContent = '+';
+                }
+            });
+            
+            // Toggle current FAQ
+            faqItem.classList.toggle('active');
+            toggle.textContent = faqItem.classList.contains('active') ? '−' : '+';
+        }
+
+        /* =========================
+           SMOOTH SCROLL FOR ANCHOR LINKS
+        ========================= */
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -829,7 +866,32 @@
             });
         });
 
-        // Scroll animations
+        /* =========================
+           SCROLL TO TOP BUTTON
+        ========================= */
+
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.style.display = 'flex';
+                } else {
+                    scrollTopBtn.style.display = 'none';
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        /* =========================
+           SCROLL ANIMATIONS
+        ========================= */
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -840,7 +902,7 @@
         }, { threshold: 0.1 });
 
         document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.workflow-card, .feature-card, .method-card, .app-card, .report-card, .benefit-card');
+            const cards = document.querySelectorAll('.category-card, .faq-item');
             cards.forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
