@@ -205,7 +205,7 @@
         }
 
         .section-gray {
-            background: var(--off-white);
+            /* background: var(--off-white); */
         }
 
         .container {
@@ -242,7 +242,8 @@
             opacity: 0.8;
             max-width: 700px;
             margin: 0 auto;
-            font-weight: 300;
+            font-weight: 600;
+            color: #000;
         }
 
         /* WORKFLOW CARDS - Numbered with Blue Borders */
@@ -311,7 +312,7 @@
         }
 
         .feature-card {
-            background: var(--white);
+            background: #ffffff43;
             border-right: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             padding: 3rem;
@@ -351,7 +352,7 @@
         .feature-content p {
             font-size: 1rem;
             line-height: 1.7;
-            color: var(--light-gray);
+            color: #000000f;
         }
 
         /* ACCESS METHOD CARDS - Circular Blue Icons */
@@ -460,9 +461,9 @@
         }
 
         .report-card {
-            background: var(--white);
+            background: #ffffff57;
             padding: 3rem;
-            box-shadow: 15px 15px 0 var(--blue);
+            /* box-shadow: 15px 15px 0 var(--blue); */
             transition: all 0.3s;
             border: 2px solid var(--border);
         }
@@ -488,7 +489,7 @@
         .report-card p {
             font-size: 1rem;
             line-height: 1.7;
-            color: var(--light-gray);
+            color: #000000;
         }
 
         /* BENEFIT CARDS - Blue Diagonal Triangle */

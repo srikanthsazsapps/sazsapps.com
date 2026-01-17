@@ -365,7 +365,7 @@
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: rgba(62, 137, 236, 0.1);
+            /* background: rgba(62, 137, 236, 0.1); */
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -376,7 +376,7 @@
         }
 
         .feature-card:hover .feature-icon {
-            background: #3E89EC;
+            /* background: #3E89EC; */
             transform: rotate(5deg) scale(1.1);
         }
 
@@ -413,10 +413,58 @@
         .features-grid .feature-card:nth-child(7) { transition-delay: 0.7s; }
         .features-grid .feature-card:nth-child(8) { transition-delay: 0.8s; }
 
+        .feature-icon {
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 16px;
+}
+
+/* Individual icons using nth-child */
+.features-grid .feature-card:nth-child(1) .feature-icon {
+    background-image: url("../assets/contentImages/oneclickblu.webp") ;
+}
+
+.features-grid .feature-card:nth-child(2) .feature-icon {
+    background-image: url("../assets/contentImages/GSTblu.webp");
+}
+
+.features-grid .feature-card:nth-child(3) .feature-icon {
+    background-image: url("../assets/contentImages/realtimeblu.webp");
+}
+
+.features-grid .feature-card:nth-child(4) .feature-icon {
+    background-image: url("../assets/contentImages/ewayblu.webp");
+}
+
+.features-grid .feature-card:nth-child(5) .feature-icon {
+    background-image: url("../assets/contentImages/creditblu.webp");
+}
+
+.features-grid .feature-card:nth-child(6) .feature-icon {
+    background-image: url("../assets/contentImages/auditblu.webp");
+}
+
+.features-grid .feature-card:nth-child(7) .feature-icon {
+    background-image: url("../assets/contentImages/weightblu.webp");
+}
+
+.features-grid .feature-card:nth-child(8) .feature-icon {
+    background-image: url("../assets/contentImages/Seamlessblu.webp");
+}
+
         /* Benefits */
         .benefits {
             padding: 6rem 5%;
-            background: linear-gradient(180deg, transparent, rgba(62, 137, 236, 0.03));
+            /* background: linear-gradient(180deg, transparent, rgba(62, 137, 236, 0.03)); */
+
+    background: url("/src/assets/contentImages/einvoice5.webp") center / cover no-repeat;
+    /* min-height: 100vh; */
+        background-size: cover; /* change here */
+
+    
         }
 
         .benefits-container {

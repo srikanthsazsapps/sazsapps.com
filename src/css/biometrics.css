@@ -208,6 +208,12 @@
             position: relative;
             overflow: hidden;
         }
+        .key-features{
+            
+    background: url("/src/assets/contentImages/bg1.webp") center/cover no-repeat fixed;
+    min-height: 100vh;
+
+        }
 
         .hero-visual::before {
             content: '';
