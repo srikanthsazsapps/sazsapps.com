@@ -174,7 +174,7 @@ p {
     border-radius:1.5rem;
     border:2px solid #e5e7eb;
     padding:2rem 2.5rem;
-    box-shadow:0 4px 20px rgba(0, 0, 0, 0.08);
+    /* box-shadow:0 4px 20px rgba(0, 0, 0, 0.08); */
 }
 .dispatch-card {
     display:flex;
@@ -435,7 +435,7 @@ margin:0 auto;
 background:#ffffff;
 border-radius:1.5rem;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+/* box-shadow:0 10px 30px rgba(0,0,0,0.08); */
 transition:all .4s ease;
 border:2px solid #e5e7eb;
 }

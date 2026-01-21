@@ -28,7 +28,7 @@ body {
 }
 .back{
     
-    background: url("/src/assets/contentImages/backg1.jpg") center / cover no-repeat;
+    background: url("/src/assets/contentImages/faqbg1.webp") center / cover no-repeat;
     min-height: 100vh;
 }
     /* Hero Section */
