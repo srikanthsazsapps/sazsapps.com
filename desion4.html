@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive 3D Scroll | EXCON 2025</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --accent: #ffffff;
+            --primary-blue: #0066ff;
+            --scroll-height: 500vh; 
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: #fff; overflow-x: hidden; }
+
+        /* Scrollable container */
+        .scroll-container {
+            height: var(--scroll-height);
+            position: relative;
+        }
+
+        /* Sticky Viewport */
+        .sticky-hub {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Responsive Layout Grid */
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+            max-width: 1400px;
+            padding: 0 5%;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* --- Text Styling (Responsive) --- */
+        .content { z-index: 10; position: relative; }
+        
+        .step-indicator {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 900;
+            opacity: 0.1;
+            line-height: 1;
+            position: absolute;
+            top: -50px;
+            left: -10px;
+        }
+
+        h2 { 
+            font-size: clamp(2rem, 5vw, 3.5rem); 
+            margin-bottom: 20px; 
+            font-weight: 800; 
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: #888;
+            max-width: 450px;
+        }
+
+        /* --- 3D HUB (Responsive) --- */
+        .hub-viewport {
+            position: relative;
+            height: clamp(400px, 60vh, 600px);
+            perspective: 2000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone {
+            position: absolute;
+            /* Adaptive phone sizing */
+            width: clamp(180px, 25vw, 280px);
+            height: clamp(360px, 50vh, 560px);
+            background: #111;
+            border-radius: clamp(20px, 4vw, 40px);
+            border: 6px solid #222;
+            overflow: hidden;
+            transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .phone img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+
+        /* --- 3D POSITIONS --- */
+        .pos-0 { z-index: 50; transform: translateZ(350px); border-color: #fff; filter: grayscale(0); opacity: 1; }
+        .pos-1 { z-index: 40; transform: translateX(60%) translateZ(100px) rotateY(-30deg); filter: grayscale(1) brightness(0.4); }
+        .pos-2 { z-index: 30; transform: translateX(110%) translateZ(-100px) rotateY(-45deg); filter: grayscale(1) brightness(0.2); opacity: 0.5; }
+        .pos-3 { z-index: 10; transform: translateZ(-500px) scale(0.5); opacity: 0; }
+        .pos-4 { z-index: 30; transform: translateX(-110%) translateZ(-100px) rotateY(45deg); filter: grayscale(1) brightness(0.2); opacity: 0.5; }
+        .pos-5 { z-index: 40; transform: translateX(-60%) translateZ(100px) rotateY(30deg); filter: grayscale(1) brightness(0.4); }
+
+        /* UI Navigation Line */
+        .nav-line { height: 2px; width: 100px; background: #222; margin-top: 30px; position: relative; }
+        .nav-fill { height: 100%; background: var(--primary-blue); width: 0%; transition: 0.2s; }
+
+        /* --- MEDIA QUERIES FOR SMALLER VIEWS --- */
+        @media (max-width: 968px) {
+            .layout {
+                grid-template-columns: 1fr; /* Stack vertically */
+                grid-template-rows: auto 1fr;
+                gap: 20px;
+                text-align: center;
+                justify-items: center;
+            }
+
+            .content { order: 1; margin-top: 40px; }
+            .hub-viewport { order: 2; width: 100%; }
+
+            .step-indicator { left: 50%; transform: translateX(-50%); top: -40px; }
+            p { margin: 0 auto; }
+            .nav-line { margin: 20px auto; }
+
+            /* Reduce horizontal spread on mobile so phones don't go off-screen */
+            .pos-1 { transform: translateX(40%) translateZ(50px) rotateY(-20deg); }
+            .pos-5 { transform: translateX(-40%) translateZ(50px) rotateY(20deg); }
+            .pos-2, .pos-4 { display: none; } /* Hide far-off phones on mobile for clarity */
+        }
+
+        @media (max-height: 600px) {
+            .hub-viewport { height: 350px; }
+            h2 { font-size: 1.5rem; }
+        }
+
+        .dummy { height: 100vh; background: #050505; display: flex; align-items: center; justify-content: center; color: #333; }
+    </style>
+</head>
+<body>
+
+    <div class="dummy">Scroll down for the 1 → 6 Mobile Experience</div>
+
+    <div class="scroll-container" id="scrollTrigger">
+        <div class="sticky-hub">
+            <div class="layout">
+                
+                <div class="content">
+                    <div class="step-indicator" id="stepNum">01</div>
+                    <h2 id="title">Industry <br>Mobile Apps</h2>
+                    <p id="desc">Our specialized ecosystem for Quarry, Bricks, and RMC. Real-time control in the palm of your hand.</p>
+                    <div class="nav-line"><div class="nav-fill" id="fill"></div></div>
+                </div>
+
+                <div class="hub-viewport" id="hub">
+                    <div class="phone pos-0"><img src="screen1.png" alt="1"></div>
+                    <div class="phone pos-1"><img src="screen2.png" alt="2"></div>
+                    <div class="phone pos-2"><img src="screen3.png" alt="3"></div>
+                    <div class="phone pos-3"><img src="screen4.png" alt="4"></div>
+                    <div class="phone pos-4"><img src="screen5.png" alt="5"></div>
+                    <div class="phone pos-5"><img src="screen6.png" alt="6"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="dummy">Next Section</div>
+
+    <script>
+        const trigger = document.getElementById('scrollTrigger');
+        const phones = Array.from(document.querySelectorAll('.phone'));
+        const stepNum = document.getElementById('stepNum');
+        const fill = document.getElementById('fill');
+
+        const totalSteps = 6;
+        let lastStep = -1;
+        const posClasses = ['pos-0', 'pos-1', 'pos-2', 'pos-3', 'pos-4', 'pos-5'];
+
+        window.addEventListener('scroll', () => {
+            const rect = trigger.getBoundingClientRect();
+            
+            // Calculate 0 to 1 progress
+            let progress = -rect.top / (rect.height - window.innerHeight);
+            progress = Math.max(0, Math.min(1, progress));
+
+            // Determine active step
+            let currentStep = Math.floor(progress * (totalSteps - 0.01));
+
+            if (currentStep !== lastStep) {
+                updateExperience(currentStep, progress);
+                lastStep = currentStep;
+            }
+        });
+
+        function updateExperience(step, progress) {
+            stepNum.innerText = `0${step + 1}`;
+            fill.style.width = `${(progress * 100)}%`;
+
+            phones.forEach((phone, index) => {
+                let newPosIndex = (index - step + totalSteps) % totalSteps;
+                // Remove all p- classes
+                const existingClasses = Array.from(phone.classList).filter(c => !c.startsWith('pos-'));
+                phone.className = existingClasses.join(' ') + ' ' + posClasses[newPosIndex];
+            });
+        }
+    </script>
+</body>
+</html>
