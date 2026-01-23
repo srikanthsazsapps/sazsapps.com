@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EXCON 2025 - Enterprise Platform | Bricks / Mining Tech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --accent: #ff9800;
+      --dark-bg: #0a0a0a;
+      --light-bg: #ffffff;
+      --dark-text: #1a1a1a;
+      --light-text: #f0f0f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    body {
+      background: var(--dark-bg);
+      color: var(--light-text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Full Width Sections */
+    .full-width-section {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      padding: 100px 10%;
+    }
+
+    .section-dark {
+      background: var(--dark-bg);
+      color: var(--light-text);
+    }
+
+    .section-light {
+      background: var(--light-bg);
+      color: var(--dark-text);
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Typography */
+    .event-tag {
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: inline-block;
+      margin-bottom: 15px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    h1 .highlight {
+      color: var(--primary);
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      margin-bottom: 30px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .lead-text {
+      font-size: clamp(16px, 2vw, 20px);
+      opacity: 0.9;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .body-text {
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    /* Hero Section */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      filter: grayscale(100%);
+      transition: filter 0.5s ease, transform 0.5s ease;
+    }
+
+    .hero-image:hover {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .metric-box {
+      border-left: 3px solid var(--primary);
+      padding-left: 20px;
+    }
+
+    .metric-box strong {
+      display: block;
+      font-size: 32px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .metric-box span {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* Shuffling Stack Styles */
+    .stack-container {
+      position: relative;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1000px;
+    }
+
+    .stack-card {
+      position: absolute;
+      width: 520px;
+      height: 350px;
+      border-radius: 20px;
+      border: 3px solid rgba(255,255,255,0.8);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .stack-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .active-front {
+      z-index: 10;
+      transform: translateZ(50px) translateY(0) scale(1) rotate(0deg);
+      opacity: 1;
+      border-color: var(--primary);
+    }
+
+    .back-pile {
+      z-index: 1;
+      transform: translateZ(-100px) translateY(20px) scale(0.8) rotate(var(--r));
+      opacity: 0.5;
+    }
+
+    .exit-top {
+      z-index: 11;
+      transform: translateZ(150px) translateY(-150%) scale(1.1) rotate(10deg);
+      opacity: 0;
+    }
+
+    /* Video Section */
+    .video-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+      background: #000;
+      margin-bottom: 40px;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      min-height: 500px;
+      max-height: 700px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 50px;
+      pointer-events: none;
+    }
+
+    .video-caption {
+      color: white;
+      max-width: 800px;
+    }
+
+    .video-caption h3 {
+      font-size: clamp(24px, 4vw, 42px);
+      margin-bottom: 15px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .video-caption p {
+      font-size: clamp(14px, 2vw, 18px);
+      opacity: 0.95;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+      line-height: 1.6;
+    }
+
+    /* Content Layouts */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .single-column {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Image Grids */
+    .image-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .image-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .image-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.5s ease;
+    }
+
+    .image-card:hover img {
+      filter: grayscale(0%);
+    }
+
+    .image-caption-box {
+      padding: 25px;
+      background: rgba(0,0,0,0.05);
+    }
+
+    .section-light .image-caption-box {
+      background: rgba(0,0,0,0.02);
+    }
+
+    .image-caption-box strong {
+      display: block;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .image-caption-box p {
+      font-size: 14px;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    /* Featured Image Section */
+    .featured-image-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .featured-image-section img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%);
+      transition: filter 0.5s ease;
+    }
+
+    .featured-image-section:hover img {
+      filter: grayscale(0%);
+    }
+
+    .featured-caption {
+      padding: 35px 40px;
+      background: rgba(0,0,0,0.05);
+      border-top: 3px solid var(--primary);
+    }
+
+    .section-light .featured-caption {
+      background: rgba(0,0,0,0.02);
+    }
+
+    /* Highlight Boxes */
+    .highlight-box {
+      background: rgba(255, 152, 0, 0.1);
+      border-left: 4px solid var(--accent);
+      padding: 20px 25px;
+      margin: 30px 0;
+      border-radius: 4px;
+    }
+
+    .section-light .highlight-box {
+      background: rgba(255, 152, 0, 0.05);
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Stats Sidebar */
+    .stats-sidebar {
+      background: rgba(13, 71, 161, 0.08);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 40px;
+      position: sticky;
+      top: 40px;
+    }
+
+    .section-light .stats-sidebar {
+      background: rgba(13, 71, 161, 0.04);
+    }
+
+    .stat-item {
+      background: rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .section-light .stat-item {
+      background: rgba(0,0,0,0.03);
+      border-color: rgba(0,0,0,0.1);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      background: rgba(13, 71, 161, 0.15);
+    }
+
+    .stat-number {
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .stat-detail {
+      font-size: 12px;
+      opacity: 0.6;
+    }
+
+    /* Product Launch Cards */
+    .launch-card {
+      background: rgba(13, 71, 161, 0.05);
+      border: 2px solid var(--primary);
+      border-radius: 16px;
+      padding: 50px;
+      margin: 40px 0;
+    }
+
+    .launch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--dark-bg);
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    /* Three Column Grid */
+    .three-column-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      margin-top: 50px;
+    }
+
+    /* Four Column Grid */
+    .four-column-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    /* Five Column Grid */
+    .five-column-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 35px;
+      transition: all 0.3s ease;
+    }
+
+    .section-light .feature-card {
+      background: rgba(0,0,0,0.02);
+      border-color: rgba(0,0,0,0.1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 15px 40px rgba(13, 71, 161, 0.15);
+    }
+
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    /* Lists */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .feature-list li {
+      padding-left: 30px;
+      position: relative;
+      margin-bottom: 15px;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    .feature-list li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* Center Text Section */
+    .center-text {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    /* Integration Grid - Compact */
+    .integration-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .integration-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .section-light .integration-item {
+      background: rgba(0,0,0,0.02);
+      border-color: rgba(0,0,0,0.1);
+    }
+
+    .integration-item:hover {
+      border-color: var(--primary);
+      background: rgba(13, 71, 161, 0.08);
+    }
+
+    .integration-item span {
+      font-size: 32px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .integration-item strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .integration-item p {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .full-width-section {
+        padding: 60px 5%;
+      }
+
+      .hero-grid,
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .image-showcase,
+      .three-column-grid,
+      .four-column-grid,
+      .five-column-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stats-sidebar {
+        position: static;
+      }
+
+      .hero-image,
+      .featured-image-section img,
+      .image-card img {
+        max-height: 350px;
+      }
+
+      .video-container video {
+        min-height: 300px;
+        max-height: 500px;
+      }
+
+      .video-overlay {
+        padding: 30px;
+      }
+
+      .stack-container {
+        height: 350px;
+        margin-top: 40px;
+      }
+
+      .stack-card {
+        width: 300px;
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-box strong {
+        font-size: 24px;
+      }
+
+      .launch-card {
+        padding: 30px 25px;
+      }
+
+      .video-overlay {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="hero-grid">
+      <div>
+        <span class="event-tag">Bengaluru • 2025</span>
+        <h1>
+          EXCON 2025:<br>
+          <span class="highlight">Enterprise Platform</span>
+        </h1>
+        <p class="lead-text">
+          South Asia's largest construction equipment exhibition showcasing our most advanced, fully integrated enterprise software ecosystem with 15+ system integrations, mobile applications, and comprehensive automation capabilities.
+        </p>
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <strong>15+</strong>
+            <span>System Integrations</span>
+          </div>
+          <div class="metric-box">
+            <strong>60+</strong>
+            <span>Customer Engagements</span>
+          </div>
+          <div class="metric-box">
+            <strong>125+</strong>
+            <span>New Contacts</span>
+          </div>
+          <div class="metric-box">
+            <strong>Mobile</strong>
+            <span>Apps Launched</span>
+          </div>
+        </div>
+      </div>
+      <div class="stack-container" id="stack-container">
+        <div class="stack-card" style="--r: -10deg;"><img src="./EXCON2025_1.jpeg" alt="EXCON 2025 Image 1"></div>
+        <div class="stack-card" style="--r: 5deg;"><img src="./EXCON2025_2.jpeg" alt="EXCON 2025 Image 2"></div>
+        <div class="stack-card" style="--r: -5deg;"><img src="./EXCON2025_3.jpeg" alt="EXCON 2025 Image 3"></div>
+        <div class="stack-card" style="--r: 8deg;"><img src="./EXCON2025_4.jpeg" alt="EXCON 2025 Image 4"></div>
+        <div class="stack-card" style="--r: 0deg;"><img src="./EXCON2025_5.jpeg" alt="EXCON 2025 Image 5"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Highlight Section - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="video-section">
+      <div class="center-text">
+        <span class="event-tag">Exhibition Highlights</span>
+        <h2>EXCON 2025 Experience</h2>
+        <p class="lead-text">
+          Showcasing enterprise-grade solutions at South Asia's premier expo
+        </p>
+      </div>
+      
+      <div class="video-container">
+        <video id="excon2025Video1" muted loop playsinline>
+          <source src="./EXCON2025_video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+          <div class="video-caption">
+            <h3>Enterprise Platform Showcase</h3>
+            <p>Demonstrating our fully integrated software ecosystem with 15+ advanced integrations, mobile applications, and automation capabilities to 60+ industry leaders at EXCON 2025.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Overview - Light -->
+  <section class="full-width-section section-light">
+    <div class="two-column">
+      <div>
+        <span class="event-tag">Event Overview</span>
+        <h2>South Asia's Premier Construction Expo</h2>
+        
+        <p class="body-text">
+          EXCON 2025, organized by the Confederation of Indian Industry (CII), is recognized as South Asia's largest and most influential construction equipment and infrastructure exhibition, serving as a premier platform for showcasing advanced technologies, integrated solutions, and large-scale industrial innovations.
+        </p>
+        
+        <p class="body-text">
+          Our participation at EXCON 2025 represented the most advanced and mature phase of our product and organizational journey, reflecting years of continuous development, integration, and operational refinement. This event served as a comprehensive demonstration of our end-to-end, enterprise-ready software ecosystem built for complex industrial operations.
+        </p>
+
+        <div class="highlight-box">
+          <strong>Organizational Maturity:</strong>
+          <p class="body-text" style="margin: 0;">EXCON 2025 marked the culmination of years of development, showcasing a fully integrated, automation-driven platform with enterprise-scale capabilities across construction materials, mining, and infrastructure sectors.</p>
+        </div>
+      </div>
+
+      <div class="stats-sidebar">
+        <h3 style="font-size: 24px; margin-bottom: 15px;">Business Impact</h3>
+        <p style="font-size: 14px; opacity: 0.7; margin-bottom: 30px;">Measurable outcomes from EXCON 2025</p>
+        
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Integrations</div>
+          <div class="stat-detail">Advanced Systems</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-number">60+</div>
+          <div class="stat-label">Customers</div>
+          <div class="stat-detail">Direct Engagement</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-number">125+</div>
+          <div class="stat-label">Contacts</div>
+          <div class="stat-detail">Qualified Leads</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration Showcase - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="single-column" style="max-width: 1400px;">
+      <div class="center-text">
+        <span class="event-tag">Advanced Integrations</span>
+        <h2>15+ System Integrations</h2>
+        <p class="lead-text">
+          Comprehensive automation and connectivity across industrial operations
+        </p>
+      </div>
+
+      <div class="integration-grid">
+        <div class="integration-item">
+          <span>📡</span>
+          <strong>RFID Integration</strong>
+          <p>Automated tracking</p>
+        </div>
+        <div class="integration-item">
+          <span>🚗</span>
+          <strong>ANPR System</strong>
+          <p>Vehicle identification</p>
+        </div>
+        <div class="integration-item">
+          <span>👤</span>
+          <strong>Biometric Auth</strong>
+          <p>Workforce control</p>
+        </div>
+        <div class="integration-item">
+          <span>⚖️</span>
+          <strong>Weighbridge</strong>
+          <p>Real-time capture</p>
+        </div>
+        <div class="integration-item">
+          <span>🚧</span>
+          <strong>Boom Barrier</strong>
+          <p>Site access control</p>
+        </div>
+        <div class="integration-item">
+          <span>💰</span>
+          <strong>Tally Integration</strong>
+          <p>Financial sync</p>
+        </div>
+        <div class="integration-item">
+          <span>📊</span>
+          <strong>Barcode System</strong>
+          <p>Operational traceability</p>
+        </div>
+        <div class="integration-item">
+          <span>☁️</span>
+          <strong>AWS Cloud</strong>
+          <p>Secure infrastructure</p>
+        </div>
+        <div class="integration-item">
+          <span>⚡</span>
+          <strong>Automation Engine</strong>
+          <p>Workflow optimization</p>
+        </div>
+        <div class="integration-item">
+          <span>🎯</span>
+          <strong>Customer Focus</strong>
+          <p>Satisfaction design</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exhibition Gallery - Light -->
+  <section class="full-width-section section-light">
+    <div class="single-column">
+      <span class="event-tag">Exhibition Gallery</span>
+      <h2>EXCON 2025 Stall Moments</h2>
+      
+      <div class="image-showcase">
+        <div>
+          <div class="image-card">
+            <img src="./EXCON2025_6.jpeg" alt="Exhibition Stall">
+          </div>
+          <div class="image-caption-box">
+            <strong>Exhibition Stall</strong>
+            <p>Our comprehensive exhibition stall showcasing 15+ integrations and mobile applications at EXCON 2025.</p>
+          </div>
+        </div>
+        
+        <div>
+          <div class="image-card">
+            <img src="./EXCON2025_7.jpeg" alt="Live Demonstrations">
+          </div>
+          <div class="image-caption-box">
+            <strong>Live Demonstrations</strong>
+            <p>Demonstrating advanced system integrations and automation capabilities to industry stakeholders.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="image-card">
+            <img src="./EXCON2025_8.jpeg" alt="Customer Engagement">
+          </div>
+          <div class="image-caption-box">
+            <strong>Customer Engagement</strong>
+            <p>Direct interactions with 60+ customers who visited our stall, receiving highly positive feedback.</p>
+          </div>
+        </div>
+        
+        <div>
+          <div class="image-card">
+            <img src="./EXCON2025_9.jpeg" alt="Mobile App Demo">
+          </div>
+          <div class="image-caption-box">
+            <strong>Mobile Applications</strong>
+            <p>Showcasing Android and iOS applications with industry-specific customizations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section 2 - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="video-section">
+      <div class="center-text">
+        <span class="event-tag">Mobile Innovation</span>
+        <h2>Mobile App Launch at EXCON 2025</h2>
+        <p class="lead-text">
+          Expanding operational control across Android and iOS platforms
+        </p>
+      </div>
+      
+      <div class="video-container">
+        <video id="excon2025Video2" muted loop playsinline>
+          <source src="./EXCON2025_video2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+          <div class="video-caption">
+            <h3>Mobile Applications Launch</h3>
+            <p>Introducing Android and iOS applications with customer-specific customizations for 200+ Quarry & Crusher operations, 53+ Bricks & Pavers manufacturers, and 50+ RMC plants.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Innovation - Light -->
+  <section class="full-width-section section-light">
+    <div class="single-column">
+      <div class="center-text">
+        <span class="event-tag">Mobile Applications</span>
+        <h2>Industry-Specific Mobile Solutions</h2>
+        <p class="lead-text">
+          Real-time monitoring, approvals, and operational control across devices
+        </p>
+      </div>
+
+      <div class="launch-card">
+        <div class="launch-badge">
+          <span>📱</span>
+          Mobile Launch
+        </div>
+        <h3>Android & iOS Applications</h3>
+        <p class="body-text">
+          A major highlight of EXCON 2025 was the launch of our mobile applications, expanding system accessibility and operational control across devices. These solutions were demonstrated across multiple industry segments with customer-specific customizations.
+        </p>
+        <ul class="feature-list">
+          <li>Android applications for real-time operational control</li>
+          <li>iOS applications with full feature parity</li>
+          <li>Customer-specific mobile apps for different verticals</li>
+          <li>200+ Quarry & Crusher operation deployments</li>
+          <li>53+ Bricks & Pavers manufacturer implementations</li>
+          <li>50+ Ready Mix Concrete (RMC) plant solutions</li>
+          <li>Real-time monitoring and approval workflows</li>
+          <li>Mobile-first reporting and analytics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Gallery - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="single-column">
+      <div class="center-text">
+        <span class="event-tag">Technology Showcase</span>
+        <h2>Advanced Integration Demonstrations</h2>
+        <p class="lead-text">
+          Live demonstrations of enterprise-grade automation capabilities
+        </p>
+      </div>
+
+      <div class="featured-image-section" style="margin-bottom: 40px;">
+        <img src="./EXCON2025_10.jpeg" alt="Integration Demo">
+        <div class="featured-caption">
+          <strong>System Integration Demo</strong>
+          <p>Live demonstration of RFID, ANPR, biometric, weighbridge, and boom barrier integrations working seamlessly within our unified platform, showcasing real-time data synchronization and automated workflows.</p>
+        </div>
+      </div>
+
+      <div class="image-showcase">
+        <div>
+          <div class="image-card">
+            <img src="./EXCON2025_11.jpeg" alt="Cloud Infrastructure">
+          </div>
+          <div class="image-caption-box">
+            <strong>AWS Cloud Infrastructure</strong>
+            <p>Demonstrating our AWS-secured cloud platform ensuring high availability, data security, and scalability.</p>
+          </div>
+        </div>
+        
+        <div>
+          <div class="image-card">
+            <img src="./EXCON2025_12.jpeg" alt="Automation Engine">
+          </div>
+          <div class="image-caption-box">
+            <strong>Automation Engine</strong>
+            <p>Showcasing rule-based workflows, automated alerts, and intelligent process optimization capabilities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Engagement - Light -->
+  <section class="full-width-section section-light">
+    <div class="single-column">
+      <span class="event-tag">Customer Engagement</span>
+      <h2>Team Growth & Customer Focus</h2>
+      
+      <div class="image-showcase">
+        <div>
+          <div class="image-card">
+            <img src="./EXCON2025_13.jpeg" alt="Team Expansion">
+          </div>
+          <div class="image-caption-box">
+            <strong>Team Expansion</strong>
+            <p>Our expanded team reflecting organizational growth and enhanced development, implementation, and support capabilities.</p>
+          </div>
+        </div>
+        
+        <div>
+          <div class="image-card">
+            <img src="./EXCON2025_14.jpeg" alt="Customer Appreciation">
+          </div>
+          <div class="image-caption-box">
+            <strong>Customer Appreciation</strong>
+            <p>Receiving strong appreciation and highly positive feedback from 60+ customers who visited our exhibition stall.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="body-text" style="margin-top: 30px;">
+        EXCON 2025 reflected our organizational growth and customer-centric focus. We expanded our internal team, strengthening development, implementation, and support capabilities, while placing increased emphasis on customer support, responsiveness, and service quality.
+      </p>
+
+      <div class="highlight-box">
+        <strong>Customer Satisfaction:</strong>
+        <p class="body-text" style="margin: 0;">The event provided a valuable platform to validate customer satisfaction, demonstrate system maturity, and reinforce trust across existing and prospective clients, with 60+ direct customer engagements and 125+ new qualified business contacts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Achievements - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="center-text">
+      <span class="event-tag">Core Achievements</span>
+      <h2>EXCON 2025 Highlights</h2>
+      <p class="lead-text">Strategic milestones defining enterprise-scale readiness</p>
+    </div>
+
+    <div class="three-column-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🔗</span>
+        <h3 style="font-size: 22px; margin-bottom: 15px;">15+ Integrations</h3>
+        <p class="body-text">
+          Showcased comprehensive integration ecosystem including RFID, ANPR, biometrics, weighbridge, Tally, AWS cloud, and advanced automation engines.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">📱</span>
+        <h3 style="font-size: 22px; margin-bottom: 15px;">Mobile Innovation</h3>
+        <p class="body-text">
+          Launched Android and iOS applications with industry-specific customizations for quarry, crusher, bricks, pavers, and RMC operations.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">👥</span>
+        <h3 style="font-size: 22px; margin-bottom: 15px;">Strong Engagement</h3>
+        <p class="body-text">
+          Engaged with 60+ customers, gained 125+ qualified contacts, and received highly positive feedback validating system maturity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategic Impact - Light -->
+  <section class="full-width-section section-light">
+    <div class="two-column">
+      <div>
+        <span class="event-tag">Strategic Value</span>
+        <h2>Enterprise-Scale Positioning</h2>
+        
+        <p class="body-text">
+          Participation in EXCON 2025 firmly established our organization as a fully integrated, automation-driven, enterprise-scale technology provider for the construction materials, mining, and infrastructure ecosystem.
+        </p>
+
+        <p class="body-text">
+          The breadth of integrations, mobile innovation, operational depth, and customer engagement achieved during this event underscored our readiness to support complex, multi-location, and high-volume industrial operations at scale.
+        </p>
+
+        <div class="highlight-box">
+          <strong>Market Leadership:</strong>
+          <p class="body-text" style="margin: 0;">EXCON 2025 demonstrated our evolution into a mature, enterprise-ready platform provider with comprehensive automation capabilities, mobile accessibility, and customer-focused design across 15+ advanced system integrations.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="launch-card" style="margin: 0;">
+          <h3>Key Takeaways</h3>
+          <ul class="feature-list">
+            <li>Showcased 15+ advanced system integrations</li>
+            <li>Launched Android and iOS mobile applications</li>
+            <li>Engaged with 60+ customers at exhibition stall</li>
+            <li>Acquired 125+ new qualified business contacts</li>
+            <li>Demonstrated enterprise-scale capabilities</li>
+            <li>Expanded internal team and support capabilities</li>
+            <li>Validated customer satisfaction and trust</li>
+            <li>Positioned as automation-driven platform leader</li>
+            <li>Ready for complex, multi-location operations</li>
+            <li>Comprehensive ecosystem for industrial operations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <script>
+    // Intersection Observer for autoplay videos when in view
+    const video1 = document.getElementById('excon2025Video1');
+    const video2 = document.getElementById('excon2025Video2');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play();
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+    
+    if (video1) observer.observe(video1);
+    if (video2) observer.observe(video2);
+
+    // Shuffling Stack Logic
+    const cards = Array.from(document.querySelectorAll('.stack-card'));
+    let currentIndex = 0;
+
+    function updateStack() {
+      cards.forEach((card, index) => {
+        card.classList.remove('active-front', 'back-pile', 'exit-top');
+
+        if (index === currentIndex) {
+          card.classList.add('active-front');
+        } else {
+          card.classList.add('back-pile');
+        }
+      });
+    }
+
+    function shuffle() {
+      const currentCard = cards[currentIndex];
+      currentCard.classList.add('exit-top');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateStack();
+      }, 600);
+    }
+
+    // Initialize positions
+    updateStack();
+
+    // Run the shuffle every 3 seconds
+    setInterval(shuffle, 3000);
+  </script>
+
+</body>
+</html>

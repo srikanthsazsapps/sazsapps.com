@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EXCON 2023 - Bricks Launch | Bricks / Mining Tech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --accent: #ff9800;
+      --dark-bg: #0a0a0a;
+      --light-bg: #ffffff;
+      --dark-text: #1a1a1a;
+      --light-text: #f0f0f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    body {
+      background: var(--dark-bg);
+      color: var(--light-text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Full Width Sections */
+    .full-width-section {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      padding: 100px 10%;
+    }
+
+    .section-dark {
+      background: var(--dark-bg);
+      color: var(--light-text);
+    }
+
+    .section-light {
+      background: var(--light-bg);
+      color: var(--dark-text);
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Typography */
+    .event-tag {
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: inline-block;
+      margin-bottom: 15px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    h1 .highlight {
+      color: var(--primary);
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      margin-bottom: 30px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .lead-text {
+      font-size: clamp(16px, 2vw, 20px);
+      opacity: 0.9;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .body-text {
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    /* Hero Section */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      filter: grayscale(100%);
+      transition: filter 0.5s ease, transform 0.5s ease;
+    }
+
+    .hero-image:hover {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .metric-box {
+      border-left: 3px solid var(--primary);
+      padding-left: 20px;
+    }
+
+    .metric-box strong {
+      display: block;
+      font-size: 32px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .metric-box span {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* Video Section */
+    .video-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+      background: #000;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      min-height: 500px;
+      max-height: 700px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 50px;
+      pointer-events: none;
+    }
+
+    .video-caption {
+      color: white;
+      max-width: 800px;
+    }
+
+    .video-caption h3 {
+      font-size: clamp(24px, 4vw, 42px);
+      margin-bottom: 15px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .video-caption p {
+      font-size: clamp(14px, 2vw, 18px);
+      opacity: 0.95;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+      line-height: 1.6;
+    }
+
+    /* Content Layouts */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .single-column {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Image Grids */
+    .image-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .image-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .image-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.5s ease;
+    }
+
+    .image-card:hover img {
+      filter: grayscale(0%);
+    }
+
+    .image-caption-box {
+      padding: 25px;
+      background: rgba(0,0,0,0.05);
+    }
+
+    .section-light .image-caption-box {
+      background: rgba(0,0,0,0.02);
+    }
+
+    .image-caption-box strong {
+      display: block;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .image-caption-box p {
+      font-size: 14px;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    /* Featured Image Section */
+    .featured-image-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .featured-image-section img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%);
+      transition: filter 0.5s ease;
+    }
+
+    .featured-image-section:hover img {
+      filter: grayscale(0%);
+    }
+
+    .featured-caption {
+      padding: 35px 40px;
+      background: rgba(0,0,0,0.05);
+      border-top: 3px solid var(--primary);
+    }
+
+    .section-light .featured-caption {
+      background: rgba(0,0,0,0.02);
+    }
+
+    /* Highlight Boxes */
+    .highlight-box {
+      background: rgba(255, 152, 0, 0.1);
+      border-left: 4px solid var(--accent);
+      padding: 20px 25px;
+      margin: 30px 0;
+      border-radius: 4px;
+    }
+
+    .section-light .highlight-box {
+      background: rgba(255, 152, 0, 0.05);
+    }
+
+    .highlight-box strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Stats Sidebar */
+    .stats-sidebar {
+      background: rgba(13, 71, 161, 0.08);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 40px;
+      position: sticky;
+      top: 40px;
+    }
+
+    .section-light .stats-sidebar {
+      background: rgba(13, 71, 161, 0.04);
+    }
+
+    .stat-item {
+      background: rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .section-light .stat-item {
+      background: rgba(0,0,0,0.03);
+      border-color: rgba(0,0,0,0.1);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      background: rgba(13, 71, 161, 0.15);
+    }
+
+    .stat-number {
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .stat-detail {
+      font-size: 12px;
+      opacity: 0.6;
+    }
+
+    /* Video/Product Launch Cards */
+    .launch-card {
+      background: rgba(13, 71, 161, 0.05);
+      border: 2px solid var(--primary);
+      border-radius: 16px;
+      padding: 50px;
+      margin: 40px 0;
+    }
+
+    .launch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--dark-bg);
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    /* Three Column Grid */
+    .three-column-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      margin-top: 50px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 35px;
+      transition: all 0.3s ease;
+    }
+
+    .section-light .feature-card {
+      background: rgba(0,0,0,0.02);
+      border-color: rgba(0,0,0,0.1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 15px 40px rgba(13, 71, 161, 0.15);
+    }
+
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    /* Lists */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .feature-list li {
+      padding-left: 30px;
+      position: relative;
+      margin-bottom: 15px;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    .feature-list li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* Center Text Section */
+    .center-text {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    /* Shuffling Stack Styles */
+    .stack-container {
+      position: relative;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1000px;
+    }
+
+    .stack-card {
+      position: absolute;
+      width: 520px;
+      height: 350px;
+      border-radius: 20px;
+      border: 3px solid rgba(255,255,255,0.8);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .stack-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .active-front {
+      z-index: 10;
+      transform: translateZ(50px) translateY(0) scale(1) rotate(0deg);
+      opacity: 1;
+      border-color: var(--primary);
+    }
+
+    .back-pile {
+      z-index: 1;
+      transform: translateZ(-100px) translateY(20px) scale(0.8) rotate(var(--r));
+      opacity: 0.5;
+    }
+
+    .exit-top {
+      z-index: 11;
+      transform: translateZ(150px) translateY(-150%) scale(1.1) rotate(10deg);
+      opacity: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .full-width-section {
+        padding: 60px 5%;
+      }
+
+      .hero-grid,
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .image-showcase,
+      .three-column-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stats-sidebar {
+        position: static;
+      }
+
+      .hero-image,
+      .featured-image-section img,
+      .image-card img {
+        max-height: 350px;
+      }
+
+      .video-container video {
+        min-height: 300px;
+        max-height: 500px;
+      }
+
+      .video-overlay {
+        padding: 30px;
+      }
+
+      .stack-container {
+        height: 350px;
+        margin-top: 40px;
+      }
+
+      .stack-card {
+        width: 300px;
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .metrics-grid {
+        /* grid-template-columns: 1fr; */
+      }
+
+      .metric-box strong {
+        font-size: 24px;
+      }
+
+      .launch-card {
+        padding: 30px 25px;
+      }
+
+      .video-overlay {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="hero-grid">
+      <div>
+        <span class="event-tag">Bengaluru • December 12-16, 2023</span>
+        <h1>
+          EXCON 2023:<br>
+          <span class="highlight">Bricks Software Launch</span>
+        </h1>
+        <p class="lead-text">
+          Our strategic participation at South Asia's largest construction equipment exhibition, marking the official launch of Bricks Software and expansion into North Indian markets through the Confederation of Indian Industry's international platform.
+        </p>
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <strong>105+</strong>
+            <span>Customer Engagements</span>
+          </div>
+          <div class="metric-box">
+            <strong>200+</strong>
+            <span>Business Contacts</span>
+          </div>
+          <div class="metric-box">
+            <strong>CII</strong>
+            <span>International Standards</span>
+          </div>
+          <div class="metric-box">
+            <strong>North India</strong>
+            <span>Market Entry</span>
+          </div>
+        </div>
+      </div>
+      <div class="stack-container" id="stack-container">
+        <div class="stack-card" style="--r: -10deg;"><img src="./EXCON1.jpeg" alt="EXCON Image 1"></div>
+        <div class="stack-card" style="--r: 5deg;"><img src="./EXCON2.jpeg" alt="EXCON Image 2"></div>
+        <div class="stack-card" style="--r: -5deg;"><img src="./EXCON3.jpeg" alt="EXCON Image 3"></div>
+        <div class="stack-card" style="--r: 8deg;"><img src="./EXCON4.jpeg" alt="EXCON Image 4"></div>
+        <div class="stack-card" style="--r: 0deg;"><img src="./EXCON5.jpeg" alt="EXCON Image 5"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Highlight Section - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="video-section">
+      <div class="center-text">
+        <span class="event-tag">Event Highlights</span>
+        <h2>Experience EXCON 2023</h2>
+        <p class="lead-text">
+          Watch the highlights from South Asia's premier construction equipment exhibition
+        </p>
+      </div>
+      
+      <div class="video-container">
+        <video id="exconVideo" muted loop playsinline>
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+          <div class="video-caption">
+            <h3>EXCON 2023 in Action</h3>
+            <p>Witness the energy, innovation, and industry connections that made EXCON 2023 a landmark event for our organization.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Overview - Light -->
+  <section class="full-width-section section-light">
+    <div class="two-column">
+      <div>
+        <span class="event-tag">Event Overview</span>
+        <h2>South Asia's Premier Construction Equipment Expo</h2>
+        
+        <p class="body-text">
+          EXCON 2023, organized by the Confederation of Indian Industry (CII), is globally recognized as South Asia's largest and most influential construction equipment and infrastructure exhibition, serving as a strategic convergence point for stakeholders across construction, mining, infrastructure development, material processing, and heavy equipment manufacturing sectors.
+        </p>
+        
+        <p class="body-text">
+          Our participation as an exhibitor at EXCON 2023 represented a critical phase in our organizational expansion, marking our second large-scale industry engagement and a decisive move toward strengthening our national presence. The exhibition provided a highly structured B2B environment for enterprise-level discussions, technology evaluation, and solution-driven engagement with industry leaders and operational decision-makers.
+        </p>
+
+        <div class="highlight-box">
+          <strong>Strategic Significance:</strong>
+          <p class="body-text" style="margin: 0;">This event marked our transition from regional player to national contender, establishing credibility through CII's internationally recognized platform and enabling engagement with enterprise-level clients across diverse geographical markets.</p>
+        </div>
+      </div>
+
+      <div class="stats-sidebar">
+        <h3 style="font-size: 24px; margin-bottom: 15px;">Business Impact</h3>
+        <p style="font-size: 14px; opacity: 0.7; margin-bottom: 30px;">Measurable outcomes from South Asia's largest expo</p>
+        
+        <div class="stat-item">
+          <div class="stat-number">105+</div>
+          <div class="stat-label">Customers</div>
+          <div class="stat-detail">Direct Engagements</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Contacts</div>
+          <div class="stat-detail">Qualified Leads</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-number">2nd</div>
+          <div class="stat-label">Major Expo</div>
+          <div class="stat-detail">National Expansion</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Launch Section - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="single-column">
+      <div class="center-text">
+        <span class="event-tag">Product Launch</span>
+        <h2>Bricks Software Unveiled at EXCON 2023</h2>
+        <p class="lead-text">
+          A comprehensive digital solution engineered to streamline operations, enhance process visibility, and support data-driven decision-making within construction material and infrastructure-related businesses.
+        </p>
+      </div>
+
+      <div class="featured-image-section">
+        <img src="./EXCON2.jpeg" alt="Bricks Software Launch Moment">
+        <div class="featured-caption">
+          <strong>Launch Ceremony</strong>
+          <p>The official launch of Bricks Software was formally inaugurated by Mr. T. Premkumar of TTV Blue Metals, Sankarankovil, a key representative of the TTV Group and grandson of the founder Mr. Thirumalai Nadar. His presence added strong industry significance and legacy value to the launch.</p>
+        </div>
+      </div>
+
+      <div class="launch-card">
+        <div class="launch-badge">
+          <span>🚀</span>
+          Technology Innovation
+        </div>
+        <h3>Comprehensive Solution Architecture</h3>
+        <p class="body-text">
+          The Bricks Software addresses core operational challenges such as workflow optimization, operational control, reporting accuracy, and scalability across multi-site operations. Live demonstrations and technical walkthroughs enabled detailed discussions around system architecture, operational integration, and real-world application scenarios.
+        </p>
+        <ul class="feature-list">
+          <li>Workflow optimization and process automation</li>
+          <li>Real-time operational visibility and control</li>
+          <li>Advanced reporting and analytics capabilities</li>
+          <li>Multi-site scalability and enterprise readiness</li>
+          <li>Integration-ready architecture for existing systems</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- RMC Software Launch - Light -->
+  <section class="full-width-section section-light">
+    <div class="single-column">
+      <span class="event-tag">Additional Product Launch</span>
+      <h2>SAZS RMC Software Introduction</h2>
+      
+      <div class="image-showcase">
+        <div>
+          <div class="image-card">
+            <img src="./EXCON3.jpeg" alt="SAZS RMC Software Launch">
+          </div>
+          <div class="image-caption-box">
+            <strong>RMC Solution Launch</strong>
+            <p>Official launch of SAZS RMC software solution, designed to streamline operations, improve process visibility, and enhance efficiency for Ready Mix Concrete (RMC) plants.</p>
+          </div>
+        </div>
+        
+        <div>
+          <div class="image-card">
+            <img src="./EXCON4.jpeg" alt="Industry Partner Inauguration">
+          </div>
+          <div class="image-caption-box">
+            <strong>Industry Validation</strong>
+            <p>The product launch was inaugurated by Mr. Raj Kumar, CEO of Sri Modern Weigh System (Modern Weighbridge), Salem, adding strong industry relevance and practical validation.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="body-text">
+        At EXCON 2023, we also officially launched our SAZS RMC software solution, designed to streamline operations, improve process visibility, and enhance efficiency for Ready Mix Concrete (RMC) plants. The product launch was inaugurated by Mr. Raj Kumar, CEO of Sri Modern Weigh System (Modern Weighbridge), Salem, a trusted industry partner with deep expertise in weighing and automation systems.
+      </p>
+
+      <div class="highlight-box">
+        <strong>Product Portfolio Expansion:</strong>
+        <p class="body-text" style="margin: 0;">This launch marked a key milestone in our product journey, expanding our solution portfolio beyond quarry and crusher operations into RMC and construction materials management, reinforcing our commitment to delivering technology-driven, industry-ready software solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Recognition - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="single-column">
+      <div class="center-text">
+        <span class="event-tag">Customer Appreciation</span>
+        <h2>Honouring Valued Customers</h2>
+        <p class="lead-text">
+          Recognizing strong partnerships and long-term customer relationships at EXCON 2023.
+        </p>
+      </div>
+
+      <div class="featured-image-section">
+        <img src="./EXCON5.jpeg" alt="Customer Recognition Ceremony">
+        <div class="featured-caption">
+          <strong>Happy Customer Recognition</strong>
+          <p>At EXCON 2023, we had the privilege of honouring Mr. Perumal Gounder Subramani, Director of SUN-X Concrete India Private Limited, with a "Happy Customer" recognition shield at our exhibition stall. As one of our valued customers, the recognition reflects his continued trust in our quarry, crusher, and construction materials management software solutions.</p>
+        </div>
+      </div>
+
+      <p class="body-text" style="margin-top: 40px;">
+        This moment highlights our strong customer relationships and our commitment to delivering reliable, technology-driven solutions for the construction and mining industry. Customer satisfaction and long-term partnerships remain at the core of our business philosophy.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Achievements - Light -->
+  <section class="full-width-section section-light">
+    <div class="center-text">
+      <span class="event-tag">Core Achievements</span>
+      <h2>EXCON 2023 Highlights</h2>
+      <p class="lead-text">Three pillars of success that defined our national expansion strategy</p>
+    </div>
+
+    <div class="three-column-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🚀</span>
+        <h3 style="font-size: 22px; margin-bottom: 15px;">Dual Product Launch</h3>
+        <p class="body-text">
+          Successfully launched both Bricks Software and SAZS RMC solution with formal inaugurations by industry leaders, demonstrating product maturity and market readiness across multiple construction material verticals.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🌏</span>
+        <h3 style="font-size: 22px; margin-bottom: 15px;">Geographic Expansion</h3>
+        <p class="body-text">
+          Facilitated strategic entry into North Indian markets, enabling engagement with regionally diverse clients, infrastructure firms, and construction enterprises for true pan-India presence.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🏢</span>
+        <h3 style="font-size: 22px; margin-bottom: 15px;">Enterprise Positioning</h3>
+        <p class="body-text">
+          Reinforced positioning as technology-driven, enterprise-ready solution provider through CII's international platform, strengthening brand equity and industry credibility.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategic Impact - Dark -->
+  <section class="full-width-section section-dark">
+    <div class="two-column">
+      <div>
+        <span class="event-tag">Strategic Value</span>
+        <h2>Long-Term Positioning & Growth</h2>
+        
+        <p class="body-text">
+          Participation in EXCON 2023 reinforced our positioning as a technology-driven, enterprise-ready solution provider within the construction and infrastructure ecosystem. The exposure, insights, and market validation gained through this exhibition contributed to strengthening our brand equity, accelerating customer acquisition, and supporting our long-term vision of scalable, pan-India growth.
+        </p>
+
+        <p class="body-text">
+          EXCON 2023 played a pivotal role in expanding our footprint beyond southern India, facilitating entry into North Indian markets and enabling interaction with regionally diverse clients, infrastructure firms, and construction material enterprises. This geographical diversification significantly strengthened our national growth strategy.
+        </p>
+
+        <div class="highlight-box">
+          <strong>Market Validation:</strong>
+          <p class="body-text" style="margin: 0;">The strong commercial traction and measurable business outcomes from EXCON 2023—including 105+ customer engagements and 200+ qualified contacts—validated our product-market fit and confirmed readiness for national-scale operations.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="launch-card" style="margin: 0;">
+          <h3>Key Takeaways</h3>
+          <ul class="feature-list">
+            <li>Successfully launched two major software products</li>
+            <li>Engaged with 105+ customers during exhibition</li>
+            <li>Acquired 200+ qualified business contacts</li>
+            <li>Established presence in North Indian markets</li>
+            <li>Strengthened brand positioning through CII platform</li>
+            <li>Demonstrated enterprise-ready capabilities</li>
+            <li>Built foundation for pan-India expansion</li>
+            <li>Gained valuable market insights and validation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- <footer style="padding: 50px; text-align: center; font-size: 13px; opacity: 0.6; background: var(--dark-bg);">
+    <p>© 2026 BRICKS / MINING TECH. All Rights Reserved. Shaping the future of Industrial Infrastructure.</p>
+  </footer> -->
+
+  <script>
+    // Intersection Observer for autoplay video when in view
+    const video = document.getElementById('exconVideo');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    }, {
+      threshold: 0.5 // Play when 50% of video is visible
+    });
+    
+    observer.observe(video);
+
+    // Shuffling Stack Logic
+    const cards = Array.from(document.querySelectorAll('.stack-card'));
+    let currentIndex = 0;
+
+    function updateStack() {
+      cards.forEach((card, index) => {
+        card.classList.remove('active-front', 'back-pile', 'exit-top');
+
+        if (index === currentIndex) {
+          card.classList.add('active-front');
+        } else {
+          card.classList.add('back-pile');
+        }
+      });
+    }
+
+    function shuffle() {
+      const currentCard = cards[currentIndex];
+      currentCard.classList.add('exit-top');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateStack();
+      }, 600);
+    }
+
+    // Initialize positions
+    updateStack();
+
+    // Run the shuffle every 3 seconds
+    setInterval(shuffle, 3000);
+  </script>
+
+</body>
+</html>

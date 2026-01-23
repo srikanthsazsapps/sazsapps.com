@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Large Round Floating Images</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #111; 
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .floating-img {
+            position: absolute;
+            bottom: -300px; /* Hidden deeper for larger images */
+            
+            /* SIZING & SHAPE */
+            width: 200px;  /* Base width */
+            height: 200px; /* Must match width for a perfect circle */
+            border-radius: 50%; /* Makes the image round */
+            object-fit: cover;  /* Ensures the image fills the circle without stretching */
+            border: 2px solid rgba(255, 255, 255, 0.2); /* Optional: subtle border */
+            
+            opacity: 0;
+            animation: floatMove var(--speed) infinite ease-in-out;
+        }
+
+        @keyframes floatMove {
+            0% { 
+                transform: translateY(0) translateX(0); 
+                opacity: 0; 
+            }
+            10% { 
+                opacity: 1; 
+            }
+            90% { 
+                opacity: 1; 
+            }
+            100% { 
+                /* Floats to top with a slight sway, no rotation */
+                transform: translateY(-140vh) translateX(60px); 
+                opacity: 0; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="image-box"></div>
+
+    <script>
+        const container = document.getElementById('image-box');
+
+        const myImages = [
+            "./src/assets/contentImages/whyimg2.webp", 
+            "./src/assets/contentImages/whyimg2.webp", 
+            "./src/assets/contentImages/whyimg2.webp",
+            "./src/assets/contentImages/sazsLogo1.png",
+            "./src/assets/contentImages/img5.jpg", 
+            "./src/assets/contentImages/img6.jpg",
+            "./src/assets/contentImages/img7.jpg",
+            "./src/assets/contentImages/img8.jpg",
+            "./src/assets/contentImages/img9.jpg",
+            "./src/assets/contentImages/img10.jpg",
+            "./src/assets/contentImages/img11.jpg",
+            "./src/assets/contentImages/img12.jpg",
+            "./src/assets/contentImages/img13.jpg",
+            "./src/assets/contentImages/img14.jpg",
+            "./src/assets/contentImages/img15.jpg",
+            "./src/assets/contentImages/img16.jpg",
+            "./src/assets/contentImages/img17.jpg",
+            "./src/assets/contentImages/img18.jpg",
+            "./src/assets/contentImages/img19.jpg",
+            "./src/assets/contentImages/img20.jpg"
+        ];
+
+        myImages.forEach((imagePath) => {
+            const img = document.createElement('img');
+            img.src = imagePath; 
+            img.className = 'floating-img';
+
+            // Randomize position and timing
+            const startX = Math.random() * 80; 
+            const speed = Math.random() * 10 + 12; // 12-22 seconds for a slow, majestic float
+            const delay = Math.random() * 20;
+            
+            // Random Size: Range between 180px and 280px
+            const size = Math.random() * 100 + 180; 
+
+            img.style.left = startX + '%';
+            img.style.width = size + 'px';
+            img.style.height = size + 'px'; // Keep it square so border-radius makes a circle
+            img.style.setProperty('--speed', speed + 's');
+            img.style.animationDelay = delay + 's';
+
+            // Error handling
+            img.onerror = function() {
+                this.src = "https://via.placeholder.com/200?text=Error";
+            };
+
+            container.appendChild(img);
+        });
+    </script>
+</body>
+</html>
