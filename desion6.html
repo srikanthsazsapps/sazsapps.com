@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Large Round Floating Images</title>
+    <title>Clear Spaced Floating Images</title>
     <style>
         body, html {
             margin: 0;
@@ -11,7 +11,7 @@
             height: 100%;
             width: 100%;
             overflow: hidden;
-            background-color: #111; 
+            background-color: #0a0a0a; 
         }
 
         .container {
@@ -22,35 +22,34 @@
 
         .floating-img {
             position: absolute;
-            bottom: -300px; /* Hidden deeper for larger images */
-            
-            /* SIZING & SHAPE */
-            width: 200px;  /* Base width */
-            height: 200px; /* Must match width for a perfect circle */
-            border-radius: 50%; /* Makes the image round */
-            object-fit: cover;  /* Ensures the image fills the circle without stretching */
-            border: 2px solid rgba(255, 255, 255, 0.2); /* Optional: subtle border */
-            
+            bottom: -350px; 
+            border-radius: 50%; 
+            object-fit: cover;  
+            border: 2px solid rgba(255, 255, 255, 0.8); 
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
             opacity: 0;
-            animation: floatMove var(--speed) infinite ease-in-out;
+            filter: blur(0px); 
+            animation: floatMove var(--speed) infinite linear;
+            transition: transform 0.3s ease-out, box-shadow 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .floating-img:active, .floating-img:hover {
+            transform: scale(1.1) translateY(-20px) !important;
+            z-index: 1000 !important;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+            opacity: 1 !important;
         }
 
         @keyframes floatMove {
-            0% { 
-                transform: translateY(0) translateX(0); 
-                opacity: 0; 
-            }
-            10% { 
-                opacity: 1; 
-            }
-            90% { 
-                opacity: 1; 
-            }
-            100% { 
-                /* Floats to top with a slight sway, no rotation */
-                transform: translateY(-140vh) translateX(60px); 
-                opacity: 0; 
-            }
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-150vh) translateX(var(--sway)); opacity: 0; }
+        }
+
+        @media (max-width: 600px) {
+            .floating-img { bottom: -200px; }
         }
     </style>
 </head>
@@ -60,52 +59,53 @@
 
     <script>
         const container = document.getElementById('image-box');
+        const isMobile = window.innerWidth < 600;
 
         const myImages = [
-            "./src/assets/contentImages/whyimg2.webp", 
-            "./src/assets/contentImages/whyimg2.webp", 
-            "./src/assets/contentImages/whyimg2.webp",
-            "./src/assets/contentImages/sazsLogo1.png",
-            "./src/assets/contentImages/img5.jpg", 
-            "./src/assets/contentImages/img6.jpg",
-            "./src/assets/contentImages/img7.jpg",
-            "./src/assets/contentImages/img8.jpg",
-            "./src/assets/contentImages/img9.jpg",
-            "./src/assets/contentImages/img10.jpg",
-            "./src/assets/contentImages/img11.jpg",
-            "./src/assets/contentImages/img12.jpg",
-            "./src/assets/contentImages/img13.jpg",
-            "./src/assets/contentImages/img14.jpg",
-            "./src/assets/contentImages/img15.jpg",
-            "./src/assets/contentImages/img16.jpg",
-            "./src/assets/contentImages/img17.jpg",
-            "./src/assets/contentImages/img18.jpg",
-            "./src/assets/contentImages/img19.jpg",
-            "./src/assets/contentImages/img20.jpg"
+            "./src/assets/contentImages/whyimg2.webp", "./src/assets/contentImages/whyimg2.webp", 
+            "./src/assets/contentImages/whyimg2.webp", "./src/assets/contentImages/sazsLogo1.png",
+            "./src/assets/contentImages/img5.jpg", "./src/assets/contentImages/img6.jpg",
+            "./src/assets/contentImages/img7.jpg", "./src/assets/contentImages/img8.jpg",
+            "./src/assets/contentImages/img9.jpg", "./src/assets/contentImages/img10.jpg",
+            "./src/assets/contentImages/img11.jpg", "./src/assets/contentImages/img12.jpg",
+            "./src/assets/contentImages/img13.jpg", "./src/assets/contentImages/img14.jpg",
+            "./src/assets/contentImages/img15.jpg", "./src/assets/contentImages/img16.jpg",
+            "./src/assets/contentImages/img17.jpg", "./src/assets/contentImages/img18.jpg",
+            "./src/assets/contentImages/img19.jpg", "./src/assets/contentImages/img20.jpg"
         ];
 
-        myImages.forEach((imagePath) => {
+        // NEW: Column-based spacing logic
+        const totalImages = myImages.length;
+        const columnWidth = 100 / totalImages; // Divide screen into 20 zones
+
+        myImages.forEach((imagePath, index) => {
             const img = document.createElement('img');
             img.src = imagePath; 
             img.className = 'floating-img';
 
-            // Randomize position and timing
-            const startX = Math.random() * 80; 
-            const speed = Math.random() * 10 + 12; // 12-22 seconds for a slow, majestic float
-            const delay = Math.random() * 20;
-            
-            // Random Size: Range between 180px and 280px
-            const size = Math.random() * 100 + 180; 
+            const speed = Math.random() * 10 + 15; 
+            const minSize = isMobile ? 60 : 100;
+            const maxSize = isMobile ? 80 : 130;
+            const size = minSize + (Math.random() * maxSize); 
 
-            img.style.left = startX + '%';
+            // CALCULATE POSITION: Put each image in its own column zone
+            // Zone start + a small random offset inside that zone
+            const zoneStart = index * columnWidth;
+            const offset = (Math.random() * (columnWidth - 5)); // Keep small gap
+            const finalLeft = zoneStart + offset;
+
+            const swayValue = isMobile ? (Math.random() * 30 - 15) : (Math.random() * 80 - 40);
+            const delay = Math.random() * 25; // Keep long delay so they don't all rise together
+
+            img.style.left = finalLeft + '%';
             img.style.width = size + 'px';
-            img.style.height = size + 'px'; // Keep it square so border-radius makes a circle
+            img.style.height = size + 'px'; 
             img.style.setProperty('--speed', speed + 's');
+            img.style.setProperty('--sway', swayValue + 'px');
             img.style.animationDelay = delay + 's';
 
-            // Error handling
             img.onerror = function() {
-                this.src = "https://via.placeholder.com/200?text=Error";
+                this.src = "https://via.placeholder.com/150?text=Error";
             };
 
             container.appendChild(img);

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sazs | EXCON 2025 Media Wall</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            background: #1a120b;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+            touch-action: none;
+        }
+
+        .table {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+        }
+
+        /* Default Desktop Size */
+        .photo-brick {
+            position: absolute;
+            width: 220px;
+            height: 250px;
+            background: #fff;
+            padding: 10px 10px 45px 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            cursor: grab;
+            user-select: none;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border-radius: 2px;
+        }
+
+        /* MOBILE ADJUSTMENTS */
+        @media (max-width: 600px) {
+            .photo-brick {
+                width: 140px;  /* Smaller bricks for mobile */
+                height: 160px;
+                padding: 5px 5px 25px 5px;
+            }
+            
+            .photo-brick.active {
+                width: 95vw !important; /* Almost full width on mobile */
+                height: 60vh !important;
+                padding: 10px !important;
+            }
+
+            button {
+                padding: 8px 15px !important;
+                font-size: 12px;
+            }
+        }
+
+        .photo-brick:active { cursor: grabbing; z-index: 1000 !important; }
+
+        .photo-brick img, .photo-brick video {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            background: #000;
+        }
+
+        /* BIG SCREEN MODE */
+        .photo-brick.active {
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            width: 85vw;
+            height: 80vh;
+            transform: translate(-50%, -50%) rotate(0deg) !important;
+            z-index: 9999 !important;
+            padding: 20px;
+            cursor: default;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 10000;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button onclick="shuffleWall()">SHUFFLE TABLE</button>
+    </div>
+
+    <div id="table" class="table"></div>
+
+    <script>
+        const table = document.getElementById('table');
+        let highestZ = 100;
+
+        const videoList = [
+            "./src/assets/contentVideos/vid1.mp4", "./src/assets/contentVideos/vid2.mp4",
+            "./src/assets/contentVideos/vid3.mp4", "./src/assets/contentVideos/vid4.mp4",
+            "./src/assets/contentVideos/vid5.mp4", "./src/assets/contentVideos/vid6.mp4",
+            "./src/assets/contentVideos/vid7.mp4", "./src/assets/contentVideos/vid8.mp4",
+            "./src/assets/contentVideos/vid9.mp4", "./src/assets/contentVideos/vid10.mp4"
+        ];
+
+        const imageList = [
+            "./src/assets/contentImages/whyimg2.webp", "./src/assets/contentImages/whyimg2.webp", 
+            "./src/assets/contentImages/whyimg2.webp", "./src/assets/contentImages/sazsLogo1.png",
+            "./src/assets/contentImages/img5.jpg", "./src/assets/contentImages/img6.jpg",
+            "./src/assets/contentImages/img7.jpg", "./src/assets/contentImages/img8.jpg",
+            "./src/assets/contentImages/img9.jpg", "./src/assets/contentImages/img10.jpg",
+            "./src/assets/contentImages/img11.jpg", "./src/assets/contentImages/img12.jpg",
+            "./src/assets/contentImages/img13.jpg", "./src/assets/contentImages/img14.jpg",
+            "./src/assets/contentImages/img15.jpg", "./src/assets/contentImages/img16.jpg",
+            "./src/assets/contentImages/img17.jpg", "./src/assets/contentImages/img18.jpg",
+            "./src/assets/contentImages/img19.jpg", "./src/assets/contentImages/img20.jpg"
+        ];
+
+        function createBricks() {
+            videoList.forEach((src, i) => createBrick(src, true, i));
+            imageList.forEach((src, i) => createBrick(src, false, i + 10));
+        }
+
+        function createBrick(src, isVideo, index) {
+            const brick = document.createElement('div');
+            brick.className = 'photo-brick';
+            brick.innerHTML = isVideo ? `<video src="${src}" muted loop></video>` : `<img src="${src}">`;
+            setRandomPos(brick, index);
+            addInteractions(brick);
+            table.appendChild(brick);
+        }
+
+        function setRandomPos(brick, z) {
+            // Check if mobile to adjust scatter area
+            const isMobile = window.innerWidth < 600;
+            const brickWidth = isMobile ? 140 : 250;
+            const brickHeight = isMobile ? 160 : 300;
+
+            const maxX = window.innerWidth - brickWidth;
+            const maxY = window.innerHeight - brickHeight;
+
+            brick.style.left = Math.random() * maxX + 'px';
+            brick.style.top = Math.random() * maxY + 'px';
+            brick.style.transform = `rotate(${Math.random() * 30 - 15}deg)`;
+            brick.style.zIndex = z;
+        }
+
+        function addInteractions(brick) {
+            let isDragging = false;
+            let startX, startY;
+
+            brick.addEventListener('pointerdown', (e) => {
+                isDragging = false;
+                startX = e.clientX - brick.offsetLeft;
+                startY = e.clientY - brick.offsetTop;
+                brick.style.zIndex = ++highestZ;
+                
+                const onMove = (m) => {
+                    isDragging = true;
+                    brick.style.left = (m.clientX - startX) + 'px';
+                    brick.style.top = (m.clientY - startY) + 'px';
+                };
+
+                document.addEventListener('pointermove', onMove);
+                document.addEventListener('pointerup', () => {
+                    document.removeEventListener('pointermove', onMove);
+                }, { once: true });
+            });
+
+            brick.addEventListener('click', () => {
+                if (!isDragging) {
+                    if (brick.classList.contains('active')) {
+                        brick.classList.remove('active');
+                    } else {
+                        document.querySelectorAll('.active').forEach(a => a.classList.remove('active'));
+                        brick.classList.add('active');
+                        const v = brick.querySelector('video');
+                        if(v) { v.muted = false; v.play(); }
+                    }
+                }
+            });
+        }
+
+        function shuffleWall() {
+            document.querySelectorAll('.photo-brick').forEach((b, i) => {
+                b.classList.remove('active');
+                setRandomPos(b, i);
+            });
+        }
+
+        // Re-randomize positions if window is resized
+        window.addEventListener('resize', shuffleWall);
+
+        createBricks();
+    </script>
+</body>
+</html>

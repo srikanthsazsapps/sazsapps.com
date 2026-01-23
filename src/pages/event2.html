@@ -116,7 +116,7 @@
       object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-      filter: grayscale(100%);
+      /* filter: grayscale(100%); */
       transition: filter 0.5s ease, transform 0.5s ease;
     }
 
@@ -244,7 +244,7 @@
       width: 100%;
       height: 350px;
       object-fit: cover;
-      filter: grayscale(100%);
+      /* filter: grayscale(100%); */
       transition: filter 0.5s ease;
     }
 
@@ -290,7 +290,7 @@
       max-height: 500px;
       object-fit: cover;
       display: block;
-      filter: grayscale(100%);
+      /* filter: grayscale(100%); */
       transition: filter 0.5s ease;
     }
 
@@ -618,11 +618,11 @@
         </div>
       </div>
       <div class="stack-container" id="stack-container">
-        <div class="stack-card" style="--r: -10deg;"><img src="./EXCON1.jpeg" alt="EXCON Image 1"></div>
-        <div class="stack-card" style="--r: 5deg;"><img src="./EXCON2.jpeg" alt="EXCON Image 2"></div>
-        <div class="stack-card" style="--r: -5deg;"><img src="./EXCON3.jpeg" alt="EXCON Image 3"></div>
-        <div class="stack-card" style="--r: 8deg;"><img src="./EXCON4.jpeg" alt="EXCON Image 4"></div>
-        <div class="stack-card" style="--r: 0deg;"><img src="./EXCON5.jpeg" alt="EXCON Image 5"></div>
+        <div class="stack-card" style="--r: -10deg;"><img src="../assets/imageevent/event2/exc14.webp" alt="EXCON Image 1"></div>
+        <div class="stack-card" style="--r: 5deg;"><img src="../assets/imageevent/event2/exc2.webp" alt="EXCON Image 2"></div>
+        <div class="stack-card" style="--r: -5deg;"><img src="../assets/imageevent/event2/exc8.webp" alt="EXCON Image 3"></div>
+        <div class="stack-card" style="--r: 8deg;"><img src="../assets/imageevent/event2/exc9.webp" alt="EXCON Image 4"></div>
+        <div class="stack-card" style="--r: 0deg;"><img src="../assets/imageevent/event2/exc12.webp" alt="EXCON Image 5"></div>
       </div>
     </div>
   </section>
@@ -640,7 +640,7 @@
       
       <div class="video-container">
         <video id="exconVideo" muted loop playsinline>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          <source src="../assets/imageevent/event2/Excon 2023 shall.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="video-overlay">
@@ -711,7 +711,7 @@
       </div>
 
       <div class="featured-image-section">
-        <img src="./EXCON2.jpeg" alt="Bricks Software Launch Moment">
+        <img src="../assets/imageevent/event2/exc12.webp" alt="Bricks Software Launch Moment">
         <div class="featured-caption">
           <strong>Launch Ceremony</strong>
           <p>The official launch of Bricks Software was formally inaugurated by Mr. T. Premkumar of TTV Blue Metals, Sankarankovil, a key representative of the TTV Group and grandson of the founder Mr. Thirumalai Nadar. His presence added strong industry significance and legacy value to the launch.</p>
@@ -739,7 +739,7 @@
   </section>
 
   <!-- RMC Software Launch - Light -->
-  <section class="full-width-section section-light">
+  <!-- <section class="full-width-section section-light">
     <div class="single-column">
       <span class="event-tag">Additional Product Launch</span>
       <h2>SAZS RMC Software Introduction</h2>
@@ -747,7 +747,7 @@
       <div class="image-showcase">
         <div>
           <div class="image-card">
-            <img src="./EXCON3.jpeg" alt="SAZS RMC Software Launch">
+            <img src="../assets/imageevent/event2/exc4.webp" alt="SAZS RMC Software Launch">
           </div>
           <div class="image-caption-box">
             <strong>RMC Solution Launch</strong>
@@ -775,10 +775,215 @@
         <p class="body-text" style="margin: 0;">This launch marked a key milestone in our product journey, expanding our solution portfolio beyond quarry and crusher operations into RMC and construction materials management, reinforcing our commitment to delivering technology-driven, industry-ready software solutions.</p>
       </div>
     </div>
-  </section>
+  </section> -->
+    <style>
+        /* CSS Variables for easy color management */
+        :root {
+            --gold-accent: #d4af37;
+            --deep-black: #000000;
+            --panel-gray: #0a0a0a;
+            --text-main: #ffffff;
+            --text-dim: #aaaaaa;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--deep-black);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- UNIQUE RMC SECTION LAYOUT --- */
+        .rmc-split-layout {
+            display: flex;
+            position: relative;
+        }
+
+        /* Left Side: Wide Sticky Media (60%) */
+        .rmc-sticky-media {
+            width: 60%;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+            background: var(--panel-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        /* Landscape Container for Wide Images */
+        .rmc-media-box {
+            position: relative;
+            width: 95%; 
+            height: 60vh; 
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+        }
+
+        .rmc-slide-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease, transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform: scale(1.1);
+        }
+
+        .rmc-slide-layer.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .rmc-slide-layer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+
+        /* Right Side: Scrollable Text (40%) */
+        .rmc-scroll-content {
+            width: 40%;
+            padding: 0 5%;
+        }
+
+        .rmc-text-panel {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .rmc-text-panel h4 {
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+
+        .rmc-text-panel h1 {
+            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .rmc-text-panel p {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .rmc-highlight {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 1024px) {
+            .rmc-split-layout { flex-direction: column; }
+            .rmc-sticky-media { 
+                width: 100%; 
+                height: 45vh; 
+                position: sticky; 
+                top: 0; 
+                z-index: 100;
+                padding: 15px;
+            }
+            .rmc-media-box { height: 35vh; width: 100%; }
+            .rmc-scroll-content { width: 100%; padding: 0 30px; }
+            .rmc-text-panel { height: auto; padding: 80px 0; }
+        }
+    </style>
+<!-- </head>
+<body> -->
+
+    <div class="rmc-split-layout">
+        
+        <div class="rmc-sticky-media">
+            <div class="rmc-media-box">
+                <div class="rmc-slide-layer is-visible" id="rmc-media-1">
+                    <img src="../assets/imageevent/event2/exc4.webp" alt="RMC Software Dashboard">
+                </div>
+                <div class="rmc-slide-layer" id="rmc-media-2">
+                    <img src="../assets/imageevent/event2/exc32.webp" alt="Mr. Raj Kumar Inauguration">
+                </div>
+                <div class="rmc-slide-layer" id="rmc-media-3">
+                    <img src="../assets/imageevent/event2/exc24.webp" alt="Product Portfolio Journey">
+                </div>
+            </div>
+        </div>
+
+        <div class="rmc-scroll-content">
+            
+            <div class="rmc-text-panel" data-rmc="1">
+                <h4>01 // Launch</h4>
+                <h1>SAZS RMC Software Solution</h1>
+                <p>Designed to <span class="rmc-highlight">streamline operations</span>, improve process visibility, and enhance efficiency for Ready Mix Concrete (RMC) plants.</p>
+                <p>Officially launched at EXCON, this tool represents the pinnacle of our automation capabilities.</p>
+            </div>
+
+            <div class="rmc-text-panel" data-rmc="2">
+                <h4>02 // Validation</h4>
+                <h1>Industry Validation</h1>
+                <p>The product launch was inaugurated by <span class="rmc-highlight">Mr. Raj Kumar</span>, CEO of Sri Modern Weigh System (Modern Weighbridge), Salem.</p>
+                <p>His partnership adds strong industry relevance and practical validation to our system maturity.</p>
+            </div>
+
+            <div class="rmc-text-panel" data-rmc="3">
+                <h4>03 // Strategy</h4>
+                <h1>Portfolio Expansion</h1>
+                <p>This launch marked a key milestone, expanding our solution portfolio into <span class="rmc-highlight">RMC and construction materials management</span>.</p>
+                <p>Reinforcing our commitment to delivering industry-ready, tech-driven software solutions.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="height: 30vh; background: #000;"></div>
+
+    <script>
+        // Scoped script to avoid global namespace pollution
+        (function() {
+            const rmcPanels = document.querySelectorAll('.rmc-text-panel');
+            const rmcSlides = document.querySelectorAll('.rmc-slide-layer');
+
+            const rmcObserverOptions = {
+                threshold: 0.6 
+            };
+
+            const rmcObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const rmcId = entry.target.getAttribute('data-rmc');
+                        
+                        // Switch slides
+                        rmcSlides.forEach(slide => slide.classList.remove('is-visible'));
+                        
+                        const activeRmcSlide = document.getElementById(`rmc-media-${rmcId}`);
+                        if(activeRmcSlide) {
+                            activeRmcSlide.classList.add('is-visible');
+                        }
+                    }
+                });
+            }, rmcObserverOptions);
+
+            rmcPanels.forEach(panel => rmcObserver.observe(panel));
+        })();
+    </script>
   <!-- Customer Recognition - Dark -->
-  <section class="full-width-section section-dark">
+  <!-- <section class="full-width-section section-dark">
     <div class="single-column">
       <div class="center-text">
         <span class="event-tag">Customer Appreciation</span>
@@ -800,8 +1005,281 @@
         This moment highlights our strong customer relationships and our commitment to delivering reliable, technology-driven solutions for the construction and mining industry. Customer satisfaction and long-term partnerships remain at the core of our business philosophy.
       </p>
     </div>
-  </section>
+  </section> -->
 
+ <style>
+    :root {
+        --gold: #d4af37;
+        --item-width: 320px; 
+        --item-height: 280px;
+        /* Increased translate-z to 700px to accommodate more images in the circle */
+        --translate-z: 700px; 
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+        min-height: 100vh;
+    }
+
+    .main-container {
+        display: flex;
+        width: 95%;
+        max-width: 1400px;
+        min-height: 100vh;
+        margin: 0 auto;
+        align-items: center;
+        gap: 50px;
+        padding: 40px 0;
+    }
+
+    .text-content {
+        flex: 1;
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .text-content h4 {
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 15px;
+        font-size: 0.85rem;
+    }
+
+    .text-content h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1.1;
+        margin-bottom: 25px;
+        font-weight: 900;
+    }
+
+    .quote-box {
+        border-left: 2px solid #fff;
+        padding-left: 25px;
+        margin: 30px 0;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: #eee;
+    }
+
+    .text-content p {
+        color: #aaa;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .gallery-scene {
+        flex: 1.2;
+        height: 600px;
+        perspective: 2000px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .carousel {
+        width: var(--item-width);
+        height: var(--item-height);
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .carousel-item {
+        position: absolute;
+        width: var(--item-width);
+        height: var(--item-height);
+        border: 1px solid #333;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #111;
+        backface-visibility: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(100%);
+        transition: 0.5s;
+    }
+
+    .carousel-item.active {
+        border-color: var(--gold);
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    }
+
+    .carousel-item.active img {
+        filter: grayscale(0%);
+    }
+
+    /* 3D Positioning for 13 Items (360 / 13 = 27.69deg) */
+    .carousel-item:nth-child(1) { transform: rotateY(calc(0 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(2) { transform: rotateY(calc(1 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(3) { transform: rotateY(calc(2 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(4) { transform: rotateY(calc(3 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(5) { transform: rotateY(calc(4 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(6) { transform: rotateY(calc(5 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(7) { transform: rotateY(calc(6 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(8) { transform: rotateY(calc(7 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(9) { transform: rotateY(calc(8 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(10) { transform: rotateY(calc(9 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(11) { transform: rotateY(calc(10 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(12) { transform: rotateY(calc(11 * 27.69deg)) translateZ(var(--translate-z)); }
+    .carousel-item:nth-child(13) { transform: rotateY(calc(12 * 27.69deg)) translateZ(var(--translate-z)); }
+
+    .nav-controls {
+        position: absolute;
+        bottom: -0px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .btn {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid #444;
+        color: #fff;
+        padding: 12px 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 50px;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .btn:hover {
+        background: var(--gold);
+        color: #000;
+        border-color: var(--gold);
+    }
+
+    @media (max-width: 1100px) {
+        :root {
+            --item-width: 260px;
+            --item-height: 220px;
+            --translate-z: 550px;
+        }
+    }
+
+    @media (max-width: 850px) {
+        .main-container { flex-direction: column; text-align: center; padding-top: 80px; }
+        .text-content { order: 2; width: 100%; }
+        .gallery-scene { order: 1; width: 100%; height: 400px; margin-bottom: 40px; }
+        :root { --item-width: 200px; --item-height: 160px; --translate-z: 450px; }
+    }
+</style>
+
+<div class="main-container">
+    <div class="text-content">
+        <h4>Customer Appreciation</h4>
+        <h1>Honouring Valued Customers</h1>
+        <div class="quote-box">
+            "At EXCON 2023, we had the privilege of honouring Mr. Perumal Gounder Subramani, Director of SUN-X Concrete India Private Limited."
+        </div>
+        <p>This recognition reflects his continued trust in our quarry, crusher, and construction materials management software solutions.</p>
+        <p>Customer satisfaction and long-term partnerships remain at the core of our business philosophy.</p>
+    </div>
+
+    <div class="gallery-scene">
+        <div class="carousel" id="carousel">
+            <div class="carousel-item active"><img src="../assets/imageevent/event2/exc2.webp" alt="1"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc3.webp" alt="2"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc5.webp" alt="3"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc6.webp" alt="4"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc7.webp" alt="5"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc9.webp" alt="6"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc10.webp" alt="7"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc11.webp" alt="8"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc12.webp" alt="9"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc21.webp" alt="10"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc14.webp" alt="11"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc18.webp" alt="12"></div>
+            <div class="carousel-item"><img src="../assets/imageevent/event2/exc19.webp" alt="13"></div>
+        </div>
+
+        <div class="nav-controls">
+            <button class="btn" id="prev">Prev</button>
+            <button class="btn" id="next">Next</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const carousel = document.getElementById('carousel');
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length; // Now 13
+    const angle = 360 / totalItems; // 27.69 degrees
+    let rotation = 0;
+    let index = 0;
+    let autoRotateInterval;
+
+    function updateRotation(dir) {
+        if (dir === 'next') {
+            rotation -= angle;
+            index = (index + 1) % totalItems;
+        } else {
+            rotation += angle;
+            index = (index - 1 + totalItems) % totalItems;
+        }
+
+        carousel.style.transform = `rotateY(${rotation}deg)`;
+
+        items.forEach((item, i) => {
+            item.classList.remove('active');
+            if (i === index) item.classList.add('active');
+        });
+    }
+
+    function startAutoRotate() {
+        autoRotateInterval = setInterval(() => {
+            updateRotation('next');
+        }, 3000);
+    }
+
+    function stopAutoRotate() {
+        clearInterval(autoRotateInterval);
+    }
+
+    document.getElementById('next').addEventListener('click', () => {
+        stopAutoRotate();
+        updateRotation('next');
+        startAutoRotate();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        stopAutoRotate();
+        updateRotation('prev');
+        startAutoRotate();
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoRotate);
+    carousel.addEventListener('mouseleave', startAutoRotate);
+
+    let startX = 0;
+    document.addEventListener('touchstart', e => {
+        stopAutoRotate();
+        startX = e.touches[0].clientX;
+    });
+    
+    document.addEventListener('touchend', e => {
+        let endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) updateRotation('next');
+        if (endX - startX > 50) updateRotation('prev');
+        startAutoRotate();
+    });
+
+    startAutoRotate();
+</script>
+  
   <!-- Key Achievements - Light -->
   <section class="full-width-section section-light">
     <div class="center-text">

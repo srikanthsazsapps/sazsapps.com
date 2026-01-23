@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCON 2025 | Premium Dark Gallery</title>
+    <style>
+        /* --- DARK THEME STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: #000000; /* Pure Black */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Top Header */
+        .section-header {
+            padding: 100px 10% 40px;
+            background: #000000;
+            border-bottom: 1px solid #222;
+        }
+
+        .section-header h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* Main Container */
+        .split-scroll-container {
+            display: flex;
+            position: relative;
+            background: #000000;
+        }
+
+        /* Left Side: White Text */
+        .text-side {
+            width: 45%;
+            padding-left: 10%;
+        }
+
+        .step {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 60px;
+            opacity: 0.15; /* Very faded when inactive */
+            transition: all 0.7s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .step.active {
+            opacity: 1;
+            transform: translateX(10px);
+        }
+
+        .step h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            position: relative;
+        }
+
+        /* Small accent line next to active heading */
+        .step.active h2::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            width: 20px;
+            height: 2px;
+            background: #007bff; /* Sharp blue accent */
+        }
+
+        .step p {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            max-width: 400px;
+        }
+
+        /* Right Side: Media Display */
+        .media-side {
+            width: 55%;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .media-box {
+            width: 90%;
+            height: 80%;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333; /* Subsituted shadow for a subtle border */
+            background: #111;
+        }
+
+        /* Overlay for images to keep them dark */
+        .media-box::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.4));
+            z-index: 2;
+        }
+
+        .media-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            filter: grayscale(40%); /* Subtle grayscale for the B&W look */
+            transform: scale(1.1);
+            transition: opacity 1s ease, transform 1.2s ease;
+        }
+
+        .media-content.active {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1);
+        }
+
+        /* Mobile View */
+        @media (max-width: 900px) {
+            .split-scroll-container { flex-direction: column-reverse; }
+            .text-side, .media-side { width: 100%; }
+            .media-side { height: 45vh; border-bottom: 1px solid #333; }
+            .step { height: auto; padding: 80px 20px; opacity: 1; }
+            .section-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+<!-- </head>
+<body> -->
+
+    <header class="section-header">
+        <h1>Exhibition Gallery</h1>
+        <p>EXCON 2025 // Stall Moments & Highlights</p>
+    </header>
+
+    <div class="split-scroll-container">
+        <div class="text-side">
+            <div class="step active" data-index="1">
+                <h2>Exhibition Stall</h2>
+                <p>A flagship presence at EXCON 2025, showcasing 15+ integrations and our latest industrial software suite.</p>
+            </div>
+            <div class="step" data-index="2">
+                <h2>Live Demonstrations</h2>
+                <p>Real-time automation walkthroughs and system stress-tests performed live for industry leaders.</p>
+            </div>
+            <div class="step" data-index="3">
+                <h2>Customer Engagement</h2>
+                <p>Building connections with 60+ global clients. High-impact networking in the heart of the expo.</p>
+            </div>
+            <div class="step" data-index="4">
+                <h2>Mobile Applications</h2>
+                <p>Next-generation Android and iOS deployments designed for field-level industrial monitoring.</p>
+            </div>
+        </div>
+
+        <div class="media-side">
+            <div class="media-box">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200" class="media-content active" id="media-1">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200" class="media-content" id="media-2">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200" class="media-content" id="media-3">
+                <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1200" class="media-content" id="media-4">
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 30vh; background: #000;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const steps = document.querySelectorAll('.step');
+            const medias = document.querySelectorAll('.media-content');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const index = entry.target.getAttribute('data-index');
+
+                        steps.forEach(s => s.classList.remove('active'));
+                        entry.target.classList.add('active');
+
+                        medias.forEach(m => m.classList.remove('active'));
+                        const targetMedia = document.getElementById(`media-${index}`);
+                        if(targetMedia) targetMedia.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.6 });
+
+            steps.forEach(step => observer.observe(step));
+        });
+    </script>
+</body>
+</html>
