@@ -100,55 +100,6 @@
       margin-bottom: 20px;
     }
 
-    /* Hero Section */
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .hero-image {
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-      /* filter: grayscale(100%); */
-      transition: filter 0.5s ease, transform 0.5s ease;
-    }
-
-    .hero-image:hover {
-      filter: grayscale(0%);
-      transform: scale(1.02);
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .metric-box {
-      border-left: 3px solid var(--primary);
-      padding-left: 20px;
-    }
-
-    .metric-box strong {
-      display: block;
-      font-size: 32px;
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .metric-box span {
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
     /* Video Section */
     .video-section {
       max-width: 1400px;
@@ -466,60 +417,12 @@
       margin: 0 auto 60px;
     }
 
-    /* Shuffling Stack Styles */
-    .stack-container {
-      position: relative;
-      height: 450px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      perspective: 1000px;
-    }
-
-    .stack-card {
-      position: absolute;
-      width: 520px;
-      height: 350px;
-      border-radius: 20px;
-      border: 3px solid rgba(255,255,255,0.8);
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-    }
-
-    .stack-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .active-front {
-      z-index: 10;
-      transform: translateZ(50px) translateY(0) scale(1) rotate(0deg);
-      opacity: 1;
-      border-color: var(--primary);
-    }
-
-    .back-pile {
-      z-index: 1;
-      transform: translateZ(-100px) translateY(20px) scale(0.8) rotate(var(--r));
-      opacity: 0.5;
-    }
-
-    .exit-top {
-      z-index: 11;
-      transform: translateZ(150px) translateY(-150%) scale(1.1) rotate(10deg);
-      opacity: 0;
-    }
-
     /* Responsive */
     @media (max-width: 968px) {
       .full-width-section {
         padding: 60px 5%;
       }
 
-      .hero-grid,
       .two-column {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -531,15 +434,10 @@
         gap: 25px;
       }
 
-      .metrics-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
       .stats-sidebar {
         position: static;
       }
 
-      .hero-image,
       .featured-image-section img,
       .image-card img {
         max-height: 350px;
@@ -553,27 +451,9 @@
       .video-overlay {
         padding: 30px;
       }
-
-      .stack-container {
-        height: 350px;
-        margin-top: 40px;
-      }
-
-      .stack-card {
-        width: 300px;
-        height: 250px;
-      }
     }
 
     @media (max-width: 480px) {
-      .metrics-grid {
-        /* grid-template-columns: 1fr; */
-      }
-
-      .metric-box strong {
-        font-size: 24px;
-      }
-
       .launch-card {
         padding: 30px 25px;
       }
@@ -585,47 +465,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Hero Section - Dark -->
-  <section class="full-width-section section-dark">
-    <div class="hero-grid">
-      <div>
-        <span class="event-tag">Bengaluru • December 12-16, 2023</span>
-        <h1>
-          EXCON 2023:<br>
-          <span class="highlight">Bricks Software Launch</span>
-        </h1>
-        <p class="lead-text">
-          Our strategic participation at South Asia's largest construction equipment exhibition, marking the official launch of Bricks Software and expansion into North Indian markets through the Confederation of Indian Industry's international platform.
-        </p>
-        <div class="metrics-grid">
-          <div class="metric-box">
-            <strong>105+</strong>
-            <span>Customer Engagements</span>
-          </div>
-          <div class="metric-box">
-            <strong>200+</strong>
-            <span>Business Contacts</span>
-          </div>
-          <div class="metric-box">
-            <strong>CII</strong>
-            <span>International Standards</span>
-          </div>
-          <div class="metric-box">
-            <strong>North India</strong>
-            <span>Market Entry</span>
-          </div>
-        </div>
-      </div>
-      <div class="stack-container" id="stack-container">
-        <div class="stack-card" style="--r: -10deg;"><img src="../assets/imageevent/event2/exc14.webp" alt="EXCON Image 1"></div>
-        <div class="stack-card" style="--r: 5deg;"><img src="../assets/imageevent/event2/exc2.webp" alt="EXCON Image 2"></div>
-        <div class="stack-card" style="--r: -5deg;"><img src="../assets/imageevent/event2/exc8.webp" alt="EXCON Image 3"></div>
-        <div class="stack-card" style="--r: 8deg;"><img src="../assets/imageevent/event2/exc9.webp" alt="EXCON Image 4"></div>
-        <div class="stack-card" style="--r: 0deg;"><img src="../assets/imageevent/event2/exc12.webp" alt="EXCON Image 5"></div>
-      </div>
-    </div>
-  </section>
 
   <!-- Video Highlight Section - Dark -->
   <section class="full-width-section section-dark">
@@ -738,44 +577,6 @@
     </div>
   </section>
 
-  <!-- RMC Software Launch - Light -->
-  <!-- <section class="full-width-section section-light">
-    <div class="single-column">
-      <span class="event-tag">Additional Product Launch</span>
-      <h2>SAZS RMC Software Introduction</h2>
-      
-      <div class="image-showcase">
-        <div>
-          <div class="image-card">
-            <img src="../assets/imageevent/event2/exc4.webp" alt="SAZS RMC Software Launch">
-          </div>
-          <div class="image-caption-box">
-            <strong>RMC Solution Launch</strong>
-            <p>Official launch of SAZS RMC software solution, designed to streamline operations, improve process visibility, and enhance efficiency for Ready Mix Concrete (RMC) plants.</p>
-          </div>
-        </div>
-        
-        <div>
-          <div class="image-card">
-            <img src="./EXCON4.jpeg" alt="Industry Partner Inauguration">
-          </div>
-          <div class="image-caption-box">
-            <strong>Industry Validation</strong>
-            <p>The product launch was inaugurated by Mr. Raj Kumar, CEO of Sri Modern Weigh System (Modern Weighbridge), Salem, adding strong industry relevance and practical validation.</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="body-text">
-        At EXCON 2023, we also officially launched our SAZS RMC software solution, designed to streamline operations, improve process visibility, and enhance efficiency for Ready Mix Concrete (RMC) plants. The product launch was inaugurated by Mr. Raj Kumar, CEO of Sri Modern Weigh System (Modern Weighbridge), Salem, a trusted industry partner with deep expertise in weighing and automation systems.
-      </p>
-
-      <div class="highlight-box">
-        <strong>Product Portfolio Expansion:</strong>
-        <p class="body-text" style="margin: 0;">This launch marked a key milestone in our product journey, expanding our solution portfolio beyond quarry and crusher operations into RMC and construction materials management, reinforcing our commitment to delivering technology-driven, industry-ready software solutions.</p>
-      </div>
-    </div>
-  </section> -->
     <style>
         /* CSS Variables for easy color management */
         :root {
@@ -906,8 +707,6 @@
             .rmc-text-panel { height: auto; padding: 80px 0; }
         }
     </style>
-<!-- </head>
-<body> -->
 
     <div class="rmc-split-layout">
         
@@ -982,30 +781,6 @@
             rmcPanels.forEach(panel => rmcObserver.observe(panel));
         })();
     </script>
-  <!-- Customer Recognition - Dark -->
-  <!-- <section class="full-width-section section-dark">
-    <div class="single-column">
-      <div class="center-text">
-        <span class="event-tag">Customer Appreciation</span>
-        <h2>Honouring Valued Customers</h2>
-        <p class="lead-text">
-          Recognizing strong partnerships and long-term customer relationships at EXCON 2023.
-        </p>
-      </div>
-
-      <div class="featured-image-section">
-        <img src="./EXCON5.jpeg" alt="Customer Recognition Ceremony">
-        <div class="featured-caption">
-          <strong>Happy Customer Recognition</strong>
-          <p>At EXCON 2023, we had the privilege of honouring Mr. Perumal Gounder Subramani, Director of SUN-X Concrete India Private Limited, with a "Happy Customer" recognition shield at our exhibition stall. As one of our valued customers, the recognition reflects his continued trust in our quarry, crusher, and construction materials management software solutions.</p>
-        </div>
-      </div>
-
-      <p class="body-text" style="margin-top: 40px;">
-        This moment highlights our strong customer relationships and our commitment to delivering reliable, technology-driven solutions for the construction and mining industry. Customer satisfaction and long-term partnerships remain at the core of our business philosophy.
-      </p>
-    </div>
-  </section> -->
 
  <style>
     :root {
@@ -1354,11 +1129,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <!-- <footer style="padding: 50px; text-align: center; font-size: 13px; opacity: 0.6; background: var(--dark-bg);">
-    <p>© 2026 BRICKS / MINING TECH. All Rights Reserved. Shaping the future of Industrial Infrastructure.</p>
-  </footer> -->
-
   <script>
     // Intersection Observer for autoplay video when in view
     const video = document.getElementById('exconVideo');
@@ -1376,38 +1146,6 @@
     });
     
     observer.observe(video);
-
-    // Shuffling Stack Logic
-    const cards = Array.from(document.querySelectorAll('.stack-card'));
-    let currentIndex = 0;
-
-    function updateStack() {
-      cards.forEach((card, index) => {
-        card.classList.remove('active-front', 'back-pile', 'exit-top');
-
-        if (index === currentIndex) {
-          card.classList.add('active-front');
-        } else {
-          card.classList.add('back-pile');
-        }
-      });
-    }
-
-    function shuffle() {
-      const currentCard = cards[currentIndex];
-      currentCard.classList.add('exit-top');
-
-      setTimeout(() => {
-        currentIndex = (currentIndex + 1) % cards.length;
-        updateStack();
-      }, 600);
-    }
-
-    // Initialize positions
-    updateStack();
-
-    // Run the shuffle every 3 seconds
-    setInterval(shuffle, 3000);
   </script>
 
 </body>
