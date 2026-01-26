@@ -1,217 +1,374 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXCON 2025 | Premium Dark Gallery</title>
-    <style>
-        /* --- DARK THEME STYLES --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!-- Add this section right after the HERO section (after </header> tag and before the "KEY BENEFITS SECTION") -->
 
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: #000000; /* Pure Black */
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* Top Header */
-        .section-header {
-            padding: 100px 10% 40px;
-            background: #000000;
-            border-bottom: 1px solid #222;
-        }
-
-        .section-header h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: #888;
-            margin-top: 10px;
-        }
-
-        /* Main Container */
-        .split-scroll-container {
-            display: flex;
-            position: relative;
-            background: #000000;
-        }
-
-        /* Left Side: White Text */
-        .text-side {
-            width: 45%;
-            padding-left: 10%;
-        }
-
-        .step {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-right: 60px;
-            opacity: 0.15; /* Very faded when inactive */
-            transition: all 0.7s cubic-bezier(0.2, 1, 0.3, 1);
-        }
-
-        .step.active {
-            opacity: 1;
-            transform: translateX(10px);
-        }
-
-        .step h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #ffffff;
-            position: relative;
-        }
-
-        /* Small accent line next to active heading */
-        .step.active h2::before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 50%;
-            width: 20px;
-            height: 2px;
-            background: #007bff; /* Sharp blue accent */
-        }
-
-        .step p {
-            font-size: 1.1rem;
-            color: #aaaaaa;
-            max-width: 400px;
-        }
-
-        /* Right Side: Media Display */
-        .media-side {
-            width: 55%;
-            height: 100vh;
-            position: sticky;
-            top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .media-box {
-            width: 90%;
-            height: 80%;
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #333; /* Subsituted shadow for a subtle border */
-            background: #111;
-        }
-
-        /* Overlay for images to keep them dark */
-        .media-box::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.4));
-            z-index: 2;
-        }
-
-        .media-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            filter: grayscale(40%); /* Subtle grayscale for the B&W look */
-            transform: scale(1.1);
-            transition: opacity 1s ease, transform 1.2s ease;
-        }
-
-        .media-content.active {
-            opacity: 1;
-            filter: grayscale(0%);
-            transform: scale(1);
-        }
-
-        /* Mobile View */
-        @media (max-width: 900px) {
-            .split-scroll-container { flex-direction: column-reverse; }
-            .text-side, .media-side { width: 100%; }
-            .media-side { height: 45vh; border-bottom: 1px solid #333; }
-            .step { height: auto; padding: 80px 20px; opacity: 1; }
-            .section-header h1 { font-size: 2.5rem; }
-        }
-    </style>
-<!-- </head>
-<body> -->
-
-    <header class="section-header">
-        <h1>Exhibition Gallery</h1>
-        <p>EXCON 2025 // Stall Moments & Highlights</p>
-    </header>
-
-    <div class="split-scroll-container">
-        <div class="text-side">
-            <div class="step active" data-index="1">
-                <h2>Exhibition Stall</h2>
-                <p>A flagship presence at EXCON 2025, showcasing 15+ integrations and our latest industrial software suite.</p>
-            </div>
-            <div class="step" data-index="2">
-                <h2>Live Demonstrations</h2>
-                <p>Real-time automation walkthroughs and system stress-tests performed live for industry leaders.</p>
-            </div>
-            <div class="step" data-index="3">
-                <h2>Customer Engagement</h2>
-                <p>Building connections with 60+ global clients. High-impact networking in the heart of the expo.</p>
-            </div>
-            <div class="step" data-index="4">
-                <h2>Mobile Applications</h2>
-                <p>Next-generation Android and iOS deployments designed for field-level industrial monitoring.</p>
-            </div>
-        </div>
-
-        <div class="media-side">
-            <div class="media-box">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200" class="media-content active" id="media-1">
-                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200" class="media-content" id="media-2">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200" class="media-content" id="media-3">
-                <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1200" class="media-content" id="media-4">
-            </div>
-        </div>
+<!-- BLACK & WHITE WHY CHOOSE SECTION -->
+<section id="why-choose" class="why-choose-section">
+  <div class="why-choose-wrapper">
+    <!-- Animated Background Elements -->
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
     </div>
 
-    <div style="height: 30vh; background: #000;"></div>
+    <!-- Main Content - Centered -->
+    <div class="why-choose-main">
+      <div class="content-badge">
+        <span class="badge-dot"></span>
+        <span>Industry-Specific Solution</span>
+      </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const steps = document.querySelectorAll('.step');
-            const medias = document.querySelectorAll('.media-content');
+      <h2 class="mega-heading">Why Choose SAZS Apps ERP for Your Business?</h2>
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const index = entry.target.getAttribute('data-index');
+      <div class="description-box">
+        <p class="mega-description">
+          In the <span class="highlight-text">Crusher</span>, <span class="highlight-text">Quarry</span>, <span class="highlight-text">Readymix (RMC)</span>, and <span class="highlight-text">Brick Plant</span> industries, profitability depends on tight security and operational speed. SAZS Apps ERP provides a <span class="highlight-text">"Hard-Wired"</span> security and management ecosystem that bridges the gap between your physical site and your office accounts.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                        steps.forEach(s => s.classList.remove('active'));
-                        entry.target.classList.add('active');
+<!-- ADD THIS CSS TO YOUR WhytoChoose.css FILE -->
+<style>
+/* Why Choose Section - White & Black Theme */
+.why-choose-section {
+  padding: 6rem 2rem;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
 
-                        medias.forEach(m => m.classList.remove('active'));
-                        const targetMedia = document.getElementById(`media-${index}`);
-                        if(targetMedia) targetMedia.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.6 });
+.why-choose-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
 
-            steps.forEach(step => observer.observe(step));
-        });
-    </script>
-</body>
-</html>
+/* Floating Background Shapes */
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.03;
+  animation: float-random 20s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: #000000;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  background: #000000;
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.shape-3 {
+  width: 250px;
+  height: 250px;
+  background: #000000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 6s;
+}
+
+@keyframes float-random {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(20px, 30px) scale(1.05);
+  }
+}
+
+/* Main Content - Centered */
+.why-choose-main {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Badge */
+.content-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: transparent;
+  border: 2px solid #000000;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: pulse-badge 3s ease-in-out infinite;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #000000;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+}
+
+/* Mega Heading */
+.mega-heading {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #000000;
+  margin: 0 0 50px 0;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  animation: slideInDown 1s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Description Box */
+.description-box {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 40px 50px;
+  background: #f8f9fa;
+  border-radius: 24px;
+  border: 3px solid #e5e7eb;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 1s ease-out 0.2s backwards;
+}
+
+.description-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #000000, #4b5563, #000000);
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
+}
+
+@keyframes gradient-slide {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mega-description {
+  font-size: 1rem;
+  color: #1f2937;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 400;
+}
+
+.highlight-text {
+  color: #000000;
+  font-weight: 700;
+  position: relative;
+  padding: 0 4px;
+  transition: all 0.3s ease;
+}
+
+.highlight-text:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .mega-heading {
+    font-size: 4.5rem;
+  }
+
+  .mega-description {
+    font-size: 1.8rem;
+  }
+
+  .description-box {
+    padding: 35px 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .why-choose-section {
+    padding: 5rem 2rem;
+  }
+
+  .mega-heading {
+    font-size: 3.5rem;
+  }
+
+  .mega-description {
+    font-size: 1.5rem;
+  }
+
+  .description-box {
+    padding: 30px 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-choose-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .content-badge {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+  }
+
+  .mega-heading {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+  }
+
+  .description-box {
+    padding: 25px 30px;
+  }
+
+  .mega-description {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+
+  .trust-badge {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 32px;
+    gap: 16px;
+  }
+
+  .trust-title {
+    font-size: 1.1rem;
+  }
+
+  .trust-subtitle {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-choose-section {
+    padding: 3rem 1rem;
+  }
+
+  .mega-heading {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+
+  .description-box {
+    padding: 20px 24px;
+    border-radius: 16px;
+  }
+
+  .mega-description {
+    font-size: 1.15rem;
+  }
+
+  .trust-badge {
+    padding: 20px 24px;
+  }
+
+  .trust-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .trust-title {
+    font-size: 1rem;
+  }
+
+  .trust-subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+/* Match existing page styles */
+.why-choose-section {
+  margin-top: 0;
+}
+
+.mega-heading,
+.mega-description {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+</style>
+

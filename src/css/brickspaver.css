@@ -294,7 +294,7 @@ p {
 .hero-main-container {
     max-width: 1200px;
     width: 100%;
-    padding: 60px 40px;
+    padding: 100px 40px;
     z-index: 2;
 }
 
@@ -983,7 +983,7 @@ p {
 
 .slide-in {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(0px);
     transition: opacity 1s ease, transform 1s ease;
 }
 

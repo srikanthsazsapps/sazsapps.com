@@ -10,7 +10,7 @@
             color: #212529;
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 90px;
+            /* padding-top: 90px; */
         }
 
         /* Animated Background - WORKING */
@@ -631,7 +631,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            body { padding-top: 70px; }
+            /* body { padding-top: 70px; } */
             .hero { padding: 5rem 5% 4rem; }
             .benefits-container { grid-template-columns: 1fr; }
             .benefits-visual { height: 350px; }

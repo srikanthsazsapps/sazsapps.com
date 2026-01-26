@@ -28,7 +28,7 @@
         .hero {
             min-height: 90vh;
             background: 
-                linear-gradient(135deg, rgba(62,137,236,0.08) 0%, rgba(62,137,236,0.03) 100%),
+        linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) ),
                 url('../assets/contentImages/Anpr.png') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -58,7 +58,7 @@
         .hero-subtitle {
             font-size: clamp(1.3rem, 3.5vw, 1.7rem);
             font-weight: 600;
-            color: var(--text-muted);
+            color: #fff;
             max-width: 920px;
             margin: 0 auto 2.5rem;
         }

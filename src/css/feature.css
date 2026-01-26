@@ -286,8 +286,8 @@ p {
     justify-content: center;
     overflow: hidden;
     background:
-        linear-gradient(135deg, rgba(10,37,64,0.85), rgba(13,58,92,0.7)),
-        url("../../assets/contentImages/smart-facility.jpg") center/cover no-repeat;
+               linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) ),
+        url("../assets/contentImages/quarry.png") center/cover no-repeat;
 }
 
 .hero-main-container {
