@@ -1000,7 +1000,7 @@ h1 {
 /* Slide-in animation for sections */
 .slide-in {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(0px);
     transition: opacity 1s ease, transform 1s ease;
 }
 
