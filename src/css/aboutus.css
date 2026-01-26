@@ -382,7 +382,8 @@ h1 {
         flex-direction: column;
         text-align: center;
         padding: 15px;
-        margin: 10px;
+        padding-top: 100px !important;
+        /* margin: 10px; */
     }
 
     .procurement-content {
@@ -813,7 +814,7 @@ h1 {
         font-size: 17px !important;
     }
     .procurement-section {
-        padding: 0 !important;
+        padding: 0 ;
     }
 }
 
