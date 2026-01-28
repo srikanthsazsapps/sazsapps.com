@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excon 2023 - Shuffling Stack</title>
-     <style>
-        /* 1. Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        body {
-            background-color: #000;
-            overflow-x: hidden;
-        }
+    <style>
 
         /* 2. Hero Section & Video */
         .event-hero-wrapper {
@@ -27,7 +9,7 @@
             align-items: center;
             justify-content: center;
             color: white;
-            padding: 40px 20px;
+            padding: 110px 20px;
         }
 
         .background-video-element {
@@ -56,9 +38,9 @@
 
         .text-content-section { flex: 1.2; }
         h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
-        .highlight-blue-color { color: #2563EB; }
+        .highlight-blue-color { color: #3e89ec; }
 
-        /* 3. The Shuffling Stack Logic */
+        /* 3. Simple Image/Video Display - NO ANIMATION */
         .visual-stack-section {
             flex: 0.8;
             position: relative;
@@ -66,50 +48,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            perspective: 1000px;
         }
 
         .photo-stack-item {
-            position: absolute;
             width: 520px;
             height: 350px;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            
-            /* Smooth movement transition */
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
+            border: 3px solid #3e89ec;
         }
 
-        .photo-stack-item img {
+        .photo-stack-item img,
+        .photo-stack-item video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        /* CARD POSITIONS */
-        
-        /* The one in the very front */
-        .position-front-active {
-            z-index: 10;
-            transform: translateZ(50px) translateY(0) scale(1) rotate(0deg);
-            opacity: 1;
-            border-color: #2563EB;
-        }
-
-        /* The ones waiting in the back */
-        .position-hidden-stack {
-            z-index: 1;
-            transform: translateZ(-100px) translateY(20px) scale(0.8) rotate(var(--r));
-            opacity: 0;
-        }
-
-        /* Transition state: flying out to move to back */
-        .transition-exit-upward {
-            z-index: 11;
-            transform: translateZ(150px) translateY(-150%) scale(1.1) rotate(10deg);
-            opacity: 0;
+            display: block;
         }
 
         .metrics-display-grid {
@@ -120,14 +75,14 @@
         }
 
         .metric-box-container {
-            border-left: 3px solid #2563EB;
+            border-left: 3px solid #3e89ec;
             padding-left: 15px;
         }
 
         .metric-value-display {
             display: block;
             font-size: 28px;
-            color: #FF9F00;
+            color: #3e89ec;
         }
 
         .metric-description-text {
@@ -136,7 +91,7 @@
         }
 
         .event-badge-label {
-            color: #FF9F00;
+            color: #3e89ec;
             font-weight: bold;
             letter-spacing: 2px;
             margin-bottom: 15px;
@@ -168,7 +123,7 @@
                 flex-direction: column;
                 text-align: center;
                 width: 90%;
-                gap: 90px;
+                gap: 40px;
             }
 
             .text-content-section {
@@ -247,88 +202,52 @@
             }
         }
     </style>
-<!-- </head>
-<body> -->
-
     <section class="event-hero-wrapper">
         <video autoplay muted loop playsinline class="background-video-element">
-            <!-- <source src="/excon2003.mp4" type="video/mp4"> -->
+            <!-- Uncomment and add your video path -->
+            <!-- <source src="/path/to/excon2003.mp4" type="video/mp4"> -->
         </video>
         <div class="gradient-video-overlay"></div>
 
         <div class="main-content-wrapper">
             <div class="text-content-section">
-                <span class="event-badge-label">Bengaluru • 2025</span>
-                <h1>EXCON 2025: <br><span class="highlight-blue-color">Enterprise Platform</span></h1>
-                <p class="event-info-paragraph">South Asia's largest construction equipment exhibition showcasing our most advanced, fully integrated enterprise software ecosystem with 15+ system integrations, mobile applications, and comprehensive automation capabilities.</p>
+                <span class="event-badge-label">BENGALURU • DECEMBER 12-16, 2023</span>
+                <h1>EXCON 2023: <br><span class="highlight-blue-color">Bricks Software Launch</span></h1>
+                <p class="event-info-paragraph">Our strategic participation at South Asia's largest construction equipment exhibition, marking the official launch of Bricks Software and expansion into North Indian markets through the Confederation of Indian Industry's international platform.</p>
                 
                 <div class="metrics-display-grid">
                     <div class="metric-box-container">
-                        <strong class="metric-value-display">15+</strong>
-                        <span class="metric-description-text">System Integrations</span>
-                    </div>
-                    <div class="metric-box-container">
-                        <strong class="metric-value-display">60+</strong>
+                        <strong class="metric-value-display">105+</strong>
                         <span class="metric-description-text">Customer Engagements</span>
                     </div>
                     <div class="metric-box-container">
-                        <strong class="metric-value-display">125+</strong>
-                        <span class="metric-description-text">New Contacts</span>
+                        <strong class="metric-value-display">200+</strong>
+                        <span class="metric-description-text">Business Contacts</span>
                     </div>
                     <div class="metric-box-container">
-                        <strong class="metric-value-display">Mobile</strong>
-                        <span class="metric-description-text">Apps Launched</span>
+                        <strong class="metric-value-display">CII</strong>
+                        <span class="metric-description-text">International Standards</span>
+                    </div>
+                    <div class="metric-box-container">
+                        <strong class="metric-value-display">North India</strong>
+                        <span class="metric-description-text">Market Entry</span>
                     </div>
                 </div>
             </div>
 
-            <div class="visual-stack-section" id="stack-container">
-                <div class="photo-stack-item" style="--r: -10deg;"><img src="./EXCON2025_1.jpeg" alt="EXCON 2025 Image 1"></div>
-                <div class="photo-stack-item" style="--r: 5deg;"><img src="./EXCON2025_2.jpeg" alt="EXCON 2025 Image 2"></div>
-                <div class="photo-stack-item" style="--r: -5deg;"><img src="./EXCON2025_3.jpeg" alt="EXCON 2025 Image 3"></div>
-                <div class="photo-stack-item" style="--r: 8deg;"><img src="./EXCON2025_4.jpeg" alt="EXCON 2025 Image 4"></div>
-                <div class="photo-stack-item" style="--r: 0deg;"><img src="./EXCON2025_5.jpeg" alt="EXCON 2025 Image 5"></div>
+            <div class="visual-stack-section">
+                <!-- Simple static image display - NO ANIMATION -->
+                <div class="photo-stack-item">
+                    <!-- Option 1: Use an image -->
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80" alt="EXCON 2023 Event">
+                    
+                    <!-- Option 2: Use a video instead (comment out image above and uncomment below) -->
+                    <!-- <video autoplay muted loop playsinline>
+                        <source src="/path/to/your-video.mp4" type="video/mp4">
+                    </video> -->
+                </div>
             </div>
         </div>
     </section>
 
-    <script>
-        const cards = Array.from(document.querySelectorAll('.photo-stack-item'));
-        let currentIndex = 0;
-
-        function updateStack() {
-            cards.forEach((card, index) => {
-                // Clear all classes
-                card.classList.remove('position-front-active', 'position-hidden-stack', 'transition-exit-upward');
-
-                if (index === currentIndex) {
-                    // Current image comes to front
-                    card.classList.add('position-front-active');
-                } else {
-                    // Others stay in the back pile
-                    card.classList.add('position-hidden-stack');
-                }
-            });
-        }
-
-        function shuffle() {
-            const currentCard = cards[currentIndex];
-            
-            // 1. Move the current front card out (Exit animation)
-            currentCard.classList.add('transition-exit-upward');
-
-            // 2. Wait for exit animation, then change index and update
-            setTimeout(() => {
-                currentIndex = (currentIndex + 1) % cards.length;
-                updateStack();
-            }, 600); // This matches transition time
-        }
-
-        // Initialize positions
-        updateStack();
-
-        // Run the shuffle every 3 seconds
-        setInterval(shuffle, 3000);
-    </script>
-</body>
-</html>
+  
