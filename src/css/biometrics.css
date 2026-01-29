@@ -745,7 +745,7 @@
 
         /* CTA Section - Centered Block */
         .cta-block {
-            background: var(--off-white);
+            background: #ffffff;
             padding: 6rem 4rem;
             text-align: center;
         }
