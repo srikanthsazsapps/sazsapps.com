@@ -1,30 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sazs | EXCON 2025 Media Wall</title>
+<!-- Find this section in your HTML (around line 2000+) and replace it with this: -->
+
+<div class="media-wall-section">
     <style>
-        body, html {
-            margin: 0; padding: 0;
-            width: 100%; height: 100%;
+        /* Scope ALL styles to media-wall-section only */
+        .media-wall-section {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
             background: #1a120b;
             overflow: hidden;
             font-family: 'Segoe UI', sans-serif;
             touch-action: none;
+            position: relative;
         }
 
-        .table {
+        .media-wall-section .table {
             position: relative;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
         }
 
         /* Default Desktop Size */
-        .photo-brick {
+        .media-wall-section .photo-brick {
             position: absolute;
-            width: 220px;
+            width: 320px;
             height: 250px;
             background: #fff;
             padding: 10px 10px 45px 10px;
@@ -37,35 +38,40 @@
 
         /* MOBILE ADJUSTMENTS */
         @media (max-width: 600px) {
-            .photo-brick {
-                width: 140px;  /* Smaller bricks for mobile */
+            .media-wall-section .photo-brick {
+                width: 140px;
                 height: 160px;
                 padding: 5px 5px 25px 5px;
             }
             
-            .photo-brick.active {
-                width: 95vw !important; /* Almost full width on mobile */
+            .media-wall-section .photo-brick.active {
+                width: 95vw !important;
                 height: 60vh !important;
                 padding: 10px !important;
             }
 
-            button {
+            .media-wall-section button {
                 padding: 8px 15px !important;
                 font-size: 12px;
             }
         }
 
-        .photo-brick:active { cursor: grabbing; z-index: 1000 !important; }
+        .media-wall-section .photo-brick:active {
+            cursor: grabbing;
+            z-index: 1000 !important;
+        }
 
-        .photo-brick img, .photo-brick video {
-            width: 100%; height: 100%;
-            object-fit: cover;
+        .media-wall-section .photo-brick img,
+        .media-wall-section .photo-brick video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
             pointer-events: none;
             background: #000;
         }
 
         /* BIG SCREEN MODE */
-        .photo-brick.active {
+        .media-wall-section .photo-brick.active {
             position: fixed !important;
             top: 50% !important;
             left: 50% !important;
@@ -77,8 +83,8 @@
             cursor: default;
         }
 
-        .controls {
-            position: fixed;
+        .media-wall-section .controls {
+            position: absolute;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
@@ -87,7 +93,7 @@
             z-index: 10000;
         }
 
-        button {
+        .media-wall-section button {
             padding: 10px 20px;
             background: #fff;
             border: none;
@@ -97,8 +103,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
     </style>
-<!-- </head>
-<body> -->
 
     <div class="controls">
         <button onclick="shuffleWall()">SHUFFLE TABLE</button>
@@ -111,24 +115,26 @@
         let highestZ = 100;
 
         const videoList = [
-            "./src/assets/contentVideos/vid1.mp4", "./src/assets/contentVideos/vid2.mp4",
-            "./src/assets/contentVideos/vid3.mp4", "./src/assets/contentVideos/vid4.mp4",
-            "./src/assets/contentVideos/vid5.mp4", "./src/assets/contentVideos/vid6.mp4",
-            "./src/assets/contentVideos/vid7.mp4", "./src/assets/contentVideos/vid8.mp4",
-            "./src/assets/contentVideos/vid9.mp4", "./src/assets/contentVideos/vid10.mp4"
+            "../src/assets/imageevent/event5/sazs app team video.mp4", "../src/assets/imageevent/event5/sazs product reel2.mp4",
+            "../src/assets/imageevent/event5/sazs Reel6 out.mp4", "../src/assets/imageevent/event5/sazsappcustomerinteraction.mp4",
+            "../src/assets/imageevent/event5/sazsproductreel1.mp4", "../src/assets/imageevent/event5/sazsthankyoureel.mp4",
+            // "./src/assets/contentVideos/vid7.mp4", "./src/assets/contentVideos/vid8.mp4",
+            // "./src/assets/contentVideos/vid9.mp4", "./src/assets/contentVideos/vid10.mp4"
         ];
 
         const imageList = [
-            "./src/assets/contentImages/whyimg2.webp", "./src/assets/contentImages/whyimg2.webp", 
-            "./src/assets/contentImages/whyimg2.webp", "./src/assets/contentImages/sazsLogo1.png",
-            "./src/assets/contentImages/img5.jpg", "./src/assets/contentImages/img6.jpg",
-            "./src/assets/contentImages/img7.jpg", "./src/assets/contentImages/img8.jpg",
-            "./src/assets/contentImages/img9.jpg", "./src/assets/contentImages/img10.jpg",
-            "./src/assets/contentImages/img11.jpg", "./src/assets/contentImages/img12.jpg",
-            "./src/assets/contentImages/img13.jpg", "./src/assets/contentImages/img14.jpg",
-            "./src/assets/contentImages/img15.jpg", "./src/assets/contentImages/img16.jpg",
-            "./src/assets/contentImages/img17.jpg", "./src/assets/contentImages/img18.jpg",
-            "./src/assets/contentImages/img19.jpg", "./src/assets/contentImages/img20.jpg"
+            "../src/assets/imageevent/event5/exc2501.webp", "../src/assets/imageevent/event5/exc2502.webp", 
+            "../src/assets/imageevent/event5/exc2503.webp", "../src/assets/imageevent/event5/exc2504.webp",
+            "../src/assets/imageevent/event5/exc2505.webp", "../src/assets/imageevent/event5/exc2506.webp",
+            "../src/assets/imageevent/event5/exc2507.webp", "../src/assets/imageevent/event5/exc2508.webp",
+            "../src/assets/imageevent/event5/exc2509.webp", "../src/assets/imageevent/event5/exc2510.webp",
+            "../src/assets/imageevent/event5/exc2511.webp", "../src/assets/imageevent/event5/exc2512.webp",
+            "../src/assets/imageevent/event5/exc2513.webp", "../src/assets/imageevent/event5/exc2514.webp",
+            "../src/assets/imageevent/event5/exc2515.webp", "../src/assets/imageevent/event5/exc2516.webp",
+            "../src/assets/imageevent/event5/exc2517.webp", "../src/assets/imageevent/event5/exc2518.webp",
+            "../src/assets/imageevent/event5/exc2519.webp", "../src/assets/imageevent/event5/exc2520.webp",
+            "../src/assets/imageevent/event5/exc2521.webp", "../src/assets/imageevent/event5/exc2522.webp",
+            "../src/assets/imageevent/event5/exc2523.webp", "../src/assets/imageevent/event5/exc2524.webp"
         ];
 
         function createBricks() {
@@ -139,14 +145,36 @@
         function createBrick(src, isVideo, index) {
             const brick = document.createElement('div');
             brick.className = 'photo-brick';
-            brick.innerHTML = isVideo ? `<video src="${src}" muted loop></video>` : `<img src="${src}">`;
+            
+            if (isVideo) {
+                const video = document.createElement('video');
+                video.src = src;
+                video.muted = true;
+                video.loop = true;
+                video.autoplay = true;
+                
+                video.onerror = function() {
+                    console.error('Failed to load video:', src);
+                    brick.style.background = '#ff6b6b';
+                    brick.innerHTML = `<div style="color:white; padding:20px; text-align:center;">Video not found:<br>${src}</div>`;
+                };
+                
+                brick.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = src;
+                img.onerror = function() {
+                    console.error('Failed to load image:', src);
+                };
+                brick.appendChild(img);
+            }
+            
             setRandomPos(brick, index);
             addInteractions(brick);
             table.appendChild(brick);
         }
 
         function setRandomPos(brick, z) {
-            // Check if mobile to adjust scatter area
             const isMobile = window.innerWidth < 600;
             const brickWidth = isMobile ? 140 : 250;
             const brickHeight = isMobile ? 160 : 300;
@@ -184,13 +212,27 @@
 
             brick.addEventListener('click', () => {
                 if (!isDragging) {
+                    const video = brick.querySelector('video');
+                    
                     if (brick.classList.contains('active')) {
                         brick.classList.remove('active');
+                        if (video) {
+                            video.muted = true;
+                        }
                     } else {
-                        document.querySelectorAll('.active').forEach(a => a.classList.remove('active'));
+                        document.querySelectorAll('.active').forEach(a => {
+                            a.classList.remove('active');
+                            const otherVideo = a.querySelector('video');
+                            if (otherVideo) {
+                                otherVideo.muted = true;
+                            }
+                        });
+                        
                         brick.classList.add('active');
-                        const v = brick.querySelector('video');
-                        if(v) { v.muted = false; v.play(); }
+                        if (video) {
+                            video.muted = false;
+                            video.play();
+                        }
                     }
                 }
             });
@@ -199,14 +241,15 @@
         function shuffleWall() {
             document.querySelectorAll('.photo-brick').forEach((b, i) => {
                 b.classList.remove('active');
+                const video = b.querySelector('video');
+                if (video) {
+                    video.muted = true;
+                }
                 setRandomPos(b, i);
             });
         }
 
-        // Re-randomize positions if window is resized
         window.addEventListener('resize', shuffleWall);
-
         createBricks();
     </script>
-</body>
-</html>
+</div>
