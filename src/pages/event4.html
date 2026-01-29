@@ -772,7 +772,7 @@
 
                             <a href="../pages/event5.html" class="media-event-card">
                                 <div class="media-card-image">
-                                    <!-- <img src="./src/assets/contentImages/chennaibnr1.png" alt="Media Kit" /> -->
+                                    <img src="../assets/imageevent/event5/exc2552.webp" alt="Media Kit" />
                                 </div>
                                 <div class="media-card-content">
                                     <div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)
@@ -1058,7 +1058,27 @@
             justify-content: center;
             perspective: 1000px;
         }
+/* Add to your <style> section */
+video[controls] {
+  width: 100%;
+  height: auto;
+}
 
+video::-webkit-media-controls {
+  opacity: 0.8;
+}
+
+video::-webkit-media-controls-panel {
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
+}
+
+/* Mobile responsive controls */
+@media (max-width: 768px) {
+  .video-caption h3,
+  .video-caption p {
+    display: none; /* Hide text on mobile when controls show */
+  }
+}
         .photo-stack-item {
             position: absolute;
             width: 520px;
@@ -1332,8 +1352,9 @@
       </div>
       
       <div class="video-container">
-        <video id="iemsVideo1" muted loop playsinline>
-          <source src="./IEMS_video1.mp4" type="video/mp4">
+        <!-- WITH CONTROLS ✓ -->
+<video id="iemsVideo1" autoplay muted loop playsinline controls>
+          <source src="../assets/imageevent/event4/IEMSshall.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="video-overlay">
@@ -1345,6 +1366,23 @@
       </div>
     </div>
   </section>
+  <script>
+// Force video play on load
+window.addEventListener('DOMContentLoaded', function() {
+  const video1 = document.getElementById('iemsVideo1');
+  const video2 = document.getElementById('iemsVideo2');
+  
+  if (video1) {
+    video1.muted = true;
+    video1.play().catch(err => console.log('Video 1 autoplay prevented:', err));
+  }
+  
+  if (video2) {
+    video2.muted = true;
+    video2.play().catch(err => console.log('Video 2 autoplay prevented:', err));
+  }
+});
+</script>
 
   <!-- Event Overview - Light -->
   <section class="full-width-section section-light">
@@ -1404,8 +1442,9 @@
       </div>
       
       <div class="video-container">
-        <video id="iemsVideo2" muted loop playsinline>
-          <source src="./IEMS_video2.mp4" type="video/mp4">
+      <!-- WITH CONTROLS ✓ -->
+<video id="iemsVideo2" autoplay muted loop playsinline preload="auto" webkit-playsinline controls>
+          <source src="../assets/imageevent/event4/IEMSstallopen.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="video-overlay">
@@ -1417,6 +1456,56 @@
       </div>
     </div>
   </section>
+  <script>
+  // Enhanced video autoplay handler
+  document.addEventListener('DOMContentLoaded', function() {
+    const video1 = document.getElementById('iemsVideo1');
+    const video2 = document.getElementById('iemsVideo2');
+    
+    function initVideo(video) {
+      if (video) {
+        video.muted = true;
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        
+        // Try to play
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log('Video playing successfully');
+            })
+            .catch(error => {
+              console.log('Autoplay prevented, trying user interaction:', error);
+              // Retry on user interaction
+              document.addEventListener('click', () => video.play(), { once: true });
+            });
+        }
+      }
+    }
+    
+    // Initialize both videos
+    initVideo(video1);
+    initVideo(video2);
+    
+    // Intersection Observer for autoplay when in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play();
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+    
+    if (video1) observer.observe(video1);
+    if (video2) observer.observe(video2);
+  });
+</script>
 
   <!-- Technology Leadership - Light -->
   <section class="full-width-section section-light">
