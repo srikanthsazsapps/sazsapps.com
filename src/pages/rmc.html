@@ -19,10 +19,27 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sazsapps.com/rmc">
     <link rel="icon" type="image/x-icon" href="../../src/assets/logo/logoblack.png">
-    <link rel="stylesheet" href="../../src/css/rmc.css">
-    <link rel="stylesheet" href="../../src/assets/css/all.min.css">
+    <!-- <link rel="stylesheet" href="../../src/css/rmc.css">
+    <link rel="stylesheet" href="../../src/assets/css/all.min.css"> -->
     <link rel="canonical" href="https://sazsapps.com/rmc">
-    <link href="../css/comman.css" rel="stylesheet" />
+    <!-- <link href="../css/comman.css" rel="stylesheet" /> -->
+
+
+    <link rel="preload" href="../css/comman.css" as="style" onload="this.rel='stylesheet'">
+<link rel="preload" href="../../src/css/rmc.css" as="style" onload="this.rel='stylesheet'">
+
+<!-- Font Awesome (deferred) -->
+<link rel="stylesheet"
+      href="../../src/assets/css/all.min.css"
+      media="print"
+      onload="this.media='all'">
+
+<noscript>
+  <link rel="stylesheet" href="../css/comman.css">
+  <link rel="stylesheet" href="../../src/css/rmc.css">
+  <link rel="stylesheet" href="../../src/assets/css/all.min.css">
+</noscript>
+
 
     <script src="../../src/js/jquery-3.7.1.slim.min.js" defer></script>
 </head>
@@ -34,11 +51,12 @@
             <div class="sazs-header-wrapper">
                 <div class="sazs-header-main">
                     <a href="/" class="sazs-brand">
-                        <div class="sazs-brand-image">
-                            <img src="../assets/contentImages/sazsLogo1.png" alt="SAZS ERP App Logo Home page"
-                                class="sazs-brand-image">
-                        </div>
-                    </a>
+                    <div class="sazs-brand-image">
+                        <img src="../assets/images/sazslogo.avif"
+                            alt="SAZS Apps - ERP Software for Quarry and Crusher Management" width="180" height="60"
+                            loading="eager" decoding="async" fetchpriority="high">
+                    </div>
+                </a>
 
                     <ul class="sazs-menu-list">
                         <li class="sazs-menu-item">
@@ -101,71 +119,23 @@
                         </div>
 
                         <!-- Right Side - Products Grid -->
-                        <div class="product-right">
-                            <div class="product-grid-title">Our Products</div>
-
-                            <div class="sazs-submenu-grid">
-
-                                <div class="sazs-submenu-col">
-                                    <a href="QuarryCrusher.html" class="sazs-product-card">
-                                        <div class="sazs-card-img-wrapper">
-                                            <img src="../assets/contentImages/crusherdroneview.webp"
-                                                alt="Stone Crusher Management Software" />
-                                        </div>
-                                        <div class="sazs-card-heading">Stone Crusher Software for End-to-End Operations
-                                        </div>
-                                        <div class="sazs-card-text">In the rugged environment of stone crushing,
-                                            efficiency
-                                            is
-                                            currency. Transform your quarry operations with intelligent automation.
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="sazs-submenu-col">
-                                    <a href="QuarryCrusher.html" class="sazs-product-card">
-                                        <div class="sazs-card-img-wrapper">
-                                            <img src="../assets/contentImages/quarrydroneview.webp"
-                                                alt="Brick Manufacturing ERP Software" />
-                                        </div>
-                                        <div class="sazs-card-heading">End-to-End Management Software for Stone
-                                            Quarries</div>
-                                        <div class="sazs-card-text">In the rugged environment of stone crushing,
-                                            efficiency
-                                            is
-                                            currency. Transform your quarry operations with intelligent automation.
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="sazs-submenu-col">
-                                    <a href="rmc.html" class="sazs-product-card">
-                                        <div class="sazs-card-img-wrapper">
-                                            <img src="../assets/contentImages/rmc.png"
-                                                alt="Brick Manufacturing ERP Software" />
-                                        </div>
-                                        <div class="sazs-card-heading">Next-Gen Billing Software for Ready Mix Concrete
-                                            (RMC) Plants</div>
-                                        <div class="sazs-card-text">The Future of Fast, Accurate & Automated RMC Billing
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="sazs-submenu-col">
-                                    <a href="brickspaver.html" class="sazs-product-card">
-                                        <div class="sazs-card-img-wrapper">
-                                            <img src="../assets/contentImages/bricksdrone.png"
-                                                alt="Brick Manufacturing ERP Software" />
-                                        </div>
-                                        <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver
-                                            Manufacturing
-                                            Plants</div>
-                                        <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every
-                                            Stage
-                                            of Your Production</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                <img src="../assets/images/xlogo.svg" alt="Twitter" class="d">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/facebook.svg" alt="Facebook" class="d">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                <img src="../assets/images/youtube.svg" alt="YouTube" class="d">
+            </a>
+            <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
+                <img src="../assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                rel="noopener">
+                <img src="../assets/contentImages/instagram.svg" alt="Instagram" class="d">
+            </a>
                     </div>
                 </div>
 
@@ -256,7 +226,7 @@
                         <div class="media-events-grid">
                             <a href="../pages/event1.html" class="media-event-card">
                                 <div class="media-card-image">
-                                    <img src="../assets/contentImages/Codisia22.webp" alt="Press Releases" />
+                                    <img src="../assets/images/Codisia22.avif" alt="Press Releases" />
                                 </div>
                                 <div class="media-card-content">
                                     <div class="media-card-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners
@@ -267,7 +237,7 @@
 
                             <a href="../pages/event2.html" class="media-event-card">
                                 <div class="media-card-image">
-                                    <img src="../assets/contentImages/Excon23.webp" alt="Upcoming Events" />
+                                    <img src="../assets/images/Excon23.avif" alt="Upcoming Events" />
                                 </div>
                                 <div class="media-card-content">
                                     <div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)
@@ -278,7 +248,7 @@
 
                             <a href="../pages/event3.html" class="media-event-card">
                                 <div class="media-card-image">
-                                    <img src="../assets/contentImages/TMSA24.webp" alt="Blog & Articles" />
+                                    <img src="../assets/images/TMSA24.avif" alt="Blog & Articles" />
                                 </div>
                                 <div class="media-card-content">
                                     <div class="media-card-title">Tamil Nadu Mines Safety Association – Chennai Zone
@@ -290,7 +260,7 @@
 
                             <a href="../pages/event4.html" class="media-event-card">
                                 <div class="media-card-image">
-                                    <img src="../assets/contentImages/IEMS24.webp" alt="Customer Stories" />
+                                    <img src="../assets/images/IEMS24.avif" alt="Customer Stories" />
                                 </div>
                                 <div class="media-card-content">
                                     <div class="media-card-title">IEMS – International Mining Expo & Conclave 2024
@@ -301,7 +271,7 @@
 
                             <a href="../pages/event5.html" class="media-event-card">
                                 <div class="media-card-image">
-                                    <img src="../assets/contentImages/Excon25.webp" alt="Media Kit" />
+                                    <img src="../assets/images/Excon25.avif" alt="Media Kit" />
                                 </div>
                                 <div class="media-card-content">
                                     <div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)
@@ -525,8 +495,7 @@
         </script>
 
 
-   
-    <!-- Hero Section -->
+   <main>    <!-- Hero Section -->
     <section class="hero-main-section">
         <div class="hero-main-container">
             <div class="hero-main-content">
@@ -712,37 +681,37 @@
         <div class="stack-layers">
             <div class="tile t1">
                 <div class="tile-content">
-                    <span class="tile-num">01</span>
+                    <div class="tile-num">01</div>
                     <p>Prevent asset pilferage and mismanagement of material stocks.</p>
                 </div>
             </div>
             <div class="tile t2">
                 <div class="tile-content">
-                    <span class="tile-num">02</span>
+                    <div class="tile-num">02</div>
                     <p>Real-time monitoring of all crusher and quarry transactions.</p>
                 </div>
             </div>
             <div class="tile t3">
                 <div class="tile-content">
-                    <span class="tile-num">03</span>
+                    <div class="tile-num">03</div>
                     <p>Daily, weekly, and monthly financial analysis of income/expenditure.</p>
                 </div>
             </div>
             <div class="tile t4">
                 <div class="tile-content">
-                    <span class="tile-num">04</span>
+                    <div class="tile-num">04</div>
                     <p>360° comprehensive view of all financial statements.</p>
                 </div>
             </div>
             <div class="tile t5">
                 <div class="tile-content">
-                    <span class="tile-num">05</span>
+                    <div class="tile-num">05</div>
                     <p>Proactive maintenance of vehicles to extend machinery lifetime.</p>
                 </div>
             </div>
             <div class="tile t6">
                 <div class="tile-content">
-                    <span class="tile-num">06</span>
+                    <div class="tile-num">06</div>
                     <p>Track employee performance and automate accurate payroll.</p>
                 </div>
             </div>
@@ -1303,6 +1272,7 @@
                 </div>
 
 
+</main>
 
     <!-- CTA Footer -->
     <footer class="footer-container fade-in">
@@ -1316,14 +1286,14 @@
     <footer class="a">
         <div class="b">
             <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
-                <img src="../../src/assets/contentImages/twitter_5968830.png" alt="Twitter" class="d">
+                <img src="../assets/images/xlogo.svg" alt="Twitter" class="d">
             </a>
             <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
                 rel="noopener">
                 <img src="../../src/assets/contentImages/facebook.svg" alt="Follow SAZS Apps on Facebook for RMC software updates" class="d">
             </a>
             <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
-                <img src="../../src/assets/contentImages/youtube_1384060.png" alt="YouTube" class="d">
+                <img src="../assets/images/youtube.svg" alt="YouTube" class="d">
             </a>
             <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
                 <img src="../../src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
@@ -1351,9 +1321,9 @@
     </footer>
 
     <footer class="footerbottom">
-        <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+        <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
             May I help you?
-        </a>
+        </a> -->
         <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
         <button class="scroll-top" aria-label="Scroll to top">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

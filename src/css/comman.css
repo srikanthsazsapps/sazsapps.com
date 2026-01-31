@@ -1,6 +1,6 @@
 /* ------------------headnavfull -------------------------*/
        
- * {
+ /* * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -10,7 +10,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             background-color: rgb(255, 255, 255);
             color: #333;
-        }
+        } */
 
         .sazs-header {
             background: rgb(255, 255, 255) !important;
@@ -755,8 +755,8 @@
             }
 
             .sazs-brand-image {
-                width: 87px;
-                height: 40px;
+                width: 120px;
+                height: 50px;
             }
 
             .sazs-hamburger {

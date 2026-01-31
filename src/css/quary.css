@@ -26,7 +26,25 @@ p {
     color: #212529 !important;
 }
 
+/* Update this in your style section */
+:root {
+    /* Use a slightly darker blue for better contrast against white */
+    --blue-accessible: #1a5fb4; 
+}
 
+.tile-num {
+    background: var(--blue-accessible); /* Background must be dark enough */
+    color: #ffffff; /* Text must be pure white */
+    font-weight: 700;
+}
+
+.tile-content {
+    border-left: 5px solid var(--blue-accessible);
+}
+
+.highlight-text {
+    color: var(--blue-accessible);
+}
 /* ============================================
    ENHANCED HERO SECTION
 ============================================ */
@@ -40,7 +58,7 @@ p {
     padding-top: 90px;
     background:
         linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%),
-        url("/src/assets/contentImages/quarrydrone1.png") center/cover no-repeat;
+        url("/src/assets/images/quarrybricksrmc.avif") center/cover no-repeat;
 }
 
 .hero-main-container {
