@@ -22,9 +22,6 @@
     <link rel="stylesheet" href="../../src/css/quary.css">
     <link rel="stylesheet" href="../../src/assets/css/all.min.css">
     <link href="../css/comman.css" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/css/all.min.css">
-    <script src="../../src/js/jquery-3.7.1.slim.min.js" defer></script>
-    <script src="../../src/js/bootstrap.bundle.min.js" defer></script>
 </head>
 
 <body>
@@ -2085,7 +2082,7 @@ flex:1;
                             validation for businesses.</p>
                     </div>
                     <div class="card4 ">
-                        <img src="../assets/contentImages/" alt="Data Icon">
+                        <img src="../assets/contentImages/weighbridgeicon.png" alt="Data Icon">
                         <h5>Weighbridge and Camera
                             Integration</h5>
                         <p>Weighbridge and Camera Integration combines vehicle weighing with visual monitoring for
@@ -2174,9 +2171,9 @@ flex:1;
     </footer>
 
     <footer class="footerbottom">
-        <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+         <!--  <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
             May I help you?
-        </a>
+        </a> --> -->
         <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
         <button class="scroll-top" aria-label="Scroll to top">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2186,54 +2183,8 @@ flex:1;
     </footer>
 
     <script>
-        // Toggle mobile products dropdown
-        function toggleMobileDropdown() {
-            const dropdown = document.getElementById('mobileProductsDropdown');
-            const trigger = document.querySelector('.mobile-dropdown-trigger');
 
-            dropdown.classList.toggle('active');
-            trigger.classList.toggle('active');
-        }
-
-        // Close mobile dropdown when clicking outside
-        document.addEventListener('click', function (event) {
-            const mobileDropdown = document.querySelector('.mobile-dropdown');
-            if (mobileDropdown && !mobileDropdown.contains(event.target)) {
-                const dropdown = document.getElementById('mobileProductsDropdown');
-                const trigger = document.querySelector('.mobile-dropdown-trigger');
-                if (dropdown && trigger) {
-                    dropdown.classList.remove('active');
-                    trigger.classList.remove('active');
-                }
-            }
-        });
-
-        // Navigation functions
-        function toggleNav() {
-            const sidenav = document.getElementById("mySidenav");
-            const isOpen = sidenav.style.width === "250px";
-
-            if (isOpen) {
-                sidenav.style.width = "0";
-                document.removeEventListener("click", closeNavOnClickOutside);
-            } else {
-                sidenav.style.width = "250px";
-                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
-            }
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.removeEventListener("click", closeNavOnClickOutside);
-        }
-
-        function closeNavOnClickOutside(event) {
-            const sidenav = document.getElementById("mySidenav");
-            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
-                sidenav.style.width = "0";
-                document.removeEventListener("click", closeNavOnClickOutside);
-            }
-        }
+    
 
         // Highlight active page
         function highlightActivePage() {

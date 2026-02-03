@@ -417,6 +417,16 @@ p {
     color: #1f253d;
     letter-spacing: -0.5px;
 }
+@media (max-width: 576px) {
+   .feature-card h5 {
+    font-size: 1rem;
+    
+}
+
+.feature-card p {
+    font-size: 14px !important;
+}
+}
 
 .feature-card p {
     font-size: 1.05rem;
