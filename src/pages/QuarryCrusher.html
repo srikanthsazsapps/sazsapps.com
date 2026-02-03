@@ -1209,7 +1209,858 @@
     }
 }
                 </style>
+                <section>
+
+    <style>
+        /* Feature Grid Section Styles */
+.sazs-feature-grid {
+    display:grid;
+    grid-template-columns:minmax(0, 1fr);
+    gap:3rem;
+    margin-top:2rem;
+    padding: 10px 1%;
+}
+.sazs-feature-card {
+    background:#ffffff;
+    border-radius:1.5rem;
+    padding:3rem;
+    overflow:hidden;
+    transition:all .4s ease;
+    display:flex;
+    gap:3rem;
+    align-items:center;
+    justify-content:space-between;
+}
+.sazs-feature-card:nth-child(even) {
+    flex-direction:row-reverse;
+}
+.sazs-feature-card:hover {
+    transform:translateY(-6px);
+    box-shadow:0 12px 40px rgba(59, 130, 246, 0.15);
+    border-color:#3b82f6;
+}
+.sazs-feature-image {
+    width:380px;
+    min-width:580px;
+    height:280px;
+    object-fit:cover;
+    border-radius:1rem;
+    transition:transform .4s ease;
+    box-shadow:0 8px 24px rgba(0, 0, 0, 0.1);
+    border:3px solid #f8f9fa;
+}
+.sazs-feature-card:hover .sazs-feature-image {
+    transform:scale(1.03) rotate(1deg);
+    box-shadow:0 12px 32px rgba(59, 130, 246, 0.2);
+}
+.sazs-feature-content {
+    flex:1;
+    display:flex;
+    flex-direction:column ;
+    justify-content:center;
+}
+.sazs-feature-tag {
+    display:inline-block;
+    font-size:.7rem;
+    color:#ffffff;
+    background:linear-gradient(135deg, #3b82f6, #2563eb);
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    margin-bottom:.8rem;
+    font-weight:700;
+    padding:.4rem .9rem;
+    border-radius:999px;
+    box-shadow:0 4px 12px rgba(59, 130, 246, 0.3);
+    width:fit-content;
+}
+.sazs-feature-card h3 {
+    font-size:1.65rem;
+    margin-bottom:.9rem;
+    font-weight:800;
+    line-height:1.25;
+    color:#000000;
+    letter-spacing:-.02em;
+}
+.sazs-feature-card p {
+    font-size:1.05rem;
+    color:#4b5563;
+    margin-bottom:1.2rem;
+    line-height:1.8;
+    font-weight:400;
+}
+.sazs-feature-card ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    font-size:.95rem;
+    color:#4b5563;
+    line-height:1.8;
+}
+.sazs-feature-card li {
+    margin-bottom:.7rem;
+    font-weight:400;
+    padding-left:1.5rem;
+    position:relative;
+}
+.sazs-feature-card li::before {
+    content:"✓";
+    color:#3b82f6;
+    position:absolute;
+    left:0;
+    font-weight:bold;
+    font-size:1rem;
+    background:#dbeafe;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:.75rem;
+}
+.sazs-feature-card li strong {
+    color:#000000;
+    font-weight:700;
+}
+
+/* Why Choose Section - White & Black Theme */
+.sazs-why-choose-section {
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.sazs-why-choose-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Floating Background Shapes */
+.sazs-floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sazs-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.03;
+  animation: sazs-float-random 20s ease-in-out infinite;
+}
+
+.sazs-shape-1 {
+  width: 300px;
+  height: 300px;
+  background: #000000;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.sazs-shape-2 {
+  width: 200px;
+  height: 200px;
+  background: #000000;
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.sazs-shape-3 {
+  width: 250px;
+  height: 250px;
+  background: #000000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 6s;
+}
+
+@keyframes sazs-float-random {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(20px, 30px) scale(1.05);
+  }
+}
+
+/* Main Content - Centered */
+.sazs-why-choose-main {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Badge */
+.sazs-content-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: transparent;
+  border: 2px solid #000000;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: sazs-pulse-badge 3s ease-in-out infinite;
+}
+
+.sazs-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #000000;
+  border-radius: 50%;
+  animation: sazs-pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes sazs-pulse-badge {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes sazs-pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+}
+
+/* Mega Heading */
+.sazs-mega-heading {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #000000;
+  margin: 0 0 50px 0;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  animation: sazs-slideInDown 1s ease-out;
+}
+
+@keyframes sazs-slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Description Box */
+.sazs-description-box {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 40px 50px;
+  background: #f8f9fa;
+  border-radius: 24px;
+  border: 3px solid #e5e7eb;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  animation: sazs-slideInUp 1s ease-out 0.2s backwards;
+}
+
+.sazs-description-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #000000, #4b5563, #000000);
+  background-size: 200% 100%;
+  animation: sazs-gradient-slide 3s linear infinite;
+}
+
+@keyframes sazs-gradient-slide {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes sazs-slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sazs-mega-description {
+  font-size: 2rem;
+  color: #1f2937;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 400;
+}
+
+.sazs-highlight-text {
+  color: #000000;
+  font-weight: 700;
+  position: relative;
+  padding: 0 4px;
+  transition: all 0.3s ease;
+}
+
+.sazs-highlight-text:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Security Features Section */
+.sazs-features-section {
+padding:5rem 2rem;
+}
+
+.sazs-features-header {
+text-align:center;
+max-width:900px;
+margin:0 auto 4rem;
+}
+
+.sazs-section-heading {
+    font-size:2rem;
+    margin-bottom:.75rem;
+    font-weight:800;
+    color:#000000;
+    text-align:center;
+    letter-spacing:-.03em;
+}
+
+.sazs-section-sub {
+    font-size:1.05rem;
+    color:#4b5563;
+    max-width:45rem;
+    margin:0 auto 2rem;
+    text-align:center;
+    line-height:1.7;
+    font-weight:400;
+}
+
+.sazs-modern-features-grid {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:2.5rem;
+max-width:1400px;
+margin:0 auto;
+}
+
+.sazs-modern-feature-card {
+background:#ffffff;
+border-radius:1.5rem;
+overflow:hidden;
+transition:all .4s ease;
+border:2px solid #e5e7eb;
+}
+
+.sazs-modern-feature-card:hover {
+transform:translateY(-10px);
+box-shadow:0 20px 50px rgba(59,130,246,0.15);
+border-color:#3b82f6;
+}
+
+.sazs-feature-image-wrapper {
+position:relative;
+width:100%;
+height:250px;
+overflow:hidden;
+}
+
+.sazs-feature-image-wrapper img {
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform .4s ease;
+}
+
+.sazs-modern-feature-card:hover .sazs-feature-image-wrapper img {
+transform:scale(1.1);
+}
+
+.sazs-feature-badge {
+position:absolute;
+top:1.5rem;
+left:1.5rem;
+padding:.6rem 1.5rem;
+border-radius:999px;
+font-size:.85rem;
+font-weight:700;
+text-transform:uppercase;
+letter-spacing:.05em;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+.sazs-weighbridge-badge {
+background:linear-gradient(135deg,#3b82f6,#2563eb);
+color:#ffffff;
+}
+
+.sazs-barrier-badge {
+background:linear-gradient(135deg,#10b981,#059669);
+color:#ffffff;
+}
+
+.sazs-theft-badge {
+background:linear-gradient(135deg,#ef4444,#dc2626);
+color:#ffffff;
+}
+
+.sazs-feature-body {
+padding:2rem 2.5rem 2.5rem;
+}
+
+.sazs-feature-body h3 {
+font-size:1.5rem;
+font-weight:800;
+color:#000000;
+margin:0 0 1rem;
+line-height:1.3;
+}
+
+.sazs-feature-body p {
+color:#4b5563;
+font-size:.95rem;
+line-height:1.7;
+margin:0 0 1.5rem;
+}
+
+.sazs-feature-points {
+display:flex;
+flex-direction:column;
+gap:.85rem;
+}
+
+.sazs-feature-point {
+display:flex;
+align-items:flex-start;
+gap:.75rem;
+}
+
+.sazs-point-icon {
+flex-shrink:0;
+width:24px;
+height:24px;
+background:#3b82f6;
+color:#ffffff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:.85rem;
+font-weight:bold;
+}
+
+.sazs-feature-point span:last-child {
+color:#4b5563;
+font-size:.9rem;
+line-height:1.6;
+flex:1;
+}
+
+/* Responsive Design */
+@media (max-width:1024px) and (min-width:768px) {
+    .sazs-feature-card {
+        padding:2rem;
+    }
+    .sazs-feature-image {
+        width:320px;
+        height:240px;
+    }
+    .sazs-feature-content h3 {
+        font-size:1.4rem;
+    }
+    .sazs-modern-features-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap:2rem;
+    }
+    .sazs-feature-image-wrapper {
+        height:220px;
+    }
+    .sazs-feature-badge {
+        padding:.5rem 1.2rem;
+        font-size:.8rem;
+    }
+    .sazs-feature-body {
+        padding:1.75rem 2rem 2rem;
+    }
+    .sazs-feature-body h3 {
+        font-size:1.3rem;
+    }
+    .sazs-section-heading {
+        font-size:2rem;
+    }
+}
+
+@media (max-width:767px) {
+    .sazs-modern-features-grid {
+        grid-template-columns:1fr;
+        gap:1.5rem;
+    }
+    .sazs-feature-image-wrapper {
+        height:200px;
+    }
+    .sazs-feature-badge {
+        top:1rem;
+        left:1rem;
+        padding:.4rem 1rem;
+        font-size:.75rem;
+    }
+    .sazs-feature-body {
+        padding:1.5rem;
+    }
+    .sazs-feature-body h3 {
+        font-size:1.2rem;
+    }
+    .sazs-feature-body p {
+        font-size:.85rem;
+    }
+    .sazs-feature-point {
+        gap:.6rem;
+    }
+    .sazs-point-icon {
+        width:20px;
+        height:20px;
+        font-size:.75rem;
+    }
+    .sazs-feature-point span:last-child {
+        font-size:.85rem;
+    }
+    .sazs-feature-card,
+    .sazs-feature-card:nth-child(even) {
+        flex-direction:column;
+        padding:1.5rem;
+        text-align:center;
+    }
+    .sazs-feature-image {
+        width:100%;
+        min-width:100%;
+        height:200px;
+    }
+    .sazs-feature-content {
+        text-align:center;
+    }
+    .sazs-feature-tag {
+        margin:0 auto 0.8rem;
+    }
+    .sazs-section-heading {
+        font-size:1.5rem;
+        line-height:1.3;
+    }
+    .sazs-section-sub {
+        font-size:.9rem;
+        line-height:1.6;
+    }
+}
+
+@media (max-width: 1200px) {
+  .sazs-mega-heading {
+    font-size: 4.5rem;
+  }
+
+  .sazs-mega-description {
+    font-size: 1.8rem;
+  }
+
+  .sazs-description-box {
+    padding: 35px 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .sazs-why-choose-section {
+    padding: 5rem 2rem;
+  }
+
+  .sazs-mega-heading {
+    font-size: 3.5rem;
+  }
+
+  .sazs-mega-description {
+    font-size: 1.5rem;
+  }
+
+  .sazs-description-box {
+    padding: 30px 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sazs-why-choose-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .sazs-content-badge {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+  }
+
+  .sazs-mega-heading {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+  }
+
+  .sazs-description-box {
+    padding: 25px 30px;
+  }
+
+  .sazs-mega-description {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .sazs-why-choose-section {
+    padding: 3rem 1rem;
+  }
+
+  .sazs-mega-heading {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+
+  .sazs-description-box {
+    padding: 20px 24px;
+    border-radius: 16px;
+  }
+
+  .sazs-mega-description {
+    font-size: 1.15rem;
+  }
+}
+    </style>
+     <!-- KEY BENEFITS SECTION -->
+      <section id="benefits">
+        <!-- <h2 class="sazs-section-heading">Why Choose SAZS Apps ERP?</h2>
+        <p class="sazs-section-sub">
+          In the Crusher, Quarry, Readymix (RMC), and Brick Plant industries, profitability depends on tight security and operational speed. SAZS Apps ERP provides a "Hard-Wired" security and management ecosystem.
+        </p> -->
+
+        <div class="sazs-feature-grid">
+          <!-- <div class="sazs-feature-card">
+            <img src="../assets/contentImages/whyimg1.webp" alt="Security barrier control system" class="sazs-feature-image" />
+            <div class="sazs-feature-content">
+              <div class="sazs-feature-tag">🛡️ Security</div>
+              <h3>Unlocked Security: Boom Barrier &amp; Weighment Integration</h3>
+              <p>
+                We don't just record data; we control the physical movement of your stock.
+              </p>
+              <ul>
+                <li><strong>Automated Weighment:</strong> Direct connection to weighbridge load cells eliminates manual entry errors</li>
+                <li><strong>Boom Barrier Integration:</strong> ERP acts as digital gateman - barrier opens only with valid weighment, invoice, and credit</li>
+                <li><strong>Result:</strong> 100% "closed-loop" system where material cannot leave unaccounted</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sazs-feature-card">
+            <img src="../assets/contentImages/whyimg2.webp" alt="Industrial inventory management" class="sazs-feature-image" />
+            <div class="sazs-feature-content">
+              <div class="sazs-feature-tag">📦 Inventory</div>
+              <h3>Effective Inventory &amp; Stock Control</h3>
+              <p>
+                Stop the guesswork in your stockyard. Track every unit of aggregates, cement, or finished bricks.
+              </p>
+              <ul>
+                <li><strong>Real-Time Stockpiles:</strong> Automatic deduction during RMC batching or brick production</li>
+                <li><strong>Live Reconciliation:</strong> Compare physical stock with digital records instantly</li>
+                <li><strong>Result:</strong> Accurate inventory prevents over-ordering or stock-outs</li>
+              </ul>
+            </div>
+          </div> -->
+
+          <div class="sazs-feature-card">
+            <img src="../assets/contentImages/whyi3.webp" alt="Sales dashboard analytics" class="sazs-feature-image" />
+            <div class="sazs-feature-content">
+              <div class="sazs-feature-tag">🚀 Sales</div>
+              <h3>High-Speed Sales &amp; Customer Management</h3>
+              <p>
+                Professionalize the way you sell. Our ERP moves as fast as your trucks do.
+              </p>
+              <ul>
+                <li><strong>Instant Quotation to Invoice:</strong> Convert orders to GST invoices in under 60 seconds</li>
+                <li><strong>Smart Credit Control:</strong> Auto-block billing for overdue payments or exhausted limits</li>
+                <li><strong>Result:</strong> Improved cash flow and 40% boost in customer trust</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sazs-feature-card">
+            <img src="../assets/contentImages/whyimg4.webp" alt="Financial accounting dashboard" class="sazs-feature-image" />
+            <div class="sazs-feature-content">
+              <div class="sazs-feature-tag">📈 Accounts</div>
+              <h3>Integrated Accounts &amp; Financial Intelligence</h3>
+              <p>
+                Eliminate the gap between your site operations and your balance sheet.
+              </p>
+              <ul>
+                <li><strong>Auto-Accounting:</strong> Every sale, purchase, and expense auto-posted to ledgers</li>
+                <li><strong>Site-Wise P&amp;L:</strong> Real-time profit/loss reports for Quarry, RMC, or Brick Unit</li>
+                <li><strong>Result:</strong> Total financial transparency and 90% reduction in accounting errors</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- <div class="sazs-feature-card">
+            <img src="../assets/contentImages/whyimg5.webp" alt="Crusher and quarry operations" class="sazs-feature-image" />
+            <div class="sazs-feature-content">
+              <div class="sazs-feature-tag">Industry Specific</div>
+              <h3>Tailored for Crusher &amp; Quarry</h3>
+              <p>
+                Built specifically for your industry's unique challenges.
+              </p>
+              <ul>
+                <li>Boom Barrier control for high-volume truck traffic</li>
+                <li>Automated Weighment to stop material theft</li>
+                <li>Production tracking by size and quality</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sazs-feature-card">
+            <img src="../assets/contentImages/whyimg6.webp" alt="RMC and brick plant automation" class="sazs-feature-image" />
+            <div class="sazs-feature-content">
+              <div class="sazs-feature-tag">Complete Solution</div>
+              <h3>RMC &amp; Brick Plant Ready</h3>
+              <p>
+                Handle the complexities of concrete batching and brick production.
+              </p>
+              <ul>
+                <li>Raw material tracking vs Output reconciliation</li>
+                <li>Transit Mixer trip and time-slot management</li>
+                <li>Piece-rate payroll and kiln production tracking</li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+      </section>
+
+      <!-- SECURITY SECTION -->
+      <section id="security" class="sazs-features-section">
+        <div class="sazs-features-header">
+          <h2 class="sazs-section-heading">Hard-Wired Security at Gate & Weighbridge</h2>
+          <p class="sazs-section-sub">
+            Generic accounting tools only record what staff type. SAZS Apps ERP controls the physical gate, talks to your weighbridge, and enforces credit limits in real time.
+          </p>
+        </div>
+
+        <div class="sazs-modern-features-grid">
+          <div class="sazs-modern-feature-card">
+            <div class="sazs-feature-image-wrapper">
+              <img src="../assets/contentImages/head1.webp" alt="Weighbridge system" />
+              <div class="sazs-feature-badge sazs-weighbridge-badge">Weighbridge</div>
+            </div>
+            <div class="sazs-feature-body">
+              <h3>Direct Load Cell Integration</h3>
+              <p>Capture gross, tare, and net weight automatically from the weighbridge – no manual typing, no "adjustments".</p>
+              <div class="sazs-feature-points">
+                <div class="sazs-feature-point">
+                  <span class="sazs-point-icon">✓</span>
+                  <span>Auto-read from indicator / load cells</span>
+                </div>
+                <div class="sazs-feature-point">
+                  <span class="sazs-point-icon">✓</span>
+                  <span>Single source of truth for tonnage</span>
+                </div>
+                <div class="sazs-feature-point">
+                  <span class="sazs-point-icon">✓</span>
+                  <span>Blocks invoices without valid weight</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sazs-modern-feature-card">
+            <div class="sazs-feature-image-wrapper">
+              <img src="../assets/contentImages/head2.webp" alt="Boom barrier gate control" />
+              <div class="sazs-feature-badge sazs-barrier-badge">Boom Barrier</div>
+            </div>
+            <div class="sazs-feature-body">
+              <h3>"No Slip, No Exit" Control</h3>
+              <p>The boom barrier opens only when the ERP confirms weighment, invoice, and credit checks – closing your gate leak.</p>
+              <div class="sazs-feature-points">
+                <div class="sazs-feature-point">
+                  <span class="sazs-point-icon">✓</span>
+                  <span>Linked with weighment & billing</span>
+                </div>
+                <div class="sazs-feature-point">
+                  <span class="sazs-point-icon">✓</span>
+                  <span>Stops under-billing & over-loading</span>
+                </div>
+                <div class="sazs-feature-point">
+                  <span class="sazs-point-icon">✓</span>
+                  <span>Digital gate log for every trip</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sazs-modern-feature-card">
+            <div class="sazs-feature-image-wrapper">
+              <img src="../assets/contentImages/head3.webp" alt="Security monitoring system" />
+              <div class="sazs-feature-badge sazs-theft-badge">Theft Control</div>
+            </div>
+            <div class="sazs-feature-body">
+              <h3>Material Theft & Leakage Control</h3>
+              <p>Real-time tracking and cross-checks between stock, weighbridge, and dispatch reduce theft by design, not by suspicion.</p>
+              <div class="sazs-feature-points">
+                <div class="sazs-feature-point">
+                  <span class="sazs-point-icon">✓</span>
+                  <span>Instant alerts for mismatch</span>
+                </div>
+                <div class="sazs-feature-point">
+                  <span class="sazs-point-icon">✓</span>
+                  <span>Driver / truck history per site</span>
+                </div>
+                <div class="sazs-feature-point">
+                  <span class="sazs-point-icon">✓</span>
+                  <span>Audit-ready trip records</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+                    <h1 class="stack-title">Unique <span class="highlight-text">features</span></h1>
+
   <div class="cards-container">
+    
                     <div class="card1 ">
                         <img src="../assets/contentImages/camera icon.png" alt=" Data Icon">
                         <path fill="currentColor"
@@ -1234,7 +2085,7 @@
                             validation for businesses.</p>
                     </div>
                     <div class="card4 ">
-                        <img src="../assets/contentImages/weighbridge icon.png" alt="Data Icon">
+                        <img src="../assets/contentImages/" alt="Data Icon">
                         <h5>Weighbridge and Camera
                             Integration</h5>
                         <p>Weighbridge and Camera Integration combines vehicle weighing with visual monitoring for
