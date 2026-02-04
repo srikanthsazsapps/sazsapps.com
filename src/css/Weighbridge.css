@@ -15,118 +15,7 @@
             overflow-x: hidden;
         }
 
-        /* ============================================
-           NAVIGATION (Matching Main Website)
-        ============================================ */
-        .sazs-header {
-            background: rgb(255, 255, 255);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .sazs-header-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 15px 20px;
-        }
-
-        .sazs-header-main {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .sazs-brand {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .sazs-brand-image {
-            width: 150px;
-            height: 70px;
-            object-fit: contain;
-        }
-
-        .sazs-menu-list {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .sazs-menu-link {
-            color: rgba(0, 0, 0, 0.8);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            transition: color 0.3s;
-        }
-
-        .sazs-menu-link:hover {
-            color: #3E89EC;
-        }
-
-        .sazs-cta-group {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .sazs-button {
-            padding: 0.65rem 1.5rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .sazs-button-outline {
-            background: transparent;
-            color: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.2);
-        }
-
-        .sazs-button-outline:hover {
-            background: #3E89EC;
-            color: white;
-            border-color: #3E89EC;
-        }
-
-        .sazs-button-primary {
-            background: #3E89EC;
-            color: white;
-        }
-
-        .sazs-button-primary:hover {
-            background: #2C6FCE;
-            transform: translateY(-2px);
-        }
-
-        /* Mobile Menu */
-        .sazs-hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .sazs-hamburger span {
-            width: 24px;
-            height: 2px;
-            background: #000000;
-            transition: all 0.3s;
-        }
+    
 
         /* ============================================
            HERO SECTION
@@ -851,7 +740,7 @@
     position: relative;
     min-height: 80vh;
     display: flex;
-    margin-top: 90px;
+    padding-top: 90px;
     align-items: center;
     justify-content: center;
     overflow: hidden;

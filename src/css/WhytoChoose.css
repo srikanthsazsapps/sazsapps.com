@@ -1101,12 +1101,7 @@ flex:1;
     font-size:1.1rem;
     flex-shrink:0;
 }
-footer {
-    font-size:.75rem;
-    color:#6b7280;
-    padding:2rem 0 1rem;
-    text-align:center;
-}
+
 @media (max-width:1024px) and (min-width:768px) {
     .page {
         padding:1.5rem;
