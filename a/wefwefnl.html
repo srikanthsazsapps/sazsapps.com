@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Features Dashboard - Construction Industry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0a;
+      color: white;
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* Navigation Styles */
+    .sazs-header {
+      background: rgb(255, 255, 255) !important;
+      position: fixed !important;
+      left: 0 !important;
+      right: 0 !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+      transition: transform 0.3s ease-in-out !important;
+    }
+
+    .sazs-header-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 5px 0px;
+    }
+
+    .sazs-header-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sazs-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .sazs-brand-image {
+      width: 150px;
+      height: 70px;
+      margin-top: 10px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      z-index: 1001 !important;
+      justify-content: center;
+    }
+
+    .sazs-menu-list {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+      padding-left: 70px;
+    }
+
+    .sazs-menu-item {
+      position: relative;
+    }
+
+    .sazs-menu-link {
+      color: rgba(0, 0, 0, 0.8);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500 !important;
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .sazs-menu-link:hover {
+      color: #000000;
+    }
+
+    .sazs-menu-link.active {
+      color: #000000;
+    }
+
+    .sazs-arrow-svg {
+      width: 12px;
+      height: 12px;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sazs-menu-item.active .sazs-arrow-svg {
+      transform: rotate(45deg);
+    }
+
+    .sazs-submenu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition: 
+        max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0s linear 0.5s;
+      padding: 0 2rem;
+      transform: translateY(-10px);
+      background: rgb(255, 255, 255);
+    }
+
+    .sazs-submenu.active {
+      max-height: 1000px;
+      opacity: 1;
+      visibility: visible;
+      padding: 2rem;
+      transform: translateY(0);
+      transition: 
+        max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0s linear 0s,
+        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+      }
+      50% {
+        box-shadow: 0 12px 32px rgba(102,255,153,0.3), 0 0 20px rgba(102,255,153,0.2);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .bento-container {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      position: relative;
+      border-radius: 28px;
+      padding: 32px 28px;
+      overflow: hidden;
+      min-height: 260px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.6s ease-out backwards;
+    }
+
+    /* Staggered animation delays */
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+    .card:nth-child(6) { animation-delay: 0.6s; }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s;
+      z-index: 2;
+    }
+
+    .card:hover::before {
+      left: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+    }
+
+    .card h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      animation: slideInLeft 0.8s ease-out backwards;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      opacity: 0.82;
+      animation: slideInLeft 0.8s ease-out 0.1s backwards;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Card backgrounds with images */
+    .anpr      { 
+      grid-column: span 2; 
+      background: linear-gradient(135deg, rgba(255,98,0,0.9), rgba(255,160,64,0.9)),
+                  url('https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800&h=600&fit=crop') center/cover;
+    }
+    .einvoice  { 
+      grid-column: span 2; 
+      background: linear-gradient(135deg, rgba(178,107,255,0.9), rgba(215,158,255,0.9)),
+                  url('https://images.unsplash.com/photo-1554224311-beee4914e67c?w=800&h=600&fit=crop') center/cover;
+    }
+    .weighbridge { 
+      grid-column: span 2; 
+      background: linear-gradient(135deg, rgba(0,77,64,0.9), rgba(0,121,107,0.9)),
+                  url('https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&h=600&fit=crop') center/cover;
+    }
+    .boom      { 
+      grid-column: span 2; 
+      background: linear-gradient(135deg, rgba(34,0,102,0.9), rgba(63,26,153,0.9)),
+                  url('https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=800&h=600&fit=crop') center/cover;
+    }
+    .biometrics { 
+      grid-column: span 2; 
+      background: linear-gradient(135deg, rgba(74,0,114,0.9), rgba(106,27,154,0.9)),
+                  url('https://images.unsplash.com/photo-1633265486064-086b219458ec?w=800&h=600&fit=crop') center/cover;
+    }
+    .smarttech  { 
+      grid-column: span 2; 
+      background: linear-gradient(135deg, rgba(195,255,59,0.9), rgba(234,255,125,0.9)),
+                  url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop') center/cover;
+      color: #0f2200; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .shine-effect {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      animation: float 3s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .shine-effect:hover {
+      transform: scale(1.06) translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+      animation: none;
+    }
+
+    .mini-text strong {
+      display: block;
+      font-size: 1.45rem;
+      font-weight: 700;
+      transition: all 0.4s ease;
+    }
+
+    .mini-text span {
+      font-size: 0.95rem;
+      opacity: 0.75;
+      transition: all 0.4s ease;
+    }
+
+    .content-wrapper {
+      position: relative;
+    }
+
+    .content-item {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .feature-container {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+      z-index: 1;
+    }
+
+    .feature-pill {
+      background: rgba(255,255,255,0.95);
+      color: #111;
+      padding: 12px 18px;
+      border-radius: 16px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.3s ease;
+      animation: slideInRight 0.6s ease-out backwards;
+    }
+
+    .feature-pill:first-child {
+      animation-delay: 0.5s;
+    }
+
+    .feature-pill:last-child {
+      animation-delay: 0.7s;
+    }
+
+    .feature-pill:hover {
+      transform: translateX(-5px);
+    }
+
+    .status-panel {
+      width: 150px;
+      padding: 18px 20px;
+      background: rgba(20,20,30,0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+    }
+
+    .status-panel strong {
+      font-size: 0.7rem;
+      display: block;
+      transition: all 0.4s ease;
+    }
+
+    .status-panel span {
+      font-size: 0.65rem;
+      opacity: 0.8;
+      transition: all 0.4s ease;
+    }
+
+    .status-panel hr {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      margin: 14px 0;
+    }
+
+    .info-box {
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+      padding: 18px 22px;
+      border-radius: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.15rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .info-box:hover {
+      transform: scale(1.02);
+    }
+
+    .status-badge {
+      background: #66ff99;
+      color: #0d2e00;
+      padding: 10px 16px;
+      border-radius: 16px;
+      font-weight: 800;
+      font-size: 1.4rem;
+      animation: glow 2s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .status-badge:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 1100px) {
+      .bento-container { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .bento-container { grid-template-columns: 1fr; }
+      .card { min-height: 260px; padding: 28px 20px; }
+      .shine-effect { right: 20px; bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="sazs-header">
+  <div class="sazs-header-wrapper">
+    <div class="sazs-header-main">
+      <a href="/" class="sazs-brand">
+        <div class="sazs-brand-image">
+          <img src="./src/assets/images/sazslogo.avif" alt="SAZS Logo">
+        </div>
+      </a>
+
+      <ul class="sazs-menu-list">
+        <li class="sazs-menu-item">
+          <a class="sazs-menu-link" data-dropdown="features">
+            Features
+            <svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor">
+              <path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Features Dropdown with Dashboard -->
+    <div class="sazs-submenu" id="features">
+      <div class="bento-container">
+
+        <!-- ANPR Camera Integration -->
+        <div class="card anpr">
+          <h2>ANPR Camera</h2>
+          <p>Automatic vehicle recognition</p>
+          <div class="shine-effect">
+            <div class="content-wrapper" style="display:flex; align-items:center; gap:16px; padding:16px 20px; background:rgba(255,255,255,0.96); color:#111; border-radius:20px;">
+              <div class="mini-text content-item" id="anpr-content">
+                <strong>Smart Tech</strong>
+                <span>Auto Recognition</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- E-Invoice Integration -->
+        <div class="card einvoice">
+          <h2>E-Invoice</h2>
+          <p>GST compliant billing</p>
+          <div class="shine-effect">
+            <div class="content-wrapper" style="display:flex; align-items:center; gap:16px; padding:16px 20px; background:rgba(255,255,255,0.96); color:#111; border-radius:20px;">
+              <div class="mini-text content-item" id="einvoice-content">
+                <strong>Compliance</strong>
+                <span>GST Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weighbridge Integration -->
+        <div class="card weighbridge">
+          <h2>Weighbridge</h2>
+          <p>Real-time weight capture</p>
+          <div class="feature-container">
+            <div class="feature-pill">Real-time Capture</div>
+            <div class="feature-pill">Automation</div>
+          </div>
+        </div>
+
+        <!-- Boom Barrier Integration -->
+        <div class="card boom">
+          <h2>Boom Barrier</h2>
+          <p>Automated gate control</p>
+          <div class="shine-effect status-panel">
+            <div class="content-item" id="boom-content">
+              <strong>Security</strong>
+              <span>Gate Control</span>
+              <!-- <hr>
+              <strong>Automated</strong>
+              <span>Access System</span> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Biometrics -->
+        <div class="card biometrics">
+          <h2>Biometrics</h2>
+          <p>Secure access control</p>
+          <div class="shine-effect" style="width:280px; padding:0;">
+            <div class="info-box">
+              <span id="biometric-status">Fingerprint Scanner</span>
+              <div class="status-badge" id="status-indicator">✓</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smart Tech -->
+        <div class="card smarttech">
+          <h2>Smart Tech</h2>
+          <p>Tailored for Crushers & Quarries</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Desktop dropdown hover logic
+  if (window.innerWidth > 991) {
+    const navLinks = document.querySelectorAll('[data-dropdown]');
+    let hoverTimeout = null;
+
+    navLinks.forEach(link => {
+      const navItem = link.closest('.sazs-menu-item');
+      const dropdownId = link.getAttribute('data-dropdown');
+      const dropdown = document.getElementById(dropdownId);
+
+      if (!dropdown || !navItem) return;
+
+      navItem.addEventListener('mouseenter', () => {
+        clearTimeout(hoverTimeout);
+        document.querySelectorAll('.sazs-submenu').forEach(d => d.classList.remove('active'));
+        document.querySelectorAll('.sazs-menu-item').forEach(n => n.classList.remove('active'));
+        dropdown.classList.add('active');
+        navItem.classList.add('active');
+      });
+
+      dropdown.addEventListener('mouseleave', () => {
+        hoverTimeout = setTimeout(() => {
+          dropdown.classList.remove('active');
+          navItem.classList.remove('active');
+        }, 200);
+      });
+    });
+  }
+
+  // Content morphing animations
+  const anprContent = document.getElementById('anpr-content');
+  const einvoiceContent = document.getElementById('einvoice-content');
+  const boomContent = document.getElementById('boom-content');
+  const biometricStatus = document.getElementById('biometric-status');
+  const statusIndicator = document.getElementById('status-indicator');
+
+  const anprVariations = [
+    { title: 'Smart Tech', subtitle: 'Auto Recognition' },
+    { title: 'Crushers', subtitle: 'Vehicle Tracking' },
+    { title: 'Quarries', subtitle: 'Entry Logging' }
+  ];
+
+  const einvoiceVariations = [
+    { title: 'Compliance', subtitle: 'GST Ready' },
+    { title: 'RMC', subtitle: 'Billing System' },
+    { title: 'Brick & Paver', subtitle: 'Invoice Ready' }
+  ];
+
+  const boomVariations = [
+    
+    { top: 'Security', topLabel: 'Gate Control', bottom: 'Automated', bottomLabel: 'Access System' },
+    { top: 'Real-time', topLabel: 'Monitoring', bottom: 'Smart', bottomLabel: 'Integration' },
+    { top: 'Advanced', topLabel: 'Security', bottom: 'Seamless', bottomLabel: 'Operations' }
+  ];
+
+  const biometricVariations = [
+    { status: 'Fingerprint Scanner', indicator: '✓' },
+    { status: 'Face Recognition', indicator: '✓' },
+    { status: 'RFID Access', indicator: '✓' }
+  ];
+
+  let currentAnpr = 0, currentEinvoice = 0, currentBoom = 0, currentBiometric = 0;
+
+  function morphContent(element, newContent, isBoom = false) {
+    element.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    element.style.opacity = '0';
+    element.style.transform = 'scale(0.95)';
+    
+    setTimeout(() => {
+      if (isBoom) {
+        element.innerHTML = `
+          <strong>${newContent.top}</strong>
+          <span>${newContent.topLabel}</span>
+        
+        `;
+      } else {
+        element.innerHTML = `
+          <strong>${newContent.title}</strong>
+          <span>${newContent.subtitle}</span>
+        `;
+      }
+      element.style.opacity = '1';
+      element.style.transform = 'scale(1)';
+    }, 400);
+  }
+
+  setInterval(() => {
+    currentAnpr = (currentAnpr + 1) % anprVariations.length;
+    morphContent(anprContent, anprVariations[currentAnpr]);
+  }, 4000);
+
+  setInterval(() => {
+    currentEinvoice = (currentEinvoice + 1) % einvoiceVariations.length;
+    morphContent(einvoiceContent, einvoiceVariations[currentEinvoice]);
+  }, 5000);
+
+  setInterval(() => {
+    currentBoom = (currentBoom + 1) % boomVariations.length;
+    morphContent(boomContent, boomVariations[currentBoom], true);
+  }, 6000);
+
+  setInterval(() => {
+    currentBiometric = (currentBiometric + 1) % biometricVariations.length;
+    const variation = biometricVariations[currentBiometric];
+    
+    biometricStatus.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    statusIndicator.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    biometricStatus.style.opacity = '0';
+    statusIndicator.style.opacity = '0';
+    
+    setTimeout(() => {
+      biometricStatus.textContent = variation.status;
+      statusIndicator.textContent = variation.indicator;
+      biometricStatus.style.opacity = '1';
+      statusIndicator.style.opacity = '1';
+    }, 400);
+  }, 7000);
+</script>
+
+</body>
+</html>

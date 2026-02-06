@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMask Bento Dropdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<style>:root {
+    --bg-dark: #030303;
+    --card-bg: #141414;
+    --border-color: #2b2b2b;
+    --text-gray: #9fa3a9;
+    --accent-orange: #f6851b;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-item { position: relative; margin-right: 30px; }
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Dropdown Logic */
+.dropdown-wrapper {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 700px;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover .dropdown-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* The Bento Grid Layout */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-auto-rows: minmax(100px, auto);
+    gap: 12px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.card:hover { background: #1c1c1c; }
+
+.card h3 { margin: 0; font-size: 18px; }
+.card p { color: var(--text-gray); font-size: 13px; margin: 5px 0 0 0; }
+
+/* Grid Spanning (The Bento Effect) */
+.rwas { 
+    grid-column: span 2; /* Takes up two columns */
+    background: linear-gradient(145deg, #141414, #1a1a1a);
+}
+
+.perps { 
+    grid-column: span 1;
+    background: #0d0d0d;
+}
+
+.chart-mockup {
+    height: 40px;
+    background: linear-gradient(90deg, transparent, #333, transparent);
+    margin-top: 15px;
+    border-radius: 4px;
+}</style>
+<nav class="navbar">
+    <div class="logo">MetaMask</div>
+    
+    <div class="nav-item">
+        <button class="nav-btn">Features <span class="chevron">▾</span></button>
+        
+        <div class="dropdown-wrapper">
+            <div class="bento-grid">
+                <div class="card buy">
+                    <div class="card-content">
+                        <h3>Buy</h3>
+                        <p>Turn cash to crypto</p>
+                    </div>
+                    <img src="https://via.placeholder.com/40" alt="icon">
+                </div>
+
+                <div class="card earn">
+                    <div class="card-content">
+                        <h3>Earn</h3>
+                        <p>Grow your crypto</p>
+                    </div>
+                    <img src="https://via.placeholder.com/40" alt="icon">
+                </div>
+
+                <div class="card swaps">
+                    <div class="card-content">
+                        <h3>Swaps</h3>
+                        <p>Exchange any token</p>
+                    </div>
+                    <img src="https://via.placeholder.com/40" alt="icon">
+                </div>
+
+                <div class="card rwas">
+                    <div class="card-content">
+                        <h3>RWAs</h3>
+                        <p>Tokenized stocks and ETFs</p>
+                    </div>
+                    <div class="chart-mockup"></div>
+                </div>
+
+                <div class="card perps">
+                    <div class="card-content">
+                        <h3>Perps</h3>
+                        <p>Long or short tokens</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-item"><a href="#" class="nav-link">Developer</a></div>
+</nav>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const navBtn = document.querySelector('.nav-btn');
+    const dropdown = document.querySelector('.dropdown-wrapper');
+
+    // Toggle menu on click for mobile/touch compatibility
+    navBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('active');
+    });
+
+    // Close menu when clicking anywhere else
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+
+    // Simple interaction feedback
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            console.log("Navigating to:", card.querySelector('h3').innerText);
+        });
+    });
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>

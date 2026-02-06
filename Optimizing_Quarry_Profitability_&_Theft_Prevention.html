@@ -3,37 +3,27 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ANPR + Sazs ERP | Smart Automation for Quarries & Crushers</title>
-    <meta name="description"
-        content="Seamless ANPR camera integration with Sazs  ERP for automated vehicle tracking, weighbridge, dispatch and billing in quarry, crusher and RMC businesses." />
-    <link rel="stylesheet" href="style.css">
+    <title>Case Study: Optimizing Quarry Profitability via Automated Theft Prevention</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="./src/css/comman.css" rel="stylesheet" />
-    <link href="./src/css/Anprs.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="./src/assets/logo/logoblack.png">
-    <!-- <link rel="stylesheet" href="../assets/css/all.min.css"> -->
 
+    <link href="./src/css/CaseStudies1.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/assets/css/all.min.css">
+    <link rel="stylesheet" href="./src/assets/css/all.min.css" media="print" onload="this.media='all'">
 
-    <!-- <link rel="stylesheet" href="../css/comman.css" as="style" onload="this.rel='stylesheet'">
-<link rel="stylesheet" href="../css/Anprs.css" as="style" onload="this.rel='stylesheet'"> -->
-
-    <!-- Font Awesome (deferred) -->
-    <!-- <link rel="stylesheet"
-      href="../assets/css/all.min.css"
-      media="print"
-      onload="this.media='all'">
-
-<noscript>
-  <link rel="stylesheet" href="../css/comman.css">
-  <link rel="stylesheet" href="../css/Anprs.css">
-  <link rel="stylesheet" href="../assets/css/all.min.css">
-</noscript> -->
+    <meta name="description"
+        content="Case study on how Sazs ERP for Crusher & Quarry eliminated material theft, automated weighbridge operations, and boosted quarry profitability with secure stock tracking." />
+    <meta name="keywords"
+        content="Crusher ERP theft prevention, Quarry material loss control, Automated weighbridge integration, Sazs ERP security, Quarry stock tracking software, Prevent weighbridge malpractice" />
 
 
 </head>
 
 <body>
-   <nav class="sazs-header">
+    <div class="page-wrap">
+
+      <nav class="sazs-header">
 <div class="sazs-header-wrapper">
 <div class="sazs-header-main">
 <a href="/" class="sazs-brand">
@@ -379,151 +369,352 @@
 function toggleMobileDropdown(t,e){e&&e.stopPropagation();const n=t.nextElementSibling;document.querySelectorAll(".mobile-dropdown-content").forEach(e=>{e!==n&&e.classList.remove("active")}),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>{e!==t&&e.classList.remove("active")}),n.classList.toggle("active"),t.classList.toggle("active")}const sidenav=document.getElementById("mySidenav");sidenav&&sidenav.addEventListener("click",function(e){e.stopPropagation()}),document.addEventListener("click",function(e){e.target.closest(".mobile-dropdown")||(document.querySelectorAll(".mobile-dropdown-content").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>e.classList.remove("active")))});if(window.innerWidth>991){const e=document.querySelectorAll("[data-dropdown]"),t=document.querySelector(".sazs-header-wrapper");let n=null;e.forEach(e=>{const o=e.closest(".sazs-menu-item"),s=e.getAttribute("data-dropdown"),c=document.getElementById(s);c&&o&&(o.addEventListener("mouseenter",()=>{clearTimeout(n),document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active")),c.classList.add("active"),o.classList.add("active")}),c.addEventListener("mouseenter",()=>{clearTimeout(n)}),c.addEventListener("mouseleave",()=>{n=setTimeout(()=>{c.classList.remove("active"),o.classList.remove("active")},200)}))}),t&&t.addEventListener("mouseleave",()=>{n=setTimeout(()=>{document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active"))},200)})}function openNav(){document.querySelectorAll(".mobile-dropdown-content").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>e.classList.remove("active")),sidenav.style.width="250px",document.addEventListener("click",closeNavOnClickOutside)}function closeNav(){sidenav.style.width="0",document.removeEventListener("click",closeNavOnClickOutside)}function toggleNav(){"250px"===sidenav.style.width?closeNav():openNav()}function closeNavOnClickOutside(e){sidenav.contains(e.target)||e.target.closest(".sazs-hamburger")||closeNav()}if(window.innerWidth>991){const e=document.querySelectorAll("[data-dropdown]");let t=null;e.forEach(e=>{const n=e.closest(".sazs-menu-item"),o=e.getAttribute("data-dropdown"),s=document.getElementById(o);s&&n&&(n.addEventListener("mouseenter",()=>{clearTimeout(t),document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active")),s.classList.add("active"),n.classList.add("active")}),s.addEventListener("mouseleave",()=>{t=setTimeout(()=>{s.classList.remove("active"),n.classList.remove("active")},200)}))})}const anprContent=document.getElementById("anpr-content"),einvoiceContent=document.getElementById("einvoice-content"),boomContent=document.getElementById("boom-content"),biometricStatus=document.getElementById("biometric-status"),statusIndicator=document.getElementById("status-indicator"),anprVariations=[{title:"Smart Tech",subtitle:"Auto Recognition"},{title:"Crushers",subtitle:"Vehicle Tracking"},{title:"Quarries",subtitle:"Entry Logging"}],einvoiceVariations=[{title:"Compliance",subtitle:"GST Ready"},{title:"RMC",subtitle:"Billing System"},{title:"Brick & Paver",subtitle:"Invoice Ready"}],boomVariations=[{top:"Security",topLabel:"Gate Control"},{top:"Automated",topLabel:"Access System"},{top:"Real-time",topLabel:"Monitoring"},{top:"Smart",topLabel:"Integration"},{top:"Advanced",topLabel:"Security"},{top:"Seamless",topLabel:"Operations"}],biometricVariations=[{status:"Fingerprint Scanner"},{status:"Face Recognition"},{status:"RFID Access"}];let currentAnpr=0,currentEinvoice=0,currentBoom=0,currentBiometric=0;function morphContent(e,t,n=!1){e.style.transition="opacity .4s ease, transform .4s ease",e.style.opacity="0",e.style.transform="scale(.95)",setTimeout(()=>{n?e.innerHTML=`<strong>${t.top}</strong><span>${t.topLabel}</span>`:e.innerHTML=`<strong>${t.title}</strong><span>${t.subtitle}</span>`,e.style.opacity="1",e.style.transform="scale(1)"},400)}setInterval(()=>{currentAnpr=(currentAnpr+1)%anprVariations.length,morphContent(anprContent,anprVariations[currentAnpr])},4e3),setInterval(()=>{currentEinvoice=(currentEinvoice+1)%einvoiceVariations.length,morphContent(einvoiceContent,einvoiceVariations[currentEinvoice])},5e3),setInterval(()=>{currentBoom=(currentBoom+1)%boomVariations.length,morphContent(boomContent,boomVariations[currentBoom],!0)},6e3),setInterval(()=>{currentBiometric=(currentBiometric+1)%biometricVariations.length;const e=biometricVariations[currentBiometric];biometricStatus.style.transition="opacity .4s ease, transform .4s ease",statusIndicator.style.transition="opacity .4s ease, transform .4s ease",biometricStatus.style.opacity="0",statusIndicator.style.opacity="0",setTimeout(()=>{biometricStatus.textContent=e.status,statusIndicator.textContent=e.indicator,biometricStatus.style.opacity="1",statusIndicator.style.opacity="1"},400)},7e3);
 </script>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                ANPR Camera Integration with <span class="highlight">Sazs ERP</span>
-            </h1>
-            <p class="hero-subtitle">
-                Smart Automation for Vehicle Tracking, Weighbridge & Billing<br>
-                in Quarry, Crusher & RMC Businesses
-            </p>
+
+
+        <main>
+
+            <div class="topsection">
+                <div class="hero-kicker">
+                    <div class="hero-k-dot">
+
+                    </div>
+                    <div class="hero-k-label">Case study &nbsp;•&nbsp; Theft prevention at scale</div>
+                </div>
+                <h1 class="hero-title">
+                    Optimizing Quarry Profitability via <span class="accent">Automated Theft Prevention</span>
+                </h1>
+                <p class="hero-subtitle">
+                    This case study highlights how Sazs ERP transformed security and operational integrity for a
+                    leading crusher and quarry business. By replacing vulnerable manual processes with advanced digital
+                    oversight, the company eliminated systemic leaks and secured its bottom line.
+                </p>
+
+                <div class="hero-badges">
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        95% reduction in material theft
+                    </div>
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        Zero unauthorized dispatches
+                    </div>
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        2 minute truck processing
+                    </div>
+                </div>
+
+
+            </div>
+
+            <section class="hero">
+
+                <div class="hero-grid">
+                    <!-- Challenge Section on Left -->
+                    <div style="display: flex; flex-direction: column; gap: 32px;">
+                        <section id="challenge" style="margin: 0;">
+                            <div class="section-kicker">The challenge</div>
+                            <h2>Manual Vulnerabilities and Material Loss</h2>
+                            <p class="section-intro">
+                                Quarry owners often struggle with material theft and unaccounted stock movements that
+                                directly erode profits. In this case, the reliance on manual registers and delayed data
+                                entry created a high-risk environment.
+                            </p>
+
+                            <!-- Challenge Illustration Image -->
+                            <div class="content-image-wrapper">
+                                <img src="./src/assets/contentImages/case11.webp"
+                                    alt="Manual paper-based weighbridge operations showing vulnerability points"
+                                    loading="lazy">
+                                <div class="image-caption">Traditional manual weighbridge operations with paper slips
+                                    and delayed data entry</div>
+                            </div>
+
+                            <p>
+                                The operation faced frequent unauthorized vehicle dispatches and the manipulation of
+                                weighbridge slips, making it nearly impossible to maintain accurate inventory or stop
+                                intentional malpractice.
+                            </p>
+                        </section>
+                    </div>
+
+                    <!-- Security Panel on Right -->
+                    <aside class="hero-panel" aria-label="Impact summary">
+                        <div class="panel-inner">
+                            <div class="panel-header">
+                                <div class="panel-tag">Security &amp; Stock Integrity</div>
+                                <div class="panel-highlight">
+                                    <span class="pill-dot"></span>
+                                    From manual leaks to closed-loop control
+                                </div>
+                            </div>
+                            <div class="panel-metric-row">
+                                <div class="panel-metric">
+                                    <div class="panel-metric-label">Material theft</div>
+                                    <div class="panel-metric-value">↓ 95%</div>
+                                    <div class="panel-metric-sub">Within 3 months of going live</div>
+                                </div>
+                                <div class="panel-metric">
+                                    <div class="panel-metric-label">Dispatch integrity</div>
+                                    <div class="panel-metric-value">0</div>
+                                    <div class="panel-metric-sub">Unauthorized loads leaving the quarry</div>
+                                </div>
+                            </div>
+                            <div class="panel-divider"></div>
+                            <div class="panel-metric-row">
+                                <div class="panel-metric">
+                                    <div class="panel-metric-label">Stock accuracy</div>
+                                    <div class="panel-metric-value">98–99%</div>
+                                    <div class="panel-metric-sub">Real-time sync with physical inventory</div>
+                                </div>
+                                <div class="panel-metric">
+                                    <div class="panel-metric-label">Truck cycle time</div>
+                                    <div class="panel-metric-value">&lt; 2 min</div>
+                                    <div class="panel-metric-sub">Auto weighment &amp; digital gate pass</div>
+                                </div>
+                            </div>
+                            <div class="panel-divider"></div>
+                            <div class="panel-quote">
+                                <span class="quote-mark">"</span>
+                                Once weighment moved directly from load cell to ERP, the scope for manipulation at the
+                                weighbridge vanished.
+                            </div>
+                            <div class="panel-quote-attrib">
+                                QUARRY • Sazs ERP CUSTOMER
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="layout-main">
+                    <div class="content-flow">
+                        <section id="solution" class="alt">
+                            <div class="section-kicker">The solution</div>
+                            <h2>Automated Weighment and GPS Integration</h2>
+                            <p class="section-intro">
+                                To combat these leaks, Sazs ERP for Crusher &amp; Quarry implemented a robust,
+                                centralized security framework. A core component of the solution was automated
+                                weighbridge integration, designed specifically to avoid manual errors and prevent
+                                malpractice.
+                            </p>
+
+                            <!-- Split Image Grid for Solution -->
+                            <div class="split-image-grid">
+                                <div class="split-image-item">
+                                    <img src="./src/assets/contentImages/case12.webp"
+                                        alt="Automated weighbridge with digital integration" loading="lazy">
+                                </div>
+                                <div class="split-image-item">
+                                    <img src="./src/assets/contentImages/case13.webp"
+                                        alt="GPS tracking dashboard showing real-time vehicle monitoring"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                            <div class="image-caption">Left: Automated weighbridge integration | Right: Real-time GPS
+                                tracking dashboard</div>
+
+                            <p>
+                                By pulling weight data directly from the scales into the ERP, the system removed the
+                                human element from the recording process, ensuring that every slip was accurate and
+                                tamper-proof.
+                            </p>
+
+                            <p>The comprehensive solution included:</p>
+                            <ul>
+                                <li><strong>Real-Time Tracking:</strong> Instant digital recording of vehicle entry and
+                                    exit.</li>
+                                <li><strong>GPS Monitoring:</strong> End-to-end trip tracking to ensure material reaches
+                                    its destination.</li>
+                                <li><strong>Role-Based Security:</strong> Restricted access to sensitive data, ensuring
+                                    that only authorized personnel could oversee dispatch logs.</li>
+                                <li><strong>Digital Verification:</strong> Every load was time-stamped and verified
+                                    within the ERP, creating a transparent audit trail.</li>
+                            </ul>
+                        </section>
+
+                        <section id="comparison">
+                            <div class="section-kicker">Before vs after</div>
+                            <h2>Manual vs. Automated Quarry Operations</h2>
+                            <p class="section-intro">
+                                To illustrate the impact of Sazs ERP, here is a comparison between traditional
+                                manual operations and the automated, integrated environment.
+                            </p>
+
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th class="comparison-label">Feature</th>
+                                        <th>Manual Operations (Before)</th>
+                                        <th>Sazs ERP (After)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="comparison-label" data-label="Feature">Data Integrity</td>
+                                        <td data-label="Manual Operations (Before)">Prone to manual error and
+                                            intentional manipulation.</td>
+                                        <td data-label="Sazs ERP (After)">Tamper-proof; data flows directly from
+                                            equipment to ERP.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="comparison-label" data-label="Feature">Weighbridge Process</td>
+                                        <td data-label="Manual Operations (Before)">Slips can be overwritten or
+                                            falsified by operators.</td>
+                                        <td data-label="Sazs ERP (After)">Automated Integration captures weight
+                                            without human input.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="comparison-label" data-label="Feature">Vehicle Tracking</td>
+                                        <td data-label="Manual Operations (Before)">Limited to manual gate registers;
+                                            easy to bypass.</td>
+                                        <td data-label="Sazs ERP (After)">GPS & RFID tracking ensure 100%
+                                            visibility of all movements.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="comparison-label" data-label="Feature">Dispatches</td>
+                                        <td data-label="Manual Operations (Before)">High risk of unauthorized material
+                                            leaving the site.</td>
+                                        <td data-label="Sazs ERP (After)">Zero unauthorized dispatches; system
+                                            validates every load.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="comparison-label" data-label="Feature">Stock Accuracy</td>
+                                        <td data-label="Manual Operations (Before)">85–90% accuracy; frequent
+                                            reconciliation disputes.</td>
+                                        <td data-label="Sazs ERP (After)">98–99% accuracy; real-time stock sync.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="comparison-label" data-label="Feature">Processing Time</td>
+                                        <td data-label="Manual Operations (Before)">10–15 minutes per truck (manual logs
+                                            & slips).</td>
+                                        <td data-label="Sazs ERP (After)">Under 2 minutes with automated weighing &
+                                            gate control.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- Comparison Visual -->
+                            <div class="content-image-wrapper" style="margin-top: 24px;">
+                                <img src="./src/assets/contentImages/case14.webp"
+                                    alt="Dashboard showing before and after metrics comparison" loading="lazy">
+                                <div class="image-caption">Real-time analytics dashboard showing operational
+                                    improvements and theft reduction metrics</div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <div class="section-kicker">Key benefits</div>
+                            <h2>Key Benefits of Weighment Integration</h2>
+                            <p class="section-intro">
+                                By removing the "human element" from the scales, the system addresses the two biggest
+                                threats to quarry profitability:
+                            </p>
+
+                            <!-- Technical Integration Visual -->
+                            <div class="content-image-wrapper">
+                                <img src="./src/assets/contentImages/case15.webp"
+                                    alt="Integrated ERP system dashboard showing real-time data flow" loading="lazy">
+                                <div class="image-caption">Seamless data flow from weighbridge sensors to centralized
+                                    ERP dashboard</div>
+                            </div>
+
+                            <p>
+                                <strong>Eliminating Malpractice:</strong> Since the weight is captured digitally from
+                                the load cells and pushed directly to the ERP, operators cannot "under-report" weights
+                                to facilitate theft or favor specific buyers.
+                            </p>
+                            <p>
+                                <strong>Avoiding Manual Error:</strong> It eliminates "fat-finger" mistakes where
+                                incorrect digits are typed into a register, ensuring that your billing and inventory are
+                                always perfectly aligned with the physical material moved.
+                            </p>
+                        </section>
+
+                        <section id="results" class="compact">
+                            <div class="section-kicker">The outcome</div>
+                            <h2>Enhanced Security and Rapid ROI</h2>
+                            <p class="section-intro">
+                                The shift to a digital-first approach yielded immediate and measurable improvements.
+                                Within just three months, the quarry achieved a 95% reduction in material theft and
+                                reached a milestone of zero unauthorized dispatches.
+                            </p>
+                            <div class="result-metric-row">
+                                <div class="result-metric-card">
+                                    <div class="result-metric-title">Material theft</div>
+                                    <div class="result-metric-value">95% reduction</div>
+                                    <div class="result-metric-note">Within just three months of implementation</div>
+                                </div>
+                                <div class="result-metric-card">
+                                    <div class="result-metric-title">Unauthorized dispatches</div>
+                                    <div class="result-metric-value">Zero</div>
+                                    <div class="result-metric-note">Complete elimination of unauthorized loads</div>
+                                </div>
+                                <div class="result-metric-card">
+                                    <div class="result-metric-title">Profitability</div>
+                                    <div class="result-metric-value">Margins restored</div>
+                                    <div class="result-metric-note">Accurate stock reconciliation & boosted profits
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Success Story Visual -->
+                            <div class="content-image-wrapper" style="margin-top: 16px;">
+                                <img src="./src/assets/contentImages/case16.webp"
+                                    alt="Successful quarry operations with improved efficiency and security"
+                                    loading="lazy">
+                                <div class="image-caption">Modern quarry facility operating with enhanced security and
+                                    digital oversight</div>
+                            </div>
+
+                            <p style="margin-top:10px;">
+                                By eliminating quarry material loss through automated weighment, the company secured
+                                accurate stock reconciliation and significantly boosted its profit margins.
+                            </p>
+                        </section>
+                    </div>
+                    <aside class="hero-panel" aria-label="Impact summary">
+
+                        <aside class="sidebar" aria-label="Context and SEO">
+                            <section class="compact">
+                                <div class="section-kicker">Use case fit</div>
+                                <h2>Who this approach serves</h2>
+                                <p class="section-intro">
+                                    The same control framework applies to any high-throughput bulk material business
+                                    where every truck movement translates directly into revenue and risk.
+                                </p>
+                                <ul>
+                                    <li>Stone crusher and quarry operations</li>
+                                    <li>Ready-mix concrete plants</li>
+                                    <li>Sand mining and aggregate yards</li>
+                                    <li>Multi-site operators managing weighbridges</li>
+                                </ul>
+                            </section>
+                        </aside>
+                    </aside>
+                </div>
+            </section>
+        </main>
+
+        <div class="floating-cta">
+            <div class="floating-badge">Ready to secure your weighbridge?</div>
+            <button onclick="scrollToSection('results')">
+                Talk to SAZS Apps
+            </button>
         </div>
-    </section>
-    <style>
-        .container {
-            /* background: url("/src/assets/contentImages/background4.webp") center/cover no-repeat fixed; */
-            /* min-height: 100vh; */
-
-        }
-    </style>
-    <div class="container">
-
-        <!-- WORKFLOW -->
-        <section>
-            <h2>How It Works</h2>
-            <div class="workflow-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Vehicle Entry</h3>
-                    <p>ANPR camera reads truck number automatically</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Verification</h3>
-                    <p>ERP checks authorization, customer & material</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Weighment</h3>
-                    <p>Automatic tare/gross/net weight recording</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3>Dispatch</h3>
-                    <p>ANPR confirms correct material & exit</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">5</div>
-                    <h3>Billing</h3>
-                    <p>Instant challan, invoice & trip report</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FEATURES -->
-        <section>
-            <h2>Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Automated Gate Operations</h3>
-                    <ul class="feature-list">
-                        <li>No manual registers</li>
-                        <li>Very fast vehicle movement</li>
-                        <li>Zero identification errors</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Weighbridge + ANPR Sync</h3>
-                    <ul class="feature-list">
-                        <li>100% accurate weights</li>
-                        <li>No duplicate/fake weighments</li>
-                        <li>Real-time ERP update</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Material Dispatch Control</h3>
-                    <ul class="feature-list">
-                        <li>M-sand, P-sand, aggregates tracking</li>
-                        <li>Customer-specific permissions</li>
-                        <li>Live dispatch dashboard</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Automatic Billing</h3>
-                    <ul class="feature-list">
-                        <li>Instant invoice generation</li>
-                        <li>Prevents revenue leakage</li>
-                        <li>GST compliant</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Fraud Prevention</h3>
-                    <ul class="feature-list">
-                        <li>Block unauthorized vehicles</li>
-                        <li>Prevent duplicate trips</li>
-                        <li>Full audit trail</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Powerful Reports</h3>
-                    <ul class="feature-list">
-                        <li>Vehicle / Customer wise analysis</li>
-                        <li>Daily • Monthly • Yearly reports</li>
-                        <li>Management MIS dashboard</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- BENEFITS -->
-        <section>
-            <h2>Benefits for Quarry & Crusher Owners</h2>
-            <div class="benefits-grid">
-                <div class="benefit-pill">100% Automated Gates</div>
-                <div class="benefit-pill">Minimum Manpower Required</div>
-                <div class="benefit-pill">Much Faster Turnaround</div>
-                <div class="benefit-pill">Zero Billing Manipulation</div>
-                <div class="benefit-pill">Complete Transparency</div>
-                <div class="benefit-pill">Higher Profitability</div>
-            </div>
-        </section>
     </div>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <h2 class="cta-title">Transform Your Operations Today</h2>
-        <p
-            style="font-size:1.35rem; color:#333; margin-bottom:2.2rem; max-width:780px; margin-left:auto; margin-right:auto;">
-            Sazs ERP + ANPR = Complete Digital Control & Transparency
-        </p>
-        <!-- <a href="" class="cta-btn">Contact Us Now →</a> -->
-    </section>
+    <script>
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
 
-    <!-- <footer class="footer-container ">
-                <div class="footer-content">
-                    <h1 class="heading zoom-in">Together<span class="succeed-text"> We Grow !</span></h1>
-                    <a href="./src/pages/contact.html" class="join-button">Contact Us</a>
 
-                </div>
-            </footer> -->
 
-    <footer class="a">
+     <footer class="a">
         <div class="b">
             <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
                 <img src="src/assets/images/xlogo.svg" alt="Twitter" class="d">
@@ -602,8 +793,6 @@ function toggleMobileDropdown(t,e){e&&e.stopPropagation();const n=t.nextElementS
             });
         });
     </script>
-
-
 </body>
 
 </html>

@@ -3,37 +3,27 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ANPR + Sazs ERP | Smart Automation for Quarries & Crushers</title>
-    <meta name="description"
-        content="Seamless ANPR camera integration with Sazs  ERP for automated vehicle tracking, weighbridge, dispatch and billing in quarry, crusher and RMC businesses." />
-    <link rel="stylesheet" href="style.css">
-    <link href="./src/css/comman.css" rel="stylesheet" />
-    <link href="./src/css/Anprs.css" rel="stylesheet" />
+    <title>Case Study: Automating E-Invoicing & GST Compliance in Building Materials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./src/assets/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="./src/assets/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="./src/assets/logo/logoblack.png">
-    <!-- <link rel="stylesheet" href="../assets/css/all.min.css"> -->
 
+    <!-- SEO -->
+    <meta name="description"
+        content="How Sazs ERP automated e-invoicing and GST compliance for crusher, quarry, RMC, and brick plant operations, achieving 100% accuracy and 97% faster invoicing." />
+    <meta name="keywords"
+        content="Crusher e-invoice software, Quarry GST ERP, Readymix RMC billing software, Sazs ERP e-invoice solution, Brick plant GST automation, Automated E-way bill for quarries, GST compliant crusher software" />
 
-    <!-- <link rel="stylesheet" href="../css/comman.css" as="style" onload="this.rel='stylesheet'">
-<link rel="stylesheet" href="../css/Anprs.css" as="style" onload="this.rel='stylesheet'"> -->
-
-    <!-- Font Awesome (deferred) -->
-    <!-- <link rel="stylesheet"
-      href="../assets/css/all.min.css"
-      media="print"
-      onload="this.media='all'">
-
-<noscript>
-  <link rel="stylesheet" href="../css/comman.css">
-  <link rel="stylesheet" href="../css/Anprs.css">
-  <link rel="stylesheet" href="../assets/css/all.min.css">
-</noscript> -->
-
-
+    <link href="./src/css/comman.css" rel="stylesheet" />
+    <link href="./src/css/CaseStudies3.css" rel="stylesheet" />
 </head>
 
 <body>
-   <nav class="sazs-header">
+    <div class="page-wrap">
+
+
+        <nav class="sazs-header">
 <div class="sazs-header-wrapper">
 <div class="sazs-header-main">
 <a href="/" class="sazs-brand">
@@ -379,151 +369,220 @@
 function toggleMobileDropdown(t,e){e&&e.stopPropagation();const n=t.nextElementSibling;document.querySelectorAll(".mobile-dropdown-content").forEach(e=>{e!==n&&e.classList.remove("active")}),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>{e!==t&&e.classList.remove("active")}),n.classList.toggle("active"),t.classList.toggle("active")}const sidenav=document.getElementById("mySidenav");sidenav&&sidenav.addEventListener("click",function(e){e.stopPropagation()}),document.addEventListener("click",function(e){e.target.closest(".mobile-dropdown")||(document.querySelectorAll(".mobile-dropdown-content").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>e.classList.remove("active")))});if(window.innerWidth>991){const e=document.querySelectorAll("[data-dropdown]"),t=document.querySelector(".sazs-header-wrapper");let n=null;e.forEach(e=>{const o=e.closest(".sazs-menu-item"),s=e.getAttribute("data-dropdown"),c=document.getElementById(s);c&&o&&(o.addEventListener("mouseenter",()=>{clearTimeout(n),document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active")),c.classList.add("active"),o.classList.add("active")}),c.addEventListener("mouseenter",()=>{clearTimeout(n)}),c.addEventListener("mouseleave",()=>{n=setTimeout(()=>{c.classList.remove("active"),o.classList.remove("active")},200)}))}),t&&t.addEventListener("mouseleave",()=>{n=setTimeout(()=>{document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active"))},200)})}function openNav(){document.querySelectorAll(".mobile-dropdown-content").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>e.classList.remove("active")),sidenav.style.width="250px",document.addEventListener("click",closeNavOnClickOutside)}function closeNav(){sidenav.style.width="0",document.removeEventListener("click",closeNavOnClickOutside)}function toggleNav(){"250px"===sidenav.style.width?closeNav():openNav()}function closeNavOnClickOutside(e){sidenav.contains(e.target)||e.target.closest(".sazs-hamburger")||closeNav()}if(window.innerWidth>991){const e=document.querySelectorAll("[data-dropdown]");let t=null;e.forEach(e=>{const n=e.closest(".sazs-menu-item"),o=e.getAttribute("data-dropdown"),s=document.getElementById(o);s&&n&&(n.addEventListener("mouseenter",()=>{clearTimeout(t),document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active")),s.classList.add("active"),n.classList.add("active")}),s.addEventListener("mouseleave",()=>{t=setTimeout(()=>{s.classList.remove("active"),n.classList.remove("active")},200)}))})}const anprContent=document.getElementById("anpr-content"),einvoiceContent=document.getElementById("einvoice-content"),boomContent=document.getElementById("boom-content"),biometricStatus=document.getElementById("biometric-status"),statusIndicator=document.getElementById("status-indicator"),anprVariations=[{title:"Smart Tech",subtitle:"Auto Recognition"},{title:"Crushers",subtitle:"Vehicle Tracking"},{title:"Quarries",subtitle:"Entry Logging"}],einvoiceVariations=[{title:"Compliance",subtitle:"GST Ready"},{title:"RMC",subtitle:"Billing System"},{title:"Brick & Paver",subtitle:"Invoice Ready"}],boomVariations=[{top:"Security",topLabel:"Gate Control"},{top:"Automated",topLabel:"Access System"},{top:"Real-time",topLabel:"Monitoring"},{top:"Smart",topLabel:"Integration"},{top:"Advanced",topLabel:"Security"},{top:"Seamless",topLabel:"Operations"}],biometricVariations=[{status:"Fingerprint Scanner"},{status:"Face Recognition"},{status:"RFID Access"}];let currentAnpr=0,currentEinvoice=0,currentBoom=0,currentBiometric=0;function morphContent(e,t,n=!1){e.style.transition="opacity .4s ease, transform .4s ease",e.style.opacity="0",e.style.transform="scale(.95)",setTimeout(()=>{n?e.innerHTML=`<strong>${t.top}</strong><span>${t.topLabel}</span>`:e.innerHTML=`<strong>${t.title}</strong><span>${t.subtitle}</span>`,e.style.opacity="1",e.style.transform="scale(1)"},400)}setInterval(()=>{currentAnpr=(currentAnpr+1)%anprVariations.length,morphContent(anprContent,anprVariations[currentAnpr])},4e3),setInterval(()=>{currentEinvoice=(currentEinvoice+1)%einvoiceVariations.length,morphContent(einvoiceContent,einvoiceVariations[currentEinvoice])},5e3),setInterval(()=>{currentBoom=(currentBoom+1)%boomVariations.length,morphContent(boomContent,boomVariations[currentBoom],!0)},6e3),setInterval(()=>{currentBiometric=(currentBiometric+1)%biometricVariations.length;const e=biometricVariations[currentBiometric];biometricStatus.style.transition="opacity .4s ease, transform .4s ease",statusIndicator.style.transition="opacity .4s ease, transform .4s ease",biometricStatus.style.opacity="0",statusIndicator.style.opacity="0",setTimeout(()=>{biometricStatus.textContent=e.status,statusIndicator.textContent=e.indicator,biometricStatus.style.opacity="1",statusIndicator.style.opacity="1"},400)},7e3);
 </script>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                ANPR Camera Integration with <span class="highlight">Sazs ERP</span>
-            </h1>
-            <p class="hero-subtitle">
-                Smart Automation for Vehicle Tracking, Weighbridge & Billing<br>
-                in Quarry, Crusher & RMC Businesses
-            </p>
-        </div>
-    </section>
-    <style>
-        .container {
-            /* background: url("/src/assets/contentImages/background4.webp") center/cover no-repeat fixed; */
-            /* min-height: 100vh; */
 
-        }
-    </style>
-    <div class="container">
 
-        <!-- WORKFLOW -->
-        <section>
-            <h2>How It Works</h2>
-            <div class="workflow-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Vehicle Entry</h3>
-                    <p>ANPR camera reads truck number automatically</p>
+        <main>
+            <div class="topsection">
+                <div class="hero-kicker">
+                    <div class="hero-k-dot"></div>
+                    <div class="hero-k-label">Case study • E-Invoicing & GST Compliance</div>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Verification</h3>
-                    <p>ERP checks authorization, customer & material</p>
+                <h1 class="hero-title">
+                    Automating E-Invoicing & GST Compliance in <span class="accent">Building Materials</span>
+                </h1>
+                <p class="hero-subtitle">
+                    How Sazs ERP transformed compliance operations for crushers, quarries, RMC, and brick
+                    plants—achieving 100% accuracy and 97% faster invoicing through seamless government portal
+                    integration.
+                </p>
+
+
+                <div class="hero-badges">
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        100% GST Compliance
+                    </div>
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        97% Faster Invoicing
+                    </div>
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        Zero Document Rejections
+                    </div>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Weighment</h3>
-                    <p>Automatic tare/gross/net weight recording</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3>Dispatch</h3>
-                    <p>ANPR confirms correct material & exit</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">5</div>
-                    <h3>Billing</h3>
-                    <p>Instant challan, invoice & trip report</p>
+
+                <div class="hero-footnote">
+                    <strong>Industries:</strong> Crusher, Quarry, Readymix (RMC), Brick Plants
                 </div>
             </div>
-        </section>
 
-        <!-- FEATURES -->
-        <section>
-            <h2>Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Automated Gate Operations</h3>
-                    <ul class="feature-list">
-                        <li>No manual registers</li>
-                        <li>Very fast vehicle movement</li>
-                        <li>Zero identification errors</li>
-                    </ul>
+            <section class="hero">
+                <div class="layout-main">
+                    <div class="content-flow">
+                        <section id="challenge">
+                            <div class="section-kicker">The challenge</div>
+                            <h2>Compliance Risks and Manual Bottlenecks</h2>
+
+                            <img src="./src/assets/contentImages/case31.webp"
+                                alt="Manual GST compliance creating operational risks"
+                                style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+                            <p class="section-intro">
+                                In the high-volume industries of Crushers, Quarries, Readymix (RMC), and Brick Plants,
+                                managing tax compliance manually is a major operational risk. This client faced several
+                                critical hurdles:
+                            </p>
+                            <ul>
+                                <li><strong>Human Error in Taxation:</strong> Manual calculation of GST led to frequent
+                                    errors in tax rates and HSN codes.</li>
+                                <li><strong>Slow E-Invoice Turnaround:</strong> Accountants had to manually log into
+                                    government portals to generate IRNs, leading to long queues of trucks waiting at the
+                                    dispatch gate.</li>
+                                <li><strong>Payment Delays:</strong> Customers often rejected invoices due to formatting
+                                    errors or missing QR codes, leading to stalled cash flow.</li>
+                                <li><strong>High Admin Costs:</strong> A heavy dependency on senior accountants for
+                                    basic invoicing increased overheads.</li>
+                            </ul>
+                        </section>
+
+                        <section id="solution" class="alt">
+                            <div class="section-kicker">The solution</div>
+                            <h2>Real-Time GST & E-Invoice Integration</h2>
+
+                            <img src="./src/assets/contentImages/case32.webp" alt="Sazs ERP GST portal integration"
+                                style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+                            <p class="section-intro">
+                                Sazs ERP implemented a seamless, "one-click" compliance framework that integrated the
+                                weighing process directly with the government's tax infrastructure.
+                            </p>
+
+                            <div class="pill-metric-row">
+                                <div class="pill-metric">Direct GST Portal Integration</div>
+                                <div class="pill-metric">Instant IRN Generation</div>
+                                <div class="pill-metric">Auto E-Way Bills</div>
+                                <div class="pill-metric">Zero Manual Entry</div>
+                            </div>
+
+                            <p><strong>1. Direct GST Portal Integration</strong><br>
+                                The ERP was linked directly to the GST portal via a secure API. As soon as a truck
+                                leaves the automated weighbridge, the system pulls the data and prepares the invoice
+                                instantly—no manual typing required.
+                            </p>
+
+                            <p><strong>2. Instant IRN & QR Code Generation</strong><br>
+                                The module automatically generates the Invoice Reference Number (IRN) and QR codes
+                                required for legal E-Invoicing. These are printed directly onto the dispatch
+                                slip/invoice in real-time.
+                            </p>
+
+                            <p><strong>3. Integrated E-Way Bill Creation</strong><br>
+                                For the Quarry and RMC sectors, where transportation is constant, the system generates
+                                the E-Way Bill simultaneously with the invoice. This ensures that no vehicle leaves the
+                                premises without 100% legal documentation.
+                            </p>
+
+                            <p><strong>4. Precision for Brick Plants & RMC</strong><br>
+                                Whether it's the piece-rate billing for Brick Plants or the cubic-meter calculations for
+                                Readymix, the system applies the correct GST slabs automatically based on the product
+                                category.
+                            </p>
+                        </section>
+
+                        <section id="results">
+                            <div class="section-kicker">The results</div>
+                            <h2>100% Accuracy and Zero Delays</h2>
+
+                            <img src="./src/assets/contentImages/case33.webp"
+                                alt="GST compliance results and performance metrics"
+                                style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+                            <p class="section-intro">
+                                The transition from manual filing to Sazs ERP yielded immediate operational benefits:
+                            </p>
+
+                            <div class="result-metric-row">
+                                <div class="result-metric-card">
+                                    <div class="result-metric-title">GST Compliance</div>
+                                    <div class="result-metric-value">100% Accuracy</div>
+                                    <div class="result-metric-note">Every invoice generated is legally verified and
+                                        error-free.</div>
+                                </div>
+                                <div class="result-metric-card">
+                                    <div class="result-metric-title">Invoicing Speed</div>
+                                    <div class="result-metric-value">97% Faster</div>
+                                    <div class="result-metric-note">Invoice time dropped from 20 minutes to just 30
+                                        seconds.</div>
+                                </div>
+                                <div class="result-metric-card">
+                                    <div class="result-metric-title">Document Quality</div>
+                                    <div class="result-metric-value">Zero Rejections</div>
+                                    <div class="result-metric-note">Clean, QR-coded invoices ensure faster customer
+                                        approvals and payments.</div>
+                                </div>
+                                <div class="result-metric-card">
+                                    <div class="result-metric-title">Independence</div>
+                                    <div class="result-metric-value">Site-Level Control</div>
+                                    <div class="result-metric-note">Site supervisors can now generate compliant invoices
+                                        without back-office dependency.</div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <aside class="sidebar" aria-label="Comparison & SEO">
+                        <section id="comparison" class="compact">
+                            <div class="section-kicker">Efficiency comparison</div>
+                            <h2>Manual vs Automated</h2>
+
+                            <img src="./src/assets/contentImages/case34.webp"
+                                alt="Manual compliance vs Sazs ERP automation comparison"
+                                style="width:100%;border-radius:12px;margin:8px 0 12px;" />
+
+                            <p class="section-intro">
+                                See the dramatic difference automation makes in day-to-day compliance operations.
+                            </p>
+
+                            <div class="table-wrapper">
+                                <table class="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="comparison-label">Task</th>
+                                            <th>Manual Compliance</th>
+                                            <th>Sazs ERP</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="comparison-label">Data Entry</td>
+                                            <td>Manual entry of weight/rates</td>
+                                            <td>Fetched from Weighbridge Integration</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="comparison-label">GST Calculation</td>
+                                            <td>Calculated on paper or Excel</td>
+                                            <td>Auto-calculated based on HSN/SAC</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="comparison-label">E-Invoice Generation</td>
+                                            <td>Manual upload to Gov portal</td>
+                                            <td>Direct API sync in 1-click</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="comparison-label">E-Way Bill</td>
+                                            <td>Separate login and entry</td>
+                                            <td>Generated instantly with invoice</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="comparison-label">Truck Wait Time</td>
+                                            <td>High (15+ minutes)</td>
+                                            <td>Minimal (under 1 minute)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                    
+                    </aside>
                 </div>
-
-                <div class="feature-card">
-                    <h3>Weighbridge + ANPR Sync</h3>
-                    <ul class="feature-list">
-                        <li>100% accurate weights</li>
-                        <li>No duplicate/fake weighments</li>
-                        <li>Real-time ERP update</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Material Dispatch Control</h3>
-                    <ul class="feature-list">
-                        <li>M-sand, P-sand, aggregates tracking</li>
-                        <li>Customer-specific permissions</li>
-                        <li>Live dispatch dashboard</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Automatic Billing</h3>
-                    <ul class="feature-list">
-                        <li>Instant invoice generation</li>
-                        <li>Prevents revenue leakage</li>
-                        <li>GST compliant</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Fraud Prevention</h3>
-                    <ul class="feature-list">
-                        <li>Block unauthorized vehicles</li>
-                        <li>Prevent duplicate trips</li>
-                        <li>Full audit trail</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Powerful Reports</h3>
-                    <ul class="feature-list">
-                        <li>Vehicle / Customer wise analysis</li>
-                        <li>Daily • Monthly • Yearly reports</li>
-                        <li>Management MIS dashboard</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- BENEFITS -->
-        <section>
-            <h2>Benefits for Quarry & Crusher Owners</h2>
-            <div class="benefits-grid">
-                <div class="benefit-pill">100% Automated Gates</div>
-                <div class="benefit-pill">Minimum Manpower Required</div>
-                <div class="benefit-pill">Much Faster Turnaround</div>
-                <div class="benefit-pill">Zero Billing Manipulation</div>
-                <div class="benefit-pill">Complete Transparency</div>
-                <div class="benefit-pill">Higher Profitability</div>
-            </div>
-        </section>
+            </section>
+        </main>
     </div>
+ 
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <h2 class="cta-title">Transform Your Operations Today</h2>
-        <p
-            style="font-size:1.35rem; color:#333; margin-bottom:2.2rem; max-width:780px; margin-left:auto; margin-right:auto;">
-            Sazs ERP + ANPR = Complete Digital Control & Transparency
-        </p>
-        <!-- <a href="" class="cta-btn">Contact Us Now →</a> -->
-    </section>
-
-    <!-- <footer class="footer-container ">
-                <div class="footer-content">
-                    <h1 class="heading zoom-in">Together<span class="succeed-text"> We Grow !</span></h1>
-                    <a href="./src/pages/contact.html" class="join-button">Contact Us</a>
-
-                </div>
-            </footer> -->
-
-    <footer class="a">
+     <footer class="a">
         <div class="b">
             <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
                 <img src="src/assets/images/xlogo.svg" alt="Twitter" class="d">
@@ -602,8 +661,6 @@ function toggleMobileDropdown(t,e){e&&e.stopPropagation();const n=t.nextElementS
             });
         });
     </script>
-
-
 </body>
 
 </html>

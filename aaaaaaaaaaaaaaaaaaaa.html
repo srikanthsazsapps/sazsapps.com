@@ -1,17 +1,10 @@
-/* ------------------headnavfull -------------------------*/
-       
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            background-color: rgb(255, 255, 255);
-            color: #333;
-        }
-/* *{margin:0;padding:0;box-sizing:border-box} */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background-color:#000;color:#000000}
 .sazs-header{background:#fff!important;position:fixed!important;left:0!important;right:0!important;z-index:1000!important;transition:transform .3s ease-in-out!important}
 .sazs-header.expanded{background:rgba(255,255,255,.98)}
@@ -191,264 +184,352 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica N
 @media (max-width:640px){.bento-container{grid-template-columns:1fr}.card{min-height:260px;padding:28px 20px}.shine-effect{right:20px;bottom:20px}}
 @media (max-width:480px){.sazs-header-wrapper{padding:.5rem .75rem}.sazs-brand-image{width:120px;height:50px}.sazs-hamburger{padding:.25rem}.sazs-submenu.active{padding:.75rem}.sazs-card-img-wrapper{height:140px;border-radius:8px}.sazs-product-card{border-radius:8px}.sazs-card-heading{font-size:.8rem}.sazs-card-text{font-size:.7rem;line-height:1.4}.media-card-image{height:120px;margin:.5rem;border-radius:8px}.media-card-content{padding:0 .75rem .75rem}.media-card-title{font-size:.85rem}.media-events-title{font-size:1.1rem}.blog-card-image{height:250px;border-radius:16px}.blog-card{border-radius:16px}.blog-card-overlay{padding:1.25rem 1rem 1rem}.blog-overlay-title{font-size:.95rem}.blog-overlay-explore{font-size:.9rem}}
 @media (max-width:1100px){.bento-container{grid-template-columns:repeat(2,1fr)}}
+</style>
+
+<nav class="sazs-header">
+<div class="sazs-header-wrapper">
+<div class="sazs-header-main">
+<a href="/" class="sazs-brand">
+<div class="sazs-brand-image">
+<img src="./src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo Home page" class="sazs-brand-image">
+</div>
+</a>
+<ul class="sazs-menu-list">
+<li class="sazs-menu-item">
+<a class="sazs-menu-link" data-dropdown="platform">Product<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+</li>
+<li class="sazs-menu-item">
+<a class="sazs-menu-link" data-dropdown="Features">Features<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+</li>
+<li class="sazs-menu-item">
+<a class="sazs-menu-link" data-dropdown="resources">Media & Events<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+</li>
+<li class="sazs-menu-item">
+<a class="sazs-menu-link" data-dropdown="blogs">Blogs<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+</li>
+</ul>
+<div class="sazs-cta-group">
+<a href="Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
+</div>
+<div class="sazs-hamburger">
+<a href="javascript:void(0);" onclick="toggleNav()"><i class="fa fa-bars"></i></a>
+</div>
+</div>
+
+<div class="sazs-submenu" id="platform">
+<div class="product-dropdown">
+<div class="product-left">
+<div class="product-section-title">Quick Links</div>
+<a href="index.html" class="product-link">Home</a>
+<a href="aboutus.html" class="product-link">About Us</a>
+<a href="WhytoChoose.html" class="product-link">Why to Choose</a>
+<a href="careers.html" class="product-link">Careers</a>
+<a href="ProfitCalculator.html" class="product-link">Profit Calc</a>
+<a href="Questions.html" class="product-link">FAQ</a>
+</div>
+<div class="product-right">
+<div class="product-grid-title">Our Products</div>
+<div class="sazs-submenu-grid">
+<div class="sazs-submenu-col">
+<a href="QuarryCrusher.html" class="sazs-product-card">
+<div class="sazs-card-img-wrapper">
+<img src="./src/assets/contentImages/crusherdroneview.avif" alt="Stone Crusher Management Software"/>
+</div>
+<div class="sazs-card-heading">Stone Crusher Software for End-to-End Operations</div>
+<div class="sazs-card-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
+</a>
+</div>
+<div class="sazs-submenu-col">
+<a href="rmc.html" class="sazs-product-card">
+<div class="sazs-card-img-wrapper">
+<img src="/src/assets/contentImages/quarrydroneview.avif" alt="Brick Manufacturing ERP Software"/>
+</div>
+<div class="sazs-card-heading">End-to-End Management Software for Stone Quarries</div>
+<div class="sazs-card-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
+</a>
+</div>
+<div class="sazs-submenu-col">
+<a href="rmc.html" class="sazs-product-card">
+<div class="sazs-card-img-wrapper">
+<img src="/src/assets/contentImages/RMCdroneview.avif" alt="Brick Manufacturing ERP Software"/>
+</div>
+<div class="sazs-card-heading">Next-Gen Billing Software for Ready Mix Concrete (RMC) Plants</div>
+<div class="sazs-card-text">The Future of Fast, Accurate & Automated RMC Billing</div>
+</a>
+</div>
+<div class="sazs-submenu-col">
+<a href="brickspaver.html" class="sazs-product-card">
+<div class="sazs-card-img-wrapper">
+<img src="/src/assets/contentImages/bricksdrone.avif" alt="Brick Manufacturing ERP Software"/>
+</div>
+<div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing Plants</div>
+<div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage of Your Production</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="sazs-submenu" id="Features">
+    <div class="media-events-header">
+<h2 class="media-events-title">Features   <span class="media-title-separator">—</span> <span class="media-title-subtitle">tailored to every Crushers & Quarries ,RMC ,Brick & Paver</span></h2>
+<!-- <div class="media-events-ai-tracker">
+<span class="ai-tracker-label">Latest Insights</span>
+<span class="ai-tracker-beta">NEW</span>
+<span class="ai-tracker-text">Industry Proven Results</span>
+</div> -->
+</div>
+<div class="bento-container">
+    
+<a style="color: #000;text-decoration: none !important;" href="Anprs.html" class="card anpr">
+<h2 >ANPR Camera</h2>
+<p>Automatic vehicle recognition</p>
+<div class="shine-effect">
+<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.96);color:#111;border-radius:20px">
+<div class="mini-text content-item" id="anpr-content">
+<strong>Smart Tech</strong>
+<span>Auto Recognition</span>
+</div>
+</div>
+</div>
+</a>
+<a style="color: #000;text-decoration: none !important;" href="EInvoice.html" class="card einvoice">
+<h2>E-Invoice</h2>
+<p>GST compliant billing</p>
+<div class="shine-effect">
+<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.96);color:#111;border-radius:20px">
+<div class="mini-text content-item" id="einvoice-content">
+<strong>Compliance</strong>
+<span>GST Ready</span>
+</div>
+</div>
+</div>
+</a>
+<a style="color: #000;text-decoration: none !important;" href="Weighbridge.html" class="card weighbridge">
+<h2>Weighbridge</h2>
+<p>Real-time weight capture</p>
+<div class="feature-container">
+<div class="feature-pill">Real-time Capture</div>
+<div class="feature-pill">Automation</div>
+</div>
+</a>
+<a style="color: #000;text-decoration: none !important;" href="BoomBarrier.html" class="card boom">
+<h2>Boom Barrier</h2>
+<p>Automated gate control</p>
+<div class="shine-effect status-panel">
+<div class="content-item" id="boom-content">
+<strong>Security</strong>
+<span>Gate Control</span>
+<!-- <hr>
+<strong>Automated</strong>
+<span>Access System</span> -->
+</div>
+</div>
+</a>
+<a style="color: #000;text-decoration: none !important;" href="Biometrics.html" class="card biometrics">
+<h2>Biometrics</h2>
+<p>Secure access control</p>
+<div class="shine-effect" style="width:214px;padding:0">
+<div class="info-box">
+<span id="biometric-status">Fingerprint Scanner</span>
+<div  id="status-indicator"></div>
+</div>
+</div>
+</a>
+<div class="card smarttech">
+<h2>Smart Tech</h2>
+<p>Tailored for Crushers & Quarries</p>
+</div>
+</div>
+</div>
+
+<div class="sazs-submenu" id="resources">
+<div class="media-events-dropdown">
+<div class="media-events-header">
+<h2 class="media-events-title">Media & Events <span class="media-title-separator">—</span> <span class="media-title-subtitle">Stay Connected, Stay Informed</span></h2>
+<div class="media-events-ai-tracker">
+<span class="ai-tracker-label">Latest Updates</span>
+<span class="ai-tracker-beta">NEW</span>
+<span class="ai-tracker-text">Industry Insights & Success Stories</span>
+</div>
+</div>
+<div class="media-events-grid">
+      <a href="JHARKHAND_MINING_2026.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/Excon25.avif" alt="Media Kit"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">Jharkhand Mining & Construction Show 2026 </div>
+</div>
+</a>
+    <a href="EXCON_2025.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/Excon25.avif" alt="Media Kit"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
+</div>
+</a>
+<a href="IEMS_2024.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/IEMS24.avif" alt="Customer Stories"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">IEMS – International Mining Expo & Conclave 2024</div>
+</div>
+</a>
+<a href="TNMSA_2024.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/TMSA24.avif" alt="Blog & Articles"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</div>
+</div>
+</a>
+<a href="EXCON_2023.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/Excon23.avif" alt="Upcoming Events"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
+</div>
+</a>
+<a href="CODDISSIA.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/Codisia22.avif" alt="Press Releases"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</div>
+</div>
+</a>
 
 
 
 
-        /*------------------------------ footeer css full -----------------------*/
+</div>
+</div>
+</div>
 
+<div class="sazs-submenu" id="blogs">
+<div class="blogs-dropdown-container">
+<div class="media-events-header">
+<h2 class="media-events-title">Case Studies <span class="media-title-separator">—</span> <span class="media-title-subtitle">Real-World Success Stories</span></h2>
+<div class="media-events-ai-tracker">
+<span class="ai-tracker-label">Latest Insights</span>
+<span class="ai-tracker-beta">NEW</span>
+<span class="ai-tracker-text">Industry Proven Results</span>
+</div>
+</div>
+<div class="blogs-cards-grid">
+<a href="Optimizing_Quarry_Profitability_&_Theft_Prevention.html" class="blog-card">
+<div class="blog-card-image">
+<img src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability"/>
+<div class="blog-card-overlay">
+<div class="blog-overlay-title">Optimizing Quarry Profitability & Theft Prevention</div>
+<div class="blog-overlay-explore">Explore →</div>
+</div>
+</div>
+</a>
+<a href="Transforming_Customer_Experience_&_Order_Speed.html" class="blog-card">
+<div class="blog-card-image">
+<img src="/src/assets/contentImages/tran2.webp" alt="Customer Experience"/>
+<div class="blog-card-overlay">
+<div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
+<div class="blog-overlay-explore">Explore →</div>
+</div>
+</div>
+</a>
+<a href="Automating_E-Invoicing_&_GST_Compliance.html" class="blog-card">
+<div class="blog-card-image">
+<img src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing"/>
+<div class="blog-card-overlay">
+<div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
+<div class="blog-overlay-explore">Explore →</div>
+</div>
+</div>
+</a>
+<a href="Real-Time_Vehicle_&_Trip_Management.html" class="blog-card">
+<div class="blog-card-image">
+<img src="/src/assets/contentImages/real4.webp" alt="Vehicle Management"/>
+<div class="blog-card-overlay">
+<div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
+<div class="blog-overlay-explore">Explore →</div>
+</div>
+</div>
+</a>
+<a href="Complete_Financial_Control_&_Profit_Analysis.html" class="blog-card">
+<div class="blog-card-image">
+<img src="/src/assets/contentImages/comp5.webp" alt="Financial Control"/>
+<div class="blog-card-overlay">
+<div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
+<div class="blog-overlay-explore">Explore →</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
 
+<div id="mySidenav" class="sidenav">
+<a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
+<a href="/"><img src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page" class="sidenav-logo"></a>
+<a href="/">Home</a>
+<a href="aboutus.html">About Us</a>
+<div class="mobile-dropdown">
+<a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products <i class="fa fa-chevron-down"></i></a>
+<div class="mobile-dropdown-content">
+<a href="QuarryCrusher.html">Quarry & Crusher</a>
+<a href="rmc.html">Ready Mix Concrete</a>
+<a href="brickspaver.html">Bricks & Pavers</a>
+</div>
+</div>
+<div class="mobile-dropdown">
+<a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Explore Features <i class="fa fa-chevron-down"></i></a>
+<div class="mobile-dropdown-content">
+<a href="features.html">Features</a>
+<a href="Anprs.html">ANPR Camera Integration</a>
+<a href="EInvoice.html">E-Invoice Integration</a>
+<a href="Weighbridge.html">Weighbridge and Camera Integration</a>
+<a href="Boombarrier.html">Boom Barrier Integration</a>
+<a href="biometrics.html">Biometrics</a>
+</div>
+</div>
+<div class="mobile-dropdown">
+<a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Case Studies <i class="fa fa-chevron-down"></i></a>
+<div class="mobile-dropdown-content">
+<a href="./src/pages/CaseStudies1.html">Case Study 1</a>
+<a href="./src/pages/CaseStudies2.html">Case Study 2</a>
+<a href="./src/pages/CaseStudies3.html">Case Study 3</a>
+<a href="./src/pages/CaseStudies4.html">Case Study 4</a>
+<a href="./src/pages/CaseStudies5.html">Case Study 5</a>
+</div>
+</div>
+<div class="mobile-dropdown">
+<a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Events <i class="fa fa-chevron-down"></i></a>
+<div class="mobile-dropdown-content">
+<a href="./src/pages/event1.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
+<a href="./src/pages/event2.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
+<a href="./src/pages/event3.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
+<a href="./src/pages/event4.html">IEMS – International Mining Expo & Conclave 2024</a>
+<a href="./src/pages/event5.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
+</div>
+</div>
+<a href="./src/pages/ProfitCalculator.html">Profit Calc</a>
+<a href="./src/pages/careers.html">Careers</a>
+<a href="./src/pages/Signup.html">Sign Up</a>
+<a href="./src/pages/contact.html">Contact Us</a>
+<a href="./src/pages/Weighbridge.html">Why to Choose Sazs</a>
+<a href="./src/pages/Questions.html">FAQ</a>
+<div class="call">
+<a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i>76666 28000</a>
+</div>
+</div>
 
-    /* Footer: "Together We Grow" Section */
-.footer-container {
-    position: relative;
-    background-color: rgb(255, 255, 253);
-    padding: 0px 20px;
-    padding-top: 30px;
-    text-align: center;
-    overflow: hidden;
-}
-
-.footer-container::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-color: rgb(255, 255, 253);
-    border-radius: 50% 50% 0 0;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.heading {
-    color: #2d3748;
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    letter-spacing: 10px;
-}
-
-.succeed-text {
-    color: #3E89EC;
-}
-
-.join-button {
-    display: inline-block;
-    background-color: #216DCE;
-    color: #fafbfc !important;
-    padding: 12px 32px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.join-button:hover {
-    background-color: #333;
-}
-
-/* Social Links & Navigation Section */
-.a {
-    background-color: rgb(255, 255, 253);
-    color: #333;
-    text-align: center;
-    padding: 20px 0 40px 0;
-}
-
-.b {
-    display: flex;
-    justify-content: center;
-    padding-top: 15px;
-}
-
-.c {
-    margin: 0 10px;
-    text-decoration: none;
-    display: inline-block;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.c:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
-}
-
-.d {
-    width: 30px;
-    transition: filter 0.3s ease;
-}
-
-.d:hover {
-    filter: brightness(1.2);
-}
-
-.e {
-    font-size: 14px;
-    color: #333;
-    padding: 30px 0 0;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.f {
-    color: #333;
-    text-decoration: none;
-    margin: 0 8px;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-.f:hover {
-    color: #007bff;
-    text-decoration: underline;
-}
-
-.f:not(:last-child)::after {
-    content: " | ";
-    color: #333;
-}
-
-/* Animations for footer links and icons */
-.c,
-.f {
-    animation: fadeIn 1s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Bottom Footer (Copyright + Help Button) */
-.footerbottom {
-    padding: 40px 0 40px;
-    background: #0b0d1f;
-    color: white;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footerbottom span {
-    font-size: 14px;
-}
-
-/* WhatsApp Help Button */
-.help-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    border: 2px solid #6aa5ff;
-    background-color: #007bff;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(99, 91, 255, 0.3);
-}
-
-.help-btn:hover {
-    background-color: #1f78fc;
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Scroll to Top Button */
-.scroll-top {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-    z-index: 100;
-    display: none; /* Shown via JS when scrolling */
-}
-
-.scroll-top:hover {
-    background-color: #f8f9fa;
-}
-
-/* Responsive Adjustments for Footer */
-@media (max-width: 768px) {
-    .heading {
-        font-size: 36px;
-    }
-
-    .join-button {
-        padding: 10px 24px;
-        font-size: 14px;
-    }
-
-    .help-btn {
-        bottom: 15px;
-        left: 15px;
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-
-    .scroll-top {
-        display: none;
-    }
-
-    .footer-container {
-        padding: 12px 15px;
-    }
-
-    .nav-links {
-        gap: 10px;
-    }
-
-    .nav-links a {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .help-btn {
-        width: auto;
-        left: 5%;
-        bottom: 5%;
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-
-    .heading {
-        font-size: 28px;
-        letter-spacing: 6px;
-    }
-
-    .b {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .d {
-        width: 28px;
-    }
-}
+<script>
+function toggleMobileDropdown(t,e){e&&e.stopPropagation();const n=t.nextElementSibling;document.querySelectorAll(".mobile-dropdown-content").forEach(e=>{e!==n&&e.classList.remove("active")}),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>{e!==t&&e.classList.remove("active")}),n.classList.toggle("active"),t.classList.toggle("active")}const sidenav=document.getElementById("mySidenav");sidenav&&sidenav.addEventListener("click",function(e){e.stopPropagation()}),document.addEventListener("click",function(e){e.target.closest(".mobile-dropdown")||(document.querySelectorAll(".mobile-dropdown-content").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>e.classList.remove("active")))});if(window.innerWidth>991){const e=document.querySelectorAll("[data-dropdown]"),t=document.querySelector(".sazs-header-wrapper");let n=null;e.forEach(e=>{const o=e.closest(".sazs-menu-item"),s=e.getAttribute("data-dropdown"),c=document.getElementById(s);c&&o&&(o.addEventListener("mouseenter",()=>{clearTimeout(n),document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active")),c.classList.add("active"),o.classList.add("active")}),c.addEventListener("mouseenter",()=>{clearTimeout(n)}),c.addEventListener("mouseleave",()=>{n=setTimeout(()=>{c.classList.remove("active"),o.classList.remove("active")},200)}))}),t&&t.addEventListener("mouseleave",()=>{n=setTimeout(()=>{document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active"))},200)})}function openNav(){document.querySelectorAll(".mobile-dropdown-content").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>e.classList.remove("active")),sidenav.style.width="250px",document.addEventListener("click",closeNavOnClickOutside)}function closeNav(){sidenav.style.width="0",document.removeEventListener("click",closeNavOnClickOutside)}function toggleNav(){"250px"===sidenav.style.width?closeNav():openNav()}function closeNavOnClickOutside(e){sidenav.contains(e.target)||e.target.closest(".sazs-hamburger")||closeNav()}if(window.innerWidth>991){const e=document.querySelectorAll("[data-dropdown]");let t=null;e.forEach(e=>{const n=e.closest(".sazs-menu-item"),o=e.getAttribute("data-dropdown"),s=document.getElementById(o);s&&n&&(n.addEventListener("mouseenter",()=>{clearTimeout(t),document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active")),s.classList.add("active"),n.classList.add("active")}),s.addEventListener("mouseleave",()=>{t=setTimeout(()=>{s.classList.remove("active"),n.classList.remove("active")},200)}))})}const anprContent=document.getElementById("anpr-content"),einvoiceContent=document.getElementById("einvoice-content"),boomContent=document.getElementById("boom-content"),biometricStatus=document.getElementById("biometric-status"),statusIndicator=document.getElementById("status-indicator"),anprVariations=[{title:"Smart Tech",subtitle:"Auto Recognition"},{title:"Crushers",subtitle:"Vehicle Tracking"},{title:"Quarries",subtitle:"Entry Logging"}],einvoiceVariations=[{title:"Compliance",subtitle:"GST Ready"},{title:"RMC",subtitle:"Billing System"},{title:"Brick & Paver",subtitle:"Invoice Ready"}],boomVariations=[{top:"Security",topLabel:"Gate Control"},{top:"Automated",topLabel:"Access System"},{top:"Real-time",topLabel:"Monitoring"},{top:"Smart",topLabel:"Integration"},{top:"Advanced",topLabel:"Security"},{top:"Seamless",topLabel:"Operations"}],biometricVariations=[{status:"Fingerprint Scanner"},{status:"Face Recognition"},{status:"RFID Access"}];let currentAnpr=0,currentEinvoice=0,currentBoom=0,currentBiometric=0;function morphContent(e,t,n=!1){e.style.transition="opacity .4s ease, transform .4s ease",e.style.opacity="0",e.style.transform="scale(.95)",setTimeout(()=>{n?e.innerHTML=`<strong>${t.top}</strong><span>${t.topLabel}</span>`:e.innerHTML=`<strong>${t.title}</strong><span>${t.subtitle}</span>`,e.style.opacity="1",e.style.transform="scale(1)"},400)}setInterval(()=>{currentAnpr=(currentAnpr+1)%anprVariations.length,morphContent(anprContent,anprVariations[currentAnpr])},4e3),setInterval(()=>{currentEinvoice=(currentEinvoice+1)%einvoiceVariations.length,morphContent(einvoiceContent,einvoiceVariations[currentEinvoice])},5e3),setInterval(()=>{currentBoom=(currentBoom+1)%boomVariations.length,morphContent(boomContent,boomVariations[currentBoom],!0)},6e3),setInterval(()=>{currentBiometric=(currentBiometric+1)%biometricVariations.length;const e=biometricVariations[currentBiometric];biometricStatus.style.transition="opacity .4s ease, transform .4s ease",statusIndicator.style.transition="opacity .4s ease, transform .4s ease",biometricStatus.style.opacity="0",statusIndicator.style.opacity="0",setTimeout(()=>{biometricStatus.textContent=e.status,statusIndicator.textContent=e.indicator,biometricStatus.style.opacity="1",statusIndicator.style.opacity="1"},400)},7e3);
+</script>
+</body>
+</html>
