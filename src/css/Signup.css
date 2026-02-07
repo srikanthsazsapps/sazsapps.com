@@ -7,7 +7,7 @@
 
 body {
     font-family:"Nunito", sans-serif;
-    background-color: rgb(255, 255, 253);
+    background-color: rgb(255, 255, 253) !important;
     color: #333;
 }
 
@@ -506,24 +506,24 @@ h1 {
 }
 
 .contact-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 40px !important;
+    margin-top: 20px !important;
 }
 
 .contact-item {
-    flex: 1;
-    max-width: 200px;
+    flex: 1 !important;
+    max-width: 200px !important;
 }
 
 .contact-item h3 {
-    font-size: 1rem;
-    color: #2a2a2a;
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-transform: uppercase;
+    font-size: 1rem !important;
+    color: #2a2a2a !important;
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+    text-transform: uppercase !important;
 }
 
 .contact-item p {
@@ -533,12 +533,12 @@ h1 {
 }
 
 .contact-item a {
-    color: #007bff;
-    text-decoration: none;
+    color: #007bff !important;
+    text-decoration: none !important;
 }
 
 .contact-item a:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 /* Media Query for Small Screens */
