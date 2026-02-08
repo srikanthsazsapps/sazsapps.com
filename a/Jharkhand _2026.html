@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jharkhand Mining & Construction Show 2026 | SAZS Apps ERP Solutions</title>
+    <meta name="description" content="Sazs Apps at JMC 2026 - Showcasing enterprise ERP solutions for mining, quarry, and construction industries in Ranchi, Jharkhand">
+    <meta name="keywords" content="Mining ERP Software, Quarry Management Software, Crusher ERP, Construction ERP Solutions, Digital Transformation in Mining, Industry 4.0, Jharkhand Mining Show 2026, Sazs Apps">
+    
+    <style>
+        /* ============================================
+           GLOBAL STYLES
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #34a853;
+            --accent-color: #fbbc04;
+            --dark-bg: #0f172a;
+            --darker-bg: #020617;
+            --light-text: #f1f5f9;
+            --gray-text: #94a3b8;
+            --card-bg: #1e293b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--darker-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           HERO SECTION - CSS
+           ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000000;
+            overflow: hidden;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(26, 115, 232, 0.15) 0%, transparent 70%);
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+            padding: 0 2rem;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            color: white;
+            font-weight: 600;
+        }
+
+        .hero-visual-section {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-center-image {
+            position: relative;
+            z-index: 5;
+            max-width: 750px;
+            width: 100%;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            animation: heroImageBounce 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards;
+        }
+
+        .hero-center-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-center-title {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 1.5rem 4rem;
+            border-radius: 15px;
+            z-index: 6;
+        }
+
+        .hero-center-title h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: white;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .floating-stat {
+            position: absolute;
+            background: white;
+            padding: 1.8rem 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+            opacity: 0;
+            animation: heroStatPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .floating-stat-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .floating-stat-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #1a73e8;
+            line-height: 1;
+        }
+
+        .stat-top-left {
+            top: 20px;
+            left: -20px;
+            animation-delay: 0.5s;
+        }
+
+        .stat-top-right {
+            top: 20px;
+            right: -20px;
+            animation-delay: 0.7s;
+        }
+
+        .stat-bottom-left {
+            bottom: 20px;
+            left: -20px;
+            animation-delay: 0.8s;
+        }
+
+        .stat-bottom-right {
+            bottom: 20px;
+            right: -20px;
+            animation-delay: 0.9s;
+        }
+
+        .floating-image {
+            position: absolute;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            z-index: 4;
+            opacity: 0;
+        }
+
+        .floating-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .float-img-1 {
+            width: 300px;
+            height: 220px;
+            top: 40px;
+            left: -80px;
+            animation: floatInLeft 1.2s ease 0.4s forwards;
+            transform: rotate(-6deg);
+        }
+
+        .float-img-2 {
+            width: 300px;
+            height: 220px;
+            top: 40px;
+            right: -80px;
+            animation: floatInRight 1.2s ease 0.5s forwards;
+            transform: rotate(6deg);
+        }
+
+        .float-img-3 {
+            width: 300px;
+            height: 220px;
+            bottom: 40px;
+            left: -80px;
+            animation: floatInLeft 1.2s ease 0.6s forwards;
+            transform: rotate(4deg);
+        }
+
+        .float-img-4 {
+            width: 300px;
+            height: 220px;
+            bottom: 40px;
+            right: -80px;
+            animation: floatInRight 1.2s ease 0.7s forwards;
+            transform: rotate(-4deg);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: var(--gray-text);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.1s forwards;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.2s forwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Hero Section Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroImageBounce {
+            0% {
+                opacity: 0;
+                transform: scale(0.7) translateY(50px);
+            }
+            50% {
+                transform: scale(1.05) translateY(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes heroStatPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            70% {
+                transform: scale(1.1) rotate(2deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes floatInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px) rotate(-15deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(-6deg);
+            }
+        }
+
+        @keyframes floatInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px) rotate(15deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(6deg);
+            }
+        }
+
+        /* HERO SECTION - RESPONSIVE */
+        /* Large Desktop */
+        @media (min-width: 1400px) {
+            .hero-content {
+                max-width: 1600px;
+            }
+        }
+
+        /* Desktop */
+        @media (max-width: 1399px) {
+            .hero-visual-section {
+                max-width: 1000px;
+            }
+            
+            .floating-stat {
+                padding: 1.5rem 2rem;
+            }
+            
+            .floating-stat-value {
+                font-size: 3rem;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (max-width: 1199px) {
+            .floating-image,
+            .floating-stat {
+                display: none;
+            }
+            
+            .hero-visual-section {
+                min-height: 450px;
+                max-width: 900px;
+            }
+
+            .hero-center-image {
+                max-width: 85%;
+            }
+            
+            .hero-center-title {
+                padding: 1.2rem 3rem;
+                bottom: 25px;
+            }
+            
+            .hero-center-title h2 {
+                font-size: clamp(1.8rem, 4vw, 3rem);
+                letter-spacing: 2px;
+            }
+        }
+
+        /* Tablet Portrait */
+        @media (max-width: 991px) {
+            .hero {
+                padding: 3rem 1.5rem 2rem;
+                min-height: 90vh;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .hero-visual-section {
+                min-height: 400px;
+                max-width: 700px;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-center-image {
+                max-width: 90%;
+                border-radius: 20px;
+            }
+            
+            .hero-center-title {
+                padding: 1rem 2.5rem;
+                bottom: 20px;
+                border-radius: 12px;
+            }
+            
+            .hero-center-title h2 {
+                font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+                letter-spacing: 1.5px;
+            }
+            
+            .hero-badge {
+                padding: 0.4rem 1.2rem;
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: clamp(2rem, 6vw, 3.5rem);
+                margin-bottom: 1.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(1rem, 2.5vw, 1.3rem);
+                margin-bottom: 2.5rem;
+            }
+            
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 767px) {
+            .hero {
+                padding: 2.5rem 1rem 1.5rem;
+                min-height: 85vh;
+            }
+            
+            .hero-visual-section {
+                min-height: 350px;
+                max-width: 100%;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-center-image {
+                max-width: 95%;
+                border-radius: 15px;
+            }
+            
+            .hero-center-title {
+                padding: 0.8rem 2rem;
+                bottom: 15px;
+                border-radius: 10px;
+            }
+            
+            .hero-center-title h2 {
+                font-size: clamp(1.3rem, 4vw, 2rem);
+                letter-spacing: 1px;
+            }
+            
+            .hero-badge {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 1.2rem;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.8rem, 5.5vw, 3rem);
+                margin-bottom: 1rem;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+                margin-bottom: 2rem;
+                padding: 0 0.5rem;
+            }
+            
+            .cta-button {
+                padding: 0.9rem 2rem;
+                font-size: 0.95rem;
+                border-radius: 40px;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 575px) {
+            .hero {
+                padding: 2rem 0.8rem 1rem;
+            }
+            
+            .hero-content {
+                padding: 0 0.5rem;
+            }
+            
+            .hero-visual-section {
+                min-height: 300px;
+                margin-bottom: 1.2rem;
+            }
+            
+            .hero-center-image {
+                max-width: 100%;
+                border-radius: 12px;
+            }
+            
+            .hero-center-title {
+                padding: 0.6rem 1.5rem;
+                bottom: 12px;
+            }
+            
+            .hero-center-title h2 {
+                font-size: clamp(1.2rem, 5vw, 1.8rem);
+            }
+            
+            .hero-badge {
+                padding: 0.35rem 0.9rem;
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.6rem, 6vw, 2.5rem);
+                line-height: 1.15;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+                margin-bottom: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 0.85rem 1.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 479px) {
+            .hero {
+                padding: 1.5rem 0.5rem 1rem;
+                min-height: 80vh;
+            }
+            
+            .hero-visual-section {
+                min-height: 250px;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-center-title {
+                padding: 0.5rem 1.2rem;
+                bottom: 10px;
+            }
+            
+            .hero-center-title h2 {
+                font-size: clamp(1.1rem, 5.5vw, 1.6rem);
+            }
+            
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.8rem;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.4rem, 6.5vw, 2.2rem);
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.85rem, 3vw, 1.05rem);
+                margin-bottom: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Landscape Orientation */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 2rem 1rem;
+            }
+            
+            .hero-visual-section {
+                min-height: 250px;
+            }
+        }
+
+        /* ============================================
+           STATS SECTION - CSS
+           ============================================ */
+        .stats-section {
+            padding: 4rem 2rem;
+            background: var(--dark-bg);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .stat-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray-text);
+            font-size: 1.1rem;
+        }
+
+        /* Stats Section Animation */
+        @keyframes slideInBottom {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* STATS SECTION - RESPONSIVE */
+        /* Tablet Landscape */
+        @media (max-width: 1199px) {
+            .stats-container {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+        }
+
+        /* Tablet Portrait */
+        @media (max-width: 991px) {
+            .stats-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .stat-card {
+                padding: 1.8rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 767px) {
+            .stats-section {
+                padding: 3rem 1rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+                border-radius: 15px;
+            }
+            
+            .stat-number {
+                font-size: 2.3rem;
+            }
+            
+            .stat-label {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 575px) {
+            .stats-section {
+                padding: 2.5rem 0.8rem;
+            }
+            
+            .stat-card {
+                padding: 1.3rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 479px) {
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ============================================
+           SECTION GENERAL - CSS
+           ============================================ */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section-header.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(26, 115, 232, 0.1);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* SECTION GENERAL - RESPONSIVE */
+        /* Large Desktop */
+        @media (min-width: 1400px) {
+            .section {
+                max-width: 1600px;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (max-width: 1199px) {
+            .section {
+                padding: 4rem 2rem;
+            }
+        }
+
+        /* Tablet Portrait */
+        @media (max-width: 991px) {
+            .section {
+                padding: 3.5rem 1.5rem;
+            }
+            
+            .section-header {
+                margin-bottom: 3rem;
+            }
+            
+            .section-title {
+                font-size: clamp(1.8rem, 4.5vw, 3rem);
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 767px) {
+            .section {
+                padding: 3rem 1rem;
+            }
+            
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+            
+            .section-badge {
+                padding: 0.4rem 1.2rem;
+                font-size: 0.85rem;
+            }
+            
+            .section-title {
+                font-size: clamp(1.6rem, 4vw, 2.5rem);
+                margin-bottom: 0.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.05rem;
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 575px) {
+            .section {
+                padding: 2.5rem 0.8rem;
+            }
+            
+            .section-header {
+                margin-bottom: 2rem;
+            }
+            
+            .section-badge {
+                padding: 0.35rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .section-title {
+                font-size: clamp(1.5rem, 5vw, 2.2rem);
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 479px) {
+            .section {
+                padding: 2rem 0.5rem;
+            }
+            
+            .section-title {
+                font-size: clamp(1.4rem, 5.5vw, 2rem);
+            }
+            
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ============================================
+           ABOUT CARD (OVERVIEW) - CSS
+           ============================================ */
+        .about-card {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .about-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about-card p {
+            color: var(--gray-text);
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        /* Overview Section Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ABOUT CARD - RESPONSIVE */
+        /* Tablet Portrait */
+        @media (max-width: 991px) {
+            .about-card {
+                padding: 2.5rem;
+            }
+            
+            .about-card h3 {
+                font-size: 1.8rem;
+            }
+            
+            .about-card p {
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 767px) {
+            .about-card {
+                padding: 2rem;
+                border-radius: 15px;
+            }
+            
+            .about-card h3 {
+                font-size: 1.6rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .about-card p {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 575px) {
+            .about-card {
+                padding: 1.5rem;
+            }
+            
+            .about-card h3 {
+                font-size: 1.4rem;
+            }
+            
+            .about-card p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 479px) {
+            .about-card {
+                padding: 1.2rem;
+            }
+            
+            .about-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .about-card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ============================================
+           TIMELINE SECTION - CSS
+           ============================================ */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .timeline-item.animate {
+            opacity: 1;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 50%;
+            transform: translateX(-50px);
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 50%;
+            transform: translateX(50px);
+        }
+
+        .timeline-item.animate {
+            transform: translateX(0);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 4px solid var(--dark-bg);
+            z-index: 2;
+            animation: dotPulse 2s infinite;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .timeline-day {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--gray-text);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-list li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        .timeline-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Timeline Animations */
+        @keyframes timelineFadeRotate {
+            from {
+                opacity: 0;
+                transform: translateX(-50px) rotate(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(0deg);
+            }
+        }
+
+        @keyframes timelineFadeRotateRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px) rotate(5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(0deg);
+            }
+        }
+
+        @keyframes dotPulse {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.7);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.2);
+                box-shadow: 0 0 0 10px rgba(26, 115, 232, 0);
+            }
+        }
+
+        /* TIMELINE SECTION - RESPONSIVE */
+        /* Tablet Portrait */
+        @media (max-width: 991px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                padding: 1.8rem;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 767px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                margin-bottom: 3rem;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+            }
+
+            .timeline-dot {
+                left: 20px;
+                width: 16px;
+                height: 16px;
+            }
+            
+            .timeline-content {
+                padding: 1.5rem;
+                border-radius: 15px;
+            }
+            
+            .timeline-day {
+                padding: 0.4rem 0.9rem;
+                font-size: 0.85rem;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.4rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .timeline-content p {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+            
+            .timeline-list li {
+                padding-left: 1.8rem;
+                margin-bottom: 0.7rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 575px) {
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 50px;
+            }
+            
+            .timeline-content {
+                padding: 1.2rem;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.25rem;
+            }
+            
+            .timeline-content p {
+                font-size: 0.9rem;
+            }
+            
+            .timeline-list li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 479px) {
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 45px;
+            }
+            
+            .timeline-content {
+                padding: 1rem;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.15rem;
+            }
+            
+            .timeline-content p,
+            .timeline-list li {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ============================================
+           FEATURE CARDS (INSIGHTS) - CSS
+           ============================================ */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .feature-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray-text);
+            line-height: 1.8;
+        }
+
+        /* Insights Section Animation */
+        @keyframes flipIn {
+            from {
+                opacity: 0;
+                transform: perspective(400px) rotateY(-90deg);
+            }
+            to {
+                opacity: 1;
+                transform: perspective(400px) rotateY(0deg);
+            }
+        }
+
+        /* FEATURE CARDS - RESPONSIVE */
+        /* Tablet Landscape */
+        @media (max-width: 1199px) {
+            .feature-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        /* Tablet Portrait */
+        @media (max-width: 991px) {
+            .feature-grid {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 2rem;
+            }
+            
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 767px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 2rem 1.8rem;
+                border-radius: 15px;
+            }
+            
+            .feature-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .feature-card p {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 575px) {
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .feature-icon {
+                font-size: 2.2rem;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 479px) {
+            .feature-card {
+                padding: 1.2rem;
+            }
+            
+            .feature-icon {
+                font-size: 2rem;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .feature-card p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ============================================
+           RECOGNITION SECTION - CSS
+           ============================================ */
+        .recognition-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            margin: 5rem 0;
+        }
+
+        .recognition-content {
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease;
+        }
+
+        .recognition-content.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .recognition-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .recognition-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .recognition-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Recognition Section Animation */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* RECOGNITION SECTION - RESPONSIVE */
+        /* Tablet Portrait */
+        @media (max-width: 991px) {
+            .recognition-section {
+                padding: 4rem 1.5rem;
+                margin: 4rem 0;
+            }
+            
+            .recognition-icon {
+                font-size: 4rem;
+            }
+            
+            .recognition-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .recognition-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 767px) {
+            .recognition-section {
+                padding: 3.5rem 1rem;
+                margin: 3rem 0;
+            }
+            
+            .recognition-icon {
+                font-size: 3.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .recognition-content h2 {
+                font-size: 2rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            .recognition-content p {
+                font-size: 1.05rem;
+                line-height: 1.7;
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 575px) {
+            .recognition-section {
+                padding: 3rem 0.8rem;
+            }
+            
+            .recognition-icon {
+                font-size: 3rem;
+            }
+            
+            .recognition-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .recognition-content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 479px) {
+            .recognition-section {
+                padding: 2.5rem 0.5rem;
+            }
+            
+            .recognition-icon {
+                font-size: 2.5rem;
+            }
+            
+            .recognition-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .recognition-content p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ============================================
+           KEYWORDS SECTION - CSS
+           ============================================ */
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .keyword-tag {
+            padding: 0.7rem 1.5rem;
+            background: rgba(26, 115, 232, 0.1);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(26, 115, 232, 0.3);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.5s ease;
+        }
+
+        .keyword-tag.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .keyword-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* KEYWORDS SECTION - RESPONSIVE */
+        /* Mobile Landscape */
+        @media (max-width: 767px) {
+            .keywords {
+                gap: 0.8rem;
+            }
+            
+            .keyword-tag {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 575px) {
+            .keyword-tag {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 479px) {
+            .keyword-tag {
+                padding: 0.45rem 0.9rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* ============================================
+           FOOTER - CSS
+           ============================================ */
+        footer {
+            background: var(--darker-bg);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            color: var(--gray-text);
+        }
+
+        /* FOOTER - RESPONSIVE */
+        /* Mobile Landscape */
+        @media (max-width: 767px) {
+            footer {
+                padding: 2.5rem 1rem;
+            }
+            
+            footer p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 575px) {
+            footer {
+                padding: 2rem 0.5rem;
+            }
+            
+            footer p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         HERO SECTION - HTML
+         ============================================ -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">RANCHI • 2026</div>
+            
+            <div class="hero-visual-section">
+                <!-- Floating Stats -->
+                <div class="floating-stat stat-top-left">
+                    <div class="floating-stat-label">Days of Innovation</div>
+                    <div class="floating-stat-value">3</div>
+                </div>
+                
+                <div class="floating-stat stat-top-right">
+                    <div class="floating-stat-label">Industry Leaders Engaged</div>
+                    <div class="floating-stat-value">100+</div>
+                </div>
+                
+                <div class="floating-stat stat-bottom-right">
+                    <div class="floating-stat-label">ERP Integrations Showcased</div>
+                    <div class="floating-stat-value">15+</div>
+                </div>
+
+                <!-- Floating Images -->
+                <div class="floating-image float-img-1">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop" alt="Team at JMC 2026">
+                </div>
+                
+                <div class="floating-image float-img-2">
+                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=300&fit=crop" alt="Industry Speaker">
+                </div>
+                
+                <div class="floating-image float-img-3">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=300&fit=crop" alt="Customer Engagement">
+                </div>
+                
+                <div class="floating-image float-img-4">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop" alt="ERP Demo">
+                </div>
+
+                <!-- Center Main Image -->
+                <div class="hero-center-image">
+                    <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1200&h=700&fit=crop" alt="JMC 2026 Exhibition Floor">
+                    <div class="hero-center-title">
+                        <h2>JMC 2026</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Text Content -->
+            <h1>Jharkhand Mining & Construction Show 2026</h1>
+            <p class="hero-subtitle">
+                Premier industry platform showcasing enterprise ERP solutions for mining, quarry, and construction sectors
+            </p>
+            <a href="#overview" class="cta-button">Explore Our Journey</a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         OVERVIEW SECTION - HTML
+         ============================================ -->
+    <section class="section" id="overview">
+        <div class="section-header scroll-animate">
+            <span class="section-badge">EVENT OVERVIEW</span>
+            <h2 class="section-title">Transforming Infrastructure Through Technology</h2>
+            <p class="section-subtitle">
+                Sazs Apps participated as a key technology exhibitor at JMC 2026, demonstrating industry-specific ERP solutions designed to address operational, compliance, and scalability challenges
+            </p>
+        </div>
+
+        <div class="about-card scroll-animate">
+            <h3>Our Position at JMC 2026</h3>
+            <p>
+                As one of the key technology-focused exhibitors, Sazs Apps showcased its industry-specific ERP solutions designed to address the operational, compliance, and scalability challenges of infrastructure-driven enterprises. The exhibition served as a premier industry platform for stakeholders across the mining, quarry, and construction sectors, enabling collaboration, technology exchange, and business networking.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TIMELINE SECTION - HTML
+         ============================================ -->
+    <section class="section">
+        <div class="section-header scroll-animate">
+            <span class="section-badge">EVENT TIMELINE</span>
+            <h2 class="section-title">Three Days of Industry Transformation</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item scroll-animate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-day">Day 1</span>
+                    <h3>Industry Engagement & Networking</h3>
+                    <p>
+                        The opening day focused on establishing industry connections and understanding operational challenges across mining and construction businesses. Our team engaged with plant owners, operations heads, and decision-makers, discussing current pain points.
+                    </p>
+                    <ul class="timeline-list">
+                        <li>Digital readiness of mining and quarry operations</li>
+                        <li>Challenges in multi-site operational control</li>
+                        <li>Need for centralized reporting systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item scroll-animate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-day">Day 2</span>
+                    <h3>Digital Transformation & ERP Demonstrations</h3>
+                    <p>
+                        Day two centered on enterprise-level discussions around digital transformation. Sazs Apps demonstrated how its integrated ERP platform enables comprehensive operational excellence.
+                    </p>
+                    <ul class="timeline-list">
+                        <li>Real-time operational visibility across distributed sites</li>
+                        <li>Asset traceability and lifecycle management</li>
+                        <li>Compliance alignment and statutory reporting</li>
+                        <li>Data-driven decision-making through centralized dashboards</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item scroll-animate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-day">Day 3</span>
+                    <h3>Recognition & Strategic Alignment</h3>
+                    <p>
+                        The final day marked the successful conclusion with exhibitor recognition for Sazs Apps Private Limited, acknowledging our contribution to advancing technology-led execution in the mining and construction ecosystem.
+                    </p>
+                    <ul class="timeline-list">
+                        <li>Long-term digital roadmap discussions</li>
+                        <li>ERP implementation strategies</li>
+                        <li>Governance-driven technology adoption</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         INSIGHTS SECTION - HTML
+         ============================================ -->
+    <section class="section">
+        <div class="section-header scroll-animate">
+            <span class="section-badge">INDUSTRY INSIGHTS</span>
+            <h2 class="section-title">Key Market Trends Identified</h2>
+            <p class="section-subtitle">
+                Critical insights gathered across three days of industry engagement
+            </p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card scroll-animate">
+                <div class="feature-icon">📊</div>
+                <h3>ERP Demand Surge</h3>
+                <p>
+                    Increasing demand for specialized ERP software for mining and quarry operations, driven by the need for operational efficiency and data accuracy
+                </p>
+            </div>
+
+            <div class="feature-card scroll-animate">
+                <div class="feature-icon">🔍</div>
+                <h3>Compliance Focus</h3>
+                <p>
+                    Growing emphasis on operational transparency and compliance readiness with statutory regulations and environmental standards
+                </p>
+            </div>
+
+            <div class="feature-card scroll-animate">
+                <div class="feature-icon">⚙️</div>
+                <h3>Industry 4.0 Adoption</h3>
+                <p>
+                    Accelerated adoption of Industry 4.0 principles in construction and infrastructure projects for competitive advantage
+                </p>
+            </div>
+
+            <div class="feature-card scroll-animate">
+                <div class="feature-icon">📈</div>
+                <h3>Scalable Platforms</h3>
+                <p>
+                    Critical need for scalable platforms supporting business expansion, multi-site operations, and corporate governance
+                </p>
+            </div>
+
+            <div class="feature-card scroll-animate">
+                <div class="feature-icon">🎯</div>
+                <h3>Real-time Analytics</h3>
+                <p>
+                    Strong demand for real-time operational insights and data-driven decision-making capabilities across all verticals
+                </p>
+            </div>
+
+            <div class="feature-card scroll-animate">
+                <div class="feature-icon">🔗</div>
+                <h3>System Integration</h3>
+                <p>
+                    Essential requirement for integrated systems connecting operations, finance, compliance, and reporting in unified platforms
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         RECOGNITION SECTION - HTML
+         ============================================ -->
+    <section class="recognition-section">
+        <div class="recognition-content scroll-animate">
+            <div class="recognition-icon">🏆</div>
+            <h2>Exhibitor Recognition</h2>
+            <p>
+                Sazs Apps Private Limited was honored as an exhibitor at Jharkhand Mining & Construction Show 2026. This recognition reflects our ongoing commitment to delivering enterprise-grade ERP solutions that enable operational excellence, regulatory compliance, and digital maturity across the mining and construction ecosystem.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LOOKING AHEAD SECTION - HTML
+         ============================================ -->
+    <section class="section">
+        <div class="section-header scroll-animate">
+            <span class="section-badge">FUTURE VISION</span>
+            <h2 class="section-title">Looking Ahead</h2>
+        </div>
+
+        <div class="about-card scroll-animate">
+            <h3>Continued Innovation & Growth</h3>
+            <p>
+                Participation at JMC 2026 strengthened existing partnerships and opened avenues for new collaborations across the mining and construction industry. Sazs Apps remains committed to supporting organizations in their digital transformation journey through reliable, scalable, and industry-focused ERP platforms. Our solutions empower enterprises with real-time insights, operational control, compliance alignment, and scalable digital growth tailored specifically for the infrastructure sector.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION - HTML
+         ============================================ -->
+    <section class="section">
+        <div class="section-header scroll-animate">
+            <span class="section-badge">ABOUT US</span>
+            <h2 class="section-title">Sazs Apps Private Limited</h2>
+        </div>
+
+        <div class="about-card scroll-animate">
+            <h3>Enterprise Technology Solutions Provider</h3>
+            <p>
+                Sazs Apps Private Limited is a technology company specializing in ERP software for mining, quarry, and construction businesses. Our solutions empower enterprises with real-time insights, operational control, compliance alignment, and scalable digital growth. We are committed to transforming traditional infrastructure operations into modern, data-driven enterprises through purpose-built technology platforms.
+            </p>
+        </div>
+
+        <div class="keywords">
+            <span class="keyword-tag scroll-animate">Mining ERP Software</span>
+            <span class="keyword-tag scroll-animate">Quarry Management Software</span>
+            <span class="keyword-tag scroll-animate">Crusher ERP</span>
+            <span class="keyword-tag scroll-animate">Construction ERP Solutions</span>
+            <span class="keyword-tag scroll-animate">Digital Transformation</span>
+            <span class="keyword-tag scroll-animate">Industry 4.0</span>
+            <span class="keyword-tag scroll-animate">Jharkhand Mining Show 2026</span>
+            <span class="keyword-tag scroll-animate">Real-time Analytics</span>
+            <span class="keyword-tag scroll-animate">Compliance Management</span>
+            <span class="keyword-tag scroll-animate">Operational Excellence</span>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER - HTML
+         ============================================ -->
+    <footer>
+        <p>&copy; 2026 Sazs Apps Private Limited. All Rights Reserved.</p>
+        <p style="margin-top: 1rem; color: #64748b;">Empowering Infrastructure Through Technology</p>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        /* ==========================================
+           HERO SECTION - JS
+           ========================================== */
+        // Hero parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroVisual = document.querySelector('.hero-visual-section');
+            if (heroVisual && scrolled < window.innerHeight) {
+                heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        /* ==========================================
+           STATS SECTION - JS
+           ========================================== */
+        const statCards = document.querySelectorAll('.stat-card');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.animation = `slideInBottom 0.8s ease forwards`;
+                        entry.target.classList.add('animate');
+                    }, index * 150);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        statCards.forEach(card => statsObserver.observe(card));
+
+        /* ==========================================
+           OVERVIEW SECTION - JS
+           ========================================== */
+        const overviewObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('section-header')) {
+                        entry.target.style.animation = 'slideInBottom 1s ease forwards';
+                    } else if (entry.target.classList.contains('about-card')) {
+                        entry.target.style.animation = 'slideInLeft 1s ease forwards';
+                    }
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        // Observe overview section elements
+        document.querySelectorAll('#overview .section-header, #overview .about-card').forEach(el => {
+            overviewObserver.observe(el);
+        });
+
+        /* ==========================================
+           TIMELINE SECTION - JS
+           ========================================== */
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const isOdd = Array.from(entry.target.parentElement.children).indexOf(entry.target) % 2 === 0;
+                    entry.target.style.animation = isOdd 
+                        ? 'timelineFadeRotate 0.8s ease forwards'
+                        : 'timelineFadeRotateRight 0.8s ease forwards';
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            timelineObserver.observe(item);
+        });
+
+        /* ==========================================
+           INSIGHTS SECTION - JS
+           ========================================== */
+        const insightsObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.querySelectorAll('.feature-card');
+                    cards.forEach((card, i) => {
+                        setTimeout(() => {
+                            card.style.animation = `flipIn 0.6s ease forwards`;
+                            card.classList.add('animate');
+                        }, i * 100);
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const insightsSection = document.querySelector('.feature-grid');
+        if (insightsSection) {
+            insightsObserver.observe(insightsSection.parentElement);
+        }
+
+        /* ==========================================
+           RECOGNITION SECTION - JS
+           ========================================== */
+        const recognitionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInScale 1s ease forwards';
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const recognitionContent = document.querySelector('.recognition-content');
+        if (recognitionContent) {
+            recognitionObserver.observe(recognitionContent);
+        }
+
+        /* ==========================================
+           OTHER SECTIONS - JS (Generic)
+           ========================================== */
+        const genericObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        // Observe remaining section headers and about cards
+        document.querySelectorAll('.section-header:not(#overview .section-header), .about-card:not(#overview .about-card)').forEach(el => {
+            genericObserver.observe(el);
+        });
+
+        /* ==========================================
+           KEYWORD TAGS - JS
+           ========================================== */
+        const keywordTags = document.querySelectorAll('.keyword-tag');
+        const keywordObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const tags = Array.from(keywordTags);
+                    tags.forEach((tag, i) => {
+                        setTimeout(() => {
+                            tag.style.animation = 'heroStatPop 0.5s ease forwards';
+                            tag.classList.add('animate');
+                        }, i * 80);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (keywordTags.length > 0) {
+            keywordObserver.observe(keywordTags[0].parentElement);
+        }
+
+        /* ==========================================
+           SMOOTH SCROLLING - JS
+           ========================================== */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

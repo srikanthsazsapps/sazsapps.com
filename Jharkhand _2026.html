@@ -3,45 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sazs Apps at JMC 2026 | Jharkhand Mining & Construction Show</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Jharkhand Mining & Construction Show 2026 | SAZS Apps ERP Solutions</title>
+    <meta name="description" content="Sazs Apps at JMC 2026 - Showcasing enterprise ERP solutions for mining, quarry, and construction industries in Ranchi, Jharkhand">
+ <link rel="stylesheet" href="./src/css/comman.css">
     <style>
-        :root {
-            --primary: #1a1a1a;
-            --secondary: #d4af37;
-            --accent: #ff6b35;
-            --light: #f8f9fa;
-            --dark: #0a0a0a;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-industrial: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #d4af37 100%);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'IBM Plex Sans', sans-serif;
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #e0e0e0;
+            --accent-color: #ffffff;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #000000;
+            --light-text: #ffffff;
+            --gray-text: #a0a0a0;
+            --card-bg: #1a1a1a;
+            --brand-color: #ffffff;
+            --blue-highlight: #2563eb;
+            --blue-light: #3b82f6;
+            --blue-dark: #1e40af;
+        }
+        
+        body { 
+            margin: 0; 
+            background-color: #000; 
+            color: #fff; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: var(--primary);
-            overflow-x: hidden;
-            background: var(--light);
+            overflow-x: hidden; 
         }
 
-        /* Hero Section */
+        /* ============================================
+           HERO SECTION - CSS (BLACK THEME)
+           ============================================ */
         .hero {
             position: relative;
-            height: 100vh;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1e3c72 50%, #2a5298 100%);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: #000000;
             overflow: hidden;
+            padding: 4rem 2rem 2rem;
+            padding-top: 100px;
         }
 
         .hero::before {
@@ -51,56 +59,245 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.15) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            opacity: 0.3;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
             text-align: center;
-            max-width: 1200px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            z-index: 2;
+            padding: 0 2rem;
+            max-width: 1400px;
+            width: 100%;
         }
 
         .hero-badge {
             display: inline-block;
-            background: rgba(212, 175, 55, 0.2);
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-            padding: 0.5rem 2rem;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 50px;
-            font-weight: 600;
+            margin-bottom: 2rem;
             font-size: 0.9rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            animation: slideInDown 1s ease-out 0.3s both;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards, 
+                       badgeGlow 3s ease-in-out 2s infinite;
+            color: white;
+            font-weight: 600;
         }
 
-        @keyframes slideInDown {
+        .hero-visual-section {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-center-image {
+            position: relative;
+            z-index: 5;
+            max-width: 750px;
+            width: 100%;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            animation: heroImageBounce 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards, 
+                       heroFloat 6s ease-in-out 2s infinite;
+        }
+
+        .hero-center-image img,
+        .hero-center-image video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-center-title {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 1.5rem 4rem;
+            border-radius: 15px;
+            z-index: 6;
+        }
+
+        .hero-center-title h2 {
+            font-size: 20px;
+            font-weight: 900;
+            color: white;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .floating-stat {
+            position: absolute;
+            background: white;
+            padding: 1.8rem 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+            opacity: 0;
+            animation: heroStatPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+                       floatUpDown 4s ease-in-out infinite;
+        }
+
+        .floating-stat-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .floating-stat-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #000000;
+            line-height: 1;
+        }
+
+        .stat-top-left {
+            top: 20px;
+            left: -20px;
+            animation-delay: 0.5s, 2s;
+        }
+
+        .stat-top-right {
+            top: 20px;
+            right: -20px;
+            animation-delay: 0.7s, 2.5s;
+        }
+
+        .stat-bottom-left {
+            bottom: 20px;
+            left: -20px;
+            animation-delay: 0.8s, 3s;
+        }
+
+        .stat-bottom-right {
+            bottom: 20px;
+            right: -20px;
+            animation-delay: 0.9s, 3.5s;
+        }
+
+        .floating-image {
+            position: absolute;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            z-index: 4;
+            opacity: 0;
+        }
+
+        .floating-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .float-img-1 {
+            width: 300px;
+            height: 220px;
+            top: 40px;
+            left: -80px;
+            animation: floatInLeft 1.2s ease 0.4s forwards,
+                       floatDiagonal1 5s ease-in-out 2s infinite;
+            transform: rotate(-6deg);
+        }
+
+        .float-img-2 {
+            width: 300px;
+            height: 220px;
+            top: 40px;
+            right: -80px;
+            animation: floatInRight 1.2s ease 0.5s forwards,
+                       floatDiagonal2 5.5s ease-in-out 2.5s infinite;
+            transform: rotate(6deg);
+        }
+
+        .float-img-3 {
+            width: 300px;
+            height: 220px;
+            bottom: 40px;
+            left: -80px;
+            animation: floatInLeft 1.2s ease 0.6s forwards,
+                       floatDiagonal3 6s ease-in-out 3s infinite;
+            transform: rotate(4deg);
+        }
+
+        .float-img-4 {
+            width: 300px;
+            height: 220px;
+            bottom: 40px;
+            right: -80px;
+            animation: floatInRight 1.2s ease 0.7s forwards,
+                       floatDiagonal4 5.2s ease-in-out 3.5s infinite;
+            transform: rotate(-4deg);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards;
+            background: linear-gradient(135deg, #ffffff 0%, var(--blue-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: var(--gray-text);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.1s forwards;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--blue-highlight);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.2s forwards,
+                       buttonBreathe 4s ease-in-out 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.4);
+            background: var(--blue-light);
+            animation: none;
+        }
+
+        /* Hero Section Animations */
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -108,1039 +305,2279 @@
             }
         }
 
-        .hero h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 8vw, 7rem);
-            font-weight: 400;
-            color: #fff;
-            line-height: 1;
-            margin-bottom: 1rem;
-            letter-spacing: 3px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            animation: slideInLeft 1s ease-out 0.5s both;
+        @keyframes heroImageBounce {
+            0% {
+                opacity: 0;
+                transform: scale(0.7) translateY(50px);
+            }
+            50% {
+                transform: scale(1.05) translateY(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
 
-        @keyframes slideInLeft {
+        @keyframes heroStatPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            70% {
+                transform: scale(1.1) rotate(2deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes floatInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
+                transform: translateX(-100px) rotate(-15deg);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateX(0) rotate(-6deg);
             }
         }
 
-        .hero h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-weight: 300;
-            color: var(--secondary);
-            margin-bottom: 2rem;
-            animation: slideInRight 1s ease-out 0.7s both;
-        }
-
-        @keyframes slideInRight {
+        @keyframes floatInRight {
             from {
                 opacity: 0;
-                transform: translateX(50px);
+                transform: translateX(100px) rotate(15deg);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateX(0) rotate(6deg);
             }
         }
 
-        .hero-description {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            animation: fadeIn 1s ease-out 0.9s both;
+        @keyframes heroFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes floatUpDown {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
+        @keyframes floatDiagonal1 {
+            0%, 100% {
+                transform: translate(0, 0) rotate(-6deg);
+            }
+            50% {
+                transform: translate(-10px, -15px) rotate(-8deg);
+            }
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
+        @keyframes floatDiagonal2 {
+            0%, 100% {
+                transform: translate(0, 0) rotate(6deg);
+            }
+            50% {
+                transform: translate(10px, -15px) rotate(8deg);
+            }
         }
 
-        .scroll-indicator svg {
-            width: 30px;
-            height: 30px;
-            stroke: var(--secondary);
-            stroke-width: 2;
-            fill: none;
+        @keyframes floatDiagonal3 {
+            0%, 100% {
+                transform: translate(0, 0) rotate(4deg);
+            }
+            50% {
+                transform: translate(-10px, 15px) rotate(6deg);
+            }
         }
 
-        /* Stats Section */
-        .stats {
-            background: var(--dark);
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 1400px;
+        @keyframes floatDiagonal4 {
+            0%, 100% {
+                transform: translate(0, 0) rotate(-4deg);
+            }
+            50% {
+                transform: translate(10px, 15px) rotate(-6deg);
+            }
+        }
+
+        @keyframes badgeGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        @keyframes buttonBreathe {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+            }
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            padding: 0 20px;
             margin: 0 auto;
         }
 
-        .stat-item {
+        /* ============================================
+           INTRO SECTION - WHITE THEME
+           ============================================ */
+        .intro-block {
+            padding: 60px 0 40px;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .intro-text-wrapper {
+            max-width: 100%;
+            margin: 0 auto;
             text-align: center;
-            color: #fff;
+        }
+
+        .intro-text-wrapper h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--blue-highlight);
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease;
+        }
+
+        .intro-block:not(.animate-on-scroll) .intro-text-wrapper h2 {
+            opacity: 1;
+        }
+
+        .intro-block.animate-on-scroll .intro-text-wrapper h2 {
             opacity: 0;
             transform: translateY(30px);
+        }
+
+        .animate-on-scroll.show-animation .intro-text-wrapper h2 {
+            opacity: 1;
+            transform: translateY(0);
             animation: fadeInUp 0.8s ease-out forwards;
         }
 
-        .stat-item:nth-child(1) { animation-delay: 0.1s; }
-        .stat-item:nth-child(2) { animation-delay: 0.2s; }
-        .stat-item:nth-child(3) { animation-delay: 0.3s; }
-        .stat-item:nth-child(4) { animation-delay: 0.4s; }
-
-        .stat-number {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 4rem;
-            color: var(--secondary);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
+        .intro-text-wrapper p {
             font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            color: rgba(0, 0, 0, 0.85);
+            margin-bottom: 15px;
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease;
         }
 
-        /* Video Section */
-        .video-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(180deg, var(--light) 0%, #e8e9eb 100%);
+        .intro-block:not(.animate-on-scroll) .intro-text-wrapper p {
+            opacity: 1;
         }
 
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
+        .intro-block.animate-on-scroll .intro-text-wrapper p {
+            opacity: 0;
+            transform: translateY(20px);
         }
 
-        .section-tag {
+        .animate-on-scroll.show-animation .intro-text-wrapper p:nth-of-type(1) {
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        .animate-on-scroll.show-animation .intro-text-wrapper p:nth-of-type(2) {
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        }
+
+        .animate-on-scroll.show-animation .intro-text-wrapper p:nth-of-type(3) {
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+        }
+
+        .highlight-tag {
             display: inline-block;
-            color: var(--accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: var(--blue-highlight);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 50px;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.8s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .section-description {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.8;
+        .intro-block:not(.animate-on-scroll) .highlight-tag {
+            opacity: 1;
         }
 
-        .video-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            background: var(--primary);
-            aspect-ratio: 16/9;
-            transition: transform 0.3s ease;
+        .intro-block.animate-on-scroll .highlight-tag:not(.keyword-tag) {
+            opacity: 0;
+            transform: scale(0.8);
         }
 
-        .video-container:hover {
-            transform: scale(1.02);
+        .animate-on-scroll.show-animation .highlight-tag:not(.keyword-tag) {
+            animation: bounceIn 0.8s ease-out 0.6s forwards;
         }
 
-        .video-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+        .highlight-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.5);
+            background: var(--blue-light);
         }
 
-        .play-button {
-            width: 100px;
-            height: 100px;
-            background: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+        .keyword-tag {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.8s ease;
         }
 
-        .play-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.7);
+        .animate-on-scroll.show-animation .keyword-tag {
+            animation: bounceIn 0.8s ease-out forwards !important;
         }
 
-        .play-button::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 25px solid var(--dark);
-            border-top: 15px solid transparent;
-            border-bottom: 15px solid transparent;
-            margin-left: 5px;
+        /* ============================================
+           TIMELINE HEADER - BLACK THEME
+           ============================================ */
+        .timeline-header-section {
+            background: #000000;
+            padding: 40px 0 20px;
         }
 
-        /* Timeline Section */
-        .timeline-section {
-            padding: 6rem 2rem;
-            background: #fff;
+        .timeline-header-section .intro-text-wrapper h2 {
+            color: var(--blue-light);
         }
 
-        .timeline {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            padding-left: 50px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--gradient-industrial);
+        /* ============================================
+           TIMELINE CONTENT SECTION - WHITE THEME
+           ============================================ */
+        .timeline-area { 
+            padding: 60px 0;
+            background: #ffffff;
         }
 
         .timeline-item {
-            margin-bottom: 4rem;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 80px;
+            align-items: center;
             opacity: 0;
-            transform: translateX(-30px);
-            animation: slideInTimeline 0.8s ease-out forwards;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
 
-        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
-
-        @keyframes slideInTimeline {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .timeline-item.show-animation { 
+            opacity: 1; 
+            transform: translateY(0); 
         }
 
-        .timeline-marker {
-            position: absolute;
-            left: -58px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: var(--secondary);
-            border: 4px solid #fff;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px var(--secondary);
-        }
-
-        .timeline-content {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-left: 4px solid var(--secondary);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            transform: translateX(10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .timeline-day {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .timeline-description {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-highlights {
-            list-style: none;
-            padding: 0;
-        }
-
-        .timeline-highlights li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+        .picture-block { 
+            width: 100%;
+            border-radius: 16px; 
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             position: relative;
-            color: #555;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .timeline-highlights li::before {
-            content: '▸';
+        .picture-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .timeline-item.show-animation .picture-block::before {
+            animation: shine 2s ease-in-out 0.5s;
+        }
+
+        .picture-block:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .picture-block img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .picture-block:hover img {
+            transform: scale(1.1);
+        }
+
+        .info-block { 
+            width: 100%;
+            padding: 10px; 
+            text-align: left;
+        }
+        
+        .phase-number { 
+            color: var(--blue-highlight); 
+            font-weight: 900; 
+            font-size: 2.5rem; 
+            line-height: 1;
+            margin-bottom: 8px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.show-animation .phase-number {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .phase-date {
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease 0.1s;
+        }
+
+        .timeline-item.show-animation .phase-date {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .info-block h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--blue-highlight);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.6s ease 0.2s;
+        }
+
+        .timeline-item.show-animation .info-block h2 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .info-block p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(0, 0, 0, 0.85);
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.6s ease 0.3s;
+        }
+
+        .timeline-item.show-animation .info-block p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bullet-list {
+            margin-top: 20px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .bullet-list li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+            color: rgba(0, 0, 0, 0.9);
+            line-height: 1.5;
+            font-size: 0.9rem;
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.4s ease, color 0.3s ease;
+        }
+
+        .intro-block .bullet-list li {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.show-animation .insights-list li:nth-child(1) {
+            animation: slideInLeft 0.6s ease 0.8s forwards;
+        }
+
+        .animate-on-scroll.show-animation .insights-list li:nth-child(2) {
+            animation: slideInLeft 0.6s ease 1s forwards;
+        }
+
+        .animate-on-scroll.show-animation .insights-list li:nth-child(3) {
+            animation: slideInLeft 0.6s ease 1.2s forwards;
+        }
+
+        .animate-on-scroll.show-animation .insights-list li:nth-child(4) {
+            animation: slideInLeft 0.6s ease 1.4s forwards;
+        }
+
+        .timeline-item .bullet-list li {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .timeline-item.show-animation .bullet-list li:nth-child(1) {
+            animation: slideInLeft 0.5s ease 0.5s forwards;
+        }
+
+        .timeline-item.show-animation .bullet-list li:nth-child(2) {
+            animation: slideInLeft 0.5s ease 0.6s forwards;
+        }
+
+        .timeline-item.show-animation .bullet-list li:nth-child(3) {
+            animation: slideInLeft 0.5s ease 0.7s forwards;
+        }
+
+        .timeline-item.show-animation .bullet-list li:nth-child(4) {
+            animation: slideInLeft 0.5s ease 0.8s forwards;
+        }
+
+        .bullet-list li:hover {
+            color: rgba(0, 0, 0, 0.95);
+        }
+
+        .bullet-list li:before {
+            content: "→";
             position: absolute;
             left: 0;
-            color: var(--accent);
+            color: #000000;
             font-weight: bold;
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(180deg, #fff 0%, #f8f9fa 100%);
-        }
-
-        .gallery-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            cursor: pointer;
             transition: transform 0.3s ease;
-            opacity: 0;
-            animation: fadeInScale 0.8s ease-out forwards;
         }
 
-        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
-        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
-        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
-        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
-        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
-        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+        .bullet-list li:hover:before {
+            transform: translateX(5px);
+        }
 
-        @keyframes fadeInScale {
-            from {
+        /* ============================================
+           KEY INDUSTRY INSIGHTS SECTION - BLACK THEME
+           ============================================ */
+        .insights-section {
+            padding: 100px 0;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insights-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .insights-header {
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .insights-section.show-animation .insights-header {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .insights-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--blue-light) 0%, var(--blue-highlight) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .insights-intro {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .insight-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease;
+        }
+
+        .insights-section.show-animation .insight-card-1 {
+            animation: insightCardReveal 0.8s ease 0.2s forwards;
+        }
+
+        .insights-section.show-animation .insight-card-2 {
+            animation: insightCardReveal 0.8s ease 0.4s forwards;
+        }
+
+        .insights-section.show-animation .insight-card-3 {
+            animation: insightCardReveal 0.8s ease 0.6s forwards;
+        }
+
+        .insights-section.show-animation .insight-card-4 {
+            animation: insightCardReveal 0.8s ease 0.8s forwards;
+        }
+
+        @keyframes insightCardReveal {
+            0% {
                 opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            60% {
+                transform: translateY(-10px) scale(1.02);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .insight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue-light) 0%, var(--blue-highlight) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .insight-card:hover {
+            border-color: var(--blue-light);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.2);
+        }
+
+        .insight-card:hover::before {
+            opacity: 1;
+        }
+
+        .insight-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+            transform: scale(1);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .insight-card:hover .insight-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .insight-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--blue-light);
+        }
+
+        .insight-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        .insights-conclusion {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 30px;
+            background: rgba(37, 99, 235, 0.05);
+            border-left: 4px solid var(--blue-light);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease 1s;
+        }
+
+        .insights-section.show-animation .insights-conclusion {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .insights-conclusion p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* ============================================
+           RECOGNITION SECTION - WHITE THEME
+           ============================================ */
+        .recognition-section {
+            padding: 120px 0;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recognition-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 30px;
+            padding: 80px 60px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .recognition-card.show-animation {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .recognition-background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('./src/assets/imageevent/event5/exc2552.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1s ease 0.5s;
+            z-index: 0;
+        }
+
+        .recognition-card.show-animation .recognition-background-image {
+            opacity: 0.15;
+        }
+
+        .recognition-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(245, 245, 245, 0.5) 50%, 
+                rgba(255, 255, 255, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .recognition-spotlight {
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            animation: spotlightPulse 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes spotlightPulse {
+            0%, 100% {
+                opacity: 0.3;
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: translateX(-50%) scale(1.1);
+            }
+        }
+
+        .recognition-icon-wrapper {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .recognition-icon {
+            font-size: 6rem;
+            display: inline-block;
+            animation: iconFloat 3s ease-in-out infinite, iconGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        @keyframes iconGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2));
+            }
+            50% {
+                filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.4));
+            }
+        }
+
+        .recognition-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .recognition-content h3 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--blue-highlight);
+        }
+
+        .recognition-content p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.8;
+            color: rgba(0, 0, 0, 0.85);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           LOOKING AHEAD SECTION - BLACK THEME
+           ============================================ */
+        .looking-ahead-section {
+            padding: 120px 0;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .looking-ahead-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .looking-ahead-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.02) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.02) 50%, transparent 52%);
+            background-size: 100px 100px;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .looking-ahead-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .looking-ahead-section.show-animation .looking-ahead-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .looking-ahead-badge {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border: 1px solid var(--blue-highlight);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            color: var(--blue-light);
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(37, 99, 235, 0.5);
+            }
+        }
+
+        .looking-ahead-content h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--blue-light) 0%, var(--blue-highlight) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .looking-ahead-content p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Additional Keyframe Animations */
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
                 transform: scale(0.9);
             }
-            to {
+            100% {
                 opacity: 1;
                 transform: scale(1);
             }
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
         }
 
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
         }
 
-        .gallery-text {
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
+        /* HERO SECTION - RESPONSIVE */
+        /* Large Desktop */
+        @media (min-width: 1400px) {
+            .hero-content {
+                max-width: 1600px;
+            }
+            .container {
+                max-width: 1320px;
+            }
         }
 
-        .gallery-text h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+        /* Desktop */
+        @media (max-width: 1399px) {
+            .hero-visual-section {
+                max-width: 1000px;
+            }
+            
+            .floating-stat {
+                padding: 1.5rem 2rem;
+            }
+            
+            .floating-stat-value {
+                font-size: 3rem;
+            }
         }
 
-        .gallery-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        /* Tablet Landscape */
+        @media (max-width: 1199px) {
+            .floating-image,
+            .floating-stat {
+                display: none;
+            }
+            
+            .hero-visual-section {
+                min-height: 450px;
+                max-width: 900px;
+            }
+
+            .hero-center-image {
+                max-width: 85%;
+            }
+            
+            .hero-center-title {
+                padding: 1.2rem 3rem;
+                bottom: 25px;
+            }
+            
+            .hero-center-title h2 {
+                font-size: clamp(1.8rem, 4vw, 3rem);
+                letter-spacing: 2px;
+            }
         }
 
-        /* Insights Section */
-        .insights-section {
-            padding: 6rem 2rem;
-            background: var(--dark);
-            color: #fff;
+        /* Tablet Portrait */
+        @media (max-width: 991px) {
+            .hero {
+                padding: 3rem 1.5rem 2rem;
+                min-height: 90vh;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .hero-visual-section {
+                min-height: 400px;
+                max-width: 700px;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-center-image {
+                max-width: 90%;
+                border-radius: 20px;
+            }
+            
+            .hero-center-title {
+                padding: 1rem 2.5rem;
+                bottom: 20px;
+                border-radius: 12px;
+            }
+            
+            .hero-center-title h2 {
+                font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+                letter-spacing: 1.5px;
+            }
+            
+            .hero-badge {
+                padding: 0.4rem 1.2rem;
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: clamp(2rem, 6vw, 3.5rem);
+                margin-bottom: 1.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(1rem, 2.5vw, 1.3rem);
+                margin-bottom: 2.5rem;
+            }
+            
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+
+            .insights-section {
+                padding: 70px 0;
+            }
+
+            .insights-header {
+                margin-bottom: 40px;
+            }
+
+            .insights-grid {
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+
+            .insight-card {
+                padding: 30px 20px;
+            }
+
+            .recognition-section {
+                padding: 80px 0;
+            }
+
+            .recognition-card {
+                padding: 60px 40px;
+                border-radius: 20px;
+            }
+
+            .recognition-icon {
+                font-size: 4.5rem;
+            }
+
+            .looking-ahead-section {
+                padding: 80px 0;
+            }
         }
 
-        .insights-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        /* Mobile Landscape */
+        @media (max-width: 767px) {
+            .hero {
+                padding: 2.5rem 1rem 1.5rem;
+                min-height: 85vh;
+            }
+            
+            .hero-visual-section {
+                min-height: 350px;
+                max-width: 100%;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-center-image {
+                max-width: 95%;
+                border-radius: 15px;
+            }
+            
+            .hero-center-title {
+                padding: 0.8rem 2rem;
+                bottom: 15px;
+                border-radius: 10px;
+            }
+            
+            .hero-center-title h2 {
+                font-size: clamp(1.3rem, 4vw, 2rem);
+                letter-spacing: 1px;
+            }
+            
+            .hero-badge {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 1.2rem;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.8rem, 5.5vw, 3rem);
+                margin-bottom: 1rem;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+                margin-bottom: 2rem;
+                padding: 0 0.5rem;
+            }
+            
+            .cta-button {
+                padding: 0.9rem 2rem;
+                font-size: 0.95rem;
+                border-radius: 40px;
+            }
+
+            .insights-section {
+                padding: 50px 0;
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .insight-card {
+                padding: 25px 20px;
+            }
+
+            .insight-icon {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+
+            .insights-conclusion {
+                padding: 30px 20px;
+            }
+
+            .recognition-section {
+                padding: 60px 0;
+            }
+
+            .recognition-card {
+                padding: 40px 25px;
+                border-radius: 15px;
+            }
+
+            .recognition-icon {
+                font-size: 3.5rem;
+            }
+
+            .looking-ahead-section {
+                padding: 60px 0;
+            }
+
+            .looking-ahead-badge {
+                padding: 10px 20px;
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+            }
         }
 
-        .insight-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease-out forwards;
+        /* Small Mobile */
+        @media (max-width: 575px) {
+            .hero {
+                padding: 2rem 0.8rem 1rem;
+            }
+            
+            .hero-content {
+                padding: 0 0.5rem;
+            }
+            
+            .hero-visual-section {
+                min-height: 300px;
+                margin-bottom: 1.2rem;
+            }
+            
+            .hero-center-image {
+                max-width: 100%;
+                border-radius: 12px;
+            }
+            
+            .hero-center-title {
+                padding: 0.6rem 1.5rem;
+                bottom: 12px;
+            }
+            
+            .hero-center-title h2 {
+                font-size: clamp(1.2rem, 5vw, 1.8rem);
+            }
+            
+            .hero-badge {
+                padding: 0.35rem 0.9rem;
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.6rem, 6vw, 2.5rem);
+                line-height: 1.15;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+                margin-bottom: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 0.85rem 1.8rem;
+                font-size: 0.9rem;
+            }
+
+            .insight-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .insight-content p {
+                font-size: 0.95rem;
+            }
+
+            .recognition-icon-wrapper {
+                margin-bottom: 30px;
+            }
         }
 
-        .insight-card:nth-child(1) { animation-delay: 0.1s; }
-        .insight-card:nth-child(2) { animation-delay: 0.2s; }
-        .insight-card:nth-child(3) { animation-delay: 0.3s; }
-        .insight-card:nth-child(4) { animation-delay: 0.4s; }
-
-        .insight-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--secondary);
-            transform: translateY(-10px);
+        /* Extra Small Mobile */
+        @media (max-width: 479px) {
+            .hero {
+                padding: 1.5rem 0.5rem 1rem;
+                min-height: 80vh;
+            }
+            
+            .hero-visual-section {
+                min-height: 250px;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-center-title {
+                padding: 0.5rem 1.2rem;
+                bottom: 10px;
+            }
+            
+            .hero-center-title h2 {
+                font-size: clamp(1.1rem, 5.5vw, 1.6rem);
+            }
+            
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.8rem;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.4rem, 6.5vw, 2.2rem);
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.85rem, 3vw, 1.05rem);
+                margin-bottom: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.85rem;
+            }
         }
 
-        .insight-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
+        /* Landscape Orientation */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 2rem 1rem;
+            }
+            
+            .hero-visual-section {
+                min-height: 250px;
+            }
         }
 
-        .insight-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--secondary);
+        /* Tablet Styles (600px and up) */
+        @media (min-width: 600px) {
+            .container {
+                padding: 0 40px;
+            }
+
+            .intro-block {
+                padding: 80px 0 50px;
+            }
+
+            .intro-text-wrapper {
+                max-width: 700px;
+            }
+
+            .intro-text-wrapper h2 {
+                font-size: 2.5rem;
+                margin-bottom: 25px;
+            }
+
+            .intro-text-wrapper p {
+                font-size: 1.1rem;
+                margin-bottom: 18px;
+            }
+
+            .highlight-tag {
+                padding: 11px 25px;
+                font-size: 1rem;
+            }
+
+            .timeline-area {
+                padding: 80px 0;
+            }
+
+            .timeline-item {
+                gap: 40px;
+                margin-bottom: 100px;
+            }
+
+            .picture-block {
+                height: 350px;
+                border-radius: 20px;
+            }
+
+            .phase-number {
+                font-size: 3rem;
+            }
+
+            .phase-date {
+                font-size: 0.85rem;
+            }
+
+            .info-block h2 {
+                font-size: 1.8rem;
+            }
+
+            .info-block p {
+                font-size: 1.05rem;
+            }
+
+            .bullet-list li {
+                font-size: 0.95rem;
+            }
         }
 
-        .insight-description {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-        }
+        /* Desktop Styles (992px and up) */
+        @media (min-width: 992px) {
+            .container {
+                max-width: 1550px;
+                padding: 0 60px;
+            }
 
-        /* Recognition Section */
-        .recognition-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-            text-align: center;
-        }
+            .intro-block {
+                padding: 120px 0 80px;
+            }
 
-        .recognition-badge {
-            max-width: 400px;
-            margin: 3rem auto;
-            padding: 3rem;
-            background: #fff;
-            border-radius: 50%;
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
-            border: 8px solid var(--secondary);
-            animation: rotate360 20s linear infinite;
-        }
+            .intro-text-wrapper {
+                max-width: 900px;
+            }
 
-        @keyframes rotate360 {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
+            .intro-text-wrapper h2 {
+                font-size: 3.5rem;
+                margin-bottom: 30px;
+            }
 
-        .recognition-badge-inner {
-            animation: rotate360-reverse 20s linear infinite;
-        }
+            .intro-text-wrapper p {
+                font-size: 1.2rem;
+                line-height: 1.8;
+                margin-bottom: 20px;
+            }
 
-        @keyframes rotate360-reverse {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(-360deg); }
-        }
+            .highlight-tag {
+                padding: 12px 30px;
+                margin-top: 20px;
+                font-size: 1.1rem;
+            }
 
-        .badge-icon {
-            font-size: 5rem;
-            margin-bottom: 1rem;
-        }
+            .timeline-area {
+                padding: 100px 0;
+            }
 
-        .badge-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
+            .timeline-item {
+                flex-direction: row;
+                gap: 60px;
+                margin-bottom: 150px;
+                transform: translateY(50px);
+            }
 
-        .badge-subtitle {
-            color: #666;
-            font-size: 1.1rem;
-        }
+            .timeline-item:nth-child(even) {
+                flex-direction: row-reverse;
+            }
 
-        /* CTA Section */
-        .cta-section {
-            padding: 6rem 2rem;
-            background: var(--gradient-industrial);
-            text-align: center;
-            color: #fff;
-        }
+            .picture-block {
+                flex: 0 0 55%;
+                height: 450px;
+                border-radius: 24px;
+            }
 
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+            .info-block {
+                flex: 1;
+                padding: 20px;
+            }
 
-        .cta-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 2rem;
-            letter-spacing: 2px;
-        }
+            .phase-number {
+                font-size: 4rem;
+                margin-bottom: 10px;
+            }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 3rem;
-        }
+            .phase-date {
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+                margin-bottom: 15px;
+            }
 
-        .btn {
-            padding: 1.2rem 3rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            display: inline-block;
-        }
+            .info-block h2 {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
 
-        .btn-primary {
-            background: var(--secondary);
-            color: var(--dark);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-        }
+            .info-block p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
 
-        .btn-primary:hover {
-            background: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
-        }
+            .bullet-list {
+                margin-top: 25px;
+            }
 
-        .btn-secondary {
-            background: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-        }
-
-        .btn-secondary:hover {
-            background: #fff;
-            color: var(--dark);
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark);
-            color: #fff;
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--secondary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .keywords {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-top: 1rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .timeline {
+            .bullet-list li {
                 padding-left: 30px;
-            }
-
-            .timeline-marker {
-                left: -43px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
+                margin-bottom: 12px;
+                font-size: 1rem;
+                line-height: 1.6;
             }
         }
 
-        /* Scroll reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
+        /* ============================================
+           FOOTER - WHITE THEME
+           ============================================ */
+        footer {
+            background: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        footer p:first-child {
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
         }
+
+        footer p:last-child {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 0.85rem;
+        }
+
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
+<nav class="sazs-header">
+<div class="sazs-header-wrapper">
+<div class="sazs-header-main">
+<a href="/" class="sazs-brand">
+<div class="sazs-brand-image">
+<img src="./src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo Home page" class="sazs-brand-image">
+</div>
+</a>
+<ul class="sazs-menu-list">
+<li class="sazs-menu-item">
+<a class="sazs-menu-link" data-dropdown="platform">Product<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+</li>
+<li class="sazs-menu-item">
+<a class="sazs-menu-link" data-dropdown="Features">Features<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+</li>
+<li class="sazs-menu-item">
+<a class="sazs-menu-link" data-dropdown="resources">Media & Events<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+</li>
+<li class="sazs-menu-item">
+<a class="sazs-menu-link" data-dropdown="blogs">Blogs<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+</li>
+</ul>
+<div class="sazs-cta-group">
+<a href="Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
+</div>
+<div class="sazs-hamburger">
+<a href="javascript:void(0);" onclick="toggleNav()"><i class="fa fa-bars"></i></a>
+</div>
+</div>
+
+<div class="sazs-submenu" id="platform">
+<div class="product-dropdown">
+<div class="product-left">
+<div class="product-section-title">Quick Links</div>
+<a href="index.html" class="product-link">Home</a>
+<a href="aboutus.html" class="product-link">About Us</a>
+<a href="WhytoChoose.html" class="product-link">Why to Choose</a>
+<a href="careers.html" class="product-link">Careers</a>
+<a href="ProfitCalculator.html" class="product-link">Profit Calc</a>
+<a href="Questions.html" class="product-link">FAQ</a>
+</div>
+<div class="product-right">
+<div class="product-grid-title">Our Products</div>
+<div class="sazs-submenu-grid">
+<div class="sazs-submenu-col">
+<a href="QuarryCrusher.html" class="sazs-product-card">
+<div class="sazs-card-img-wrapper">
+<img src="./src/assets/contentImages/crusherdroneview.avif" alt="Stone Crusher Management Software"/>
+</div>
+<div class="sazs-card-heading">Stone Crusher Software for End-to-End Operations</div>
+<div class="sazs-card-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
+</a>
+</div>
+<div class="sazs-submenu-col">
+<a href="rmc.html" class="sazs-product-card">
+<div class="sazs-card-img-wrapper">
+<img src="/src/assets/contentImages/quarrydroneview.avif" alt="Brick Manufacturing ERP Software"/>
+</div>
+<div class="sazs-card-heading">End-to-End Management Software for Stone Quarries</div>
+<div class="sazs-card-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
+</a>
+</div>
+<div class="sazs-submenu-col">
+<a href="rmc.html" class="sazs-product-card">
+<div class="sazs-card-img-wrapper">
+<img src="/src/assets/contentImages/RMCdroneview.avif" alt="Brick Manufacturing ERP Software"/>
+</div>
+<div class="sazs-card-heading">Next-Gen Billing Software for Ready Mix Concrete (RMC) Plants</div>
+<div class="sazs-card-text">The Future of Fast, Accurate & Automated RMC Billing</div>
+</a>
+</div>
+<div class="sazs-submenu-col">
+<a href="brickspaver.html" class="sazs-product-card">
+<div class="sazs-card-img-wrapper">
+<img src="/src/assets/contentImages/bricksdrone.avif" alt="Brick Manufacturing ERP Software"/>
+</div>
+<div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing Plants</div>
+<div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage of Your Production</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="sazs-submenu" id="Features">
+    <div class="media-events-header">
+<h2 class="media-events-title">Features   <span class="media-title-separator">—</span> <span class="media-title-subtitle">tailored to every Crushers & Quarries ,RMC ,Brick & Paver</span></h2>
+<!-- <div class="media-events-ai-tracker">
+<span class="ai-tracker-label">Latest Insights</span>
+<span class="ai-tracker-beta">NEW</span>
+<span class="ai-tracker-text">Industry Proven Results</span>
+</div> -->
+</div>
+<div class="bento-container">
+    
+<a style="color: #000;text-decoration: none !important;" href="Anprs.html" class="card anpr">
+<h2 >ANPR Camera</h2>
+<p>Automatic vehicle recognition</p>
+<div class="shine-effect">
+<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.96);color:#111;border-radius:20px">
+<div class="mini-text content-item" id="anpr-content">
+<strong>Smart Tech</strong>
+<span>Auto Recognition</span>
+</div>
+</div>
+</div>
+</a>
+<a style="color: #000;text-decoration: none !important;" href="EInvoice.html" class="card einvoice">
+<h2>E-Invoice</h2>
+<p>GST compliant billing</p>
+<div class="shine-effect">
+<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.96);color:#111;border-radius:20px">
+<div class="mini-text content-item" id="einvoice-content">
+<strong>Compliance</strong>
+<span>GST Ready</span>
+</div>
+</div>
+</div>
+</a>
+<a style="color: #000;text-decoration: none !important;" href="Weighbridge.html" class="card weighbridge">
+<h2>Weighbridge</h2>
+<p>Real-time weight capture</p>
+<div class="feature-container">
+<div class="feature-pill">Real-time Capture</div>
+<div class="feature-pill">Automation</div>
+</div>
+</a>
+<a style="color: #000;text-decoration: none !important;" href="BoomBarrier.html" class="card boom">
+<h2>Boom Barrier</h2>
+<p>Automated gate control</p>
+<div class="shine-effect status-panel">
+<div class="content-item" id="boom-content">
+<strong>Security</strong>
+<span>Gate Control</span>
+<!-- <hr>
+<strong>Automated</strong>
+<span>Access System</span> -->
+</div>
+</div>
+</a>
+<a style="color: #000;text-decoration: none !important;" href="Biometrics.html" class="card biometrics">
+<h2>Biometrics</h2>
+<p>Secure access control</p>
+<div class="shine-effect" style="width:214px;padding:0">
+<div class="info-box">
+<span id="biometric-status">Fingerprint Scanner</span>
+<div  id="status-indicator"></div>
+</div>
+</div>
+</a>
+<div class="card smarttech">
+<h2>Smart Tech</h2>
+<p>Tailored for Crushers & Quarries</p>
+</div>
+</div>
+</div>
+
+<div class="sazs-submenu" id="resources">
+<div class="media-events-dropdown">
+<div class="media-events-header">
+<h2 class="media-events-title">Media & Events <span class="media-title-separator">—</span> <span class="media-title-subtitle">Stay Connected, Stay Informed</span></h2>
+<div class="media-events-ai-tracker">
+<span class="ai-tracker-label">Latest Updates</span>
+<span class="ai-tracker-beta">NEW</span>
+<span class="ai-tracker-text">Industry Insights & Success Stories</span>
+</div>
+</div>
+<div class="media-events-grid">
+      <a href="Jharkhand _2026.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/Excon25.avif" alt="Media Kit"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">Jharkhand Mining & Construction Show 2026 </div>
+</div>
+</a>
+    <a href="EXCON_2025.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/Excon25.avif" alt="Media Kit"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
+</div>
+</a>
+<a href="IEMS_2024.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/IEMS24.avif" alt="Customer Stories"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">IEMS – International Mining Expo & Conclave 2024</div>
+</div>
+</a>
+<a href="TNMSA_2024.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/TMSA24.avif" alt="Blog & Articles"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</div>
+</div>
+</a>
+<a href="EXCON_2023.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/Excon23.avif" alt="Upcoming Events"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
+</div>
+</a>
+<a href="CODDISSIA.html" class="media-event-card">
+<div class="media-card-image">
+<img src="./src/assets/images/Codisia22.avif" alt="Press Releases"/>
+</div>
+<div class="media-card-content">
+<div class="media-card-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</div>
+</div>
+</a>
+
+
+
+
+</div>
+</div>
+</div>
+
+<div class="sazs-submenu" id="blogs">
+<div class="blogs-dropdown-container">
+<div class="media-events-header">
+<h2 class="media-events-title">Case Studies <span class="media-title-separator">—</span> <span class="media-title-subtitle">Real-World Success Stories</span></h2>
+<div class="media-events-ai-tracker">
+<span class="ai-tracker-label">Latest Insights</span>
+<span class="ai-tracker-beta">NEW</span>
+<span class="ai-tracker-text">Industry Proven Results</span>
+</div>
+</div>
+<div class="blogs-cards-grid">
+<a href="Optimizing_Quarry_Profitability_&_Theft_Prevention.html" class="blog-card">
+<div class="blog-card-image">
+<img src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability"/>
+<div class="blog-card-overlay">
+<div class="blog-overlay-title">Optimizing Quarry Profitability & Theft Prevention</div>
+<div class="blog-overlay-explore">Explore →</div>
+</div>
+</div>
+</a>
+<a href="Transforming_Customer_Experience_&_Order_Speed.html" class="blog-card">
+<div class="blog-card-image">
+<img src="/src/assets/contentImages/tran2.webp" alt="Customer Experience"/>
+<div class="blog-card-overlay">
+<div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
+<div class="blog-overlay-explore">Explore →</div>
+</div>
+</div>
+</a>
+<a href="Automating_E-Invoicing_&_GST_Compliance.html" class="blog-card">
+<div class="blog-card-image">
+<img src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing"/>
+<div class="blog-card-overlay">
+<div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
+<div class="blog-overlay-explore">Explore →</div>
+</div>
+</div>
+</a>
+<a href="Real-Time_Vehicle_&_Trip_Management.html" class="blog-card">
+<div class="blog-card-image">
+<img src="/src/assets/contentImages/real4.webp" alt="Vehicle Management"/>
+<div class="blog-card-overlay">
+<div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
+<div class="blog-overlay-explore">Explore →</div>
+</div>
+</div>
+</a>
+<a href="Complete_Financial_Control_&_Profit_Analysis.html" class="blog-card">
+<div class="blog-card-image">
+<img src="/src/assets/contentImages/comp5.webp" alt="Financial Control"/>
+<div class="blog-card-overlay">
+<div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
+<div class="blog-overlay-explore">Explore →</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+<div id="mySidenav" class="sidenav">
+<a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
+<a href="/"><img src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page" class="sidenav-logo"></a>
+<a href="/">Home</a>
+<a href="aboutus.html">About Us</a>
+<div class="mobile-dropdown">
+<a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products <i class="fa fa-chevron-down"></i></a>
+<div class="mobile-dropdown-content">
+<a href="QuarryCrusher.html">Quarry & Crusher</a>
+<a href="rmc.html">Ready Mix Concrete</a>
+<a href="brickspaver.html">Bricks & Pavers</a>
+</div>
+</div>
+<div class="mobile-dropdown">
+<a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Explore Features <i class="fa fa-chevron-down"></i></a>
+<div class="mobile-dropdown-content">
+<!-- <a href="features.html">Features</a> -->
+<a href="Anprs.html">ANPR Camera Integration</a>
+<a href="EInvoice.html">E-Invoice Integration</a>
+<a href="Weighbridge.html">Weighbridge and Camera Integration</a>
+<a href="Boombarrier.html">Boom Barrier Integration</a>
+<a href="biometrics.html">Biometrics</a>
+</div>
+</div>
+<div class="mobile-dropdown">
+<a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Case Studies <i class="fa fa-chevron-down"></i></a>
+<div class="mobile-dropdown-content">
+<a href="Optimizing_Quarry_Profitability_&_Theft_Prevention.html">Quarry Profitability
+Optimizing Quarry Profitability & Theft Prevention</a>
+<a href="Transforming_Customer_Experience_&_Order_Speed.html">Customer Experience
+Transforming Customer Experience & Order Speed</a>
+<a href="Automating_E-Invoicing_&_GST_Compliance.html">E-Invoicing
+Automating E-Invoicing & GST Compliance</a>
+<a href="Real-Time_Vehicle_&_Trip_Management.html">Vehicle Management
+Real-Time Vehicle & Trip Management</a>
+<a href="Complete_Financial_Control_&_Profit_Analysis.html">
+Financial Control
+Complete Financial Control & Profit Analysis</a>
+</div>
+</div>
+<div class="mobile-dropdown">
+<a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Events <i class="fa fa-chevron-down"></i></a>
+<div class="mobile-dropdown-content">
+<a href="Jharkhand _2026.html">Jharkhand Mining & Construction Show 2026</a>
+<a href="EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
+<a href="IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
+<a href="TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
+<a href="EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
+<a href="CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
+</div>
+</div>
+<a href="ProfitCalculator.html">Profit Calc</a>
+<a href="careers.html">Careers</a>
+<a href="Signup.html">Sign Up</a>
+<a href="contact.html">Contact Us</a>
+<a href="Weighbridge.html">Why to Choose Sazs</a>
+<a href="Questions.html">FAQ</a>
+<div class="call">
+<a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i>76666 28000</a>
+</div>
+</div>
+
+<script>
+function toggleMobileDropdown(t,e){e&&e.stopPropagation();const n=t.nextElementSibling;document.querySelectorAll(".mobile-dropdown-content").forEach(e=>{e!==n&&e.classList.remove("active")}),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>{e!==t&&e.classList.remove("active")}),n.classList.toggle("active"),t.classList.toggle("active")}const sidenav=document.getElementById("mySidenav");sidenav&&sidenav.addEventListener("click",function(e){e.stopPropagation()}),document.addEventListener("click",function(e){e.target.closest(".mobile-dropdown")||(document.querySelectorAll(".mobile-dropdown-content").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>e.classList.remove("active")))});if(window.innerWidth>991){const e=document.querySelectorAll("[data-dropdown]"),t=document.querySelector(".sazs-header-wrapper");let n=null;e.forEach(e=>{const o=e.closest(".sazs-menu-item"),s=e.getAttribute("data-dropdown"),c=document.getElementById(s);c&&o&&(o.addEventListener("mouseenter",()=>{clearTimeout(n),document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active")),c.classList.add("active"),o.classList.add("active")}),c.addEventListener("mouseenter",()=>{clearTimeout(n)}),c.addEventListener("mouseleave",()=>{n=setTimeout(()=>{c.classList.remove("active"),o.classList.remove("active")},200)}))}),t&&t.addEventListener("mouseleave",()=>{n=setTimeout(()=>{document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active"))},200)})}function openNav(){document.querySelectorAll(".mobile-dropdown-content").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".mobile-dropdown-trigger").forEach(e=>e.classList.remove("active")),sidenav.style.width="250px",document.addEventListener("click",closeNavOnClickOutside)}function closeNav(){sidenav.style.width="0",document.removeEventListener("click",closeNavOnClickOutside)}function toggleNav(){"250px"===sidenav.style.width?closeNav():openNav()}function closeNavOnClickOutside(e){sidenav.contains(e.target)||e.target.closest(".sazs-hamburger")||closeNav()}if(window.innerWidth>991){const e=document.querySelectorAll("[data-dropdown]");let t=null;e.forEach(e=>{const n=e.closest(".sazs-menu-item"),o=e.getAttribute("data-dropdown"),s=document.getElementById(o);s&&n&&(n.addEventListener("mouseenter",()=>{clearTimeout(t),document.querySelectorAll(".sazs-submenu").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sazs-menu-item").forEach(e=>e.classList.remove("active")),s.classList.add("active"),n.classList.add("active")}),s.addEventListener("mouseleave",()=>{t=setTimeout(()=>{s.classList.remove("active"),n.classList.remove("active")},200)}))})}const anprContent=document.getElementById("anpr-content"),einvoiceContent=document.getElementById("einvoice-content"),boomContent=document.getElementById("boom-content"),biometricStatus=document.getElementById("biometric-status"),statusIndicator=document.getElementById("status-indicator"),anprVariations=[{title:"Smart Tech",subtitle:"Auto Recognition"},{title:"Crushers",subtitle:"Vehicle Tracking"},{title:"Quarries",subtitle:"Entry Logging"}],einvoiceVariations=[{title:"Compliance",subtitle:"GST Ready"},{title:"RMC",subtitle:"Billing System"},{title:"Brick & Paver",subtitle:"Invoice Ready"}],boomVariations=[{top:"Security",topLabel:"Gate Control"},{top:"Automated",topLabel:"Access System"},{top:"Real-time",topLabel:"Monitoring"},{top:"Smart",topLabel:"Integration"},{top:"Advanced",topLabel:"Security"},{top:"Seamless",topLabel:"Operations"}],biometricVariations=[{status:"Fingerprint Scanner"},{status:"Face Recognition"},{status:"RFID Access"}];let currentAnpr=0,currentEinvoice=0,currentBoom=0,currentBiometric=0;function morphContent(e,t,n=!1){e.style.transition="opacity .4s ease, transform .4s ease",e.style.opacity="0",e.style.transform="scale(.95)",setTimeout(()=>{n?e.innerHTML=`<strong>${t.top}</strong><span>${t.topLabel}</span>`:e.innerHTML=`<strong>${t.title}</strong><span>${t.subtitle}</span>`,e.style.opacity="1",e.style.transform="scale(1)"},400)}setInterval(()=>{currentAnpr=(currentAnpr+1)%anprVariations.length,morphContent(anprContent,anprVariations[currentAnpr])},4e3),setInterval(()=>{currentEinvoice=(currentEinvoice+1)%einvoiceVariations.length,morphContent(einvoiceContent,einvoiceVariations[currentEinvoice])},5e3),setInterval(()=>{currentBoom=(currentBoom+1)%boomVariations.length,morphContent(boomContent,boomVariations[currentBoom],!0)},6e3),setInterval(()=>{currentBiometric=(currentBiometric+1)%biometricVariations.length;const e=biometricVariations[currentBiometric];biometricStatus.style.transition="opacity .4s ease, transform .4s ease",statusIndicator.style.transition="opacity .4s ease, transform .4s ease",biometricStatus.style.opacity="0",statusIndicator.style.opacity="0",setTimeout(()=>{biometricStatus.textContent=e.status,statusIndicator.textContent=e.indicator,biometricStatus.style.opacity="1",statusIndicator.style.opacity="1"},400)},7e3);
+</script>
+    <!-- ============================================
+         HERO SECTION - HTML (BLACK THEME)
+         ============================================ -->
+    <section class="hero" >
         <div class="hero-content">
-            <div class="hero-badge">Exhibitor Spotlight</div>
-            <h1>JMC 2026</h1>
-            <h2>Jharkhand Mining & Construction Show</h2>
-            <p class="hero-description">
-                Pioneering Digital Transformation in Mining and Construction Through Enterprise ERP Solutions
+            <div class="hero-badge">RANCHI • 2026</div>
+            
+            <div class="hero-visual-section">
+                <!-- Floating Stats -->
+                <div class="floating-stat stat-top-left">
+                    <div class="floating-stat-label">Days of Innovation</div>
+                    <div class="floating-stat-value">3</div>
+                </div>
+                
+                <div class="floating-stat stat-top-right">
+                    <div class="floating-stat-label">Industry Leaders Engaged</div>
+                    <div class="floating-stat-value">100+</div>
+                </div>
+                
+                <div class="floating-stat stat-bottom-right">
+                    <div class="floating-stat-label">ERP Integrations Showcased</div>
+                    <div class="floating-stat-value">15+</div>
+                </div>
+
+                <!-- Floating Images -->
+                <div class="floating-image float-img-1">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop" alt="Team at JMC 2026">
+                </div>
+                
+                <div class="floating-image float-img-2">
+                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=300&fit=crop" alt="Industry Speaker">
+                </div>
+                
+                <div class="floating-image float-img-3">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=300&fit=crop" alt="Customer Engagement">
+                </div>
+                
+                <div class="floating-image float-img-4">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop" alt="ERP Demo">
+                </div>
+
+                <!-- Center Main Image -->
+                <div class="hero-center-image">
+                    <img src="./src/assets/imageevent/event5/exc2541.webp" alt="JMC 2026 Event">
+                    <div class="hero-center-title">
+                        <h2>JMC 2026</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Text Content -->
+            <h1>Jharkhand Mining & Construction Show 2026</h1>
+            <p class="hero-subtitle">
+                Premier industry platform showcasing enterprise ERP solutions for mining, quarry, and construction sectors
             </p>
-        </div>
-        <div class="scroll-indicator">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 5v14M5 12l7 7 7-7"/>
-            </svg>
+            <a href="#overview" class="cta-button">Explore Our Journey</a>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stat-item">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Days of Innovation</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Industry Connections</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Digital Focus</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">1</div>
-            <div class="stat-label">Award Recognition</div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="video-section reveal">
-        <div class="section-header">
-            <div class="section-tag">Event Highlights</div>
-            <h2 class="section-title">Experience JMC 2026</h2>
-            <p class="section-description">
-                Watch how Sazs Apps brought digital transformation to the forefront of the mining and construction industry at Ranchi's premier exhibition event.
-            </p>
-        </div>
-        <div class="video-container">
-            <div class="video-placeholder">
-                <div class="play-button"></div>
+    <!-- Event Overview (WHITE THEME) -->
+    <section class="intro-block" id="overview">
+        <div class="container">
+            <div class="intro-text-wrapper">
+                <h2>Event Overview</h2>
+                <p>Sazs Apps Private Limited participated as an exhibitor at the Jharkhand Mining & Construction Show 2026 (JMC 2026), held in Ranchi, Jharkhand. The exhibition served as a premier industry platform for stakeholders across the mining, quarry, and construction sectors, enabling collaboration, technology exchange, and business networking.</p>
+                <p>As one of the key technology-focused exhibitors, Sazs Apps showcased its industry-specific ERP solutions designed to address the operational, compliance, and scalability challenges of infrastructure-driven enterprises.</p>
+                <span class="highlight-tag">Premier Technology Exhibitor</span>
             </div>
         </div>
     </section>
 
-    <!-- Timeline Section -->
-    <section class="timeline-section reveal">
-        <div class="section-header">
-            <div class="section-tag">Event Journey</div>
-            <h2 class="section-title">Three Days of Transformation</h2>
-            <p class="section-description">
-                A comprehensive journey through innovation, collaboration, and industry excellence
-            </p>
+    <!-- Event Timeline & Highlights Header (BLACK THEME) -->
+    <section class="intro-block timeline-header-section animate-on-scroll">
+        <div class="container">
+            <div class="intro-text-wrapper">
+                <h2>Event Timeline & Highlights</h2>
+            </div>
         </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <div class="timeline-day">Day 1</div>
-                    <h3 class="timeline-title">Industry Engagement & Networking</h3>
-                    <p class="timeline-description">
-                        The opening day focused on establishing industry connections and understanding operational challenges across mining and construction businesses.
-                    </p>
-                    <ul class="timeline-highlights">
-                        <li>Digital readiness assessment of mining operations</li>
-                        <li>Multi-site operational control challenges discussion</li>
-                        <li>Centralized reporting systems exploration</li>
-                        <li>Plant owners and decision-makers engagement</li>
+    </section>
+
+    <!-- Day-by-Day Content (WHITE THEME) -->
+    <section class="timeline-area" style="background-color: #000; padding: 20px; ">
+        <div class="container" style="background-color: #ffffff; border-radius: 50px;" >
+            
+            <!-- Day 1 -->
+            <div class="timeline-item animate-on-scroll">
+                <div class="picture-block">
+                    <img src="../src/assets/contentImages/Anpr.png" alt="Industry Networking">
+                </div>
+                <div class="info-block">
+                    <div class="phase-number">DAY 1</div>
+                    <div class="phase-date">February 2026</div>
+                    <h2>Industry Engagement & Networking</h2>
+                    <p>The opening day focused on establishing industry connections and understanding operational challenges across mining and construction businesses. Our team engaged with plant owners, operations heads, and decision-makers, discussing current pain points related to manual processes, fragmented data, and compliance management.</p>
+                    <p style="margin-top: 15px; margin-bottom: 10px; font-weight: 600;">Key focus areas included:</p>
+                    <ul class="bullet-list">
+                        <li>Digital readiness of mining and quarry operations</li>
+                        <li>Challenges in multi-site operational control</li>
+                        <li>Need for centralized reporting systems</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <div class="timeline-day">Day 2</div>
-                    <h3 class="timeline-title">Digital Transformation & ERP Demonstrations</h3>
-                    <p class="timeline-description">
-                        Enterprise-level discussions around digital transformation with comprehensive ERP platform demonstrations.
-                    </p>
-                    <ul class="timeline-highlights">
-                        <li>Real-time operational visibility demonstrations</li>
+            <!-- Day 2 -->
+            <div class="timeline-item animate-on-scroll">
+                <div class="picture-block">
+                    <img src="../src/assets/contentImages/whyimg5.webp" alt="ERP Software Demo">
+                </div>
+                <div class="info-block">
+                    <div class="phase-number">DAY 2</div>
+                    <div class="phase-date">February 2026</div>
+                    <h2>Digital Transformation & ERP Demonstrations</h2>
+                    <p>Day two centered on enterprise-level discussions around digital transformation. Sazs Apps demonstrated how its integrated ERP platform enables:</p>
+                    <ul class="bullet-list">
+                        <li>Real-time operational visibility across geographically distributed sites</li>
                         <li>Asset traceability and lifecycle management</li>
                         <li>Compliance alignment and statutory reporting</li>
-                        <li>Data-driven decision-making dashboards</li>
+                        <li>Data-driven decision-making through centralized dashboards</li>
                     </ul>
+                    <p style="margin-top: 15px;">These interactions reinforced a clear industry shift toward centralized operations, real-time analytics, and scalable digital infrastructure to support sustainable growth.</p>
                 </div>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <div class="timeline-day">Day 3</div>
-                    <h3 class="timeline-title">Recognition & Strategic Alignment</h3>
-                    <p class="timeline-description">
-                        The final day marked successful conclusion with exhibitor recognition and strategic planning discussions.
-                    </p>
-                    <ul class="timeline-highlights">
-                        <li>Exhibitor recognition ceremony</li>
-                        <li>Long-term digital roadmap planning</li>
-                        <li>ERP implementation strategy sessions</li>
+            <!-- Day 3 -->
+            <div class="timeline-item animate-on-scroll">
+                <div class="picture-block">
+                    <img src="../src/assets/contentImages/Weighbridgeintegrationf.png" alt="Award Ceremony">
+                </div>
+                <div class="info-block">
+                    <div class="phase-number">DAY 3</div>
+                    <div class="phase-date">February 2026</div>
+                    <h2>Recognition & Strategic Alignment</h2>
+                    <p>The final day marked the successful conclusion of the event with exhibitor recognition for Sazs Apps Private Limited. The recognition acknowledged our contribution to advancing technology-led execution in the mining and construction ecosystem.</p>
+                    <p style="margin-top: 15px; margin-bottom: 10px;">Discussions on Day 3 focused on:</p>
+                    <ul class="bullet-list">
+                        <li>Long-term digital roadmaps</li>
+                        <li>ERP implementation strategies</li>
                         <li>Governance-driven technology adoption</li>
                     </ul>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section reveal">
-        <div class="section-header">
-            <div class="section-tag">Visual Journey</div>
-            <h2 class="section-title">Event Gallery</h2>
-            <p class="section-description">
-                Capturing moments of innovation, collaboration, and industry excellence
-            </p>
+    <!-- Key Industry Insights Section (BLACK THEME) -->
+    <section class="insights-section animate-on-scroll">
+        <div class="container">
+            <div class="insights-header">
+                <h2>Key Industry Insights</h2>
+                <p class="insights-intro">Insights gathered across the three-day event highlighted:</p>
+            </div>
+            
+            <div class="insights-grid">
+                <div class="insight-card insight-card-1">
+                    <div class="insight-content">
+                        <h3>ERP Demand Surge</h3>
+                        <p>Increasing demand for ERP software for mining and quarry operations</p>
+                    </div>
+                </div>
+                
+                <div class="insight-card insight-card-2">
+                    <div class="insight-content">
+                        <h3>Transparency Focus</h3>
+                        <p>Growing focus on operational transparency and compliance readiness</p>
+                    </div>
+                </div>
+                
+                <div class="insight-card insight-card-3">
+                    <div class="insight-content">
+                        <h3>Industry 4.0 Adoption</h3>
+                        <p>Adoption of Industry 4.0 principles in construction and infrastructure projects</p>
+                    </div>
+                </div>
+                
+                <div class="insight-card insight-card-4">
+                    <div class="insight-content">
+                        <h3>Scalable Solutions</h3>
+                        <p>Need for scalable platforms supporting business expansion and governance</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="insights-conclusion">
+                <p>These trends reaffirm the importance of purpose-built ERP solutions tailored for the infrastructure sector.</p>
+            </div>
         </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                        <div class="gallery-icon">🏢</div>
-                        <h3>Exhibition Booth</h3>
-                        <p>Our technology showcase</p>
-                    </div>
+    </section>
+
+    <!-- Recognition Section (WHITE THEME) -->
+    <section class="recognition-section">
+        <div class="container">
+            <div class="recognition-card animate-on-scroll">
+                <div class="recognition-background-image"></div>
+                <div class="recognition-overlay"></div>
+                <div class="recognition-spotlight"></div>
+                <div class="recognition-icon-wrapper">
+                    <div class="recognition-icon">🏆</div>
                 </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                        <div class="gallery-icon">💼</div>
-                        <h3>Industry Meetings</h3>
-                        <p>Strategic discussions</p>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                        <div class="gallery-icon">💻</div>
-                        <h3>Live Demonstrations</h3>
-                        <p>ERP platform in action</p>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                        <div class="gallery-icon">🤝</div>
-                        <h3>Networking</h3>
-                        <p>Building partnerships</p>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                        <div class="gallery-icon">🏆</div>
-                        <h3>Recognition</h3>
-                        <p>Award ceremony</p>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                        <div class="gallery-icon">🎯</div>
-                        <h3>Solutions</h3>
-                        <p>Industry-focused ERP</p>
-                    </div>
+                <div class="recognition-content">
+                    <h3>Recognition & Acknowledgement</h3>
+                    <p>Sazs Apps Private Limited was honored as an exhibitor at Jharkhand Mining & Construction Show 2026. This recognition reflects our ongoing commitment to delivering enterprise-grade ERP solutions that enable operational excellence, regulatory compliance, and digital maturity.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Insights Section -->
-    <section class="insights-section reveal">
-        <div class="section-header">
-            <div class="section-tag">Industry Trends</div>
-            <h2 class="section-title">Key Insights from JMC 2026</h2>
-            <p class="section-description">
-                Critical trends shaping the future of mining and construction operations
-            </p>
-        </div>
-        <div class="insights-grid">
-            <div class="insight-card">
-                <span class="insight-icon">📊</span>
-                <h3 class="insight-title">ERP Adoption Rising</h3>
-                <p class="insight-description">
-                    Increasing demand for ERP software specifically designed for mining and quarry operations with integrated compliance features.
-                </p>
-            </div>
-            <div class="insight-card">
-                <span class="insight-icon">🔍</span>
-                <h3 class="insight-title">Operational Transparency</h3>
-                <p class="insight-description">
-                    Growing focus on operational transparency and compliance readiness across all levels of mining and construction operations.
-                </p>
-            </div>
-            <div class="insight-card">
-                <span class="insight-icon">⚙️</span>
-                <h3 class="insight-title">Industry 4.0</h3>
-                <p class="insight-description">
-                    Adoption of Industry 4.0 principles in construction and infrastructure projects for enhanced efficiency and sustainability.
-                </p>
-            </div>
-            <div class="insight-card">
-                <span class="insight-icon">📈</span>
-                <h3 class="insight-title">Scalable Platforms</h3>
-                <p class="insight-description">
-                    Need for scalable platforms supporting business expansion and governance with real-time data analytics capabilities.
-                </p>
+    <!-- Looking Ahead Section (BLACK THEME) -->
+    <section class="looking-ahead-section animate-on-scroll">
+        <video class="looking-ahead-video-bg" autoplay muted loop playsinline>
+            <source src="../src/assets/imageevent/event5/video6.mp4" type="video/mp4">
+            <source src="../src/assets/imageevent/event5/video5.mp4" type="video/webm">
+        </video>
+        <div class="container">
+            <div class="looking-ahead-content">
+                <div class="looking-ahead-badge">FUTURE FORWARD</div>
+                <h2>Looking Ahead</h2>
+                <p>Participation at JMC 2026 strengthened existing partnerships and opened avenues for new collaborations across the mining and construction industry. Sazs Apps remains committed to supporting organizations in their digital transformation journey through reliable, scalable, and industry-focused ERP platforms.</p>
             </div>
         </div>
     </section>
 
-    <!-- Recognition Section -->
-    <section class="recognition-section reveal">
-        <div class="section-header">
-            <div class="section-tag">Achievement</div>
-            <h2 class="section-title">Exhibitor Recognition</h2>
-            <p class="section-description">
-                Honored for advancing technology-led execution in the mining and construction ecosystem
-            </p>
-        </div>
-        <div class="recognition-badge">
-            <div class="recognition-badge-inner">
-                <div class="badge-icon">🏆</div>
-                <div class="badge-title">RECOGNIZED</div>
-                <div class="badge-subtitle">Exhibitor Excellence 2026</div>
-            </div>
-        </div>
-    </section>
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        /* ==========================================
+           HERO SECTION - JS
+           ========================================== */
+        // Hero parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroVisual = document.querySelector('.hero-visual-section');
+            if (heroVisual && scrolled < window.innerHeight) {
+                heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2 class="cta-title">Transform Your Operations Today</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
-                Join industry leaders in embracing digital transformation with purpose-built ERP solutions for mining, quarry, and construction businesses.
-            </p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-primary">Schedule a Demo</a>
-                <a href="#" class="btn btn-secondary">Learn More</a>
-            </div>
-        </div>
-    </section>
+        /* ==========================================
+           TIMELINE REVEAL ANIMATION - JS
+           ========================================== */
+        const scrollObserver = new IntersectionObserver((observedItems) => {
+            observedItems.forEach(item => {
+                if (item.isIntersecting) item.target.classList.add('show-animation');
+            });
+        }, { threshold: 0.15 });
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Sazs Apps</h3>
-                <p>
-                    Sazs Apps Private Limited specializes in ERP software for mining, quarry, and construction businesses, empowering enterprises with real-time insights and operational control.
-                </p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#">Home</a>
-                <a href="#">Products</a>
-                <a href="#">Solutions</a>
-                <a href="#">Contact Us</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Email: info@sazsapps.com</p>
-                <p>Phone: +91 XXX XXX XXXX</p>
-                <p>Location: Ranchi, Jharkhand</p>
-            </div>
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <a href="#">LinkedIn</a>
-                <a href="#">Twitter</a>
-                <a href="#">Facebook</a>
-                <a href="#">YouTube</a>
-            </div>
+        document.querySelectorAll('.animate-on-scroll').forEach(element => scrollObserver.observe(element));
+    </script>
+    <footer class="a">
+        <div class="b">
+            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                <img src="src/assets/images/xlogo.svg" alt="Twitter" class="d">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
+                rel="noopener">
+                <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                <img src="src/assets/images/youtube.svg" alt="YouTube" class="d">
+            </a>
+            <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
+                <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                rel="noopener">
+                <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+            </a>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Sazs Apps Private Limited. All rights reserved.</p>
-            <div class="keywords">
-                Keywords: Mining ERP Software | Quarry Management Software | Crusher ERP | Construction ERP Solutions | 
-                Digital Transformation in Mining | Industry 4.0 | Jharkhand Mining Show 2026 | Sazs Apps Private Limited
-            </div>
+
+        <div class="e">
+            <a href="./index.html" class="f">Home</a>
+            <a href="./src/pages/aboutus.html" class="f">About Us</a>
+            <a href="./src/pages/features.html" class="f">Explore Features</a>
+            <a href="./src/pages/careers.html" class="f">Careers</a>
+            <a href="./src/pages/contact.html" class="f">Contact Us</a>
+            <a href="./src/pages/Signup.html " class="f">Request a Demo</a>
+            <a href="./src/pages/termsofService.html" class="f">Terms of Service</a>
+            <a href="./src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
+            <a href="./src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
         </div>
     </footer>
+    <footer class="footerbottom">
+        <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+            May I help you?
+        </a> -->
+        <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+        <button class="scroll-top" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+        </button>
+    </footer>
 
-    <script>
-        // Scroll reveal animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
+    <script defer>
+        function animateCountUp(element, target) {
+            let start = 0;
+            let duration = 2000; // Animation duration in milliseconds
+            let step = Math.ceil(target / (duration / 16)); // Approximate steps per frame
+
+            function updateNumber() {
+                start += step;
+                if (start >= target) {
+                    element.textContent = target + "+"; // Ensure final value is correct
+                } else {
+                    element.textContent = start;
+                    requestAnimationFrame(updateNumber);
+                }
+            }
+
+            updateNumber();
+        }
+
+        function startCounterOnView(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let card = entry.target;
+                    card.classList.add("visible"); // Fade-in effect
+
+                    card.querySelectorAll(".succeed-text").forEach(el => {
+                        let target = parseInt(el.textContent.replace("+", "").trim(), 10);
+                        if (!el.dataset.animated) { // Prevent multiple triggers
+                            el.textContent = "0"; // Start from 0
+                            animateCountUp(el, target);
+                            el.dataset.animated = "true"; // Mark as animated
+                        }
+                    });
+
+                    observer.unobserve(card); // Stop observing after animation starts
                 }
             });
         }
 
-        window.addEventListener('scroll', reveal);
-        reveal(); // Check on load
+        document.addEventListener("DOMContentLoaded", function () {
+            let options = { threshold: 0.5 }; // Trigger when 50% is visible
+            let observer = new IntersectionObserver(startCounterOnView, options);
 
-        // Smooth scrolling for scroll indicator
-        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelectorAll(".feature-card").forEach(card => {
+                observer.observe(card);
+            });
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll('.accordion-button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const arrow = button.querySelector('.arrow');
+
+                    // Toggle content visibility
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        arrow.innerHTML = "&#9660;"; // Down Arrow
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        arrow.innerHTML = "&#9650;"; // Up Arrow
+                    }
+                });
+            });
+        });
+
+        
+
+
+        window.onscroll = function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                header.classList.add("hide");
+            } else {
+                header.classList.remove("hide");
+            }
+
+            if (currentScroll <= 0) {
+                header.classList.remove("fixed");
+            } else if (currentScroll > 100) {
+                header.classList.add("fixed");
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        };
+
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("aboutDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+        // Function to highlight the current page in the navbar
+        function highlightActivePage() {
+            const currentPath = window.location.pathname;
+            const links = document.querySelectorAll(".nav-link");
+
+            links.forEach(link => {
+                // Get the page identifier from the data attribute
+                const page = link.getAttribute("data-page");
+
+                // Check if the current URL includes the page identifier
+                if (currentPath.includes(page)) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        }
+
+        // Run function on page load
+        document.addEventListener("DOMContentLoaded", highlightActivePage);
+        function toggleNav() {
+            const sidenav = document.getElementById("mySidenav");
+            const isOpen = sidenav.style.width === "250px";
+
+            if (isOpen) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            } else {
+                sidenav.style.width = "250px";
+                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
+            }
+        }
+
+        function closeNavOnClickOutside(event) {
+            const sidenav = document.getElementById("mySidenav");
+            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
+                sidenav.style.width = "0";
+                document.removeEventListener("click", closeNavOnClickOutside);
+            }
+        }
+        // Scroll to top functionality
+        document.querySelector('.scroll-top').addEventListener('click', () => {
             window.scrollTo({
-                top: window.innerHeight,
+                top: 0,
                 behavior: 'smooth'
             });
         });
 
-        // Play button interaction
-        document.querySelector('.play-button').addEventListener('click', function() {
-            alert('Video player would be integrated here. Replace the placeholder with actual video embed code (YouTube, Vimeo, or self-hosted video).');
-        });
-
-        // Gallery items click
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                alert('Gallery lightbox would open here. You can integrate with libraries like Lightbox2, PhotoSwipe, or GLightbox.');
-            });
-        });
-
-        // Parallax effect for hero
+        // Show/hide scroll button based on scroll position
         window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero-content');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-                hero.style.opacity = 1 - (scrolled / 600);
+            const scrollButton = document.querySelector('.scroll-top');
+            if (window.scrollY > 200) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
             }
         });
-
-        // Add animation to stats numbers
-        function animateValue(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                element.textContent = value + (element.dataset.suffix || '');
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                threshold: 0.2, // Trigger animation when 20% of the element is visible
             };
-            window.requestAnimationFrame(step);
-        }
 
-        // Trigger stats animation when in view
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = entry.target.querySelectorAll('.stat-number');
-                    statNumbers.forEach(stat => {
-                        const text = stat.textContent;
-                        const number = parseInt(text.replace(/\D/g, ''));
-                        const suffix = text.replace(/[0-9]/g, '');
-                        stat.dataset.suffix = suffix;
-                        animateValue(stat, 0, number, 2000);
-                    });
-                    statsObserver.unobserve(entry.target);
-                }
-            });
+            const animatedElements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, observerOptions);
+
+            animatedElements.forEach((el) => observer.observe(el));
         });
-
-        const statsSection = document.querySelector('.stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
     </script>
 </body>
 </html>
