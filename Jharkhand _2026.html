@@ -962,12 +962,14 @@
             background: #ffffff;
             position: relative;
             overflow: hidden;
+            margin: 20px;
+            border-radius: 30px;
         }
 
         .recognition-card {
             max-width: 1000px;
             margin: 0 auto;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            background: linear-gradient(135deg, #000000 0%, #000000 100%);
             border-radius: 30px;
             padding: 80px 60px;
             position: relative;
@@ -989,7 +991,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('./src/assets/imageevent/event6/Img2.avif');
+            background-image: url('./src/assets/imageevent/event6/Img7.avif');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -1109,7 +1111,9 @@
             height: 100%;
             object-fit: cover;
             opacity: 0.3;
+            /* margin: 20px; */
             z-index: 0;
+            border-radius: 20px;
         }
 
         .looking-ahead-section::before {
@@ -1865,65 +1869,86 @@
 </div>
 <div class="bento-container">
     
-<a style="color: #000;text-decoration: none !important;" href="Anprs.html" class="card anpr">
-<h2 >ANPR Camera</h2>
-<p>Automatic vehicle recognition</p>c
-<div class="shine-effect">
-<div style="display:flex;aslign-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.96);color:#111;border-radius:20px">
-<div class="mini-text content-item" id="anpr-content">
-<strong>Smart Tech</strong>
-<span>Auto Recognition</span>
-</div>
-</div>
-</div>
-</a>
-<a style="color: #000;text-decoration: none !important;" href="EInvoice.html" class="card einvoice">
-<h2>E-Invoice</h2>
-<p>GST compliant billing</p>
-<div class="shine-effect">
-<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.96);color:#111;border-radius:20px">
-<div class="mini-text content-item" id="einvoice-content">
-<strong>Compliance</strong>
-<span>GST Ready</span>
-</div>
-</div>
-</div>
-</a>
-<a style="color: #000;text-decoration: none !important;" href="Weighbridge.html" class="card weighbridge">
-<h2>Weighbridge</h2>
-<p>Real-time weight capture</p>
-<div class="feature-container">
-<div class="feature-pill">Real-time Capture</div>
-<div class="feature-pill">Automation</div>
-</div>
-</a>
-<a style="color: #000;text-decoration: none !important;" href="BoomBarrier.html" class="card boom">
-<h2>Boom Barrier</h2>
-<p>Automated gate control</p>
-<div class="shine-effect status-panel">
-<div class="content-item" id="boom-content">
-<strong>Security</strong>
-<span>Gate Control</span>
-<!-- <hr>
-<strong>Automated</strong>
-<span>Access System</span> -->
-</div>
-</div>
-</a>
-<a style="color: #000;text-decoration: none !important;" href="Biometrics.html" class="card biometrics">
-<h2>Biometrics</h2>
-<p>Secure access control</p>
-<div class="shine-effect" style="width:214px;padding:0">
-<div class="info-box">
-<span id="biometric-status">Fingerprint Scanner</span>
-<div  id="status-indicator"></div>
-</div>
-</div>
-</a>
-<div class="card smarttech">
-<h2>Smart Tech</h2>
-<p>Tailored for Crushers & Quarries</p>
-</div>
+    <a style="color: #000;text-decoration: none !important;" href="Anprs.html" class="card anpr">
+        <img src="./src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
+        <div class="card-content">
+            <h2>ANPR Camera</h2>
+            <p>Automatic vehicle recognition</p>
+            <div class="shine-effect">
+                <div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.96);color:#111;border-radius:20px">
+                    <div class="mini-text content-item" id="anpr-content">
+                        <strong>Smart Tech</strong>
+                        <span>Auto Recognition</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a style="color: #000;text-decoration: none !important;" href="EInvoice.html" class="card einvoice">
+        <img src="./src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
+        <div class="card-content">
+            <h2>E-Invoice</h2>
+            <p>GST compliant billing</p>
+            <div class="shine-effect">
+                <div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.96);color:#111;border-radius:20px">
+                    <div class="mini-text content-item" id="einvoice-content">
+                        <strong>Compliance</strong>
+                        <span>GST Ready</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a style="color: #000;text-decoration: none !important;" href="Weighbridge.html" class="card weighbridge">
+        <img src="./src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
+        <div class="card-content">
+            <h2>Weighbridge</h2>
+            <p>Real-time weight capture</p>
+            <div class="feature-container">
+                <div class="feature-pill">Real-time Capture</div>
+                <div class="feature-pill">Automation</div>
+            </div>
+        </div>
+    </a>
+
+    <a style="color: #000;text-decoration: none !important;" href="BoomBarrier.html" class="card boom">
+        <img src="./src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
+        <div class="card-content">
+            <h2>Boom Barrier</h2>
+            <p>Automated gate control</p>
+            <div class="shine-effect status-panel">
+                <div class="content-item" id="boom-content">
+                    <strong>Security</strong>
+                    <span>Gate Control</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a style="color: #000;text-decoration: none !important;" href="Biometrics.html" class="card biometrics">
+        <img src="./src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
+        <div class="card-content">
+            <h2>Biometrics</h2>
+            <p>Secure access control</p>
+            <div class="shine-effect" style="width:214px;padding:0">
+                <div class="info-box">
+                    <span id="biometric-status">Fingerprint Scanner</span>
+                    <div id="status-indicator"></div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <div class="card smarttech">
+        <img src="./src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
+        <div class="card-content">
+            <h2>Smart Tech</h2>
+            <p>Tailored for Crushers & Quarries</p>
+        </div>
+    </div>
+
 </div>
 </div>
 
@@ -2245,7 +2270,7 @@ Complete Financial Control & Profit Analysis</a>
             <!-- Day 3 -->
             <div class="timeline-item animate-on-scroll">
                 <div class="picture-block">
-                    <img src="./src/assets/imageevent/event6/Img7.avif" alt="Award Ceremony">
+                    <img src="./src/assets/imageevent/event6/Img5.avif" alt="Award Ceremony">
                 </div>
                 <div class="info-block">
                     <div class="phase-number">DAY 3</div>
@@ -2318,9 +2343,9 @@ Complete Financial Control & Profit Analysis</a>
                 <div class="recognition-icon-wrapper">
                     <div class="recognition-icon">🏆</div>
                 </div>
-                <div class="recognition-content">
+                <div class="recognition-content" >
                     <h3>Recognition & Acknowledgement</h3>
-                    <p>Sazs Apps Private Limited was honored as an exhibitor at Jharkhand Mining & Construction Show 2026. This recognition reflects our ongoing commitment to delivering enterprise-grade ERP solutions that enable operational excellence, regulatory compliance, and digital maturity.</p>
+                    <p style="color: #fff;">Sazs Apps Private Limited was honored as an exhibitor at Jharkhand Mining & Construction Show 2026. This recognition reflects our ongoing commitment to delivering enterprise-grade ERP solutions that enable operational excellence, regulatory compliance, and digital maturity.</p>
                 </div>
             </div>
         </div>
@@ -2329,8 +2354,8 @@ Complete Financial Control & Profit Analysis</a>
     <!-- Looking Ahead Section (BLACK THEME) -->
     <section class="looking-ahead-section animate-on-scroll">
         <video class="looking-ahead-video-bg" autoplay muted loop playsinline>
-            <source src="../src/assets/imageevent/event5/video6.mp4" type="video/mp4">
-            <source src="../src/assets/imageevent/event5/video5.mp4" type="video/webm">
+            <source src="./src/assets/imageevent/event6/slide.mp4" type="video/mp4">
+            <!-- <source src="../src/assets/imageevent/event5/video5.mp4" type="video/webm"> -->
         </video>
         <div class="container">
             <div class="looking-ahead-content">
