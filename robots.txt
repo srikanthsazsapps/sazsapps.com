@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /Signup.html
+
+Sitemap: https://sazsapps.com/sitemap.xml
