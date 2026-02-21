@@ -928,13 +928,14 @@ body {
 }
 
 .card p {
-    font-size: 0.9rem;
-    font-weight: 800;
-    opacity: .82;
-    animation: slideInLeft .8s ease-out .1s backwards;
-    position: relative;
-    z-index: 1;
+    font-size: 0.9rem !important;
+    font-weight: 800 !important;
+    opacity: .82 !important;
+    animation: slideInLeft .8s ease-out .1s backwards !important;
+    position: relative !important;
+    z-index: 1 !important;
     color: #000000 !important;
+    
 }
 
 /* Remove background from these classes */
