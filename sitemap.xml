@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
@@ -37,5 +37,52 @@
   <url><loc>https://sazsapps.com/Transforming_Customer_Experience_Order_Speed.html</loc></url>
   <url><loc>https://sazsapps.com/Weighbridge.html</loc></url>
   <url><loc>https://sazsapps.com/WhytoChoose.html</loc></url>
+
+</urlset> -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url><loc>https://sazsapps.com/</loc></url>
+
+  <url><loc>https://sazsapps.com/aboutus.html</loc></url>
+  <url><loc>https://sazsapps.com/careers.html</loc></url>
+  <url><loc>https://sazsapps.com/ProfitCalculator.html</loc></url>
+  <url><loc>https://sazsapps.com/Questions.html</loc></url>
+  <url><loc>https://sazsapps.com/WhytoChoose.html</loc></url>
+
+  <!-- Pages inside src -->
+  <url><loc>https://sazsapps.com/src/pages/contact</loc></url>
+  <url><loc>https://sazsapps.com/src/pages/privacyPolicy</loc></url>
+  <url><loc>https://sazsapps.com/src/pages/dataProtectionPolicy</loc></url>
+  <url><loc>https://sazsapps.com/src/pages/Signup</loc></url>
+  <url><loc>https://sazsapps.com/src/pages/termsofService</loc></url>
+
+  <!-- Products -->
+  <url><loc>https://sazsapps.com/products/Anprs.html</loc></url>
+  <url><loc>https://sazsapps.com/products/biometrics.html</loc></url>
+  <url><loc>https://sazsapps.com/products/Boombarrier.html</loc></url>
+  <url><loc>https://sazsapps.com/products/brickspaver.html</loc></url>
+  <url><loc>https://sazsapps.com/products/EInvoice.html</loc></url>
+  <url><loc>https://sazsapps.com/products/QuarryCrusher.html</loc></url>
+  <url><loc>https://sazsapps.com/products/rmc.html</loc></url>
+  <url><loc>https://sazsapps.com/products/Weighbridge.html</loc></url>
+
+  <!-- Media Events -->
+  <url><loc>https://sazsapps.com/media-events/CODDISSIA.html</loc></url>
+  <url><loc>https://sazsapps.com/media-events/EXCON_2023.html</loc></url>
+  <url><loc>https://sazsapps.com/media-events/EXCON_2025.html</loc></url>
+  <url><loc>https://sazsapps.com/media-events/IEMS_2024.html</loc></url>
+  <url><loc>https://sazsapps.com/media-events/Jharkhand_2026.html</loc></url>
+  <url><loc>https://sazsapps.com/media-events/TNMSA_2024.html</loc></url>
+
+  <!-- Case Studies -->
+  <url><loc>https://sazsapps.com/case-studies/Automating_E-Invoicing_GST_Compliance.html</loc></url>
+  <url><loc>https://sazsapps.com/case-studies/Complete_Financial_Control_Profit_Analysis.html</loc></url>
+  <url><loc>https://sazsapps.com/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html</loc></url>
+  <url><loc>https://sazsapps.com/case-studies/Real-Time_Vehicle_Trip_Management.html</loc></url>
+  <url><loc>https://sazsapps.com/case-studies/Transforming_Customer_Experience_Order_Speed.html</loc></url>
 
 </urlset>
