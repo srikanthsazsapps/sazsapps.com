@@ -1,0 +1,2 @@
+cleancss -o src\css\minified\comman.min.css src\css\comman.css
+cleancss -o src\css\minified\style.min.css src\css\style.css

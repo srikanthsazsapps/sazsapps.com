@@ -393,7 +393,7 @@ p {
         rgba(0,0,0,0.9) 100%);
 }
 
-.card-content {
+.card-contentt {
     position: relative;
     z-index: 2;
     padding: 40px 30px;
@@ -401,12 +401,12 @@ p {
     transition: transform 0.4s ease;
 }
 
-.feature-card:hover .card-content {
+.feature-card:hover .card-contentt {
     transform: translateY(-10px);
 }
 
-.bg-image .card-content h5, 
-.bg-image .card-content p {
+.bg-image .card-contentt h5, 
+.bg-image .card-contentt p {
     color: #ffffff !important;
 }
 

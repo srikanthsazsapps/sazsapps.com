@@ -30,25 +30,79 @@
     <meta name="twitter:description"
         content="Automate your quarry, crusher, and RMC plant operations with SAZS  ERP. Integrated weighbridge, ANPR, and billing solutions for 250+ satisfied clients.">
     <meta name="twitter:image" content="https://sazsapps.com/src/assets/logo/logoblack.png">
-    <!-- <link rel="preload" as="image" href="/src/assets/images/quarrybricksrmc.avif" type="image/avif"
-        fetchpriority="high"> -->
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="src/assets/logo/logoblack.png">
 
-    <!-- Stylesheets -->
-    <!-- Defer normal CSS -->
-    <link rel="stylesheet" href="src/css/comman.css">
-    <link rel="stylesheet" href="src/css/style.css">
-
-    <!-- Font Awesome (deferred) -->
-    <link rel="stylesheet" href="src/assets/css/all.min.css">
+    <!-- Keep your core layout CSS synchronous but minified -->
+    <link rel="stylesheet" href="src/css/minified/style.min.css">
+    <link rel="stylesheet" href="src/css/minified/comman.min.css">
 
 
 
 
     <!-- Scripts -->
-    <script src="src/js/jquery-3.7.1.slim.min.js" defer></script>
     <script src="src/js/comman.js" defer></script>
+    <script src="src/js/index.js" defer></script>
+
+    <style>
+        /* Header + Hero CSS only */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: #000000 !important;
+            color: #333;
+        }
+
+        header {
+            background: #000;
+            color: #fff;
+        }
+
+        .hero {
+            min-height: 100vh;
+            align-items: center;
+            background-color: #000000;
+
+            padding: 60px 16px;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+        }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://sazsapps.com/#organization",
+  "name": "SAZS Apps Private Limited",
+  "url": "https://sazsapps.com/",
+  "logo": "https://sazsapps.com/images/logo.png",
+  "description": "SAZS Apps provides ERP and management software for quarry, crusher, RMC, bricks, and construction material businesses.",
+  "foundingDate": "2017",
+  "telephone": "+91 76666 28000",
+  "email": "info@sazsapps.com",
+  "areaServed": "India",
+  "knowsAbout": [
+    "Quarry Management Software",
+    "Crusher ERP Software",
+    "RMC ERP",
+    "Brick Plant ERP",
+    "Construction ERP Solutions",
+    "Weighbridge Automation",
+    "ANPR Integration"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No. 8B, Arunachalam Pettai Street, Kovilpatti Town",
+    "addressLocality": "Kovilpatti",
+    "addressRegion": "Tamil Nadu",
+    "postalCode": "628501",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://play.google.com/store/apps/details?id=com.SazsApps",
+    "https://www.facebook.com/p/Sazs-Apps-100075849583725/"
+  ]
+}
+</script>
 
 </head>
 
@@ -94,10 +148,15 @@
                     </li>
                 </ul>
                 <div class="sazs-cta-group">
-                    <a href="Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
+                    <a href="/src/pages/Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
                 </div>
                 <div class="sazs-hamburger">
-                    <a href="javascript:void(0);" onclick="toggleNav()"><i class="fa fa-bars"></i></a>
+                    <a href="javascript:void(0);" onclick="toggleNav()" aria-label="Open navigation menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
                 </div>
             </div>
 
@@ -116,7 +175,7 @@
                         <div class="product-grid-title">Our Products</div>
                         <div class="sazs-submenu-grid">
                             <div class="sazs-submenu-col">
-                                <a href="QuarryCrusher.html" class="sazs-product-card">
+                                <a href="/products/QuarryCrusher.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
                                         <img src="/src/assets/contentImages/crusherdroneview.avif"
                                             alt="Stone Crusher Management Software" />
@@ -128,7 +187,7 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="rmc.html" class="sazs-product-card">
+                                <a href="/products/QuarryCrusher.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
                                         <img src="/src/assets/contentImages/quarrydroneview.avif"
                                             alt="Brick Manufacturing ERP Software" />
@@ -140,7 +199,7 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="rmc.html" class="sazs-product-card">
+                                <a href="/products/rmc.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
                                         <img src="/src/assets/contentImages/RMCdroneview.avif"
                                             alt="Brick Manufacturing ERP Software" />
@@ -152,7 +211,7 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="brickspaver.html" class="sazs-product-card">
+                                <a href="/products/brickspaver.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
                                         <img src="/src/assets/contentImages/bricksdrone.avif"
                                             alt="Brick Manufacturing ERP Software" />
@@ -180,8 +239,8 @@
 </div> -->
                 </div>
                 <div class="bento-container">
-
-                    <a style="color: #000;text-decoration: none !important;" href="Anprs.html" class="card anpr">
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="/products/Anprs.html" class="card anpr">
                         <img src="/src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
                         <div class="card-content">
                             <h2>ANPR Camera</h2>
@@ -198,7 +257,10 @@
                         </div>
                     </a>
 
-                    <a style="color: #000;text-decoration: none !important;" href="EInvoice.html" class="card einvoice">
+
+
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="/products/EInvoice.html" class="card einvoice">
                         <img src="/src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
                         <div class="card-content">
                             <h2>E-Invoice</h2>
@@ -215,8 +277,8 @@
                         </div>
                     </a>
 
-                    <a style="color: #000;text-decoration: none !important;" href="Weighbridge.html"
-                        class="card weighbridge">
+                    <a style="color: #000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="/products/Weighbridge.html" class="card weighbridge">
                         <img src="/src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
                         <div class="card-content">
                             <h2>Weighbridge</h2>
@@ -228,8 +290,8 @@
                         </div>
                     </a>
 
-                    <a style="color: #000000;text-decoration: none !important;" href="Boombarrier.html"
-                        class="card boom">
+                    <a style="color: #000000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="/products/Boombarrier.html" class="card boom">
                         <img src="/src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
                         <div class="card-content">
                             <h2>Boom Barrier</h2>
@@ -243,8 +305,8 @@
                         </div>
                     </a>
 
-                    <a style="color: #000;text-decoration: none !important;" href="biometrics.html"
-                        class="card biometrics">
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="/products/biometrics.html" class="card biometrics">
                         <img src="/src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
                         <div class="card-content">
                             <h2>Biometrics</h2>
@@ -258,7 +320,7 @@
                         </div>
                     </a>
 
-                    <div class="card smarttech">
+                    <div style="border: 1px solid rgba(0, 0, 0, 0.368);" class="card smarttech">
                         <img src="/src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
                         <div class="card-content">
                             <h2>Smart Tech</h2>
@@ -281,7 +343,7 @@
                         </div>
                     </div>
                     <div class="media-events-grid">
-                        <a href="Jharkhand_2026.html" class="media-event-card">
+                        <a href="/media-events/Jharkhand_2026.html" class="media-event-card">
                             <div class="media-card-image">
                                 <img src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
                             </div>
@@ -289,7 +351,7 @@
                                 <div class="media-card-title">Jharkhand Mining & Construction Show 2026 </div>
                             </div>
                         </a>
-                        <a href="EXCON_2025.html" class="media-event-card">
+                        <a href="/media-events/EXCON_2025.html" class="media-event-card">
                             <div class="media-card-image">
                                 <img src="/src/assets/images/excon25.avif" alt="EXCON_2025" />
                             </div>
@@ -297,7 +359,7 @@
                                 <div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
                             </div>
                         </a>
-                        <a href="IEMS_2024.html" class="media-event-card">
+                        <a href="/media-events/IEMS_2024.html" class="media-event-card">
                             <div class="media-card-image">
                                 <img src="/src/assets/images/iems24.avif" alt="IEMS_2024" />
                             </div>
@@ -305,7 +367,7 @@
                                 <div class="media-card-title">IEMS – International Mining Expo & Conclave 2024</div>
                             </div>
                         </a>
-                        <a href="TNMSA_2024.html" class="media-event-card">
+                        <a href="/media-events/TNMSA_2024.html" class="media-event-card">
                             <div class="media-card-image">
                                 <img src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
                             </div>
@@ -314,7 +376,7 @@
                                     2024</div>
                             </div>
                         </a>
-                        <a href="EXCON_2023.html" class="media-event-card">
+                        <a href="/media-events/EXCON_2023.html" class="media-event-card">
                             <div class="media-card-image">
                                 <img src="/src/assets/images/excon23.avif" alt="EXCON_2023" />
                             </div>
@@ -322,7 +384,7 @@
                                 <div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
                             </div>
                         </a>
-                        <a href="CODDISSIA.html" class="media-event-card">
+                        <a href="/media-events/CODDISSIA.html" class="media-event-card">
                             <div class="media-card-image">
                                 <img src="/src/assets/images/codisia22.avif" alt="CODDISSIA" />
                             </div>
@@ -351,7 +413,7 @@
                         </div>
                     </div>
                     <div class="blogs-cards-grid">
-                        <a href="Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
+                        <a href="/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
                             <div class="blog-card-image">
                                 <img src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
                                 <div class="blog-card-overlay">
@@ -361,7 +423,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="Transforming_Customer_Experience_Order_Speed.html" class="blog-card">
+                        <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-card">
                             <div class="blog-card-image">
                                 <img src="/src/assets/contentImages/tran2.webp" alt="Customer Experience" />
                                 <div class="blog-card-overlay">
@@ -370,7 +432,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="Automating_E-Invoicing_GST_Compliance.html" class="blog-card">
+                        <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-card">
                             <div class="blog-card-image">
                                 <img src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
                                 <div class="blog-card-overlay">
@@ -379,7 +441,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="Real-Time_Vehicle_Trip_Management.html" class="blog-card">
+                        <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-card">
                             <div class="blog-card-image">
                                 <img src="/src/assets/contentImages/real4.webp" alt="Vehicle Management" />
                                 <div class="blog-card-overlay">
@@ -388,7 +450,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="Complete_Financial_Control_Profit_Analysis.html" class="blog-card">
+                        <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-card">
                             <div class="blog-card-image">
                                 <img src="/src/assets/contentImages/comp5.webp" alt="Financial Control" />
                                 <div class="blog-card-overlay">
@@ -410,3199 +472,856 @@
         <a href="/">Home</a>
         <a href="aboutus.html">About Us</a>
         <div class="mobile-dropdown">
-            <a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products <i
-                    class="fa fa-chevron-down"></i></a>
+            <a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
-                <a href="QuarryCrusher.html">Quarry & Crusher</a>
-                <a href="rmc.html">Ready Mix Concrete</a>
-                <a href="brickspaver.html">Bricks & Pavers</a>
+                <a href="/products/QuarryCrusher.html">Quarry & Crusher</a>
+                <a href="/products/rmc.html">Ready Mix Concrete</a>
+                <a href="/products/brickspaver.html">Bricks & Pavers</a>
             </div>
         </div>
         <div class="mobile-dropdown">
             <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
-                class="mobile-dropdown-trigger">Explore Features <i class="fa fa-chevron-down"></i></a>
+                class="mobile-dropdown-trigger">Explore Features
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
                 <!-- <a href="features.html">Features</a> -->
-                <a href="Anprs.html">ANPR Camera Integration</a>
-                <a href="EInvoice.html">E-Invoice Integration</a>
-                <a href="Weighbridge.html">Weighbridge and Camera Integration</a>
-                <a href="Boombarrier.html">Boom Barrier Integration</a>
-                <a href="biometrics.html">Biometrics</a>
+                <a href="/products/Anprs.html">ANPR Camera Integration</a>
+                <a href="/products/EInvoice.html">E-Invoice Integration</a>
+                <a href="/products/Weighbridge.html">Weighbridge and Camera Integration</a>
+                <a href="/products/Boombarrier.html">Boom Barrier Integration</a>
+                <a href="/products/biometrics.html">Biometrics</a>
             </div>
         </div>
         <div class="mobile-dropdown">
             <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
-                class="mobile-dropdown-trigger">Case Studies <i class="fa fa-chevron-down"></i></a>
+                class="mobile-dropdown-trigger">Case Studies
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
-                <a href="Optimizing_Quarry_Profitability_Theft_Prevention.html">Quarry Profitability
+                <a href="/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html">Quarry Profitability
                     Optimizing Quarry Profitability & Theft Prevention</a>
-                <a href="Transforming_Customer_Experience_Order_Speed.html">Customer Experience
+                <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html">Customer Experience
                     Transforming Customer Experience & Order Speed</a>
-                <a href="Automating_E-Invoicing_GST_Compliance.html">E-Invoicing
+                <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html">E-Invoicing
                     Automating E-Invoicing & GST Compliance</a>
-                <a href="Real-Time_Vehicle_Trip_Management.html">Vehicle Management
+                <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html">Vehicle Management
                     Real-Time Vehicle & Trip Management</a>
-                <a href="Complete_Financial_Control_Profit_Analysis.html">
+                <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html">
                     Financial Control
                     Complete Financial Control & Profit Analysis</a>
             </div>
         </div>
         <div class="mobile-dropdown">
             <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
-                class="mobile-dropdown-trigger">Events <i class="fa fa-chevron-down"></i></a>
+                class="mobile-dropdown-trigger">Events
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
-                <a href="Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
-                <a href="EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
-                <a href="IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
-                <a href="TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
-                <a href="EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
-                <a href="CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
+                <a href="/media-events/Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
+                <a href="/media-events/EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
+                <a href="/media-events/IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
+                <a href="/media-events/TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
+                <a href="/media-events/EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
+                <a href="/media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
             </div>
         </div>
         <a href="ProfitCalculator.html">Profit Calc</a>
         <a href="careers.html">Careers</a>
-        <a href="Signup.html">Sign Up</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="Weighbridge.html">Why to Choose Sazs</a>
+        <a href="src/pages/Signup.html">Sign Up</a>
+        <a href="src/pages/contact.html">Contact Us</a>
+        <a href="WhytoChoose.html">Why to Choose Sazs</a>
         <a href="Questions.html">FAQ</a>
-        <div class="call">
-            <a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i>76666 28000</a>
-        </div>
+        <!-- <div class="call">
+            <a href="tel:+917666628000">
+                <svg class="ringing-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+  19.79 19.79 0 0 1-8.63-3.07
+  19.5 19.5 0 0 1-6-6
+  19.79 19.79 0 0 1-3.07-8.67
+  A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+  12.84 12.84 0 0 0 .7 2.81
+  2 2 0 0 1-.45 2.11L8.09 9.91
+  a16 16 0 0 0 6 6l1.27-1.27
+  a2 2 0 0 1 2.11-.45
+  12.84 12.84 0 0 0 2.81.7
+  A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> 76666 28000</a>
+        </div> -->
     </div>
+    
+    <main>
 
 
 
-    <section class="hero-main-section">
-        <!-- RESPONSIVE HERO IMAGE -->
-        <picture class="hero-bg">
-            <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(max-width: 768px)" type="image/avif">
-            <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(max-width: 1280px)" type="image/avif">
-            <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(min-width: 1281px)" type="image/avif">
-            <img src="/src/assets/images/quarrybricksrmc.avif"
-                alt="Aerial view of quarry crusher and RMC operations managed by SAZS ERP software" width="1920"
-                height="1080" fetchpriority="high" loading="eager" decoding="async" />
-        </picture>
+        <section class="hero-main-section">
+            <!-- RESPONSIVE HERO IMAGE -->
+            <picture class="hero-bg">
+                <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(max-width: 768px)" type="image/avif">
+                <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(max-width: 1280px)" type="image/avif">
+                <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(min-width: 1281px)" type="image/avif">
+                <img src="/src/assets/images/quarrybricksrmc.avif"
+                    alt="Aerial view of quarry crusher and RMC operations managed by SAZS ERP software" width="1920"
+                    height="1080" fetchpriority="high" loading="eager" decoding="async" />
+            </picture>
 
-        <!-- GRADIENT OVERLAY -->
-        <div class="hero-overlay"></div>
+            <!-- GRADIENT OVERLAY -->
+            <div class="hero-overlay"></div>
 
-        <!-- YOUR EXISTING CONTENT (UNCHANGED) -->
-        <div class="hero-main-container">
-            <div class="hero-main-content">
-                <div class="hero-content-left">
+            <!-- YOUR EXISTING CONTENT (UNCHANGED) -->
+            <div class="hero-main-container">
+                <div class="hero-main-content">
+                    <div class="hero-content-left">
 
-                    <h1 class="hero-main-title">
-                        The Ultimate <span class="hero-text-highlight">ERP Solution</span> for
-                        Quarry, Crusher, and RMC Businesses
-                    </h1>
+                        <h1 class="hero-main-title">
+                            The Ultimate <span class="hero-text-highlight">ERP Solution</span> for
+                            Quarry, Crusher, and RMC Businesses
+                        </h1>
 
-                    <h2 class="hero-subheadline">
-                        Stop losing money to manual errors. Streamline your operations,
-                        track every load, and automate billing with India’s most trusted
-                        ERP software.
-                    </h2>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <section class="awesome-erp mb-5">
-        <div class="erp-container">
-            <div class="erp-left">
-                <h2 style="color: #fff;">Why We Are Awesome in ERP</h2>
-            </div>
-            <div class="erp-divider"></div> <!-- Vertical Line -->
-            <div class="erp-right ">
-                <p>With more than 5+ years of experience in the ERP industry, we know what it's like to be at every
-                    stage of a growing business.</p>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- WHY US Section -->
-    <section class="divider-line">
-        <section class="why-us ">
-
-
-            <section class="orbit-section">
-                <h1 class="section-title zoom-in">
-                    <span class="highlight-text">Efficient,</span>
-                    <span class="highlight-text"> User-Friendly &</span>
-                    Automated
-                </h1>
-
-                <div class="orbit-container">
-                    <div class="orbit-column left-side slide-in">
-                        <div class="feature-text">
-                            <h5><span class="highlight-text">Creative & Simple</span> User Interface</h5>
-                            <p>
-                                Our application is designed for all user levels, ensuring a smooth experience across
-                                every touchpoint. No technical skills are required — anyone can operate it with
-                                ease.
-                                With intuitive navigation, clean layout, and smart reporting, you get 100% accurate
-                                data
-                                for faster decisions.</p>
-                        </div>
-                        <div class="feature-text">
-                            <h5>Hardware <span class="highlight-text">Integration</span></h5>
-                            <p>SAZS Apps supports a wide range of hardware devices including weighbridge systems,
-                                barcode scanners, ANPR cameras, and GPS tracking units.
-                                Easily plug-and-play hardware to automate operations without manual effort.</p>
-                        </div>
-                        <div class="feature-text">
-                            <h5><span class="highlight-text">Powerful</span> Technology</h5>
-                            <p>Built on Microsoft technology and backed by secure cloud hosting, our system delivers
-                                high performance with maximum uptime and data safety.
-                                Fast, scalable, and dependable — even for large-scale operations.</p>
-                        </div>
-                    </div>
-
-                    <div class="orbit-center">
-                        <div class="glow-effect"></div>
-                        <img src="src/assets/contentImages/homeftr.svg" alt="SAZS ERP Central" class="main-graphic">
-                    </div>
-
-                    <div class="orbit-column right-side slide-in">
-                        <div class="feature-text">
-                            <h5><span class="highlight-text">Secu</span>rity</h5>
-                            <p>Your data is protected with advanced security protocols, including two-factor
-                                authentication and controlled user access.
-                                Every action is logged and monitored through SAZS utility, ensuring complete safety
-                                and
-                                transparency.</p>
-                        </div>
-                        <div class="feature-text">
-                            <h5>Our <span class="highlight-text">Happy</span> Customers</h5>
-                            <p>Trusted by 303+ businesses across Tamil Nadu, and growing.
-                                Our clients rely on us for automation, accuracy, and business efficiency.</p>
-                        </div>
-                        <div class="feature-text">
-                            <h5><span class="highlight-text">24/7</span> Customer Support</h5>
-                            <p>We offer round-the-clock support, helping you resolve queries and continue operations
-                                without downtime.
-                                Always available when you need us.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <h1 class="fade-in mt-5" style="text-align: center;">
-                WHAT YOU
-                <span class="highlight-text">GAIN ?</span>
-
-            </h1>
-            <section class="GAIN">
-                <div class="steps-wrap">
-
-                    <!-- Row 1 -->
-                    <div class="step-row">
-                        <div class="step-text fade-in">
-                            <h2>✓ Track and monitor every operation from remote</h2>
-                            <p>Stay connected and oversee all activities in real-time, regardless of your location.</p>
-                        </div>
-                        <div class="step-card-wrap slide-in">
-                            <div class="step-card">
-                                <img src="/src/assets/images/Trackandmonitor.avif" alt="Remote Monitoring">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 2 -->
-                    <div class="step-row">
-                        <div class="step-card-wrap">
-                            <div class="step-card slide-in">
-                                <img src="./src/assets/images/100accuracy.avif" alt="Financial Accuracy">
-                            </div>
-                        </div>
-                        <div class="step-text fade-in">
-                            <h2>✓ 100% accuracy in financial statements in single click</h2>
-                            <p>Generate comprehensive financial reports instantly with complete precision and zero
-                                errors.</p>
-                        </div>
-                    </div>
-
-                    <!-- Row 3 -->
-                    <div class="step-row">
-                        <div class="step-text fade-in">
-                            <h2>✓ No dependency with any employees</h2>
-                            <p>Fully automated system that operates independently and efficiently.</p>
-                        </div>
-                        <div class="step-card-wrap slide-in">
-                            <div class="step-card">
-                                <img src="/src/assets/images/Nodepedencyneeded.avif" alt="Automation">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 4 -->
-                    <div class="step-row">
-                        <div class="step-card-wrap slide-in">
-                            <div class="step-card">
-                                <img src="./src/assets/images/multipleyards.avif" alt="Multiple Yards">
-                            </div>
-                        </div>
-                        <div class="step-text fade-in">
-                            <h2>✓ Manage and run multiple yards in multiple places</h2>
-                            <p>Centralized control system allows seamless management of all your locations.</p>
-                        </div>
-                    </div>
-
-                    <!-- Row 5 -->
-                    <div class="step-row">
-                        <div class="step-text fade-in">
-                            <h2>✓ Reduced manual effort and 0% manual errors</h2>
-                            <p>Automated processes ensure complete accuracy and efficiency.</p>
-                        </div>
-                        <div class="step-card-wrap slide-in">
-                            <div class="step-card">
-                                <img src="/src/assets/images/Reducemanualeffort.avif" alt="Zero Errors">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <style>
-                /* ================= BASE ================= */
-
-                .GAIN {
-                    display: flex;
-                    justify-content: center;
-                    padding: 40px 20px;
-                }
-
-                .steps-wrap {
-                    max-width: 1200px;
-                    width: 100%;
-                }
-
-                .step-row {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    align-items: center;
-                    padding: 32px 60px;
-                    position: relative;
-                }
-
-                .step-text {
-                    font-size: 0.95rem;
-                    line-height: 1.6;
-                    color: #6b7280;
-                    max-width: 500px;
-                }
-
-                .step-text h2 {
-                    color: #000;
-                }
-
-                .step-card-wrap {
-                    display: flex;
-                    justify-content: flex-end;
-                }
-
-                .step-card {
-                    width: 460px;
-                    height: 220px;
-                }
-
-                .step-card img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 2px;
-                }
-
-                /* ================= EVEN ROW DESKTOP ================= */
-
-                .step-row:nth-child(even) .step-card-wrap {
-                    order: 1;
-                    justify-content: flex-start;
-                }
-
-                .step-row:nth-child(even) .step-text {
-                    order: 2;
-                    text-align: right;
-                }
-
-                /* ================= RESPONSIVE ================= */
-
-                @media (max-width: 900px) {
-                    .step-row {
-                        padding: 26px 24px;
-                    }
-                }
-
-                /* 🔥 FINAL MOBILE FIX (IMPORTANT) */
-                @media (max-width: 720px) {
-
-                    .step-row {
-                        grid-template-columns: 1fr !important;
-                        row-gap: 18px;
-                    }
-
-                    /* FORCE SAME ORDER FOR ALL ROWS */
-                    .step-row .step-text {
-                        grid-row: 1 !important;
-                        order: unset !important;
-                        text-align: left !important;
-                        margin-left: 0 !important;
-                    }
-
-                    .step-row .step-card-wrap {
-                        grid-row: 2 !important;
-                        order: unset !important;
-                        justify-content: center !important;
-                    }
-
-                    .step-card {
-                        width: 240px;
-                        height: 120px;
-                    }
-                }
-
-                @media (max-width: 480px) {
-                    .step-card {
-                        width: 200px;
-                        height: 100px;
-                    }
-
-                    .step-text {
-                        font-size: 0.9rem;
-                    }
-                }
-            </style>
-
-
-            <style>
-                .mahi-quote-section {
-                    padding: 80px 5%;
-                    /* Adjusted padding for better fit */
-                    background: #fff;
-                    font-family: 'Inter', sans-serif;
-                    text-align: center;
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                .quote-container {
-                    max-width: 900px;
-                    margin: 0 auto;
-                    position: relative;
-                }
-
-                /* Huge Double Quotes - Made responsive with Viewport Width units */
-                .quote-container::before {
-                    content: '“';
-                    position: absolute;
-                    top: -60px;
-                    left: -110px;
-                    font-size: clamp(120px, 20vw, 250px);
-                    /* Scales down on mobile */
-                    color: #f0f0f0;
-                    font-family: 'Georgia', serif;
-                    z-index: 0;
-                    line-height: 1;
-                }
-
-                .mahi-content {
-                    position: relative;
-                    z-index: 1;
-                }
-
-                /* Big Letters - Scale down for tablets and phones */
-                .big-letter-text {
-                    font-size: clamp(1.8rem, 8vw, 2.8rem);
-                    font-weight: 850;
-                    line-height: 1.1;
-                    color: #111;
-                    letter-spacing: -1px;
-                    margin-bottom: 20px;
-                    text-transform: uppercase;
-                }
-
-                .highlight-blue {
-                    color: #007bff;
-                    position: relative;
-                }
-
-                .integration-list {
-                    display: flex;
-                    justify-content: center;
-                    gap: 10px;
-                    flex-wrap: wrap;
-                    margin-top: 30px;
-                }
-
-                .integration-tag {
-                    font-size: clamp(0.7rem, 2vw, 0.9rem);
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    padding: 8px 16px;
-                    border: 2px solid #111;
-                    border-radius: 50px;
-                    transition: all 0.3s;
-                }
-
-                .integration-tag:hover {
-                    background: #111;
-                    color: #fff;
-                }
-
-                /* Small closing quote - Responsive scale */
-                .quote-container::after {
-                    content: '”';
-                    position: absolute;
-                    bottom: -100px;
-                    right: -90px;
-                    font-size: clamp(120px, 20vw, 250px);
-                    color: #f0f0f0;
-                    font-family: 'Georgia', serif;
-                    z-index: 0;
-                }
-
-                /* Mobile specific adjustments */
-                @media (max-width: 768px) {
-                    .mahi-quote-section {
-                        padding: 60px 20px;
-                    }
-
-                    .big-letter-text {
-                        letter-spacing: -0.5px;
-                    }
-
-                    /* Move quotes further out so text is readable on tiny screens */
-                    .quote-container::before {
-                        top: -40px;
-                        left: -10px;
-                        opacity: 0.5;
-                    }
-
-                    .quote-container::after {
-                        bottom: -60px;
-                        right: -10px;
-                        opacity: 0.5;
-                    }
-                }
-            </style>
-
-            <section class="mahi-quote-section zoom-in">
-                <div class="quote-container">
-                    <div class="mahi-content">
-                        <h2 class="big-letter-text">
-                            Don't Let Your Profits Drive Out the Gate. <span class="highlight-blue">Secure Your
-                                Site</span> with SAZS ERP.
+                        <h2 class="hero-subheadline">
+                            Stop losing money to manual errors. Streamline your operations,
+                            track every load, and automate billing with India’s most trusted
+                            ERP software.
                         </h2>
 
-                        <p style="font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto;">
-                            From automated weighment to real-time P&L, we provide the tools to recover lost revenue. If
-                            our system saves you just two trucks a month, it's already paid for itself </p>
-
-                        <div class="integration-list">
-                            <div class="integration-tag">ANPR</div>
-                            <div class="integration-tag">Mobile Apps</div>
-                            <div class="integration-tag">Tally</div>
-                            <div class="integration-tag">Biometrics</div>
-                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </section>
-        <style>
-            :root {
-                --primary: #ffffff;
-                --primary-dark: #000000;
-                --accent: #3b82f6;
-                --bg: #ffffff;
-                --bg-soft: #f8f9fa;
-                --bg-light: #ffffff;
-                --text: #000000;
-                --muted: #4b5563;
-                --border: #e5e7eb;
-            }
-
-            *,
-            *::before,
-            *::after {
-                box-sizing: border-box;
-            }
-
-            /* Demo Benefits Section */
-            .wdemo-benefits {
-                margin: 2rem 0;
-                padding: 1.5rem;
-                background: #f8f9fa;
-                border-radius: 0.75rem;
-                border: 2px solid #e5e7eb;
-            }
-
-            .wbenefit-item {
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-                margin-bottom: 1rem;
-                font-size: 0.9rem;
-                color: #4b5563;
-            }
-
-            .wbenefit-item:last-child {
-                margin-bottom: 0;
-            }
-
-            .wbenefit-icon {
-                font-size: 1.5rem;
-                flex-shrink: 0;
-            }
-
-            /* Demo Note Section */
-            .wdemo-note {
-                margin-top: 1.5rem;
-                padding: 1.5rem;
-                background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(59, 130, 246, 0.1));
-                border-radius: 0.75rem;
-                border-left: 4px solid #3b82f6;
-            }
-
-            .wdemo-note p {
-                margin: 0 0 1rem 0;
-                font-size: 0.95rem;
-                color: #000000;
-            }
-
-            .wdemo-note strong {
-                color: #3b82f6;
-                font-weight: 700;
-            }
-
-            .wdemo-note ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .wdemo-note li {
-                margin-bottom: 0.5rem;
-                padding-left: 1.5rem;
-                position: relative;
-                font-size: 0.85rem;
-                color: #4b5563;
-                line-height: 1.6;
-            }
-
-            .wdemo-note li::before {
-                content: "✓";
-                position: absolute;
-                left: 0;
-                color: #3b82f6;
-                font-weight: bold;
-            }
-
-            .wdemo-note li:last-child {
-                margin-bottom: 0;
-            }
-
-            /* Demo CTA spacing adjustment */
-            .wdemo-cta {
-                margin-bottom: 40px;
-            }
-
-            html {
-                scroll-behavior: smooth;
-            }
-
-            /* 
-            a {
-                color: inherit;
-                text-decoration: none;
-            } */
-
-            .wsite {
-                min-height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                padding: 1.25rem;
-                background: #ffffff;
-            }
-
-            .wpage {
-                width: 100%;
-                padding: 1.5rem 1.5rem 2.5rem;
-                background-color: #000000;
-                border-radius: 20px;
-            }
-
-            h1,
-            h2,
-            h3 {
-                margin: 0;
-                font-weight: 700;
-                color: #000000;
-            }
-
-            p {
-                margin: 0;
-            }
-
-            .whero {
-                display: grid;
-                grid-template-columns: 1fr 1.1fr;
-                gap: 3rem;
-                padding: 3rem 2.5rem;
-                border-radius: 1.5rem;
-                background: #ffffff;
-                color: #000000;
-                position: relative;
-                border: 3px solid #3b82f6;
-                box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
-            }
-
-            .whero-left {
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .whero-badge {
-                display: inline-flex;
-                align-items: center;
-                gap: .6rem;
-                padding: .6rem 1.3rem;
-                border-radius: 999px;
-                border: 2px solid #3b82f6;
-                background: #ffffff;
-                font-size: .9rem;
-                color: #000000;
-                width: fit-content;
-                box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
-                font-weight: 500;
-            }
-
-            .wbadge-icon {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 22px;
-                height: 22px;
-                border-radius: 50%;
-                background: #3b82f6;
-                color: #ffffff;
-                font-size: 0.7rem;
-                box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
-            }
-
-            .whero h1 {
-                font-size: 3.5rem;
-                line-height: 1.1;
-                margin: 0;
-                color: #000000;
-                font-weight: 900;
-                letter-spacing: -0.02em;
-            }
-
-            .wblue-text {
-                color: #3b82f6;
-                display: block;
-            }
-
-            .whero-sub {
-                color: #4b5563;
-                font-size: 1.05rem;
-                line-height: 1.7;
-                margin: 0;
-                max-width: 600px;
-            }
-
-            .whero-pills {
-                display: flex;
-                flex-wrap: wrap;
-                gap: .7rem;
-            }
-
-            .wpill {
-                padding: .5rem 1.1rem;
-                border-radius: 999px;
-                background: #f8f9fa;
-                border: 2px solid #e5e7eb;
-                font-size: .85rem;
-                color: #000000;
-                font-weight: 500;
-            }
-
-            .whero-cta {
-                display: flex;
-                gap: 1rem;
-                align-items: center;
-                margin-top: 0.5rem;
-            }
-
-            .whero-btn-primary {
-                padding: 1rem 2.5rem;
-                background: #3b82f6;
-                color: #ffffff;
-                border: none;
-                border-radius: .5rem;
-                font-size: 1.05rem;
-                font-weight: 700;
-                cursor: pointer;
-                box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
-                transition: all .3s ease;
-            }
-
-            .whero-btn-primary:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
-                background: #2563eb;
-            }
-
-            .whero-btn-ghost {
-                padding: .95rem 2rem;
-                border: 2px solid #000000;
-                background: transparent;
-                color: #000000;
-                border-radius: .5rem;
-                font-size: 1rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all .3s ease;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            .whero-btn-ghost:hover {
-                background: #f8f9fa;
-            }
-
-            .wtrust-text {
-                font-size: .9rem;
-                color: #6b7280;
-                margin: 0.5rem 0 0;
-            }
-
-            .whero-right {
-                background: #ffffff;
-                border-radius: 1.5rem;
-                border: 2px solid #e5e7eb;
-                padding: 2rem 2.5rem;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            }
-
-            .wdispatch-card {
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .wdispatch-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-wrap: wrap;
-                gap: 1rem;
-                padding-bottom: 1.5rem;
-                border-bottom: 1px solid #e5e7eb;
-            }
-
-            .wdispatch-header h3 {
-                font-size: 1.3rem;
-                font-weight: 700;
-                margin: 0;
-                color: #000000;
-            }
-
-            .wdispatch-info {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-                gap: 0.3rem;
-                font-size: 0.9rem;
-                color: #4b5563;
-                text-align: right;
-            }
-
-            .wdispatch-metrics {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 1.25rem;
-            }
-
-            .wdispatch-metric-card {
-                /* background:#f8f9fa; */
-                border: 2px solid #e5e7eb;
-                border-radius: 1rem;
-                padding: 1.5rem;
-            }
-
-            .wmetric-title {
-                font-size: 0.85rem;
-                color: #4b5563;
-                margin-bottom: 0.75rem;
-                font-weight: 500;
-            }
-
-            .wmetric-big-value {
-                font-size: 2rem;
-                font-weight: 900;
-                color: #000000;
-                margin-bottom: 0.5rem;
-                line-height: 1;
-            }
-
-            .wmetric-subtitle {
-                font-size: 0.8rem;
-                color: #3b82f6;
-                font-weight: 500;
-            }
-
-            .wdispatch-timeline {
-                display: flex;
-                flex-direction: column;
-                gap: 0.85rem;
-                padding: 1.5rem 0;
-                border-top: 1px dashed #e5e7eb;
-            }
-
-            .wtimeline-item {
-                display: flex;
-                align-items: flex-start;
-                gap: 0.75rem;
-                font-size: 0.9rem;
-                color: #4b5563;
-            }
-
-            .wtimeline-bullet {
-                color: #3b82f6;
-                font-size: 0.5rem;
-                margin-top: 0.4rem;
-                flex-shrink: 0;
-            }
-
-            .wweighbridge-btn {
-                padding: 1.1rem;
-                background: #ffffff;
-                color: #3b82f6;
-                border: 2px solid #3b82f6;
-                border-radius: 0.75rem;
-                font-size: 0.95rem;
-                font-weight: 700;
-                letter-spacing: 0.08em;
-                cursor: pointer;
-                box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
-                transition: all .3s ease;
-                text-transform: uppercase;
-            }
-
-            .wweighbridge-btn:hover {
-                background: #3b82f6;
-                color: #ffffff;
-                box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
-            }
-
-            .wmetric {
-                padding: .75rem .85rem;
-                border-radius: .8rem;
-                background: #f8f9fa;
-                border: 2px solid #e5e7eb;
-            }
-
-            .wtimeline {
-                margin-top: .7rem;
-                padding-top: .7rem;
-                border-top: 1px dashed #e5e7eb;
-                font-size: .75rem;
-                color: #4b5563;
-            }
-
-            section {
-                /* margin-top:2.4rem; */
-            }
-
-            .wsection-heading {
-                font-size: 2rem;
-                margin-bottom: .75rem;
-                font-weight: 800;
-                color: #000000;
-                text-align: center;
-                letter-spacing: -.03em;
-            }
-
-            .wsection-sub {
-                font-size: 1.05rem;
-                color: #4b5563;
-                max-width: 45rem;
-                margin: 0 auto 2rem;
-                text-align: center;
-                line-height: 1.7;
-                font-weight: 400;
-            }
-
-            .wfeature-grid {
-                display: grid;
-                grid-template-columns: minmax(0, 1fr);
-                gap: 3rem;
-                margin-top: 2rem;
-            }
-
-            .wfeature-card {
-                background: #ffffff;
-                border-radius: 1.5rem;
-                padding: 3rem;
-                /* border:1px solid #e5e7eb; */
-                overflow: hidden;
-                transition: all .4s ease;
-                /* box-shadow:0 4px 20px rgba(0, 0, 0, 0.04); */
-                display: flex;
-                gap: 3rem;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            .wfeature-card:nth-child(even) {
-                flex-direction: row-reverse;
-            }
-
-            .wfeature-card:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15);
-                border-color: #3b82f6;
-            }
-
-            .wfeature-image {
-                width: 380px;
-                min-width: 580px;
-                height: 280px;
-                object-fit: cover;
-                border-radius: 1rem;
-                transition: transform .4s ease;
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-                border: 3px solid #f8f9fa;
-            }
-
-            .wfeature-card:hover .wfeature-image {
-                transform: scale(1.03) rotate(1deg);
-                box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2);
-            }
-
-            .wfeature-content {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-
-            .wfeature-tag {
-                display: inline-block;
-                font-size: .7rem;
-                color: #ffffff;
-                background: linear-gradient(135deg, #3b82f6, #2563eb);
-                text-transform: uppercase;
-                letter-spacing: .12em;
-                margin-bottom: .8rem;
-                font-weight: 700;
-                padding: .4rem .9rem;
-                border-radius: 999px;
-                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-                width: fit-content;
-            }
-
-            .wfeature-card h3 {
-                font-size: 1.65rem;
-                margin-bottom: .9rem;
-                font-weight: 800;
-                line-height: 1.25;
-                color: #000000;
-                letter-spacing: -.02em;
-            }
-
-            .wfeature-card p {
-                font-size: 1.05rem;
-                color: #4b5563;
-                margin-bottom: 1.2rem;
-                line-height: 1.8;
-                font-weight: 400;
-            }
-
-            .wfeature-card ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                font-size: .95rem;
-                color: #4b5563;
-                line-height: 1.8;
-            }
-
-            .wfeature-card li {
-                margin-bottom: .7rem;
-                font-weight: 400;
-                padding-left: 1.5rem;
-                position: relative;
-            }
-
-            .wfeature-card li::before {
-                content: "✓";
-                color: #3b82f6;
-                position: absolute;
-                left: 0;
-                font-weight: bold;
-                font-size: 1rem;
-                background: #dbeafe;
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: .75rem;
-            }
-
-            .wfeatures-section {
-                padding: 5rem 2rem;
-                /* background:#f8fafc; */
-            }
-
-            .winventory-section {
-                background: #ffffff;
-            }
-
-            .wfeatures-header {
-                text-align: center;
-                max-width: 900px;
-                margin: 0 auto 4rem;
-            }
-
-            .wmodern-features-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: 2.5rem;
-                max-width: 1400px;
-                margin: 0 auto;
-            }
-
-            .wmodern-feature-card {
-                background: #ffffff;
-                border-radius: 1.5rem;
-                overflow: hidden;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-                transition: all .4s ease;
-                border: 2px solid #e5e7eb;
-            }
-
-            .wmodern-feature-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 20px 50px rgba(59, 130, 246, 0.15);
-                border-color: #3b82f6;
-            }
-
-            .wfeature-image-wrapper {
-                position: relative;
-                width: 100%;
-                height: 250px;
-                overflow: hidden;
-            }
-
-            .wfeature-image-wrapper img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform .4s ease;
-            }
-
-            .wmodern-feature-card:hover .wfeature-image-wrapper img {
-                transform: scale(1.1);
-            }
-
-            .wfeature-badge {
-                position: absolute;
-                top: 1.5rem;
-                left: 1.5rem;
-                padding: .6rem 1.5rem;
-                border-radius: 999px;
-                font-size: .85rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: .05em;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            }
-
-            .weighbridge-badge {
-                background: linear-gradient(135deg, #3b82f6, #2563eb);
-                color: #ffffff;
-            }
-
-            .wbarrier-badge {
-                background: linear-gradient(135deg, #10b981, #059669);
-                color: #ffffff;
-            }
-
-            .wtheft-badge {
-                background: linear-gradient(135deg, #ef4444, #dc2626);
-                color: #ffffff;
-            }
-
-            .wcrusher-badge {
-                background: linear-gradient(135deg, #f59e0b, #d97706);
-                color: #ffffff;
-            }
-
-            .wrmc-badge {
-                background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-                color: #ffffff;
-            }
-
-            .wbrick-badge {
-                background: linear-gradient(135deg, #ec4899, #db2777);
-                color: #ffffff;
-            }
-
-            .wfeature-body {
-                padding: 2rem 2.5rem 2.5rem;
-            }
-
-            .wfeature-body h3 {
-                font-size: 1.5rem;
-                font-weight: 800;
-                color: #000000;
-                margin: 0 0 1rem;
-                line-height: 1.3;
-            }
-
-            .wfeature-body p {
-                color: #4b5563;
-                font-size: .95rem;
-                line-height: 1.7;
-                margin: 0 0 1.5rem;
-            }
-
-            .wfeature-points {
-                display: flex;
-                flex-direction: column;
-                gap: .85rem;
-            }
-
-            .wfeature-point {
-                display: flex;
-                align-items: flex-start;
-                gap: .75rem;
-            }
-
-            .wpoint-icon {
-                flex-shrink: 0;
-                width: 24px;
-                height: 24px;
-                background: #3b82f6;
-                color: #ffffff;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: .85rem;
-                font-weight: bold;
-            }
-
-            .wfeature-point span:last-child {
-                color: #4b5563;
-                font-size: .9rem;
-                line-height: 1.6;
-                flex: 1;
-            }
-
-            .wfeature-card li strong {
-                color: #000000;
-                font-weight: 700;
-            }
-
-            #why-generic-fails {
-                background: #ffffff;
-                padding: 5rem 2rem;
-                /* margin:3rem 0; */
-                /* border-radius:20px; */
-                position: relative;
-                border-top-left-radius: 40px;
-                border-top-right-radius: 40px;
-                overflow: hidden;
-                /* border:2px solid #e5e7eb; */
-            }
-
-            .why-fails-wrapper {
-                max-width: 1400px;
-                margin: 0 auto;
-                position: relative;
-                z-index: 1;
-            }
-
-            .why-fails-header {
-                text-align: center;
-                margin-bottom: 4rem;
-            }
-
-            .wsection-badge {
-                display: inline-block;
-                padding: 0.5rem 1.5rem;
-                background: #dbeafe;
-                color: #3b82f6;
-                border: 1px solid #3b82f6;
-                border-radius: 999px;
-                font-size: 0.85rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                margin-bottom: 1.5rem;
-            }
-
-            .why-fails-header .wsection-heading {
-                color: #000000;
-                font-size: 3rem;
-                margin-bottom: 1rem;
-            }
-
-            .why-fails-header .wsection-sub {
-                color: #4b5563;
-                font-size: 1.1rem;
-                max-width: 800px;
-                margin: 0 auto;
-            }
-
-            .why-fails-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: 2rem;
-            }
-
-            .why-fail-card {
-                background: #ffffff;
-                border-radius: 1.5rem;
-                padding: 2.5rem;
-                border: 2px solid #e5e7eb;
-                position: relative;
-                transition: all 0.4s ease;
-                overflow: hidden;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            }
-
-            .why-fail-card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 4px;
-                background: linear-gradient(90deg, #3b82f6, #60a5fa);
-                opacity: 0;
-                transition: opacity 0.4s ease;
-            }
-
-            .why-fail-card:hover {
-                transform: translateY(-10px);
-                border-color: #3b82f6;
-                box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
-            }
-
-            .why-fail-card:hover::before {
-                opacity: 1;
-            }
-
-            .wcard-number {
-                position: absolute;
-                top: 1.5rem;
-                right: 1.5rem;
-                font-size: 4rem;
-                font-weight: 900;
-                color: rgba(59, 130, 246, 0.1);
-                line-height: 1;
-            }
-
-            .wcard-icon-wrapper {
-                width: 80px;
-                height: 80px;
-                background: linear-gradient(135deg, #3b82f6, #60a5fa);
-                border-radius: 1.5rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 2rem;
-                box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-            }
-
-            .wcard-icon {
-                width: 40px;
-                height: 40px;
-                color: #ffffff;
-            }
-
-            .wcard-content h3 {
-                color: #000000;
-                font-size: 1.5rem;
-                font-weight: 800;
-                margin-bottom: 1rem;
-            }
-
-            .wcard-content p {
-                color: #4b5563;
-                font-size: 0.95rem;
-                line-height: 1.7;
-                margin-bottom: 1.5rem;
-            }
-
-            .wrisk-list {
-                display: flex;
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-
-            .wrisk-item {
-                display: flex;
-                align-items: flex-start;
-                gap: 0.75rem;
-                color: #4b5563;
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-
-            .wrisk-icon {
-                flex-shrink: 0;
-                width: 24px;
-                height: 24px;
-                background: #dbeafe;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.85rem;
-                color: #3b82f6;
-            }
-
-            .wcard-label {
-                position: absolute;
-                bottom: 1.5rem;
-                right: 1.5rem;
-                padding: 0.4rem 1rem;
-                border-radius: 999px;
-                font-size: 0.75rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-            }
-
-            .wrisk-label {
-                background: #dbeafe;
-                color: #3b82f6;
-                border: 1px solid #3b82f6;
-            }
-
-            .wsecurity-label {
-                background: #fef3c7;
-                color: #f59e0b;
-                border: 1px solid #f59e0b;
-            }
-
-            .wloss-label {
-                background: #dbeafe;
-                color: #3b82f6;
-                border: 1px solid #3b82f6;
-            }
-
-            #comparison {
-                background: #ffffff;
-                padding: 4rem 2rem;
-                /* margin:3rem 0;
-    border-radius:20px; */
-            }
-
-            .wcomparison-wrapper {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .wcomparison-intro {
-                margin-bottom: 3rem;
-                display: flex;
-                justify-content: center;
-            }
-
-            .wintro-content {
-                background: #ffffff;
-                padding: 2.5rem 3.5rem;
-                border-radius: 1.5rem;
-                text-align: center;
-                /* max-width:700px; */
-                /* box-shadow:0 10px 40px rgba(0, 0, 0, 0.1); */
-                border: 2px solid #e5e7eb;
-            }
-
-            .wcomparison-intro h2 {
-                color: #000000;
-                font-size: 2.5rem;
-                font-weight: 900;
-                margin: 0 0 0.75rem 0;
-                letter-spacing: 0.02em;
-            }
-
-            .wcomparison-subtitle {
-                color: #000000;
-                font-size: 1.1rem;
-                margin: 0 0 1rem 0;
-                font-weight: 500;
-            }
-
-            .wblue-highlight {
-                color: #3b82f6;
-                font-weight: 700;
-            }
-
-            .wcomparison-description {
-                color: #4b5563;
-                font-size: 0.9rem;
-                line-height: 1.6;
-                margin: 0;
-            }
-
-            .wpricing-table {
-                /* background:#ffffff; */
-                /* border-radius:1.5rem; */
-                padding: 0;
-                /* box-shadow:0 20px 60px rgba(0, 0, 0, 0.1); */
-                overflow: hidden;
-                /* border:2px solid #e5e7eb; */
-            }
-
-            .wtable-header-row {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 0;
-            }
-
-            .wheader-cell {
-
-                padding: 2rem 1.5rem;
-                text-align: center;
-                /* border-right:1px solid #e5e7eb; */
-
-            }
-
-            .wfeature-header-cell {
-                /* background:#f8f9fa; */
-                border-right: 1px solid #e5e7eb;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .wfeature-header-cell h3 {
-                color: #000000;
-                font-size: 0.95rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                margin: 0;
-            }
-
-            .wmanual-header-cell {
-                /* background:#f8f9fa; */
-                border-right: 1px solid #e5e7eb;
-            }
-
-            .wsazs-header-cell {
-                /* background:#f8f9fa; */
-            }
-
-            .wmanual-title {
-                color: #f59e0b;
-                font-size: 0.95rem;
-                font-weight: 800;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                margin: 0 0 0.75rem 0;
-            }
-
-            .wsazs-title {
-                color: #3b82f6;
-                font-size: 0.95rem;
-                font-weight: 800;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                margin: 0 0 0.75rem 0;
-            }
-
-            .wheader-badge {
-                font-size: 1.8rem;
-                font-weight: 900;
-                margin: 0.5rem 0;
-            }
-
-            .wlimited-badge {
-                color: #000000;
-            }
-
-            .wcomplete-badge {
-                color: #000000;
-            }
-
-            .wheader-desc {
-                color: #4b5563;
-                font-size: 0.8rem;
-                line-height: 1.5;
-                margin: 0 0.75rem 0 0;
-            }
-
-            .wtable-body {
-                background: #ffffff;
-            }
-
-            .wcomparison-row {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                border-top: 1px solid #e5e7eb;
-            }
-
-            .wfeature-name {
-                padding: 1.25rem 1.5rem;
-                color: #000000;
-                font-size: 0.9rem;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-                border-right: 1px solid #e5e7eb;
-            }
-
-            .wfeature-dot {
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: #3b82f6;
-                flex-shrink: 0;
-            }
-
-            .wcomparison-cell {
-                padding: 1.25rem 1.5rem;
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-                font-size: 0.875rem;
-                color: #000000;
-            }
-
-            .wbad-cell {
-                border-right: 1px solid #e5e7eb;
-                background: #fef3c7;
-            }
-
-            .wgood-cell {
-                background: #dcfce7;
-            }
-
-            .wcross-icon {
-                color: #ef4444;
-                font-size: 1.25rem;
-                font-weight: bold;
-                flex-shrink: 0;
-            }
-
-            .wcheck-icon {
-                color: #10b981;
-                font-size: 1.25rem;
-                font-weight: bold;
-                flex-shrink: 0;
-            }
-
-            .wtable-footer-row {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                /* background:#f8f9fa; */
-                padding: 2rem 1.5rem;
-                gap: 0;
-            }
-
-            .wfooter-spacer {
-                /* border-right:1px solid #e5e7eb; */
-            }
-
-            .wfooter-btn-cell {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0 1rem;
-                border-right: 1px solid #e5e7eb;
-            }
-
-            .wtable-btn {
-                padding: 0.75rem 2rem;
-                border: none;
-                border-radius: 999px;
-                font-size: 0.85rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                letter-spacing: 0.05em;
-            }
-
-            .wview-btn {
-                background: #f59e0b;
-                color: #ffffff;
-                box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
-            }
-
-            .wview-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-            }
-
-            .wget-started-btn {
-                background: #3b82f6;
-                color: #ffffff;
-                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            }
-
-            .wget-started-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-            }
-
-            #checklist {
-                padding: 4rem 2rem;
-                background: #ffffff;
-                border-bottom-left-radius: 40px;
-                border-bottom-right-radius: 40px;
-            }
-
-            .wchecklist-intro {
-                text-align: center;
-                margin-bottom: 3rem;
-                max-width: 900px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .wchecklist-container {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-                max-width: 1400px;
-                margin: 0 auto;
-            }
-
-            .wchecklist-left {
-                display: flex;
-            }
-
-            .wchecklist-card {
-                background: #ffffff;
-                border-radius: 1.5rem;
-                overflow: hidden;
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-                width: 100%;
-                border: 2px solid #e5e7eb;
-            }
-
-            .wchecklist-image {
-                position: relative;
-                width: 100%;
-                height: 250px;
-                overflow: hidden;
-            }
-
-            .wchecklist-image img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-            .wchecklist-title-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(59, 130, 246, 0.5));
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .wchecklist-title-overlay h3 {
-                color: #ffffff;
-                font-size: 2rem;
-                font-weight: 800;
-                margin: 0;
-                text-align: center;
-                padding: 0 2rem;
-            }
-
-            .wchecklist-items {
-                padding: 2rem;
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .wchecklist-item {
-                display: flex;
-                align-items: flex-start;
-                gap: 1rem;
-                font-size: 0.95rem;
-                color: #4b5563;
-                line-height: 1.6;
-            }
-
-            .wcheck-icon-blue {
-                color: #3b82f6;
-                font-size: 1.25rem;
-                font-weight: bold;
-                flex-shrink: 0;
-            }
-
-            .wchecklist-right {
-                display: flex;
-            }
-
-            .wdemo-form-card {
-                background: #ffffff;
-                border: 2px solid #3b82f6;
-                border-radius: 1.5rem;
-                padding: 2.5rem;
-                color: #000000;
-                box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
-                width: 100%;
-            }
-
-            .wdemo-form-card h3 {
-                font-size: 2rem;
-                font-weight: 800;
-                margin: 0 0 1rem 0;
-                color: #000000;
-            }
-
-            .wdemo-form-card>p {
-                color: #4b5563;
-                font-size: 0.95rem;
-                line-height: 1.6;
-                margin: 0 0 2rem 0;
-            }
-
-            .wdemo-form {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .wform-input {
-                padding: 1rem 1.25rem;
-                border-radius: 0.75rem;
-                border: 2px solid #e5e7eb;
-                background: #ffffff;
-                color: #000000;
-                font-size: 0.95rem;
-                transition: all .3s ease;
-            }
-
-            .wform-input::placeholder {
-                color: #9ca3af;
-            }
-
-            .wform-input:focus {
-                outline: none;
-                border-color: #3b82f6;
-                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            }
-
-            .wform-submit-btn {
-                padding: 1.25rem;
-                background: linear-gradient(135deg, #3b82f6, #2563eb);
-                color: #ffffff;
-                border: none;
-                border-radius: 0.75rem;
-                font-size: 1rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                cursor: pointer;
-                box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
-                transition: all .3s ease;
-            }
-
-            .wform-submit-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 12px 32px rgba(255, 255, 255, 0.4);
-                color: #ffffff;
-            }
-
-            .wform-seo-text {
-                font-size: 0.75rem;
-                color: #6b7280;
-                line-height: 1.5;
-                margin: 0;
-            }
-
-            .wcta-side {
-                padding: 1.5rem;
-            }
-
-            .wcheck-card ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .wcheck-card li {
-                margin-bottom: .6rem;
-                display: flex;
-                align-items: flex-start;
-                gap: .5rem;
-                font-size: .95rem;
-                color: #4b5563;
-                line-height: 1.6;
-            }
-
-            .wcheck-card li span {
-                color: #3b82f6;
-                margin-top: .05rem;
-                font-weight: bold;
-                font-size: 1.1rem;
-                flex-shrink: 0;
-            }
-
-
-
-            @media (max-width:1024px) and (min-width:768px) {
-                .wpage {
-                    padding: 1.5rem;
-                }
-
-                .whero h1 {
-                    font-size: 2.2rem;
-                }
-
-                .whero-pills {
-                    gap: 0.5rem;
-                }
-
-                .wfeature-card {
-                    padding: 2rem;
-                }
-
-                .wfeature-image {
-                    width: 320px;
-                    height: 240px;
-                }
-
-                .wfeature-content h3 {
-                    font-size: 1.4rem;
-                }
-
-                .wmodern-features-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 2rem;
-                }
-
-                .wfeature-image-wrapper {
-                    height: 220px;
-                }
-
-                .wfeature-badge {
-                    padding: .5rem 1.2rem;
-                    font-size: .8rem;
-                }
-
-                .wfeature-body {
-                    padding: 1.75rem 2rem 2rem;
-                }
-
-                .wfeature-body h3 {
-                    font-size: 1.3rem;
-                }
-
-                .wsection-heading {
-                    font-size: 2rem;
-                }
-
-                #why-generic-fails {
-                    padding: 4rem 2rem;
-                }
-
-                .why-fails-header .wsection-heading {
-                    font-size: 2.5rem;
-                }
-
-                .why-fails-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 1.5rem;
-                }
-
-                .why-fail-card:last-child {
-                    grid-column: 1 / -1;
-                    max-width: 600px;
-                    margin: 0 auto;
-                }
-
-                .wintro-content {
-                    padding: 2.5rem 3rem;
-                }
-
-                .wcomparison-intro h2 {
-                    font-size: 2.5rem;
-                }
-
-                .wpricing-table {
-                    padding: 2.5rem 2rem;
-                }
-            }
-
-            @media (max-width:767px) {
-                .wpage {
-                    padding: 1rem;
-                }
-
-                .whero {
-                    grid-template-columns: 1fr;
-                    gap: 2rem;
-                    padding: 2rem 1.5rem;
-                }
-
-                .whero h1 {
-                    font-size: 2rem;
-                }
-
-                .wblue-text {
-                    margin-top: 0.25rem;
-                }
-
-                .whero-pills {
-                    gap: .5rem;
-                }
-
-                .wpill {
-                    font-size: .75rem;
-                    padding: .35rem .85rem;
-                }
-
-                .whero-cta {
-                    flex-direction: column;
-                    gap: 1rem;
-                }
-
-                .whero-btn-primary,
-                .whero-btn-ghost {
-                    width: 100%;
-                    text-align: center;
-                    justify-content: center;
-                }
-
-                .wdispatch-metrics {
-                    grid-template-columns: 1fr;
-                }
-
-                .wmetric-big-value {
-                    font-size: 1.5rem;
-                }
-
-                .wchecklist-container {
-                    grid-template-columns: 1fr;
-                    gap: 2rem;
-                }
-
-                .wchecklist-image {
-                    height: 200px;
-                }
-
-                .wchecklist-title-overlay h3 {
-                    font-size: 1.5rem;
-                }
-
-                .wchecklist-items {
-                    padding: 1.5rem;
-                }
-
-                .wchecklist-item {
-                    font-size: 0.9rem;
-                }
-
-                .wdemo-form-card {
-                    padding: 2rem 1.5rem;
-                }
-
-                .wdemo-form-card h3 {
-                    font-size: 1.5rem;
-                }
-
-                .wdemo-form-card>p {
-                    font-size: 0.9rem;
-                }
-
-                .wmodern-features-grid {
-                    grid-template-columns: 1fr;
-                    gap: 1.5rem;
-                }
-
-                .wfeature-image-wrapper {
-                    height: 200px;
-                }
-
-                .wfeature-badge {
-                    top: 1rem;
-                    left: 1rem;
-                    padding: .4rem 1rem;
-                    font-size: .75rem;
-                }
-
-                .wfeature-body {
-                    padding: 1.5rem;
-                }
-
-                .wfeature-body h3 {
-                    font-size: 1.2rem;
-                }
-
-                .wfeature-body p {
-                    font-size: .85rem;
-                }
-
-                .wfeature-point {
-                    gap: .6rem;
-                }
-
-                .wpoint-icon {
-                    width: 20px;
-                    height: 20px;
-                    font-size: .75rem;
-                }
-
-                .wfeature-point span:last-child {
-                    font-size: .85rem;
-                }
-
-                .wfeature-card,
-                .wfeature-card:nth-child(even) {
-                    flex-direction: column;
-                    padding: 1.5rem;
-                    text-align: center;
-                }
-
-                .wfeature-image {
-                    width: 100%;
-                    min-width: 100%;
-                    height: 200px;
-                }
-
-                .wfeature-content {
-                    text-align: center;
-                }
-
-                .wfeature-tag {
-                    margin: 0 auto 0.8rem;
-                }
-
-                .wsection-heading {
-                    font-size: 1.5rem;
-                    line-height: 1.3;
-                }
-
-                .wsection-sub {
-                    font-size: .9rem;
-                    line-height: 1.6;
-                }
-
-                #why-generic-fails {
-                    padding: 3rem 1rem;
-                    margin: 2rem 0;
-                }
-
-                .wsection-badge {
-                    font-size: 0.75rem;
-                    padding: 0.4rem 1.2rem;
-                }
-
-                .why-fails-header {
-                    margin-bottom: 3rem;
-                }
-
-                .why-fails-header .wsection-heading {
-                    font-size: 1.8rem;
-                    line-height: 1.3;
-                }
-
-                .why-fails-header .wsection-sub {
-                    font-size: 0.9rem;
-                    line-height: 1.6;
-                }
-
-                .why-fails-grid {
-                    grid-template-columns: 1fr;
-                    gap: 1.5rem;
-                }
-
-                .why-fail-card {
-                    padding: 2rem 1.5rem;
-                }
-
-                .wcard-number {
-                    font-size: 2.5rem;
-                    top: 1rem;
-                    right: 1rem;
-                }
-
-                .wcard-icon-wrapper {
-                    width: 60px;
-                    height: 60px;
-                    margin-bottom: 1.5rem;
-                }
-
-                .wcard-icon {
-                    width: 30px;
-                    height: 30px;
-                }
-
-                .wcard-content h3 {
-                    font-size: 1.25rem;
-                }
-
-                .wcard-content p {
-                    font-size: 0.9rem;
-                    line-height: 1.6;
-                }
-
-                .wrisk-item {
-                    font-size: 0.85rem;
-                }
-
-                #comparison {
-                    padding: 2rem 1rem;
-                }
-
-                .wintro-content {
-                    padding: 2rem 1.5rem;
-                    max-width: 100%;
-                }
-
-                .wcomparison-intro h2 {
-                    font-size: 1.8rem;
-                }
-
-                .wcomparison-subtitle {
-                    font-size: 0.95rem;
-                }
-
-                .wcomparison-description {
-                    font-size: 0.85rem;
-                }
-
-                .wpricing-table {
-                    border-radius: 1rem;
-                }
-
-                .wtable-header-row {
-                    grid-template-columns: 1fr;
-                    gap: 0;
-                }
-
-                .wheader-cell {
-                    padding: 1.5rem 1rem;
-                    border-right: none !important;
-                    border-bottom: 1px solid #e5e7eb;
-                }
-
-                .wfeature-header-cell {
-                    display: none;
-                }
-
-                .wmanual-title,
-                .wsazs-title {
-                    font-size: 0.85rem;
-                }
-
-                .wheader-badge {
-                    font-size: 1.5rem;
-                }
-
-                .wheader-desc {
-                    font-size: 0.75rem;
-                }
-
-                .wcomparison-row {
-                    grid-template-columns: 1fr;
-                }
-
-                .wfeature-name {
-                    border-right: none;
-                    border-bottom: 1px solid #e5e7eb;
-                    padding: 1rem;
-                    font-size: 0.85rem;
-                    background: #f8f9fa;
-                }
-
-                .wcomparison-cell {
-                    padding: 1rem;
-                    border-right: none;
-                    font-size: 0.8rem;
-                }
-
-                .wbad-cell {
-                    border-left: 3px solid #f59e0b;
-                    border-bottom: 1px solid #e5e7eb;
-                }
-
-                .wgood-cell {
-                    border-left: 3px solid #10b981;
-                    border-bottom: 1px solid #e5e7eb;
-                }
-
-                .wtable-footer-row {
-                    grid-template-columns: 1fr;
-                    gap: 1rem;
-                    padding: 1.5rem 1rem;
-                }
-
-                .wfooter-spacer {
-                    display: none;
-                }
-
-                .wfooter-btn-cell {
-                    padding: 0;
-                }
-
-                .wtable-btn {
-                    width: 100%;
-                    padding: 1rem 2rem;
-                    font-size: 0.8rem;
-                }
-            }
-
-            @media (max-width:480px) {
-                .wform-submit-btn {
-                    font-size: 0.7rem !important;
-                }
-
-                .whero h1 {
-                    font-size: 1.5rem;
-                }
-
-                .whero-pills {
-                    justify-content: center;
-                }
-
-                .wsection-heading {
-                    font-size: 1.3rem;
-                }
-
-                .wsection-sub {
-                    font-size: 0.85rem;
-                }
-
-                .why-fails-header .wsection-heading {
-                    font-size: 1.5rem;
-                }
-
-                .why-fail-card {
-                    padding: 1.5rem 1rem;
-                }
-
-                .wcard-number {
-                    font-size: 2rem;
-                }
-
-                .wcard-icon-wrapper {
-                    width: 50px;
-                    height: 50px;
-                }
-
-                .wcard-icon {
-                    width: 25px;
-                    height: 25px;
-                }
-
-                .wcard-content h3 {
-                    font-size: 1.1rem;
-                }
-
-                .wcard-content p {
-                    font-size: 0.85rem;
-                }
-
-                .wcomparison-intro h2 {
-                    font-size: 1.5rem;
-                }
-
-                .wintro-content {
-                    padding: 1.5rem 1rem;
-                }
-
-                .wpricing-table {
-                    padding: 1rem 0.75rem;
-                }
-            }
-
-            @media (min-width:768px) {
-                .whero {
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 2rem;
-                }
-
-                .whero>div:first-child,
-                .whero>.whero-right {
-                    flex: 1;
-                }
-
-                .wchecklist {
-                    flex-direction: row;
-                }
-
-                .wcheck-card {
-                    flex: 2;
-                }
-
-                .wcta-side {
-                    flex: 1.2;
-                }
-            }
-
-            @media (min-width:1024px) {
-                .wpage {
-                    padding-inline: 2rem;
-                }
-
-                .whero {
-                    padding-inline: 2rem;
-                    padding-top: 2.75rem;
-                }
-            }
-        </style>
-
-        <div class="site">
-            <div class="wpage">
-                <!-- WHY GENERAL SOFTWARE FAILS SECTION -->
-                <section id="why-generic-fails">
-                    <div class="why-fails-wrapper">
-                        <div class="why-fails-header">
-                            <span class="wsection-badge">Industry Problem</span>
-                            <h2 class="wsection-heading">Why "General" Software Fails Your Industry</h2>
+
+
+
+
+        <section class="awesome-erp mb-5">
+            <div class="erp-container">
+                <div class="erp-left">
+                    <h2 style="color: #fff;">Why We Are Awesome in ERP</h2>
+                </div>
+                <div class="erp-divider"></div> <!-- Vertical Line -->
+                <div class="erp-right ">
+                    <p>With more than 5+ years of experience in the ERP industry, we know what it's like to be at every
+                        stage of a growing business.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- WHY US Section -->
+        <section class="divider-line">
+            <section class="why-us ">
+
+
+                <section class="orbit-section">
+                    <h1 class="section-title zoom-in">
+                        <span class="highlight-text">Efficient,</span>
+                        <span class="highlight-text"> User-Friendly &</span>
+                        Automated
+                    </h1>
+
+                    <div class="orbit-container">
+                        <div class="orbit-column left-side slide-in">
+                            <div class="feature-text">
+                                <h5><span class="highlight-text">Creative & Simple</span> User Interface</h5>
+                                <p>
+                                    Our application is designed for all user levels, ensuring a smooth experience across
+                                    every touchpoint. No technical skills are required — anyone can operate it with
+                                    ease.
+                                    With intuitive navigation, clean layout, and smart reporting, you get 100% accurate
+                                    data
+                                    for faster decisions.</p>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Hardware <span class="highlight-text">Integration</span></h5>
+                                <p>SAZS Apps supports a wide range of hardware devices including weighbridge systems,
+                                    barcode scanners, ANPR cameras, and GPS tracking units.
+                                    Easily plug-and-play hardware to automate operations without manual effort.</p>
+                            </div>
+                            <div class="feature-text">
+                                <h5><span class="highlight-text">Powerful</span> Technology</h5>
+                                <p>Built on Microsoft technology and backed by secure cloud hosting, our system delivers
+                                    high performance with maximum uptime and data safety.
+                                    Fast, scalable, and dependable — even for large-scale operations.</p>
+                            </div>
+                        </div>
+
+                        <div class="orbit-center">
+                            <div class="glow-effect"></div>
+                            <img src="src/assets/contentImages/homeftr.svg" alt="SAZS ERP Central" class="main-graphic">
+                        </div>
+
+                        <div class="orbit-column right-side slide-in">
+                            <div class="feature-text">
+                                <h5><span class="highlight-text">Secu</span>rity</h5>
+                                <p>Your data is protected with advanced security protocols, including two-factor
+                                    authentication and controlled user access.
+                                    Every action is logged and monitored through SAZS utility, ensuring complete safety
+                                    and
+                                    transparency.</p>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Our <span class="highlight-text">Happy</span> Customers</h5>
+                                <p>Trusted by 303+ businesses across Tamil Nadu, and growing.
+                                    Our clients rely on us for automation, accuracy, and business efficiency.</p>
+                            </div>
+                            <div class="feature-text">
+                                <h5><span class="highlight-text">24/7</span> Customer Support</h5>
+                                <p>We offer round-the-clock support, helping you resolve queries and continue operations
+                                    without downtime.
+                                    Always available when you need us.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <h1 class="fade-in mt-5" style="text-align: center;">
+                    WHAT YOU
+                    <span class="highlight-text">GAIN ?</span>
+
+                </h1>
+                <section class="GAIN">
+                    <div class="steps-wrap">
+
+                        <!-- Row 1 -->
+                        <div class="step-row">
+                            <div class="step-text fade-in">
+                                <h2>✓ Track and monitor every operation from remote</h2>
+                                <p>Stay connected and oversee all activities in real-time, regardless of your location.
+                                </p>
+                            </div>
+                            <div class="step-card-wrap slide-in">
+                                <div class="step-card">
+                                    <img src="/src/assets/images/Trackandmonitor.avif" alt="Remote Monitoring">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="step-row">
+                            <div class="step-card-wrap">
+                                <div class="step-card slide-in">
+                                    <img src="./src/assets/images/100accuracy.avif" alt="Financial Accuracy">
+                                </div>
+                            </div>
+                            <div class="step-text fade-in">
+                                <h2>✓ 100% accuracy in financial statements in single click</h2>
+                                <p>Generate comprehensive financial reports instantly with complete precision and zero
+                                    errors.</p>
+                            </div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="step-row">
+                            <div class="step-text fade-in">
+                                <h2>✓ No dependency with any employees</h2>
+                                <p>Fully automated system that operates independently and efficiently.</p>
+                            </div>
+                            <div class="step-card-wrap slide-in">
+                                <div class="step-card">
+                                    <img src="/src/assets/images/Nodepedencyneeded.avif" alt="Automation">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Row 4 -->
+                        <div class="step-row">
+                            <div class="step-card-wrap slide-in">
+                                <div class="step-card">
+                                    <img src="./src/assets/images/multipleyards.avif" alt="Multiple Yards">
+                                </div>
+                            </div>
+                            <div class="step-text fade-in">
+                                <h2>✓ Manage and run multiple yards in multiple places</h2>
+                                <p>Centralized control system allows seamless management of all your locations.</p>
+                            </div>
+                        </div>
+
+                        <!-- Row 5 -->
+                        <div class="step-row">
+                            <div class="step-text fade-in">
+                                <h2>✓ Reduced manual effort and 0% manual errors</h2>
+                                <p>Automated processes ensure complete accuracy and efficiency.</p>
+                            </div>
+                            <div class="step-card-wrap slide-in">
+                                <div class="step-card">
+                                    <img src="/src/assets/images/Reducemanualeffort.avif" alt="Zero Errors">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+
+
+
+
+                <section class="mahi-quote-section zoom-in">
+                    <div class="quote-container">
+                        <div class="mahi-content">
+                            <h2 class="big-letter-text">
+                                Don't Let Your Profits Drive Out the Gate. <span class="highlight-blue">Secure Your
+                                    Site</span> with SAZS ERP.
+                            </h2>
+
+                            <p style="font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto;">
+                                From automated weighment to real-time P&L, we provide the tools to recover lost revenue.
+                                If
+                                our system saves you just two trucks a month, it's already paid for itself </p>
+
+                            <div class="integration-list">
+                                <div class="integration-tag">ANPR</div>
+                                <div class="integration-tag">Mobile Apps</div>
+                                <div class="integration-tag">Tally</div>
+                                <div class="integration-tag">Biometrics</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+
+            <div class="site">
+                <div class="wpage">
+                    <!-- WHY GENERAL SOFTWARE FAILS SECTION -->
+                    <section id="why-generic-fails">
+                        <div class="why-fails-wrapper">
+                            <div class="why-fails-header">
+                                <span class="wsection-badge">Industry Problem</span>
+                                <h2 class="wsection-heading">Why "General" Software Fails Your Industry</h2>
+                                <p class="wsection-sub">
+                                    Most software is designed for trading or retail, but Crusher, Quarry, and Readymix
+                                    businesses operate in "Real-Time." Here is why you need a specialized ERP:
+                                </p>
+                            </div>
+
+                            <div class="why-fails-grid">
+                                <!-- Card 1 -->
+                                <div class="why-fail-card risk-card">
+                                    <div class="wcard-number">01</div>
+                                    <div class="wcard-icon-wrapper">
+                                        <svg class="wcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path
+                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                        </svg>
+                                    </div>
+                                    <div class="wcard-content">
+                                        <h3>The "Human Element" Risk</h3>
+                                        <p>
+                                            Generic software relies on your staff to type in the correct weight. If they
+                                            make a "mistake" (or commit malpractice), the software cannot stop it. SAZS
+                                            Apps
+                                            ERP pulls the weight directly from the load cells.
+                                        </p>
+                                        <div class="wrisk-list">
+                                            <div class="wrisk-item">
+                                                <span class="wrisk-icon">⚠</span>
+                                                <span>Manual entry allows fraud and errors</span>
+                                            </div>
+                                            <div class="wrisk-item">
+                                                <span class="wrisk-icon">⚠</span>
+                                                <span>No verification of actual weights</span>
+                                            </div>
+                                            <div class="wrisk-item">
+                                                <span class="wrisk-icon">⚠</span>
+                                                <span>Staff can manipulate records easily</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wcard-label wrisk-label">High Risk</div>
+                                </div>
+
+                                <!-- Card 2 -->
+                                <div class="why-fail-card security-card">
+                                    <div class="wcard-number">02</div>
+                                    <div class="wcard-icon-wrapper">
+                                        <svg class="wcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path
+                                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                        </svg>
+                                    </div>
+                                    <div class="wcard-content">
+                                        <h3>The Gate Leak</h3>
+                                        <p>
+                                            Standard software doesn't know if a truck has actually left the gate or if
+                                            it
+                                            left with 20 tons instead of 10. Our Boom Barrier integration ensures that
+                                            the
+                                            physical gate only opens when the digital data is 100% correct.
+                                        </p>
+                                        <div class="wrisk-list">
+                                            <div class="wrisk-item">
+                                                <span class="wrisk-icon">⚠</span>
+                                                <span>No physical gate control integration</span>
+                                            </div>
+                                            <div class="wrisk-item">
+                                                <span class="wrisk-icon">⚠</span>
+                                                <span>Trucks can leave without proper documentation</span>
+                                            </div>
+                                            <div class="wrisk-item">
+                                                <span class="wrisk-icon">⚠</span>
+                                                <span>Material theft goes undetected</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wcard-label wsecurity-label">Security Gap</div>
+                                </div>
+
+                                <!-- Card 3 -->
+                                <div class="why-fail-card loss-card">
+                                    <div class="wcard-number">03</div>
+                                    <div class="wcard-icon-wrapper">
+                                        <svg class="wcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path
+                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="wcard-content">
+                                        <h3>Revenue Leakage</h3>
+                                        <p>
+                                            In Brick Plants or RMC units, raw material consumption must match output.
+                                            Generic software doesn't track "breakage" or "slump," leading to hidden
+                                            losses.
+                                            We track every unit from raw material to finished product.
+                                        </p>
+                                        <div class="wrisk-list">
+                                            <div class="wrisk-item">
+                                                <span class="wrisk-icon">⚠</span>
+                                                <span>No reconciliation between input and output</span>
+                                            </div>
+                                            <div class="wrisk-item">
+                                                <span class="wrisk-icon">⚠</span>
+                                                <span>Hidden wastage and breakage not tracked</span>
+                                            </div>
+                                            <div class="wrisk-item">
+                                                <span class="wrisk-icon">⚠</span>
+                                                <span>Profit margins erode silently</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wcard-label wloss-label">Revenue Loss</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- COMPARISON TABLE -->
+                    <section id="comparison">
+                        <div class="wcomparison-wrapper">
+                            <div class="wcomparison-intro">
+                                <div class="wintro-content">
+                                    <h2>COMPARISON TABLE</h2>
+                                    <p class="wcomparison-subtitle"><span class="wblue-highlight">SAZS ERP</span> vs
+                                        Manual / Generic Software</p>
+                                    <p class="wcomparison-description">
+                                        See exactly where your current system is leaking profit and how SAZS ERP
+                                        provides the complete automated solution for your Quarry, Crusher, RMC & Brick
+                                        Plant
+                                        operations.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="wpricing-table">
+                                <!-- Column Headers -->
+                                <div class="wtable-header-row">
+                                    <div class="header-cell wfeature-wheader-cell">
+                                        <h3>FEATURE / CAPABILITY</h3>
+                                    </div>
+                                    <div class="header-cell wmanual-wheader-cell">
+                                        <h3 class="wmanual-title">MANUAL / GENERIC SOFTWARE</h3>
+                                        <div class="wheader-badge wlimited-badge">Limited</div>
+                                        <p class="wheader-desc">Traditional methods with manual data entry and
+                                            disconnected
+                                            systems leading to errors and revenue loss.</p>
+                                    </div>
+                                    <div class="header-cell wsazs-wheader-cell">
+                                        <h3 class="wsazs-title">SAZS ERP SOLUTION</h3>
+                                        <div class="wheader-badge wcomplete-badge">Complete</div>
+                                        <p class="wheader-desc">Fully automated, cloud-based platform with hardware
+                                            integrations for 100% accuracy and real-time control.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Table Body -->
+                                <div class="wtable-body">
+                                    <!-- Row 1 -->
+                                    <div class="wcomparison-row">
+                                        <div class="wfeature-name"><span class="wfeature-dot"></span>Direct Weighbridge
+                                            Sync
+                                        </div>
+                                        <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Manual
+                                            entry (High risk of fraud)</div>
+                                        <div class="wcomparison-cell wgood-cell"><span
+                                                class="wcheck-icon">✓</span>Automated
+                                            Integration (Zero human error)</div>
+                                    </div>
+
+                                    <!-- Row 2 -->
+                                    <div class="wcomparison-row">
+                                        <div class="wfeature-name"><span class="wfeature-dot"></span>Physical Gate
+                                            Security
+                                        </div>
+                                        <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Manual
+                                            logbooks</div>
+                                        <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Boom
+                                            Barrier Integration (No slip, No exit)</div>
+                                    </div>
+
+                                    <!-- Row 3 -->
+                                    <div class="wcomparison-row">
+                                        <div class="wfeature-name"><span class="wfeature-dot"></span>Material Theft
+                                            Control
+                                        </div>
+                                        <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Easy
+                                            to
+                                            bypass</div>
+                                        <div class="wcomparison-cell wgood-cell"><span
+                                                class="wcheck-icon">✓</span>Real-time
+                                            95% reduction in theft</div>
+                                    </div>
+
+                                    <!-- Row 4 -->
+                                    <div class="wcomparison-row">
+                                        <div class="wfeature-name"><span class="wfeature-dot"></span>Invoicing Speed
+                                        </div>
+                                        <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>10–20
+                                            minutes per truck</div>
+                                        <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Under
+                                            30
+                                            seconds (Automated)</div>
+                                    </div>
+
+                                    <!-- Row 5 -->
+                                    <div class="wcomparison-row">
+                                        <div class="wfeature-name"><span class="wfeature-dot"></span>Credit Limit
+                                            Enforcement</div>
+                                        <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Manual
+                                            checking (Slow)</div>
+                                        <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Hard
+                                            Stop
+                                            (Blocks dispatch instantly)</div>
+                                    </div>
+
+                                    <!-- Row 6 -->
+                                    <div class="wcomparison-row">
+                                        <div class="wfeature-name"><span class="wfeature-dot"></span>Trip Verification
+                                        </div>
+                                        <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Based
+                                            on
+                                            driver's word</div>
+                                        <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>GPS +
+                                            Weighbridge Cross-check</div>
+                                    </div>
+
+                                    <!-- Row 7 -->
+                                    <div class="wcomparison-row">
+                                        <div class="wfeature-name"><span class="wfeature-dot"></span>GST & E-Invoicing
+                                        </div>
+                                        <div class="wcomparison-cell wbad-cell"><span
+                                                class="wcross-icon">✕</span>Separate
+                                            portal login</div>
+                                        <div class="wcomparison-cell wgood-cell"><span
+                                                class="wcheck-icon">✓</span>One-click
+                                            Direct API Sync</div>
+                                    </div>
+
+                                    <!-- Row 8 -->
+                                    <div class="wcomparison-row">
+                                        <div class="wfeature-name"><span class="wfeature-dot"></span>Site-Wise P&L</div>
+                                        <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Needs
+                                            manual calculation</div>
+                                        <div class="wcomparison-cell wgood-cell"><span
+                                                class="wcheck-icon">✓</span>Instant,
+                                            Real-time Dashboards</div>
+                                    </div>
+
+                                    <!-- Row 9 -->
+                                    <div class="wcomparison-row">
+                                        <div class="wfeature-name"><span class="wfeature-dot"></span>Inventory Tracking
+                                        </div>
+                                        <div class="wcomparison-cell wbad-cell"><span
+                                                class="wcross-icon">✕</span>Monthly
+                                            physical counts only</div>
+                                        <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Live
+                                            Stock Reconciliation</div>
+                                    </div>
+
+                                    <!-- Row 10 -->
+                                    <div class="wcomparison-row">
+                                        <div class="wfeature-name"><span class="wfeature-dot"></span>Industry Specifics
+                                        </div>
+                                        <div class="wcomparison-cell wbad-cell"><span
+                                                class="wcross-icon">✕</span>General
+                                            "Retail" features</div>
+                                        <div class="wcomparison-cell wgood-cell"><span
+                                                class="wcheck-icon">✓</span>Custom
+                                            for Quarry, RMC & Bricks</div>
+                                    </div>
+                                </div>
+
+                                <!-- Footer Buttons -->
+                                <div class="wtable-footer-row">
+                                    <div class="wfooter-spacer"></div>
+                                    <div class="wfooter-btn-cell">
+                                        <button class="wtable-btn wview-btn"
+                                            onclick="window.location.href='Signup.html'">VIEW DETAILS</button>
+                                    </div>
+                                    <div class="wfooter-btn-cell">
+                                        <button class="wtable-btn wget-started-btn"
+                                            onclick="window.location.href='Signup.html'">GET STARTED</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- CHECKLIST & FORM -->
+                    <section id="checklist">
+                        <div class="wchecklist-intro">
+                            <h2 class="wsection-heading">Is Your Current System Protecting Your Profit?</h2>
                             <p class="wsection-sub">
-                                Most software is designed for trading or retail, but Crusher, Quarry, and Readymix
-                                businesses operate in "Real-Time." Here is why you need a specialized ERP:
+                                Turn this checklist into your sales weapon: use it on your website, in client meetings,
+                                and
+                                inside proposals to prove the ROI of SAZS ERP.
                             </p>
                         </div>
 
-                        <div class="why-fails-grid">
-                            <!-- Card 1 -->
-                            <div class="why-fail-card risk-card">
-                                <div class="wcard-number">01</div>
-                                <div class="wcard-icon-wrapper">
-                                    <svg class="wcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                    </svg>
-                                </div>
-                                <div class="wcard-content">
-                                    <h3>The "Human Element" Risk</h3>
-                                    <p>
-                                        Generic software relies on your staff to type in the correct weight. If they
-                                        make a "mistake" (or commit malpractice), the software cannot stop it. SAZS Apps
-                                        ERP pulls the weight directly from the load cells.
-                                    </p>
-                                    <div class="wrisk-list">
-                                        <div class="wrisk-item">
-                                            <span class="wrisk-icon">⚠</span>
-                                            <span>Manual entry allows fraud and errors</span>
-                                        </div>
-                                        <div class="wrisk-item">
-                                            <span class="wrisk-icon">⚠</span>
-                                            <span>No verification of actual weights</span>
-                                        </div>
-                                        <div class="wrisk-item">
-                                            <span class="wrisk-icon">⚠</span>
-                                            <span>Staff can manipulate records easily</span>
+                        <div class="wchecklist-container">
+                            <div class="wchecklist-left">
+                                <div class="wchecklist-card">
+                                    <div class="wchecklist-image">
+                                        <img src="./src/assets/contentImages/profitprotect.webp"
+                                            alt="Business checklist" />
+                                        <div class="wchecklist-title-overlay">
+                                            <h3>Profit Protection Checklist</h3>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="wcard-label wrisk-label">High Risk</div>
-                            </div>
-
-                            <!-- Card 2 -->
-                            <div class="why-fail-card security-card">
-                                <div class="wcard-number">02</div>
-                                <div class="wcard-icon-wrapper">
-                                    <svg class="wcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                    </svg>
-                                </div>
-                                <div class="wcard-content">
-                                    <h3>The Gate Leak</h3>
-                                    <p>
-                                        Standard software doesn't know if a truck has actually left the gate or if it
-                                        left with 20 tons instead of 10. Our Boom Barrier integration ensures that the
-                                        physical gate only opens when the digital data is 100% correct.
-                                    </p>
-                                    <div class="wrisk-list">
-                                        <div class="wrisk-item">
-                                            <span class="wrisk-icon">⚠</span>
-                                            <span>No physical gate control integration</span>
+                                    <div class="wchecklist-items">
+                                        <div class="wchecklist-item">
+                                            <span class="wcheck-icon-blue">✓</span>
+                                            <span>Weighbridge connected directly to ERP (no manual entry)</span>
                                         </div>
-                                        <div class="wrisk-item">
-                                            <span class="wrisk-icon">⚠</span>
-                                            <span>Trucks can leave without proper documentation</span>
+                                        <div class="wchecklist-item">
+                                            <span class="wcheck-icon-blue">✓</span>
+                                            <span>Boom barrier linked to invoice & credit limit</span>
                                         </div>
-                                        <div class="wrisk-item">
-                                            <span class="wrisk-icon">⚠</span>
-                                            <span>Material theft goes undetected</span>
+                                        <div class="wchecklist-item">
+                                            <span class="wcheck-icon-blue">✓</span>
+                                            <span>Live stock view for aggregates, cement & bricks</span>
+                                        </div>
+                                        <div class="wchecklist-item">
+                                            <span class="wcheck-icon-blue">✓</span>
+                                            <span>Site-wise P&L for Quarry, RMC & Brick Plant</span>
+                                        </div>
+                                        <div class="wchecklist-item">
+                                            <span class="wcheck-icon-blue">✓</span>
+                                            <span>Automatic GST & e-invoice generation</span>
+                                        </div>
+                                        <div class="wchecklist-item">
+                                            <span class="wcheck-icon-blue">✓</span>
+                                            <span>Piece-rate payroll automated for brick workers</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="wcard-label wsecurity-label">Security Gap</div>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="why-fail-card loss-card">
-                                <div class="wcard-number">03</div>
-                                <div class="wcard-icon-wrapper">
-                                    <svg class="wcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                                <div class="wcard-content">
-                                    <h3>Revenue Leakage</h3>
-                                    <p>
-                                        In Brick Plants or RMC units, raw material consumption must match output.
-                                        Generic software doesn't track "breakage" or "slump," leading to hidden losses.
-                                        We track every unit from raw material to finished product.
-                                    </p>
-                                    <div class="wrisk-list">
-                                        <div class="wrisk-item">
-                                            <span class="wrisk-icon">⚠</span>
-                                            <span>No reconciliation between input and output</span>
-                                        </div>
-                                        <div class="wrisk-item">
-                                            <span class="wrisk-icon">⚠</span>
-                                            <span>Hidden wastage and breakage not tracked</span>
-                                        </div>
-                                        <div class="wrisk-item">
-                                            <span class="wrisk-icon">⚠</span>
-                                            <span>Profit margins erode silently</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wcard-label wloss-label">Revenue Loss</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- COMPARISON TABLE -->
-                <section id="comparison">
-                    <div class="wcomparison-wrapper">
-                        <div class="wcomparison-intro">
-                            <div class="wintro-content">
-                                <h2>COMPARISON TABLE</h2>
-                                <p class="wcomparison-subtitle"><span class="wblue-highlight">SAZS ERP</span> vs
-                                    Manual / Generic Software</p>
-                                <p class="wcomparison-description">
-                                    See exactly where your current system is leaking profit and how SAZS ERP
-                                    provides the complete automated solution for your Quarry, Crusher, RMC & Brick Plant
-                                    operations.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="wpricing-table">
-                            <!-- Column Headers -->
-                            <div class="wtable-header-row">
-                                <div class="header-cell wfeature-wheader-cell">
-                                    <h3>FEATURE / CAPABILITY</h3>
-                                </div>
-                                <div class="header-cell wmanual-wheader-cell">
-                                    <h3 class="wmanual-title">MANUAL / GENERIC SOFTWARE</h3>
-                                    <div class="wheader-badge wlimited-badge">Limited</div>
-                                    <p class="wheader-desc">Traditional methods with manual data entry and disconnected
-                                        systems leading to errors and revenue loss.</p>
-                                </div>
-                                <div class="header-cell wsazs-wheader-cell">
-                                    <h3 class="wsazs-title">SAZS ERP SOLUTION</h3>
-                                    <div class="wheader-badge wcomplete-badge">Complete</div>
-                                    <p class="wheader-desc">Fully automated, cloud-based platform with hardware
-                                        integrations for 100% accuracy and real-time control.</p>
                                 </div>
                             </div>
 
-                            <!-- Table Body -->
-                            <div class="wtable-body">
-                                <!-- Row 1 -->
-                                <div class="wcomparison-row">
-                                    <div class="wfeature-name"><span class="wfeature-dot"></span>Direct Weighbridge Sync
+                            <div class="wchecklist-right">
+                                <div class="wdemo-form-card">
+                                    <h3>Get a Live Demo</h3>
+                                    <p>See your own Crusher, Quarry, RMC or Brick Plant running on SAZS ERP in a
+                                        30-minute remote session.</p>
+
+                                    <div class="wdemo-cta">
+                                        <a href="Signup.html" class="wform-submit-btn">
+                                            SIGN IN TO REQUEST DEMO
+                                        </a>
+
                                     </div>
-                                    <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Manual
-                                        entry (High risk of fraud)</div>
-                                    <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Automated
-                                        Integration (Zero human error)</div>
-                                </div>
 
-                                <!-- Row 2 -->
-                                <div class="wcomparison-row">
-                                    <div class="wfeature-name"><span class="wfeature-dot"></span>Physical Gate Security
-                                    </div>
-                                    <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Manual
-                                        logbooks</div>
-                                    <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Boom
-                                        Barrier Integration (No slip, No exit)</div>
-                                </div>
+                                    <div class="wdemo-note">
 
-                                <!-- Row 3 -->
-                                <div class="wcomparison-row">
-                                    <div class="wfeature-name"><span class="wfeature-dot"></span>Material Theft Control
-                                    </div>
-                                    <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Easy to
-                                        bypass</div>
-                                    <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Real-time
-                                        95% reduction in theft</div>
-                                </div>
-
-                                <!-- Row 4 -->
-                                <div class="wcomparison-row">
-                                    <div class="wfeature-name"><span class="wfeature-dot"></span>Invoicing Speed</div>
-                                    <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>10–20
-                                        minutes per truck</div>
-                                    <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Under 30
-                                        seconds (Automated)</div>
-                                </div>
-
-                                <!-- Row 5 -->
-                                <div class="wcomparison-row">
-                                    <div class="wfeature-name"><span class="wfeature-dot"></span>Credit Limit
-                                        Enforcement</div>
-                                    <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Manual
-                                        checking (Slow)</div>
-                                    <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Hard Stop
-                                        (Blocks dispatch instantly)</div>
-                                </div>
-
-                                <!-- Row 6 -->
-                                <div class="wcomparison-row">
-                                    <div class="wfeature-name"><span class="wfeature-dot"></span>Trip Verification</div>
-                                    <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Based on
-                                        driver's word</div>
-                                    <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>GPS +
-                                        Weighbridge Cross-check</div>
-                                </div>
-
-                                <!-- Row 7 -->
-                                <div class="wcomparison-row">
-                                    <div class="wfeature-name"><span class="wfeature-dot"></span>GST & E-Invoicing</div>
-                                    <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Separate
-                                        portal login</div>
-                                    <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>One-click
-                                        Direct API Sync</div>
-                                </div>
-
-                                <!-- Row 8 -->
-                                <div class="wcomparison-row">
-                                    <div class="wfeature-name"><span class="wfeature-dot"></span>Site-Wise P&L</div>
-                                    <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Needs
-                                        manual calculation</div>
-                                    <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Instant,
-                                        Real-time Dashboards</div>
-                                </div>
-
-                                <!-- Row 9 -->
-                                <div class="wcomparison-row">
-                                    <div class="wfeature-name"><span class="wfeature-dot"></span>Inventory Tracking
-                                    </div>
-                                    <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>Monthly
-                                        physical counts only</div>
-                                    <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Live
-                                        Stock Reconciliation</div>
-                                </div>
-
-                                <!-- Row 10 -->
-                                <div class="wcomparison-row">
-                                    <div class="wfeature-name"><span class="wfeature-dot"></span>Industry Specifics
-                                    </div>
-                                    <div class="wcomparison-cell wbad-cell"><span class="wcross-icon">✕</span>General
-                                        "Retail" features</div>
-                                    <div class="wcomparison-cell wgood-cell"><span class="wcheck-icon">✓</span>Custom
-                                        for Quarry, RMC & Bricks</div>
-                                </div>
-                            </div>
-
-                            <!-- Footer Buttons -->
-                            <div class="wtable-footer-row">
-                                <div class="wfooter-spacer"></div>
-                                <div class="wfooter-btn-cell">
-                                    <button class="wtable-btn wview-btn"
-                                        onclick="window.location.href='Signup.html'">VIEW DETAILS</button>
-                                </div>
-                                <div class="wfooter-btn-cell">
-                                    <button class="wtable-btn wget-started-btn"
-                                        onclick="window.location.href='Signup.html'">GET STARTED</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- CHECKLIST & FORM -->
-                <section id="checklist">
-                    <div class="wchecklist-intro">
-                        <h2 class="wsection-heading">Is Your Current System Protecting Your Profit?</h2>
-                        <p class="wsection-sub">
-                            Turn this checklist into your sales weapon: use it on your website, in client meetings, and
-                            inside proposals to prove the ROI of SAZS ERP.
-                        </p>
-                    </div>
-
-                    <div class="wchecklist-container">
-                        <div class="wchecklist-left">
-                            <div class="wchecklist-card">
-                                <div class="wchecklist-image">
-                                    <img src="./src/assets/contentImages/profitprotect.webp" alt="Business checklist" />
-                                    <div class="wchecklist-title-overlay">
-                                        <h3>Profit Protection Checklist</h3>
-                                    </div>
-                                </div>
-                                <div class="wchecklist-items">
-                                    <div class="wchecklist-item">
-                                        <span class="wcheck-icon-blue">✓</span>
-                                        <span>Weighbridge connected directly to ERP (no manual entry)</span>
-                                    </div>
-                                    <div class="wchecklist-item">
-                                        <span class="wcheck-icon-blue">✓</span>
-                                        <span>Boom barrier linked to invoice & credit limit</span>
-                                    </div>
-                                    <div class="wchecklist-item">
-                                        <span class="wcheck-icon-blue">✓</span>
-                                        <span>Live stock view for aggregates, cement & bricks</span>
-                                    </div>
-                                    <div class="wchecklist-item">
-                                        <span class="wcheck-icon-blue">✓</span>
-                                        <span>Site-wise P&L for Quarry, RMC & Brick Plant</span>
-                                    </div>
-                                    <div class="wchecklist-item">
-                                        <span class="wcheck-icon-blue">✓</span>
-                                        <span>Automatic GST & e-invoice generation</span>
-                                    </div>
-                                    <div class="wchecklist-item">
-                                        <span class="wcheck-icon-blue">✓</span>
-                                        <span>Piece-rate payroll automated for brick workers</span>
+                                        <p><strong>What you'll see:</strong></p>
+                                        <ul>
+                                            <li>Real-time weighbridge integration</li>
+                                            <li>Automated invoicing in action</li>
+                                            <li>Live inventory tracking</li>
+                                            <li>Site-wise P&L dashboards</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="wchecklist-right">
-                            <div class="wdemo-form-card">
-                                <h3>Get a Live Demo</h3>
-                                <p>See your own Crusher, Quarry, RMC or Brick Plant running on SAZS ERP in a
-                                    30-minute remote session.</p>
-
-                                <div class="wdemo-cta">
-                                    <a href="Signup.html" class="wform-submit-btn">
-                                        SIGN IN TO REQUEST DEMO
-                                    </a>
-
-                                </div>
-
-              <div class="wdemo-note">
-
-                                <p><strong>What you'll see:</strong></p>
-                                <ul>
-                                    <li>Real-time weighbridge integration</li>
-                                    <li>Automated invoicing in action</li>
-                                    <li>Live inventory tracking</li>
-                                    <li>Site-wise P&L dashboards</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    </section>
+                </div>
             </div>
-    </section>
-    </div>
-    </div>
 
 
 
 
-    </section>
-    <!-- </section> -->
+        </section>
+        <!-- </section> -->
 
-    <div class="spacer" style="">
-        <section class="technology-section zoom-in">
-            <div class="content">
-                <h1>Save More, Secure Better</h1>
-                <p>With our features and integration.</p>
+        <div class="spacer" style="">
+            <section class="technology-section zoom-in">
+                <div class="content">
+                    <h1>Save More, Secure Better</h1>
+                    <p>With our features and integration.</p>
 
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-
-                    <h2> <span class="succeed-text">
-                            303+
-                        </span></h2>
-                    <h3 style="color: #fff;">Happy Clients</h3>
                 </div>
-                <div class="feature-card">
+                <div class="features-grid">
+                    <div class="feature-card">
 
-                    <h2> <span class="succeed-text">
+                        <h2> <span class="succeed-text">
+                                303+
+                            </span></h2>
+                        <h3 style="color: #fff;">Happy Clients</h3>
+                    </div>
+                    <div class="feature-card">
 
-                            100000+
-                        </span></h2>
-                    <h3 style="color: #fff;">Transaction</h3>
+                        <h2> <span class="succeed-text">
+
+                                100000+
+                            </span></h2>
+                        <h3 style="color: #fff;">Transaction</h3>
+                    </div>
+                    <div class="feature-card">
+
+                        <h2><span class="succeed-text">
+                                24/7
+                            </span></h2>
+                        <h3 style="color: #fff;">Hours Of Support</h3>
+                    </div>
+                    <div class="feature-card">
+
+                        <h2><span class="succeed-text">
+                                3300+
+                            </span></h2>
+                        <h3 style="color: #fff;">Users</h3>
+                    </div>
                 </div>
-                <div class="feature-card">
+            </section>
+        </div>
 
-                    <h2><span class="succeed-text">
-                            24/7
-                        </span></h2>
-                    <h3 style="color: #fff;">Hours Of Support</h3>
-                </div>
-                <div class="feature-card">
 
-                    <h2><span class="succeed-text">
-                            3300+
-                        </span></h2>
-                    <h3 style="color: #fff;">Users</h3>
+
+
+        <section class="hero">
+            <div class="hero-inner">
+                <header class="hero-header">
+                    <p class="hero-tagline">
+                        "We don't want to push our ideas on to customers,
+                        we simply want to make what they want."
+                    </p>
+
+                    <h1 class="hero-title">
+                        <span class="accent-text">NO.1</span> ERP SOFTWARE FOR
+                        <span class="accent-text">QUARRY</span> &
+                        <span class="accent-text">CRUSHER</span>,
+                        <span class="accent-text">BRICKS</span> &
+                        <span class="accent-text">RMC</span> PLANTS
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        A complete, secure and user-friendly ERP tailored for quarry, crusher, brick and RMC plants to
+                        streamline operations and boost profitability.
+                    </p>
+
+                    <a class="primary-button">
+                        Explore ERP Features & Integrations
+                    </a>
+
+                </header>
+
+                <div class="hero-layout">
+                    <!-- Features in 2x2 grid, centered -->
+                    <div class="features">
+                        <div class="feature-bar bar-1">
+                            <div class="bar-content">
+                                <div class="bar-number">01</div>
+                                <div class="bar-text">
+                                    <div class="bar-title">Safe And Secure</div>
+                                    <div class="bar-description">
+                                        Ensuring data security, backups and regulatory adherence for your business
+                                        operations.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feature-bar bar-2">
+                            <div class="bar-content">
+                                <div class="bar-number">02</div>
+                                <div class="bar-text">
+                                    <div class="bar-title">User Friendly</div>
+                                    <div class="bar-description">
+                                        Intuitive interface for quick onboarding, seamless navigation and enhanced
+                                        productivity.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feature-bar bar-3">
+                            <div class="bar-content">
+                                <div class="bar-number">03</div>
+                                <div class="bar-text">
+                                    <div class="bar-title">Unlimited Logins</div>
+                                    <div class="bar-description">
+                                        Give access to all departments and locations with unlimited user logins.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feature-bar bar-4">
+                            <div class="bar-content">
+                                <div class="bar-number">04</div>
+                                <div class="bar-text">
+                                    <div class="bar-title">Domain Specific</div>
+                                    <div class="bar-description">
+                                        Built specifically for quarry, crusher, bricks and RMC workflows with
+                                        domain-ready
+                                        modules.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.features -->
+                </div><!-- /.hero-layout -->
+            </div><!-- /.hero-inner -->
+
+
+        </section>
+
+        <section class="mahi-quote-section ">
+            <div class="quote-container1 zoom-in">
+                <div class="mahi-content">
+                    <h2 class="big-letter-text">
+                        Eliminate Weighbridge Malpractice <span class="highlight-blue">and</span> Manual Accounting
+                        Errors
+                        Forever.
+                    </h2>
+
+                    <p style="font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto;">
+                        SAZS ERP bridges the gap between your physical site and your office. With Boom Barrier
+                        control and live inventory sync, you get total visibility over every ton of material you move
                 </div>
             </div>
         </section>
-    </div>
-
-
-    <style>
-        /* Hero wrapper */
-        .hero {
-            min-height: 100vh;
-            /* display: flex; */
-            align-items: center;
-            background-color: #000000;
-
-            padding: 60px 16px;
-            border-top-left-radius: 20%;
-            border-top-right-radius: 20%;
-        }
-
-        .hero-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Header content */
-        .hero-header {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #f9fafb;
-        }
-
-        .hero-tagline {
-            font-size: 16px;
-            font-style: italic;
-            color: #9ca3af !important;
-            margin-bottom: 16px;
-        }
-
-        .hero-title {
-            font-size: 40px;
-            font-weight: 800;
-            letter-spacing: 0.02em;
-            line-height: 1.3;
-            color: #fff;
-            margin-bottom: 18px;
-        }
-
-        .accent-text {
-            color: #3b82f6;
-        }
-
-        .hero-subtitle {
-            max-width: 650px;
-            margin: 0 auto;
-            font-size: 15px;
-            color: #d1d5db !important;
-        }
-
-        /* CTA button */
-        .primary-button {
-            display: inline-block;
-            margin-top: 26px;
-            padding: 14px 36px;
-            background: linear-gradient(135deg, #2563eb, #3b82f6);
-            color: #f9fafb;
-            text-decoration: none;
-            border-radius: 999px;
-            font-size: 16px;
-            font-weight: 600;
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .primary-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(37, 99, 235, 0.55);
-        }
-
-        /* Features layout - now centered without left column */
-        .hero-layout {
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Features list - 2x2 grid */
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 18px;
-            max-width: 1100px;
-        }
-
-        .feature-bar {
-            border-radius: 999px;
-            padding: 14px 26px 14px 26px;
-            background: linear-gradient(120deg, rgba(15, 23, 42, 0.9), rgba(30, 64, 175, 0.9));
-            box-shadow: 0 10px 35px rgba(15, 23, 42, 0.75);
-            color: #e5e7eb;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .feature-bar:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
-            background: linear-gradient(120deg, rgba(30, 64, 175, 1), rgba(37, 99, 235, 1));
-        }
-
-        .bar-content {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .bar-number {
-            font-size: 26px;
-            font-weight: 700;
-            color: #bfdbfe;
-            min-width: 42px;
-        }
-
-        .bar-text {
-            flex: 1;
-        }
-
-        .bar-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: #f9fafb;
-        }
-
-        .bar-description {
-            font-size: 13px;
-            color: #d1d5db;
-        }
-
-        /* Individual bar gradients (for subtle variation) */
-        .bar-1 {
-            background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(37, 99, 235, 0.95));
-        }
-
-        .bar-2 {
-            background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(59, 130, 246, 0.95));
-        }
-
-        .bar-3 {
-            background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(37, 99, 235, 0.9));
-        }
-
-        .bar-4 {
-            background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(30, 64, 175, 0.95));
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero {
-                padding-top: 40px;
-            }
-
-            .hero-title {
-                font-size: 32px;
-            }
-
-            .features {
-                grid-template-columns: 1fr 1fr;
-                gap: 18px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero {
-                padding: 40px 12px 50px;
-            }
-
-            .hero-header {
-                margin-bottom: 28px;
-            }
-
-            .hero-tagline {
-                font-size: 14px;
-            }
-
-            .hero-title {
-                font-size: 24px;
-            }
-
-            .hero-subtitle {
-                font-size: 13px;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-                gap: 14px;
-            }
-
-            .feature-bar {
-                padding: 12px 18px;
-            }
-
-            .bar-number {
-                font-size: 22px;
-                min-width: 34px;
-            }
-
-            .bar-title {
-                font-size: 14px;
-            }
-
-            .bar-description {
-                font-size: 12px;
-            }
-
-            .primary-button {
-                padding: 12px 26px;
-                font-size: 14px;
-            }
-        }
-    </style>
-
-    <section class="hero">
-        <div class="hero-inner">
-            <header class="hero-header">
-                <p class="hero-tagline">
-                    "We don't want to push our ideas on to customers,
-                    we simply want to make what they want."
-                </p>
-
-                <h1 class="hero-title">
-                    <span class="accent-text">NO.1</span> ERP SOFTWARE FOR
-                    <span class="accent-text">QUARRY</span> &
-                    <span class="accent-text">CRUSHER</span>,
-                    <span class="accent-text">BRICKS</span> &
-                    <span class="accent-text">RMC</span> PLANTS
-                </h1>
-
-                <p class="hero-subtitle">
-                    A complete, secure and user-friendly ERP tailored for quarry, crusher, brick and RMC plants to
-                    streamline operations and boost profitability.
-                </p>
-
-                <a  class="primary-button">
-                    Explore ERP Features & Integrations
-                </a>
-
-            </header>
-
-            <div class="hero-layout">
-                <!-- Features in 2x2 grid, centered -->
-                <div class="features">
-                    <div class="feature-bar bar-1">
-                        <div class="bar-content">
-                            <div class="bar-number">01</div>
-                            <div class="bar-text">
-                                <div class="bar-title">Safe And Secure</div>
-                                <div class="bar-description">
-                                    Ensuring data security, backups and regulatory adherence for your business
-                                    operations.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="feature-bar bar-2">
-                        <div class="bar-content">
-                            <div class="bar-number">02</div>
-                            <div class="bar-text">
-                                <div class="bar-title">User Friendly</div>
-                                <div class="bar-description">
-                                    Intuitive interface for quick onboarding, seamless navigation and enhanced
-                                    productivity.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="feature-bar bar-3">
-                        <div class="bar-content">
-                            <div class="bar-number">03</div>
-                            <div class="bar-text">
-                                <div class="bar-title">Unlimited Logins</div>
-                                <div class="bar-description">
-                                    Give access to all departments and locations with unlimited user logins.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="feature-bar bar-4">
-                        <div class="bar-content">
-                            <div class="bar-number">04</div>
-                            <div class="bar-text">
-                                <div class="bar-title">Domain Specific</div>
-                                <div class="bar-description">
-                                    Built specifically for quarry, crusher, bricks and RMC workflows with domain-ready
-                                    modules.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- /.features -->
-            </div><!-- /.hero-layout -->
-        </div><!-- /.hero-inner -->
-
-
-    </section>
-    <style>
-        .mahi-quote-section1 {
-            padding: 80px 5%;
-            /* Adjusted padding for better fit */
-            background: #ffffff;
-            font-family: 'Inter', sans-serif;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quote-container1 {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        /* Huge Double Quotes - Made responsive with Viewport Width units */
-        .quote-container1::before {
-            content: '“';
-            position: absolute;
-            top: -60px;
-            left: -110px;
-            font-size: clamp(120px, 20vw, 250px);
-            /* Scales down on mobile */
-            color: #f0f0f0;
-            font-family: 'Georgia', serif;
-            z-index: 0;
-            line-height: 1;
-        }
-
-        .mahi-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Big Letters - Scale down for tablets and phones */
-        .big-letter-text {
-            font-size: clamp(1.8rem, 8vw, 2.8rem);
-            font-weight: 850;
-            line-height: 1.1;
-            color: #111;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .highlight-blue {
-            color: #007bff;
-            position: relative;
-        }
-
-        .integration-list {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .integration-tag {
-            font-size: clamp(0.7rem, 2vw, 0.9rem);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 8px 16px;
-            border: 2px solid #111;
-            border-radius: 50px;
-            transition: all 0.3s;
-        }
-
-        .integration-tag:hover {
-            background: #111;
-            color: #fff;
-        }
-
-        /* Small closing quote - Responsive scale */
-        .quote-container1::after {
-            content: '”';
-            position: absolute;
-            bottom: -100px;
-            right: -90px;
-            font-size: clamp(120px, 20vw, 250px);
-            color: #f0f0f0;
-            font-family: 'Georgia', serif;
-            z-index: 0;
-        }
-
-        /* Mobile specific adjustments */
-        @media (max-width: 768px) {
-            .mahi-quote-section {
-                padding: 60px 20px;
-            }
-
-            .big-letter-text {
-                letter-spacing: -0.5px;
-            }
-
-            /* Move quotes further out so text is readable on tiny screens */
-            .quote-container::before {
-                top: -40px;
-                left: -10px;
-                opacity: 0.5;
-            }
-
-            .quote-container::after {
-                bottom: -60px;
-                right: -10px;
-                opacity: 0.5;
-            }
-        }
-    </style>
-
-    <section class="mahi-quote-section ">
-        <div class="quote-container1 zoom-in">
-            <div class="mahi-content">
-                <h2 class="big-letter-text">
-                    Eliminate Weighbridge Malpractice <span class="highlight-blue">and</span> Manual Accounting Errors
-                    Forever.
-                </h2>
-
-                <p style="font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto;">
-                    SAZS ERP bridges the gap between your physical site and your office. With Boom Barrier
-                    control and live inventory sync, you get total visibility over every ton of material you move
-            </div>
-        </div>
-    </section>
+    </main>
 
     <footer class="footer-container ">
         <div class="footer-content">
@@ -3636,13 +1355,13 @@
         <div class="e">
             <a href="index.html" class="f">Home</a>
             <a href="aboutus.html" class="f">About Us</a>
-            <a href="features.html" class="f">Explore Features</a>
+            <!-- <a href="features.html" class="f">Explore Features</a> -->
             <a href="careers.html" class="f">Careers</a>
-            <a href="contact.html" class="f">Contact Us</a>
-            <a href="Signup.html " class="f">Request a Demo</a>
-            <a href="termsofService.html" class="f">Terms of Service</a>
-            <a href="privacyPolicy.html" class="f">Privacy Policy</a>
-            <a href="dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+            <a href="/src/pages/contact.html" class="f">Contact Us</a>
+            <a href="/src/pages/Signup.html " class="f">Request a Demo</a>
+            <a href="/src/pages/termsofService.html" class="f">Terms of Service</a>
+            <a href="/src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
+            <a href="/src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
 
         </div>
     </footer>
@@ -3657,175 +1376,7 @@
             </svg>
         </button>
     </footer>
-
-    <script defer>
-        function animateCountUp(element, target) {
-            let start = 0;
-            let duration = 2000; // Animation duration in milliseconds
-            let step = Math.ceil(target / (duration / 16)); // Approximate steps per frame
-
-            function updateNumber() {
-                start += step;
-                if (start >= target) {
-                    element.textContent = target + "+"; // Ensure final value is correct
-                } else {
-                    element.textContent = start;
-                    requestAnimationFrame(updateNumber);
-                }
-            }
-
-            updateNumber();
-        }
-
-        function startCounterOnView(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    let card = entry.target;
-                    card.classList.add("visible"); // Fade-in effect
-
-                    card.querySelectorAll(".succeed-text").forEach(el => {
-                        let target = parseInt(el.textContent.replace("+", "").trim(), 10);
-                        if (!el.dataset.animated) { // Prevent multiple triggers
-                            el.textContent = "0"; // Start from 0
-                            animateCountUp(el, target);
-                            el.dataset.animated = "true"; // Mark as animated
-                        }
-                    });
-
-                    observer.unobserve(card); // Stop observing after animation starts
-                }
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            let options = { threshold: 0.5 }; // Trigger when 50% is visible
-            let observer = new IntersectionObserver(startCounterOnView, options);
-
-            document.querySelectorAll(".feature-card").forEach(card => {
-                observer.observe(card);
-            });
-        });
-        document.addEventListener("DOMContentLoaded", () => {
-            const buttons = document.querySelectorAll('.accordion-button');
-
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const content = button.nextElementSibling;
-                    const arrow = button.querySelector('.arrow');
-
-                    // Toggle content visibility
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                        arrow.innerHTML = "&#9660;"; // Down Arrow
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        arrow.innerHTML = "&#9650;"; // Up Arrow
-                    }
-                });
-            });
-        });
-
-
-
-
-        window.onscroll = function () {
-            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScroll > lastScrollTop) {
-                header.classList.add("hide");
-            } else {
-                header.classList.remove("hide");
-            }
-
-            if (currentScroll <= 0) {
-                header.classList.remove("fixed");
-            } else if (currentScroll > 100) {
-                header.classList.add("fixed");
-            }
-
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        };
-
-
-        function toggleDropdown() {
-            const dropdown = document.getElementById("aboutDropdown");
-            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-        }
-        // Function to highlight the current page in the navbar
-        function highlightActivePage() {
-            const currentPath = window.location.pathname;
-            const links = document.querySelectorAll(".nav-link");
-
-            links.forEach(link => {
-                // Get the page identifier from the data attribute
-                const page = link.getAttribute("data-page");
-
-                // Check if the current URL includes the page identifier
-                if (currentPath.includes(page)) {
-                    link.classList.add("active");
-                } else {
-                    link.classList.remove("active");
-                }
-            });
-        }
-
-        // Run function on page load
-        document.addEventListener("DOMContentLoaded", highlightActivePage);
-        function toggleNav() {
-            const sidenav = document.getElementById("mySidenav");
-            const isOpen = sidenav.style.width === "250px";
-
-            if (isOpen) {
-                sidenav.style.width = "0";
-                document.removeEventListener("click", closeNavOnClickOutside);
-            } else {
-                sidenav.style.width = "250px";
-                setTimeout(() => document.addEventListener("click", closeNavOnClickOutside), 100);
-            }
-        }
-
-        function closeNavOnClickOutside(event) {
-            const sidenav = document.getElementById("mySidenav");
-            if (!sidenav.contains(event.target) && !event.target.closest(".icon")) {
-                sidenav.style.width = "0";
-                document.removeEventListener("click", closeNavOnClickOutside);
-            }
-        }
-        // Scroll to top functionality
-        document.querySelector('.scroll-top').addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Show/hide scroll button based on scroll position
-        window.addEventListener('scroll', () => {
-            const scrollButton = document.querySelector('.scroll-top');
-            if (window.scrollY > 200) {
-                scrollButton.style.display = 'flex';
-            } else {
-                scrollButton.style.display = 'none';
-            }
-        });
-        document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = {
-                threshold: 0.2, // Trigger animation when 20% of the element is visible
-            };
-
-            const animatedElements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, observerOptions);
-
-            animatedElements.forEach((el) => observer.observe(el));
-        });
-    </script>
+    
 </body>
 
 </html>

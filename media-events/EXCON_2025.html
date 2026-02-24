@@ -22,7 +22,7 @@
     <meta property="og:description"
         content="SAZS Apps at EXCON 2025 showcasing 15+ integrations including RFID, ANPR, biometrics. Launched Android & iOS mobile apps. 60+ engagements.">
     <meta property="og:image" content="https://sazsapps.com/src/assets/imageevent/event5/exc2540.webp">
-    <link rel="preload" href="src/js/comman.js" as="script">
+    <link rel="preload" href="../src/js/comman.js" as="script">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -33,12 +33,12 @@
     <meta name="twitter:image" content="https://sazsapps.com/src/assets/imageevent/event5/exc2540.webp">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="src/assets/logo/logoblack.png">
+    <link rel="icon" type="image/x-icon" href="../src/assets/logo/logoblack.png">
 
     <!-- Existing stylesheets -->
-    <link rel="stylesheet" href="src/assets/css/all.min.css">
-    <link href="src/css/comman.css" rel="stylesheet" />
-        <script src="src/js/comman.js" defer></script>
+    <link rel="stylesheet" href="../src/assets/css/all.min.css">
+    <link href="../src/css/minified/comman.min.css" rel="stylesheet" />
+        <script src="../src/js/comman.js" defer></script>
 <!--  -->
 
 
@@ -586,6 +586,46 @@
             opacity: 0.8;
         }
     </style>
+
+    
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://sazsapps.com/EXCON_2025.html#post",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sazsapps.com/EXCON_2025.html"
+  },
+  "headline": "EXCON 2025 – Confederation of Indian Industry (CII)",
+  "description": "Coverage of SAZS Apps at EXCON 2025, showcasing quarry, crusher, RMC and brick plant ERP solutions for the construction and mining industry.",
+  "image": [
+    "https://sazsapps.com/images/media-events/EXCON_2025.jpg"
+  ],
+  "author": {
+    "@type": "Organization",
+    "@id": "https://sazsapps.com/#organization",
+    "name": "SAZS Apps Private Limited"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://sazsapps.com/#organization"
+  },
+  "datePublished": "2025-12-15",
+  "dateModified": "2025-12-15",
+  "inLanguage": "en",
+  "keywords": [
+    "EXCON 2025",
+    "CII EXCON",
+    "SAZS Apps events",
+    "construction equipment expo",
+    "quarry ERP software"
+  ],
+  "url": "https://sazsapps.com/EXCON_2025.html"
+}
+</script>
+
 </head>
 
 <body>
@@ -595,7 +635,7 @@
             <div class="sazs-header-main">
                 <a href="/" class="sazs-brand">
                     <div class="sazs-brand-image">
-                        <img src="./src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo Home page"
+                        <img src="../src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo Home page"
                             class="sazs-brand-image">
                     </div>
                 </a>
@@ -630,10 +670,15 @@
                     </li>
                 </ul>
                 <div class="sazs-cta-group">
-                    <a href="Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
+                    <a href="../src/pages/Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
                 </div>
                 <div class="sazs-hamburger">
-                    <a href="javascript:void(0);" onclick="toggleNav()"><i class="fa fa-bars"></i></a>
+                    <a href="javascript:void(0);" onclick="toggleNav()" aria-label="Open navigation menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
                 </div>
             </div>
 
@@ -641,20 +686,20 @@
                 <div class="product-dropdown">
                     <div class="product-left">
                         <div class="product-section-title">Quick Links</div>
-                        <a href="index.html" class="product-link">Home</a>
-                        <a href="aboutus.html" class="product-link">About Us</a>
-                        <a href="WhytoChoose.html" class="product-link">Why to Choose</a>
-                        <a href="careers.html" class="product-link">Careers</a>
-                        <a href="ProfitCalculator.html" class="product-link">Profit Calc</a>
-                        <a href="Questions.html" class="product-link">FAQ</a>
+                        <a href="../index.html" class="product-link">Home</a>
+                        <a href="../aboutus.html" class="product-link">About Us</a>
+                        <a href="../WhytoChoose.html" class="product-link">Why to Choose</a>
+                        <a href="../careers.html" class="product-link">Careers</a>
+                        <a href="../ProfitCalculator.html" class="product-link">Profit Calc</a>
+                        <a href="../Questions.html" class="product-link">FAQ</a>
                     </div>
                     <div class="product-right">
                         <div class="product-grid-title">Our Products</div>
                         <div class="sazs-submenu-grid">
                             <div class="sazs-submenu-col">
-                                <a href="QuarryCrusher.html" class="sazs-product-card">
+                                <a href="../products/QuarryCrusher.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/crusherdroneview.avif"
+                                        <img src="../src/assets/contentImages/crusherdroneview.avif"
                                             alt="Stone Crusher Management Software" />
                                     </div>
                                     <div class="sazs-card-heading">Stone Crusher Software for End-to-End Operations
@@ -664,9 +709,9 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="rmc.html" class="sazs-product-card">
+                                <a href="../products/QuarryCrusher.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/quarrydroneview.avif"
+                                        <img src="../src/assets/contentImages/quarrydroneview.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">End-to-End Management Software for Stone Quarries
@@ -676,9 +721,9 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="rmc.html" class="sazs-product-card">
+                                <a href="../products/rmc.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/RMCdroneview.avif"
+                                        <img src="../src/assets/contentImages/RMCdroneview.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">Next-Gen Billing Software for Ready Mix Concrete
@@ -688,9 +733,9 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="brickspaver.html" class="sazs-product-card">
+                                <a href="../products/brickspaver.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/bricksdrone.avif"
+                                        <img src="../src/assets/contentImages/bricksdrone.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
@@ -716,9 +761,9 @@
 </div> -->
                 </div>
                 <div class="bento-container">
-
-                    <a style="color: #000;text-decoration: none !important;" href="Anprs.html" class="card anpr">
-                        <img src="/src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/Anprs.html" class="card anpr">
+                        <img src="../src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
                         <div class="card-content">
                             <h2>ANPR Camera</h2>
                             <p>Automatic vehicle recognition</p>
@@ -734,8 +779,11 @@
                         </div>
                     </a>
 
-                    <a style="color: #000;text-decoration: none !important;" href="EInvoice.html" class="card einvoice">
-                        <img src="/src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
+
+
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/EInvoice.html" class="card einvoice">
+                        <img src="../src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
                         <div class="card-content">
                             <h2>E-Invoice</h2>
                             <p>GST compliant billing</p>
@@ -751,9 +799,9 @@
                         </div>
                     </a>
 
-                    <a style="color: #000;text-decoration: none !important;" href="Weighbridge.html"
-                        class="card weighbridge">
-                        <img src="/src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
+                    <a style="color: #000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/Weighbridge.html" class="card weighbridge">
+                        <img src="../src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
                         <div class="card-content">
                             <h2>Weighbridge</h2>
                             <p>Real-time weight capture</p>
@@ -764,9 +812,9 @@
                         </div>
                     </a>
 
-                    <a style="color: #000000;text-decoration: none !important;" href="Boombarrier.html"
-                        class="card boom">
-                        <img src="/src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
+                    <a style="color: #000000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/Boombarrier.html" class="card boom">
+                        <img src="../src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
                         <div class="card-content">
                             <h2>Boom Barrier</h2>
                             <p>Automated gate control</p>
@@ -779,9 +827,9 @@
                         </div>
                     </a>
 
-                    <a style="color: #000;text-decoration: none !important;" href="biometrics.html"
-                        class="card biometrics">
-                        <img src="/src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/biometrics.html" class="card biometrics">
+                        <img src="../src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
                         <div class="card-content">
                             <h2>Biometrics</h2>
                             <p>Secure access control</p>
@@ -794,8 +842,8 @@
                         </div>
                     </a>
 
-                    <div class="card smarttech">
-                        <img src="/src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
+                    <div style="border: 1px solid rgba(0, 0, 0, 0.368);" class="card smarttech">
+                        <img src="../src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
                         <div class="card-content">
                             <h2>Smart Tech</h2>
                             <p>Tailored for Crushers & Quarries</p>
@@ -817,50 +865,50 @@
                         </div>
                     </div>
                     <div class="media-events-grid">
-                        <a href="Jharkhand_2026.html" class="media-event-card">
+                        <a href="../media-events/Jharkhand_2026.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
+                                <img src="../src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">Jharkhand Mining & Construction Show 2026 </div>
                             </div>
                         </a>
-                        <a href="EXCON_2025.html" class="media-event-card">
+                        <a href="../media-events/EXCON_2025.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/excon25.avif" alt="EXCON_2025" />
+                                <img src="../src/assets/images/excon25.avif" alt="EXCON_2025" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
                             </div>
                         </a>
-                        <a href="IEMS_2024.html" class="media-event-card">
+                        <a href="../media-events/IEMS_2024.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/iems24.avif" alt="IEMS_2024" />
+                                <img src="../src/assets/images/iems24.avif" alt="IEMS_2024" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">IEMS – International Mining Expo & Conclave 2024</div>
                             </div>
                         </a>
-                        <a href="TNMSA_2024.html" class="media-event-card">
+                        <a href="../media-events/TNMSA_2024.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
+                                <img src="../src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet
                                     2024</div>
                             </div>
                         </a>
-                        <a href="EXCON_2023.html" class="media-event-card">
+                        <a href="../media-events/EXCON_2023.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/excon23.avif" alt="EXCON_2023" />
+                                <img src="../src/assets/images/excon23.avif" alt="EXCON_2023" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
                             </div>
                         </a>
-                        <a href="CODDISSIA.html" class="media-event-card">
+                        <a href="../media-events/CODDISSIA.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/codisia22.avif" alt="CODDISSIA" />
+                                <img src="../src/assets/images/codisia22.avif" alt="CODDISSIA" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners
@@ -887,9 +935,9 @@
                         </div>
                     </div>
                     <div class="blogs-cards-grid">
-                        <a href="Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
+                        <a href="../case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
+                                <img src="../src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Optimizing Quarry Profitability & Theft Prevention
                                     </div>
@@ -897,36 +945,36 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="Transforming_Customer_Experience_Order_Speed.html" class="blog-card">
+                        <a href="../case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/tran2.webp" alt="Customer Experience" />
+                                <img src="../src/assets/contentImages/tran2.webp" alt="Customer Experience" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
                                     <div class="blog-overlay-explore">Explore →</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="Automating_E-Invoicing_GST_Compliance.html" class="blog-card">
+                        <a href="../case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
+                                <img src="../src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
                                     <div class="blog-overlay-explore">Explore →</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="Real-Time_Vehicle_Trip_Management.html" class="blog-card">
+                        <a href="../case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/real4.webp" alt="Vehicle Management" />
+                                <img src="../src/assets/contentImages/real4.webp" alt="Vehicle Management" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
                                     <div class="blog-overlay-explore">Explore →</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="Complete_Financial_Control_Profit_Analysis.html" class="blog-card">
+                        <a href="../case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/comp5.webp" alt="Financial Control" />
+                                <img src="../src/assets/contentImages/comp5.webp" alt="Financial Control" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
                                     <div class="blog-overlay-explore">Explore →</div>
@@ -941,69 +989,97 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/"><img src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page"
+        <a href="/"><img src="../src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page"
                 class="sidenav-logo"></a>
         <a href="/">Home</a>
         <a href="aboutus.html">About Us</a>
         <div class="mobile-dropdown">
-            <a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products <i
-                    class="fa fa-chevron-down"></i></a>
+            <a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
-                <a href="QuarryCrusher.html">Quarry & Crusher</a>
-                <a href="rmc.html">Ready Mix Concrete</a>
-                <a href="brickspaver.html">Bricks & Pavers</a>
+                <a href="../products/QuarryCrusher.html">Quarry & Crusher</a>
+                <a href="../products/rmc.html">Ready Mix Concrete</a>
+                <a href="../products/brickspaver.html">Bricks & Pavers</a>
             </div>
         </div>
         <div class="mobile-dropdown">
             <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
-                class="mobile-dropdown-trigger">Explore Features <i class="fa fa-chevron-down"></i></a>
+                class="mobile-dropdown-trigger">Explore Features
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
                 <!-- <a href="features.html">Features</a> -->
-                <a href="Anprs.html">ANPR Camera Integration</a>
-                <a href="EInvoice.html">E-Invoice Integration</a>
-                <a href="Weighbridge.html">Weighbridge and Camera Integration</a>
-                <a href="Boombarrier.html">Boom Barrier Integration</a>
-                <a href="biometrics.html">Biometrics</a>
+                <a href="../products/Anprs.html">ANPR Camera Integration</a>
+                <a href="../products/EInvoice.html">E-Invoice Integration</a>
+                <a href="../products/Weighbridge.html">Weighbridge and Camera Integration</a>
+                <a href="../products/Boombarrier.html">Boom Barrier Integration</a>
+                <a href="../products/biometrics.html">Biometrics</a>
             </div>
         </div>
         <div class="mobile-dropdown">
             <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
-                class="mobile-dropdown-trigger">Case Studies <i class="fa fa-chevron-down"></i></a>
+                class="mobile-dropdown-trigger">Case Studies
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
-                <a href="Optimizing_Quarry_Profitability_Theft_Prevention.html">Quarry Profitability
+                <a href="../case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html">Quarry Profitability
                     Optimizing Quarry Profitability & Theft Prevention</a>
-                <a href="Transforming_Customer_Experience_Order_Speed.html">Customer Experience
+                <a href="../case-studies/Transforming_Customer_Experience_Order_Speed.html">Customer Experience
                     Transforming Customer Experience & Order Speed</a>
-                <a href="Automating_E-Invoicing_GST_Compliance.html">E-Invoicing
+                <a href="../case-studies/Automating_E-Invoicing_GST_Compliance.html">E-Invoicing
                     Automating E-Invoicing & GST Compliance</a>
-                <a href="Real-Time_Vehicle_Trip_Management.html">Vehicle Management
+                <a href="../case-studies/Real-Time_Vehicle_Trip_Management.html">Vehicle Management
                     Real-Time Vehicle & Trip Management</a>
-                <a href="Complete_Financial_Control_Profit_Analysis.html">
+                <a href="../case-studies/Complete_Financial_Control_Profit_Analysis.html">
                     Financial Control
                     Complete Financial Control & Profit Analysis</a>
             </div>
         </div>
         <div class="mobile-dropdown">
             <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
-                class="mobile-dropdown-trigger">Events <i class="fa fa-chevron-down"></i></a>
+                class="mobile-dropdown-trigger">Events
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
-                <a href="Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
-                <a href="EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
-                <a href="IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
-                <a href="TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
-                <a href="EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
-                <a href="CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
+                <a href="../media-events/Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
+                <a href="../media-events/EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
+                <a href="../media-events/IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
+                <a href="../media-events/TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
+                <a href="../media-events/EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
+                <a href="../media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
             </div>
         </div>
-        <a href="ProfitCalculator.html">Profit Calc</a>
-        <a href="careers.html">Careers</a>
-        <a href="Signup.html">Sign Up</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="Weighbridge.html">Why to Choose Sazs</a>
-        <a href="Questions.html">FAQ</a>
-        <div class="call">
-            <a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i>76666 28000</a>
-        </div>
+        <a href="../ProfitCalculator.html">Profit Calc</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../src/pages/Signup.html">Sign Up</a>
+        <a href="../src/pages/contact.html">Contact Us</a>
+        <a href="../WhytoChoose.html">Why to Choose Sazs</a>
+        <a href="../Questions.html">FAQ</a>
+        <!-- <div class="call">
+            <a href="tel:+917666628000">
+                <svg class="ringing-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+  19.79 19.79 0 0 1-8.63-3.07
+  19.5 19.5 0 0 1-6-6
+  19.79 19.79 0 0 1-3.07-8.67
+  A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+  12.84 12.84 0 0 0 .7 2.81
+  2 2 0 0 1-.45 2.11L8.09 9.91
+  a16 16 0 0 0 6 6l1.27-1.27
+  a2 2 0 0 1 2.11-.45
+  12.84 12.84 0 0 0 2.81.7
+  A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> 76666 28000</a>
+        </div> -->
     </div>
 
 
@@ -1901,16 +1977,16 @@
                 <div class="visual-container">
                     <!-- Floating Images -->
                     <div class="float-img img-1">
-                        <img src="./src/assets/imageevent/event5/exc2558.webp" alt="Construction">
+                        <img src="../src/assets/imageevent/event5/exc2558.webp" alt="Construction">
                     </div>
                     <div class="float-img img-2">
-                        <img src="./src/assets/imageevent/event5/exc2546.webp" alt="Exhibition">
+                        <img src="../src/assets/imageevent/event5/exc2546.webp" alt="Exhibition">
                     </div>
                     <div class="float-img img-3">
-                        <img src="./src/assets/imageevent/event5/exc2550.webp" alt="Industry">
+                        <img src="../src/assets/imageevent/event5/exc2550.webp" alt="Industry">
                     </div>
                     <div class="float-img img-4">
-                        <img src="./src/assets/imageevent/event5/exc2538.webp" alt="Technology">
+                        <img src="../src/assets/imageevent/event5/exc2538.webp" alt="Technology">
                     </div>
 
                     <!-- Stat Cards -->
@@ -1931,13 +2007,13 @@
 
                     <!-- Main Card -->
                     <div class="main-card">
-                        <img src="./src/assets/imageevent/event5/exc2551.webp" class="main-card-bg active">
-                        <img src="./src/assets/imageevent/event5/exc2552.webp" class="main-card-bg">
-                        <img src="./src/assets/imageevent/event5/exc2559.webp" class="main-card-bg">
-                        <img src="./src/assets/imageevent/event5/exc2560.webp" class="main-card-bg">
-                        <img src="./src/assets/imageevent/event5/exc2557.webp" class="main-card-bg">
-                        <img src="./src/assets/imageevent/event5/exc2510.webp" class="main-card-bg">
-                        <img src="./src/assets/imageevent/event5/exc2532.webp" class="main-card-bg">
+                        <img src="../src/assets/imageevent/event5/exc2551.webp" class="main-card-bg active">
+                        <img src="../src/assets/imageevent/event5/exc2552.webp" class="main-card-bg">
+                        <img src="../src/assets/imageevent/event5/exc2559.webp" class="main-card-bg">
+                        <img src="../src/assets/imageevent/event5/exc2560.webp" class="main-card-bg">
+                        <img src="../src/assets/imageevent/event5/exc2557.webp" class="main-card-bg">
+                        <img src="../src/assets/imageevent/event5/exc2510.webp" class="main-card-bg">
+                        <img src="../src/assets/imageevent/event5/exc2532.webp" class="main-card-bg">
 
                         <div class="main-card-content">
                             <h2>EXCON 2025</h2>
@@ -1978,7 +2054,7 @@
 
                     <div class="about-image-content">
                         <div class="about-image-wrapper">
-                            <img src="./src/assets/imageevent/event5/exc2554.webp" alt="EXCON Exhibition"
+                            <img src="../src/assets/imageevent/event5/exc2554.webp" alt="EXCON Exhibition"
                                 class="about-main-image">
                             <div class="floating-badge">EXCON 2025</div>
                             <div class="about-image-overlay">
@@ -2039,7 +2115,7 @@
 
             <div class="video-container">
                 <video id="excon2025Video1" autoplay muted loop playsinline controls>
-                    <source src="./src/assets/imageevent/event5/video3.mp4" type="video/mp4">
+                    <source src="../src/assets/imageevent/event5/video3.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-overlay">
@@ -2325,10 +2401,10 @@
 
         <div class="media-side">
             <div class="media-box">
-                <img src="./src/assets/imageevent/event5/exc2543.webp" class="media-content active" id="media-1">
-                <img src="./src/assets/imageevent/event5/exc2544.webp" class="media-content" id="media-2">
-                <img src="./src/assets/imageevent/event5/exc2539.webp" class="media-content" id="media-3">
-                <img src="./src/assets/imageevent/event5/exc2540.webp" class="media-content" id="media-4">
+                <img src="../src/assets/imageevent/event5/exc2543.webp" class="media-content active" id="media-1">
+                <img src="../src/assets/imageevent/event5/exc2544.webp" class="media-content" id="media-2">
+                <img src="../src/assets/imageevent/event5/exc2539.webp" class="media-content" id="media-3">
+                <img src="../src/assets/imageevent/event5/exc2540.webp" class="media-content" id="media-4">
             </div>
         </div>
     </div>
@@ -2604,16 +2680,16 @@
                         </div>
 
                         <div class="hub-viewport" id="mobileHub">
-                            <div class="phone pos-0"><img src="./src/assets/imageevent/event5/Mainpage.webp" alt="1">
+                            <div class="phone pos-0"><img src="../src/assets/imageevent/event5/Mainpage.webp" alt="1">
                             </div>
-                            <div class="phone pos-1"><img src="./src/assets/imageevent/event5/Sales.webp" alt="2"></div>
-                            <div class="phone pos-2"><img src="./src/assets/imageevent/event5/Profitandloss.webp"
+                            <div class="phone pos-1"><img src="../src/assets/imageevent/event5/Sales.webp" alt="2"></div>
+                            <div class="phone pos-2"><img src="../src/assets/imageevent/event5/Profitandloss.webp"
                                     alt="3">
                             </div>
-                            <div class="phone pos-3"><img src="./src/assets/imageevent/event5/Asset.webp" alt="4"></div>
-                            <div class="phone pos-4"><img src="./src/assets/imageevent/event5/Accounts.webp" alt="5">
+                            <div class="phone pos-3"><img src="../src/assets/imageevent/event5/Asset.webp" alt="4"></div>
+                            <div class="phone pos-4"><img src="../src/assets/imageevent/event5/Accounts.webp" alt="5">
                             </div>
-                            <div class="phone pos-5"><img src="./src/assets/imageevent/event5/Attendance.webp" alt="6">
+                            <div class="phone pos-5"><img src="../src/assets/imageevent/event5/Attendance.webp" alt="6">
                             </div>
                         </div>
 
@@ -2711,7 +2787,7 @@
             </div>
 
             <div class="featured-image-section" style="margin-bottom: 40px;">
-                <img src="./src/assets/imageevent/event5/exc2551.webp" alt="Integration Demo">
+                <img src="../src/assets/imageevent/event5/exc2551.webp" alt="Integration Demo">
                 <div class="featured-caption">
                     <strong>System Integration Demo</strong>
                     <p>Live demonstration of RFID, ANPR, biometric, weighbridge, and boom barrier integrations working
@@ -2723,7 +2799,7 @@
             <div class="image-showcase">
                 <div>
                     <div class="image-card">
-                        <img src="./src/assets/imageevent/event5/exc2545.webp" alt="Cloud Infrastructure">
+                        <img src="../src/assets/imageevent/event5/exc2545.webp" alt="Cloud Infrastructure">
                     </div>
                     <div class="image-caption-box">
                         <strong>AWS Cloud Infrastructure</strong>
@@ -2734,7 +2810,7 @@
 
                 <div>
                     <div class="image-card">
-                        <img src="./src/assets/imageevent/event5/exc2542.webp" alt="Automation Engine">
+                        <img src="../src/assets/imageevent/event5/exc2542.webp" alt="Automation Engine">
                     </div>
                     <div class="image-caption-box">
                         <strong>Automation Engine</strong>
@@ -2758,7 +2834,7 @@
                 style="max-width: 1000px; margin: 40px auto; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3); background: #000;">
                 <video id="excon2025Video3" autoplay muted loop playsinline controls
                     style="width: 100%; display: block;">
-                    <source src="./src/assets/imageevent/event5/video6.mp4" type="video/mp4">
+                    <source src="../src/assets/imageevent/event5/video6.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-overlay"
@@ -2912,8 +2988,8 @@
                 padding: 0;
                 width: 100%;
                 height: 100vh;
-                /* background: #1a120b; */
-                overflow: hidden;
+                /* background: #ffffff; */
+                overflow: unset;
                 font-family: 'Segoe UI', sans-serif;
                 touch-action: none;
                 position: relative;
@@ -3020,35 +3096,35 @@
             let highestZ = 100;
 
             const videoList = [
-                "./src/assets/imageevent/event5/video1.mp4", "./src/assets/imageevent/event5/video2.mp4",
-                "./src/assets/imageevent/event5/video3.mp4", "./src/assets/imageevent/event5/video4.mp4",
-                "./src/assets/imageevent/event5/video5.mp4", "./src/assets/imageevent/event5/video6.mp4",
+                "../src/assets/imageevent/event5/video1.mp4", "../src/assets/imageevent/event5/video2.mp4",
+                "../src/assets/imageevent/event5/video3.mp4", "../src/assets/imageevent/event5/video4.mp4",
+                "../src/assets/imageevent/event5/video5.mp4", "../src/assets/imageevent/event5/video6.mp4",
             ];
 
             const imageList = [
-                "./src/assets/imageevent/event5/exc2501.webp", "./src/assets/imageevent/event5/exc2502.webp",
-                "./src/assets/imageevent/event5/exc2503.webp", "./src/assets/imageevent/event5/exc2504.webp",
-                "./src/assets/imageevent/event5/exc2505.webp", "./src/assets/imageevent/event5/exc2506.webp",
-                "./src/assets/imageevent/event5/exc2507.webp", "./src/assets/imageevent/event5/exc2508.webp",
-                "./src/assets/imageevent/event5/exc2509.webp", "./src/assets/imageevent/event5/exc2510.webp",
-                "./src/assets/imageevent/event5/exc2511.webp", "./src/assets/imageevent/event5/exc2525.webp",
-                "./src/assets/imageevent/event5/exc2513.webp", "./src/assets/imageevent/event5/exc2514.webp",
-                "./src/assets/imageevent/event5/exc2515.webp", "./src/assets/imageevent/event5/exc2516.webp",
-                "./src/assets/imageevent/event5/exc2517.webp", "./src/assets/imageevent/event5/exc2518.webp",
-                "./src/assets/imageevent/event5/exc2519.webp", "./src/assets/imageevent/event5/exc2520.webp",
-                "./src/assets/imageevent/event5/exc2521.webp", "./src/assets/imageevent/event5/exc2522.webp",
-                "./src/assets/imageevent/event5/exc2523.webp", "./src/assets/imageevent/event5/exc2524.webp",
-                "./src/assets/imageevent/event5/exc2525.webp", "./src/assets/imageevent/event5/exc2526.webp",
-                "./src/assets/imageevent/event5/exc2527.webp", "./src/assets/imageevent/event5/exc2528.webp",
-                "./src/assets/imageevent/event5/exc2529.webp", "./src/assets/imageevent/event5/exc2530.webp",
-                "./src/assets/imageevent/event5/exc2531.webp", "./src/assets/imageevent/event5/exc2532.webp",
-                "./src/assets/imageevent/event5/exc2533.webp", "./src/assets/imageevent/event5/exc2534.webp",
-                "./src/assets/imageevent/event5/exc2535.webp", "./src/assets/imageevent/event5/exc2536.webp",
-                "./src/assets/imageevent/event5/exc2537.webp", "./src/assets/imageevent/event5/exc2538.webp",
-                "./src/assets/imageevent/event5/exc2539.webp", "./src/assets/imageevent/event5/exc2540.webp",
-                "./src/assets/imageevent/event5/exc2545.webp", "./src/assets/imageevent/event5/exc2542.webp",
-                "./src/assets/imageevent/event5/exc2543.webp", "./src/assets/imageevent/event5/exc2544.webp",
-                "./src/assets/imageevent/event5/exc2548.webp"
+                "../src/assets/imageevent/event5/exc2501.webp", "../src/assets/imageevent/event5/exc2502.webp",
+                "../src/assets/imageevent/event5/exc2503.webp", "../src/assets/imageevent/event5/exc2504.webp",
+                "../src/assets/imageevent/event5/exc2505.webp", "../src/assets/imageevent/event5/exc2506.webp",
+                "../src/assets/imageevent/event5/exc2507.webp", "../src/assets/imageevent/event5/exc2508.webp",
+                "../src/assets/imageevent/event5/exc2509.webp", "../src/assets/imageevent/event5/exc2510.webp",
+                "../src/assets/imageevent/event5/exc2511.webp", "../src/assets/imageevent/event5/exc2525.webp",
+                "../src/assets/imageevent/event5/exc2513.webp", "../src/assets/imageevent/event5/exc2514.webp",
+                "../src/assets/imageevent/event5/exc2515.webp", "../src/assets/imageevent/event5/exc2516.webp",
+                "../src/assets/imageevent/event5/exc2517.webp", "../src/assets/imageevent/event5/exc2518.webp",
+                "../src/assets/imageevent/event5/exc2519.webp", "../src/assets/imageevent/event5/exc2520.webp",
+                "../src/assets/imageevent/event5/exc2521.webp", "../src/assets/imageevent/event5/exc2522.webp",
+                "../src/assets/imageevent/event5/exc2523.webp", "../src/assets/imageevent/event5/exc2524.webp",
+                "../src/assets/imageevent/event5/exc2525.webp", "../src/assets/imageevent/event5/exc2526.webp",
+                "../src/assets/imageevent/event5/exc2527.webp", "../src/assets/imageevent/event5/exc2528.webp",
+                "../src/assets/imageevent/event5/exc2529.webp", "../src/assets/imageevent/event5/exc2530.webp",
+                "../src/assets/imageevent/event5/exc2531.webp", "../src/assets/imageevent/event5/exc2532.webp",
+                "../src/assets/imageevent/event5/exc2533.webp", "../src/assets/imageevent/event5/exc2534.webp",
+                "../src/assets/imageevent/event5/exc2535.webp", "../src/assets/imageevent/event5/exc2536.webp",
+                "../src/assets/imageevent/event5/exc2537.webp", "../src/assets/imageevent/event5/exc2538.webp",
+                "../src/assets/imageevent/event5/exc2539.webp", "../src/assets/imageevent/event5/exc2540.webp",
+                "../src/assets/imageevent/event5/exc2545.webp", "../src/assets/imageevent/event5/exc2542.webp",
+                "../src/assets/imageevent/event5/exc2543.webp", "../src/assets/imageevent/event5/exc2544.webp",
+                "../src/assets/imageevent/event5/exc2548.webp"
             ];
 
             function createBricks() {
@@ -3169,51 +3245,52 @@
     </div>
 
 
-    <footer class="a">
-        <div class="b">
-            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/images/xlogo.svg" alt="Twitter" class="d">
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
-                rel="noopener">
-                <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
-            </a>
-            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/images/youtube.svg" alt="YouTube" class="d">
-            </a>
-            <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
-            </a>
-            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
-                rel="noopener">
-                <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
-            </a>
-        </div>
+        <!-- Footer -->
+        <footer class="a">
+            <div class="b">
+                <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                    <img src="../src/assets/images/xlogo.svg" alt="Twitter" class="d">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
+                    class="c" rel="noopener">
+                    <img src="../src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+                </a>
+                <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                    <img src="../src/assets/images/youtube.svg" alt="YouTube" class="d">
+                </a>
+                <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
+                    <img src="../src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+                </a>
+                <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                    rel="noopener">
+                    <img src="../src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+                </a>
+            </div>
 
-        <div class="e">
-            <a href="index.html" class="f">Home</a>
-            <a href="aboutus.html" class="f">About Us</a>
-            <a href="features.html" class="f">Explore Features</a>
-            <a href="careers.html" class="f">Careers</a>
-            <a href="contact.html" class="f">Contact Us</a>
-            <a href="Signup.html " class="f">Request a Demo</a>
-            <a href="termsofService.html" class="f">Terms of Service</a>
-            <a href="privacyPolicy.html" class="f">Privacy Policy</a>
-            <a href="dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+            <div class="e">
+                <a href="../index.html" class="f">Home</a>
+                <a href="../aboutus.html" class="f">About Us</a>
+                <!-- <a href="features.html" class="f">Explore Features</a> -->
+                <a href="../careers.html" class="f">Careers</a>
+                <a href="../src/pages/contact.html" class="f">Contact Us</a>
+                <a href="../src/pages/Signup.html" class="f">Request a Demo</a>
+                <a href="../src/pages/termsofService.html" class="f">Terms of Service</a>
+                <a href="../src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
+                <a href="../src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
 
-        </div>
-    </footer>
-    <footer class="footerbottom">
-        <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+            </div>
+        </footer>
+        <footer class="footerbottom">
+            <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
             May I help you?
         </a> -->
-        <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
-        <button class="scroll-top" aria-label="Scroll to top">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 19V5M5 12l7-7 7 7" />
-            </svg>
-        </button>
-    </footer>
+            <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+            <button class="scroll-top" aria-label="Scroll to top">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+            </button>
+        </footer>
 
 
     <script>

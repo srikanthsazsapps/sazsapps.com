@@ -5,15 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Invoice Integration | Sazs ERP</title>
-    <link href="src/css/EInvoice.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="src/assets/logo/logoblack.png">
+    <link href="../src/css/EInvoice.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="../src/assets/logo/logoblack.png">
     <meta name="description"
         content="GST-compliant E-Invoice Integration for Quarry, Crusher, RMC, Bricks & Pavers industries. Automate IRN generation, e-way bills, and ensure 100% compliance with Sazs ERP.">
-    <link href="src/css/comman.css" rel="stylesheet" />
-    <link rel="stylesheet" href="src/assets/css/all.min.css">
-    <link rel="preload" href="src/js/comman.js" as="script">
-        <script src="src/js/comman.js" defer></script>
+    <link href="../src/css/minified/comman.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="../src/assets/css/all.min.css"> -->
+    <link rel="preload" href="../src/js/comman.js" as="script">
+        <script src="../src/js/comman.js" defer></script>
 
+
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://sazsapps.com/EInvoice.html#service",
+  "name": "E-Invoice Software for Quarry, Crusher, RMC & Brick Plants",
+  "description": "GST-compliant e-invoice software integrated with SAZS ERP to automate invoice generation, IRP registration, QR code printing and real-time accounting for quarry, crusher, RMC and brick businesses.",
+  "url": "https://sazsapps.com/EInvoice.html",
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://sazsapps.com/#organization"
+  },
+  "areaServed": "India",
+  "serviceType": "E-Invoice Software",
+  "category": "GST & Compliance Automation"
+}
+</script>
 
 
 </head>
@@ -26,7 +45,7 @@
             <div class="sazs-header-main">
                 <a href="/" class="sazs-brand">
                     <div class="sazs-brand-image">
-                        <img src="./src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo Home page"
+                        <img src="../src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo Home page"
                             class="sazs-brand-image">
                     </div>
                 </a>
@@ -61,10 +80,15 @@
                     </li>
                 </ul>
                 <div class="sazs-cta-group">
-                    <a href="Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
+                    <a href="../src/pages/Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
                 </div>
                 <div class="sazs-hamburger">
-                    <a href="javascript:void(0);" onclick="toggleNav()"><i class="fa fa-bars"></i></a>
+                    <a href="javascript:void(0);" onclick="toggleNav()" aria-label="Open navigation menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
                 </div>
             </div>
 
@@ -72,20 +96,20 @@
                 <div class="product-dropdown">
                     <div class="product-left">
                         <div class="product-section-title">Quick Links</div>
-                        <a href="index.html" class="product-link">Home</a>
-                        <a href="aboutus.html" class="product-link">About Us</a>
-                        <a href="WhytoChoose.html" class="product-link">Why to Choose</a>
-                        <a href="careers.html" class="product-link">Careers</a>
-                        <a href="ProfitCalculator.html" class="product-link">Profit Calc</a>
-                        <a href="Questions.html" class="product-link">FAQ</a>
+                        <a href="../index.html" class="product-link">Home</a>
+                        <a href="../aboutus.html" class="product-link">About Us</a>
+                        <a href="../WhytoChoose.html" class="product-link">Why to Choose</a>
+                        <a href="../careers.html" class="product-link">Careers</a>
+                        <a href="../ProfitCalculator.html" class="product-link">Profit Calc</a>
+                        <a href="../Questions.html" class="product-link">FAQ</a>
                     </div>
                     <div class="product-right">
                         <div class="product-grid-title">Our Products</div>
                         <div class="sazs-submenu-grid">
                             <div class="sazs-submenu-col">
-                                <a href="QuarryCrusher.html" class="sazs-product-card">
+                                <a href="../products/QuarryCrusher.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/crusherdroneview.avif"
+                                        <img src="../src/assets/contentImages/crusherdroneview.avif"
                                             alt="Stone Crusher Management Software" />
                                     </div>
                                     <div class="sazs-card-heading">Stone Crusher Software for End-to-End Operations
@@ -95,9 +119,9 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="rmc.html" class="sazs-product-card">
+                                <a href="../products/QuarryCrusher.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/quarrydroneview.avif"
+                                        <img src="../src/assets/contentImages/quarrydroneview.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">End-to-End Management Software for Stone Quarries
@@ -107,9 +131,9 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="rmc.html" class="sazs-product-card">
+                                <a href="../products/rmc.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/RMCdroneview.avif"
+                                        <img src="../src/assets/contentImages/RMCdroneview.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">Next-Gen Billing Software for Ready Mix Concrete
@@ -119,9 +143,9 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="brickspaver.html" class="sazs-product-card">
+                                <a href="../products/brickspaver.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/bricksdrone.avif"
+                                        <img src="../src/assets/contentImages/bricksdrone.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
@@ -147,9 +171,9 @@
 </div> -->
                 </div>
                 <div class="bento-container">
-
-                    <a style="color: #000;text-decoration: none !important;" href="Anprs.html" class="card anpr">
-                        <img src="/src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/Anprs.html" class="card anpr">
+                        <img src="../src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
                         <div class="card-content">
                             <h2>ANPR Camera</h2>
                             <p>Automatic vehicle recognition</p>
@@ -165,8 +189,11 @@
                         </div>
                     </a>
 
-                    <a style="color: #000;text-decoration: none !important;" href="EInvoice.html" class="card einvoice">
-                        <img src="/src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
+
+
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/EInvoice.html" class="card einvoice">
+                        <img src="../src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
                         <div class="card-content">
                             <h2>E-Invoice</h2>
                             <p>GST compliant billing</p>
@@ -182,9 +209,9 @@
                         </div>
                     </a>
 
-                    <a style="color: #000;text-decoration: none !important;" href="Weighbridge.html"
-                        class="card weighbridge">
-                        <img src="/src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
+                    <a style="color: #000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/Weighbridge.html" class="card weighbridge">
+                        <img src="../src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
                         <div class="card-content">
                             <h2>Weighbridge</h2>
                             <p>Real-time weight capture</p>
@@ -195,9 +222,9 @@
                         </div>
                     </a>
 
-                    <a style="color: #000000;text-decoration: none !important;" href="Boombarrier.html"
-                        class="card boom">
-                        <img src="/src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
+                    <a style="color: #000000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/Boombarrier.html" class="card boom">
+                        <img src="../src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
                         <div class="card-content">
                             <h2>Boom Barrier</h2>
                             <p>Automated gate control</p>
@@ -210,9 +237,9 @@
                         </div>
                     </a>
 
-                    <a style="color: #000;text-decoration: none !important;" href="biometrics.html"
-                        class="card biometrics">
-                        <img src="/src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/biometrics.html" class="card biometrics">
+                        <img src="../src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
                         <div class="card-content">
                             <h2>Biometrics</h2>
                             <p>Secure access control</p>
@@ -225,8 +252,8 @@
                         </div>
                     </a>
 
-                    <div class="card smarttech">
-                        <img src="/src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
+                    <div style="border: 1px solid rgba(0, 0, 0, 0.368);" class="card smarttech">
+                        <img src="../src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
                         <div class="card-content">
                             <h2>Smart Tech</h2>
                             <p>Tailored for Crushers & Quarries</p>
@@ -248,50 +275,50 @@
                         </div>
                     </div>
                     <div class="media-events-grid">
-                        <a href="Jharkhand_2026.html" class="media-event-card">
+                        <a href="../media-events/Jharkhand_2026.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
+                                <img src="../src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">Jharkhand Mining & Construction Show 2026 </div>
                             </div>
                         </a>
-                        <a href="EXCON_2025.html" class="media-event-card">
+                        <a href="../media-events/EXCON_2025.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/excon25.avif" alt="EXCON_2025" />
+                                <img src="../src/assets/images/excon25.avif" alt="EXCON_2025" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
                             </div>
                         </a>
-                        <a href="IEMS_2024.html" class="media-event-card">
+                        <a href="../media-events/IEMS_2024.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/iems24.avif" alt="IEMS_2024" />
+                                <img src="../src/assets/images/iems24.avif" alt="IEMS_2024" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">IEMS – International Mining Expo & Conclave 2024</div>
                             </div>
                         </a>
-                        <a href="TNMSA_2024.html" class="media-event-card">
+                        <a href="../media-events/TNMSA_2024.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
+                                <img src="../src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet
                                     2024</div>
                             </div>
                         </a>
-                        <a href="EXCON_2023.html" class="media-event-card">
+                        <a href="../media-events/EXCON_2023.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/excon23.avif" alt="EXCON_2023" />
+                                <img src="../src/assets/images/excon23.avif" alt="EXCON_2023" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
                             </div>
                         </a>
-                        <a href="CODDISSIA.html" class="media-event-card">
+                        <a href="../media-events/CODDISSIA.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/codisia22.avif" alt="CODDISSIA" />
+                                <img src="../src/assets/images/codisia22.avif" alt="CODDISSIA" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners
@@ -318,9 +345,9 @@
                         </div>
                     </div>
                     <div class="blogs-cards-grid">
-                        <a href="Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
+                        <a href="../case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
+                                <img src="../src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Optimizing Quarry Profitability & Theft Prevention
                                     </div>
@@ -328,36 +355,36 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="Transforming_Customer_Experience_Order_Speed.html" class="blog-card">
+                        <a href="../case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/tran2.webp" alt="Customer Experience" />
+                                <img src="../src/assets/contentImages/tran2.webp" alt="Customer Experience" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
                                     <div class="blog-overlay-explore">Explore →</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="Automating_E-Invoicing_GST_Compliance.html" class="blog-card">
+                        <a href="../case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
+                                <img src="../src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
                                     <div class="blog-overlay-explore">Explore →</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="Real-Time_Vehicle_Trip_Management.html" class="blog-card">
+                        <a href="../case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/real4.webp" alt="Vehicle Management" />
+                                <img src="../src/assets/contentImages/real4.webp" alt="Vehicle Management" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
                                     <div class="blog-overlay-explore">Explore →</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="Complete_Financial_Control_Profit_Analysis.html" class="blog-card">
+                        <a href="../case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/comp5.webp" alt="Financial Control" />
+                                <img src="../src/assets/contentImages/comp5.webp" alt="Financial Control" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
                                     <div class="blog-overlay-explore">Explore →</div>
@@ -372,69 +399,97 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/"><img src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page"
+        <a href="/"><img src="../src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page"
                 class="sidenav-logo"></a>
         <a href="/">Home</a>
         <a href="aboutus.html">About Us</a>
         <div class="mobile-dropdown">
-            <a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products <i
-                    class="fa fa-chevron-down"></i></a>
+            <a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
-                <a href="QuarryCrusher.html">Quarry & Crusher</a>
-                <a href="rmc.html">Ready Mix Concrete</a>
-                <a href="brickspaver.html">Bricks & Pavers</a>
+                <a href="../products/QuarryCrusher.html">Quarry & Crusher</a>
+                <a href="../products/rmc.html">Ready Mix Concrete</a>
+                <a href="../products/brickspaver.html">Bricks & Pavers</a>
             </div>
         </div>
         <div class="mobile-dropdown">
             <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
-                class="mobile-dropdown-trigger">Explore Features <i class="fa fa-chevron-down"></i></a>
+                class="mobile-dropdown-trigger">Explore Features
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
                 <!-- <a href="features.html">Features</a> -->
-                <a href="Anprs.html">ANPR Camera Integration</a>
-                <a href="EInvoice.html">E-Invoice Integration</a>
-                <a href="Weighbridge.html">Weighbridge and Camera Integration</a>
-                <a href="Boombarrier.html">Boom Barrier Integration</a>
-                <a href="biometrics.html">Biometrics</a>
+                <a href="../products/Anprs.html">ANPR Camera Integration</a>
+                <a href="../products/EInvoice.html">E-Invoice Integration</a>
+                <a href="../products/Weighbridge.html">Weighbridge and Camera Integration</a>
+                <a href="../products/Boombarrier.html">Boom Barrier Integration</a>
+                <a href="../products/biometrics.html">Biometrics</a>
             </div>
         </div>
         <div class="mobile-dropdown">
             <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
-                class="mobile-dropdown-trigger">Case Studies <i class="fa fa-chevron-down"></i></a>
+                class="mobile-dropdown-trigger">Case Studies
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
-                <a href="Optimizing_Quarry_Profitability_Theft_Prevention.html">Quarry Profitability
+                <a href="../case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html">Quarry Profitability
                     Optimizing Quarry Profitability & Theft Prevention</a>
-                <a href="Transforming_Customer_Experience_Order_Speed.html">Customer Experience
+                <a href="../case-studies/Transforming_Customer_Experience_Order_Speed.html">Customer Experience
                     Transforming Customer Experience & Order Speed</a>
-                <a href="Automating_E-Invoicing_GST_Compliance.html">E-Invoicing
+                <a href="../case-studies/Automating_E-Invoicing_GST_Compliance.html">E-Invoicing
                     Automating E-Invoicing & GST Compliance</a>
-                <a href="Real-Time_Vehicle_Trip_Management.html">Vehicle Management
+                <a href="../case-studies/Real-Time_Vehicle_Trip_Management.html">Vehicle Management
                     Real-Time Vehicle & Trip Management</a>
-                <a href="Complete_Financial_Control_Profit_Analysis.html">
+                <a href="../case-studies/Complete_Financial_Control_Profit_Analysis.html">
                     Financial Control
                     Complete Financial Control & Profit Analysis</a>
             </div>
         </div>
         <div class="mobile-dropdown">
             <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
-                class="mobile-dropdown-trigger">Events <i class="fa fa-chevron-down"></i></a>
+                class="mobile-dropdown-trigger">Events
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
             <div class="mobile-dropdown-content">
-                <a href="Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
-                <a href="EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
-                <a href="IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
-                <a href="TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
-                <a href="EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
-                <a href="CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
+                <a href="../media-events/Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
+                <a href="../media-events/EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
+                <a href="../media-events/IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
+                <a href="../media-events/TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
+                <a href="../media-events/EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
+                <a href="../media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
             </div>
         </div>
-        <a href="ProfitCalculator.html">Profit Calc</a>
-        <a href="careers.html">Careers</a>
-        <a href="Signup.html">Sign Up</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="Weighbridge.html">Why to Choose Sazs</a>
-        <a href="Questions.html">FAQ</a>
-        <div class="call">
-            <a href="tel:+917666628000"><i class="fa fa-phone-volume ringing-icon"></i>76666 28000</a>
-        </div>
+        <a href="../ProfitCalculator.html">Profit Calc</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../src/pages/Signup.html">Sign Up</a>
+        <a href="../src/pages/contact.html">Contact Us</a>
+        <a href="../WhytoChoose.html">Why to Choose Sazs</a>
+        <a href="../Questions.html">FAQ</a>
+        <!-- <div class="call">
+            <a href="tel:+917666628000">
+                <svg class="ringing-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+  19.79 19.79 0 0 1-8.63-3.07
+  19.5 19.5 0 0 1-6-6
+  19.79 19.79 0 0 1-3.07-8.67
+  A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+  12.84 12.84 0 0 0 .7 2.81
+  2 2 0 0 1-.45 2.11L8.09 9.91
+  a16 16 0 0 0 6 6l1.27-1.27
+  a2 2 0 0 1 2.11-.45
+  12.84 12.84 0 0 0 2.81.7
+  A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> 76666 28000</a>
+        </div> -->
     </div>
 
 
@@ -454,7 +509,7 @@
             overflow: hidden;
             background:
                 linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8)),
-                url("/src/assets/contentImages/Einvoicef.png") center/cover no-repeat;
+                url("../src/assets/contentImages/Einvoicef.png") center/cover no-repeat;
 
         }
 
@@ -1018,51 +1073,52 @@
 
 
 
-   <footer class="a">
-        <div class="b">
-            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/images/xlogo.svg" alt="Twitter" class="d">
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
-                rel="noopener">
-                <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
-            </a>
-            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/images/youtube.svg" alt="YouTube" class="d">
-            </a>
-            <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
-            </a>
-            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
-                rel="noopener">
-                <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
-            </a>
-        </div>
+        <!-- Footer -->
+        <footer class="a">
+            <div class="b">
+                <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                    <img src="../src/assets/images/xlogo.svg" alt="Twitter" class="d">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
+                    class="c" rel="noopener">
+                    <img src="../src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+                </a>
+                <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                    <img src="../src/assets/images/youtube.svg" alt="YouTube" class="d">
+                </a>
+                <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
+                    <img src="../src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+                </a>
+                <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                    rel="noopener">
+                    <img src="../src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+                </a>
+            </div>
 
-        <div class="e">
-            <a href="index.html" class="f">Home</a>
-            <a href="aboutus.html" class="f">About Us</a>
-            <a href="features.html" class="f">Explore Features</a>
-            <a href="careers.html" class="f">Careers</a>
-            <a href="contact.html" class="f">Contact Us</a>
-            <a href="Signup.html " class="f">Request a Demo</a>
-            <a href="termsofService.html" class="f">Terms of Service</a>
-            <a href="privacyPolicy.html" class="f">Privacy Policy</a>
-            <a href="dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+            <div class="e">
+                <a href="../index.html" class="f">Home</a>
+                <a href="../aboutus.html" class="f">About Us</a>
+                <!-- <a href="features.html" class="f">Explore Features</a> -->
+                <a href="../careers.html" class="f">Careers</a>
+                <a href="../src/pages/contact.html" class="f">Contact Us</a>
+                <a href="../src/pages/Signup.html" class="f">Request a Demo</a>
+                <a href="../src/pages/termsofService.html" class="f">Terms of Service</a>
+                <a href="../src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
+                <a href="../src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
 
-        </div>
-    </footer>
-    <footer class="footerbottom">
-        <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+            </div>
+        </footer>
+        <footer class="footerbottom">
+            <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
             May I help you?
         </a> -->
-        <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
-        <button class="scroll-top" aria-label="Scroll to top">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 19V5M5 12l7-7 7 7" />
-            </svg>
-        </button>
-    </footer>
+            <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+            <button class="scroll-top" aria-label="Scroll to top">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+            </button>
+        </footer>
 
 
     <script>
