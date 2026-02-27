@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Automate employee attendance with Sazs ERP Biometric Integration. Fingerprint and face recognition for accurate workforce management.">
+    <title>Biometric Integration | Sazs ERP</title>
+    <link rel="icon" type="image/x-icon" href="../src/assets/logo/logoblack.png">
+    <link rel="preload" href="../src/js/comman.js" as="script">
+
+
+    <link rel="stylesheet" href="../src/css/minified/comman.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="../src/css/biometrics.css" as="style" onload="this.rel='stylesheet'">
+
+    <!-- Font Awesome (deferred) -->
+    <link rel="stylesheet" href="../src/assets/css/all.min.css" media="print" onload="this.media='all'">
+
+    <noscript>
+        <link rel="stylesheet" href="../src/css/minified/comman.min.css">
+        <link rel="stylesheet" href="../src/css/biometrics.css">
+        <link rel="stylesheet" href="../src/assets/css/all.min.css">
+    </noscript>
+        <script src="../src/js/comman.js" defer></script>
+
+
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://sazsapps.com/products/biometrics.html#service",
+  "name": "Biometric Attendance Integration for Quarry, Crusher & RMC Plants",
+  "description": "Biometric integration with SAZS ERP to capture employee in/out timings at sites and plants, link attendance with payroll and shift-wise production, and prevent proxy punching.",
+  "url": "https://sazsapps.com/products/biometrics.html",
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://sazsapps.com/#organization"
+  },
+  "serviceType": "Biometric Attendance Integration",
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "additionalType": "HR & Attendance Automation"
+}
+</script>
+
+
+</head>
+
+<body>
+
+    <nav class="sazs-header">
+        <div class="sazs-header-wrapper">
+            <div class="sazs-header-main">
+                <a href="/" class="sazs-brand">
+                    <div class="sazs-brand-image">
+                        <img src="../src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo Home page"
+                            class="sazs-brand-image">
+                    </div>
+                </a>
+                <ul class="sazs-menu-list">
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="platform">Product<svg class="sazs-arrow-svg"
+                                viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg></a>
+                    </li>
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="Features">Features<svg class="sazs-arrow-svg"
+                                viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg></a>
+                    </li>
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="resources">Media & Events<svg class="sazs-arrow-svg"
+                                viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg></a>
+                    </li>
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="blogs">Blogs<svg class="sazs-arrow-svg"
+                                viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg></a>
+                    </li>
+                </ul>
+                <div class="sazs-cta-group">
+                    <a href="../Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
+                </div>
+                <div class="sazs-hamburger">
+                    <a href="javascript:void(0);" onclick="toggleNav()" aria-label="Open navigation menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sazs-submenu" id="platform">
+                <div class="product-dropdown">
+                    <div class="product-left">
+                        <div class="product-section-title">Quick Links</div>
+                        <a href="../index.html" class="product-link">Home</a>
+                        <a href="../aboutus.html" class="product-link">About Us</a>
+                        <a href="../WhytoChoose.html" class="product-link">Why to Choose</a>
+                        <a href="../careers.html" class="product-link">Careers</a>
+                        <a href="../ProfitCalculator.html" class="product-link">Profit Calc</a>
+                        <a href="../Questions.html" class="product-link">FAQ</a>
+                    </div>
+                    <div class="product-right">
+                        <div class="product-grid-title">Our Products</div>
+                        <div class="sazs-submenu-grid">
+                            <div class="sazs-submenu-col">
+                                <a href="../products/QuarryCrusher.html" class="sazs-product-card">
+                                    <div class="sazs-card-img-wrapper">
+                                        <img src="../src/assets/contentImages/crusherdroneview.avif"
+                                            alt="Stone Crusher Management Software" />
+                                    </div>
+                                    <div class="sazs-card-heading">Stone Crusher Software for End-to-End Operations
+                                    </div>
+                                    <div class="sazs-card-text">In the rugged environment of stone crushing, efficiency
+                                        is currency. Transform your quarry operations with intelligent automation.</div>
+                                </a>
+                            </div>
+                            <div class="sazs-submenu-col">
+                                <a href="../products/QuarryCrusher.html" class="sazs-product-card">
+                                    <div class="sazs-card-img-wrapper">
+                                        <img src="../src/assets/contentImages/quarrydroneview.avif"
+                                            alt="Brick Manufacturing ERP Software" />
+                                    </div>
+                                    <div class="sazs-card-heading">End-to-End Management Software for Stone Quarries
+                                    </div>
+                                    <div class="sazs-card-text">In the rugged environment of stone crushing, efficiency
+                                        is currency. Transform your quarry operations with intelligent automation.</div>
+                                </a>
+                            </div>
+                            <div class="sazs-submenu-col">
+                                <a href="../products/rmc.html" class="sazs-product-card">
+                                    <div class="sazs-card-img-wrapper">
+                                        <img src="../src/assets/contentImages/RMCdroneview.avif"
+                                            alt="Brick Manufacturing ERP Software" />
+                                    </div>
+                                    <div class="sazs-card-heading">Next-Gen Billing Software for Ready Mix Concrete
+                                        (RMC) Plants</div>
+                                    <div class="sazs-card-text">The Future of Fast, Accurate & Automated RMC Billing
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sazs-submenu-col">
+                                <a href="../products/brickspaver.html" class="sazs-product-card">
+                                    <div class="sazs-card-img-wrapper">
+                                        <img src="../src/assets/contentImages/bricksdrone.avif"
+                                            alt="Brick Manufacturing ERP Software" />
+                                    </div>
+                                    <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
+                                        Plants</div>
+                                    <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every
+                                        Stage of Your Production</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sazs-submenu" id="Features">
+                <div class="media-events-header">
+                    <h2 class="media-events-title">Features <span class="media-title-separator">—</span> <span
+                            class="media-title-subtitle">tailored to every Crushers & Quarries ,RMC ,Brick &
+                            Paver</span></h2>
+                    <!-- <div class="media-events-ai-tracker">
+<span class="ai-tracker-label">Latest Insights</span>
+<span class="ai-tracker-beta">NEW</span>
+<span class="ai-tracker-text">Industry Proven Results</span>
+</div> -->
+                </div>
+                <div class="bento-container">
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/Anprs.html" class="card anpr">
+                        <img src="../src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
+                        <div class="card-content">
+                            <h2>ANPR Camera</h2>
+                            <p>Automatic vehicle recognition</p>
+                            <div class="shine-effect">
+                                <div
+                                    style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.96);color:#111;border-radius:20px">
+                                    <div class="mini-text content-item" id="anpr-content">
+                                        <strong>Smart Tech</strong>
+                                        <span>Auto Recognition</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+
+
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/EInvoice.html" class="card einvoice">
+                        <img src="../src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
+                        <div class="card-content">
+                            <h2>E-Invoice</h2>
+                            <p>GST compliant billing</p>
+                            <div class="shine-effect">
+                                <div
+                                    style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.96);color:#111;border-radius:20px">
+                                    <div class="mini-text content-item" id="einvoice-content">
+                                        <strong>Compliance</strong>
+                                        <span>GST Ready</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a style="color: #000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/Weighbridge.html" class="card weighbridge">
+                        <img src="../src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
+                        <div class="card-content">
+                            <h2>Weighbridge</h2>
+                            <p>Real-time weight capture</p>
+                            <div class="feature-container">
+                                <div class="feature-pill">Real-time Capture</div>
+                                <div class="feature-pill">Automation</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a style="color: #000000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/Boombarrier.html" class="card boom">
+                        <img src="../src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
+                        <div class="card-content">
+                            <h2>Boom Barrier</h2>
+                            <p>Automated gate control</p>
+                            <div class="shine-effect status-panel">
+                                <div class="content-item" id="boom-content">
+                                    <strong>Security</strong>
+                                    <span>Gate Control</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
+                        href="../products/biometrics.html" class="card biometrics">
+                        <img src="../src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
+                        <div class="card-content">
+                            <h2>Biometrics</h2>
+                            <p>Secure access control</p>
+                            <div class="shine-effect" style="width:214px;padding:0">
+                                <div class="info-box">
+                                    <span id="biometric-status">Fingerprint Scanner</span>
+                                    <div id="status-indicator"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div style="border: 1px solid rgba(0, 0, 0, 0.368);" class="card smarttech">
+                        <img src="../src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
+                        <div class="card-content">
+                            <h2>Smart Tech</h2>
+                            <p>Tailored for Crushers & Quarries</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="sazs-submenu" id="resources">
+                <div class="media-events-dropdown">
+                    <div class="media-events-header">
+                        <h2 class="media-events-title">Media & Events <span class="media-title-separator">—</span> <span
+                                class="media-title-subtitle">Stay Connected, Stay Informed</span></h2>
+                        <div class="media-events-ai-tracker">
+                            <span class="ai-tracker-label">Latest Updates</span>
+                            <span class="ai-tracker-beta">NEW</span>
+                            <span class="ai-tracker-text">Industry Insights & Success Stories</span>
+                        </div>
+                    </div>
+                    <div class="media-events-grid">
+                        <a href="../media-events/Jharkhand_2026.html" class="media-event-card">
+                            <div class="media-card-image">
+                                <img src="../src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
+                            </div>
+                            <div class="media-card-content">
+                                <div class="media-card-title">Jharkhand Mining & Construction Show 2026 </div>
+                            </div>
+                        </a>
+                        <a href="../media-events/EXCON_2025.html" class="media-event-card">
+                            <div class="media-card-image">
+                                <img src="../src/assets/images/excon25.avif" alt="EXCON_2025" />
+                            </div>
+                            <div class="media-card-content">
+                                <div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
+                            </div>
+                        </a>
+                        <a href="../media-events/IEMS_2024.html" class="media-event-card">
+                            <div class="media-card-image">
+                                <img src="../src/assets/images/iems24.avif" alt="IEMS_2024" />
+                            </div>
+                            <div class="media-card-content">
+                                <div class="media-card-title">IEMS – International Mining Expo & Conclave 2024</div>
+                            </div>
+                        </a>
+                        <a href="../media-events/TNMSA_2024.html" class="media-event-card">
+                            <div class="media-card-image">
+                                <img src="../src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
+                            </div>
+                            <div class="media-card-content">
+                                <div class="media-card-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet
+                                    2024</div>
+                            </div>
+                        </a>
+                        <a href="../media-events/EXCON_2023.html" class="media-event-card">
+                            <div class="media-card-image">
+                                <img src="../src/assets/images/excon23.avif" alt="EXCON_2023" />
+                            </div>
+                            <div class="media-card-content">
+                                <div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
+                            </div>
+                        </a>
+                        <a href="../media-events/CODDISSIA.html" class="media-event-card">
+                            <div class="media-card-image">
+                                <img src="../src/assets/images/codisia22.avif" alt="CODDISSIA" />
+                            </div>
+                            <div class="media-card-content">
+                                <div class="media-card-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners
+                                    Association Expo 2023</div>
+                            </div>
+                        </a>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="sazs-submenu" id="blogs">
+                <div class="blogs-dropdown-container">
+                    <div class="media-events-header">
+                        <h2 class="media-events-title">Case Studies <span class="media-title-separator">—</span> <span
+                                class="media-title-subtitle">Real-World Success Stories</span></h2>
+                        <div class="media-events-ai-tracker">
+                            <span class="ai-tracker-label">Latest Insights</span>
+                            <span class="ai-tracker-beta">NEW</span>
+                            <span class="ai-tracker-text">Industry Proven Results</span>
+                        </div>
+                    </div>
+                    <div class="blogs-cards-grid">
+                        <a href="../case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="../src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
+                                <div class="blog-card-overlay">
+                                    <div class="blog-overlay-title">Optimizing Quarry Profitability & Theft Prevention
+                                    </div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="../case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="../src/assets/contentImages/tran2.webp" alt="Customer Experience" />
+                                <div class="blog-card-overlay">
+                                    <div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="../case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="../src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
+                                <div class="blog-card-overlay">
+                                    <div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="../case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="../src/assets/contentImages/real4.webp" alt="Vehicle Management" />
+                                <div class="blog-card-overlay">
+                                    <div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="../case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="../src/assets/contentImages/comp5.webp" alt="Financial Control" />
+                                <div class="blog-card-overlay">
+                                    <div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/"><img src="../src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page"
+                class="sidenav-logo"></a>
+        <a href="/">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <div class="mobile-dropdown">
+            <a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
+            <div class="mobile-dropdown-content">
+                <a href="../products/QuarryCrusher.html">Quarry & Crusher</a>
+                <a href="../products/rmc.html">Ready Mix Concrete</a>
+                <a href="../products/brickspaver.html">Bricks & Pavers</a>
+            </div>
+        </div>
+        <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
+                class="mobile-dropdown-trigger">Explore Features
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
+            <div class="mobile-dropdown-content">
+                <!-- <a href="features.html">Features</a> -->
+                                <a href="../features/Anprs.html">ANPR Camera Integration</a>
+                <a href="../features/EInvoice.html">E-Invoice Integration</a>
+                <a href="../features/Weighbridge.html">Weighbridge and Camera Integration</a>
+                <a href="../features/Boombarrier.html">Boom Barrier Integration</a>
+                <a href="../features/biometrics.html">Biometrics</a>
+            </div>
+        </div>
+        <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
+                class="mobile-dropdown-trigger">Case Studies
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
+            <div class="mobile-dropdown-content">
+                <a href="../case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html">Quarry Profitability
+                    Optimizing Quarry Profitability & Theft Prevention</a>
+                <a href="../case-studies/Transforming_Customer_Experience_Order_Speed.html">Customer Experience
+                    Transforming Customer Experience & Order Speed</a>
+                <a href="../case-studies/Automating_E-Invoicing_GST_Compliance.html">E-Invoicing
+                    Automating E-Invoicing & GST Compliance</a>
+                <a href="../case-studies/Real-Time_Vehicle_Trip_Management.html">Vehicle Management
+                    Real-Time Vehicle & Trip Management</a>
+                <a href="../case-studies/Complete_Financial_Control_Profit_Analysis.html">
+                    Financial Control
+                    Complete Financial Control & Profit Analysis</a>
+            </div>
+        </div>
+        <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
+                class="mobile-dropdown-trigger">Events
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg> </a>
+            <div class="mobile-dropdown-content">
+                <a href="../media-events/Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
+                <a href="../media-events/EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
+                <a href="../media-events/IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
+                <a href="../media-events/TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
+                <a href="../media-events/EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
+                <a href="../media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
+            </div>
+        </div>
+        <a href="../ProfitCalculator.html">Profit Calc</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../Signup.html">Sign Up</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../WhytoChoose.html">Why to Choose Sazs</a>
+        <a href="../Questions.html">FAQ</a>
+        <!-- <div class="call">
+            <a href="tel:+917666628000">
+                <svg class="ringing-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+  19.79 19.79 0 0 1-8.63-3.07
+  19.5 19.5 0 0 1-6-6
+  19.79 19.79 0 0 1-3.07-8.67
+  A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+  12.84 12.84 0 0 0 .7 2.81
+  2 2 0 0 1-.45 2.11L8.09 9.91
+  a16 16 0 0 0 6 6l1.27-1.27
+  a2 2 0 0 1 2.11-.45
+  12.84 12.84 0 0 0 2.81.7
+  A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> 76666 28000</a>
+        </div> -->
+    </div>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding-top: 100px;">
+        <div class="hero-text">
+            <div class="hero-tag">
+                <i class="fas fa-fingerprint"></i>
+                Smart Attendance Solution
+            </div>
+            <h1>
+                <span class="text-blue">Biometric Integration</span>
+                with Sazs ERP
+            </h1>
+            <p class="hero-description">
+                Automate employee attendance and access management with high accuracy and security. By connecting
+                biometric devices directly to the ERP system, organizations can eliminate manual attendance processes,
+                prevent proxy entries, and maintain reliable workforce records.
+            </p>
+            <div class="hero-actions">
+                <a href="#demo" class="btn-large btn-blue">Get Started Now</a>
+                <a href="#features" class="btn-large btn-outline">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <i class="fas fa-fingerprint"></i>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Accurate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Zero</div>
+                <div class="stat-label">Proxy Entries</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Real-Time</div>
+                <div class="stat-label">Sync</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Monitoring</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">HOW IT WORKS</div>
+                <h2 class="section-title">Simple, Secure, and Automated</h2>
+                <p class="section-subtitle">Employees authenticate using biometric methods such as fingerprint or face
+                    recognition. The biometric device securely captures the data and synchronizes it in real time with
+                    Sazs ERP.</p>
+            </div>
+
+            <div class="workflow-flow">
+                <div class="flow-step">
+                    <div class="flow-circle">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Employee Authentication</h3>
+                    <p>Employees use fingerprint or face recognition to authenticate their identity</p>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-circle">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Real-Time Sync</h3>
+                    <p>Data is securely captured and synchronized instantly with Sazs ERP</p>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-circle">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Automatic Recording</h3>
+                    <p>Attendance details and working hours are automatically managed in ERP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <div class="key-features">
+        <section class="section" style="">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">KEY FEATURES</div>
+                    <h2 class="section-title">Powerful Attendance Features</h2>
+                </div>
+
+                <div class="features-asymmetric">
+                    <div class="feature-tile wide">
+                        <i class="fas fa-clock"></i>
+                        <h3>Real-time biometric attendance synchronization</h3>
+                        <p>Instant synchronization between biometric devices and ERP system for accurate attendance
+                            tracking</p>
+                    </div>
+
+                    <div class="feature-tile">
+                        <i class="fas fa-fingerprint"></i>
+                        <h3>Fingerprint and face recognition support</h3>
+                        <p>Multiple biometric authentication methods</p>
+                    </div>
+
+                    <div class="feature-tile">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Accurate shift calculation</h3>
+                        <p>Automated working hour and shift tracking</p>
+                    </div>
+
+                    <div class="feature-tile">
+                        <i class="fas fa-business-time"></i>
+                        <h3>Overtime tracking</h3>
+                        <p>Late entry, early exit monitoring</p>
+                    </div>
+
+                    <div class="feature-tile">
+                        <i class="fas fa-users-cog"></i>
+                        <h3>Centralized employee data management</h3>
+                        <p>All workforce data in one unified platform</p>
+                    </div>
+
+                    <div class="feature-tile">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Role-based access control</h3>
+                        <p>Secure access management system</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Biometric Systems -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">BIOMETRIC SYSTEMS</div>
+                <h2 class="section-title">Supported Biometric Devices</h2>
+                <p class="section-subtitle">Compatible with industry-leading biometric technologies</p>
+            </div>
+
+            <div class="systems-blocks">
+                <div class="system-block">
+                    <i class="fas fa-fingerprint"></i>
+                    <h3>Fingerprint Scanners</h3>
+                </div>
+
+                <div class="system-block">
+                    <i class="fas fa-face-smile"></i>
+                    <h3>Face Recognition Devices</h3>
+                </div>
+
+                <div class="system-block">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Multi-location Biometric Device Integration</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+
+    <section class="section" style="  background: url(../src/assets/contentImages/bgplain2.webp) center/cover no-repeat fixed;
+    min-height: 100vh;">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">IDEAL USE CASES</div>
+                <h2 class="section-title">Perfect For Every Industry</h2>
+            </div>
+
+            <div class="usecases-stack">
+                <div class="usecase-box">
+                    <div class="usecase-icon-box">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Industrial Units and Factories</h3>
+                </div>
+
+                <div class="usecase-box">
+                    <div class="usecase-icon-box">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Quarry, Crusher, and RMC Plants</h3>
+                </div>
+
+                <div class="usecase-box">
+                    <div class="usecase-icon-box">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Corporate Offices</h3>
+                </div>
+
+                <div class="usecase-box">
+                    <div class="usecase-icon-box">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Warehouses and Logistics Centers</h3>
+                </div>
+
+                <div class="usecase-box">
+                    <div class="usecase-icon-box">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>Educational Institutions</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">REPORTS & ANALYTICS</div>
+                <h2 class="section-title">Comprehensive Insights</h2>
+                <p class="section-subtitle">Detailed attendance reports for better workforce management</p>
+            </div>
+
+            <div class="reports-cards">
+                <div class="report-box">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Attendance Reports</h3>
+                    <p>Daily, weekly, and monthly attendance reports</p>
+                </div>
+
+                <div class="report-box">
+                    <i class="fas fa-user-clock"></i>
+                    <h3>Employee Analysis</h3>
+                    <p>Employee-wise attendance analysis</p>
+                </div>
+
+                <div class="report-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Shift Summaries</h3>
+                    <p>Shift and overtime summaries</p>
+                </div>
+
+                <div class="report-box">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Audit Logs</h3>
+                    <p>Complete attendance audit logs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section" style="  background: url(../src/assets/contentImages/bg2.webp) center/cover no-repeat fixed;
+    min-height: 100vh;"">
+        <div class=" container">
+        <div class="section-header">
+            <div class="section-label">SECURITY & BENEFITS</div>
+            <h2 class="section-title">Transform Your Workforce Management</h2>
+        </div>
+
+        <div class="benefits-rows">
+            <div class="benefit-row">
+                <div class="benefit-icon-circle">
+                    <i class="fas fa-user-slash"></i>
+                </div>
+                <div class="benefit-text">
+                    <h3>Eliminates proxy attendance</h3>
+                    <p>Prevent buddy punching and ensure only authorized employees mark attendance</p>
+                </div>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-icon-circle">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <div class="benefit-text">
+                    <h3>Reduces manual errors and paperwork</h3>
+                    <p>Automated tracking eliminates manual attendance processes</p>
+                </div>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-icon-circle">
+                    <i class="fas fa-money-check-alt"></i>
+                </div>
+                <div class="benefit-text">
+                    <h3>Improves payroll accuracy</h3>
+                    <p>Accurate attendance data ensures precise payroll calculations</p>
+                </div>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-icon-circle">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <div class="benefit-text">
+                    <h3>Enhances workforce discipline</h3>
+                    <p>Transparent attendance monitoring improves employee discipline</p>
+                </div>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-icon-circle">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="benefit-text">
+                    <h3>Secure and reliable data synchronization</h3>
+                    <p>Encrypted data transfer ensures security and reliability</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-block">
+        <div class="cta-inner">
+            <h2>Ready to <span class="highlight">Automate</span> Your Attendance?</h2>
+            <p>Join hundreds of organizations already using Sazs ERP for accurate, secure biometric attendance
+                management. Get started today.</p>
+            <div class="cta-buttons">
+                <a href="../Signup.html" class="btn-large btn-blue">Request a Demo</a>
+                <a href="../contact.html" class="btn-large btn-outline">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+    <!-- <footer class="footer-container ">
+                <div class="footer-content">
+                    <h1 class="heading zoom-in">Together<span class="succeed-text"> We Grow !</span></h1>
+                    <a href="./src/pages/contact.html" class="join-button">Contact Us</a>
+
+                </div>
+            </footer> -->
+
+        <!-- Footer -->
+        <footer class="a">
+            <div class="b">
+                <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                    <img src="../src/assets/images/xlogo.svg" alt="Twitter" class="d">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
+                    class="c" rel="noopener">
+                    <img src="../src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+                </a>
+                <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                    <img src="../src/assets/images/youtube.svg" alt="YouTube" class="d">
+                </a>
+                <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
+                    <img src="../src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+                </a>
+                <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                    rel="noopener">
+                    <img src="../src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+                </a>
+            </div>
+
+            <div class="e">
+                <a href="../index.html" class="f">Home</a>
+                <a href="../aboutus.html" class="f">About Us</a>
+                <!-- <a href="features.html" class="f">Explore Features</a> -->
+                <a href="../careers.html" class="f">Careers</a>
+                <a href="../contact.html" class="f">Contact Us</a>
+                <a href="../Signup.html" class="f">Request a Demo</a>
+                <a href="../termsofService.html" class="f">Terms of Service</a>
+                <a href="../privacyPolicy.html" class="f">Privacy Policy</a>
+                <a href="../dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+
+            </div>
+        </footer>
+        <footer class="footerbottom">
+            <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+            May I help you?
+        </a> -->
+            <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+            <button class="scroll-top" aria-label="Scroll to top">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+            </button>
+        </footer>
+
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.workflow-card, .feature-card, .method-card, .app-card, .report-card, .benefit-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s, transform 0.6s';
+                observer.observe(card);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
