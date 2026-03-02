@@ -1676,7 +1676,7 @@ a {
 }
 
 
-#wa-float {
+/* #wa-float {
   position: fixed;
   bottom: 24px;
   right: 24px;
@@ -1700,7 +1700,6 @@ a {
   height: 32px;
 }
 
-/* Tablet */
 @media (max-width: 768px) {
   #wa-float {
     bottom: 18px;
@@ -1714,7 +1713,6 @@ a {
   }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   #wa-float {
     bottom: 14px;
@@ -1726,4 +1724,4 @@ a {
     width: 26px;
     height: 26px;
   }
-}
+} */
