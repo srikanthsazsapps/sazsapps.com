@@ -298,7 +298,7 @@
     }
 
     /* Info Boxes */
-    .info-box {
+    .info-boxs {
       background: linear-gradient(135deg, var(--warning-light) 0%, #fff7e6 100%);
       border-left: 4px solid var(--warning);
       border-radius: var(--radius-md);
@@ -306,13 +306,13 @@
       margin-top: 12px;
     }
 
-    .info-box-text {
+    .info-boxs-text {
       font-size: 13px;
       color: #92400e;
       line-height: 1.6;
     }
 
-    .info-box-text strong {
+    .info-boxs-text strong {
       font-weight: 700;
       color: #78350f;
     }
