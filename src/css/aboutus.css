@@ -461,7 +461,7 @@ h1 {
 
 
 /* Scroll to top button */
-.scroll-top {
+/* .scroll-top {
     position:absolute;
     bottom: 20px;
     right: 20px;
@@ -487,7 +487,7 @@ h1 {
     .scroll-top {
        
         display: none;
-    }}
+    }} */
 
 /* Responsive styles */
 @media (max-width: 768px) {

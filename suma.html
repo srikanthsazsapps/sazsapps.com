@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAZS ERP – FAQ Section</title>
+<style>
+  /* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; } */
+
+  /* body {
+    background: #ffffff;
+    color: #2c2c3a;
+    font-family: 'DM Sans', sans-serif;
+  } */
+
+  /* ══════════════════════════════
+     SECTION
+  ══════════════════════════════ */
+  .sazs-faq {
+    background: #ffffff;
+    padding: 96px 0 112px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sazs-faq::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 55% 40% at 5% 10%,  rgba(37,99,235,.04) 0%, transparent 60%),
+      radial-gradient(ellipse 45% 50% at 95% 90%, rgba(37,99,235,.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .faq-wm {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(100px, 18vw, 240px);
+    letter-spacing: .06em;
+    color: rgba(37,99,235,.03);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .faq-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ══════════════════════════════
+     HEADER
+  ══════════════════════════════ */
+  .faq-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 52px;
+    flex-wrap: wrap;
+  }
+
+  .faq-head-left { flex: 1 1 340px; }
+
+  .faq-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .faq-eyebrow-line {
+    width: 32px; height: 2px;
+    background: #2563eb;
+    border-radius: 2px;
+  }
+  .faq-eyebrow-text {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #2563eb;
+  }
+
+  .faq-h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 3.5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: .02em;
+    color: #0f0f0f;
+  }
+  .faq-h2 em {
+    font-style: normal;
+    color: #2563eb;
+  }
+
+  .faq-head-right {
+    flex: 1 1 320px;
+    max-width: 400px;
+  }
+  .faq-head-right p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: #7a7a8c;
+  }
+  .faq-head-right p strong {
+    color: #2c2c3a;
+    font-weight: 600;
+  }
+
+  /* ══════════════════════════════
+     TABS
+  ══════════════════════════════ */
+  .faq-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+
+  .faq-tab {
+    padding: 8px 20px;
+    border: 1.5px solid rgba(0,0,0,0.09);
+    border-radius: 100px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #7a7a8c;
+    cursor: pointer;
+    background: transparent;
+    letter-spacing: .02em;
+    transition: all .2s ease;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .faq-tab:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    background: rgba(37,99,235,0.08);
+  }
+  .faq-tab.active {
+    border-color: #2563eb;
+    color: #ffffff;
+    background: #2563eb;
+  }
+
+  /* ══════════════════════════════
+     FAQ LIST
+  ══════════════════════════════ */
+  .faq-list {
+    columns: 2;
+    column-gap: 52px;
+  }
+
+  .faq-item {
+    break-inside: avoid;
+    border-bottom: 1.5px solid rgba(0,0,0,0.09);
+    border-top: 1.5px solid transparent;
+    background: transparent;
+    transition: background .2s;
+  }
+
+  .faq-item.is-first {
+    border-top-color: rgba(0,0,0,0.09);
+  }
+
+  .faq-item.open {
+    /* background: rgba(37,99,235,0.08); */
+  }
+
+  .faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 16px 22px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .faq-q-text {
+    font-size: 14.5px;
+    font-weight: 500;
+    line-height: 1.55;
+    color: #2c2c3a;
+    flex: 1;
+    transition: color .2s;
+  }
+
+  .faq-ico {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0,0,0,0.09);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: #7a7a8c;
+    background: #ffffff;
+    transition: all .25s ease;
+  }
+  .faq-ico svg {
+    width: 13px; height: 13px;
+    transition: transform .3s ease;
+    stroke: currentColor;
+  }
+
+  .faq-item.open .faq-ico     { background: #2563eb; border-color: #2563eb; color: #ffffff; }
+  .faq-item.open .faq-ico svg { transform: rotate(45deg); }
+  .faq-item.open .faq-q-text  { color: #2563eb; }
+
+  .faq-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .36s ease;
+  }
+  .faq-body.open { grid-template-rows: 1fr; }
+  .faq-body-in   { overflow: hidden; }
+
+  .faq-ans {
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.9;
+    color: #7a7a8c;
+    padding: 0 40px 22px 0;
+  }
+
+  /* ══════════════════════════════
+     CTA BANNER
+  ══════════════════════════════ */
+  .faq-cta {
+    margin-top: 60px;
+    background: #1a1a2e;
+    border-radius: 20px;
+    padding: 44px 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+  .faq-cta::before {
+    content: '';
+    position: absolute;
+    top: -40%; right: 0;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(37,99,235,.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .faq-cta::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: 5%;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(37,99,235,.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .faq-cta-l { position: relative; z-index: 1; }
+  .faq-cta-l h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    letter-spacing: .05em;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+  .faq-cta-l p {
+    font-size: 14px;
+    color: rgba(255,255,255,.55);
+    font-weight: 300;
+    line-height: 1.65;
+    max-width: 380px;
+  }
+
+  .faq-cta-btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .faq-btn-a {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 28px;
+    background: #2563eb; color: #ffffff;
+    font-size: 12.5px; font-weight: 700;
+    letter-spacing: .07em; text-transform: uppercase;
+    border-radius: 100px; text-decoration: none;
+    transition: all .22s ease; white-space: nowrap;
+    font-family: 'DM Sans', sans-serif;
+    border: none;
+  }
+  .faq-btn-a:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37,99,235,.4);
+  }
+
+  .faq-btn-b {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 28px;
+    background: rgba(255,255,255,.1); color: #ffffff;
+    font-size: 12.5px; font-weight: 500;
+    letter-spacing: .07em; text-transform: uppercase;
+    border-radius: 100px; border: 1.5px solid rgba(255,255,255,.2);
+    text-decoration: none; transition: all .22s ease; white-space: nowrap;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .faq-btn-b:hover {
+    background: rgba(255,255,255,.18);
+    border-color: rgba(255,255,255,.5);
+    transform: translateY(-2px);
+  }
+
+  .wa-dot {
+    width: 7px; height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    display: inline-block;
+    animation: wapulse 2s infinite;
+  }
+  @keyframes wapulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50%      { opacity:.5; transform:scale(1.6); }
+  }
+
+  .fa { opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+  .fa.vis { opacity:1; transform:translateY(0); }
+
+  /* ══════════════════════════════
+     RESPONSIVE — ALL BREAKPOINTS
+  ══════════════════════════════ */
+
+  /* Tablet landscape: 1024px */
+  @media (max-width: 1024px) {
+    .faq-inner      { padding: 0 32px; }
+    .faq-list       { column-gap: 36px; }
+    .faq-h2         { font-size: clamp(44px, 5vw, 72px); }
+  }
+
+  /* Tablet portrait: 900px */
+  @media (max-width: 900px) {
+    .sazs-faq       { padding: 72px 0 88px; }
+    .faq-inner      { padding: 0 28px; }
+    .faq-list       { columns: 1; column-gap: 0; }
+    .faq-head       { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .faq-head-left  { flex: 1 1 100%; }
+    .faq-head-right { max-width: 100%; flex: 1 1 100%; }
+    .faq-head-right p { font-size: 14px; }
+    .faq-h2         { font-size: clamp(40px, 7vw, 64px); }
+    .faq-tabs       { gap: 6px; margin-bottom: 32px; }
+    /* first item in single-col always gets top border */
+    .faq-item:first-child { border-top-color: rgba(0,0,0,0.09); }
+  }
+
+  /* Large phone: 640px */
+  @media (max-width: 640px) {
+    .sazs-faq       { padding: 56px 0 68px; }
+    .faq-inner      { padding: 0 20px; }
+    .faq-h2         { font-size: clamp(36px, 9vw, 52px); }
+    .faq-head       { margin-bottom: 36px; }
+    .faq-eyebrow    { margin-bottom: 12px; }
+    .faq-tabs       { gap: 6px; margin-bottom: 28px; }
+    .faq-tab        { padding: 7px 14px; font-size: 12px; }
+    .faq-q          { padding: 18px 10px 18px 0; gap: 12px; }
+    .faq-q-text     { font-size: 14px; }
+    .faq-ans        { font-size: 13px; padding: 0 10px 18px 0; }
+    .faq-ico        { width: 28px; height: 28px; flex-shrink: 0; }
+    .faq-ico svg    { width: 11px; height: 11px; }
+    .faq-wm         { display: none; }
+  }
+
+  /* Small phone: 480px */
+  @media (max-width: 480px) {
+    .sazs-faq       { padding: 48px 0 60px; }
+    .faq-inner      { padding: 0 16px; }
+    .faq-h2         { font-size: clamp(32px, 9.5vw, 46px); }
+    .faq-head-right p { font-size: 13.5px; }
+    .faq-tabs       { gap: 5px; }
+    .faq-tab        { padding: 6px 12px; font-size: 11.5px; }
+    .faq-q          { padding: 16px 8px 16px 0; }
+    .faq-q-text     { font-size: 13.5px; }
+    .faq-ans        { font-size: 12.5px; line-height: 1.8; }
+  }
+
+  /* Very small phone: 360px */
+  @media (max-width: 360px) {
+    .faq-inner      { padding: 0 12px; }
+    .faq-h2         { font-size: 30px; }
+    .faq-tab        { padding: 6px 10px; font-size: 11px; }
+    .faq-q-text     { font-size: 13px; }
+  }
+</style>
+
+<section class="sazs-faq" id="faq">
+  <div class="faq-wm">Sazs Apps </div>
+
+  <div class="faq-inner">
+
+    <!-- Header -->
+    <div class="faq-head fa">
+      <div class="faq-head-left">
+        <div class="faq-eyebrow">
+          <span class="faq-eyebrow-line"></span>
+          <span class="faq-eyebrow-text">Sazs Apps</span>
+        </div>
+        <h2 class="faq-h2">Got <em>Questions?</em><br>We've Got Answers.</h2>
+      </div>
+      <div class="faq-head-right">
+        <p>Everything you need to know about SAZS ERP for <strong>Quarry, Crusher, RMC &amp; Brick</strong> operations — weighbridge integration, GST compliance, boom barriers, and more.</p>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="faq-tabs fa">
+      <button class="faq-tab active" data-cat="all">All Questions</button>
+      <button class="faq-tab" data-cat="general"> General &amp; Integration</button>
+      <button class="faq-tab" data-cat="technical">Technical &amp; Reliability</button>
+      <button class="faq-tab" data-cat="financial"> Financials &amp; Compliance</button>
+      <button class="faq-tab" data-cat="implementation"> Implementation</button>
+    </div>
+
+    <!-- FAQ List -->
+    <div class="faq-list fa" id="faqList">
+
+      <!-- General & Integration -->
+      <div class="faq-item" data-cat="general">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span class="faq-q-text">Does Sazs ERP work with my existing weighbridge?</span>
+          <span class="faq-ico"><svg viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-in">
+          <p class="faq-ans">Yes. Our ERP is designed to be hardware-agnostic. We can integrate with almost all standard electronic weighbridge scales to fetch weight data automatically, eliminating manual entry.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-cat="general">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span class="faq-q-text">How does the Boom Barrier integration work?</span>
+          <span class="faq-ico"><svg viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-in">
+          <p class="faq-ans">The Boom Barrier is linked directly to the ERP's dispatch module. The barrier will only trigger to open once a valid weighment is recorded and a GST-compliant invoice or delivery challan is generated, ensuring no vehicle leaves your site without proper documentation.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-cat="general">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span class="faq-q-text">Can I manage multiple sites (Quarry, RMC, and Brick Plant) in one login?</span>
+          <span class="faq-ico"><svg viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-in">
+          <p class="faq-ans">Absolutely. Sazs ERP is a multi-site, multi-entity platform. You can switch between different business units or view a consolidated Owner's Dashboard to see the total performance of your entire group.</p>
+        </div></div>
+      </div>
+
+      <!-- Technical & Reliability -->
+      <div class="faq-item" data-cat="technical">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span class="faq-q-text">What happens if the internet goes down at the Quarry site?</span>
+          <span class="faq-ico"><svg viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-in">
+          <p class="faq-ans">Our system is designed for real-time, centralized operations, so a stable internet connection is mandatory at quarry locations. This ensures that all weighments, dispatches, invoices, and approvals are recorded instantly in the central server without delay. Unlike offline systems, our live-online architecture provides complete transparency in transactions, real-time monitoring from head office, prevention of data manipulation or backdated entries, and stronger audit control and compliance. We recommend maintaining a backup internet connection (secondary ISP or 4G/5G failover) to avoid operational interruptions.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-cat="technical">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span class="faq-q-text">Is our data secure? Who can see my profit and loss reports?</span>
+          <span class="faq-ico"><svg viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-in">
+          <p class="faq-ans">The ERP uses Role-Based Access Control (RBAC). You decide exactly what your weighbridge operator, accountant, or manager can see, and sensitive financial data and P&amp;L reports are restricted to the owner or authorized admins only.</p>
+        </div></div>
+      </div>
+
+      <!-- Financials & Compliance -->
+      <div class="faq-item" data-cat="financial">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span class="faq-q-text">Does the software automatically generate E-Way Bills and E-Invoices?</span>
+          <span class="faq-ico"><svg viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-in">
+          <p class="faq-ans">Yes. Through direct API integration with the GST portal, you can generate E-Invoices (with IRN and QR codes) and E-Way bills instantly upon dispatch, without manual data entry on government websites.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-cat="financial">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span class="faq-q-text">Can the system handle piece-rate payments for Brick Plants?</span>
+          <span class="faq-ico"><svg viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-in">
+          <p class="faq-ans">Yes. A specialized Brick Plant Labor Management module tracks daily production counts (molding, loading, unloading) and calculates wages automatically, reducing disputes and overpayments.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-cat="financial">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span class="faq-q-text">How does the "Credit Limit" feature work for RMC and Quarry customers?</span>
+          <span class="faq-ico"><svg viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-in">
+          <p class="faq-ans">You can set a credit limit for every customer. If a customer places an order that exceeds their limit, or has unpaid invoices beyond a certain date, the ERP will automatically block dispatch until the payment is cleared or an override is granted by the owner.</p>
+        </div></div>
+      </div>
+
+      <!-- Implementation -->
+      <div class="faq-item" data-cat="implementation">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span class="faq-q-text">How long does it take to set up the system?</span>
+          <span class="faq-ico"><svg viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-in">
+          <p class="faq-ans">A standard implementation, including weighbridge integration, typically takes 7 to 14 days. This includes hardware setup, data migration, and training your staff.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-cat="implementation">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span class="faq-q-text">Do you provide training for my staff?</span>
+          <span class="faq-ico"><svg viewBox="0 0 14 14" fill="none" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-in">
+          <p class="faq-ans">Yes. We provide comprehensive on-site or remote training for your operators, accountants, and managers to ensure they are comfortable using the system from day one.</p>
+        </div></div>
+      </div>
+
+    </div><!-- /faq-list -->
+
+
+
+  </div>
+</section>
+
+<script>
+function toggleFAQ(btn) {
+  const item   = btn.closest('.faq-item');
+  const body   = item.querySelector('.faq-body');
+  const isOpen = item.classList.contains('open');
+
+  document.querySelectorAll('.faq-item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-body').classList.remove('open');
+  });
+
+  if (!isOpen) {
+    item.classList.add('open');
+    body.classList.add('open');
+  }
+}
+
+function markFirstVisible() {
+  document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('is-first'));
+  const visible = [...document.querySelectorAll('.faq-item')].filter(el => el.style.display !== 'none');
+  if (visible.length) visible[0].classList.add('is-first');
+
+  if (window.innerWidth > 900) {
+    let prevBottom = -1;
+    visible.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      if (prevBottom > 0 && rect.top < prevBottom - 10) item.classList.add('is-first');
+      prevBottom = Math.max(prevBottom, rect.bottom);
+    });
+  }
+}
+
+document.querySelectorAll('.faq-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat = tab.dataset.cat;
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const show = (cat === 'all' || item.dataset.cat === cat);
+      item.style.display = show ? '' : 'none';
+      if (!show) {
+        item.classList.remove('open');
+        item.querySelector('.faq-body').classList.remove('open');
+      }
+    });
+    setTimeout(markFirstVisible, 30);
+  });
+});
+
+window.addEventListener('load',   markFirstVisible);
+window.addEventListener('resize', markFirstVisible);
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.fa').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.1) + 's';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>

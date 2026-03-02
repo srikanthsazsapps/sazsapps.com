@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <link rel="preload" href="../src/js/comman.js" as="script">
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../src/assets/logo/logoblack.png">
+    <link rel="preload" href="../src/js/comman.js" as="script">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../src/assets/logo/logoblack.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jharkhand Mining & Construction Show 2026 | SAZS Apps ERP Solutions</title>
-    <meta name="description" content="Sazs Apps at JMC 2026 - Showcasing enterprise ERP solutions for mining, quarry, and construction industries in Ranchi, Jharkhand">
- <link rel="stylesheet" href="../src/css/minified/comman.min.css">
-     <script src="../src/js/comman.js" defer></script>
+    <meta name="description"
+        content="Sazs Apps at JMC 2026 - Showcasing enterprise ERP solutions for mining, quarry, and construction industries in Ranchi, Jharkhand">
+    <link rel="stylesheet" href="../src/css/minified/comman.min.css">
+    <script src="../src/js/comman.js" defer></script>
 
     <style>
         * {
@@ -33,14 +35,14 @@
             --blue-light: #3b82f6;
             --blue-dark: #1e40af;
         }
-        
-        body { 
-            margin: 0; 
-            background-color: #000; 
-            color: #fff; 
+
+        body {
+            margin: 0;
+            background-color: #000;
+            color: #fff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
 
         /* ============================================
@@ -88,8 +90,8 @@
             font-size: 0.9rem;
             letter-spacing: 2px;
             opacity: 0;
-            animation: fadeInUp 1s ease forwards, 
-                       badgeGlow 3s ease-in-out 2s infinite;
+            animation: fadeInUp 1s ease forwards,
+                badgeGlow 3s ease-in-out 2s infinite;
             color: white;
             font-weight: 600;
         }
@@ -113,8 +115,8 @@
             overflow: hidden;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
             opacity: 0;
-            animation: heroImageBounce 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards, 
-                       heroFloat 6s ease-in-out 2s infinite;
+            animation: heroImageBounce 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards,
+                heroFloat 6s ease-in-out 2s infinite;
         }
 
         .hero-center-image img,
@@ -154,7 +156,7 @@
             z-index: 10;
             opacity: 0;
             animation: heroStatPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
-                       floatUpDown 4s ease-in-out infinite;
+                floatUpDown 4s ease-in-out infinite;
         }
 
         .floating-stat-label {
@@ -219,7 +221,7 @@
             top: 40px;
             left: -80px;
             animation: floatInLeft 1.2s ease 0.4s forwards,
-                       floatDiagonal1 5s ease-in-out 2s infinite;
+                floatDiagonal1 5s ease-in-out 2s infinite;
             transform: rotate(-6deg);
         }
 
@@ -229,7 +231,7 @@
             top: 40px;
             right: -80px;
             animation: floatInRight 1.2s ease 0.5s forwards,
-                       floatDiagonal2 5.5s ease-in-out 2.5s infinite;
+                floatDiagonal2 5.5s ease-in-out 2.5s infinite;
             transform: rotate(6deg);
         }
 
@@ -239,7 +241,7 @@
             bottom: 40px;
             left: -80px;
             animation: floatInLeft 1.2s ease 0.6s forwards,
-                       floatDiagonal3 6s ease-in-out 3s infinite;
+                floatDiagonal3 6s ease-in-out 3s infinite;
             transform: rotate(4deg);
         }
 
@@ -249,7 +251,7 @@
             bottom: 40px;
             right: -80px;
             animation: floatInRight 1.2s ease 0.7s forwards,
-                       floatDiagonal4 5.2s ease-in-out 3.5s infinite;
+                floatDiagonal4 5.2s ease-in-out 3.5s infinite;
             transform: rotate(-4deg);
         }
 
@@ -289,7 +291,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
             opacity: 0;
             animation: fadeInUp 1s ease 1.2s forwards,
-                       buttonBreathe 4s ease-in-out 2s infinite;
+                buttonBreathe 4s ease-in-out 2s infinite;
         }
 
         .cta-button:hover {
@@ -305,6 +307,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -316,9 +319,11 @@
                 opacity: 0;
                 transform: scale(0.7) translateY(50px);
             }
+
             50% {
                 transform: scale(1.05) translateY(-10px);
             }
+
             100% {
                 opacity: 1;
                 transform: scale(1) translateY(0);
@@ -330,9 +335,11 @@
                 opacity: 0;
                 transform: scale(0.5) rotate(-10deg);
             }
+
             70% {
                 transform: scale(1.1) rotate(2deg);
             }
+
             100% {
                 opacity: 1;
                 transform: scale(1) rotate(0deg);
@@ -344,6 +351,7 @@
                 opacity: 0;
                 transform: translateX(-100px) rotate(-15deg);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0) rotate(-6deg);
@@ -355,6 +363,7 @@
                 opacity: 0;
                 transform: translateX(100px) rotate(15deg);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0) rotate(6deg);
@@ -362,73 +371,97 @@
         }
 
         @keyframes heroFloat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-20px);
             }
         }
 
         @keyframes floatUpDown {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-15px);
             }
         }
 
         @keyframes floatDiagonal1 {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0) rotate(-6deg);
             }
+
             50% {
                 transform: translate(-10px, -15px) rotate(-8deg);
             }
         }
 
         @keyframes floatDiagonal2 {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0) rotate(6deg);
             }
+
             50% {
                 transform: translate(10px, -15px) rotate(8deg);
             }
         }
 
         @keyframes floatDiagonal3 {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0) rotate(4deg);
             }
+
             50% {
                 transform: translate(-10px, 15px) rotate(6deg);
             }
         }
 
         @keyframes floatDiagonal4 {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0) rotate(-4deg);
             }
+
             50% {
                 transform: translate(10px, 15px) rotate(-6deg);
             }
         }
 
         @keyframes badgeGlow {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
             }
+
             50% {
                 box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
             }
         }
 
         @keyframes buttonBreathe {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
                 box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
             }
+
             50% {
                 transform: scale(1.02);
                 box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
@@ -571,7 +604,7 @@
         /* ============================================
            TIMELINE CONTENT SECTION - WHITE THEME
            ============================================ */
-        .timeline-area { 
+        .timeline-area {
             padding: 60px 0;
             background: #ffffff;
         }
@@ -587,17 +620,17 @@
             transition: all 0.8s ease;
         }
 
-        .timeline-item.show-animation { 
-            opacity: 1; 
-            transform: translateY(0); 
+        .timeline-item.show-animation {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .picture-block { 
+        .picture-block {
             width: 100%;
-            border-radius: 16px; 
+            border-radius: 16px;
             overflow: hidden;
             height: 250px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             position: relative;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
@@ -609,7 +642,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
             transition: left 0.6s ease;
         }
 
@@ -621,10 +654,10 @@
             transform: scale(1.03);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
-        
-        .picture-block img { 
-            width: 100%; 
-            height: 100%; 
+
+        .picture-block img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.4s ease;
         }
@@ -633,16 +666,16 @@
             transform: scale(1.1);
         }
 
-        .info-block { 
+        .info-block {
             width: 100%;
-            padding: 10px; 
+            padding: 10px;
             text-align: left;
         }
-        
-        .phase-number { 
-            color: var(--blue-highlight); 
-            font-weight: 900; 
-            font-size: 2.5rem; 
+
+        .phase-number {
+            color: var(--blue-highlight);
+            font-weight: 900;
+            font-size: 2.5rem;
             line-height: 1;
             margin-bottom: 8px;
             opacity: 0;
@@ -873,9 +906,11 @@
                 opacity: 0;
                 transform: translateY(50px) scale(0.95);
             }
+
             60% {
                 transform: translateY(-10px) scale(1.02);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -1012,10 +1047,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0) 0%, 
-                rgba(245, 245, 245, 0) 50%, 
-                rgba(255, 255, 255, 0) 100%);
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(245, 245, 245, 0) 50%,
+                    rgba(255, 255, 255, 0) 100%);
             z-index: 1;
         }
 
@@ -1033,10 +1068,13 @@
         }
 
         @keyframes spotlightPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.3;
                 transform: translateX(-50%) scale(1);
             }
+
             50% {
                 opacity: 0.6;
                 transform: translateX(-50%) scale(1.1);
@@ -1057,18 +1095,24 @@
         }
 
         @keyframes iconFloat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) rotate(0deg);
             }
+
             50% {
                 transform: translateY(-20px) rotate(5deg);
             }
         }
 
         @keyframes iconGlow {
-            0%, 100% {
+
+            0%,
+            100% {
                 filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2));
             }
+
             50% {
                 filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.4));
             }
@@ -1125,7 +1169,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.02) 50%, transparent 52%),
                 linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.02) 50%, transparent 52%);
             background-size: 100px 100px;
@@ -1165,9 +1209,12 @@
         }
 
         @keyframes badgePulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
             }
+
             50% {
                 box-shadow: 0 0 40px rgba(37, 99, 235, 0.5);
             }
@@ -1195,13 +1242,16 @@
                 opacity: 0;
                 transform: scale(0.3);
             }
+
             50% {
                 opacity: 1;
                 transform: scale(1.05);
             }
+
             70% {
                 transform: scale(0.9);
             }
+
             100% {
                 opacity: 1;
                 transform: scale(1);
@@ -1213,6 +1263,7 @@
                 opacity: 0;
                 transform: translateX(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -1223,15 +1274,19 @@
             0% {
                 left: -100%;
             }
+
             100% {
                 left: 100%;
             }
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.1);
             }
@@ -1243,6 +1298,7 @@
             .hero-content {
                 max-width: 1600px;
             }
+
             .container {
                 max-width: 1320px;
             }
@@ -1253,11 +1309,11 @@
             .hero-visual-section {
                 max-width: 1000px;
             }
-            
+
             .floating-stat {
                 padding: 1.5rem 2rem;
             }
-            
+
             .floating-stat-value {
                 font-size: 3rem;
             }
@@ -1265,11 +1321,12 @@
 
         /* Tablet Landscape */
         @media (max-width: 1199px) {
+
             .floating-image,
             .floating-stat {
                 display: none;
             }
-            
+
             .hero-visual-section {
                 min-height: 450px;
                 max-width: 900px;
@@ -1278,12 +1335,12 @@
             .hero-center-image {
                 max-width: 85%;
             }
-            
+
             .hero-center-title {
                 padding: 1.2rem 3rem;
                 bottom: 25px;
             }
-            
+
             .hero-center-title h2 {
                 font-size: clamp(1.8rem, 4vw, 3rem);
                 letter-spacing: 2px;
@@ -1296,49 +1353,49 @@
                 padding: 3rem 1.5rem 2rem;
                 min-height: 90vh;
             }
-            
+
             .hero-content {
                 padding: 0 1rem;
             }
-            
+
             .hero-visual-section {
                 min-height: 400px;
                 max-width: 700px;
                 margin-bottom: 2rem;
             }
-            
+
             .hero-center-image {
                 max-width: 90%;
                 border-radius: 20px;
             }
-            
+
             .hero-center-title {
                 padding: 1rem 2.5rem;
                 bottom: 20px;
                 border-radius: 12px;
             }
-            
+
             .hero-center-title h2 {
                 font-size: clamp(1.5rem, 3.5vw, 2.5rem);
                 letter-spacing: 1.5px;
             }
-            
+
             .hero-badge {
                 padding: 0.4rem 1.2rem;
                 font-size: 0.85rem;
                 margin-bottom: 1.5rem;
             }
-            
+
             .hero h1 {
                 font-size: clamp(2rem, 6vw, 3.5rem);
                 margin-bottom: 1.2rem;
             }
-            
+
             .hero-subtitle {
                 font-size: clamp(1rem, 2.5vw, 1.3rem);
                 margin-bottom: 2.5rem;
             }
-            
+
             .cta-button {
                 padding: 1rem 2.5rem;
                 font-size: 1rem;
@@ -1385,48 +1442,48 @@
                 padding: 2.5rem 1rem 1.5rem;
                 min-height: 85vh;
             }
-            
+
             .hero-visual-section {
                 min-height: 350px;
                 max-width: 100%;
                 margin-bottom: 1.5rem;
             }
-            
+
             .hero-center-image {
                 max-width: 95%;
                 border-radius: 15px;
             }
-            
+
             .hero-center-title {
                 padding: 0.8rem 2rem;
                 bottom: 15px;
                 border-radius: 10px;
             }
-            
+
             .hero-center-title h2 {
                 font-size: clamp(1.3rem, 4vw, 2rem);
                 letter-spacing: 1px;
             }
-            
+
             .hero-badge {
                 padding: 0.4rem 1rem;
                 font-size: 0.8rem;
                 letter-spacing: 1.5px;
                 margin-bottom: 1.2rem;
             }
-            
+
             .hero h1 {
                 font-size: clamp(1.8rem, 5.5vw, 3rem);
                 margin-bottom: 1rem;
                 line-height: 1.2;
             }
-            
+
             .hero-subtitle {
                 font-size: clamp(0.95rem, 2.2vw, 1.2rem);
                 margin-bottom: 2rem;
                 padding: 0 0.5rem;
             }
-            
+
             .cta-button {
                 padding: 0.9rem 2rem;
                 font-size: 0.95rem;
@@ -1484,46 +1541,46 @@
             .hero {
                 padding: 2rem 0.8rem 1rem;
             }
-            
+
             .hero-content {
                 padding: 0 0.5rem;
             }
-            
+
             .hero-visual-section {
                 min-height: 300px;
                 margin-bottom: 1.2rem;
             }
-            
+
             .hero-center-image {
                 max-width: 100%;
                 border-radius: 12px;
             }
-            
+
             .hero-center-title {
                 padding: 0.6rem 1.5rem;
                 bottom: 12px;
             }
-            
+
             .hero-center-title h2 {
                 font-size: clamp(1.2rem, 5vw, 1.8rem);
             }
-            
+
             .hero-badge {
                 padding: 0.35rem 0.9rem;
                 font-size: 0.75rem;
                 letter-spacing: 1px;
             }
-            
+
             .hero h1 {
                 font-size: clamp(1.6rem, 6vw, 2.5rem);
                 line-height: 1.15;
             }
-            
+
             .hero-subtitle {
                 font-size: clamp(0.9rem, 2.5vw, 1.1rem);
                 margin-bottom: 1.8rem;
             }
-            
+
             .cta-button {
                 padding: 0.85rem 1.8rem;
                 font-size: 0.9rem;
@@ -1548,35 +1605,35 @@
                 padding: 1.5rem 0.5rem 1rem;
                 min-height: 80vh;
             }
-            
+
             .hero-visual-section {
                 min-height: 250px;
                 margin-bottom: 1rem;
             }
-            
+
             .hero-center-title {
                 padding: 0.5rem 1.2rem;
                 bottom: 10px;
             }
-            
+
             .hero-center-title h2 {
                 font-size: clamp(1.1rem, 5.5vw, 1.6rem);
             }
-            
+
             .hero-badge {
                 font-size: 0.7rem;
                 padding: 0.3rem 0.8rem;
             }
-            
+
             .hero h1 {
                 font-size: clamp(1.4rem, 6.5vw, 2.2rem);
             }
-            
+
             .hero-subtitle {
                 font-size: clamp(0.85rem, 3vw, 1.05rem);
                 margin-bottom: 1.5rem;
             }
-            
+
             .cta-button {
                 padding: 0.8rem 1.5rem;
                 font-size: 0.85rem;
@@ -1589,7 +1646,7 @@
                 min-height: auto;
                 padding: 2rem 1rem;
             }
-            
+
             .hero-visual-section {
                 min-height: 250px;
             }
@@ -1770,10 +1827,9 @@
             color: rgba(0, 0, 0, 0.5);
             font-size: 0.85rem;
         }
-
     </style>
 
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -1811,6 +1867,7 @@
 
 
 </head>
+
 <body>
 
     <nav class="sazs-header">
@@ -1945,7 +2002,7 @@
                 </div>
                 <div class="bento-container">
                     <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
-                        href="../products/Anprs.html" class="card anpr">
+                        href="../features/Anprs.html" class="card anpr">
                         <img src="../src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
                         <div class="card-content">
                             <h2>ANPR Camera</h2>
@@ -1965,7 +2022,7 @@
 
 
                     <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
-                        href="../products/EInvoice.html" class="card einvoice">
+                        href="../features/EInvoice.html" class="card einvoice">
                         <img src="../src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
                         <div class="card-content">
                             <h2>E-Invoice</h2>
@@ -1983,7 +2040,7 @@
                     </a>
 
                     <a style="color: #000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
-                        href="../products/Weighbridge.html" class="card weighbridge">
+                        href="../features/Weighbridge.html" class="card weighbridge">
                         <img src="../src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
                         <div class="card-content">
                             <h2>Weighbridge</h2>
@@ -1996,8 +2053,9 @@
                     </a>
 
                     <a style="color: #000000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
-                        href="../products/Boombarrier.html" class="card boom">
-                        <img src="../src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
+                        href="../features/Boombarrier.html" class="card boom">
+                        <img src="../src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier"
+                            class="card-bg-image">
                         <div class="card-content">
                             <h2>Boom Barrier</h2>
                             <p>Automated gate control</p>
@@ -2011,7 +2069,7 @@
                     </a>
 
                     <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
-                        href="../products/biometrics.html" class="card biometrics">
+                        href="../features/biometrics.html" class="card biometrics">
                         <img src="../src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
                         <div class="card-content">
                             <h2>Biometrics</h2>
@@ -2118,7 +2176,8 @@
                         </div>
                     </div>
                     <div class="blogs-cards-grid">
-                        <a href="../case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
+                        <a href="../case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html"
+                            class="blog-card">
                             <div class="blog-card-image">
                                 <img src="../src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
                                 <div class="blog-card-overlay">
@@ -2197,11 +2256,11 @@
                 </svg> </a>
             <div class="mobile-dropdown-content">
                 <!-- <a href="features.html">Features</a> -->
-                                <a href="../features/Anprs.html">ANPR Camera Integration</a>
+                <a href="../features/Anprs.html">ANPR Camera Integration</a>
                 <a href="../features/EInvoice.html">E-Invoice Integration</a>
-                <a href="../products/Weighbridge.html">Weighbridge and Camera Integration</a>
-                <a href="../products/Boombarrier.html">Boom Barrier Integration</a>
-                <a href="../products/biometrics.html">Biometrics</a>
+                <a href="../features/Weighbridge.html">Weighbridge and Camera Integration</a>
+                <a href="../features/Boombarrier.html">Boom Barrier Integration</a>
+                <a href="../features/biometrics.html">Biometrics</a>
             </div>
         </div>
         <div class="mobile-dropdown">
@@ -2236,9 +2295,11 @@
                 <a href="../media-events/Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
                 <a href="../media-events/EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
                 <a href="../media-events/IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
-                <a href="../media-events/TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
+                <a href="../media-events/TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet
+                    2024</a>
                 <a href="../media-events/EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
-                <a href="../media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
+                <a href="../media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association
+                    Expo 2023</a>
             </div>
         </div>
         <a href="../QuarryCrusherRMCProfitCalculator.html">Profit Calc</a>
@@ -2269,22 +2330,22 @@
     <!-- ============================================
          HERO SECTION - HTML (BLACK THEME)
          ============================================ -->
-    <section class="hero" >
+    <section class="hero">
         <div class="hero-content">
             <div class="hero-badge">RANCHI • 2026</div>
-            
+
             <div class="hero-visual-section">
                 <!-- Floating Stats -->
                 <div class="floating-stat stat-top-left">
                     <div class="floating-stat-label">Days of Innovation</div>
                     <div class="floating-stat-value">3</div>
                 </div>
-                
+
                 <div class="floating-stat stat-top-right">
                     <div class="floating-stat-label">Industry Leaders Engaged</div>
                     <div class="floating-stat-value">100+</div>
                 </div>
-                
+
                 <div class="floating-stat stat-bottom-right">
                     <div class="floating-stat-label">ERP Integrations Showcased</div>
                     <div class="floating-stat-value">15+</div>
@@ -2294,15 +2355,15 @@
                 <div class="floating-image float-img-1">
                     <img src="../src/assets/imageevent/event6/Img1.avif" alt="Team at JMC 2026">
                 </div>
-                
+
                 <div class="floating-image float-img-2">
                     <img src="../src/assets/imageevent/event6/Img2.avif" alt="Industry Speaker">
                 </div>
-                
+
                 <div class="floating-image float-img-3">
                     <img src="../src/assets/imageevent/event6/Img3.avif" alt="Customer Engagement">
                 </div>
-                
+
                 <div class="floating-image float-img-4">
                     <img src="../src/assets/imageevent/event6/Img4.avif" alt="ERP Demo">
                 </div>
@@ -2319,7 +2380,8 @@
             <!-- Hero Text Content -->
             <h1>Jharkhand Mining & Construction Show 2026</h1>
             <p class="hero-subtitle">
-                Premier industry platform showcasing enterprise ERP solutions for mining, quarry, and construction sectors
+                Premier industry platform showcasing enterprise ERP solutions for mining, quarry, and construction
+                sectors
             </p>
             <a href="#overview" class="cta-button">Explore Our Journey</a>
         </div>
@@ -2330,8 +2392,13 @@
         <div class="container">
             <div class="intro-text-wrapper">
                 <h2>Event Overview</h2>
-                <p>Sazs Apps Private Limited participated as an exhibitor at the Jharkhand Mining & Construction Show 2026 (JMC 2026), held in Ranchi, Jharkhand. The exhibition served as a premier industry platform for stakeholders across the mining, quarry, and construction sectors, enabling collaboration, technology exchange, and business networking.</p>
-                <p>As one of the key technology-focused exhibitors, Sazs Apps showcased its industry-specific ERP solutions designed to address the operational, compliance, and scalability challenges of infrastructure-driven enterprises.</p>
+                <p>Sazs Apps Private Limited participated as an exhibitor at the Jharkhand Mining & Construction Show
+                    2026 (JMC 2026), held in Ranchi, Jharkhand. The exhibition served as a premier industry platform for
+                    stakeholders across the mining, quarry, and construction sectors, enabling collaboration, technology
+                    exchange, and business networking.</p>
+                <p>As one of the key technology-focused exhibitors, Sazs Apps showcased its industry-specific ERP
+                    solutions designed to address the operational, compliance, and scalability challenges of
+                    infrastructure-driven enterprises.</p>
                 <span class="highlight-tag">Premier Technology Exhibitor</span>
             </div>
         </div>
@@ -2348,8 +2415,8 @@
 
     <!-- Day-by-Day Content (WHITE THEME) -->
     <section class="timeline-area" style="background-color: #000; padding: 20px; ">
-        <div class="container" style="background-color: #ffffff; border-radius: 50px;" >
-            
+        <div class="container" style="background-color: #ffffff; border-radius: 50px;">
+
             <!-- Day 1 -->
             <div class="timeline-item animate-on-scroll">
                 <div class="picture-block">
@@ -2359,7 +2426,10 @@
                     <div class="phase-number">DAY 1</div>
                     <div class="phase-date">February 2026</div>
                     <h2>Industry Engagement & Networking</h2>
-                    <p>The opening day focused on establishing industry connections and understanding operational challenges across mining and construction businesses. Our team engaged with plant owners, operations heads, and decision-makers, discussing current pain points related to manual processes, fragmented data, and compliance management.</p>
+                    <p>The opening day focused on establishing industry connections and understanding operational
+                        challenges across mining and construction businesses. Our team engaged with plant owners,
+                        operations heads, and decision-makers, discussing current pain points related to manual
+                        processes, fragmented data, and compliance management.</p>
                     <p style="margin-top: 15px; margin-bottom: 10px; font-weight: 600;">Key focus areas included:</p>
                     <ul class="bullet-list">
                         <li>Digital readiness of mining and quarry operations</li>
@@ -2378,14 +2448,17 @@
                     <div class="phase-number">DAY 2</div>
                     <div class="phase-date">February 2026</div>
                     <h2>Digital Transformation & ERP Demonstrations</h2>
-                    <p>Day two centered on enterprise-level discussions around digital transformation. Sazs Apps demonstrated how its integrated ERP platform enables:</p>
+                    <p>Day two centered on enterprise-level discussions around digital transformation. Sazs Apps
+                        demonstrated how its integrated ERP platform enables:</p>
                     <ul class="bullet-list">
                         <li>Real-time operational visibility across geographically distributed sites</li>
                         <li>Asset traceability and lifecycle management</li>
                         <li>Compliance alignment and statutory reporting</li>
                         <li>Data-driven decision-making through centralized dashboards</li>
                     </ul>
-                    <p style="margin-top: 15px;">These interactions reinforced a clear industry shift toward centralized operations, real-time analytics, and scalable digital infrastructure to support sustainable growth.</p>
+                    <p style="margin-top: 15px;">These interactions reinforced a clear industry shift toward centralized
+                        operations, real-time analytics, and scalable digital infrastructure to support sustainable
+                        growth.</p>
                 </div>
             </div>
 
@@ -2398,7 +2471,9 @@
                     <div class="phase-number">DAY 3</div>
                     <div class="phase-date">February 2026</div>
                     <h2>Recognition & Strategic Alignment</h2>
-                    <p>The final day marked the successful conclusion of the event with exhibitor recognition for Sazs Apps Private Limited. The recognition acknowledged our contribution to advancing technology-led execution in the mining and construction ecosystem.</p>
+                    <p>The final day marked the successful conclusion of the event with exhibitor recognition for Sazs
+                        Apps Private Limited. The recognition acknowledged our contribution to advancing technology-led
+                        execution in the mining and construction ecosystem.</p>
                     <p style="margin-top: 15px; margin-bottom: 10px;">Discussions on Day 3 focused on:</p>
                     <ul class="bullet-list">
                         <li>Long-term digital roadmaps</li>
@@ -2418,7 +2493,7 @@
                 <h2>Key Industry Insights</h2>
                 <p class="insights-intro">Insights gathered across the three-day event highlighted:</p>
             </div>
-            
+
             <div class="insights-grid">
                 <div class="insight-card insight-card-1">
                     <div class="insight-content">
@@ -2426,21 +2501,21 @@
                         <p>Increasing demand for ERP software for mining and quarry operations</p>
                     </div>
                 </div>
-                
+
                 <div class="insight-card insight-card-2">
                     <div class="insight-content">
                         <h3>Transparency Focus</h3>
                         <p>Growing focus on operational transparency and compliance readiness</p>
                     </div>
                 </div>
-                
+
                 <div class="insight-card insight-card-3">
                     <div class="insight-content">
                         <h3>Industry 4.0 Adoption</h3>
                         <p>Adoption of Industry 4.0 principles in construction and infrastructure projects</p>
                     </div>
                 </div>
-                
+
                 <div class="insight-card insight-card-4">
                     <div class="insight-content">
                         <h3>Scalable Solutions</h3>
@@ -2448,9 +2523,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="insights-conclusion">
-                <p>These trends reaffirm the importance of purpose-built ERP solutions tailored for the infrastructure sector.</p>
+                <p>These trends reaffirm the importance of purpose-built ERP solutions tailored for the infrastructure
+                    sector.</p>
             </div>
         </div>
     </section>
@@ -2465,55 +2541,65 @@
                 <div class="recognition-icon-wrapper">
                     <div class="recognition-icon">🏆</div>
                 </div>
-                <div class="recognition-content" >
+                <div class="recognition-content">
                     <h3>Recognition & Acknowledgement</h3>
-                    <p style="color: #fff;">Sazs Apps Private Limited was honored as an exhibitor at Jharkhand Mining & Construction Show 2026. This recognition reflects our ongoing commitment to delivering enterprise-grade ERP solutions that enable operational excellence, regulatory compliance, and digital maturity.</p>
+                    <p style="color: #fff;">Sazs Apps Private Limited was honored as an exhibitor at Jharkhand Mining &
+                        Construction Show 2026. This recognition reflects our ongoing commitment to delivering
+                        enterprise-grade ERP solutions that enable operational excellence, regulatory compliance, and
+                        digital maturity.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Looking Ahead Section (BLACK THEME) -->
-<!-- Looking Ahead Section (BLACK THEME) -->
-<section class="looking-ahead-section animate-on-scroll">
+    <!-- Looking Ahead Section (BLACK THEME) -->
+    <section class="looking-ahead-section animate-on-scroll">
 
-    <!-- Video Background Wrapper -->
-    <div style="position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:0; opacity:0.3;">
-        <!-- <iframe
+        <!-- Video Background Wrapper -->
+        <div
+            style="position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:0; opacity:0.3;">
+            <!-- <iframe
             src="https://www.youtube-nocookie.com/embed/BsS-2fAxFf8?rel=0&modestbranding=1&showinfo=0&autoplay=1&mute=1&loop=1&playlist=BsS-2fAxFf8&controls=0"
             style="position:absolute; top:-10%; left:-5%; width:110%; height:120%; border:none; pointer-events:none;"
             allow="autoplay; encrypted-media"
             allowfullscreen>
         </iframe> -->
-    </div>
-
-    <!-- Video Card (clickable/playable) -->
-    <div class="container" style="position:relative; z-index:2;">
-
-        <div class="looking-ahead-content" style="max-width:1000px; margin:0 auto;">
-            <div class="looking-ahead-badge">FUTURE FORWARD</div>
-            <h2>Looking Ahead</h2>
-            <p>Participation at JMC 2026 strengthened existing partnerships and opened avenues for new collaborations across the mining and construction industry. Sazs Apps remains committed to supporting organizations in their digital transformation journey through reliable, scalable, and industry-focused ERP platforms.</p>
         </div>
 
-        <!-- Playable Video Card below the text -->
-        <div style="max-width:900px; margin:50px auto 0; border-radius:16px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
-            <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden;">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/BsS-2fAxFf8?rel=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=BsS-2fAxFf8"
-                    style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div style="padding:30px 40px; background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9));">
-                <h3 style="font-size:clamp(1.4rem,3vw,2rem); color:#fff; margin-bottom:10px;">JMC 2026 – Looking Ahead</h3>
-                <p style="font-size:1rem; color:rgba(255,255,255,0.8);">Watch our highlights from the Jharkhand Mining & Construction Show 2026.</p>
-            </div>
-        </div>
+        <!-- Video Card (clickable/playable) -->
+        <div class="container" style="position:relative; z-index:2;">
 
-    </div>
-</section>
+            <div class="looking-ahead-content" style="max-width:1000px; margin:0 auto;">
+                <div class="looking-ahead-badge">FUTURE FORWARD</div>
+                <h2>Looking Ahead</h2>
+                <p>Participation at JMC 2026 strengthened existing partnerships and opened avenues for new
+                    collaborations across the mining and construction industry. Sazs Apps remains committed to
+                    supporting organizations in their digital transformation journey through reliable, scalable, and
+                    industry-focused ERP platforms.</p>
+            </div>
+
+            <!-- Playable Video Card below the text -->
+            <div
+                style="max-width:900px; margin:50px auto 0; border-radius:16px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
+                <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden;">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/BsS-2fAxFf8?rel=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=BsS-2fAxFf8"
+                        style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"
+                        allow="autoplay; encrypted-media" allowfullscreen>
+                    </iframe>
+                </div>
+                <div
+                    style="padding:30px 40px; background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9));">
+                    <h3 style="font-size:clamp(1.4rem,3vw,2rem); color:#fff; margin-bottom:10px;">JMC 2026 – Looking
+                        Ahead</h3>
+                    <p style="font-size:1rem; color:rgba(255,255,255,0.8);">Watch our highlights from the Jharkhand
+                        Mining & Construction Show 2026.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <!-- ============================================
          JAVASCRIPT
          ============================================ -->
@@ -2541,52 +2627,53 @@
 
         document.querySelectorAll('.animate-on-scroll').forEach(element => scrollObserver.observe(element));
     </script>
-        <!-- Footer -->
-        <footer class="a">
-            <div class="b">
-                <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
-                    <img src="../src/assets/images/xlogo.svg" alt="Twitter" class="d">
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
-                    class="c" rel="noopener">
-                    <img src="../src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
-                </a>
-                <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
-                    <img src="../src/assets/images/youtube.svg" alt="YouTube" class="d">
-                </a>
-                <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
-                    <img src="../src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
-                </a>
-                <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
-                    rel="noopener">
-                    <img src="../src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
-                </a>
-            </div>
+    <!-- Footer -->
+    <footer class="a">
+        <div class="b">
+            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                <img src="../src/assets/images/xlogo.svg" alt="Twitter" class="d">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
+                rel="noopener">
+                <img src="../src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                <img src="../src/assets/images/youtube.svg" alt="YouTube" class="d">
+            </a>
+            <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
+                <img src="../src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                rel="noopener">
+                <img src="../src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+            </a>
+        </div>
 
-            <div class="e">
-                <a href="../index.html" class="f">Home</a>
-                <a href="../aboutus.html" class="f">About Us</a>
-                <!-- <a href="features.html" class="f">Explore Features</a> -->
-                <a href="../careers.html" class="f">Careers</a>
-                <a href="../contact.html" class="f">Contact Us</a>
-                <a href="../Signup.html" class="f">Request a Demo</a>
-                <a href="../termsofService.html" class="f">Terms of Service</a>
-                <a href="../privacyPolicy.html" class="f">Privacy Policy</a>
-                <a href="../dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+        <div class="e">
+            <a href="../index.html" class="f">Home</a>
+            <a href="../aboutus.html" class="f">About Us</a>
+            <!-- <a href="features.html" class="f">Explore Features</a> -->
+            <a href="../careers.html" class="f">Careers</a>
+            <a href="../contact.html" class="f">Contact Us</a>
+            <a href="../Signup.html" class="f">Request a Demo</a>
+            <a href="../termsofService.html" class="f">Terms of Service</a>
+            <a href="../privacyPolicy.html" class="f">Privacy Policy</a>
+            <a href="../dataProtectionPolicy.html" class="f">Data Protection Policy</a>
 
-            </div>
-        </footer>
-        <footer class="footerbottom">
-            <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+        </div>
+    </footer>
+    <footer class="footerbottom">
+        <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
             May I help you?
         </a> -->
-            <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
-            <!-- <button class="scroll-top" aria-label="Scroll to top">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+        <button class="scroll-top" aria-label="Scroll to top">
+            <!-- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 19V5M5 12l7-7 7 7" />
-                </svg>
-            </button> -->
-        </footer>
+                </svg> -->
+
+        </button>
+    </footer>
 
     <script defer>
         function animateCountUp(element, target) {
@@ -2655,7 +2742,7 @@
             });
         });
 
-        
+
 
 
         window.onscroll = function () {
@@ -2756,12 +2843,14 @@
             animatedElements.forEach((el) => observer.observe(el));
         });
     </script>
-    <a href="https://wa.me/7666628000?text=Hi%20SAZS%20Apps%20Team%2C%20I%20have%20a%20question%20about%20your%20ERP." 
-   target="_blank" 
-   style="position:fixed;bottom:30px;right:30px;z-index:9999;background:#25D366;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);"
-   aria-label="Chat on WhatsApp">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="32" height="32">
-</a>
+    <a href="https://wa.me/7666628000?text=Hi%20SAZS%20Apps%20Team%2C%20I%20have%20a%20question%20about%20your%20ERP."
+        target="_blank"
+        style="position:fixed;bottom:30px;right:30px;z-index:9999;background:#25D366;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);"
+        aria-label="Chat on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="32"
+            height="32">
+    </a>
 
 </body>
+
 </html>

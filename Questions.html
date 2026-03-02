@@ -12,12 +12,12 @@
     <link href="src/css/Questions.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="src/assets/logo/logoblack.png">
     <link rel="preload" href="src/js/comman.js" as="script">
-        <script src="src/js/comman.js" defer></script>
+    <script src="src/js/comman.js" defer></script>
 
 
-        
 
-<script type="application/ld+json">
+
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -495,7 +495,8 @@
                 <a href="/media-events/IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
                 <a href="/media-events/TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
                 <a href="/media-events/EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
-                <a href="/media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
+                <a href="/media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association
+                    Expo 2023</a>
             </div>
         </div>
         <a href="ProfitCalculator.html">Profit Calc</a>
@@ -643,7 +644,7 @@
                         Get in touch with the Sazs ERP team — we're happy to help with weighbridge, quarry, RMC, or
                         brick plant questions.
                     </p>
-                    <a href="https://wa.me/919999999999?text=Hi%20SAZS%20Apps%20Team%2C%20I%20have%20a%20question%20about%20your%20ERP."
+                    <a href="https://wa.me/7666628000?text=Hi%20SAZS%20Apps%20Team%2C%20I%20have%20a%20question%20about%20your%20ERP."
                         class="contact-btn" target="_blank">Contact us</a>
                 </div>
             </div>
@@ -670,12 +671,117 @@
                             <span>How does the Boom Barrier integration work?</span>
                             <span class="faq-toggle">+</span>
                         </div>
+
                         <div class="faq-answer">
-                            The Boom Barrier is linked directly to the ERP's dispatch module. The barrier will only
-                            trigger to open once a valid weighment is recorded and a GST-compliant invoice or delivery
-                            challan is generated, ensuring no vehicle leaves your site without proper documentation.
+                            <p>The Boom Barrier is linked directly to the ERP's dispatch module. The barrier will only
+                                trigger to open once a valid weighment is recorded and a GST-compliant invoice or
+                                delivery challan is generated, ensuring no vehicle leaves your site without proper
+                                documentation.</p>
+
+                            <!-- Local video – autoplay + loop + muted when expanded -->
+                            <div class="faq-video-wrapper" style="margin-top: 1.5rem;">
+                                <div class="video-container">
+                                    <video id="boom-video" class="faq-demo-video" controls autoplay loop muted
+                                        playsinline preload="none" loading="lazy"
+                                        poster="./src/assets/contentImages/boom-poster.jpg"
+                                        style="width:100%; height:auto; border-radius:8px; background:#000;">
+
+                                        <source src="./src/assets/contentImages/WeighbridgeVideo.mp4" type="video/mp4">
+                                        <!-- Optional fallback -->
+                                        <!-- <source src="./src/assets/contentImages/WeighbridgeVideo.webm" type="video/webm"> -->
+
+                                        Your browser does not support the video tag.
+                                        <a href="./src/assets/contentImages/WeighbridgeVideo.mp4" download>Download demo
+                                            video</a>
+                                    </video>
+                                </div>
+
+                                <p style="font-size: 0.875rem; color: #555; margin-top: 0.75rem; text-align: center;">
+                                    Demo: Boom barrier opens only after valid weighment and invoice generation
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    <style>
+                        .video-container {
+                            position: relative;
+                            width: 100%;
+                            max-width: 720px;
+                            margin: 0 auto 1rem;
+                            background: #000;
+                            border-radius: 8px;
+                            overflow: hidden;
+                            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+                        }
+
+                        .faq-demo-video {
+                            width: 100%;
+                            height: auto;
+                            display: block;
+                            object-fit: contain;
+                        }
+
+                        /* Make sure video looks good when playing automatically */
+                        .faq-demo-video[autoplay] {
+                            pointer-events: auto;
+                            /* still allow controls */
+                        }
+
+                        /* Mobile adjustments */
+                        @media (max-width: 640px) {
+                            .faq-video-wrapper {
+                                margin-top: 1.25rem !important;
+                            }
+
+                            .video-container {
+                                border-radius: 6px;
+                            }
+
+                            .faq-demo-video {
+                                border-radius: 6px;
+                            }
+                        }
+                    </style>
+                    <script>
+                        // Add this inside your existing <script> tag (at the bottom is fine)
+
+                        function toggleFaq(element) {
+                            const faqItem = element.parentElement;
+                            const answer = faqItem.querySelector('.faq-answer');
+                            const toggle = element.querySelector('.faq-toggle');
+                            const video = faqItem.querySelector('.faq-demo-video');
+
+                            // Close other open FAQs
+                            document.querySelectorAll('.faq-item').forEach(item => {
+                                if (item !== faqItem && item.classList.contains('active')) {
+                                    item.classList.remove('active');
+                                    item.querySelector('.faq-toggle').textContent = '+';
+
+                                    // Pause video in other FAQs
+                                    const otherVideo = item.querySelector('.faq-demo-video');
+                                    if (otherVideo) otherVideo.pause();
+                                }
+                            });
+
+                            // Toggle current
+                            faqItem.classList.toggle('active');
+                            toggle.textContent = faqItem.classList.contains('active') ? '−' : '+';
+
+                            // Play / pause logic for this video
+                            if (video) {
+                                if (faqItem.classList.contains('active')) {
+                                    video.play().catch(() => {
+                                        // Some browsers may still block - user may need to tap once
+                                        console.log("Autoplay was prevented - user interaction required");
+                                    });
+                                } else {
+                                    video.pause();
+                                    // Optional: reset to start when closed
+                                    // video.currentTime = 0;
+                                }
+                            }
+                        }
+                    </script>
 
                     <div class="faq-item">
                         <div class="faq-question" onclick="toggleFaq(this)">
@@ -807,51 +913,51 @@
 
 
 
-    <footer class="a">
-        <div class="b">
-            <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/images/xlogo.svg" alt="Twitter" class="d">
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
-                rel="noopener">
-                <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
-            </a>
-            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/images/youtube.svg" alt="YouTube" class="d">
-            </a>
-            <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
-            </a>
-            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
-                rel="noopener">
-                <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
-            </a>
-        </div>
+        <footer class="a">
+            <div class="b">
+                <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
+                    <img src="src/assets/images/xlogo.svg" alt="Twitter" class="d">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank"
+                    class="c" rel="noopener">
+                    <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+                </a>
+                <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
+                    <img src="src/assets/images/youtube.svg" alt="YouTube" class="d">
+                </a>
+                <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
+                    <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+                </a>
+                <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
+                    rel="noopener">
+                    <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+                </a>
+            </div>
 
-        <div class="e">
-            <a href="index.html" class="f">Home</a>
-            <a href="aboutus.html" class="f">About Us</a>
-            <!-- <a href="features.html" class="f">Explore Features</a> -->
-            <a href="careers.html" class="f">Careers</a>
-            <a href="/src/pages/contact.html" class="f">Contact Us</a>
-            <a href="/src/pages/Signup.html " class="f">Request a Demo</a>
-            <a href="/src/pages/termsofService.html" class="f">Terms of Service</a>
-            <a href="/src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
-            <a href="/src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
+            <div class="e">
+                <a href="index.html" class="f">Home</a>
+                <a href="aboutus.html" class="f">About Us</a>
+                <!-- <a href="features.html" class="f">Explore Features</a> -->
+                <a href="careers.html" class="f">Careers</a>
+                <a href="/src/pages/contact.html" class="f">Contact Us</a>
+                <a href="/src/pages/Signup.html " class="f">Request a Demo</a>
+                <a href="/src/pages/termsofService.html" class="f">Terms of Service</a>
+                <a href="/src/pages/privacyPolicy.html" class="f">Privacy Policy</a>
+                <a href="/src/pages/dataProtectionPolicy.html" class="f">Data Protection Policy</a>
 
-        </div>
-    </footer>
-    <footer class="footerbottom">
-        <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
+            </div>
+        </footer>
+        <footer class="footerbottom">
+            <!-- <a href="https://wa.me/7666628000" target="_blank" class="help-btn">
             May I help you?
         </a> -->
-        <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
-        <!-- <button class="scroll-top" aria-label="Scroll to top">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 19V5M5 12l7-7 7 7" />
-            </svg>
-        </button> -->
-    </footer>
+            <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
+            <button class="scroll-top" aria-label="Scroll to top">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+            </button>
+        </footer>
 
 
         <script>
@@ -949,12 +1055,13 @@
             });
         </script>
 
-<a href="https://wa.me/7666628000?text=Hi%20SAZS%20Apps%20Team%2C%20I%20have%20a%20question%20about%20your%20ERP." 
-   target="_blank" 
-   style="position:fixed;bottom:30px;right:30px;z-index:9999;background:#25D366;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);"
-   aria-label="Chat on WhatsApp">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="32" height="32">
-</a>
+        <a href="https://wa.me/7666628000?text=Hi%20SAZS%20Apps%20Team%2C%20I%20have%20a%20question%20about%20your%20ERP."
+            target="_blank"
+            style="position:fixed;bottom:30px;right:30px;z-index:9999;background:#25D366;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);"
+            aria-label="Chat on WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="32"
+                height="32">
+        </a>
 </body>
 
 </html>

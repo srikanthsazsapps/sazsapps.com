@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: "Nunito", sans-serif !important;
+    font-family: "Nunito", sans-serif ;
     background-color: rgb(255, 255, 253);
     color: #333;
 }
@@ -885,7 +885,7 @@ p {
 /* ============================================
    HELPER ELEMENTS
 ============================================ */
-.scroll-top {
+/* .scroll-top {
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -906,7 +906,7 @@ p {
 
 .scroll-top:hover {
     background-color: #f8f9fa;
-}
+} */
 
 .help-btn {
     position: fixed;
