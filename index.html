@@ -614,33 +614,15 @@
 
         <section class="hero-main-section">
             <!-- RESPONSIVE HERO IMAGE -->
-<picture class="hero-bg">
-    <!-- Mobile -->
-    <source 
-        srcset="/src/assets/images/quarrybricksrmc.avif" 
-        media="(max-width: 768px)" 
-        type="image/avif">
+            <picture class="hero-bg">
+                <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(max-width: 768px)" type="image/avif">
+                <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(max-width: 1280px)" type="image/avif">
+                <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(min-width: 1281px)" type="image/avif">
+                <img  src="/src/assets/images/quarrybricksrmc.avif"
+                    alt="Aerial view of quarry crusher and RMC operations managed by SAZS ERP software" width="1920"
+                    height="1080" fetchpriority="high" loading="eager" decoding="async" />
+            </picture>
 
-    <source 
-        srcset="/src/assets/images/quarrybricksrmc.avif" 
-        media="(max-width: 1280px)" 
-        type="image/avif">
-
-    <!-- Desktop -->
-    <source 
-        srcset="/src/assets/images/quarrybricksrmc.avif" 
-        media="(min-width: 1281px)" 
-        type="image/avif">
-
-    <img
-        src="/src/assets/images/quarrybricksrmc.avif"
-        alt="Aerial view of quarry crusher and RMC operations managed by SAZS ERP software"
-        width="1280"
-        height="720"
-        fetchpriority="high"
-        decoding="async"
-    />
-</picture>
             <!-- GRADIENT OVERLAY -->
             <div class="hero-overlay"></div>
 
