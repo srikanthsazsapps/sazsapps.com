@@ -241,3 +241,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// In comman.js, add cleanup on page hide
+window.addEventListener('pagehide', () => {
+  if (window.mySocket) {
+    window.mySocket.close();
+  }
+});

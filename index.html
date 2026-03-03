@@ -34,15 +34,15 @@
     <link rel="icon" type="image/x-icon" href="src/assets/logo/logoblack.png">
 
     <!-- Keep your core layout CSS synchronous but minified -->
-    <link rel="stylesheet" href="src/css/minified/style.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/minified/comman.min.css">
 
 
 
 
     <!-- Scripts -->
-    <script src="src/js/comman.js" defer></script>
-    <script src="src/js/index.js" defer></script>
+    <script type="module" src="src/js/comman.js" defer></script>
+    <script type="module" src="src/js/index.js" defer></script>
 
     <style>
         /* Header + Hero CSS only */
@@ -160,7 +160,7 @@
             <div class="sazs-header-main">
                 <a href="/" class="sazs-brand">
                     <div class="sazs-brand-image">
-                        <img src="./src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo Home page"
+                        <img  loading="lazy" src="./src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo Home page"
                             class="sazs-brand-image">
                     </div>
                 </a>
@@ -224,7 +224,7 @@
                             <div class="sazs-submenu-col">
                                 <a href="/products/QuarryCrusher.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/crusherdroneview.avif"
+                                        <img  loading="lazy" src="/src/assets/contentImages/crusherdroneview.avif"
                                             alt="Stone Crusher Management Software" />
                                     </div>
                                     <div class="sazs-card-heading">Stone Crusher Software for End-to-End Operations
@@ -236,7 +236,7 @@
                             <div class="sazs-submenu-col">
                                 <a href="/products/QuarryCrusher.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/quarrydroneview.avif"
+                                        <img  loading="lazy" src="/src/assets/contentImages/quarrydroneview.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">End-to-End Management Software for Stone Quarries
@@ -248,7 +248,7 @@
                             <div class="sazs-submenu-col">
                                 <a href="/products/rmc.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/RMCdroneview.avif"
+                                        <img  loading="lazy" src="/src/assets/contentImages/RMCdroneview.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">Next-Gen Billing Software for Ready Mix Concrete
@@ -260,7 +260,7 @@
                             <div class="sazs-submenu-col">
                                 <a href="/products/brickspaver.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/bricksdrone.avif"
+                                        <img  loading="lazy" src="/src/assets/contentImages/bricksdrone.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
@@ -288,7 +288,7 @@
                 <div class="bento-container">
                     <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
                         href="/features/Anprs.html" class="card anpr">
-                        <img src="/src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
+                        <img  loading="lazy" src="/src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
                         <div class="card-content">
                             <h2>ANPR Camera</h2>
                             <p>Automatic vehicle recognition</p>
@@ -308,7 +308,7 @@
 
                     <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
                         href="/features/EInvoice.html" class="card einvoice">
-                        <img src="/src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
+                        <img  loading="lazy" src="/src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
                         <div class="card-content">
                             <h2>E-Invoice</h2>
                             <p>GST compliant billing</p>
@@ -326,7 +326,7 @@
 
                     <a style="color: #000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
                         href="/features/Weighbridge.html" class="card weighbridge">
-                        <img src="/src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
+                        <img loading="lazy"  src="/src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
                         <div class="card-content">
                             <h2>Weighbridge</h2>
                             <p>Real-time weight capture</p>
@@ -339,7 +339,7 @@
 
                     <a style="color: #000000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
                         href="/features/Boombarrier.html" class="card boom">
-                        <img src="/src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
+                        <img loading="lazy"  src="/src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
                         <div class="card-content">
                             <h2>Boom Barrier</h2>
                             <p>Automated gate control</p>
@@ -354,7 +354,7 @@
 
                     <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
                         href="/features/biometrics.html" class="card biometrics">
-                        <img src="/src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
+                        <img loading="lazy" src="/src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
                         <div class="card-content">
                             <h2>Biometrics</h2>
                             <p>Secure access control</p>
@@ -368,7 +368,7 @@
                     </a>
 
                     <div style="border: 1px solid rgba(0, 0, 0, 0.368);" class="card smarttech">
-                        <img src="/src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
+                        <img  loading="lazy" src="/src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
                         <div class="card-content">
                             <h2>Smart Tech</h2>
                             <p>Tailored for Crushers & Quarries</p>
@@ -392,7 +392,7 @@
                     <div class="media-events-grid">
                         <a href="/media-events/Jharkhand_2026.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
+                                <img  loading="lazy" src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">Jharkhand Mining & Construction Show 2026 </div>
@@ -400,7 +400,7 @@
                         </a>
                         <a href="/media-events/EXCON_2025.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/excon25.avif" alt="EXCON_2025" />
+                                <img loading="lazy" src="/src/assets/images/excon25.avif" alt="EXCON_2025" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
@@ -408,7 +408,7 @@
                         </a>
                         <a href="/media-events/IEMS_2024.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/iems24.avif" alt="IEMS_2024" />
+                                <img loading="lazy" src="/src/assets/images/iems24.avif" alt="IEMS_2024" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">IEMS – International Mining Expo & Conclave 2024</div>
@@ -416,7 +416,7 @@
                         </a>
                         <a href="/media-events/TNMSA_2024.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
+                                <img loading="lazy" src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet
@@ -425,7 +425,7 @@
                         </a>
                         <a href="/media-events/EXCON_2023.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/excon23.avif" alt="EXCON_2023" />
+                                <img loading="lazy"  src="/src/assets/images/excon23.avif" alt="EXCON_2023" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
@@ -433,7 +433,7 @@
                         </a>
                         <a href="/media-events/CODDISSIA.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/codisia22.avif" alt="CODDISSIA" />
+                                <img loading="lazy"  src="/src/assets/images/codisia22.avif" alt="CODDISSIA" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners
@@ -462,7 +462,7 @@
                     <div class="blogs-cards-grid">
                         <a href="/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
+                                <img  loading="lazy" src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Optimizing Quarry Profitability & Theft Prevention
                                     </div>
@@ -472,7 +472,7 @@
                         </a>
                         <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/tran2.webp" alt="Customer Experience" />
+                                <img  loading="lazy" src="/src/assets/contentImages/tran2.webp" alt="Customer Experience" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
                                     <div class="blog-overlay-explore">Explore →</div>
@@ -481,7 +481,7 @@
                         </a>
                         <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
+                                <img loading="lazy" src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
                                     <div class="blog-overlay-explore">Explore →</div>
@@ -490,7 +490,7 @@
                         </a>
                         <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/real4.webp" alt="Vehicle Management" />
+                                <img loading="lazy" src="/src/assets/contentImages/real4.webp" alt="Vehicle Management" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
                                     <div class="blog-overlay-explore">Explore →</div>
@@ -499,7 +499,7 @@
                         </a>
                         <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/comp5.webp" alt="Financial Control" />
+                                <img loading="lazy" src="/src/assets/contentImages/comp5.webp" alt="Financial Control" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
                                     <div class="blog-overlay-explore">Explore →</div>
@@ -514,7 +514,7 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/"><img src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page"
+        <a href="/"><img loading="lazy"  src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page"
                 class="sidenav-logo"></a>
         <a href="/">Home</a>
         <a href="aboutus.html">About Us</a>
@@ -618,7 +618,7 @@
                 <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(max-width: 768px)" type="image/avif">
                 <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(max-width: 1280px)" type="image/avif">
                 <source srcset="/src/assets/images/quarrybricksrmc.avif" media="(min-width: 1281px)" type="image/avif">
-                <img src="/src/assets/images/quarrybricksrmc.avif"
+                <img  src="/src/assets/images/quarrybricksrmc.avif"
                     alt="Aerial view of quarry crusher and RMC operations managed by SAZS ERP software" width="1920"
                     height="1080" fetchpriority="high" loading="eager" decoding="async" />
             </picture>
@@ -704,7 +704,7 @@
 
                         <div class="orbit-center">
                             <div class="glow-effect"></div>
-                            <img src="src/assets/contentImages/homeftr.svg" alt="SAZS ERP Central" class="main-graphic">
+                            <img  loading="lazy" src="src/assets/contentImages/homeftr.svg" alt="SAZS ERP Central" class="main-graphic">
                         </div>
 
                         <div class="orbit-column right-side slide-in">
@@ -747,7 +747,7 @@
                             </div>
                             <div class="step-card-wrap slide-in">
                                 <div class="step-card">
-                                    <img src="/src/assets/images/Trackandmonitor.avif" alt="Remote Monitoring">
+                                    <img  loading="lazy" src="/src/assets/images/Trackandmonitor.avif" alt="Remote Monitoring">
                                 </div>
                             </div>
                         </div>
@@ -756,7 +756,7 @@
                         <div class="step-row">
                             <div class="step-card-wrap">
                                 <div class="step-card slide-in">
-                                    <img src="./src/assets/images/100accuracy.avif" alt="Financial Accuracy">
+                                    <img loading="lazy" src="./src/assets/images/100accuracy.avif" alt="Financial Accuracy">
                                 </div>
                             </div>
                             <div class="step-text fade-in">
@@ -774,7 +774,7 @@
                             </div>
                             <div class="step-card-wrap slide-in">
                                 <div class="step-card">
-                                    <img src="/src/assets/images/Nodepedencyneeded.avif" alt="Automation">
+                                    <img  loading="lazy" src="/src/assets/images/Nodepedencyneeded.avif" alt="Automation">
                                 </div>
                             </div>
                         </div>
@@ -783,7 +783,7 @@
                         <div class="step-row">
                             <div class="step-card-wrap slide-in">
                                 <div class="step-card">
-                                    <img src="./src/assets/images/multipleyards.avif" alt="Multiple Yards">
+                                    <img loading="lazy"  src="./src/assets/images/multipleyards.avif" alt="Multiple Yards">
                                 </div>
                             </div>
                             <div class="step-text fade-in">
@@ -800,7 +800,7 @@
                             </div>
                             <div class="step-card-wrap slide-in">
                                 <div class="step-card">
-                                    <img src="/src/assets/images/Reducemanualeffort.avif" alt="Zero Errors">
+                                    <img loading="lazy"  src="/src/assets/images/Reducemanualeffort.avif" alt="Zero Errors">
                                 </div>
                             </div>
                         </div>
@@ -1151,7 +1151,7 @@
                             <div class="wchecklist-left">
                                 <div class="wchecklist-card">
                                     <div class="wchecklist-image">
-                                        <img src="./src/assets/contentImages/profitprotect.avif"
+                                        <img  loading="lazy" src="./src/assets/contentImages/profitprotect.avif"
                                             alt="Business checklist" />
                                         <div class="wchecklist-title-overlay">
                                             <h3>Profit Protection Checklist</h3>
@@ -1372,15 +1372,6 @@
     </main>
 
     <style>
-        /* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; } */
-
-        /* body {
-    background: #ffffff;
-    color: #2c2c3a;
-    font-family: 'DM Sans', sans-serif;
-  } */
-
         /* ══════════════════════════════
      SECTION
   ══════════════════════════════ */
@@ -2278,21 +2269,21 @@
     <footer class="a">
         <div class="b">
             <a href="https://twitter.com" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/images/xlogo.svg" alt="Twitter" class="d">
+                <img loading="lazy" src="src/assets/images/xlogo.svg" alt="Twitter" class="d">
             </a>
             <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" class="c"
                 rel="noopener">
-                <img src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
+                <img loading="lazy"  src="src/assets/contentImages/facebook.svg" alt="Facebook" class="d">
             </a>
             <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/images/youtube.svg" alt="YouTube" class="d">
+                <img loading="lazy" src="src/assets/images/youtube.svg" alt="YouTube" class="d">
             </a>
             <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" class="c" rel="noopener">
-                <img src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
+                <img loading="lazy" src="src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn" class="d">
             </a>
             <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" class="c"
                 rel="noopener">
-                <img src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
+                <img loading="lazy"  src="src/assets/contentImages/instagram.svg" alt="Instagram" class="d">
             </a>
         </div>
 
@@ -2325,7 +2316,7 @@
         target="_blank"
         style="position:fixed;bottom:30px;right:30px;z-index:9999;background:#ffffff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);"
         aria-label="Chat on WhatsApp">
-        <img src="src/assets/images/whatsappicon.avif" alt="WhatsApp" width="52"
+        <img  loading="lazy" src="src/assets/images/whatsappicon.avif" alt="WhatsApp" width="52"
             height="52">
     </a>
 

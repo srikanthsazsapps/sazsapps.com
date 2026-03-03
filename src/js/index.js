@@ -36,15 +36,16 @@
             });
         }
 
-        document.addEventListener("DOMContentLoaded", function () {
-            let options = { threshold: 0.5 }; // Trigger when 50% is visible
-            let observer = new IntersectionObserver(startCounterOnView, options);
-
-            document.querySelectorAll(".feature-card").forEach(card => {
-                observer.observe(card);
-            });
-        });
-        document.addEventListener("DOMContentLoaded", () => {
+// ADD:
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(startCounterOnView, { 
+        threshold: 0.5,
+        rootMargin: '0px'
+    });
+    document.querySelectorAll(".feature-card").forEach(card => {
+        observer.observe(card);
+    });
+});        document.addEventListener("DOMContentLoaded", () => {
             const buttons = document.querySelectorAll('.accordion-button');
 
             buttons.forEach(button => {
@@ -67,23 +68,33 @@
 
 
 
-        window.onscroll = function () {
-            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+// ADD THIS at top of file:
+const header = document.querySelector('.sazs-header');
+let lastScrollTop = 0;
+let ticking = false;
 
-            if (currentScroll > lastScrollTop) {
-                header.classList.add("hide");
-            } else {
-                header.classList.remove("hide");
-            }
+function handleScroll() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > lastScrollTop) {
+        header.classList.add("hide");
+    } else {
+        header.classList.remove("hide");
+    }
+    if (currentScroll <= 0) {
+        header.classList.remove("fixed");
+    } else if (currentScroll > 100) {
+        header.classList.add("fixed");
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    ticking = false;
+}
 
-            if (currentScroll <= 0) {
-                header.classList.remove("fixed");
-            } else if (currentScroll > 100) {
-                header.classList.add("fixed");
-            }
-
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        };
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(handleScroll);
+        ticking = true;
+    }
+}, { passive: true });
 
 
         function toggleDropdown() {
@@ -147,32 +158,34 @@
                 scrollButton.style.display = 'none';
             }
         });
-        document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = {
-                threshold: 0.2, 
-            };
-
-            const animatedElements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, observerOptions);
-
-            animatedElements.forEach((el) => observer.observe(el));
+// ADD — lazy init observer only when needed:
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // stop watching after animate
+            }
         });
+    }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(".fade-in, .slide-in, .zoom-in")
+        .forEach((el) => observer.observe(el));
+});
 
 
 
-
-        // Add this to your index.js
-document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') {
-        if (window.mySocket) {
-            window.mySocket.close();
-        }
+// ADD THIS at the very end:
+window.addEventListener('pagehide', () => {
+    if (window.mySocket) {
+        window.mySocket.close();
     }
 });
+
+// REMOVE the visibilitychange listener and replace with pagehide:
+// DELETE THIS:
+// document.addEventListener('visibilitychange', () => {
+//     if (document.visibilityState === 'hidden') {
+//         if (window.mySocket) { window.mySocket.close(); }
+//     }
+// });
