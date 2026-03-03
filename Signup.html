@@ -1061,22 +1061,22 @@
         document.addEventListener("DOMContentLoaded", highlightActivePage);
 
         // Scroll to top functionality
-        document.querySelector('.scroll-top').addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        // document.querySelector('.scroll-top').addEventListener('click', () => {
+        //     window.scrollTo({
+        //         top: 0,
+        //         behavior: 'smooth'
+        //     });
+        // });
 
         // Show/hide scroll button based on scroll position
-        window.addEventListener('scroll', () => {
-            const scrollButton = document.querySelector('.scroll-top');
-            if (window.scrollY > 200) {
-                scrollButton.style.display = 'flex';
-            } else {
-                scrollButton.style.display = 'none';
-            }
-        });
+        // window.addEventListener('scroll', () => {
+        //     const scrollButton = document.querySelector('.scroll-top');
+        //     if (window.scrollY > 200) {
+        //         scrollButton.style.display = 'flex';
+        //     } else {
+        //         scrollButton.style.display = 'none';
+        //     }
+        // });
 
         // Fade-in animations
         document.addEventListener("DOMContentLoaded", () => {

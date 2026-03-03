@@ -2667,12 +2667,12 @@
             May I help you?
         </a> -->
         <div>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</div>
-        <button class="scroll-top" aria-label="Scroll to top">
-            <!-- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <!-- <button class="scroll-top" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 19V5M5 12l7-7 7 7" />
-                </svg> -->
+                </svg>
 
-        </button>
+        </button> -->
     </footer>
 
     <script defer>
@@ -2809,22 +2809,21 @@
             }
         }
         // Scroll to top functionality
-        document.querySelector('.scroll-top').addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        // document.querySelector('.scroll-top').addEventListener('click', () => {
+        //     window.scrollTo({
+        //         top: 0,
+        //         behavior: 'smooth'
+        //     });
+        // });
 
-        // Show/hide scroll button based on scroll position
-        window.addEventListener('scroll', () => {
-            const scrollButton = document.querySelector('.scroll-top');
-            if (window.scrollY > 200) {
-                scrollButton.style.display = 'flex';
-            } else {
-                scrollButton.style.display = 'none';
-            }
-        });
+        // window.addEventListener('scroll', () => {
+        //     const scrollButton = document.querySelector('.scroll-top');
+        //     if (window.scrollY > 200) {
+        //         scrollButton.style.display = 'flex';
+        //     } else {
+        //         scrollButton.style.display = 'none';
+        //     }
+        // });
         document.addEventListener("DOMContentLoaded", () => {
             const observerOptions = {
                 threshold: 0.2, // Trigger animation when 20% of the element is visible
