@@ -1586,31 +1586,6 @@ a {
     text-decoration: none;
 }
 
-/* Scroll to Top Button */
-/* /* .scroll-top {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-    z-index: 100;
-    display: none;
-}
-
-.scroll-top:hover {
-    background-color: #f8f9fa;
-} */ */
-
-/* Responsive Adjustments for Footer */
 @media (max-width: 768px) {
     .heading {
         font-size: 36px;
@@ -1644,7 +1619,6 @@ a {
         font-size: 14px;
     }
 }
-
 @media (max-width: 480px) {
     .help-btn {
         width: auto;

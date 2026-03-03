@@ -673,7 +673,7 @@ p {
 .step-text { font-size: 0.95rem; line-height: 1.6; color: #6b7280; max-width: 500px; }
 .step-text h2 { color: #000; }
 .step-card-wrap { display: flex; justify-content: flex-end; }
-.step-card { width: 460px; height: 220px; }
+.step-card { width: 460px; height: auto; }
 .step-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
 .step-row:nth-child(even) .step-card-wrap { order: 1; justify-content: flex-start; }
 .step-row:nth-child(even) .step-text { order: 2; text-align: right; }

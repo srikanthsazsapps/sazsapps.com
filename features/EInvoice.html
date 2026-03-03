@@ -1142,7 +1142,7 @@
         });
 
         // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
+        const observerCards = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -1157,7 +1157,7 @@
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'opacity 0.6s, transform 0.6s';
-                observer.observe(card);
+                observerCards.observe(card);
             });
         });
     </script>

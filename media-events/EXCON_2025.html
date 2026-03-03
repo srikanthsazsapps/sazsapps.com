@@ -2199,14 +2199,14 @@
 
             const observerOptions = { threshold: 0.2, rootMargin: '0px 0px -100px 0px' };
 
-            const observer = new IntersectionObserver((entries) => {
+            const observerAbout = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) entry.target.classList.add('animate');
                 });
             }, observerOptions);
 
-            if (aboutTextContent) observer.observe(aboutTextContent);
-            if (aboutImageContent) observer.observe(aboutImageContent);
+            if (aboutTextContent) observerAbout.observe(aboutTextContent);
+            if (aboutImageContent) observerAbout.observe(aboutImageContent);
         </script>
 
         <!-- Video Highlight Section - Dark -->
