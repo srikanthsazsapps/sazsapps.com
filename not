@@ -1,2 +1,11 @@
 cleancss -o src\css\minified\comman.min.css src\css\comman.css
 cleancss -o src\css\minified\style.min.css src\css\style.css
+
+
+
+npm install -g purgecss
+purgecss --css style.css --content index.html --output ./purged/
+
+
+
+cleancss -o src\css\minified\main.min.css src\css\main.min.css
