@@ -131,12 +131,12 @@
             }
         }
         // Scroll to top functionality
-        document.querySelector('.scroll-top').addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        // document.querySelector('.scroll-top').addEventListener('click', () => {
+        //     window.scrollTo({
+        //         top: 0,
+        //         behavior: 'smooth'
+        //     });
+        // });
 
         // Show/hide scroll button based on scroll position
         window.addEventListener('scroll', () => {
