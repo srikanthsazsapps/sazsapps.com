@@ -47,6 +47,12 @@ a {
     color: #fff;
     text-decoration: none
 }
+.sazs-brand-logo{
+        height: 50px;
+    width: auto;
+
+
+}
 
 .sazs-brand-image {
     width: 50px;
@@ -1166,6 +1172,9 @@ a {
         width: 120px;
         height: 55px;
         margin-top: 0
+    }
+    .sazs-brand-logo{
+        
     }
 
     .sazs-submenu-grid {
