@@ -149,7 +149,7 @@
         });
         document.addEventListener("DOMContentLoaded", () => {
             const observerOptions = {
-                threshold: 0.2, // Trigger animation when 20% of the element is visible
+                threshold: 0.2, 
             };
 
             const animatedElements = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
