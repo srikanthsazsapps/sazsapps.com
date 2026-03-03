@@ -49,8 +49,8 @@ a {
 }
 
 .sazs-brand-image {
-    width: 150px;
-    height: 70px;
+    width: 50px;
+    height: auto;
     margin-top: 10px;
     border-radius: 6px;
     display: flex;
