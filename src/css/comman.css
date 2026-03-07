@@ -25,6 +25,20 @@ a {
 .sazs-header.expanded {
     background: rgba(255, 255, 255, .98)
 }
+.pubdate {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /* background: rgba(11, 13, 31, 0.85); */
+    color: #aaa;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    z-index: 9999;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(6px);
+    z-index: 10;
+}
 
 .sazs-header-wrapper {
     max-width: 1460px;

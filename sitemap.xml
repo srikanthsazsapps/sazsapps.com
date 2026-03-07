@@ -1,88 +1,233 @@
-<!-- <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
     <loc>https://sazsapps.com/</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <url><loc>https://sazsapps.com/aboutus.html</loc></url>
-  <url><loc>https://sazsapps.com/Anprs.html</loc></url>
-  <url><loc>https://sazsapps.com/Automating_E-Invoicing_GST_Compliance.html</loc></url>
-  <url><loc>https://sazsapps.com/biometrics.html</loc></url>
-  <url><loc>https://sazsapps.com/Boombarrier.html</loc></url>
-  <url><loc>https://sazsapps.com/brickspaver.html</loc></url>
-  <url><loc>https://sazsapps.com/careers.html</loc></url>
-  <url><loc>https://sazsapps.com/CODDISSIA.html</loc></url>
-  <url><loc>https://sazsapps.com/Complete_Financial_Control_Profit_Analysis.html</loc></url>
-  <url><loc>https://sazsapps.com/contact.html</loc></url>
-  <url><loc>https://sazsapps.com/dataProtectionPolicy.html</loc></url>
-  <url><loc>https://sazsapps.com/EInvoice.html</loc></url>
-  <url><loc>https://sazsapps.com/EXCON_2023.html</loc></url>
-  <url><loc>https://sazsapps.com/EXCON_2025.html</loc></url>
-  <url><loc>https://sazsapps.com/features.html</loc></url>
-  <url><loc>https://sazsapps.com/IEMS_2024.html</loc></url>
-  <url><loc>https://sazsapps.com/index.html</loc></url>
-  <url><loc>https://sazsapps.com/Jharkhand_2026.html</loc></url>
-  <url><loc>https://sazsapps.com/Optimizing_Quarry_Profitability_Theft_Prevention.html</loc></url>
-  <url><loc>https://sazsapps.com/privacyPolicy.html</loc></url>
-  <url><loc>https://sazsapps.com/QuarryCrusherRMCProfitCalculator.html</loc></url>
-  <url><loc>https://sazsapps.com/QuarryCrusher.html</loc></url>
-  <url><loc>https://sazsapps.com/Questions.html</loc></url>
-  <url><loc>https://sazsapps.com/Real-Time_Vehicle_Trip_Management.html</loc></url>
-  <url><loc>https://sazsapps.com/rmc.html</loc></url>
-  <url><loc>https://sazsapps.com/Signup.html</loc></url>
-  <url><loc>https://sazsapps.com/termsofService.html</loc></url>
-  <url><loc>https://sazsapps.com/TNMSA_2024.html</loc></url>
-  <url><loc>https://sazsapps.com/Transforming_Customer_Experience_Order_Speed.html</loc></url>
-  <url><loc>https://sazsapps.com/Weighbridge.html</loc></url>
-  <url><loc>https://sazsapps.com/WhytoChoose.html</loc></url>
+  <url>
+    <loc>https://sazsapps.com/index.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-</urlset> -->
+  <url>
+    <loc>https://sazsapps.com/Signup.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/WhytoChoose.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/QuarryCrusherRMCProfitCalculator.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/aboutus.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/contact.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/Questions.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/careers.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/privacyPolicy.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/termsofService.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/dataProtectionPolicy.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
 
+  <url>
+    <loc>https://sazsapps.com/products/crusher-management-software.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
 
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://sazsapps.com/products/Quarry-management-software.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
 
-  <url><loc>https://sazsapps.com/</loc></url>
+  <url>
+    <loc>https://sazsapps.com/products/Rmc-billing-software.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
 
-  <url><loc>https://sazsapps.com/aboutus.html</loc></url>
-  <url><loc>https://sazsapps.com/careers.html</loc></url>
-  <url><loc>https://sazsapps.com/QuarryCrusherRMCProfitCalculator.html</loc></url>
-  <url><loc>https://sazsapps.com/Questions.html</loc></url>
-  <url><loc>https://sazsapps.com/WhytoChoose.html</loc></url>
+  <url>
+    <loc>https://sazsapps.com/products/brickspaver-management-software.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
 
-  <!-- Pages inside src -->
-  <url><loc>https://sazsapps.com/src/pages/contact</loc></url>
-  <url><loc>https://sazsapps.com/src/pages/privacyPolicy</loc></url>
-  <url><loc>https://sazsapps.com/src/pages/dataProtectionPolicy</loc></url>
-  <url><loc>https://sazsapps.com/src/pages/Signup</loc></url>
-  <url><loc>https://sazsapps.com/src/pages/termsofService</loc></url>
 
-  <!-- Products -->
-  <url><loc>https://sazsapps.com/products/Anprs.html</loc></url>
-  <url><loc>https://sazsapps.com/products/biometrics.html</loc></url>
-  <url><loc>https://sazsapps.com/products/Boombarrier.html</loc></url>
-  <url><loc>https://sazsapps.com/products/brickspaver.html</loc></url>
-  <url><loc>https://sazsapps.com/products/EInvoice.html</loc></url>
-  <url><loc>https://sazsapps.com/products/QuarryCrusher.html</loc></url>
-  <url><loc>https://sazsapps.com/products/rmc.html</loc></url>
-  <url><loc>https://sazsapps.com/products/Weighbridge.html</loc></url>
+  <url>
+    <loc>https://sazsapps.com/features/weighbridge-automation-software.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
-  <!-- Media Events -->
-  <url><loc>https://sazsapps.com/media-events/CODDISSIA.html</loc></url>
-  <url><loc>https://sazsapps.com/media-events/EXCON_2023.html</loc></url>
-  <url><loc>https://sazsapps.com/media-events/EXCON_2025.html</loc></url>
-  <url><loc>https://sazsapps.com/media-events/IEMS_2024.html</loc></url>
-  <url><loc>https://sazsapps.com/media-events/Jharkhand_2026.html</loc></url>
-  <url><loc>https://sazsapps.com/media-events/TNMSA_2024.html</loc></url>
+  <url>
+    <loc>https://sazsapps.com/features/anpr-camera-integration.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
-  <!-- Case Studies -->
-  <url><loc>https://sazsapps.com/case-studies/Automating_E-Invoicing_GST_Compliance.html</loc></url>
-  <url><loc>https://sazsapps.com/case-studies/Complete_Financial_Control_Profit_Analysis.html</loc></url>
-  <url><loc>https://sazsapps.com/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html</loc></url>
-  <url><loc>https://sazsapps.com/case-studies/Real-Time_Vehicle_Trip_Management.html</loc></url>
-  <url><loc>https://sazsapps.com/case-studies/Transforming_Customer_Experience_Order_Speed.html</loc></url>
+  <url>
+    <loc>https://sazsapps.com/features/boom-barrier-integration.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/features/e-invoice-gst-billing.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/features/biometric-access-control.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+
+  <url>
+    <loc>https://sazsapps.com/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/case-studies/Automating_E-Invoicing_GST_Compliance.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/case-studies/Complete_Financial_Control_Profit_Analysis.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/case-studies/Real-Time_Vehicle_Trip_Management.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/case-studies/Transforming_Customer_Experience_Order_Speed.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+
+  <url>
+    <loc>https://sazsapps.com/media-events/Jharkhand_2026.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/media-events/EXCON_2025.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/media-events/IEMS_2024.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/media-events/TNMSA_2024.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/media-events/EXCON_2023.html</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://sazsapps.com/media-events/CODDISSIA.html</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
 
 </urlset>

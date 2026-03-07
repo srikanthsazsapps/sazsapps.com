@@ -2,70 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Help Center – Sazs ERP</title>
-    <meta name="description"
-        content="Get answers to common questions about Sazs ERP for Quarry, Crusher, RMC, and Brick Manufacturing. Learn about weighbridge integration, e-invoicing, boom barriers, and implementation.">
-    <link href="src/css/minified/comman.min.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="src/assets/css/all.min.css"> -->
-    <link href="src/css/Questions.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="src/assets/logo/logoblack.png">
-    <link rel="preload" href="src/js/comman.js" as="script">
-    <script src="src/js/comman.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>FAQ – SAZS ERP for Quarry, Crusher, RMC & Brick Plants</title>
 
+  <!-- Primary Meta -->
+  <meta name="title" content="FAQ – SAZS ERP for Quarry, Crusher, RMC & Brick Plants">
+  <meta name="description"
+        content="Get detailed answers to common questions about SAZS ERP for quarry, crusher, RMC and brick plants. Learn about weighbridge integration, boom barriers, ANPR, GST e-invoicing, credit limits, implementation and support.">
+  <meta name="keywords"
+        content="SAZS ERP FAQ, quarry ERP questions, crusher software FAQ, RMC plant ERP FAQ, brick plant ERP FAQ, weighbridge integration questions, boom barrier integration FAQ, ANPR camera ERP FAQ, GST e-invoice ERP questions, e-way bill automation FAQ, quarry theft control software FAQ, multi-site quarry ERP questions, implementation and training FAQ, ERP support quarry crusher RMC bricks">
+  <meta name="author" content="SAZS Apps Private Limited">
+  <meta name="robots" content="index, follow">
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="FAQ – SAZS ERP Help Center">
+  <meta property="og:description"
+        content="Find answers about SAZS ERP features, integrations, GST compliance, data security, implementation timelines and support for quarry, crusher, RMC and brick operations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sazsapps.com/Questions.html">
+  <meta property="og:image" content="https://sazsapps.com/src/assets/logo/logoblack.png">
 
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is quarry theft and how does SAZS ERP prevent it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quarry theft happens when trucks leave the site with extra, unbilled material or without any billing at all. SAZS ERP links the weighbridge, boom barrier, and billing so the gate only opens after a valid weighment and GST-compliant invoice or delivery challan is generated, closing common leakage points."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the boom barrier plus weighbridge stop theft at my crusher?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The boom barrier is connected directly to the dispatch module. It only triggers after the system confirms a correct weighment and completed document, so operators cannot manually open the gate and send out unbilled or under-weighed loads."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can SAZS ERP detect under-weighing or duplicate trips?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Every vehicle movement and weighment is logged in real time and tied to billing. Any mismatch between expected tonnage, frequent short loads, or unusual repeat trips is visible on reports and dashboards, helping owners spot patterns of leakage quickly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does SAZS ERP help with GST compliance for quarries and crushers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SAZS ERP integrates with the GST portal to generate E-Invoices and E-Way Bills through APIs. This reduces manual entry, avoids common mistakes, and keeps your dispatches aligned with GST requirements for mining and crusher operations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can the software support GST audits and reconcile quarry dispatch with GST returns?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Because every dispatch, invoice, and E-Way Bill is captured centrally, you can quickly reconcile physical movement with GST filings. This makes GST audits easier and reduces the risk of penalties for mismatched data."
-      }
-    }
-  ]
-}
-</script>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SAZS ERP FAQ – Quarry, Crusher, RMC & Brick Software">
+  <meta name="twitter:description"
+        content="Answers to frequently asked questions on weighbridge, boom barrier, ANPR, GST e-invoicing, credit control and more in SAZS ERP.">
+  <meta name="twitter:image" content="https://sazsapps.com/src/assets/logo/logoblack.png">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="src/assets/logo/logoblack.png">
+
+  <!-- Styles (existing, unchanged) -->
+  <link href="src/css/minified/comman.min.css" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="src/assets/css/all.min.css"> -->
+  <link href="src/css/Questions.css" rel="stylesheet" />
+
+  <!-- Scripts (existing, unchanged) -->
+  <link rel="preload" href="src/js/comman.js" as="script">
+  <script src="src/js/comman.js" defer></script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://sazsapps.com/Questions.html#faq",
+    "url": "https://sazsapps.com/Questions.html",
+    "name": "SAZS ERP FAQ – Quarry, Crusher, RMC & Brick Plants",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does SAZS ERP work with my existing weighbridge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. SAZS ERP is designed to integrate with most standard electronic weighbridges and can automatically pull gross, tare and net weight directly from the indicator or load cells, removing manual entry and reducing fraud."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the boom barrier integration help prevent theft?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The boom barrier is connected to the dispatch module, so the gate only opens after a valid weighment and GST-compliant invoice or delivery challan is generated. This stops unbilled or under-weighed trucks from leaving the site."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can SAZS ERP generate E-Invoices and E-Way Bills automatically?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Through direct API integration with the GST portal, SAZS ERP can create E-Invoices with IRN and QR codes and generate E-Way Bills automatically at the time of dispatch, without re-entering data on government websites."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I manage multiple quarries, crushers, RMC and brick plants in one login?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SAZS ERP is a multi-site, multi-entity platform. You can switch between different units or view a consolidated Owner Dashboard showing overall performance across all quarry, crusher, RMC and brick locations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does implementation of SAZS ERP usually take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typical implementation including weighbridge integration, configuration and user training takes around 7 to 14 days, depending on the number of sites and complexity of operations."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -75,8 +104,7 @@
             <div class="sazs-header-main">
                 <a href="/" class="sazs-brand">
                     <div class="sazs-brand-image">
-                        <img src="./src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo Home page"
-                            class="sazs-brand-logo">
+                        <img  src="./src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo"class="sazs-brand-logo"loading="lazy">
                     </div>
                 </a>
                 <ul class="sazs-menu-list">
@@ -130,16 +158,16 @@
                         <a href="aboutus.html" class="product-link">About Us</a>
                         <a href="WhytoChoose.html" class="product-link">Why to Choose</a>
                         <a href="careers.html" class="product-link">Careers</a>
-                        <a href="ProfitCalculator.html" class="product-link">Profit Calc</a>
+                        <a href="QuarryCrusherRMCProfitCalculator.html" class="product-link">Profit Calc</a>
                         <a href="Questions.html" class="product-link">FAQ</a>
                     </div>
                     <div class="product-right">
                         <div class="product-grid-title">Our Products</div>
                         <div class="sazs-submenu-grid">
                             <div class="sazs-submenu-col">
-                                <a href="/products/QuarryCrusher.html" class="sazs-product-card">
+                                <a href="/products/crusher-management-software.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/crusherdroneview.avif"
+                                        <img  loading="lazy" src="/src/assets/contentImages/crusherdroneview.avif"
                                             alt="Stone Crusher Management Software" />
                                     </div>
                                     <div class="sazs-card-heading">Stone Crusher Software for End-to-End Operations
@@ -149,9 +177,9 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="/products/QuarryCrusher.html" class="sazs-product-card">
+                                <a href="/products/Quarry-management-software.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/quarrydroneview.avif"
+                                        <img  loading="lazy" src="/src/assets/contentImages/quarrydroneview.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">End-to-End Management Software for Stone Quarries
@@ -161,9 +189,9 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="/products/rmc.html" class="sazs-product-card">
+                                <a href="/products/Rmc-billing-software.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/RMCdroneview.avif"
+                                        <img  loading="lazy" src="/src/assets/contentImages/RMCdroneview.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">Next-Gen Billing Software for Ready Mix Concrete
@@ -173,9 +201,9 @@
                                 </a>
                             </div>
                             <div class="sazs-submenu-col">
-                                <a href="/products/brickspaver.html" class="sazs-product-card">
+                                <a href="/products/brickspaver-management-software.html" class="sazs-product-card">
                                     <div class="sazs-card-img-wrapper">
-                                        <img src="/src/assets/contentImages/bricksdrone.avif"
+                                        <img  loading="lazy" src="/src/assets/contentImages/bricksdrone.avif"
                                             alt="Brick Manufacturing ERP Software" />
                                     </div>
                                     <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing
@@ -202,8 +230,8 @@
                 </div>
                 <div class="bento-container">
                     <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
-                        href="/features/Anprs.html" class="card anpr">
-                        <img src="/src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
+                        href="/features/anpr-camera-integration.html" class="card anpr">
+                        <img  loading="lazy" src="/src/assets/contentImages/ANPR.avif" alt="ANPR Camera" class="card-bg-image">
                         <div class="card-content">
                             <h2>ANPR Camera</h2>
                             <p>Automatic vehicle recognition</p>
@@ -222,8 +250,8 @@
 
 
                     <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
-                        href="/features/EInvoice.html" class="card einvoice">
-                        <img src="/src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
+                        href="/features/e-invoice-gst-billing.html" class="card einvoice">
+                        <img  loading="lazy" src="/src/assets/contentImages/e-invoice.avif" alt="E-Invoice" class="card-bg-image">
                         <div class="card-content">
                             <h2>E-Invoice</h2>
                             <p>GST compliant billing</p>
@@ -240,8 +268,8 @@
                     </a>
 
                     <a style="color: #000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
-                        href="/features/Weighbridge.html" class="card weighbridge">
-                        <img src="/src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
+                        href="/features/weighbridge-automation-software.html" class="card weighbridge">
+                        <img loading="lazy"  src="/src/assets/contentImages/Weighbridge.avif" alt="Weighbridge" class="card-bg-image">
                         <div class="card-content">
                             <h2>Weighbridge</h2>
                             <p>Real-time weight capture</p>
@@ -253,8 +281,8 @@
                     </a>
 
                     <a style="color: #000000;text-decoration: none !important;border: 1px solid rgba(0, 0, 0, 0.368);"
-                        href="/features/Boombarrier.html" class="card boom">
-                        <img src="/src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
+                        href="/features/boom-barrier-integration.html" class="card boom">
+                        <img loading="lazy"  src="/src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier" class="card-bg-image">
                         <div class="card-content">
                             <h2>Boom Barrier</h2>
                             <p>Automated gate control</p>
@@ -268,8 +296,8 @@
                     </a>
 
                     <a style="color: #000;text-decoration: none !important; border: 1px solid rgba(0, 0, 0, 0.368);"
-                        href="/features/biometrics.html" class="card biometrics">
-                        <img src="/src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
+                        href="/features/biometric-access-control.html" class="card biometrics">
+                        <img loading="lazy" src="/src/assets/contentImages/BioMetric.avif" alt="Biometrics" class="card-bg-image">
                         <div class="card-content">
                             <h2>Biometrics</h2>
                             <p>Secure access control</p>
@@ -283,7 +311,7 @@
                     </a>
 
                     <div style="border: 1px solid rgba(0, 0, 0, 0.368);" class="card smarttech">
-                        <img src="/src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
+                        <img  loading="lazy" src="/src/assets/contentImages/SmartTech.avif" alt="Smart Tech" class="card-bg-image">
                         <div class="card-content">
                             <h2>Smart Tech</h2>
                             <p>Tailored for Crushers & Quarries</p>
@@ -307,7 +335,7 @@
                     <div class="media-events-grid">
                         <a href="/media-events/Jharkhand_2026.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
+                                <img  loading="lazy" src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">Jharkhand Mining & Construction Show 2026 </div>
@@ -315,7 +343,7 @@
                         </a>
                         <a href="/media-events/EXCON_2025.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/excon25.avif" alt="EXCON_2025" />
+                                <img loading="lazy" src="/src/assets/images/excon25.avif" alt="EXCON_2025" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
@@ -323,7 +351,7 @@
                         </a>
                         <a href="/media-events/IEMS_2024.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/iems24.avif" alt="IEMS_2024" />
+                                <img loading="lazy" src="/src/assets/images/iems24.avif" alt="IEMS_2024" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">IEMS – International Mining Expo & Conclave 2024</div>
@@ -331,7 +359,7 @@
                         </a>
                         <a href="/media-events/TNMSA_2024.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
+                                <img loading="lazy" src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet
@@ -340,7 +368,7 @@
                         </a>
                         <a href="/media-events/EXCON_2023.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/excon23.avif" alt="EXCON_2023" />
+                                <img loading="lazy"  src="/src/assets/images/excon23.avif" alt="EXCON_2023" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
@@ -348,7 +376,7 @@
                         </a>
                         <a href="/media-events/CODDISSIA.html" class="media-event-card">
                             <div class="media-card-image">
-                                <img src="/src/assets/images/codisia22.avif" alt="CODDISSIA" />
+                                <img loading="lazy"  src="/src/assets/images/codisia22.avif" alt="CODDISSIA" />
                             </div>
                             <div class="media-card-content">
                                 <div class="media-card-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners
@@ -377,7 +405,7 @@
                     <div class="blogs-cards-grid">
                         <a href="/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
+                                <img  loading="lazy" src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Optimizing Quarry Profitability & Theft Prevention
                                     </div>
@@ -387,7 +415,7 @@
                         </a>
                         <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/tran2.webp" alt="Customer Experience" />
+                                <img  loading="lazy" src="/src/assets/contentImages/tran2.webp" alt="Customer Experience" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
                                     <div class="blog-overlay-explore">Explore →</div>
@@ -396,7 +424,7 @@
                         </a>
                         <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
+                                <img loading="lazy" src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
                                     <div class="blog-overlay-explore">Explore →</div>
@@ -405,7 +433,7 @@
                         </a>
                         <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/real4.webp" alt="Vehicle Management" />
+                                <img loading="lazy" src="/src/assets/contentImages/real4.webp" alt="Vehicle Management" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
                                     <div class="blog-overlay-explore">Explore →</div>
@@ -414,7 +442,7 @@
                         </a>
                         <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-card">
                             <div class="blog-card-image">
-                                <img src="/src/assets/contentImages/comp5.webp" alt="Financial Control" />
+                                <img loading="lazy" src="/src/assets/contentImages/comp5.webp" alt="Financial Control" />
                                 <div class="blog-card-overlay">
                                     <div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
                                     <div class="blog-overlay-explore">Explore →</div>
@@ -429,7 +457,7 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/"><img src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page"
+        <a href="/"><img loading="lazy"  src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page"
                 class="sidenav-logo"></a>
         <a href="/">Home</a>
         <a href="aboutus.html">About Us</a>
@@ -440,9 +468,10 @@
                         stroke-linejoin="round" />
                 </svg> </a>
             <div class="mobile-dropdown-content">
-                <a href="/products/QuarryCrusher.html">Quarry & Crusher</a>
-                <a href="/products/rmc.html">Ready Mix Concrete</a>
-                <a href="/products/brickspaver.html">Bricks & Pavers</a>
+                <a href="/products/Quarry-management-software.html">Quarry</a>
+                <a href="/products/crusher-management-software.html">Crusher</a>
+                <a href="/products/Rmc-billing-software.html">Ready Mix Concrete</a>
+                <a href="/products/brickspaver-management-software.html">Bricks & Pavers</a>
             </div>
         </div>
         <div class="mobile-dropdown">
@@ -454,11 +483,11 @@
                 </svg> </a>
             <div class="mobile-dropdown-content">
                 <!-- <a href="features.html">Features</a> -->
-                <a href="/features/Anprs.html">ANPR Camera Integration</a>
-                <a href="/features/EInvoice.html">E-Invoice Integration</a>
-                <a href="/features/Weighbridge.html">Weighbridge and Camera Integration</a>
-                <a href="/features/Boombarrier.html">Boom Barrier Integration</a>
-                <a href="/features/biometrics.html">Biometrics</a>
+                <a href="/features/anpr-camera-integration.html">ANPR Camera Integration</a>
+                <a href="/features/e-invoice-gst-billing.html">E-Invoice Integration</a>
+                <a href="/features/weighbridge-automation-software.html">Weighbridge and Camera Integration</a>
+                <a href="/features/boom-barrier-integration.html">Boom Barrier Integration</a>
+                <a href="/features/biometric-access-control.html">Biometrics</a>
             </div>
         </div>
         <div class="mobile-dropdown">
@@ -499,7 +528,7 @@
                     Expo 2023</a>
             </div>
         </div>
-        <a href="ProfitCalculator.html">Profit Calc</a>
+        <a href="QuarryCrusherRMCProfitCalculator.html">Profit Calc</a>
         <a href="careers.html">Careers</a>
         <a href="Signup.html">Sign Up</a>
         <a href="contact.html">Contact Us</a>
