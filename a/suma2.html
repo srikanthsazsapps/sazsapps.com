@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Financial Management for Quarry, Crusher & RMC | SAZS ERP</title>
+  <meta name="description" content="SAZS ERP Finance & Accounting module gives real-time site-wise P&L, auto-accounting from weighbridge to ledgers, GST-ready invoices, and complete financial control for Quarry, Crusher, RMC and Brick Plants.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://sazsapps.com/financial-management.html">
+
+  <!-- Open Graph for SEO -->
+  <meta property="og:title" content="Complete Financial Management for Quarry, Crusher & RMC | SAZS ERP">
+  <meta property="og:description" content="Connect your weighbridge, dispatch and accounts. Auto-post every sale, purchase and expense into ledgers with real-time site-wise P&L.">
+  <meta property="og:url" content="https://sazsapps.com/financial-management.html">
+  <meta property="og:type" content="website">
+
+  <!-- JSON-LD Schema (SoftwareApplication + Service) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SAZS ERP - Quarry Financial Management",
+    "url": "https://sazsapps.com/financial-management.html",
+    "applicationCategory": "ERP, AccountingSoftware",
+    "operatingSystem": "Web, Windows",
+    "description": "Financial management and accounting module for Quarry, Crusher, RMC, Brick and Paver plants with auto-accounting, site-wise P&L, GST-ready invoicing and real-time profit analysis.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "SAZS Apps",
+      "url": "https://sazsapps.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR",
+      "description": "Request a demo for pricing of SAZS ERP Financial Management module."
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #0077b6;
+      --secondary: #023e8a;
+      --accent: #00b894;
+      --text: #222;
+      --bg: #f5f7fb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page-wrapper {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+
+    header.fm-hero {
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: #fff;
+      border-radius: 18px;
+      padding: 32px 24px;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header.fm-hero::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 60%);
+    }
+
+    .fm-badge {
+      display: inline-block;
+      background: rgba(0,0,0,0.2);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .fm-hero h1 {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    .fm-hero p {
+      max-width: 560px;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .fm-hero-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 18px 0 10px;
+    }
+
+    .fm-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.25);
+      font-size: 13px;
+    }
+
+    .fm-pill span.icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.22);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .fm-cta-row {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      border: none;
+      cursor: pointer;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      background: #fff;
+      color: var(--secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.7);
+      background: transparent;
+      color: #fff;
+    }
+
+    .fm-hero-metrics {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+    }
+
+    .fm-hero-metrics div strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    section {
+      margin-top: 40px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px 18px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    section h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    section p.lead {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 16px;
+    }
+
+    .fm-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .fm-card {
+      border-radius: 14px;
+      border: 1px solid #e4e7f0;
+      padding: 14px 14px 16px;
+      background: #fbfcff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fm-card h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .fm-card p {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .fm-card span.tag {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--secondary);
+      background: rgba(2, 62, 138, 0.06);
+      padding: 3px 7px;
+      border-radius: 999px;
+    }
+
+    .fm-icon-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(0, 119, 182, 0.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+
+    .fm-metrics-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .fm-metric {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px dashed #d7dcec;
+      background: #f7f8fe;
+      font-size: 13px;
+    }
+
+    .fm-metric strong {
+      display: block;
+      font-size: 18px;
+      color: var(--secondary);
+    }
+
+    .fm-toggle {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+
+    .fm-toggle button {
+      border-radius: 999px;
+      border: 1px solid #cbd2e8;
+      padding: 6px 12px;
+      background: #f4f5fb;
+      cursor: pointer;
+    }
+
+    .fm-toggle button.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .fm-table-wrapper {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid #e0e5f5;
+    }
+
+    table.fm-compare {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: #fff;
+    }
+
+    table.fm-compare th,
+    table.fm-compare td {
+      padding: 10px;
+      border-bottom: 1px solid #edf0fb;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    table.fm-compare thead {
+      background: #f5f6ff;
+    }
+
+    table.fm-compare th:nth-child(2) {
+      color: #b91c1c;
+    }
+
+    table.fm-compare th:nth-child(3) {
+      color: var(--secondary);
+    }
+
+    .fm-badge-green {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 11px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #047857;
+    }
+
+    .fm-faq-item {
+      border-radius: 12px;
+      border: 1px solid #e4e7f0;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .fm-faq-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .fm-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    @media (min-width: 900px) {
+      header.fm-hero {
+        padding: 36px 32px;
+      }
+      .fm-hero-flex {
+        display: grid;
+        grid-template-columns: 2.1fr 1.4fr;
+        gap: 26px;
+        align-items: center;
+      }
+      .fm-hero-side {
+        background: rgba(15,23,42,0.18);
+        padding: 14px 14px 16px;
+        border-radius: 14px;
+        backdrop-filter: blur(4px);
+      }
+      .fm-hero-side h3 {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .fm-hero-side ul {
+        list-style: none;
+        font-size: 12px;
+      }
+      .fm-hero-side li + li { margin-top: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- HERO -->
+    <header class="fm-hero">
+      <div class="fm-hero-flex">
+        <div>
+          <div class="fm-badge">Finance & Accounting Module · SAZS ERP</div>
+          <h1>Complete Financial Management for Quarry, Crusher, RMC & Brick Units</h1>
+          <p>
+            Connect your weighbridge, dispatch, purchases and payroll directly to accounts so that every ton,
+            every trip and every expense flows into ledgers in real-time with site-wise profit visibility.
+          </p>
+
+          <div class="fm-hero-highlight">
+            <div class="fm-pill">
+              <span class="icon">₹</span>
+              Site-wise P&amp;L in one click
+            </div>
+            <div class="fm-pill">
+              <span class="icon">⚙</span>
+              Auto-accounting from weighbridge
+            </div>
+            <div class="fm-pill">
+              <span class="icon">✔</span>
+              GST-ready e‑invoices &amp; reports
+            </div>
+          </div>
+
+          <div class="fm-cta-row">
+            <button class="btn-primary" onclick="scrollToSection('fm-demo')">
+              Request Finance Demo →
+            </button>
+            <button class="btn-primary btn-outline" onclick="scrollToSection('fm-features')">
+              Explore Features
+            </button>
+          </div>
+
+          <div class="fm-hero-metrics">
+            <div>
+              <strong>90% fewer</strong>
+              accounting mistakes once weighbridge and billing are auto‑posted into ledgers.
+            </div>
+            <div>
+              <strong>Real-time</strong>
+              cash, credit, and profitability across Quarry, RMC, Crusher and Brick plants.
+            </div>
+          </div>
+        </div>
+
+        <aside class="fm-hero-side">
+          <h3>Designed for heavy‑material businesses</h3>
+          <ul>
+            <li>Quarry &amp; Crusher units with multiple yards.</li>
+            <li>Ready Mix (RMC) batching plants and transit mixers.</li>
+            <li>Brick &amp; Paver plants with daily labour and piece‑rate payroll.</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <!-- KEY OUTCOMES -->
+    <section id="fm-outcomes">
+      <h2>What You Gain With SAZS Financial Management</h2>
+      <p class="lead">
+        Replace fragmented Tally entries and spreadsheet-based costing with one connected ERP where physical
+        movement and financial data always match.
+      </p>
+
+      <div class="fm-grid-3">
+        <div class="fm-card">
+          <div class="fm-icon-circle">📊</div>
+          <h3>Site-wise Profit &amp; Loss in Seconds</h3>
+          <p>
+            View separate P&amp;L for each quarry, crusher, RMC or brick unit and a consolidated Owner view
+            to see where you actually earn money and where you leak margin.
+          </p>
+          <span class="tag">Profit Analysis</span>
+        </div>
+
+        <div class="fm-card">
+          <div class="fm-icon-circle">🧾</div>
+          <h3>Auto-Posting of Every Voucher</h3>
+          <p>
+            As soon as a truck is weighed and invoice is generated, the corresponding sales, tax and stock
+            entries are posted to ledgers without manual typing, eliminating delay and malpractice.
+          </p>
+          <span class="tag">Auto Accounting</span>
+        </div>
+
+        <div class="fm-card">
+          <div class="fm-icon-circle">💰</div>
+          <h3>Cash, Credit &amp; Overdues Under Control</h3>
+          <p>
+            Enforce customer credit limits at the gate, block dispatch for over‑due accounts and track
+            collections so that your cash flow is always visible and predictable.
+          </p>
+          <span class="tag">Credit Control</span>
+        </div>
+      </div>
+
+      <div class="fm-metrics-row">
+        <div class="fm-metric">
+          <strong>303+</strong>
+          Existing SAZS ERP clients already use integrated accounts for quarry, crusher, RMC and brick plants.
+        </div>
+        <div class="fm-metric">
+          <strong>100000+</strong>
+          Financial and stock transactions posted without manual re‑entry between site and back‑office.
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="fm-features">
+      <h2>Finance &amp; Accounting Features Tailored for Your Industry</h2>
+      <p class="lead">
+        Generic accounting tools only record what your staff type. SAZS ERP reads from load cells, boom barriers
+        and GPS so that your books are driven by real movements, not assumptions.
+      </p>
+
+      <div class="fm-grid-3">
+        <div class="fm-card">
+          <h3>Sales &amp; e‑Invoicing</h3>
+          <p>
+            Auto-generate GST-compliant invoices from weighbridge, handle multiple tax structures and export
+            data for e‑invoicing and filing without manual rework.
+          </p>
+        </div>
+        <div class="fm-card">
+          <h3>Purchase &amp; Expense Control</h3>
+          <p>
+            Capture fuel, explosives, spares, loading and transport costs against specific sites and jobs so
+            that your cost per ton and per cubic meter stays under watch.
+          </p>
+        </div>
+        <div class="fm-card">
+          <h3>Integrated Stock &amp; Ledgers</h3>
+          <p>
+            Every inward, outward and production entry updates both stock and accounts, giving you accurate
+            closing stock, COGS and gross margin without reconciliation headache.
+          </p>
+        </div>
+        <div class="fm-card">
+          <h3>Multi-Site, Multi-Entity Accounts</h3>
+          <p>
+            Separate books for each unit with a group view for partners or owners, support for inter‑unit
+            transfers and consolidation without duplicate data entry.
+          </p>
+        </div>
+        <div class="fm-card">
+          <h3>Payroll &amp; Labour Costing</h3>
+          <p>
+            Map driver trips, operator hours and piece‑rate labour in brick or paver plants directly to wages,
+            overtime and incentives to avoid disputes.
+          </p>
+        </div>
+        <div class="fm-card">
+          <h3>Compliance &amp; Audit Ready</h3>
+          <p>
+            Keep every transaction traceable from gate to ledger with time stamps, user logs and attachment
+            support so that statutory audit and bank reports are simple.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section id="fm-compare">
+      <h2>Why SAZS ERP Accounting Beats Manual / Generic Software</h2>
+      <p class="lead">
+        See how a quarry-ready ERP closes gaps that spreadsheet and retail accounting tools cannot handle.
+      </p>
+
+      <div class="fm-table-wrapper">
+        <table class="fm-compare">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Manual / Generic Software</th>
+              <th>SAZS ERP Financial Management</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data Capture from Weighbridge</td>
+              <td>Staff manually type gross and tare weight, high scope for \"adjustments\" and malpractice.</td>
+              <td>Weight captured directly from load cells and locked against invoice and boom barrier.</td>
+            </tr>
+            <tr>
+              <td>Sales Posting to Ledgers</td>
+              <td>Invoices made at site, then re‑entered into accounting package days later, causing mismatch.</td>
+              <td>Every invoice automatically posts sales, GST, customer and stock ledgers in real-time.</td>
+            </tr>
+            <tr>
+              <td>Site-wise Profitability</td>
+              <td>Difficult to separate quarry, crusher, RMC and brick plant costs in one system.</td>
+              <td>Dedicated cost centres with P&amp;L for each site plus consolidated top‑level view.</td>
+            </tr>
+            <tr>
+              <td>Credit Control at Gate</td>
+              <td>Dispatch team depends on phone calls and memory to stop over‑due customers.</td>
+              <td>System blocks dispatch automatically once credit limit or due date is crossed.</td>
+            </tr>
+            <tr>
+              <td>Matching Stock &amp; Accounts</td>
+              <td>Physical stock often differs from books, adjustments done at year end.</td>
+              <td>Stock, production and accounts move together so variances are visible daily.</td>
+            </tr>
+            <tr>
+              <td>Audit &amp; Traceability</td>
+              <td>Paper slips and partial data, hard to prove when and how a truck was billed.</td>
+              <td>Digital trail from weighment to invoice, gate pass and ledger entry for every trip.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DEMO & FAQ -->
+    <section id="fm-demo">
+      <h2>See Your Numbers in Real Time</h2>
+      <p class="lead">
+        In a 30‑minute remote demo we plug your own quarry, crusher or RMC scenarios into SAZS ERP so that you
+        can see live P&amp;L, cash flow and credit exposure on screen.
+      </p>
+
+      <div class="fm-metrics-row">
+        <div class="fm-metric">
+          <strong>Step 1</strong>
+          Share your current billing, weighbridge and accounting flow with our team.
+        </div>
+        <div class="fm-metric">
+          <strong>Step 2</strong>
+          We map your sites and cost centres into SAZS ERP live during the session.
+        </div>
+        <div class="fm-metric">
+          <strong>Step 3</strong>
+          You see how each truck automatically turns into accurate books and profit.
+        </div>
+      </div>
+
+      <div style="margin-top:16px;">
+        <button class="btn-primary" onclick="window.location.href='https://sazsapps.com/contact.html';">
+          Book Finance &amp; Accounts Demo
+        </button>
+        <span class="fm-badge-green">No obligation · Quick remote session</span>
+      </div>
+
+      <div style="margin-top:20px;">
+        <div class="fm-faq-item">
+          <strong>Can SAZS ERP work with my existing accountant and Tally?</strong>
+          <span>
+            Yes. Use SAZS ERP for day‑to‑day site operations and financial capture, then export summaries
+            or detailed data that your auditor or accountant can still use in their familiar tools.
+          </span>
+        </div>
+        <div class="fm-faq-item">
+          <strong>Is the system suitable for multiple quarries and yards?</strong>
+          <span>
+            The platform is built for multi‑site operations with separate cost centres and a consolidated
+            Owner Dashboard so you can switch between locations in one click.
+          </span>
+        </div>
+      </div>
+
+      <p class="fm-note">
+        SAZS ERP is already trusted by quarry, crusher, RMC and brick plant owners across Tamil Nadu for
+        eliminating weighbridge malpractice and manual accounting errors. Extend the same control to your
+        financials today.
+      </p>
+    </section>
+  </div>
+
+  <script>
+    function scrollToSection(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({
+        top: el.offsetTop - 20,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>

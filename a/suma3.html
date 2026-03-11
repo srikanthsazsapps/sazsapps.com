@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quarry ERP Financial Management Software | Real-Time P&L, GST & Profit Control — SAZS Apps</title>
+<meta name="description" content="Get 100% accurate financial statements for your quarry, crusher or RMC plant in one click. Automated GST e-invoicing, site-wise P&L, credit control & expense tracking. Trusted by 303+ businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:     #0A0A0A;
+  --ink2:    #111111;
+  --ink3:    #1A1A1A;
+  --ink4:    #242424;
+  --plate:   #2E2E2E;
+  --muted:   #666666;
+  --dust:    #999999;
+  --fog:     #BBBBBB;
+  --paper:   #F2EDE6;
+  --paper2:  #E8E2D8;
+  --gold:    #2a91c9;
+  --gold2:   #E8B33A;
+  --gold3:   #F5C842;
+  --amber:   #FF8C00;
+  --white:   #FFFFFF;
+  --ff-disp: 'Bebas Neue', sans-serif;
+  --ff-cond: 'Barlow Condensed', sans-serif;
+  --ff-body: 'Barlow', sans-serif;
+  --r: 3px;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--ink); color: var(--paper); font-family: var(--ff-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; object-fit: cover; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ink2); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+::selection { background: var(--gold); color: var(--ink); }
+.wrap { max-width: 1380px; margin: 0 auto; padding: 0 32px; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(10,10,10,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--plate); padding: 0; transition: border-color 0.3s; }
+.nav-inner { display: flex; align-items: stretch; justify-content: space-between; height: 60px; }
+.nav-logo { display: flex; align-items: center; font-family: var(--ff-disp); font-size: 22px; letter-spacing: 2px; color: var(--white); padding: 0 24px; border-right: 1px solid var(--plate); }
+.nav-logo em { color: var(--gold); font-style: normal; }
+.nav-links { display: flex; align-items: center; list-style: none; }
+.nav-links li a { display: flex; align-items: center; height: 100%; padding: 0 20px; font-family: var(--ff-cond); font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dust); border-right: 1px solid var(--plate); transition: color 0.2s, background 0.2s; }
+.nav-links li a:hover { color: var(--gold2); background: var(--ink3); }
+.nav-cta { display: flex; align-items: center; padding: 0 28px; font-family: var(--ff-cond); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; background: var(--gold); color: var(--ink); transition: background 0.2s; }
+.nav-cta:hover { background: var(--gold3); }
+
+/* HERO */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; padding-top: 60px; }
+.hero-left { background: var(--paper); color: var(--ink); padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+.hero-left::after { content: ''; position: absolute; top: 0; right: -2px; bottom: 0; width: 4px; background: var(--gold); z-index: 3; }
+.hero-stamp { display: inline-flex; align-items: center; gap: 10px; font-family: var(--ff-cond); font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
+.hero-stamp::before { content: ''; display: block; width: 30px; height: 2px; background: var(--gold); }
+.hero h1 { font-family: var(--ff-disp); font-size: clamp(72px, 8vw, 120px); line-height: 0.9; letter-spacing: 2px; color: var(--ink); margin-bottom: 32px; }
+.hero h1 .accent { color: var(--gold); }
+.hero-sub { font-size: 15px; font-weight: 300; color: #444; line-height: 1.8; max-width: 440px; margin-bottom: 40px; }
+.hero-sub strong { font-weight: 600; color: var(--ink); }
+.hero-metrics { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #D4CEC4; margin-bottom: 40px; }
+.hm { padding: 20px 16px; border-right: 1px solid #D4CEC4; text-align: center; }
+.hm:last-child { border-right: none; }
+.hm .val { font-family: var(--ff-disp); font-size: 38px; letter-spacing: 1px; color: var(--gold); line-height: 1; display: block; margin-bottom: 4px; }
+.hm .lbl { font-family: var(--ff-cond); font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #777; }
+.hero-actions { display: flex; gap: 12px; }
+.btn-solid { background: var(--ink); color: var(--paper); padding: 14px 32px; font-family: var(--ff-cond); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border: 2px solid var(--ink); transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+.btn-solid:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.btn-outline { background: transparent; color: var(--ink); padding: 14px 32px; font-family: var(--ff-cond); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border: 2px solid var(--ink); transition: all 0.2s; }
+.btn-outline:hover { background: var(--ink); color: var(--paper); }
+.hero-right { position: relative; overflow: hidden; background: var(--ink2); }
+.hero-right img { height: 100%; width: 100%; object-fit: cover; filter: grayscale(40%) brightness(0.5) contrast(1.1); }
+.hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,150,42,0.15) 0%, transparent 50%, rgba(10,10,10,0.6) 100%); }
+.hero-ticker { position: absolute; bottom: 0; left: 0; right: 0; background: var(--gold); padding: 12px 24px; display: flex; align-items: center; gap: 32px; overflow: hidden; }
+.ticker-item { font-family: var(--ff-cond); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); white-space: nowrap; display: flex; align-items: center; gap: 12px; }
+.ticker-sep { opacity: 0.4; }
+.hero-badge { position: absolute; top: 32px; right: 32px; background: var(--ink); border: 1px solid var(--plate); padding: 20px; text-align: center; min-width: 130px; }
+.hero-badge .bd-val { font-family: var(--ff-disp); font-size: 42px; color: var(--gold3); line-height: 1; }
+.hero-badge .bd-lbl { font-family: var(--ff-cond); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--dust); margin-top: 4px; }
+
+/* SECTION COMMON */
+.sec-label { font-family: var(--ff-cond); font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.sec-label::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--gold); }
+.sec-title { font-family: var(--ff-disp); font-size: clamp(52px, 6vw, 88px); line-height: 0.92; letter-spacing: 2px; color: var(--white); margin-bottom: 20px; }
+.sec-title .gold { color: var(--gold); }
+.sec-body { font-size: 15px; font-weight: 300; color: var(--fog); line-height: 1.8; max-width: 520px; }
+.divider { height: 1px; background: var(--plate); border: none; margin: 0; }
+
+/* DEFINITION */
+.def-sec { background: var(--paper); }
+.def-inner { display: grid; grid-template-columns: 380px 1fr; min-height: 380px; }
+.def-sidebar { background: var(--ink); padding: 64px 48px; display: flex; flex-direction: column; justify-content: space-between; }
+.def-sidebar .sec-label { color: var(--gold); }
+.def-num { font-family: var(--ff-disp); font-size: 140px; line-height: 1; color: rgba(201,150,42,0.08); margin-top: auto; padding-top: 20px; letter-spacing: 4px; }
+.def-content { background: var(--paper); padding: 64px 72px; position: relative; }
+.def-content::before { content: '"'; position: absolute; top: 20px; left: 56px; font-family: var(--ff-disp); font-size: 200px; line-height: 1; color: rgba(0,0,0,0.05); pointer-events: none; }
+.def-q { font-family: var(--ff-cond); font-size: clamp(20px,2.2vw,28px); font-weight: 700; color: var(--ink); margin-bottom: 24px; line-height: 1.3; }
+.def-a { font-size: 16px; color: #444; line-height: 1.9; font-weight: 300; }
+.def-a strong { font-weight: 600; color: var(--ink); }
+.def-a .hl { color: var(--gold); font-weight: 600; }
+
+/* ═══════════════════════════════════════════
+   THE CHALLENGE — Diagonal split, bleed tiles
+   ═══════════════════════════════════════════ */
+.prob-sec { background: var(--ink); padding: 0; overflow: hidden; }
+.prob-headline-band { background: var(--ink2); padding: 80px 0 0; }
+.prob-title-row { display: flex; align-items: flex-end; gap: 48px; padding-bottom: 56px; }
+.prob-title-row .sec-label { white-space: nowrap; }
+.prob-bleed { display: grid; grid-template-columns: repeat(5, 1fr); min-height: 560px; }
+.pb-tile { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 36px 28px; cursor: default; transition: flex 0.5s cubic-bezier(0.4,0,0.2,1); flex: 1; }
+.pb-tile:hover { flex: 2.4; }
+.pb-tile-img { position: absolute; inset: 0; }
+.pb-tile-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(60%) brightness(0.35) contrast(1.2); transition: transform 0.6s ease, filter 0.5s ease; }
+.pb-tile:hover .pb-tile-img img { transform: scale(1.08); filter: grayscale(20%) brightness(0.45) contrast(1.2); }
+.pb-tile-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.4) 50%, transparent 100%); }
+.pb-tile-num { font-family: var(--ff-disp); font-size: 80px; line-height: 1; color: rgba(255,255,255,0.06); letter-spacing: 2px; position: absolute; top: 20px; left: 20px; transition: color 0.4s; }
+.pb-tile:hover .pb-tile-num { color: rgba(201,150,42,0.18); }
+.pb-tile-content { position: relative; z-index: 2; }
+.pb-tile-icon { font-size: 28px; margin-bottom: 12px; display: block; opacity: 0.9; }
+.pb-tile-title { font-family: var(--ff-cond); font-size: 16px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 8px; line-height: 1.2; }
+.pb-tile-body { font-size: 12.5px; color: var(--dust); line-height: 1.65; font-weight: 300; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s ease, opacity 0.4s ease 0.1s; }
+.pb-tile:hover .pb-tile-body { max-height: 120px; opacity: 1; }
+.pb-tile-loss { display: inline-block; margin-top: 10px; font-family: var(--ff-disp); font-size: 22px; letter-spacing: 1px; color: #EF4444; background: rgba(239,68,68,0.1); padding: 4px 10px; border-left: 3px solid #EF4444; }
+.pb-bottom-bar { background: var(--ink3); padding: 22px 0; border-top: 1px solid var(--plate); }
+.pb-bottom-inner { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pb-tag { font-family: var(--ff-cond); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border: 1px solid var(--plate); color: var(--dust); }
+.pb-tag.warn { border-color: rgba(239,68,68,0.4); color: #EF4444; background: rgba(239,68,68,0.06); }
+.pb-sep { width: 1px; height: 20px; background: var(--plate); }
+
+/* ═══════════════════════════════════════════
+   THE SOLUTION — Tab-panel module explorer
+   ═══════════════════════════════════════════ */
+.feat-sec { background: var(--paper); padding: 100px 0; overflow: hidden; color: var(--ink); }
+.feat-sec .sec-label { color: var(--gold); }
+.feat-sec .sec-title { color: var(--ink); }
+.feat-sec .sec-title .gold { color: var(--gold); }
+.feat-sec .sec-body { color: var(--muted); }
+.feat-tabs { display: flex; gap: 0; margin-top: 56px; border-bottom: 2px solid var(--ink); overflow-x: auto; scrollbar-width: none; }
+.feat-tabs::-webkit-scrollbar { display: none; }
+.ftab { display: flex; align-items: center; gap: 10px; padding: 16px 28px; font-family: var(--ff-cond); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer; white-space: nowrap; transition: color 0.2s, border-color 0.2s; user-select: none; background: transparent; border-top: none; border-left: none; border-right: none; }
+.ftab:hover { color: var(--ink); }
+.ftab.active { color: var(--ink); border-bottom-color: var(--gold); }
+.ftab-icon { font-size: 18px; }
+.ftab-num { font-family: var(--ff-disp); font-size: 11px; color: var(--gold); opacity: 0.7; }
+.feat-panels { margin-top: 0; }
+.fpanel { display: none; animation: panelIn 0.35s ease; }
+.fpanel.active { display: grid; grid-template-columns: 1fr 1.3fr; min-height: 500px; }
+@keyframes panelIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.fpanel-left { background: var(--ink); padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; }
+.fpanel-badge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ff-cond); font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 5px 14px; margin-bottom: 32px; width: fit-content; }
+.fpanel-title { font-family: var(--ff-disp); font-size: clamp(40px, 4vw, 62px); line-height: 0.92; letter-spacing: 2px; color: var(--white); margin-bottom: 24px; }
+.fpanel-title .g { color: var(--gold); }
+.fpanel-desc { font-size: 14px; color: var(--dust); line-height: 1.85; font-weight: 300; margin-bottom: 36px; max-width: 380px; }
+.fpanel-bullets { display: flex; flex-direction: column; gap: 0; }
+.fpanel-bullet { display: flex; align-items: center; gap: 0; border-top: 1px solid var(--plate); font-size: 13px; color: var(--fog); }
+.fpanel-bullet:last-child { border-bottom: 1px solid var(--plate); }
+.fpanel-bullet-tick { width: 44px; height: 44px; flex-shrink: 0; background: rgba(201,150,42,0.12); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--gold); font-weight: 700; }
+.fpanel-bullet span { padding: 0 16px; }
+.fpanel-right { position: relative; overflow: hidden; background: var(--paper2); display: flex; flex-direction: column; }
+.fpanel-stat-band { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 2px solid var(--ink); }
+.fpanel-stat { padding: 28px 24px; border-right: 1px solid #C8C0B4; }
+.fpanel-stat:last-child { border-right: none; }
+.fpanel-stat-val { font-family: var(--ff-disp); font-size: 40px; letter-spacing: 1px; color: var(--ink); line-height: 1; }
+.fpanel-stat-val span { color: var(--gold); }
+.fpanel-stat-lbl { font-family: var(--ff-cond); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+.fpanel-visual { flex: 1; position: relative; overflow: hidden; min-height: 280px; }
+.fpanel-visual img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%) brightness(0.85); }
+.fpanel-visual-caption { position: absolute; bottom: 0; left: 0; right: 0; background: var(--gold); padding: 12px 20px; font-family: var(--ff-cond); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); }
+
+/* ═══════════════════════════════════════════
+   DEEP DIVES — Full-bleed cinematic panels
+   ═══════════════════════════════════════════ */
+.deep-sec { background: var(--ink); padding: 100px 0 0; overflow: hidden; }
+.deep-sec .wrap { padding-bottom: 0; }
+.deep-panels { margin-top: 64px; }
+.dp { display: grid; grid-template-columns: 55% 45%; min-height: 540px; border-top: 1px solid var(--plate); position: relative; overflow: hidden; }
+.dp:last-child { border-bottom: 1px solid var(--plate); }
+.dp.alt { grid-template-columns: 45% 55%; }
+.dp.alt .dp-photo { order: -1; }
+.dp-content { padding: 72px 64px; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; background: var(--ink); }
+.dp-ghost { position: absolute; right: -10px; top: 50%; transform: translateY(-50%); font-family: var(--ff-disp); font-size: 160px; line-height: 1; color: rgba(255,255,255,0.025); pointer-events: none; white-space: nowrap; letter-spacing: 4px; }
+.dp-counter { font-family: var(--ff-disp); font-size: 13px; letter-spacing: 4px; color: var(--gold); margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+.dp-counter::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--gold); opacity: 0.4; }
+.dp-title { font-family: var(--ff-disp); font-size: clamp(42px,4.5vw,68px); line-height: 0.9; letter-spacing: 2px; color: var(--white); margin-bottom: 24px; }
+.dp-title .g { color: var(--gold); }
+.dp-body { font-size: 14px; color: var(--dust); line-height: 1.85; font-weight: 300; margin-bottom: 36px; max-width: 420px; }
+.dp-checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--plate); }
+.dp-check { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-right: 1px solid var(--plate); border-bottom: 1px solid var(--plate); font-size: 12.5px; color: var(--fog); font-weight: 400; line-height: 1.5; }
+.dp-check:nth-child(even) { border-right: none; }
+.dp-check:nth-last-child(-n+2) { border-bottom: none; }
+.dp-check::before { content: '✓'; color: var(--gold); font-weight: 800; font-size: 11px; flex-shrink: 0; margin-top: 2px; }
+.dp-callout { margin-top: 28px; display: flex; align-items: stretch; gap: 0; }
+.dp-callout-bar { width: 4px; background: var(--gold); flex-shrink: 0; }
+.dp-callout-body { background: rgba(201,150,42,0.07); padding: 16px 20px; }
+.dp-callout-label { font-family: var(--ff-cond); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.dp-callout-text { font-size: 13px; color: var(--dust); line-height: 1.6; font-weight: 300; }
+.dp-photo { position: relative; overflow: hidden; }
+.dp-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(50%) brightness(0.45) contrast(1.15); transition: transform 8s ease, filter 0.5s; }
+.dp:hover .dp-photo img { transform: scale(1.04); filter: grayscale(20%) brightness(0.5) contrast(1.1); }
+.dp-photo-num { position: absolute; bottom: 0; right: 0; font-family: var(--ff-disp); font-size: clamp(80px,10vw,140px); line-height: 0.85; color: var(--gold); opacity: 0.7; padding: 0 16px 8px 0; }
+.dp-photo-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.5) 0%, transparent 60%); }
+.dp.alt .dp-photo-overlay { background: linear-gradient(to left, rgba(10,10,10,0.5) 0%, transparent 60%); }
+
+/* ═══════════════════════════════════════════
+   FAQ — Masonry magazine layout
+   ═══════════════════════════════════════════ */
+.faq-sec { background: var(--paper); padding: 100px 0; color: var(--ink); }
+.faq-sec .sec-label { color: var(--gold); }
+.faq-sec .sec-title { color: var(--ink); }
+.faq-sec .sec-title .gold { color: var(--gold); }
+.faq-top { display: grid; grid-template-columns: 1fr 1.8fr; gap: 80px; align-items: end; margin-bottom: 56px; }
+.faq-intro-text { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 28px; }
+.faq-cats { display: flex; gap: 8px; flex-wrap: wrap; }
+.fcat-btn { font-family: var(--ff-cond); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 7px 16px; border: 1px solid #C8C0B4; color: var(--muted); background: transparent; cursor: pointer; transition: all 0.2s; }
+.fcat-btn.active, .fcat-btn:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.faq-cta-box { background: var(--ink); padding: 36px 32px; }
+.faq-cta-box h3 { font-family: var(--ff-disp); font-size: 36px; line-height: 0.95; letter-spacing: 2px; color: var(--white); margin-bottom: 12px; }
+.faq-cta-box p { font-size: 13px; color: var(--dust); line-height: 1.7; margin-bottom: 24px; }
+.faq-cta-link { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--ink); padding: 13px 28px; font-family: var(--ff-cond); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: background 0.2s; }
+.faq-cta-link:hover { background: var(--gold2); }
+.faq-masonry { columns: 2; column-gap: 24px; }
+.faq-card { break-inside: avoid; margin-bottom: 16px; background: var(--white); border: 1px solid #D8D2C8; overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s; }
+.faq-card:hover { border-color: var(--gold); box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+.faq-card.featured { background: var(--ink); border-color: var(--ink); }
+.fq2 { display: flex; justify-content: space-between; align-items: flex-start; padding: 22px 24px 18px; cursor: pointer; gap: 16px; }
+.fq2-text { font-family: var(--ff-cond); font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: 0.5px; line-height: 1.4; }
+.faq-card.featured .fq2-text { color: var(--white); }
+.fq2-icon { width: 26px; height: 26px; border: 1px solid #C8C0B4; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--muted); font-weight: 300; transition: all 0.3s; margin-top: 2px; }
+.faq-card.featured .fq2-icon { border-color: var(--plate); color: var(--dust); }
+.faq-card.open .fq2-icon { transform: rotate(45deg); background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.fa2 { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-card.open .fa2 { max-height: 400px; }
+.fa2-in { padding: 0 24px 22px; font-size: 13.5px; color: var(--muted); line-height: 1.8; font-weight: 300; border-top: 1px solid #D8D2C8; padding-top: 16px; }
+.faq-card.featured .fa2-in { color: var(--dust); border-top-color: var(--plate); }
+.faq-card-tag { display: inline-block; font-family: var(--ff-cond); font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); padding: 0 24px 16px; }
+
+/* RESULTS */
+.res-sec { background: var(--paper); padding: 100px 0; color: var(--ink); position: relative; overflow: hidden; }
+.res-sec::before { content: 'RESULTS'; position: absolute; right: -10px; bottom: -30px; font-family: var(--ff-disp); font-size: 240px; line-height: 1; color: rgba(0,0,0,0.04); pointer-events: none; white-space: nowrap; }
+.res-head { margin-bottom: 60px; }
+.res-head .sec-label { color: var(--gold); }
+.res-head .sec-title { color: var(--ink); }
+.res-head .sec-title .gold { color: var(--gold); }
+.stats-band { display: grid; grid-template-columns: repeat(4, 1fr); border: 2px solid var(--ink); margin-bottom: 72px; }
+.stat-block { padding: 48px 32px; text-align: center; border-right: 2px solid var(--ink); position: relative; overflow: hidden; transition: background 0.3s; }
+.stat-block:last-child { border-right: none; }
+.stat-block::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease; }
+.stat-block:hover { background: var(--ink); }
+.stat-block:hover .big { color: var(--gold3); }
+.stat-block:hover .sl { color: var(--dust); }
+.stat-block:hover::after { transform: scaleX(1); }
+.big { font-family: var(--ff-disp); font-size: 68px; line-height: 1; color: var(--ink); letter-spacing: 2px; display: block; margin-bottom: 10px; transition: color 0.3s; }
+.big .u { color: var(--gold); }
+.sl { font-family: var(--ff-cond); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); line-height: 1.4; transition: color 0.3s; }
+.case-grid { display: grid; grid-template-columns: 1.2fr 1fr; border: 2px solid var(--ink); }
+.case-img { position: relative; overflow: hidden; min-height: 400px; }
+.case-img img { height: 100%; object-fit: cover; filter: grayscale(20%) brightness(0.75); }
+.case-img-label { position: absolute; top: 24px; left: 0; background: var(--gold); padding: 8px 20px; font-family: var(--ff-cond); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); }
+.case-content { background: var(--ink); color: var(--white); padding: 56px 48px; }
+.case-content h3 { font-family: var(--ff-disp); font-size: clamp(28px, 2.5vw, 40px); line-height: 1.05; letter-spacing: 1px; color: var(--white); margin-bottom: 16px; }
+.case-content p { font-size: 14px; color: var(--dust); line-height: 1.8; font-weight: 300; margin-bottom: 28px; }
+.case-results { display: flex; flex-direction: column; }
+.cr { display: flex; border: 1px solid var(--plate); border-bottom: none; font-size: 13px; color: var(--fog); align-items: stretch; }
+.cr:last-child { border-bottom: 1px solid var(--plate); }
+.cr-arrow { width: 44px; flex-shrink: 0; background: rgba(201,150,42,0.15); display: flex; align-items: center; justify-content: center; font-family: var(--ff-cond); font-size: 16px; font-weight: 700; color: var(--gold); }
+.cr span { padding: 13px 16px; }
+
+/* LINKS */
+.links-sec { background: var(--ink2); padding: 80px 0; }
+.links-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--plate); border: 1px solid var(--plate); margin-top: 48px; }
+.lcard { background: var(--ink2); padding: 32px 24px; transition: background 0.2s; position: relative; overflow: hidden; }
+.lcard::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.lcard:hover { background: var(--ink3); }
+.lcard:hover::before { transform: scaleX(1); }
+.lcard-icon { font-size: 28px; margin-bottom: 16px; }
+.lcard-title { font-family: var(--ff-cond); font-size: 14px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--white); margin-bottom: 6px; }
+.lcard-link { font-family: var(--ff-cond); font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--gold); text-transform: uppercase; }
+
+/* CTA */
+.cta-sec { background: var(--gold); padding: 120px 0; position: relative; overflow: hidden; }
+.cta-sec::before { content: 'START'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%); font-family: var(--ff-disp); font-size: 300px; line-height: 1; color: rgba(0,0,0,0.06); pointer-events: none; }
+.cta-inner { position: relative; z-index: 1; }
+.cta-label { font-family: var(--ff-cond); font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: rgba(0,0,0,0.5); margin-bottom: 16px; }
+.cta-inner h2 { font-family: var(--ff-disp); font-size: clamp(52px, 7vw, 96px); line-height: 0.9; letter-spacing: 2px; color: var(--ink); margin-bottom: 24px; }
+.cta-inner p { font-size: 16px; color: rgba(0,0,0,0.6); max-width: 520px; line-height: 1.8; font-weight: 300; margin-bottom: 44px; }
+.cta-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+.cta-btn-dark { background: var(--ink); color: var(--white); padding: 16px 36px; font-family: var(--ff-cond); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+.cta-btn-dark:hover { background: var(--ink3); }
+.cta-btn-ghost { background: transparent; color: var(--ink); padding: 16px 36px; font-family: var(--ff-cond); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border: 2px solid var(--ink); transition: all 0.2s; }
+.cta-btn-ghost:hover { background: var(--ink); color: var(--white); }
+.cta-pills { display: flex; gap: 24px; flex-wrap: wrap; }
+.pill { display: flex; align-items: center; gap: 8px; font-family: var(--ff-cond); font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(0,0,0,0.55); }
+.pill::before { content: '✓'; color: var(--ink); font-weight: 800; }
+
+/* FOOTER */
+footer { background: var(--ink2); border-top: 1px solid var(--plate); padding: 32px 0; text-align: center; }
+footer p { font-family: var(--ff-cond); font-size: 12px; letter-spacing: 1px; color: var(--muted); }
+footer a { color: var(--gold); }
+footer a:hover { text-decoration: underline; }
+
+/* OUTCOMES */
+.outcomes-sec { background: var(--ink3); padding: 100px 0; }
+.outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--plate); border: 1px solid var(--plate); margin-top: 56px; }
+.ocard { background: var(--ink2); padding: 40px 32px; position: relative; overflow: hidden; transition: background 0.3s; }
+.ocard::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+.ocard:hover { background: var(--ink3); }
+.ocard:hover::after { transform: scaleX(1); }
+.ocard-icon { width: 52px; height: 52px; border: 1px solid var(--plate); background: var(--ink3); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 24px; transition: border-color 0.3s; }
+.ocard:hover .ocard-icon { border-color: var(--gold); background: rgba(201,150,42,0.1); }
+.ocard h3 { font-family: var(--ff-cond); font-size: 18px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 12px; }
+.ocard p { font-size: 13px; color: var(--dust); line-height: 1.75; font-weight: 300; margin-bottom: 16px; }
+.ocard-tag { display: inline-block; font-family: var(--ff-cond); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,150,42,0.4); padding: 3px 10px; }
+.outcomes-band { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--plate); border: 1px solid var(--plate); margin-top: 1px; }
+.oband-item { background: var(--ink); padding: 36px 40px; display: flex; gap: 24px; align-items: flex-start; }
+.oband-val { font-family: var(--ff-disp); font-size: 52px; line-height: 1; color: var(--gold); letter-spacing: 2px; flex-shrink: 0; }
+.oband-text { font-size: 13px; color: var(--dust); line-height: 1.7; font-weight: 300; padding-top: 6px; }
+
+/* EXTRA FEATURES */
+.xfeat-sec { background: var(--ink2); padding: 100px 0; }
+.xfeat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--plate); border: 1px solid var(--plate); margin-top: 56px; }
+.xcard { background: var(--ink3); padding: 36px 30px; transition: background 0.3s; position: relative; }
+.xcard::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--gold); transform: scaleY(0); transform-origin: top; transition: transform 0.4s; }
+.xcard:hover { background: var(--ink4); }
+.xcard:hover::before { transform: scaleY(1); }
+.xcard h3 { font-family: var(--ff-cond); font-size: 17px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 10px; }
+.xcard p { font-size: 13px; color: var(--dust); line-height: 1.75; font-weight: 300; }
+
+/* COMPARISON TABLE */
+.compare-sec { background: var(--paper); padding: 100px 0; color: var(--ink); }
+.compare-sec .sec-label { color: var(--gold); }
+.compare-sec .sec-title { color: var(--ink); }
+.compare-sec .sec-title .gold { color: var(--gold); }
+.compare-sec .sec-body { color: var(--muted); }
+.ctable-wrap { margin-top: 56px; border: 2px solid var(--ink); overflow: hidden; }
+table.ctable { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.ctable thead { background: var(--ink); color: var(--white); }
+table.ctable thead th { padding: 18px 24px; font-family: var(--ff-cond); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-right: 1px solid var(--plate); text-align: left; }
+table.ctable thead th:last-child { border-right: none; }
+table.ctable thead th.bad { color: #EF4444; }
+table.ctable thead th.good { color: var(--gold2); }
+table.ctable tbody tr { border-bottom: 1px solid #D4CEC4; transition: background 0.2s; }
+table.ctable tbody tr:last-child { border-bottom: none; }
+table.ctable tbody tr:hover { background: #EAE5DC; }
+table.ctable tbody td { padding: 18px 24px; vertical-align: top; border-right: 1px solid #D4CEC4; font-weight: 300; color: #333; line-height: 1.65; }
+table.ctable tbody td:last-child { border-right: none; }
+table.ctable tbody td:first-child { font-family: var(--ff-cond); font-weight: 700; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink); background: #EAE5DC; }
+table.ctable tbody td.bad-cell { color: #B91C1C; }
+table.ctable tbody td.good-cell { color: #1A5C2A; font-weight: 500; }
+.ctable-caption { background: var(--gold); padding: 14px 24px; font-family: var(--ff-cond); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); }
+
+/* DEMO STEPS */
+.demo-sec { background: var(--ink); padding: 100px 0; }
+.demo-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 64px; }
+.demo-steps { display: flex; flex-direction: column; gap: 0; }
+.demo-step { display: grid; grid-template-columns: 64px 1fr; border: 1px solid var(--plate); border-bottom: none; transition: background 0.2s; }
+.demo-step:last-child { border-bottom: 1px solid var(--plate); }
+.demo-step:hover { background: var(--ink3); border-color: var(--gold); }
+.demo-step-num { background: var(--ink3); border-right: 1px solid var(--plate); display: flex; align-items: center; justify-content: center; font-family: var(--ff-disp); font-size: 28px; color: var(--gold); letter-spacing: 1px; }
+.demo-step-body { padding: 24px 28px; }
+.demo-step-body h4 { font-family: var(--ff-cond); font-size: 15px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
+.demo-step-body p { font-size: 13px; color: var(--dust); line-height: 1.65; font-weight: 300; }
+.demo-cta-panel { background: var(--gold); padding: 48px 40px; }
+.demo-cta-panel h3 { font-family: var(--ff-disp); font-size: 42px; line-height: 0.95; letter-spacing: 2px; color: var(--ink); margin-bottom: 16px; }
+.demo-cta-panel p { font-size: 14px; color: rgba(0,0,0,0.6); line-height: 1.8; font-weight: 300; margin-bottom: 28px; }
+.demo-note { margin-top: 20px; font-family: var(--ff-cond); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(0,0,0,0.45); }
+.demo-trust { display: flex; gap: 0; background: var(--ink); border: 1px solid var(--plate); margin-top: 1px; }
+.dt-item { flex: 1; padding: 20px 24px; border-right: 1px solid var(--plate); text-align: center; }
+.dt-item:last-child { border-right: none; }
+.dt-val { font-family: var(--ff-disp); font-size: 28px; color: var(--gold); letter-spacing: 1px; }
+.dt-lbl { font-family: var(--ff-cond); font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dust); margin-top: 4px; }
+
+/* SCROLL REVEAL */
+.sr { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.sr.vis { opacity: 1; transform: translateY(0); }
+.sr.d1 { transition-delay: 0.07s; } .sr.d2 { transition-delay: 0.14s; }
+.sr.d3 { transition-delay: 0.21s; } .sr.d4 { transition-delay: 0.28s; }
+.sr.d5 { transition-delay: 0.35s; } .sr.d6 { transition-delay: 0.42s; }
+
+/* RESPONSIVE */
+@media(max-width: 1100px) {
+  .links-grid { grid-template-columns: repeat(3, 1fr); }
+  .outcomes-grid, .xfeat-grid { grid-template-columns: 1fr 1fr; }
+  .demo-layout { grid-template-columns: 1fr; gap: 48px; }
+  .fpanel.active { grid-template-columns: 1fr; }
+  .fpanel-right { min-height: 320px; }
+  .dp, .dp.alt { grid-template-columns: 1fr; }
+  .dp-photo { min-height: 360px; order: 0 !important; }
+  .dp.alt .dp-photo { order: 0; }
+  .prob-bleed { grid-template-columns: repeat(3, 1fr); min-height: auto; }
+}
+@media(max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { min-height: 360px; }
+  .def-inner { grid-template-columns: 1fr; }
+  .feat-sec .feat-head-row { grid-template-columns: 1fr; gap: 24px; }
+  .stats-band { grid-template-columns: 1fr 1fr; }
+  .case-grid { grid-template-columns: 1fr; }
+  .faq-top { grid-template-columns: 1fr; gap: 40px; }
+  .faq-masonry { columns: 1; }
+  .nav-links { display: none; }
+  .outcomes-band { grid-template-columns: 1fr; }
+  .demo-trust { flex-wrap: wrap; }
+  .dt-item { flex: 1 1 calc(50% - 1px); }
+  .prob-bleed { grid-template-columns: 1fr 1fr; }
+  .dp-checklist { grid-template-columns: 1fr; }
+}
+@media(max-width: 600px) {
+  .stats-band, .outcomes-grid, .xfeat-grid { grid-template-columns: 1fr; }
+  .links-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-metrics { grid-template-columns: 1fr 1fr; }
+  .hero-left { padding: 48px 32px; }
+  .oband-item { flex-direction: column; gap: 8px; }
+  .prob-bleed { grid-template-columns: 1fr; }
+  .fpanel-stat-band { grid-template-columns: 1fr; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SAZS Apps Financial Management","url":"https://sazsapps.com/case-studies/Complete_Financial_Control_Profit_Analysis.html","description":"Real-time financial management for quarry, crusher and RMC. GST e-invoicing, site-wise P&L, credit control.","applicationCategory":"BusinessApplication","operatingSystem":"Web, Android, iOS","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"303"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is quarry ERP financial management software?","acceptedAnswer":{"@type":"Answer","text":"An integrated ERP system connecting quarry operations to real-time financial reporting — automating GST invoicing, site-wise P&L, credit limits and inventory reconciliation."}},{"@type":"Question","name":"Can SAZS Apps block dispatch when a customer exceeds their credit limit?","acceptedAnswer":{"@type":"Answer","text":"Yes. Boom barrier integration physically blocks the gate when a customer exceeds their credit limit."}},{"@type":"Question","name":"Does SAZS Apps integrate with Tally?","acceptedAnswer":{"@type":"Answer","text":"Yes. SAZS Apps automatically syncs all accounting vouchers with Tally, eliminating manual re-entry."}}]}</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="https://sazsapps.com" class="nav-logo">SAZS<em>APPS</em></a>
+      <ul class="nav-links">
+        <li><a href="#outcomes">Outcomes</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#compare">Compare</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="https://sazsapps.com/Signup.html" class="nav-cta">Book Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-stamp">Financial Management ERP</div>
+    <h1>COMPLETE<br><span class="accent">FINANCIAL</span><br>CONTROL</h1>
+    <p class="hero-sub">SAZS Apps connects your <strong>weighbridge, dispatch records and site costs</strong> into a live financial dashboard — automated GST e-invoicing, real-time P&amp;L, credit enforcement. <strong>Zero manual accounting.</strong></p>
+    <p style="font-size:13px;font-weight:400;color:#666;line-height:1.7;margin-bottom:28px;max-width:440px;border-left:3px solid var(--gold);padding-left:14px;">SAZS ERP Financial Management gives owners a single place to see daily profit, cash position and risk across every quarry, crusher, RMC and brick unit — instead of waiting for month‑end reports.</p>
+    <div class="hero-metrics">
+      <div class="hm"><span class="val">90%</span><span class="lbl">Fewer Errors</span></div>
+      <div class="hm"><span class="val">30s</span><span class="lbl">Per Invoice</span></div>
+      <div class="hm"><span class="val">303+</span><span class="lbl">Businesses</span></div>
+      <div class="hm"><span class="val">1×</span><span class="lbl">Click Report</span></div>
+    </div>
+    <div class="hero-actions">
+      <a href="https://sazsapps.com/Signup.html" class="btn-solid">Book Free Demo</a>
+      <a href="https://sazsapps.com/QuarryCrusherRMCProfitCalculator.html" class="btn-outline">Calculate Profit →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80" alt="Quarry operations managed by SAZS Apps financial ERP">
+    <div class="hero-right-overlay"></div>
+    <div class="hero-badge">
+      <div class="bd-val">4.8</div>
+      <div class="bd-lbl">★ Rating<br>303+ Reviews</div>
+    </div>
+    <div class="hero-ticker">
+      <div class="ticker-item">Today's Revenue: ₹4.2L <span class="ticker-sep">|</span></div>
+      <div class="ticker-item">Invoice Generated — 30 sec ago <span class="ticker-sep">|</span></div>
+      <div class="ticker-item">GST Audit: Zero Discrepancies <span class="ticker-sep">|</span></div>
+      <div class="ticker-item">Month-close: 4 Hours</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- DEFINITION -->
+<section class="def-sec">
+  <div class="def-inner">
+    <div class="def-sidebar sr">
+      <div>
+        <div class="sec-label">Definition</div>
+        <div style="font-family:var(--ff-disp);font-size:clamp(40px,4vw,64px);line-height:0.95;letter-spacing:2px;color:var(--white);">WHAT<br>IS IT?</div>
+      </div>
+      <div class="def-num">01</div>
+    </div>
+    <div class="def-content sr d2">
+      <h2 class="def-q">What is Financial Management Software for Quarry and Crusher Businesses?</h2>
+      <p class="def-a">Financial management software for quarry and crusher businesses is an <strong>integrated ERP system</strong> that connects a site's physical operations — weighbridge readings, truck dispatches, blast schedules and daily production — directly to real-time financial reporting. Instead of manual bookkeeping, every truck movement automatically creates an accounting entry, every expense is logged against a site, and profit and loss statements update in real time. <span class="hl"><strong>SAZS Apps</strong></span> is India's leading financial management ERP built specifically for quarries, crusher plants, RMC units and brick manufacturers — combining automated GST e-invoicing, site-wise P&amp;L reporting, credit control and expense management in a single platform <strong>trusted by over 303 businesses.</strong></p>
+      <p class="def-a" style="margin-top:18px;padding-top:18px;border-top:1px solid #D8D2C8;">Unlike generic accounting software, it ties every truck, batch and labour hour to ledgers — so your P&amp;L is driven by real‑world movement, not just manual entries.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- KEY OUTCOMES -->
+<section class="outcomes-sec" id="outcomes">
+  <div class="wrap">
+    <div class="sr">
+      <div class="sec-label">What You Gain</div>
+      <h2 class="sec-title">THREE CORE<br><span class="gold">OUTCOMES</span></h2>
+      <p class="sec-body">Replace fragmented Tally entries and spreadsheet costing with one connected ERP where physical movement and financial data always match.</p>
+    </div>
+    <div class="outcomes-grid sr d2">
+      <div class="ocard">
+        <div class="ocard-icon">📊</div>
+        <h3>Site-Wise P&amp;L in Seconds</h3>
+        <p>View separate P&amp;L for each quarry, crusher, RMC or brick unit and a consolidated Owner view to see where you actually earn money and where you leak margin.</p>
+        <span class="ocard-tag">Profit Analysis</span>
+      </div>
+      <div class="ocard">
+        <div class="ocard-icon">🧾</div>
+        <h3>Auto-Posting of Every Voucher</h3>
+        <p>As soon as a truck is weighed and invoice is generated, the corresponding sales, tax and stock entries are posted to ledgers without manual typing — eliminating delay and malpractice.</p>
+        <span class="ocard-tag">Auto Accounting</span>
+      </div>
+      <div class="ocard">
+        <div class="ocard-icon">💰</div>
+        <h3>Cash, Credit &amp; Overdues Under Control</h3>
+        <p>Enforce customer credit limits at the gate, block dispatch for overdue accounts and track collections so that your cash flow is always visible and predictable.</p>
+        <span class="ocard-tag">Credit Control</span>
+      </div>
+    </div>
+    <div class="outcomes-band sr d3">
+      <div class="oband-item">
+        <div class="oband-val">303+</div>
+        <div class="oband-text">Existing SAZS ERP clients already use integrated accounts for quarry, crusher, RMC and brick plants across India.</div>
+      </div>
+      <div class="oband-item">
+        <div class="oband-val">100K+</div>
+        <div class="oband-text">Financial and stock transactions posted without manual re-entry between site and back-office every month.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROBLEM — REDESIGNED: Expanding bleed tiles -->
+<section class="prob-sec">
+  <div class="prob-headline-band">
+    <div class="wrap">
+      <div class="prob-title-row sr">
+        <div>
+          <div class="sec-label">The Challenge</div>
+          <h2 class="sec-title">FINANCIAL<br><span class="gold">BLIND SPOTS</span></h2>
+        </div>
+        <p class="sec-body" style="padding-bottom:12px;">Most quarry owners manage finances across three places: a Tally file, a notebook, and memory. None agree — and the losses are already done.</p>
+      </div>
+    </div>
+  </div>
+  <div class="prob-bleed sr d2">
+    <div class="pb-tile">
+      <div class="pb-tile-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt=""></div>
+      <div class="pb-tile-overlay"></div>
+      <div class="pb-tile-num">01</div>
+      <div class="pb-tile-content">
+        <span class="pb-tile-icon">⚖️</span>
+        <div class="pb-tile-title">Manual Weighbridge Entry</div>
+        <div class="pb-tile-body">
+          1 extra tonne per truck × 20 trucks daily = 20 tonnes of unrecorded loss, every single day.
+          <div class="pb-tile-loss">₹40,000/day lost</div>
+        </div>
+      </div>
+    </div>
+    <div class="pb-tile">
+      <div class="pb-tile-img"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt=""></div>
+      <div class="pb-tile-overlay"></div>
+      <div class="pb-tile-num">02</div>
+      <div class="pb-tile-content">
+        <span class="pb-tile-icon">🚨</span>
+        <div class="pb-tile-title">No Credit Limit Enforcement</div>
+        <div class="pb-tile-body">
+          Customers exceed credit limits because nobody checks in real time. Balances become bad debts silently.
+          <div class="pb-tile-loss">Receivables overdue</div>
+        </div>
+      </div>
+    </div>
+    <div class="pb-tile">
+      <div class="pb-tile-img"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt=""></div>
+      <div class="pb-tile-overlay"></div>
+      <div class="pb-tile-num">03</div>
+      <div class="pb-tile-content">
+        <span class="pb-tile-icon">📉</span>
+        <div class="pb-tile-title">No Site-Wise P&amp;L</div>
+        <div class="pb-tile-body">
+          Cannot tell if Site A is subsidising Site B. Underperforming sites drain resources invisibly for months.
+          <div class="pb-tile-loss">Blind margin leak</div>
+        </div>
+      </div>
+    </div>
+    <div class="pb-tile">
+      <div class="pb-tile-img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt=""></div>
+      <div class="pb-tile-overlay"></div>
+      <div class="pb-tile-num">04</div>
+      <div class="pb-tile-content">
+        <span class="pb-tile-icon">📋</span>
+        <div class="pb-tile-title">GST Reconciled Monthly</div>
+        <div class="pb-tile-body">
+          Errors at month-end require credit notes and amendments. Permanent audit risk accumulates every cycle.
+          <div class="pb-tile-loss">Compliance risk</div>
+        </div>
+      </div>
+    </div>
+    <div class="pb-tile">
+      <div class="pb-tile-img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" alt=""></div>
+      <div class="pb-tile-overlay"></div>
+      <div class="pb-tile-num">05</div>
+      <div class="pb-tile-content">
+        <span class="pb-tile-icon">⛽</span>
+        <div class="pb-tile-title">Expenses Not Linked to Sites</div>
+        <div class="pb-tile-body">
+          Costs recorded at company level — not per site. True cost-per-tonne remains permanently unknown.
+          <div class="pb-tile-loss">Pricing blind</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pb-bottom-bar">
+    <div class="wrap">
+      <div class="pb-bottom-inner">
+        <span class="pb-tag warn">5 Profit Killers</span>
+        <span class="pb-sep"></span>
+        <span class="pb-tag">All Solved by SAZS ERP</span>
+        <span class="pb-sep"></span>
+        <span class="pb-tag warn">Losses Already Happening Today</span>
+        <span class="pb-sep"></span>
+        <span class="pb-tag">Hover Each Panel to See the Impact</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FEATURES — REDESIGNED: Interactive tab-panel module explorer -->
+<section class="feat-sec" id="features">
+  <div class="wrap">
+    <div class="feat-head-row sr" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;">
+      <div>
+        <div class="sec-label">The Solution</div>
+        <h2 class="sec-title">6 CORE<br><span class="gold">MODULES</span></h2>
+      </div>
+      <p class="sec-body">Every module connects your physical operations to your financial ledger — no manual entry, no delays, no errors. Click any module to explore.</p>
+    </div>
+    <div class="feat-tabs sr d2" role="tablist">
+      <button class="ftab active" onclick="switchTab(0)" role="tab"><span class="ftab-icon">📈</span> <span>Site P&amp;L</span> <span class="ftab-num">01</span></button>
+      <button class="ftab" onclick="switchTab(1)" role="tab"><span class="ftab-icon">🧾</span> <span>GST Invoicing</span> <span class="ftab-num">02</span></button>
+      <button class="ftab" onclick="switchTab(2)" role="tab"><span class="ftab-icon">🚧</span> <span>Credit Control</span> <span class="ftab-num">03</span></button>
+      <button class="ftab" onclick="switchTab(3)" role="tab"><span class="ftab-icon">⛽</span> <span>Cost-Per-Tonne</span> <span class="ftab-num">04</span></button>
+      <button class="ftab" onclick="switchTab(4)" role="tab"><span class="ftab-icon">🔗</span> <span>Tally Sync</span> <span class="ftab-num">05</span></button>
+      <button class="ftab" onclick="switchTab(5)" role="tab"><span class="ftab-icon">📦</span> <span>Stock Recon</span> <span class="ftab-num">06</span></button>
+    </div>
+    <div class="feat-panels sr d3">
+      <!-- Panel 01 -->
+      <div class="fpanel active">
+        <div class="fpanel-left">
+          <div class="fpanel-badge">Module 01 — P&amp;L Reporting</div>
+          <div class="fpanel-title">REAL-TIME<br><span class="g">SITE P&amp;L</span></div>
+          <p class="fpanel-desc">Live profit and loss for each site — refreshed after every transaction, on any device. Compare all sites side-by-side without waiting for your accountant.</p>
+          <div class="fpanel-bullets">
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Per-site revenue &amp; cost breakdown</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Gross margin and net profit live</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Compare all sites side-by-side</span></div>
+          </div>
+        </div>
+        <div class="fpanel-right">
+          <div class="fpanel-stat-band">
+            <div class="fpanel-stat"><div class="fpanel-stat-val">3<span>days</span></div><div class="fpanel-stat-lbl">Old Close Time</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">4<span>hrs</span></div><div class="fpanel-stat-lbl">New Close Time</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">1<span>×</span></div><div class="fpanel-stat-lbl">Click Report</div></div>
+          </div>
+          <div class="fpanel-visual"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="P&L dashboard"><div class="fpanel-visual-caption">Live P&amp;L — updates with every truck</div></div>
+        </div>
+      </div>
+      <!-- Panel 02 -->
+      <div class="fpanel">
+        <div class="fpanel-left">
+          <div class="fpanel-badge">Module 02 — GST Compliance</div>
+          <div class="fpanel-title">E-INVOICE<br><span class="g">IN 30 SEC</span></div>
+          <p class="fpanel-desc">GST e-invoices with IRN and QR codes in under 30 seconds via direct API integration. E-way bills in the same workflow — no portal login needed.</p>
+          <div class="fpanel-bullets">
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>E-way bills in same workflow</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>No portal login needed</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Audit-ready at all times</span></div>
+          </div>
+        </div>
+        <div class="fpanel-right">
+          <div class="fpanel-stat-band">
+            <div class="fpanel-stat"><div class="fpanel-stat-val">20<span>min</span></div><div class="fpanel-stat-lbl">Old Invoice Time</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">30<span>sec</span></div><div class="fpanel-stat-lbl">New Invoice Time</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">0<span>errors</span></div><div class="fpanel-stat-lbl">GST Discrepancies</div></div>
+          </div>
+          <div class="fpanel-visual"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80" alt="GST invoicing"><div class="fpanel-visual-caption">Auto GST e-invoice at point of dispatch</div></div>
+        </div>
+      </div>
+      <!-- Panel 03 -->
+      <div class="fpanel">
+        <div class="fpanel-left">
+          <div class="fpanel-badge">Module 03 — Credit &amp; Receivables</div>
+          <div class="fpanel-title">HARDWARE<br><span class="g">CREDIT LOCK</span></div>
+          <p class="fpanel-desc">Boom barrier physically blocks dispatch when a customer exceeds their credit limit. Policy enforced at hardware level — no phone calls needed.</p>
+          <div class="fpanel-bullets">
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Per-customer credit limits</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Overdue invoice flagging</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Live receivables dashboard</span></div>
+          </div>
+        </div>
+        <div class="fpanel-right">
+          <div class="fpanel-stat-band">
+            <div class="fpanel-stat"><div class="fpanel-stat-val">38<span>%</span></div><div class="fpanel-stat-lbl">Drop in Overdues</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">0<span>calls</span></div><div class="fpanel-stat-lbl">Gate Check Calls</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">∞<span></span></div><div class="fpanel-stat-lbl">Auto-enforced</div></div>
+          </div>
+          <div class="fpanel-visual"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80" alt="Credit enforcement"><div class="fpanel-visual-caption">Boom barrier stops over-limit dispatch</div></div>
+        </div>
+      </div>
+      <!-- Panel 04 -->
+      <div class="fpanel">
+        <div class="fpanel-left">
+          <div class="fpanel-badge">Module 04 — Expense Tracking</div>
+          <div class="fpanel-title">TRUE COST<br><span class="g">PER TONNE</span></div>
+          <p class="fpanel-desc">Log fuel, explosives, labour and permits per site. True cost-per-tonne calculated automatically with margin data per material grade.</p>
+          <div class="fpanel-bullets">
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Category-wise expense tracking</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Site-level cost allocation</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Margin data per material grade</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Owner view of margin per customer, route and vehicle — stop unprofitable jobs fast</span></div>
+          </div>
+        </div>
+        <div class="fpanel-right">
+          <div class="fpanel-stat-band">
+            <div class="fpanel-stat"><div class="fpanel-stat-val">6<span>+</span></div><div class="fpanel-stat-lbl">Cost Categories</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">Live<span></span></div><div class="fpanel-stat-lbl">Per-Site Margin</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">Auto<span></span></div><div class="fpanel-stat-lbl">Cost-Per-Tonne</div></div>
+          </div>
+          <div class="fpanel-visual"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Cost per tonne tracking"><div class="fpanel-visual-caption">Every cost allocated to site and material</div></div>
+        </div>
+      </div>
+      <!-- Panel 05 -->
+      <div class="fpanel">
+        <div class="fpanel-left">
+          <div class="fpanel-badge">Module 05 — Accounting Sync</div>
+          <div class="fpanel-title">TALLY<br><span class="g">ZERO REENTRY</span></div>
+          <p class="fpanel-desc">Every invoice and expense posts vouchers automatically. Direct Tally sync — sales, receipt and payment vouchers always current.</p>
+          <div class="fpanel-bullets">
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Sales, receipt &amp; payment vouchers</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Real-time Tally sync</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Always-current books</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Auditor‑friendly export with clear mapping between SAZS ERP vouchers and Tally groups and ledgers</span></div>
+          </div>
+        </div>
+        <div class="fpanel-right">
+          <div class="fpanel-stat-band">
+            <div class="fpanel-stat"><div class="fpanel-stat-val">0<span></span></div><div class="fpanel-stat-lbl">Manual Re-entry</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">Real<span>-time</span></div><div class="fpanel-stat-lbl">Tally Sync</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">100<span>%</span></div><div class="fpanel-stat-lbl">Match Rate</div></div>
+          </div>
+          <div class="fpanel-visual"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Tally integration"><div class="fpanel-visual-caption">Every transaction auto-posts to Tally</div></div>
+        </div>
+      </div>
+      <!-- Panel 06 -->
+      <div class="fpanel">
+        <div class="fpanel-left">
+          <div class="fpanel-badge">Module 06 — Inventory</div>
+          <div class="fpanel-title">STOCK<br><span class="g">RECONCILIATION</span></div>
+          <p class="fpanel-desc">Production matched against dispatched tonnage daily. Shortfalls flagged before they become losses. Grade-wise inventory tracking across all sites.</p>
+          <div class="fpanel-bullets">
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Grade-wise inventory tracking</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>RMC batch yield variance</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Brick plant material matching</span></div>
+            <div class="fpanel-bullet"><span class="fpanel-bullet-tick">✓</span><span>Financial value of stock per site, material grade and yard — ready for bank and audit statements</span></div>
+          </div>
+        </div>
+        <div class="fpanel-right">
+          <div class="fpanel-stat-band">
+            <div class="fpanel-stat"><div class="fpanel-stat-val">Daily<span></span></div><div class="fpanel-stat-lbl">Stock Checks</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">Auto<span></span></div><div class="fpanel-stat-lbl">Variance Flag</div></div>
+            <div class="fpanel-stat"><div class="fpanel-stat-val">0<span>loss</span></div><div class="fpanel-stat-lbl">Undetected Gaps</div></div>
+          </div>
+          <div class="fpanel-visual"><img src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?w=700&q=80" alt="Stock reconciliation"><div class="fpanel-visual-caption">Production vs dispatch matched daily</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- DEEP DIVES — REDESIGNED: Cinematic full-bleed panels -->
+<section class="deep-sec">
+  <div class="wrap">
+    <div class="sr">
+      <div class="sec-label">Feature Deep Dives</div>
+      <h2 class="sec-title">HOW IT<br><span class="gold">WORKS</span></h2>
+    </div>
+  </div>
+  <div class="deep-panels sr d2">
+    <!-- Panel 01 -->
+    <div class="dp">
+      <div class="dp-content">
+        <div class="dp-ghost">P&amp;L</div>
+        <div class="dp-counter">01 <span style="font-family:var(--ff-cond);font-size:11px;color:var(--dust);letter-spacing:2px;font-weight:600;">/ 03 — P&amp;L Reporting</span></div>
+        <div class="dp-title">SITE P&amp;L<br><span class="g">IN REAL TIME</span></div>
+        <p class="dp-body">Most quarry owners managing multiple sites spend 2–3 days every month waiting for their accountant. By the time reports arrive, they're out of date. With SAZS Apps, P&amp;L updates continuously — after every truck, every invoice, every expense.</p>
+        <div class="dp-checklist">
+          <div class="dp-check">Compare all sites in one view</div>
+          <div class="dp-check">Identify underperformers early</div>
+          <div class="dp-check">Investment decisions on live data</div>
+          <div class="dp-check">Month-close in under 4 hours</div>
+        </div>
+      </div>
+      <div class="dp-photo">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80" alt="Real-time financial dashboard">
+        <div class="dp-photo-overlay"></div>
+        <div class="dp-photo-num">01</div>
+      </div>
+    </div>
+    <!-- Panel 02 -->
+    <div class="dp alt">
+      <div class="dp-content">
+        <div class="dp-ghost">GST</div>
+        <div class="dp-counter">02 <span style="font-family:var(--ff-cond);font-size:11px;color:var(--dust);letter-spacing:2px;font-weight:600;">/ 03 — GST Compliance</span></div>
+        <div class="dp-title">E-INVOICING<br><span class="g">30 SECONDS</span></div>
+        <p class="dp-body">Every truck on your weighbridge triggers an automatic chain: weight recorded, invoice generated with IRN and QR code, e-way bill created — all through direct GST portal API. From 20 minutes to 30 seconds.</p>
+        <div class="dp-checklist">
+          <div class="dp-check">Invoice time 15–20 min → 30 sec</div>
+          <div class="dp-check">IRN + QR on every e-invoice</div>
+          <div class="dp-check">E-way bills at point of dispatch</div>
+          <div class="dp-check">GST audits: zero discrepancies</div>
+        </div>
+        <div class="dp-callout">
+          <div class="dp-callout-bar"></div>
+          <div class="dp-callout-body">
+            <div class="dp-callout-label">Client Result — Coimbatore</div>
+            <div class="dp-callout-text">A stone crusher reduced invoice disputes to zero in the first quarter — every invoice auto-matched to weighbridge data.</div>
+          </div>
+        </div>
+      </div>
+      <div class="dp-photo">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80" alt="GST e-invoicing">
+        <div class="dp-photo-overlay"></div>
+        <div class="dp-photo-num">02</div>
+      </div>
+    </div>
+    <!-- Panel 03 -->
+    <div class="dp">
+      <div class="dp-content">
+        <div class="dp-ghost">CREDIT</div>
+        <div class="dp-counter">03 <span style="font-family:var(--ff-cond);font-size:11px;color:var(--dust);letter-spacing:2px;font-weight:600;">/ 03 — Credit &amp; Receivables</span></div>
+        <div class="dp-title">CREDIT<br><span class="g">HARDWARE LOCK</span></div>
+        <p class="dp-body">Outstanding receivables are the hidden profit killer. SAZS Apps connects your credit policy directly to the boom barrier. When a customer's balance hits their limit, the gate stays physically shut — no override by dispatch staff.</p>
+        <div class="dp-checklist">
+          <div class="dp-check">Per-customer credit limits set</div>
+          <div class="dp-check">Boom barrier blocks at limit</div>
+          <div class="dp-check">Live ageing &amp; partial payments</div>
+          <div class="dp-check">Bad debt disputes near zero</div>
+        </div>
+      </div>
+      <div class="dp-photo">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80" alt="Credit enforcement boom barrier">
+        <div class="dp-photo-overlay"></div>
+        <div class="dp-photo-num">03</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXTENDED FEATURES -->
+<section class="xfeat-sec" id="all-features">
+  <div class="wrap">
+    <div class="sr">
+      <div class="sec-label">Full Feature Set</div>
+      <h2 class="sec-title">BUILT FOR<br><span class="gold">YOUR INDUSTRY</span></h2>
+      <p class="sec-body">Generic accounting tools only record what your staff type. SAZS ERP reads from load cells, boom barriers and GPS — your books are driven by real movements, not assumptions.</p>
+    </div>
+    <div class="xfeat-grid sr d2">
+      <div class="xcard">
+        <h3>Sales &amp; E-Invoicing</h3>
+        <p>Auto-generate GST-compliant invoices from weighbridge, handle multiple tax structures and export data for e-invoicing and filing without manual rework.</p>
+      </div>
+      <div class="xcard">
+        <h3>Purchase &amp; Expense Control</h3>
+        <p>Capture fuel, explosives, spares, loading and transport costs against specific sites and jobs so that your cost per ton and per cubic meter stays under watch.</p>
+      </div>
+      <div class="xcard">
+        <h3>Integrated Stock &amp; Ledgers</h3>
+        <p>Every inward, outward and production entry updates both stock and accounts — accurate closing stock, COGS and gross margin without reconciliation headache.</p>
+      </div>
+      <div class="xcard">
+        <h3>Multi-Site, Multi-Entity Accounts</h3>
+        <p>Separate books for each unit with a group view for partners or owners, support for inter-unit transfers and consolidation without duplicate data entry.</p>
+      </div>
+      <div class="xcard">
+        <h3>Payroll &amp; Labour Costing</h3>
+        <p>Map driver trips, operator hours and piece-rate labour in brick or paver plants directly to wages, overtime and incentives to avoid disputes and leakage.</p>
+      </div>
+      <div class="xcard">
+        <h3>Compliance &amp; Audit Ready</h3>
+        <p>Keep every transaction traceable from gate to ledger with time stamps, user logs and attachment support — statutory audit and bank reports become simple.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- COMPARISON TABLE -->
+<section class="compare-sec" id="compare">
+  <div class="wrap">
+    <div class="sr">
+      <div class="sec-label">Why SAZS Wins</div>
+      <h2 class="sec-title">SAZS ERP<br><span class="gold">VS. MANUAL</span></h2>
+      <p class="sec-body">See how a quarry-ready ERP closes gaps that spreadsheet and retail accounting tools simply cannot handle.</p>
+    </div>
+    <div class="ctable-wrap sr d2">
+      <div class="ctable-caption">Capability Comparison — SAZS ERP vs. Manual / Generic Software</div>
+      <table class="ctable">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th class="bad">Manual / Generic Software</th>
+            <th class="good">SAZS ERP Financial Management</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Weighbridge Data Capture</td>
+            <td class="bad-cell">Staff manually type gross and tare weight — high scope for adjustments and malpractice.</td>
+            <td class="good-cell">Weight captured directly from load cells and locked against invoice and boom barrier.</td>
+          </tr>
+          <tr>
+            <td>Sales Posting to Ledgers</td>
+            <td class="bad-cell">Invoices made at site, then re-entered into accounting package days later causing mismatch.</td>
+            <td class="good-cell">Every invoice automatically posts sales, GST, customer and stock ledgers in real-time.</td>
+          </tr>
+          <tr>
+            <td>Site-wise Profitability</td>
+            <td class="bad-cell">Difficult to separate quarry, crusher, RMC and brick plant costs in one system.</td>
+            <td class="good-cell">Dedicated cost centres with P&amp;L for each site plus consolidated top-level owner view.</td>
+          </tr>
+          <tr>
+            <td>Credit Control at Gate</td>
+            <td class="bad-cell">Dispatch team depends on phone calls and memory to stop overdue customers.</td>
+            <td class="good-cell">System blocks dispatch automatically once credit limit or due date is crossed.</td>
+          </tr>
+          <tr>
+            <td>Matching Stock &amp; Accounts</td>
+            <td class="bad-cell">Physical stock often differs from books; adjustments done at year end.</td>
+            <td class="good-cell">Stock, production and accounts move together so variances are visible daily.</td>
+          </tr>
+          <tr>
+            <td>Audit &amp; Traceability</td>
+            <td class="bad-cell">Paper slips and partial data — hard to prove when and how a truck was billed.</td>
+            <td class="good-cell">Digital trail from weighment to invoice, gate pass and ledger entry for every trip.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- DEMO STEPS -->
+<section class="demo-sec" id="demo">
+  <div class="wrap">
+    <div class="demo-layout">
+      <div>
+        <div class="sr">
+          <div class="sec-label">See It Live</div>
+          <h2 class="sec-title">YOUR NUMBERS<br><span class="gold">IN REAL TIME</span></h2>
+          <p class="sec-body" style="margin-bottom:48px;">In a 30-minute remote demo we plug your own quarry, crusher or RMC scenarios into SAZS ERP so that you can see live P&amp;L, cash flow and credit exposure on screen.</p>
+        </div>
+        <div class="demo-steps sr d2">
+          <div class="demo-step">
+            <div class="demo-step-num">01</div>
+            <div class="demo-step-body">
+              <h4>Share Your Current Flow</h4>
+              <p>Tell us your current billing, weighbridge and accounting workflow. We'll map it exactly to your operation before the session.</p>
+            </div>
+          </div>
+          <div class="demo-step">
+            <div class="demo-step-num">02</div>
+            <div class="demo-step-body">
+              <h4>We Map Your Sites Live</h4>
+              <p>We configure your sites and cost centres into SAZS ERP during the call so that every number you see is real — not a generic demo.</p>
+            </div>
+          </div>
+          <div class="demo-step">
+            <div class="demo-step-num">03</div>
+            <div class="demo-step-body">
+              <h4>Watch Trucks Become Books</h4>
+              <p>You see how each truck dispatch automatically turns into accurate financial records, accurate books and live profit — in real time.</p>
+            </div>
+          </div>
+        </div>
+        <div class="demo-trust sr d3">
+          <div class="dt-item"><div class="dt-val">30</div><div class="dt-lbl">Min Session</div></div>
+          <div class="dt-item"><div class="dt-val">0</div><div class="dt-lbl">Obligation</div></div>
+          <div class="dt-item"><div class="dt-val">303+</div><div class="dt-lbl">Clients</div></div>
+          <div class="dt-item"><div class="dt-val">24/7</div><div class="dt-lbl">Support</div></div>
+        </div>
+      </div>
+      <div class="sr d2">
+        <div class="demo-cta-panel">
+          <h3>BOOK YOUR<br>FINANCE DEMO</h3>
+          <p>SAZS ERP is already trusted by quarry, crusher, RMC and brick plant owners across Tamil Nadu for eliminating weighbridge malpractice and manual accounting errors. Extend the same control to your financials today.</p>
+          <a href="https://sazsapps.com/Signup.html" class="cta-btn-dark" style="display:inline-flex;align-items:center;gap:8px;padding:16px 36px;font-family:var(--ff-cond);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--ink);color:var(--white);transition:background 0.2s;">Book Finance &amp; Accounts Demo →</a>
+          <div class="demo-note" style="margin-top:20px;">No obligation · Quick remote session · Works with your existing Tally</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- RESULTS -->
+<section class="res-sec" id="results">
+  <div class="wrap">
+    <div class="res-head sr">
+      <div class="sec-label">Proven Results</div>
+      <h2 class="sec-title">BY THE<br><span class="gold">NUMBERS</span></h2>
+    </div>
+    <div class="stats-band sr d2">
+      <div class="stat-block"><span class="big">90<span class="u">%</span></span><span class="sl">Fewer Accounting<br>Errors After Automation</span></div>
+      <div class="stat-block"><span class="big">30<span class="u">s</span></span><span class="sl">Invoice Generation<br>Time Per Truck</span></div>
+      <div class="stat-block"><span class="big">1<span class="u">×</span></span><span class="sl">Click for Complete<br>Financial Report</span></div>
+      <div class="stat-block"><span class="big">303<span class="u">+</span></span><span class="sl">Businesses Trust<br>SAZS Apps</span></div>
+    </div>
+    <div class="case-grid sr d3">
+      <div class="case-img">
+        <img src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?w=700&q=80" alt="Multi-site quarry Tamil Nadu SAZS ERP case study">
+        <div class="case-img-label">Case Study — Tamil Nadu</div>
+      </div>
+      <div class="case-content">
+        <h3>MULTI-SITE CRUSHER &amp; QUARRY GROUP<br>3-Day Close → 4 Hours</h3>
+        <p>A group operating two crusher plants and one quarry was spending three full working days every month compiling financial reports manually. Site managers used separate Excel files. Invoices re-entered into Tally by hand.</p>
+        <div class="case-results">
+          <div class="cr"><div class="cr-arrow">↗</div><span>Month-end close reduced from 3 days → 4 hours</span></div>
+          <div class="cr"><div class="cr-arrow">↗</div><span>Outstanding receivables dropped 38% in first quarter</span></div>
+          <div class="cr"><div class="cr-arrow">↗</div><span>12% margin gap between sites discovered — lakhs recovered annually</span></div>
+          <div class="cr"><div class="cr-arrow">↗</div><span>First GST audit: zero discrepancies</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FAQ — REDESIGNED: Masonry magazine layout on paper -->
+<section class="faq-sec" id="faq">
+  <div class="wrap">
+    <div class="faq-top sr">
+      <div>
+        <div class="sec-label">FAQ</div>
+        <h2 class="sec-title">COMMON<br><span class="gold">QUESTIONS</span></h2>
+        <p class="faq-intro-text">Everything quarry and crusher owners ask before switching to SAZS ERP — answered clearly.</p>
+      </div>
+      <div class="faq-cta-box">
+        <h3>STILL HAVE<br>QUESTIONS?</h3>
+        <p>Our team is available 24/7 to walk you through GST setup, Tally integration and multi-site P&amp;L configuration in a live session.</p>
+        <a href="https://sazsapps.com/Signup.html" class="faq-cta-link">Book a Live Demo →</a>
+      </div>
+    </div>
+    <div class="faq-masonry sr d2">
+      <div class="faq-card featured open">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">What is quarry ERP financial management software?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">Quarry ERP financial management software is an integrated system that connects a quarry or crusher plant's daily operations — weighbridge readings, truck dispatches, production records and expenses — directly to real-time financial reporting. It automates GST invoicing, tracks site-wise P&amp;L, enforces credit limits and reconciles inventory, eliminating manual bookkeeping.</div></div>
+        <div class="faq-card-tag">Core Definition</div>
+      </div>
+      <div class="faq-card">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">How does SAZS Apps calculate site-wise profit and loss?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">SAZS Apps pulls revenue data from every automated invoice and matches it against all logged site expenses — fuel, labour, explosives, maintenance and permits. The result is a live P&amp;L per site, updated after every transaction, viewable from any device without asking the accountant.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">How does SAZS Apps handle GST e-invoicing for quarry businesses?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">SAZS Apps generates GST-compliant e-invoices automatically at the point of dispatch through direct API integration with the GST portal. Each invoice includes the IRN and QR code. E-way bills are generated in the same workflow — no manual portal login required.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">Can SAZS Apps block dispatch when a customer exceeds their credit limit?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">Yes. SAZS Apps enforces credit limits at the hardware level through boom barrier integration. When a customer's outstanding balance reaches the set limit, the system blocks dispatch automatically — the gate will not open until payment is received or the owner grants an override.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">How does SAZS Apps track expenses and calculate cost-per-tonne?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">All expenses — fuel, explosives, labour, maintenance, permits — are logged per site and cost category. The system divides total site costs by production output to calculate cost-per-tonne for each material grade, giving owners accurate margin data for pricing decisions.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">Does SAZS Apps integrate with Tally?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">Yes. SAZS Apps integrates with Tally, automatically syncing accounting vouchers for every sale, receipt and expense. This eliminates manual re-entry and ensures your books are always current with your operations.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">How long does it take to generate a complete financial report?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">A complete financial report — P&amp;L, receivables, expense breakdown and stock valuation — is generated in one click from the owner's dashboard, based on real-time data. No waiting for the accounts team.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">Is financial data in SAZS Apps secure?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">Yes. SAZS Apps uses role-based access control (RBAC). P&amp;L reports, receivables and expense summaries are restricted to the owner and authorised admins only. Weighbridge operators and drivers see only screens relevant to their role.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">Can SAZS ERP work with my existing accountant and Tally?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">Yes. Use SAZS ERP for day-to-day site operations and financial capture, then export summaries or detailed data that your auditor or accountant can still use in their familiar tools. The system is designed to complement Tally, not replace your accountant.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">Is SAZS ERP suitable for multiple quarries and yards?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">The platform is built for multi-site operations with separate cost centres and a consolidated Owner Dashboard so you can switch between locations in one click. Whether you run two crusher plants or five quarry sites, every entity gets its own books with a single group view on top.</div></div>
+      </div>
+      <div class="faq-card featured">
+        <div class="fq2" onclick="tfaq2(this)">
+          <span class="fq2-text">How does this help me talk to partners and banks?</span>
+          <div class="fq2-icon">+</div>
+        </div>
+        <div class="fa2"><div class="fa2-in">Because every rupee of revenue, expense and stock is traceable back to trucks and batches, you can share clear, real‑time reports that build confidence with partners, bankers and auditors — without waiting for a month-end pack or relying on manually prepared summaries.</div></div>
+        <div class="faq-card-tag">Finance &amp; Stakeholders</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- LINKS -->
+<section class="links-sec">
+  <div class="wrap">
+    <div class="sr">
+      <div class="sec-label">Explore More</div>
+      <h3 style="font-family:var(--ff-disp);font-size:32px;letter-spacing:2px;color:var(--white);">RELATED FEATURES &amp; PRODUCTS</h3>
+    </div>
+    <div class="links-grid sr d2">
+      <a href="https://sazsapps.com/features/weighbridge-automation-software.html" class="lcard"><div class="lcard-icon">⚖️</div><div class="lcard-title">Weighbridge</div><div class="lcard-link">Live sync →</div></a>
+      <a href="https://sazsapps.com/features/e-invoice-gst-billing.html" class="lcard"><div class="lcard-icon">🧾</div><div class="lcard-title">GST E-Invoicing</div><div class="lcard-link">Auto billing →</div></a>
+      <a href="https://sazsapps.com/features/boom-barrier-integration.html" class="lcard"><div class="lcard-icon">🚧</div><div class="lcard-title">Boom Barrier</div><div class="lcard-link">Gate control →</div></a>
+      <a href="https://sazsapps.com/products/Quarry-management-software.html" class="lcard"><div class="lcard-icon">⛏️</div><div class="lcard-title">Quarry ERP</div><div class="lcard-link">Full suite →</div></a>
+      <a href="https://sazsapps.com/products/crusher-management-software.html" class="lcard"><div class="lcard-icon">🏗️</div><div class="lcard-title">Crusher ERP</div><div class="lcard-link">Stone crusher →</div></a>
+      <a href="https://sazsapps.com/QuarryCrusherRMCProfitCalculator.html" class="lcard"><div class="lcard-icon">🧮</div><div class="lcard-title">Profit Calc</div><div class="lcard-link">Calculate now →</div></a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="wrap">
+    <div class="cta-inner sr">
+      <div class="cta-label">Take Action Now</div>
+      <h2>STOP THE<br>GUESSWORK.</h2>
+      <p>SAZS Apps gives you real-time P&amp;L for every site, automated GST invoicing on every truck, and complete financial visibility from your phone — no manual entry, no end-of-month surprises.</p>
+      <div class="cta-actions">
+        <a href="https://sazsapps.com/Signup.html" class="cta-btn-dark">Book Free Demo →</a>
+        <a href="https://sazsapps.com/QuarryCrusherRMCProfitCalculator.html" class="cta-btn-ghost">Calculate Savings</a>
+      </div>
+      <div class="cta-pills">
+        <span class="pill">Free 30-min demo</span>
+        <span class="pill">No commitment</span>
+        <span class="pill">Setup in 7–14 days</span>
+        <span class="pill">24/7 support</span>
+        <span class="pill">Tally included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 <a href="https://sazsapps.com">SAZS APPS PVT. LTD.</a> — INDIA'S NO.1 ERP FOR QUARRY, CRUSHER, RMC &amp; BRICK PLANTS &nbsp;|&nbsp; <a href="https://sazsapps.com/privacyPolicy.html">PRIVACY POLICY</a> &nbsp;|&nbsp; <a href="https://sazsapps.com/termsofService.html">TERMS OF SERVICE</a></p>
+  </div>
+</footer>
+
+<script>
+// Feature tab switcher
+function switchTab(idx) {
+  document.querySelectorAll('.ftab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.fpanel').forEach((p,i) => p.classList.toggle('active', i===idx));
+}
+
+// New FAQ masonry toggle
+function tfaq2(el) {
+  const card = el.closest('.faq-card');
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('open'));
+  if (!isOpen) card.classList.add('open');
+}
+
+// Keep old tfaq in case referenced elsewhere
+function tfaq(el) { tfaq2(el); }
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, idx) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('vis'), idx * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.borderBottomColor = window.scrollY > 50 ? 'var(--gold)' : 'var(--plate)';
+});
+
+function animateCounter(el, target, suffix, duration = 1800) {
+  const start = performance.now();
+  const isDecimal = target !== Math.floor(target);
+  (function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = isDecimal ? (eased * target).toFixed(1) : Math.round(eased * target);
+    el.innerHTML = value + '<span class="u">' + suffix + '</span>';
+    if (progress < 1) requestAnimationFrame(step);
+  })(start);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.big').forEach(el => {
+        const match = el.textContent.trim().match(/^([\d.]+)(.*)/);
+        if (match) animateCounter(el, parseFloat(match[1]), match[2].trim());
+      });
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+const statsRow = document.querySelector('.stats-band');
+if (statsRow) statsObserver.observe(statsRow);
+</script>
+</body>
+</html>
