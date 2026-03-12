@@ -1193,7 +1193,6 @@
     <div class="prob-row">
       <div class="prob-row-img-wrap">
         <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="">
-        <div class="prob-row-num-badge">01</div>
       </div>
       <div class="prob-row-content">
         <span class="prob-row-icon">⚖️</span>
@@ -1207,7 +1206,6 @@
     <div class="prob-row prob-row--rev">
       <div class="prob-row-img-wrap">
         <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80" alt="">
-        <div class="prob-row-num-badge">02</div>
       </div>
       <div class="prob-row-content">
         <span class="prob-row-icon">🚨</span>
@@ -1221,7 +1219,6 @@
     <div class="prob-row">
       <div class="prob-row-img-wrap">
         <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=900&q=80" alt="">
-        <div class="prob-row-num-badge">03</div>
       </div>
       <div class="prob-row-content">
         <span class="prob-row-icon">📉</span>
@@ -1235,7 +1232,6 @@
     <div class="prob-row prob-row--rev">
       <div class="prob-row-img-wrap">
         <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80" alt="">
-        <div class="prob-row-num-badge">04</div>
       </div>
       <div class="prob-row-content">
         <span class="prob-row-icon">📋</span>
@@ -1249,7 +1245,6 @@
     <div class="prob-row">
       <div class="prob-row-img-wrap">
         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80" alt="">
-        <div class="prob-row-num-badge">05</div>
       </div>
       <div class="prob-row-content">
         <span class="prob-row-icon">⛽</span>
@@ -1362,37 +1357,25 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: grayscale(100%) brightness(0.45);
+    filter: brightness(0.75);
     transition: filter 0.7s ease, transform 0.7s ease;
   }
 
   .prob-row:hover .prob-row-img-wrap img {
-    filter: grayscale(0%) brightness(0.75);
-    transform: scale(1.06);
+    transform: scale(1.04);
   }
 
-  /* Number badge top-left of image */
-  .prob-row-num-badge {
-    position: absolute;
-    top: 0; left: 0;
-    background: #FF5C00;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    padding: 10px 18px;
-    z-index: 2;
-    clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%);
-    padding-right: 28px;
-  }
+
 
   /* ── Content side ── */
   .prob-row-content {
-    background: #0f0f0f;
+    background: #000000;
     padding: 56px 64px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     border-left: 1px solid #1c1c1c;
     position: relative;
     overflow: hidden;
@@ -1405,29 +1388,7 @@
     border-right: 1px solid #1c1c1c;
   }
 
-  /* orange left-bar accent that grows on hover */
-  .prob-row-content::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px;
-    background: #FF5C00;
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 0.45s cubic-bezier(.4,0,.2,1);
-  }
 
-  .prob-row--rev .prob-row-content::before {
-    left: auto; right: 0;
-  }
-
-  .prob-row:hover .prob-row-content::before {
-    transform: scaleY(1);
-  }
-
-  .prob-row:hover .prob-row-content {
-    background: #131313;
-  }
 
   .prob-row-icon {
     font-size: 36px;
@@ -1460,6 +1421,7 @@
     line-height: 1.8;
     margin: 0 0 28px;
     max-width: 400px;
+    text-align: center;
   }
 
   .prob-row-body strong {
@@ -1549,7 +1511,7 @@
     .prob-row--rev .prob-row-content  { order: 1; border-right: none; }
 
     .prob-row-img-wrap { height: 220px; }
-    .prob-row-img-wrap img { filter: grayscale(40%) brightness(0.55); }
+    .prob-row-img-wrap img { filter: brightness(0.75); }
 
     .prob-row-content {
       padding: 32px 24px 36px;
@@ -1557,7 +1519,7 @@
       border-top: 2px solid #1c1c1c;
     }
 
-    .prob-row-content::before { display: none; }
+
 
     .prob-row-title { font-size: 20px; letter-spacing: -0.5px; }
     .prob-row-body  { font-size: 13.5px; max-width: 100%; }
@@ -1573,7 +1535,104 @@
     .prob-row-content { padding: 24px 20px 28px; }
     .prob-row-title { font-size: 17px; }
   }
+
+  /* ══════════════════════
+     SCROLL FADE-IN ANIMATIONS (all sections)
+  ══════════════════════ */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  }
+
+  .fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-left {
+    opacity: 0;
+    transform: translateX(-48px);
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  }
+
+  .fade-left.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .fade-right {
+    opacity: 0;
+    transform: translateX(48px);
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  }
+
+  .fade-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* stagger delays */
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.45s; }
+  .delay-5 { transition-delay: 0.6s; }
+
 </style>
+
+<script>
+  // Scroll fade-in for ALL sections
+  (function() {
+    // Add fade-up class to all major section blocks
+    const targets = [
+      // hero
+      '.left', '.right',
+      // definition
+      '.def-left', '.def-right',
+      // gain
+      '.gain-header', '.gain-card', '.gain-stats',
+      // prob
+      '.prob-header-inner', '.prob-row',
+    ];
+
+    targets.forEach(sel => {
+      document.querySelectorAll(sel).forEach((el, i) => {
+        if (!el.classList.contains('fade-up') && !el.classList.contains('fade-left') && !el.classList.contains('fade-right')) {
+          el.classList.add('fade-up');
+          // stagger by index within same selector group
+          const delay = ['delay-1','delay-2','delay-3','delay-4','delay-5'];
+          el.classList.add(delay[i % 5]);
+        }
+      });
+    });
+
+    // prob-row image = fade-left, content = fade-right (alternating)
+    document.querySelectorAll('.prob-row').forEach((row, i) => {
+      row.classList.remove('fade-up');
+      const img = row.querySelector('.prob-row-img-wrap');
+      const cnt = row.querySelector('.prob-row-content');
+      if (row.classList.contains('prob-row--rev')) {
+        img && img.classList.replace ? (img.classList.add('fade-right'), img.classList.remove('fade-up')) : null;
+        cnt && (cnt.classList.add('fade-left'), cnt.classList.remove('fade-up'));
+      } else {
+        img && (img.classList.add('fade-left'), img.classList.remove('fade-up'));
+        cnt && (cnt.classList.add('fade-right'), cnt.classList.remove('fade-up'));
+      }
+    });
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => obs.observe(el));
+  })();
+</script>
 
 </body>
 </html>
