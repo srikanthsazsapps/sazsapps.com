@@ -4886,6 +4886,153 @@ function filterFaq(cat, btn){
 </script>
 
 
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol", "Noto Color Emoji";
+  --blue: #2563EB;
+}
+
+body{
+  font-family: var(--font);
+  background: #fff;
+}
+
+/* ══════════════════════════════
+   FULL-WIDTH DARK CTA SECTION
+══════════════════════════════ */
+.cta-sec{
+  width: 100%;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding: 110px 48px 100px;
+  text-align: center;
+}
+
+/* Subtle blue glow top-center */
+.cta-sec::before{
+  content:'';
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(37,99,235,.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Thin blue top border line */
+.cta-sec::after{
+  content:'';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2563EB 40%, #2563EB 60%, transparent);
+}
+
+/* ── Inner content wrapper ── */
+.cta-inner{
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ── Label ── */
+.cta-label{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 28px;
+  animation: fadeUp .5s .05s both;
+}
+.cta-label::before,
+.cta-label::after{
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--blue);
+  opacity: .5;
+}
+
+/* ── Heading ── */
+.cta-heading{
+  font-size: clamp(44px, 7vw, 84px);
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  color: #0a0a0a;
+  margin-bottom: 32px;
+  animation: fadeUp .6s .12s both;
+}
+
+/* "GUESSWORK." highlighted in blue with wavy underline */
+.cta-heading .highlight{
+  color: var(--blue);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='7'%3E%3Cpath d='M0 3.5 Q5 0 10 3.5 Q15 7 20 3.5 Q25 0 30 3.5 Q35 7 40 3.5' fill='none' stroke='%232563EB' stroke-width='2.2'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 40px 7px;
+  padding-bottom: 10px;
+}
+
+/* ── Description ── */
+.cta-desc{
+  font-size: 17px;
+  color: #6B7280;
+  line-height: 1.85;
+  max-width: 580px;
+  margin: 0 auto;
+  font-weight: 400;
+  animation: fadeUp .5s .22s both;
+}
+
+.cta-desc strong{
+  color: #111;
+  font-weight: 600;
+}
+
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(24px); }
+  to{   opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:640px){
+  .cta-sec{ padding: 72px 24px 72px; }
+  .cta-heading{ font-size: 40px; }
+  .cta-desc{ font-size: 15px; }
+}
+</style>
+<!-- </head>
+<body> -->
+
+<section class="cta-sec">
+  <div class="cta-inner">
+
+    <div class="cta-label">Take Action Now</div>
+
+    <h2 class="cta-heading">
+      STOP THE<br><span class="highlight">GUESSWORK.</span>
+    </h2>
+
+    <p class="cta-desc">
+      SAZS Apps gives you <strong>real-time P&L for every site</strong>, automated GST invoicing on every truck, and <strong>complete financial visibility from your phone</strong> — no manual entry, no end-of-month surprises.
+    </p>
+
+  </div>
+</section>
+
+
 </body>
 
 </html>
