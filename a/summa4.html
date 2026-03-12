@@ -2991,10 +2991,6 @@
   <div class="fe-sticky">
 
     <!-- FAB -->
-    <a href="#" class="fe-fab">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.21 2a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-      Book Free Demo
-    </a>
 
     <!-- ═══ HEADER CORNER ═══ -->
     <div class="fe-header-corner">
@@ -3715,6 +3711,204 @@
   window.addEventListener('resize', onScroll, { passive: true });
   onScroll();
 })();
-</script></body>
+</script>
+<!-- ═══════════ FULL FEATURE SET SECTION ═══════════ -->
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+<section class="fs-sec">
+  <div class="fs-container">
+
+    <!-- ── HEADER ── -->
+    <div class="fs-header">
+      <div class="fs-eyebrow">
+        <span class="fs-eyebrow-text">FULL FEATURE SET</span>
+        <span class="fs-eyebrow-line"></span>
+      </div>
+      <h2 class="fs-h2">BUILT FOR<br><span class="fs-h2-blue">YOUR INDUSTRY</span></h2>
+      <p class="fs-lead">Generic accounting tools only record what your staff type. SAZS ERP reads from load cells, boom barriers and GPS — your books are driven by real movements, not assumptions.</p>
+    </div>
+
+    <!-- ── GRID ── -->
+    <div class="fs-grid">
+
+      <div class="fs-card">
+        <h3 class="fs-card-title">SALES &amp; E-INVOICING</h3>
+        <p class="fs-card-body">Auto-generate GST-compliant invoices from weighbridge, handle multiple tax structures and export data for e-invoicing and filing without manual rework.</p>
+      </div>
+
+      <div class="fs-card">
+        <h3 class="fs-card-title">PURCHASE &amp; EXPENSE CONTROL</h3>
+        <p class="fs-card-body">Capture fuel, explosives, spares, loading and transport costs against specific sites and jobs so that your cost per ton and per cubic meter stays under watch.</p>
+      </div>
+
+      <div class="fs-card">
+        <h3 class="fs-card-title">INTEGRATED STOCK &amp; LEDGERS</h3>
+        <p class="fs-card-body">Every inward, outward and production entry updates both stock and accounts — accurate closing stock, COGS and gross margin without reconciliation headache.</p>
+      </div>
+
+      <div class="fs-card">
+        <h3 class="fs-card-title">MULTI-SITE, MULTI-ENTITY ACCOUNTS</h3>
+        <p class="fs-card-body">Separate books for each unit with a group view for partners or owners, support for inter-unit transfers and consolidation without duplicate data entry.</p>
+      </div>
+
+      <div class="fs-card">
+        <h3 class="fs-card-title">PAYROLL &amp; LABOUR COSTING</h3>
+        <p class="fs-card-body">Map driver trips, operator hours and piece-rate labour in brick or paver plants directly to wages, overtime and incentives to avoid disputes and leakage.</p>
+      </div>
+
+      <div class="fs-card">
+        <h3 class="fs-card-title">COMPLIANCE &amp; AUDIT READY</h3>
+        <p class="fs-card-body">Keep every transaction traceable from gate to ledger with time stamps, user logs and attachment support — statutory audit and bank reports become simple.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.fs-sec {
+  background: #0e0e0e;
+  width: 100%;
+  font-family: 'Barlow', sans-serif;
+  border-top: 1px solid #1a1a1a;
+}
+
+.fs-container {
+  max-width: 1400px;
+  width: 92%;
+  margin: 0 auto;
+  padding: 80px 0 0;
+}
+
+/* ── HEADER ── */
+.fs-header {
+  margin-bottom: 52px;
+}
+
+.fs-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.fs-eyebrow-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #2563EB;
+}
+.fs-eyebrow-line {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: #2563EB;
+  flex-shrink: 0;
+}
+
+.fs-h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(56px, 8vw, 128px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 32px;
+}
+.fs-h2-blue {
+  display: block;
+  color: #2563EB;
+}
+
+.fs-lead {
+  font-size: clamp(13px, 1.1vw, 15px);
+  color: #666;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 560px;
+}
+
+/* ── GRID ── */
+.fs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #222;
+  border-left: 1px solid #222;
+}
+
+.fs-card {
+  padding: 40px 36px 44px;
+  border-right: 1px solid #222;
+  border-bottom: 1px solid #222;
+  background: #0e0e0e;
+  transition: background 0.25s;
+}
+.fs-card:hover {
+  background: #131313;
+}
+
+.fs-card-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 18px;
+  line-height: 1.2;
+}
+
+.fs-card-body {
+  font-size: clamp(12.5px, 0.95vw, 14px);
+  color: #555;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ══════════════════════
+   RESPONSIVE
+══════════════════════ */
+
+/* Tablet 768–1023 */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .fs-container { padding: 64px 0 0; }
+  .fs-h2 { font-size: 80px; }
+  .fs-grid { grid-template-columns: repeat(2, 1fr); }
+  .fs-card { padding: 32px 28px 36px; }
+}
+
+/* Mobile 480–767 */
+@media (max-width: 767px) and (min-width: 480px) {
+  .fs-container { padding: 52px 0 0; }
+  .fs-h2 { font-size: 58px; letter-spacing: -1px; }
+  .fs-lead { font-size: 13px; max-width: 100%; }
+  .fs-grid { grid-template-columns: repeat(2, 1fr); }
+  .fs-card { padding: 26px 22px 30px; }
+  .fs-card-title { font-size: 13px; }
+  .fs-card-body { font-size: 12.5px; }
+}
+
+/* Small mobile <480 */
+@media (max-width: 479px) {
+  .fs-container { width: 100%; padding: 44px 0 0; }
+  .fs-header { padding: 0 20px; }
+  .fs-h2 { font-size: 44px; letter-spacing: -1px; }
+  .fs-lead { font-size: 13px; max-width: 100%; }
+  .fs-grid { grid-template-columns: 1fr; }
+  .fs-card { padding: 24px 20px 28px; }
+  .fs-card-title { font-size: 13px; letter-spacing: 1px; }
+  .fs-card-body { font-size: 12.5px; }
+}
+
+/* Very small <360 */
+@media (max-width: 359px) {
+  .fs-h2 { font-size: 36px; }
+  .fs-card { padding: 20px 18px 24px; }
+}
+</style>
+
+</body>
 
 </html>
