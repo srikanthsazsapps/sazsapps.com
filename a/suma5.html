@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAZS ERP — CTA Section</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+body{font-family:'Syne',sans-serif;background:#0b0b0b;}
+
+/* ════════════════════════════
+   CTA SECTION
+════════════════════════════ */
+.cta-sec{
+  position:relative;
+  overflow:hidden;
+  background:#0b0b0b;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:500px;
+}
+
+/* ── LEFT PANEL ── */
+.cta-left{
+  background:#0f0f0f;
+  padding:80px 64px;
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-right:1px solid #1a1a1a;
+}
+
+/* diagonal slash decoration */
+.cta-left::after{
+  content:'';
+  position:absolute;
+  top:0;right:-1px;
+  width:60px;height:100%;
+  background:#0b0b0b;
+  clip-path:polygon(40% 0,100% 0,100% 100%,0% 100%);
+  z-index:3;
+}
+
+.cta-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:10px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:#2563EB;
+  font-weight:700;
+  margin-bottom:28px;
+}
+
+.cta-tag::before{
+  content:'';
+  width:30px;height:1px;
+  background:#2563EB;
+}
+
+.cta-heading{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(42px,5vw,68px);
+  font-weight:900;
+  line-height:1.02;
+  color:#ffffff;
+  margin-bottom:12px;
+}
+
+.cta-heading em{
+  font-style:italic;
+  color:#2563EB;
+}
+
+.cta-sub{
+  font-size:14px;
+  font-weight:400;
+  color:#555;
+  line-height:1.8;
+  max-width:380px;
+  margin-bottom:44px;
+}
+
+/* ── BUTTONS ── */
+.cta-btns{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  max-width:300px;
+}
+
+.btn-gold{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 24px;
+  background:#2563EB;
+  color:#ffffff;
+  font-family:'Syne',sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  transition:.25s;
+  position:relative;
+  overflow:hidden;
+}
+
+.btn-gold::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:#1d4ed8;
+  transform:translateX(-100%);
+  transition:.3s;
+}
+
+.btn-gold:hover::before{transform:translateX(0);}
+.btn-gold span,.btn-gold svg{position:relative;z-index:1;}
+
+.btn-ghost{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:17px 24px;
+  background:transparent;
+  color:#888;
+  font-family:'Syne',sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border:1px solid #2a2a2a;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.btn-ghost:hover{border-color:#2563EB;color:#2563EB;}
+
+.btn-arrow{
+  font-size:16px;
+  transition:transform .2s;
+}
+
+.btn-gold:hover .btn-arrow,
+.btn-ghost:hover .btn-arrow{transform:translateX(4px);}
+
+/* ── RIGHT PANEL ── */
+.cta-right{
+  background:#0b0b0b;
+  padding:80px 64px 80px 100px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+
+/* big ghost number */
+.cta-ghost-num{
+  position:absolute;
+  bottom:-30px;
+  right:-10px;
+  font-family:'Playfair Display',serif;
+  font-size:260px;
+  font-weight:900;
+  color:rgba(37,99,235,.05);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+/* ── STATS ROW ── */
+.cta-stats{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  margin-bottom:52px;
+}
+
+.cta-stat{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 0;
+  border-bottom:1px solid #1c1c1c;
+  gap:20px;
+}
+
+.cta-stat:first-child{border-top:1px solid #1c1c1c;}
+
+.stat-label{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#444;
+  font-weight:500;
+  flex:1;
+}
+
+.stat-val{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  font-weight:700;
+  color:#ffffff;
+  min-width:80px;
+  text-align:right;
+}
+
+.stat-val span{
+  font-size:14px;
+  color:#2563EB;
+  font-family:'Syne',sans-serif;
+  font-weight:700;
+  margin-left:4px;
+}
+
+/* ── BADGES ── */
+.cta-badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.badge{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 16px;
+  border:1px solid #1e1e1e;
+  background:#111;
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#555;
+  font-weight:600;
+  transition:.2s;
+}
+
+.badge:hover{border-color:#2563EB;color:#2563EB;}
+
+.badge-dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:#2563EB;
+  flex-shrink:0;
+}
+
+/* ── ANIMATIONS ── */
+.cta-tag{animation:slideIn .5s .05s both;}
+.cta-heading{animation:slideIn .6s .1s both;}
+.cta-sub{animation:slideIn .6s .2s both;}
+.cta-btns{animation:slideIn .6s .3s both;}
+.cta-stat:nth-child(1){animation:fadeR .5s .1s both;}
+.cta-stat:nth-child(2){animation:fadeR .5s .2s both;}
+.cta-stat:nth-child(3){animation:fadeR .5s .3s both;}
+.cta-stat:nth-child(4){animation:fadeR .5s .4s both;}
+.cta-badges{animation:fadeR .6s .5s both;}
+
+@keyframes slideIn{
+  from{opacity:0;transform:translateX(-24px);}
+  to{opacity:1;transform:translateX(0);}
+}
+@keyframes fadeR{
+  from{opacity:0;transform:translateX(24px);}
+  to{opacity:1;transform:translateX(0);}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .cta-sec{grid-template-columns:1fr;}
+  .cta-left::after{display:none;}
+  .cta-left,.cta-right{padding:56px 28px;}
+  .cta-right{padding-left:28px;}
+  .cta-btns{max-width:100%;}
+}
+</style>
+</head>
+<body>
+
+<section class="cta-sec">
+
+  <!-- LEFT -->
+  <div class="cta-left">
+    <div class="cta-tag">Take Action Now</div>
+
+    <h2 class="cta-heading">
+      Stop the<br><em>Guesswork.</em><br>Start Now.
+    </h2>
+
+    <p class="cta-sub">
+      SAZS Apps gives you real-time P&L for every site, automated GST invoicing on every truck, and complete financial visibility from your phone — no manual entry, no surprises.
+    </p>
+
+    <div class="cta-btns">
+      <a href="https://sazsapps.com/Signup.html" class="btn-gold">
+        <span>Book Free Demo</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#" class="btn-ghost">
+        <span>Calculate Savings</span>
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="cta-right">
+    <div class="cta-ghost-num">₹</div>
+
+    <div class="cta-stats">
+      <div class="cta-stat">
+        <span class="stat-label">Setup Time</span>
+        <span class="stat-val">7–14<span>Days</span></span>
+      </div>
+      <div class="cta-stat">
+        <span class="stat-label">Demo Duration</span>
+        <span class="stat-val">30<span>Min</span></span>
+      </div>
+      <div class="cta-stat">
+        <span class="stat-label">Support</span>
+        <span class="stat-val">24/7<span>Live</span></span>
+      </div>
+      <div class="cta-stat">
+        <span class="stat-label">Commitment Required</span>
+        <span class="stat-val">Zero<span></span></span>
+      </div>
+    </div>
+
+    <div class="cta-badges">
+      <div class="badge"><span class="badge-dot"></span>Free 30-Min Demo</div>
+      <div class="badge"><span class="badge-dot"></span>No Commitment</div>
+      <div class="badge"><span class="badge-dot"></span>Tally Included</div>
+      <div class="badge"><span class="badge-dot"></span>GST Ready</div>
+      <div class="badge"><span class="badge-dot"></span>Multi-Site</div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
