@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAZS ERP - Financial Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --orange: #2563EB; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        html, body { background-color: #fff; color: #000; overflow-x: hidden; }
+
+        /* ═══════════ HERO LAYOUT ═══════════ */
+        .hero {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            width: 95%;
+            margin: 0 auto;
+            padding: 60px 0;
+            gap: 60px;
+            min-height: 100vh;
+        }
+
+        /* ── LEFT ── */
+        .left { flex: 1.1; min-width: 0; }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1.5px solid #ddd;
+            border-radius: 50px;
+            padding: 6px 14px 6px 8px;
+            margin-bottom: 28px;
+        }
+        .badge-chip {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: #000;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 4px;
+        }
+        .badge-text { font-size: 13px; font-weight: 500; color: #333; }
+
+        .eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: var(--orange);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -2px;
+            color: #000;
+            margin-bottom: 22px;
+        }
+        .orange {
+            color: var(--orange);
+            position: relative;
+            display: inline-block;
+        }
+        .orange::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: -5px;
+            width: 100%; height: 8px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8'%3E%3Cpath d='M0 4 Q10 0 20 4 T40 4 T60 4 T80 4 T100 4 T120 4 T140 4 T160 4 T180 4 T200 4' fill='none' stroke='%232563EB' stroke-width='2.5'/%3E%3C/svg%3E") repeat-x center/auto 100%;
+        }
+
+        .desc-main {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            max-width: 500px;
+            font-weight: 500;
+        }
+        .desc-sub {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.7;
+            margin-bottom: 38px;
+            max-width: 500px;
+        }
+
+        .btns {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--orange);
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 16px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .btn-secondary {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #111;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .arrow-circle {
+            width: 34px; height: 34px;
+            border: 1.5px solid #ccc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #333;
+            flex-shrink: 0;
+        }
+
+        .stats-grid {
+            display: flex;
+            gap: 28px;
+            border-top: 1px solid #eee;
+            padding-top: 24px;
+            flex-wrap: wrap;
+        }
+        .stat-item h2 { font-size: 24px; font-weight: 900; color: #000; letter-spacing: -0.5px; }
+        .stat-item p  { font-size: 12px; color: #888; font-weight: 500; margin-top: 2px; }
+
+        /* ═══════════ RIGHT — SINGLE DASHBOARD CARD ═══════════ */
+        .right {
+            flex: 0 0 460px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dashboard {
+            width: 100%;
+            background: #f7f9ff;
+            border: 1.5px solid #e4e8f4;
+            border-radius: 24px;
+            padding: 18px;
+            box-shadow: 0 20px 60px rgba(37,99,235,0.10), 0 4px 16px rgba(0,0,0,0.05);
+            animation: floatY 6s ease-in-out infinite;
+        }
+        @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+        /* TOP BAR */
+        .db-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+        .db-title { font-size: 12px; font-weight: 800; color: #111; letter-spacing: -.3px; }
+        .db-badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            background: #2563eb; color: #fff;
+            font-size: 9px; font-weight: 700;
+            border-radius: 20px; padding: 3px 10px;
+        }
+        .db-live-dot {
+            width: 5px; height: 5px; border-radius: 50%; background: #7ee8a2;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+        /* MAP */
+        .db-map {
+            width: 100%; height: 130px;
+            background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+            border-radius: 14px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .mg { position:absolute; background: rgba(37,99,235,0.08); }
+        .mg.h { width:100%; height:1px; }
+        .mg.v { height:100%; width:1px; }
+        .m-road-h { position:absolute; top:55%; left:0; width:100%; height:2px; background:#2563eb; opacity:.25; }
+        .m-road-v { position:absolute; left:38%; top:0; width:2px; height:100%; background:#93c5fd; opacity:.4; }
+        .mpin {
+            position: absolute;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .mpin-dot {
+            width: 11px; height: 11px; border-radius: 50%;
+            border: 2.5px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        }
+        .mpin.blue  .mpin-dot { background: #2563eb; animation: pingA 2s ease-out infinite; }
+        .mpin.dark  .mpin-dot { background: #111;    animation: pingA 2s ease-out infinite .8s; }
+        .mpin.green .mpin-dot { background: #22c55e; animation: pingA 2s ease-out infinite 1.4s; }
+        @keyframes pingA {
+            0%  { box-shadow: 0 0 0 0 rgba(37,99,235,.6); }
+            70% { box-shadow: 0 0 0 12px rgba(37,99,235,0); }
+            100%{ box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+        }
+        .mpin-tail { width:2px; height:5px; background:rgba(255,255,255,.6); }
+        .map-chip {
+            position:absolute; bottom:8px; left:10px;
+            background:#fff; border-radius:8px;
+            padding:4px 10px; display:flex; align-items:center; gap:5px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.08);
+        }
+        .map-chip-dot { width:6px; height:6px; border-radius:50%; background:#2563eb; }
+        .map-chip-txt { font-size:9px; font-weight:700; color:#333; }
+        .map-count {
+            position:absolute; top:8px; right:10px;
+            background:#2563eb; color:#fff;
+            font-size:9px; font-weight:800;
+            border-radius:20px; padding:3px 9px;
+        }
+        .map-route {
+            position:absolute; top:30%; left:10%; width:28%; height:2px;
+            background:linear-gradient(90deg,#2563eb,#93c5fd);
+            border-radius:2px; opacity:.6;
+        }
+
+        /* STAT ROW */
+        .db-stats {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .db-stat {
+            background: #fff;
+            border: 1.5px solid #eef0f8;
+            border-radius: 12px;
+            padding: 11px 12px;
+        }
+        .db-stat-lbl { font-size:8px; font-weight:700; color:#bbb; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px; }
+        .db-stat-val { font-size:20px; font-weight:900; color:#111; line-height:1; }
+        .db-stat-sub { font-size:8px; color:#aaa; margin-top:2px; }
+        .db-stat-bar { height:3px; border-radius:2px; background:#eee; margin-top:8px; }
+        .db-stat-fill { height:100%; border-radius:2px; background:#2563eb; }
+
+        /* BOTTOM PANELS */
+        .db-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        /* Maintenance */
+        .db-maint {
+            background: #fff;
+            border: 1.5px solid #eef0f8;
+            border-radius: 12px;
+            padding: 12px;
+        }
+        .db-panel-title { font-size:10px; font-weight:800; color:#111; margin-bottom:10px; }
+        .db-task { display:flex; align-items:center; gap:7px; margin-bottom:7px; }
+        .db-chk {
+            width:13px; height:13px; border-radius:3px;
+            border:1.5px solid #ddd;
+            display:flex; align-items:center; justify-content:center;
+            flex-shrink:0;
+        }
+        .db-chk.on { background:#2563eb; border-color:#2563eb; }
+        .db-chk svg { width:8px; height:8px; }
+        .db-tbar { flex:1; height:6px; border-radius:3px; background:#f0f0f0; }
+        .db-tbfill { height:100%; border-radius:3px; }
+
+        /* Alerts / chat */
+        .db-chat {
+            background: #111;
+            border-radius: 12px;
+            padding: 12px;
+        }
+        .db-chat-title { font-size:10px; font-weight:800; color:#fff; margin-bottom:9px; }
+        .db-msg {
+            border-radius:7px; padding:5px 8px;
+            font-size:8px; margin-bottom:5px; max-width:92%;
+            line-height:1.4;
+        }
+        .db-msg.recv { background:#222; color:#ccc; border-radius:7px 7px 7px 2px; }
+        .db-msg.sent { background:#2563eb; color:#fff; border-radius:7px 7px 2px 7px; margin-left:auto; text-align:right; }
+
+        /* ═══════════ TABLET 768–1024 ═══════════ */
+        @media (max-width:1024px) and (min-width:768px) {
+            .hero { padding:50px 32px 60px; gap:32px; min-height:unset; }
+            h1 { font-size:40px; letter-spacing:-1.5px; }
+            .right { flex: 0 0 340px; }
+            .db-stat-val { font-size:17px; }
+        }
+
+        /* ═══════════ MOBILE ≤767px ═══════════ */
+        @media (max-width:767px) {
+            .hero { flex-direction:column; padding:36px 20px 48px; gap:0; min-height:unset; width:100%; }
+            .left { width:100%; }
+            .badge { margin-bottom:20px; }
+            h1 { font-size:34px; letter-spacing:-1px; margin-bottom:18px; }
+            .desc-main, .desc-sub { max-width:100%; font-size:14px; }
+            .desc-sub { margin-bottom:28px; }
+            .btns { gap:16px; margin-bottom:32px; }
+            .btn-primary { font-size:14px; padding:14px 24px; }
+            .stats-grid { gap:20px; padding-top:20px; }
+            .stat-item h2 { font-size:20px; }
+            /* Right becomes full width, no overflow */
+            .right {
+                flex: none;
+                width: 100%;
+                margin-top: 36px;
+            }
+            .dashboard { animation: none; }
+            .db-map { height:110px; }
+        }
+
+        /* ═══════════ VERY SMALL ≤480px ═══════════ */
+        @media (max-width:480px) {
+            h1 { font-size:28px; }
+            .btn-primary { width:100%; text-align:center; }
+            .btns { flex-direction:column; align-items:flex-start; }
+            .badge-text { font-size:11px; }
+            .eyebrow { font-size:10px; letter-spacing:1.5px; }
+            .db-stat-val { font-size:16px; }
+            .db-map { height:95px; }
+            .db-stats { gap:8px; }
+            .db-bottom { gap:8px; }
+        }
+
+        /* ═══════════ LARGE ≥1400px ═══════════ */
+        @media (min-width:1400px) {
+            .hero { max-width:1360px; }
+            h1 { font-size:64px; }
+            .right { flex: 0 0 520px; }
+        }
+    </style>
+</head>
+<body>
+
+<main class="hero">
+
+    <!-- ── LEFT ── -->
+    <section class="left">
+
+        <div class="badge">
+            <span class="badge-chip">🚛</span>
+            <span class="badge-text">Built for Quarry · Crusher · RMC · Brick &amp; Paver</span>
+        </div>
+
+        <div class="eyebrow">Fleet Management – GPS, Tyre, Maintenance &amp; Fuel Monitoring</div>
+
+        <h1>Complete <span class="orange">Fleet</span><br><span class="orange">Control</span> For Your Units.</h1>
+
+        <p class="desc-main">Manage your entire fleet in real time. Control GPS tracking, tyre life, vehicle maintenance, and fuel usage from one powerful system designed for heavy-duty operations.</p>
+
+        <div class="btns">
+            <a href="#" class="btn-primary">Request Free Demo</a>
+            <a href="#" class="btn-secondary">
+                📞 Call Now
+                <span class="arrow-circle">→</span>
+            </a>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-item"><h2>100%</h2><p>Real-Time Visibility</p></div>
+            <div class="stat-item"><h2>25%</h2><p>Tyre Life Extended</p></div>
+            <div class="stat-item"><h2>0</h2><p>Fuel Theft Undetected</p></div>
+        </div>
+
+    </section>
+
+    <!-- ── RIGHT: SINGLE UNIFIED DASHBOARD ── -->
+    <section class="right">
+        <div class="dashboard">
+
+            <!-- TOP BAR -->
+            <div class="db-topbar">
+                <div class="db-title">⚡ SAZS Fleet Control</div>
+                <div class="db-badge">
+                    <div class="db-live-dot"></div>
+                    Live
+                </div>
+            </div>
+
+            <!-- MAP -->
+            <div class="db-map">
+                <div class="mg h" style="top:25%"></div>
+                <div class="mg h" style="top:50%"></div>
+                <div class="mg h" style="top:75%"></div>
+                <div class="mg v" style="left:25%"></div>
+                <div class="mg v" style="left:50%"></div>
+                <div class="mg v" style="left:75%"></div>
+                <div class="m-road-h"></div>
+                <div class="m-road-v"></div>
+                <div class="map-route"></div>
+                <div class="mpin blue"  style="top:36%;left:14%"><div class="mpin-dot"></div><div class="mpin-tail"></div></div>
+                <div class="mpin dark"  style="top:40%;left:50%"><div class="mpin-dot"></div><div class="mpin-tail"></div></div>
+                <div class="mpin green" style="top:28%;left:70%"><div class="mpin-dot"></div><div class="mpin-tail"></div></div>
+                <div class="mpin blue"  style="top:55%;left:82%"><div class="mpin-dot"></div><div class="mpin-tail"></div></div>
+                <div class="map-chip"><div class="map-chip-dot"></div><div class="map-chip-txt">GPS Tracking · Live</div></div>
+                <div class="map-count">38 Active</div>
+            </div>
+
+            <!-- STATS ROW -->
+            <div class="db-stats">
+                <div class="db-stat">
+                    <div class="db-stat-lbl">Vehicles</div>
+                    <div class="db-stat-val">38</div>
+                    <div class="db-stat-sub">34 Online · 4 Idle</div>
+                    <div class="db-stat-bar"><div class="db-stat-fill" style="width:89%"></div></div>
+                </div>
+                <div class="db-stat">
+                    <div class="db-stat-lbl">Fuel Avg.</div>
+                    <div class="db-stat-val">92%</div>
+                    <div class="db-stat-sub">Avg. tank level</div>
+                    <div class="db-stat-bar"><div class="db-stat-fill" style="width:92%;background:#22c55e"></div></div>
+                </div>
+                <div class="db-stat">
+                    <div class="db-stat-lbl">Perf.</div>
+                    <div class="db-stat-val">85%</div>
+                    <div class="db-stat-sub">Overall tasks</div>
+                    <div class="db-stat-bar"><div class="db-stat-fill" style="width:85%"></div></div>
+                </div>
+            </div>
+
+            <!-- BOTTOM PANELS -->
+            <div class="db-bottom">
+
+                <div class="db-maint">
+                    <div class="db-panel-title">🔧 Maintenance</div>
+                    <div class="db-task">
+                        <div class="db-chk on"><svg viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div class="db-tbar"><div class="db-tbfill" style="width:80%;background:#2563eb"></div></div>
+                    </div>
+                    <div class="db-task">
+                        <div class="db-chk on"><svg viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div class="db-tbar"><div class="db-tbfill" style="width:70%;background:#111"></div></div>
+                    </div>
+                    <div class="db-task">
+                        <div class="db-chk"></div>
+                        <div class="db-tbar"><div class="db-tbfill" style="width:90%;background:#e5e7eb"></div></div>
+                    </div>
+                    <div class="db-task">
+                        <div class="db-chk"></div>
+                        <div class="db-tbar"><div class="db-tbfill" style="width:55%;background:#e5e7eb"></div></div>
+                    </div>
+                </div>
+
+                <div class="db-chat">
+                    <div class="db-chat-title">🔔 Alerts</div>
+                    <div class="db-msg recv">Fuel low — TN-04</div>
+                    <div class="db-msg sent">Acknowledged ✓</div>
+                    <div class="db-msg recv">Tyre due — TN-07</div>
+                    <div class="db-msg sent">On route ✓</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>
