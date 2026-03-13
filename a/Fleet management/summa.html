@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fleet Management & GPS Tracking Software | SAZS Apps</title>
+  <meta name="description" content="Fleet management software with GPS tracking, tyre life, maintenance and fuel sensor integration for quarry, crusher and RMC fleets in Tamil Nadu." />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #0057FF;
+      --blue-dark: #003BBD;
+      --blue-light: #4D8FFF;
+      --blue-pale: #E8F0FF;
+      --black: #0A0A0A;
+      --black-2: #111827;
+      --gray: #374151;
+      --gray-light: #6B7280;
+      --white: #FFFFFF;
+      --off-white: #F5F7FF;
+      --border: #D1D5DB;
+      --font-head: 'Barlow Condensed', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--black);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-logo {
+      font-family: var(--font-head);
+      font-size: 1.6rem; font-weight: 800; letter-spacing: 1px;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--blue-light); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.7); font-size: 0.9rem; text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue); color: var(--white);
+      padding: 0.5rem 1.4rem; border-radius: 4px;
+      font-weight: 600; font-size: 0.9rem; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--blue-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--black-2);
+      padding: 120px 5% 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 55%; height: 100%;
+      background: linear-gradient(135deg, rgba(0,87,255,0.18) 0%, rgba(0,87,255,0.04) 100%);
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(0,87,255,0.15); border: 1px solid rgba(77,143,255,0.4);
+      color: var(--blue-light); padding: 0.35rem 1rem; border-radius: 2rem;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800; line-height: 1.05;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 span { color: var(--blue-light); }
+    .hero-desc {
+      color: rgba(255,255,255,0.65); font-size: 1.05rem; line-height: 1.7;
+      margin-bottom: 2.5rem; max-width: 500px;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--blue); color: var(--white);
+      padding: 0.85rem 2rem; border-radius: 4px;
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      border: 2px solid var(--blue);
+      transition: all 0.2s; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      padding: 0.85rem 2rem; border-radius: 4px;
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: all 0.2s; display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--white); }
+    .hero-visual {
+      position: relative; z-index: 1;
+      border-radius: 8px; overflow: hidden;
+      border: 1px solid rgba(77,143,255,0.25);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    }
+    .hero-visual img { width: 100%; display: block; }
+    .hero-stats {
+      display: flex; gap: 3rem; margin-top: 2.5rem;
+    }
+    .stat-item { }
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 2.2rem; font-weight: 800; color: var(--blue-light);
+    }
+    .stat-label { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 0.2rem; }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 90px 5%; }
+    .section-label {
+      display: inline-block;
+      background: var(--blue-pale); color: var(--blue);
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.35rem 1rem; border-radius: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800; text-transform: uppercase; line-height: 1.1;
+      letter-spacing: -0.3px;
+    }
+    .section-subtitle {
+      color: var(--gray-light); font-size: 1rem; line-height: 1.7;
+      margin-top: 0.8rem; max-width: 580px;
+    }
+    .section-header { margin-bottom: 3.5rem; }
+
+    /* ── FEATURES GRID ── */
+    .features { background: var(--off-white); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--blue); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,87,255,0.1); }
+    .feature-card:hover::before { transform: scaleX(1); }
+    .feature-icon {
+      width: 52px; height: 52px;
+      background: var(--blue-pale); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.2rem; font-size: 1.5rem;
+    }
+    .feature-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.25rem; font-weight: 700; text-transform: uppercase;
+      margin-bottom: 0.6rem; color: var(--black);
+    }
+    .feature-card p { color: var(--gray-light); font-size: 0.92rem; line-height: 1.6; }
+    .feature-list { list-style: none; margin-top: 1rem; }
+    .feature-list li {
+      color: var(--gray); font-size: 0.88rem; padding: 0.3rem 0;
+      display: flex; align-items: flex-start; gap: 0.5rem;
+    }
+    .feature-list li::before {
+      content: '→'; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    }
+
+    /* ── GPS SECTION (Dark) ── */
+    .gps-section {
+      background: var(--black-2);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .gps-section .section-title { color: var(--white); }
+    .gps-section .section-label { background: rgba(77,143,255,0.15); color: var(--blue-light); }
+    .gps-section .section-subtitle { color: rgba(255,255,255,0.55); }
+    .gps-img-wrap {
+      border-radius: 8px; overflow: hidden;
+      border: 1px solid rgba(77,143,255,0.2);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+    .gps-img-wrap img { width: 100%; display: block; }
+    .check-list { list-style: none; margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .check-list li {
+      display: flex; align-items: center; gap: 0.75rem;
+      color: rgba(255,255,255,0.75); font-size: 0.95rem;
+    }
+    .check-list .check {
+      width: 22px; height: 22px; background: var(--blue);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 0.7rem; color: white;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--blue);
+      display: flex; justify-content: space-around; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+      padding: 3rem 5%;
+    }
+    .stat-box { text-align: center; }
+    .stat-box .num {
+      font-family: var(--font-head);
+      font-size: 3rem; font-weight: 800; color: var(--white); display: block;
+    }
+    .stat-box .lbl { color: rgba(255,255,255,0.75); font-size: 0.85rem; margin-top: 0.25rem; }
+
+    /* ── TYRE & MAINTENANCE ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .info-block {
+      background: var(--black-2);
+      border-radius: 8px; padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .info-block h2 {
+      font-family: var(--font-head);
+      font-size: 1.5rem; font-weight: 800; text-transform: uppercase;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    .info-block p { color: rgba(255,255,255,0.55); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.2rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .tag {
+      background: rgba(0,87,255,0.15); color: var(--blue-light);
+      padding: 0.3rem 0.9rem; border-radius: 2rem;
+      font-size: 0.8rem; font-weight: 500;
+      border: 1px solid rgba(77,143,255,0.25);
+    }
+
+    /* ── FAQ ── */
+    .faq { background: var(--off-white); }
+    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 1.25rem; }
+    .faq-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.75rem 2rem;
+      cursor: pointer; transition: box-shadow 0.2s;
+    }
+    .faq-item:hover { box-shadow: 0 6px 24px rgba(0,87,255,0.08); }
+    .faq-q {
+      font-family: var(--font-head);
+      font-size: 1.05rem; font-weight: 700; color: var(--black);
+      text-transform: uppercase; display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem;
+    }
+    .faq-q .ico {
+      color: var(--blue); font-size: 1.2rem; flex-shrink: 0;
+    }
+    .faq-a {
+      color: var(--gray); font-size: 0.9rem; line-height: 1.7; margin-top: 1rem;
+    }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--black-2);
+      text-align: center; padding: 80px 5%;
+    }
+    .cta-band h2 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800; text-transform: uppercase;
+      color: var(--white); margin-bottom: 1rem;
+    }
+    .cta-band h2 span { color: var(--blue-light); }
+    .cta-band p { color: rgba(255,255,255,0.55); max-width: 480px; margin: 0 auto 2.5rem; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-whatsapp {
+      background: #25D366; color: white;
+      padding: 0.85rem 2rem; border-radius: 4px;
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black); color: rgba(255,255,255,0.5);
+      text-align: center; padding: 2rem 5%;
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--blue-light); text-decoration: none; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate { animation: fadeUp 0.6s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero, .gps-section, .two-col { grid-template-columns: 1fr; }
+      .hero::before { display: none; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="https://sazsapps.com/" class="nav-logo">SAZS<span>Apps</span></a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#gps">GPS Tracking</a></li>
+    <li><a href="#maintenance">Maintenance</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Request Demo</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content animate">
+    <div class="hero-badge">🚛 Built for Quarry · Crusher · RMC</div>
+    <h1>Fleet Management –<br><span>GPS, Tyre,</span><br>Maintenance<br>& Fuel Monitoring</h1>
+    <p class="hero-desc">Manage your entire fleet in real time. Control GPS tracking, tyre life, vehicle maintenance, and fuel usage from one powerful system designed for heavy-duty operations.</p>
+    <div class="hero-btns">
+      <a href="#cta" class="btn-primary">Request Free Demo</a>
+      <a href="tel:+91XXXXXXXXXX" class="btn-outline">📞 Call Now</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Real-Time Visibility</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">25%</div>
+        <div class="stat-label">Tyre Life Extended</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Fuel Theft Undetected</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual animate delay-2">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="GPS fleet tracking dashboard showing real-time vehicle locations" />
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-box"><span class="num">500+</span><div class="lbl">Vehicles Tracked</div></div>
+  <div class="stat-box"><span class="num">50+</span><div class="lbl">Fleet Clients</div></div>
+  <div class="stat-box"><span class="num">15+</span><div class="lbl">Years in Business</div></div>
+  <div class="stat-box"><span class="num">24/7</span><div class="lbl">Live Monitoring</div></div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-header">
+    <span class="section-label">What We Offer</span>
+    <h2 class="section-title">All-In-One Fleet Control</h2>
+    <p class="section-subtitle">Stop managing vehicles from multiple spreadsheets. SAZS Fleet brings GPS, tyres, maintenance, and fuel into one unified platform.</p>
+  </div>
+  <div class="features-grid">
+    <!-- GPS -->
+    <div class="feature-card">
+      <div class="feature-icon">📍</div>
+      <h3>Real-Time GPS Tracking</h3>
+      <p>Know exactly where every vehicle is — live on map, 24/7, with route history and idle time monitoring.</p>
+      <ul class="feature-list">
+        <li>Live location with map view</li>
+        <li>Route history and trip replay</li>
+        <li>Stoppage and idle time alerts</li>
+        <li>Geo-fence for quarry, crusher, RMC & customer sites</li>
+        <li>Trip summary: distance, duration, delivery status</li>
+      </ul>
+    </div>
+    <!-- TYRE -->
+    <div class="feature-card">
+      <div class="feature-icon">🔴</div>
+      <h3>Tyre Life & Cost Control</h3>
+      <p>Track every tyre from fitment to retirement. Extend tyre life by up to 25% with smart rotation and replacement alerts.</p>
+      <ul class="feature-list">
+        <li>Tyre record: brand, size, vehicle, position</li>
+        <li>Auto kilometre tracking via odometer/GPS</li>
+        <li>Rotation, alignment & replacement alerts</li>
+        <li>Tyre performance & cost per kilometre reports</li>
+      </ul>
+    </div>
+    <!-- MAINTENANCE -->
+    <div class="feature-card">
+      <div class="feature-icon">🔧</div>
+      <h3>Preventive Maintenance</h3>
+      <p>Plan services before breakdowns happen. Keep vehicles in peak condition and cut workshop downtime.</p>
+      <ul class="feature-list">
+        <li>Schedule by kilometres, hours, or date</li>
+        <li>Reminders: oil, filters, brakes, clutch</li>
+        <li>Complete service history per vehicle</li>
+        <li>Part-wise and vehicle-wise cost tracking</li>
+      </ul>
+    </div>
+    <!-- FUEL -->
+    <div class="feature-card">
+      <div class="feature-icon">⛽</div>
+      <h3>Fuel Sensor & Theft Control</h3>
+      <p>Full control over every litre. Detect theft, reduce pilferage, and improve mileage with real-time fuel data.</p>
+      <ul class="feature-list">
+        <li>Real-time fuel level from tank sensors</li>
+        <li>Auto log: fuel fill, consumption, sudden drops</li>
+        <li>Instant theft & abnormal usage alerts</li>
+        <li>Mileage comparison: vehicle, driver, route</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GPS DEEP DIVE -->
+<section class="gps-section" id="gps">
+  <div>
+    <span class="section-label">GPS Module</span>
+    <h2 class="section-title" style="color:white">See Every Vehicle.<br>Every Route.<br>Right Now.</h2>
+    <p class="section-subtitle">No more calling drivers to find out where they are. SAZS GPS gives you a live map of your entire fleet — at quarry, on road, or at customer site.</p>
+    <ul class="check-list">
+      <li><span class="check">✓</span> Live positions of all vehicles on one map</li>
+      <li><span class="check">✓</span> Stop unauthorized trips instantly</li>
+      <li><span class="check">✓</span> Geo-fence alerts for restricted zones</li>
+      <li><span class="check">✓</span> Replay any trip: speed, route, idle time</li>
+      <li><span class="check">✓</span> Trip summaries auto-generated each day</li>
+    </ul>
+  </div>
+  <div class="gps-img-wrap">
+    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80" alt="Fleet of trucks managed with SAZS GPS tracking system" />
+  </div>
+</section>
+
+<!-- TYRE + MAINTENANCE TWO-COL -->
+<section style="background:var(--black-2); padding:80px 5%;" id="maintenance">
+  <div class="section-header">
+    <span class="section-label" style="background:rgba(77,143,255,0.15); color:var(--blue-light)">Tyre & Maintenance</span>
+    <h2 class="section-title" style="color:white">Reduce Cost.<br>Increase Uptime.</h2>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.5)">Tyres and breakdowns are your biggest unplanned costs. SAZS Fleet helps you plan ahead and eliminate surprises.</p>
+  </div>
+  <div class="two-col">
+    <div class="info-block">
+      <h2>🔴 Tyre Management</h2>
+      <p>Track each tyre from day one. Know its total kilometres, position history, rotation count, and exact cost per km. Make better buying decisions based on real data — not guesswork.</p>
+      <div class="tag-list">
+        <span class="tag">Tyre Fitment Record</span>
+        <span class="tag">KM per Tyre</span>
+        <span class="tag">Rotation Alerts</span>
+        <span class="tag">Cost per KM Report</span>
+        <span class="tag">Brand Comparison</span>
+      </div>
+    </div>
+    <div class="info-block">
+      <h2>🔧 Vehicle Maintenance</h2>
+      <p>Stop waiting for breakdowns. Set service schedules by kilometres, engine hours, or date. Get automatic reminders so your workshop team stays ahead — not behind.</p>
+      <div class="tag-list">
+        <span class="tag">Oil Change Alerts</span>
+        <span class="tag">Filter Reminders</span>
+        <span class="tag">Brake & Clutch Service</span>
+        <span class="tag">Service History Log</span>
+        <span class="tag">Cost per Vehicle</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUEL SECTION -->
+<section style="background:var(--white); padding:80px 5%;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+    <div>
+      <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80" alt="Fuel monitoring system for fleet trucks" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 16px 48px rgba(0,0,0,0.1);" />
+    </div>
+    <div>
+      <span class="section-label">Fuel Control</span>
+      <h2 class="section-title">Stop Fuel<br>Theft &<br>Wastage</h2>
+      <p class="section-subtitle">Fuel is your highest running cost. One pilferage per day across 10 vehicles can cost lakhs per year. SAZS fuel sensors give you complete control over every litre.</p>
+      <ul class="check-list" style="margin-top:1.5rem;">
+        <li><span class="check" style="background:var(--blue)">✓</span> <span style="color:var(--gray)">Real-time fuel level from physical tank sensors</span></li>
+        <li><span class="check" style="background:var(--blue)">✓</span> <span style="color:var(--gray)">Sudden fuel drop = instant theft alert</span></li>
+        <li><span class="check" style="background:var(--blue)">✓</span> <span style="color:var(--gray)">Compare KM/litre by driver, vehicle, route</span></li>
+        <li><span class="check" style="background:var(--blue)">✓</span> <span style="color:var(--gray)">Daily fuel consumption report auto-generated</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-header">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title">Frequently Asked<br>Questions</h2>
+    <p class="section-subtitle">Common questions about SAZS Fleet Management answered clearly.</p>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">How does GPS fleet tracking work in SAZS Apps? <span class="ico">+</span></div>
+      <div class="faq-a">SAZS Apps integrates with GPS devices installed in your vehicles to provide real-time location tracking. The system shows live positions on a map, records complete route history, and tracks stoppage time. You can replay any trip to see exact routes, speed, and idle time at each location.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can SAZS Apps detect and prevent fuel theft? <span class="ico">+</span></div>
+      <div class="faq-a">Yes. SAZS Apps integrates with fuel sensors in vehicle tanks to monitor fuel levels in real time. If there is a sudden drop in fuel level without corresponding vehicle movement, you receive instant alerts for suspected theft or leakage.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does tyre life tracking help reduce costs? <span class="ico">+</span></div>
+      <div class="faq-a">The system tracks each tyre from fitment to retirement. By monitoring tyre performance and getting timely rotation alerts, you can extend tyre life by 15–25%. Cost per kilometre reports help you choose better tyre brands and avoid premature failures.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is SAZS suitable for quarry and crusher operations? <span class="ico">+</span></div>
+      <div class="faq-a">Absolutely. SAZS is specifically designed for quarry, crusher, RMC, and construction logistics. The system handles heavy-duty vehicles like tippers, tankers, and trucks. It integrates with your existing SAZS ERP to link fleet data with billing, weighbridge, and site operations.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What maintenance alerts does the system provide? <span class="ico">+</span></div>
+      <div class="faq-a">SAZS provides automatic reminders based on kilometres driven, engine hours, or calendar dates. You get alerts for oil changes, filter replacements, brake checks, tyre rotation, clutch servicing, and major overhauls — with vehicle details and last service date included.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need internet connection for GPS tracking? <span class="ico">+</span></div>
+      <div class="faq-a">GPS devices in vehicles work independently and store location data locally. The system syncs data when internet connectivity is available. You can view near real-time tracking in coverage areas and see complete trip history once data is uploaded.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" id="cta">
+  <h2>Track Every Vehicle.<br><span>Save Every Litre.</span><br>Extend Every Tyre's Life.</h2>
+  <p>Get started with SAZS Fleet Management today. Free demo for quarry, crusher, and RMC operations across Tamil Nadu and India.</p>
+  <div class="cta-buttons">
+    <a href="mailto:info@sazsapps.com" class="btn-primary">Request Free Demo</a>
+    <a href="https://wa.me/91XXXXXXXXXX" class="btn-whatsapp">💬 WhatsApp Us</a>
+    <a href="tel:+91XXXXXXXXXX" class="btn-outline" style="color:white; border-color:rgba(255,255,255,0.3);">📞 Call Sales Team</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <a href="https://sazsapps.com/">SAZS Apps</a>. Fleet Management Software for Quarry, Crusher & RMC Operations | Tamil Nadu, India</p>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    const ico = item.querySelector('.ico');
+    a.style.display = 'none';
+    q.addEventListener('click', () => {
+      const isOpen = a.style.display !== 'none';
+      document.querySelectorAll('.faq-a').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.faq-q .ico').forEach(el => el.textContent = '+');
+      if (!isOpen) { a.style.display = 'block'; ico.textContent = '−'; }
+    });
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.feature-card, .info-block, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>

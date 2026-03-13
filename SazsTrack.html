@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trip Track</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="message"></div>
+        <iframe id="trackFrame" src=""></iframe>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const sazsLi = params.get("SazsLi");
+
+        // Validate if SazsLi exists and not empty
+        if (sazsLi && sazsLi.trim() !== "") {
+            try {
+                // Optional: validate if it's a valid URL
+                //new URL(sazsLi);
+                
+                //window.location.replace(sazsLi);
+                console.log(sazsLi, "sazsLi");
+
+                // Load the URL into iframe
+                  document.getElementById("trackFrame").src = sazsLi;
+
+                // // Remove SazsLi from the URL without reloading the page
+                 //const newUrl = window.location.origin + window.location.pathname;
+                 //window.history.replaceState({}, document.title, newUrl);
+            } catch (e) {
+                console.warn("Invalid URL in SazsLi parameter:", sazsLi);
+            }
+        } else {
+            document.getElementById("message").innerText = "Invalid URL";
+            //window.location.replace("https://www.sazsapps.com/"); 
+        }
+    </script>
+</body>
+
+</html>
