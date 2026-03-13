@@ -48,12 +48,13 @@
         .badge-text { font-size: 13px; font-weight: 500; color: #333; }
 
         .eyebrow {
+            display: inline-block;
             font-size: 12px;
-            font-weight: 700;
+            font-weight: 900;
             letter-spacing: 2.5px;
             color: var(--orange);
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         h1 {
@@ -467,7 +468,392 @@
         </div>
     </section>
 
+
 </main>
+
+<!-- ═══════════════════════════════════════════
+     WHAT WE OFFER SECTION
+════════════════════════════════════════════ -->
+<style>
+    .offer-section {
+        background: #0e0e10;
+        padding: 110px 0 130px;
+    }
+    .offer-inner {
+        max-width: 1252px;
+        width: 92%;
+        margin: 0 auto;
+    }
+    .offer-top-label {
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin-bottom: 80px;
+    }
+
+    .of-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+        border-bottom: 1px solid #1a1a1e;
+    }
+    .of-block.c1, .of-block.c2, .of-block.c3, .of-block.c4 { margin-bottom: 50px; }
+    .of-block:first-child { }
+    .of-block:last-child  { border-bottom: none; }
+    .of-block.flip        { direction: rtl; }
+    .of-block.flip > *    { direction: ltr; }
+
+    /* ── of-left: padding top & bottom + image ── */
+    .of-left {
+        padding-top: 28px;
+        padding-bottom: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    /* Feature image card */
+    .of-img-wrap {
+        width: 100%;
+        border-radius: 18px;
+        overflow: hidden;
+        position: relative;
+        aspect-ratio: 16/9;
+        border: 1px solid #1e1e26;
+    }
+    .of-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        opacity: 0.88;
+        transition: opacity 0.3s ease, transform 0.4s ease;
+    }
+    .of-img-wrap:hover img {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+    /* Gradient overlay for text/depth */
+    .of-img-wrap::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(160deg, rgba(14,14,16,0.15) 0%, rgba(14,14,16,0.55) 100%);
+        pointer-events: none;
+        border-radius: 18px;
+    }
+    /* Badge chip inside image */
+    .of-img-chip {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        background: rgba(14,14,16,0.75);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 30px;
+        padding: 6px 14px 6px 8px;
+    }
+    .of-img-chip-dot {
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    .of-img-chip-txt {
+        font-size: 10px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 0.3px;
+    }
+
+    .of-eyebrow {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .of-eyebrow::before {
+        content: '';
+        width: 20px; height: 2px;
+        display: inline-block;
+        flex-shrink: 0;
+        border-radius: 2px;
+    }
+    .c1 .of-eyebrow { color: #60a5fa; }
+    .c1 .of-eyebrow::before { background: #2563eb; }
+    .c2 .of-eyebrow { color: #4ade80; }
+    .c2 .of-eyebrow::before { background: #22c55e; }
+    .c3 .of-eyebrow { color: #f87171; }
+    .c3 .of-eyebrow::before { background: #ef4444; }
+    .c4 .of-eyebrow { color: #60a5fa; }
+    .c4 .of-eyebrow::before { background: #2563eb; }
+
+    .of-big-title {
+        font-size: 52px;
+        font-weight: 900;
+        letter-spacing: -2.5px;
+        line-height: 1.0;
+        color: #ffffff;
+        margin: 0;
+    }
+
+    /* ── ITEM ROW — exact Surfer style ── */
+    .of-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        margin-bottom: 30px;
+    }
+    .of-item:last-child { margin-bottom: 0; }
+
+    /* Outlined circle icon — SVG inside */
+    .of-icon {
+        width: 40px; height: 40px;
+        border-radius: 50%;
+        border: 1.5px solid #2e2e36;
+        background: transparent;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+        margin-top: 1px;
+    }
+    .of-icon svg {
+        width: 18px; height: 18px;
+        stroke: #9ca3af;
+        fill: none;
+        stroke-width: 1.7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    /* Text: Bold white label + inline grey desc */
+    .of-item-body {
+        font-size: 16px;
+        line-height: 1.55;
+        color: #6b7280;
+        padding-top: 9px;
+    }
+    .of-item-body strong {
+        font-weight: 800;
+        color: #ffffff;
+        font-size: 16px;
+    }
+
+    /* TABLET */
+    @media (max-width:1024px) and (min-width:768px) {
+        .of-block { gap: 48px; }
+        .of-big-title { font-size: 38px; letter-spacing: -1.5px; }
+        .of-item-body { font-size: 14px; }
+        .of-item-body strong { font-size: 14px; }
+        .of-left { padding-top: 18px; padding-bottom: 18px; gap: 18px; }
+    }
+
+    /* MOBILE */
+    @media (max-width:767px) {
+        .offer-section { padding: 72px 0 90px; }
+        .offer-inner { width: 92%; }
+        .offer-top-label { margin-bottom: 52px; }
+        .of-block, .of-block.flip {
+            grid-template-columns: 1fr;
+            direction: ltr;
+            gap: 36px;
+        }
+        .of-big-title { font-size: 32px; letter-spacing: -1.5px; }
+        .of-icon { width: 34px; height: 34px; }
+        .of-icon svg { width: 15px; height: 15px; }
+        .of-item-body, .of-item-body strong { font-size: 14px; }
+        .of-left { padding-top: 0; padding-bottom: 0; gap: 16px; }
+    }
+    @media (max-width:480px) {
+        .of-big-title { font-size: 26px; }
+    }
+</style>
+
+<section class="offer-section">
+    <div class="offer-inner">
+
+        <div class="offer-top-label">WHAT WE OFFER</div>
+
+        <!-- BLOCK 1 — GPS — Blue -->
+        <div class="of-block c1">
+            <div class="of-left">
+                <div class="of-eyebrow">GPS Tracking</div>
+                <div class="of-big-title">Real-Time GPS Fleet Tracking.</div>
+                <!-- IMAGE -->
+                <div class="of-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="GPS Fleet Tracking — trucks on highway" loading="lazy">
+                    <div class="of-img-chip">
+                        <div class="of-img-chip-dot" style="background:#2563eb;"></div>
+                        <span class="of-img-chip-txt">Live · 38 Vehicles Tracked</span>
+                    </div>
+                </div>
+            </div>
+            <div class="of-right">
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+                    <div class="of-item-body"><strong>Live Map View:</strong> exact location of every vehicle, 24/7 on a live map.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h12"/></svg></div>
+                    <div class="of-item-body"><strong>Route History:</strong> replay any trip with full route and stoppage data.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                    <div class="of-item-body"><strong>Idle Time Monitor:</strong> detect stoppages and idle time for every vehicle.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 15h6M9 12h3"/></svg></div>
+                    <div class="of-item-body"><strong>Geo-Fence:</strong> set zones for quarry, crusher, RMC plant &amp; customer sites.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2"/></svg></div>
+                    <div class="of-item-body"><strong>Trip Summary:</strong> distance, duration, and delivery status per trip.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg></div>
+                    <div class="of-item-body"><strong>Block Trips:</strong> stop unauthorized vehicle movement instantly.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOCK 2 — TYRE — Green, flipped -->
+        <div class="of-block c2 flip">
+            <div class="of-left">
+                <div class="of-eyebrow">Tyre Management</div>
+                <div class="of-big-title">Tyre Life &amp; Cost Control.</div>
+                <!-- IMAGE -->
+                <div class="of-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=80" alt="Tyre management for heavy vehicles" loading="lazy">
+                    <div class="of-img-chip">
+                        <div class="of-img-chip-dot" style="background:#22c55e;"></div>
+                        <span class="of-img-chip-txt">25% Longer Tyre Life</span>
+                    </div>
+                </div>
+            </div>
+            <div class="of-right">
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
+                    <div class="of-item-body"><strong>Tyre Records:</strong> brand, size, vehicle position tracked from fitment to retirement.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div>
+                    <div class="of-item-body"><strong>KM Tracking:</strong> automatic kilometre tracking via odometer and GPS.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+                    <div class="of-item-body"><strong>Smart Alerts:</strong> rotation, alignment, and replacement reminders on time.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                    <div class="of-item-body"><strong>Cost Reports:</strong> tyre performance and cost per kilometre for every vehicle.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+                    <div class="of-item-body"><strong>Buy Smarter:</strong> real data to make better tyre purchase decisions.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <div class="of-item-body"><strong>Failure Prevention:</strong> avoid premature tyre failures and unplanned downtime.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOCK 3 — MAINTENANCE — Red -->
+        <div class="of-block c3">
+            <div class="of-left">
+                <div class="of-eyebrow">Maintenance</div>
+                <div class="of-big-title">Preventive Vehicle Maintenance.</div>
+                <!-- IMAGE -->
+                <div class="of-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=800&q=80" alt="Heavy vehicle maintenance and service" loading="lazy">
+                    <div class="of-img-chip">
+                        <div class="of-img-chip-dot" style="background:#ef4444;"></div>
+                        <span class="of-img-chip-txt">Zero Missed Services</span>
+                    </div>
+                </div>
+            </div>
+            <div class="of-right">
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                    <div class="of-item-body"><strong>Service Schedules:</strong> set by kilometres, hours, or calendar date.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                    <div class="of-item-body"><strong>Service Reminders:</strong> oil change, filters, brakes, clutch — never missed.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    <div class="of-item-body"><strong>Major Overhauls:</strong> scheduled reminders for engine and heavy service jobs.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                    <div class="of-item-body"><strong>Full History:</strong> complete service record for each vehicle in the fleet.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <div class="of-item-body"><strong>Cost Tracking:</strong> part-wise and vehicle-wise maintenance cost analysis.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+                    <div class="of-item-body"><strong>Longer Engine Life:</strong> planned service extends component and engine lifespan.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOCK 4 — FUEL — Blue, flipped -->
+        <div class="of-block c4 flip">
+            <div class="of-left">
+                <div class="of-eyebrow">Fuel Control</div>
+                <div class="of-big-title">Fuel Sensor &amp; Theft Control.</div>
+                <!-- IMAGE -->
+                <div class="of-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1545262810-a9f0d4952756?w=800&q=80" alt="Fuel management and monitoring system" loading="lazy">
+                    <div class="of-img-chip">
+                        <div class="of-img-chip-dot" style="background:#2563eb;"></div>
+                        <span class="of-img-chip-txt">0 Theft Undetected</span>
+                    </div>
+                </div>
+            </div>
+            <div class="of-right">
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><path d="M3 22V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14"/><path d="M17 8h2a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><line x1="3" y1="22" x2="21" y2="22"/><path d="M8 6V2h4v4"/></svg></div>
+                    <div class="of-item-body"><strong>Live Fuel Level:</strong> real-time tank level display direct from sensors.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                    <div class="of-item-body"><strong>Auto Logging:</strong> fuel fill, consumption, and sudden drops logged automatically.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                    <div class="of-item-body"><strong>Theft Alerts:</strong> instant alert for suspected theft or abnormal fuel usage.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                    <div class="of-item-body"><strong>Mileage Comparison:</strong> km/litre tracked by vehicle, driver, and route.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                    <div class="of-item-body"><strong>Leak Detection:</strong> detect pilferage and leakage the moment it happens.</div>
+                </div>
+                <div class="of-item">
+                    <div class="of-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <div class="of-item-body"><strong>Daily Savings:</strong> cut fuel costs every single day with full visibility.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 </body>
 </html>
