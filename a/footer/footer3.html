@@ -244,7 +244,6 @@
         gap: 0;
     }
 
-    .sazs-footer-ratings,
     .sazs-footer-bottom {
         padding-left: 40px;
         padding-right: 40px;
@@ -252,43 +251,113 @@
 }
 
 @media (max-width: 860px) {
-    .sazs-footer-ratings {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        padding: 24px;
-    }
-
-    .sazs-rating-group {
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
     .sazs-footer-cols {
-        padding: 40px 24px 48px;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px 24px;
+        display: none;
     }
 
-    .sazs-col-company {
-        grid-column: 1 / -1;
-        padding-right: 0;
+    /* ---- MOBILE LAYOUT ---- */
+    .sazs-footer-mobile {
+        display: block;
+        padding: 40px 24px 32px;
     }
 
-    .sazs-col-nav {
+    /* Company block – centered */
+    .sazs-mobile-company {
+        text-align: center;
+        padding-bottom: 32px;
+        border-bottom: 1px solid #1f1f1f;
+        margin-bottom: 32px;
+    }
+
+    .sazs-mobile-company .col-heading {
+        font-size: 16px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 14px;
+    }
+
+    .sazs-mobile-company .company-address {
+        font-size: 14px;
+        color: #9ca3af;
+        line-height: 1.8;
+        margin-bottom: 18px;
+    }
+
+    .sazs-mobile-company .company-links {
+        list-style: none;
         padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .sazs-mobile-company .company-links a {
+        font-size: 14px;
+        color: #9ca3af;
+        text-decoration: none;
+    }
+
+    .sazs-mobile-company .company-links a:hover {
+        color: #ffffff;
+    }
+
+    /* Nav cols – 2-column grid */
+    .sazs-mobile-nav-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px 24px;
+    }
+
+    .sazs-mobile-nav-col .col-heading {
+        font-size: 15px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 16px;
+    }
+
+    .sazs-mobile-nav-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .sazs-mobile-nav-col ul li a {
+        font-size: 13px;
+        color: #9ca3af;
+        text-decoration: none;
+        transition: color 0.15s;
+        line-height: 1.4;
+    }
+
+    .sazs-mobile-nav-col ul li a:hover {
+        color: #ffffff;
     }
 
     .sazs-footer-bottom {
         padding: 20px 24px;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sazs-footer-bottom-left {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 0;
+    }
+
+    .sazs-footer-bottom-left a {
+        margin-right: 16px;
     }
 }
 
-@media (max-width: 480px) {
-    .sazs-footer-cols {
-        grid-template-columns: 1fr 1fr;
+@media (min-width: 861px) {
+    .sazs-footer-mobile {
+        display: none;
     }
 }
 
@@ -312,17 +381,16 @@
 
 <footer class="sazs-footer">
 
-
-    <!-- MAIN COLUMNS -->
+    <!-- DESKTOP: MAIN COLUMNS GRID -->
     <div class="sazs-footer-cols">
 
         <!-- Col 1: Company -->
         <div class="sazs-col-company">
             <div class="col-heading">Company</div>
             <div class="company-address">
-                SAZS Apps Pvt. Ltd.<br>
-                Cloud ERP for Quarry,<br>
-                Crusher &amp; RMC Plants<br>
+                SAZS Apps Pvt. Ltd.
+                Cloud ERP for Quarry,
+                Crusher &amp; RMC Plants
                 India | UAE | Middle East
             </div>
             <ul class="company-links">
@@ -397,6 +465,90 @@
 
     </div>
 
+    <!-- MOBILE LAYOUT -->
+    <div class="sazs-footer-mobile">
+
+        <!-- Company – centered -->
+        <div class="sazs-mobile-company">
+            <div class="col-heading">Company</div>
+            <div class="company-address">
+                SAZS Apps Pvt. Ltd.
+                Cloud ERP for Quarry,
+                Crusher &amp; RMC Plants
+                India | UAE | Middle East
+            </div>
+            <ul class="company-links">
+                <li><a href="aboutus.html">About Us ↗</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- 2-col nav grid -->
+        <div class="sazs-mobile-nav-grid">
+
+            <div class="sazs-mobile-nav-col">
+                <div class="col-heading">Products</div>
+                <ul>
+                    <li><a href="crusher.html">Crusher Management Software</a></li>
+                    <li><a href="quarry.html">Quarry Management Software</a></li>
+                    <li><a href="rmc.html">RMC Billing Software</a></li>
+                    <li><a href="brick.html">Brick &amp; Paver ERP</a></li>
+                </ul>
+            </div>
+
+            <div class="sazs-mobile-nav-col">
+                <div class="col-heading">Features</div>
+                <ul>
+                    <li><a href="features.html#anpr">ANPR Camera</a></li>
+                    <li><a href="features.html#weighbridge">Weighbridge</a></li>
+                    <li><a href="features.html#einvoice">E-Invoice (GST)</a></li>
+                    <li><a href="features.html#boom-barrier">Boom Barrier</a></li>
+                    <li><a href="features.html#biometrics">Biometrics</a></li>
+                    <li><a href="features.html#smart-tech">Smart Tech</a></li>
+                    <li><a href="schwing-stetter-integration.html">Schwing Stetter Integration</a></li>
+                    <li><a href="fleet-management-software.html">Fleet Management (Fuel, GPS, Tyres)</a></li>
+                </ul>
+            </div>
+
+            <div class="sazs-mobile-nav-col">
+                <div class="col-heading">Resources</div>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="profitcalc.html">Profit Calculator</a></li>
+                    <li><a href="Signup.html">Request a Demo</a></li>
+                    <li><a href="whytochoose.html">Why to Choose</a></li>
+                    <li><a href="subcontract-billing.html">Subcontract Billing</a></li>
+                    <li><a href="financial-management.html">Financial Management</a></li>
+                </ul>
+            </div>
+
+            <div class="sazs-mobile-nav-col">
+                <div class="col-heading">Case Studies</div>
+                <ul>
+                    <li><a href="/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html">Quarry Profitability &amp; Theft Prevention</a></li>
+                    <li><a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html">Customer Experience &amp; Order Speed</a></li>
+                    <li><a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html">E-Invoicing &amp; GST Compliance</a></li>
+                    <li><a href="/case-studies/Real-Time_Vehicle_Trip_Management.html">Vehicle &amp; Trip Management</a></li>
+                    <li><a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html">Financial Control &amp; Profit Analysis</a></li>
+                </ul>
+            </div>
+
+            <div class="sazs-mobile-nav-col">
+                <div class="col-heading">Media &amp; Blogs</div>
+                <ul>
+                    <li><a href="/media-events/Jharkhand_2026.html">Jharkhand Mining &amp; Construction Show 2026</a></li>
+                    <li><a href="/media-events/EXCON_2025.html">EXCON 2025 – CII</a></li>
+                    <li><a href="/media-events/IEMS_2024.html">IEMS – International Mining Expo 2024</a></li>
+                    <li><a href="/media-events/TNMSA_2024.html">TNMSA – Chennai Zone Meet 2024</a></li>
+                    <li><a href="/media-events/EXCON_2023.html">EXCON 2023 – CII</a></li>
+                    <li><a href="/media-events/CODDISSIA.html">CODDISSIA – Stone Quarry Expo 2023</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
     <!-- BOTTOM BAR -->
     <div class="sazs-footer-bottom">
         <div class="sazs-footer-bottom-left">
@@ -418,7 +570,7 @@
             <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="LinkedIn">
                 <img loading="lazy" src="../../src/assets/images/Linkedin.png" alt="LinkedIn">
             </a>
-            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="Instagram">
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YbWKwL" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="Instagram">
                 <img loading="lazy" src="../../src/assets/images/instagram.png" alt="Instagram">
             </a>
         </div>
