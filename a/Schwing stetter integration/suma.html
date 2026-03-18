@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schwing Stetter RMC + SAZS Cloud ERP Integration | SAZS Apps</title>
+  <meta name="description" content="SAZS Cloud ERP integration with Schwing Stetter Ready Mix Concrete Plant PLC — real-time production, batch tracking, costing, and dispatch management." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+<style>
+/* ─────────────────────────────────────────────────────
+   SAZS Apps — Schwing Stetter RMC Integration Page
+   Palette: White #FFFFFF · Text #111827 · Blue #1D4ED8–#3B82F6
+   ───────────────────────────────────────────────────── */
+
+:root {
+  --white: #ffffff;
+  --bg-gray: #f8fafd;
+  --text: #111827;
+  --text-muted: #6b7280;
+  --blue-dark: #1D4ED8;
+  --blue-mid: #2563EB;
+  --blue-light: #3B82F6;
+  --blue-pale: #EFF6FF;
+  --border: #E5E7EB;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: 'Sora', sans-serif; line-height: 1.18; }
+p { line-height: 1.7; color: var(--text-muted); }
+
+/* ── Layout ─────────────────────────────────────────── */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.container--narrow { max-width: 720px; }
+
+/* ── Sections ───────────────────────────────────────── */
+.section { padding: 96px 0; }
+.section--gray { background: var(--bg-gray); }
+.section--blue { background: var(--blue-dark); }
+.section--cta {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+  text-align: center;
+}
+
+/* ── Section Label ──────────────────────────────────── */
+.section-label {
+  display: inline-block;
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--blue-mid);
+  background: var(--blue-pale);
+  padding: 6px 14px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+.section-label--light { color: #bfdbfe; background: rgba(255,255,255,0.12); }
+
+/* ── Section Title ──────────────────────────────────── */
+.section-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+.section-title.centered { text-align: center; }
+.section-title.light { color: #fff; }
+
+.section-intro {
+  font-size: 17px;
+  max-width: 620px;
+  margin-bottom: 48px;
+  color: var(--text-muted);
+}
+
+/* ── Buttons ────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn--primary {
+  background: var(--blue-mid);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(37,99,235,0.35);
+}
+.btn--primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+.btn--ghost { color: var(--blue-mid); border: 2px solid var(--blue-mid); }
+.btn--ghost:hover { background: var(--blue-pale); }
+.btn--white {
+  background: #fff;
+  color: var(--blue-dark);
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.btn--white:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
+.btn--outline-white { border: 2px solid rgba(255,255,255,0.5); color: #fff; }
+.btn--outline-white:hover { background: rgba(255,255,255,0.1); }
+
+/* ── HERO ───────────────────────────────────────────── */
+.hero { padding: 120px 24px 80px; max-width: 900px; margin: 0 auto; }
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue-mid);
+  background: var(--blue-pale);
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
+}
+.dot {
+  width: 8px; height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.4); }
+}
+.hero__title {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+.highlight { color: var(--blue-mid); }
+.hero__sub { font-size: 18px; max-width: 580px; margin-bottom: 40px; color: var(--text-muted); }
+.hero__cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 64px; }
+
+.hero__stats { display: flex; gap: 16px; flex-wrap: wrap; }
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  min-width: 140px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.stat-card__num {
+  font-family: 'Sora', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--blue-mid);
+}
+.stat-card__unit { font-size: 24px; font-weight: 700; color: var(--blue-mid); }
+.stat-card p { font-size: 13px; margin-top: 4px; color: var(--text-muted); }
+
+/* ── Two-col layout ─────────────────────────────────── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.two-col__text p { margin-bottom: 16px; font-size: 16px; }
+.two-col__text h2 { margin-bottom: 24px; }
+
+.flow-diagram { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.flow-node {
+  background: var(--bg-gray);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  width: 100%;
+}
+.flow-node--accent {
+  background: var(--blue-mid);
+  color: #fff;
+  border-color: var(--blue-mid);
+  box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+}
+.flow-arrow { color: var(--blue-light); font-size: 18px; font-weight: 700; padding: 2px 20px; }
+
+/* ── Cards grid ─────────────────────────────────────── */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.card:hover { border-color: var(--blue-light); box-shadow: 0 8px 24px rgba(37,99,235,0.1); transform: translateY(-3px); }
+.card__icon { font-size: 28px; margin-bottom: 14px; }
+.card h3 { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+.card p { font-size: 14px; }
+
+/* ── Problem list ───────────────────────────────────── */
+.problem-list { margin-bottom: 32px; }
+.problem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 16px;
+}
+.problem-item:last-child { border-bottom: none; }
+.problem-item__icon {
+  width: 28px; height: 28px;
+  background: #FEE2E2;
+  color: #DC2626;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 13px;
+  flex-shrink: 0; margin-top: 2px;
+}
+.problem-item strong { color: var(--text); }
+.problems__footer {
+  background: var(--blue-pale);
+  border-left: 4px solid var(--blue-mid);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 15px;
+  color: var(--blue-dark);
+}
+
+/* ── Solution grid ──────────────────────────────────── */
+.solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.solution-block {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: background 0.2s;
+}
+.solution-block:hover { background: rgba(255,255,255,0.12); }
+.solution-block__num { font-family: 'Sora', sans-serif; font-size: 36px; font-weight: 800; color: rgba(255,255,255,0.2); margin-bottom: 12px; }
+.solution-block h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.solution-block p { font-size: 14px; color: rgba(255,255,255,0.7); }
+
+/* ── Benefits list ──────────────────────────────────── */
+.benefits-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--bg-gray);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  font-size: 15px;
+  color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.benefit:hover { border-color: var(--blue-light); box-shadow: 0 4px 14px rgba(37,99,235,0.1); }
+.tick {
+  width: 22px; height: 22px;
+  background: var(--blue-mid);
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800;
+  flex-shrink: 0; margin-top: 2px;
+}
+
+/* ── Tech grid ──────────────────────────────────────── */
+.tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tech-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 20px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.tech-item p { margin: 0; font-size: 15px; }
+.tech-item__dot { width: 10px; height: 10px; background: var(--blue-mid); border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+
+/* ── Audience grid ──────────────────────────────────── */
+.audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.audience-card {
+  background: var(--bg-gray);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.audience-card:hover { border-color: var(--blue-light); box-shadow: 0 6px 20px rgba(37,99,235,0.1); transform: translateY(-3px); }
+.audience-card__icon { font-size: 32px; margin-bottom: 14px; }
+.audience-card p { font-size: 15px; color: var(--text); }
+.audience-card strong { color: var(--blue-dark); }
+
+/* ── CTA ────────────────────────────────────────────── */
+.cta-body { font-size: 17px; color: rgba(255,255,255,0.85); margin-bottom: 40px; max-width: 620px; margin-left: auto; margin-right: auto; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ── Footer ─────────────────────────────────────────── */
+.footer { padding: 28px 24px; border-top: 1px solid var(--border); text-align: center; }
+.footer p { font-size: 13px; color: var(--text-muted); }
+.footer a { color: var(--blue-mid); }
+.footer a:hover { text-decoration: underline; }
+
+/* ── Scroll reveal ──────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .two-col { grid-template-columns: 1fr; gap: 40px; }
+  .benefits-list { grid-template-columns: 1fr; }
+  .tech-grid { grid-template-columns: 1fr; }
+  .hero__cta { flex-direction: column; }
+  .hero__stats { flex-direction: column; }
+  .stat-card { min-width: unset; }
+  .section { padding: 64px 0; }
+}
+</style>
+</head>
+<body>
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__badge">
+      <span class="dot"></span> Live Integration — UAE Deployment
+    </div>
+    <h1 class="hero__title">
+      Schwing Stetter RMC Plant<br />
+      <span class="highlight">Meets Cloud ERP</span>
+    </h1>
+    <p class="hero__sub">
+      We've successfully connected the Schwing Stetter batching plant PLC directly
+      with SAZS Cloud ERP — eliminating manual entry, giving you real-time
+      visibility from mix design to dispatch.
+    </p>
+    <div class="hero__cta">
+      <a href="#benefits" class="btn btn--primary">See Key Benefits</a>
+      <a href="#contact" class="btn btn--ghost">Talk to Our Team →</a>
+    </div>
+    <div class="hero__stats">
+      <div class="stat-card reveal">
+        <span class="stat-card__num" data-target="100">0</span><span class="stat-card__unit">%</span>
+        <p>Automated batch data</p>
+      </div>
+      <div class="stat-card reveal" style="animation-delay:.1s">
+        <span class="stat-card__num" data-target="0">0</span>
+        <p>Manual entries needed</p>
+      </div>
+      <div class="stat-card reveal" style="animation-delay:.2s">
+        <span class="stat-card__num" data-target="24">0</span><span class="stat-card__unit">/7</span>
+        <p>Cloud visibility</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OVERVIEW ──────────────────────────────────────────────── -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div class="section-label">Overview</div>
+      <div class="two-col">
+        <div class="two-col__text">
+          <h2 class="section-title">One Integration.<br />Your Entire Plant — Connected.</h2>
+          <p>
+            Our integration digitally connects the entire RMC plant operation —
+            from mix design and customer order booking through to dispatch and
+            batch-wise material consumption tracking.
+          </p>
+          <p>
+            Production and consumption data flow automatically from the plant PLC
+            into the ERP system, giving you real-time visibility, accurate costing,
+            and higher profitability.
+          </p>
+        </div>
+        <div class="two-col__visual">
+          <div class="flow-diagram">
+            <div class="flow-node">Mix Design</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node">Order Booking</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node">PLC Batch</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node flow-node--accent">SAZS Cloud ERP</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node">Dispatch + Billing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT IS INTEGRATED ────────────────────────────────────── -->
+  <section class="section section--gray" id="integration">
+    <div class="container">
+      <div class="section-label">What's Integrated</div>
+      <h2 class="section-title centered">Five Functions. Fully Linked.</h2>
+      <p class="section-intro" style="text-align:center;margin:0 auto 48px;">
+        Our integration connects the Schwing Stetter batching plant PLC directly
+        with SAZS Cloud ERP. No Excel sheets. No manual sync. Always in sync.
+      </p>
+      <div class="cards-grid">
+        <div class="card reveal">
+          <div class="card__icon">⚗️</div>
+          <h3>Mix Design Management</h3>
+          <p>Manage and control concrete mix designs directly from ERP, linked to plant production.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card__icon">📋</div>
+          <h3>Customer Order &amp; Pricing</h3>
+          <p>Enter customer orders with pricing in ERP, matched to plant batches automatically.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card__icon">🚛</div>
+          <h3>Dispatch &amp; Vehicle Allocation</h3>
+          <p>Plan dispatch, allocate vehicles, and generate delivery challans from one system.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card__icon">🏭</div>
+          <h3>Batch-wise PLC Production</h3>
+          <p>Every batch produced by the PLC is automatically captured in ERP with full detail.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card__icon">📦</div>
+          <h3>Material Consumption per Batch</h3>
+          <p>Cement, aggregate, water, and admixture consumption tracked per batch — zero manual work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROBLEMS ──────────────────────────────────────────────── -->
+  <section class="section" id="problems">
+    <div class="container">
+      <div class="section-label">Industry Problem</div>
+      <h2 class="section-title">Sound Familiar?</h2>
+      <p class="section-intro">
+        Most RMC plants still operate with little or no integration between
+        plant and ERP. Here's what that looks like in practice:
+      </p>
+      <div class="problem-list">
+        <div class="problem-item reveal">
+          <div class="problem-item__icon">✗</div>
+          <div><strong>Manual tracking</strong> of production, raw materials, and returns</div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="problem-item__icon">✗</div>
+          <div><strong>No real-time visibility</strong> on what is produced, loaded, and delivered</div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="problem-item__icon">✗</div>
+          <div><strong>Material wastage and leakages</strong> due to no batch-wise consumption control</div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="problem-item__icon">✗</div>
+          <div><strong>Delayed MIS reports</strong> with frequent mismatches between plant and accounts</div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="problem-item__icon">✗</div>
+          <div><strong>Inaccurate cost per m³</strong> — can't calculate per site or project reliably</div>
+        </div>
+      </div>
+      <p class="problems__footer">
+        These challenges directly impact margins, customer service, and management's ability to take timely decisions.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── HOW WE SOLVE IT ───────────────────────────────────────── -->
+  <section class="section section--blue" id="solution">
+    <div class="container">
+      <div class="section-label section-label--light">Our Solution</div>
+      <h2 class="section-title light">How SAZS + Schwing Stetter Integration Solves This</h2>
+      <div class="solution-grid">
+        <div class="solution-block reveal">
+          <div class="solution-block__num">01</div>
+          <h3>Real-time Production Monitoring</h3>
+          <p>Live quantity, batches, and plant status on ERP dashboards — no phone calls, no waiting for reports.</p>
+        </div>
+        <div class="solution-block reveal">
+          <div class="solution-block__num">02</div>
+          <h3>Automated Batch Consumption Tracking</h3>
+          <p>Every batch: cement, aggregates, water, admixtures — auto-posted to stock, costing, and project reports.</p>
+        </div>
+        <div class="solution-block reveal">
+          <div class="solution-block__num">03</div>
+          <h3>Integrated Order &amp; Dispatch</h3>
+          <p>Customer orders and delivery schedules linked to actual plant batches. Trip sheets and challans from one system.</p>
+        </div>
+        <div class="solution-block reveal">
+          <div class="solution-block__num">04</div>
+          <h3>Accurate Costing &amp; Financial Control</h3>
+          <p>Cost per m³, per customer, per project — monitor deviations and losses the moment they happen.</p>
+        </div>
+        <div class="solution-block reveal">
+          <div class="solution-block__num">05</div>
+          <h3>Cloud Access from Anywhere</h3>
+          <p>Owners, finance, and ops teams log in securely from office, home, or on the move. Multiple plants, one platform.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KEY BENEFITS ──────────────────────────────────────────── -->
+  <section class="section" id="benefits">
+    <div class="container">
+      <div class="section-label">Key Benefits</div>
+      <h2 class="section-title">What You Gain</h2>
+      <div class="benefits-list">
+        <div class="benefit reveal"><span class="tick">✓</span> Transparent, batch-wise material consumption and reduced wastage</div>
+        <div class="benefit reveal"><span class="tick">✓</span> Fewer stock leakages and better control over raw materials</div>
+        <div class="benefit reveal"><span class="tick">✓</span> Faster, accurate billing with fewer disputes and adjustments</div>
+        <div class="benefit reveal"><span class="tick">✓</span> Real-time dashboards for production, dispatch, stock, and cost</div>
+        <div class="benefit reveal"><span class="tick">✓</span> Single source of truth for plant team, accounts, and management</div>
+        <div class="benefit reveal"><span class="tick">✓</span> Improved decision-making and stronger ROI from your RMC operations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TECH & TEAM ───────────────────────────────────────────── -->
+  <section class="section section--gray" id="technology">
+    <div class="container">
+      <div class="section-label">Technology &amp; Team</div>
+      <h2 class="section-title">Built for Scale and Reliability</h2>
+      <p class="section-intro">
+        This integration is built on a robust, scalable technical framework
+        designed by our CTO, <strong>Mr. Zeno Allwin</strong>, and implemented by
+        the SAZS development team.
+      </p>
+      <div class="tech-grid">
+        <div class="tech-item reveal">
+          <div class="tech-item__dot"></div>
+          <p>Secure integration with Schwing Stetter PLC controllers</p>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-item__dot"></div>
+          <p>Scalable architecture for multiple plants and locations</p>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-item__dot"></div>
+          <p>Purpose-built for ready mix and batching plant operations</p>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-item__dot"></div>
+          <p>Flexible configuration for reports, tax rules, and regional requirements</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHO SHOULD USE ────────────────────────────────────────── -->
+  <section class="section" id="who">
+    <div class="container">
+      <div class="section-label">Who It's For</div>
+      <h2 class="section-title">Is This Right for You?</h2>
+      <div class="audience-grid">
+        <div class="audience-card reveal">
+          <div class="audience-card__icon">🏗️</div>
+          <p>RMC plants using <strong>Schwing Stetter</strong> batching plants</p>
+        </div>
+        <div class="audience-card reveal">
+          <div class="audience-card__icon">🌍</div>
+          <p>Standalone and group plants in <strong>UAE, Middle East, and India</strong></p>
+        </div>
+        <div class="audience-card reveal">
+          <div class="audience-card__icon">📊</div>
+          <p>Owners moving away from <strong>spreadsheets</strong> and disconnected systems</p>
+        </div>
+        <div class="audience-card reveal">
+          <div class="audience-card__icon">🏢</div>
+          <p>Organizations with <strong>multiple plants</strong> needing centralized control</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────────────── -->
+  <section class="section section--cta" id="contact">
+    <div class="container container--narrow">
+      <div class="section-label section-label--light">Get Started</div>
+      <h2 class="section-title light">Still Running on Spreadsheets?</h2>
+      <p class="cta-body">
+        If you are still running your RMC plant on spreadsheets or disconnected systems,
+        this is the right time to upgrade. Let us help you automate, optimize, and grow
+        your plant with a smart, industry-specific ERP designed for Schwing Stetter and
+        other leading batching plants.
+      </p>
+      <div class="cta-buttons">
+        <a href="mailto:info@sazsapps.com" class="btn btn--white">Contact Us Today</a>
+        <a href="https://sazsapps.com" class="btn btn--outline-white">Visit sazsapps.com →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 SAZS Apps. All rights reserved. | <a href="https://sazsapps.com">sazsapps.com</a></p>
+    </div>
+  </footer>
+
+<script>
+// ── Scroll Reveal ────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.style.animationDelay
+          ? parseFloat(entry.target.style.animationDelay) * 1000
+          : 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+revealEls.forEach(el => observer.observe(el));
+
+// ── Counter animation ────────────────────────────────
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target, 10);
+  const duration = 1400;
+  const start = performance.now();
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+const counterEls = document.querySelectorAll('.stat-card__num[data-target]');
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+counterEls.forEach(el => counterObserver.observe(el));
+</script>
+
+</body>
+</html>

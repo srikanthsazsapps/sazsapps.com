@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subcontract Billing Software for Construction | SAZS Apps ERP India</title>
+  <meta name="description" content="Subcontract billing software for construction companies, builders, and contractors in India. Automate work orders, RA bills, GST, TDS, and final settlements with SAZS Apps ERP." />
+  <meta name="keywords" content="subcontract billing software, construction subcontractor billing ERP, subcontractor payment software India" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:      #000000;
+      --black-soft: #0d0d0d;
+      --black-mid:  #1a1a1a;
+      --black-card: #111111;
+      --border:     #222222;
+      --border-lt:  #2e2e2e;
+      --blue:       #1a6fff;
+      --blue-lt:    #4d8fff;
+      --blue-dim:   rgba(26,111,255,0.12);
+      --blue-glow:  rgba(26,111,255,0.25);
+      --white:      #ffffff;
+      --white-80:   rgba(255,255,255,0.8);
+      --white-50:   rgba(255,255,255,0.5);
+      --ff-head:    'Barlow Condensed', sans-serif;
+      --ff-body:    'DM Sans', sans-serif;
+      --ff-accent:  'Lora', serif;
+      --ease:       cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO (NEW CENTERED DESIGN) ── */
+    .hero {
+      position: relative;
+      min-height: 94vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 0;
+      overflow: hidden;
+    }
+
+    /* Subtle background curves */
+    .hero-bg-curve {
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 340px;
+      background: radial-gradient(ellipse at center bottom, rgba(26,111,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-bg-curve-left {
+      position: absolute;
+      bottom: 80px; left: -120px;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .hero-bg-curve-right {
+      position: absolute;
+      bottom: 80px; right: -120px;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    /* Badge */
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      font-family: var(--ff-head);
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: #ff5e3a;
+      margin-bottom: 1.8rem;
+      animation: fadeUp 0.6s var(--ease) both;
+    }
+
+    /* Headline */
+    h1.hero-title {
+      font-family: var(--ff-head); font-weight: 800;
+      font-size: clamp(3.2rem, 7vw, 6.4rem);
+      line-height: 1.0; letter-spacing: -0.01em;
+      text-transform: none; color: var(--white);
+      margin-bottom: 0.2rem;
+      animation: fadeUp 0.7s 0.1s var(--ease) both;
+    }
+
+    /* Last line with decorative swoosh underline */
+    .hero-title-last {
+      display: inline-block;
+      position: relative;
+      color: var(--white);
+      animation: fadeUp 0.7s 0.15s var(--ease) both;
+      margin-bottom: 2rem;
+    }
+    .hero-title-last svg {
+      position: absolute;
+      bottom: -18px; left: 50%;
+      transform: translateX(-50%);
+      width: 110%; height: auto;
+      overflow: visible;
+    }
+
+    /* Subtitle */
+    .hero-sub {
+      font-family: var(--ff-body);
+      font-size: 1.05rem; color: var(--white-50);
+      max-width: 540px; line-height: 1.75;
+      margin: 0 auto 2.8rem;
+      animation: fadeUp 0.7s 0.25s var(--ease) both;
+    }
+
+    /* CTA Buttons */
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 0.7s 0.35s var(--ease) both;
+      margin-bottom: 4rem;
+    }
+
+    .btn-video {
+      display: inline-flex; align-items: center; gap: 0.9rem;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: var(--white);
+      font-family: var(--ff-body); font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .btn-video:hover { background: #252525; border-color: #444; transform: translateY(-2px); }
+    .btn-video-thumb {
+      width: 44px; height: 32px;
+      background: #0d0d0d;
+      border: 1px solid #333;
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.8rem; color: var(--white-50);
+      overflow: hidden;
+      position: relative;
+    }
+    .btn-video-thumb::after {
+      content: '▶';
+      font-size: 0.7rem; color: var(--white);
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center;
+      background: var(--blue); color: var(--white);
+      font-family: var(--ff-body); font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border: none; cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { background: var(--blue-lt); transform: translateY(-2px); box-shadow: 0 12px 32px var(--blue-glow); }
+
+    /* Feature Tabs Row */
+    .hero-tabs {
+      width: 100%;
+      border-top: 1px solid var(--border);
+      display: flex;
+      animation: fadeUp 0.7s 0.45s var(--ease) both;
+    }
+    .hero-tab {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center; gap: 0.55rem;
+      padding: 1.2rem 1rem;
+      font-size: 0.82rem; font-weight: 500;
+      color: var(--white-50);
+      border-right: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .hero-tab:last-child { border-right: none; }
+    .hero-tab:hover { background: var(--black-mid); color: var(--white); }
+    .hero-tab.active {
+      background: var(--black-card);
+      color: var(--white);
+      border-bottom: 2px solid var(--blue);
+    }
+    .hero-tab-icon {
+      width: 22px; height: 22px;
+      background: var(--black-mid);
+      border: 1px solid var(--border-lt);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; flex-shrink: 0;
+    }
+    .hero-tab.active .hero-tab-icon {
+      background: var(--blue-dim);
+      border-color: rgba(26,111,255,0.4);
+    }
+    .tab-fire { color: #ff5e3a; font-size: 0.9rem; }
+
+    /* ── SHARED ── */
+    section { position: relative; z-index: 1; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 0.9rem;
+    }
+    .section-tag::before { content: ''; width: 28px; height: 2px; background: var(--blue); }
+    h2.section-title {
+      font-family: var(--ff-head); font-weight: 800;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.05; text-transform: uppercase;
+      color: var(--white); margin-bottom: 1rem;
+    }
+    h2.section-title span { color: var(--blue); }
+    .section-lead {
+      font-family: var(--ff-accent); font-style: italic;
+      color: var(--white-50); font-size: 1.03rem;
+      max-width: 560px; line-height: 1.75; margin-bottom: 3.5rem;
+    }
+
+    /* ── INTRO BAND ── */
+    .intro-band {
+      background: var(--black-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 5.5rem 0;
+    }
+    .intro-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .intro-body { font-size: 0.95rem; color: var(--white-80); line-height: 1.85; }
+    .intro-body p + p { margin-top: 1rem; }
+    .intro-highlight {
+      background: var(--blue-dim);
+      border-left: 3px solid var(--blue);
+      padding: 1.2rem 1.5rem; margin-top: 1.8rem;
+      font-family: var(--ff-accent); font-style: italic;
+      font-size: 1.02rem; color: var(--white); line-height: 1.7;
+    }
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      font-size: 0.88rem; color: var(--white-80); line-height: 1.55;
+    }
+    .checklist li::before {
+      content: '✓'; flex-shrink: 0;
+      width: 20px; height: 20px;
+      background: var(--blue-dim);
+      border: 1px solid rgba(26,111,255,0.4);
+      color: var(--blue-lt); font-size: 0.72rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 0.08rem;
+    }
+
+    /* ── FEATURES ── */
+    .features-section { padding: 6rem 0; }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+    }
+    .feature-card {
+      background: var(--black); padding: 2.5rem 2rem;
+      position: relative; overflow: hidden;
+      transition: background 0.25s; cursor: default;
+    }
+    .feature-card::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 2px;
+      background: var(--blue); transform: scaleX(0);
+      transform-origin: left; transition: transform 0.3s var(--ease);
+    }
+    .feature-card:hover { background: var(--black-card); }
+    .feature-card:hover::after { transform: scaleX(1); }
+    .feature-num {
+      font-family: var(--ff-head); font-size: 3.8rem; font-weight: 800;
+      color: rgba(255,255,255,0.04); line-height: 1; margin-bottom: 0.8rem;
+    }
+    .feature-icon { font-size: 1.7rem; margin-bottom: 0.9rem; display: block; }
+    .feature-title {
+      font-family: var(--ff-head); font-weight: 700; font-size: 1.12rem;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--white); margin-bottom: 0.6rem;
+    }
+    .feature-desc { font-size: 0.86rem; color: var(--white-50); line-height: 1.7; }
+
+    /* ── WORKFLOW ── */
+    .workflow-section {
+      background: var(--black-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 6rem 0;
+    }
+    .workflow-steps { display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+    .workflow-line {
+      position: absolute; top: 39px;
+      left: calc(10% + 20px); right: calc(10% + 20px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue), var(--blue), transparent);
+      opacity: 0.3;
+    }
+    .workflow-step {
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center; padding: 0 0.8rem;
+    }
+    .step-bubble {
+      width: 78px; height: 78px;
+      background: var(--black); border: 1px solid var(--border-lt);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-head); font-weight: 800; font-size: 1.4rem;
+      color: var(--white-50); margin-bottom: 1.3rem;
+      transition: background 0.25s, border-color 0.25s, color 0.25s;
+      position: relative; z-index: 1;
+    }
+    .workflow-step:hover .step-bubble {
+      background: var(--blue-dim); border-color: var(--blue);
+      color: var(--blue-lt); box-shadow: 0 0 20px var(--blue-glow);
+    }
+    .step-name {
+      font-family: var(--ff-head); font-weight: 700; font-size: 0.92rem;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--white); margin-bottom: 0.4rem;
+    }
+    .step-desc { font-size: 0.77rem; color: var(--white-50); line-height: 1.55; }
+
+    /* ── LOCAL COVERAGE ── */
+    .coverage-section { padding: 6rem 0; }
+    .coverage-single { width: 100%; }
+    .coverage-card-full {
+      background: var(--black-card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--blue);
+      padding: 3rem;
+    }
+    .coverage-cols {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .coverage-divider {
+      background: var(--border);
+      width: 1px;
+      align-self: stretch;
+    }
+    .coverage-col { display: flex; flex-direction: column; gap: 0; }
+    .coverage-col-header {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem;
+    }
+    .coverage-flag { font-size: 2.2rem; flex-shrink: 0; }
+    .coverage-title {
+      font-family: var(--ff-head);
+      font-weight: 800; font-size: 2rem;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--white);
+    }
+    .coverage-body {
+      font-size: 0.88rem; color: var(--white-80);
+      line-height: 1.82; margin-bottom: 1.6rem;
+    }
+    .coverage-body p + p { margin-top: 0.9rem; }
+    .compliance-tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-bottom: 0;
+    }
+    .ctag {
+      background: var(--blue-dim);
+      border: 1px solid rgba(26,111,255,0.35);
+      color: var(--blue-lt);
+      font-size: 0.73rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+    }
+    .region-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .region-tag {
+      background: transparent;
+      border: 1px solid var(--border-lt);
+      padding: 0.28rem 0.8rem;
+      font-size: 0.74rem; font-weight: 500;
+      color: var(--white-50); letter-spacing: 0.04em;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .region-tag:hover {
+      border-color: var(--blue);
+      color: var(--blue-lt);
+      background: var(--blue-dim);
+    }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--blue); padding: 5.5rem 2.5rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-band::before {
+      content: 'ERP'; position: absolute;
+      font-family: var(--ff-head); font-size: 20rem; font-weight: 800;
+      color: rgba(255,255,255,0.07);
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      pointer-events: none; white-space: nowrap;
+    }
+    .cta-band h2 {
+      font-family: var(--ff-head); font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      text-transform: uppercase; color: var(--white);
+      margin-bottom: 1rem; position: relative;
+    }
+    .cta-band p {
+      font-family: var(--ff-accent); font-style: italic;
+      color: rgba(255,255,255,0.75); font-size: 1.1rem;
+      margin-bottom: 2.4rem; position: relative;
+    }
+    .btn-black {
+      background: var(--black); color: var(--white);
+      font-family: var(--ff-head); font-weight: 800;
+      font-size: 1.05rem; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 1rem 2.8rem;
+      border: none; cursor: pointer; position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-black:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateX(30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%       { transform: scale(1.6); opacity: 0.5; }
+    }
+    @keyframes drawSwoosh {
+      from { stroke-dashoffset: 600; }
+      to   { stroke-dashoffset: 0; }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero { padding: 4rem 1.5rem 0; }
+      .intro-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .workflow-steps { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+      .workflow-line { display: none; }
+      .coverage-cols { grid-template-columns: 1fr; }
+      .coverage-divider { display: none; }
+      .hero-tabs { flex-wrap: wrap; }
+      .hero-tab { flex: 1 1 50%; border-bottom: 1px solid var(--border); }
+    }
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .workflow-steps { grid-template-columns: 1fr; }
+      h1.hero-title { font-size: 2.8rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .hero-tab { flex: 1 1 100%; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO (NEW CENTERED DESIGN) -->
+  <section class="hero">
+    <!-- Background decorative elements -->
+    <div class="hero-bg-curve"></div>
+    <div class="hero-bg-curve-left"></div>
+    <div class="hero-bg-curve-right"></div>
+
+    <!-- Badge -->
+    <div class="hero-badge">Construction ERP</div>
+
+    <!-- Main Headline -->
+    <h1 class="hero-title">Work Orders. RA Bills. Final Settlement.</h1>
+
+    <!-- Last line with SVG swoosh underline -->
+    <div style="margin-bottom: 2.4rem; animation: fadeUp 0.7s 0.15s cubic-bezier(0.22,1,0.36,1) both;">
+      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:clamp(3.2rem,7vw,6.4rem); line-height:1; color:#fff; display:inline-block; position:relative;">
+        Automated.
+        <!-- SVG Swoosh underline -->
+        <svg viewBox="0 0 420 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+          style="position:absolute; bottom:-20px; left:50%; transform:translateX(-50%); width:105%; height:28px; overflow:visible;">
+          <path d="M8 18 C60 6, 150 26, 210 14 C270 2, 350 22, 412 10"
+            stroke="#ff5e3a" stroke-width="3.5" stroke-linecap="round" fill="none"
+            stroke-dasharray="600" stroke-dashoffset="600"
+            style="animation: drawSwoosh 1.1s 0.6s cubic-bezier(0.22,1,0.36,1) forwards;"/>
+        </svg>
+      </span>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="hero-sub">
+      Manage all your subcontractor work orders, RA bills, and final settlements in one integrated construction ERP — built for contractors in India &amp; UAE.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="hero-actions">
+      <button class="btn-video">
+        <div class="btn-video-thumb"></div>
+        Watch Demo
+      </button>
+      <button class="btn-primary">Request Free Demo →</button>
+    </div>
+
+    <!-- Feature Tabs Row -->
+    <div class="hero-tabs">
+      <div class="hero-tab active">
+        <div class="hero-tab-icon">📋</div>
+        BOQ Work Orders
+      </div>
+      <div class="hero-tab">
+        <div class="hero-tab-icon"><span class="tab-fire">🔥</span></div>
+        RA Billing &amp; Advances
+      </div>
+      <div class="hero-tab">
+        <div class="hero-tab-icon">🏛️</div>
+        Auto GST, TDS &amp; Retention
+      </div>
+      <div class="hero-tab">
+        <div class="hero-tab-icon">📊</div>
+        Live Project Costing Reports
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO BAND -->
+  <section class="intro-band">
+    <div class="container">
+      <div class="intro-inner reveal">
+        <div>
+          <div class="section-tag">About the Module</div>
+          <h2 class="section-title">Subcontract Billing for <span>Your Projects</span></h2>
+          <div class="intro-body">
+            <p>Our Subcontract Billing software helps construction and infrastructure companies manage subcontractor contracts from work order to final payment — all within a single, integrated ERP platform.</p>
+            <p>From creating BOQ-linked work orders at the project level to raising and approving Running Account (RA) bills with digital measurement books, every step is automated, auditable, and connected to your accounts and project costing modules.</p>
+            <div class="intro-highlight">
+              Built for compliance — with GST, TDS, and retention recovery built directly into every billing cycle.
+            </div>
+          </div>
+        </div>
+        <ul class="checklist">
+          <li>BOQ-based work orders linked to project and cost centre</li>
+          <li>Digital measurement book with quantity validation</li>
+          <li>Running Account (RA) billing with running totals</li>
+          <li>Automatic GST, TDS, retention, and advance recovery</li>
+          <li>Multi-level approval from site to management</li>
+          <li>Final settlement with reconciliation reports</li>
+          <li>Direct integration with project costing module</li>
+          <li>Real-time cash-flow visibility for each subcontractor</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-tag">Key Capabilities</div>
+        <h2 class="section-title">Everything You Need for<br /><span>Subcontract Management</span></h2>
+        <p class="section-lead">Purpose-built features for construction subcontracting — from site measurement to final account closure.</p>
+      </div>
+      <div class="features-grid reveal">
+        <div class="feature-card">
+          <div class="feature-num">01</div>
+          <span class="feature-icon">📐</span>
+          <div class="feature-title">BOQ-Based Work Orders</div>
+          <p class="feature-desc">Create subcontract work orders directly linked to your Bill of Quantities, project, and cost centre. Every rupee is traceable to a project activity.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">02</div>
+          <span class="feature-icon">📏</span>
+          <div class="feature-title">Digital Measurement Book</div>
+          <p class="feature-desc">Record site measurements digitally with quantity validation. Eliminates manual errors and ensures billing stays within sanctioned quantities.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">03</div>
+          <span class="feature-icon">🧾</span>
+          <div class="feature-title">RA Billing & Advances</div>
+          <p class="feature-desc">Raise Running Account bills with auto-computed advance recovery, retention deductions, and price variation — all mapped to the work order.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">04</div>
+          <span class="feature-icon">🏛️</span>
+          <div class="feature-title">GST, TDS & Retention Auto-Calc</div>
+          <p class="feature-desc">All statutory deductions — GST under RCM, TDS under IT and GST acts, and retention holdbacks — calculated automatically on every bill.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">05</div>
+          <span class="feature-icon">✅</span>
+          <div class="feature-title">Multi-Level Approvals</div>
+          <p class="feature-desc">Configurable approval workflows from site engineer → project manager → accounts → management. Digital sign-off at every stage with full audit trail.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">06</div>
+          <span class="feature-icon">📊</span>
+          <div class="feature-title">Integrated Project Costing</div>
+          <p class="feature-desc">Every payment posts directly to accounts and updates project cost reports and cash-flow forecasts in real time — no double data entry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW -->
+  <section class="workflow-section" id="workflow">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:4rem;">
+        <div class="section-tag" style="justify-content:center;">End-to-End Process</div>
+        <h2 class="section-title">From Work Order to <span>Final Settlement</span></h2>
+        <p class="section-lead" style="text-align:center;margin-left:auto;margin-right:auto;">Five connected steps — fully automated within SAZS Apps ERP.</p>
+      </div>
+      <div class="workflow-steps reveal">
+        <div class="workflow-line"></div>
+        <div class="workflow-step">
+          <div class="step-bubble">01</div>
+          <div class="step-name">Work Order</div>
+          <p class="step-desc">Create BOQ-linked subcontract work order with cost centre mapping</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-bubble">02</div>
+          <div class="step-name">Measurement</div>
+          <p class="step-desc">Site engineer records digital measurements against work order quantities</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-bubble">03</div>
+          <div class="step-name">RA Bill</div>
+          <p class="step-desc">System generates RA bill with auto GST, TDS, retention & advance recovery</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-bubble">04</div>
+          <div class="step-name">Approval</div>
+          <p class="step-desc">Multi-level digital approval workflow from site to management</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-bubble">05</div>
+          <div class="step-name">Settlement</div>
+          <p class="step-desc">Final account closure with reconciliation, retention release & ledger posting</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL COVERAGE -->
+  <section class="coverage-section">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:3.5rem;">
+        <div class="section-tag" style="justify-content:center;">Local Coverage</div>
+        <h2 class="section-title">Built for Tamil Nadu, <span>All of India &amp; UAE</span></h2>
+        <p class="section-lead" style="text-align:center;margin-left:auto;margin-right:auto;">Trusted by contractors across South Asia and the Gulf — with localised compliance built in.</p>
+      </div>
+      <div class="coverage-single reveal">
+        <div class="coverage-card-full">
+          <div class="coverage-cols">
+            <div class="coverage-col">
+              <div class="coverage-col-header">
+                <span class="coverage-flag">🇮🇳</span>
+                <h3 class="coverage-title">India</h3>
+              </div>
+              <div class="coverage-body">
+                <p>SAZS Apps ERP is ideal for contractors in Tamil Nadu and across India who handle multiple subcontractors across concurrent projects. Whether you are a civil contractor, infrastructure company, real estate developer, or industrial builder, our subcontract billing module adapts to your project structure.</p>
+                <p>Our ERP is designed around Indian regulatory requirements — GST compliance, TDS under Section 194C, Labour Welfare Fund deductions, and RERA-related reporting are built directly into the billing engine, not added as afterthoughts.</p>
+                <p>With localised support teams in Tamil Nadu and cloud deployment available across India, SAZS Apps is trusted by contractors managing subcontracts worth crores across multiple active sites.</p>
+              </div>
+              <div class="compliance-tags">
+                <span class="ctag">GST / RCM</span>
+                <span class="ctag">TDS 194C</span>
+                <span class="ctag">Labour Welfare Fund</span>
+                <span class="ctag">RERA Reporting</span>
+              </div>
+              <div class="region-tags" style="margin-top:1rem;">
+                <span class="region-tag">Chennai</span>
+                <span class="region-tag">Coimbatore</span>
+                <span class="region-tag">Madurai</span>
+                <span class="region-tag">Trichy</span>
+                <span class="region-tag">Tirunelveli</span>
+                <span class="region-tag">Salem</span>
+                <span class="region-tag">Bangalore</span>
+                <span class="region-tag">Hyderabad</span>
+                <span class="region-tag">Mumbai</span>
+                <span class="region-tag">Delhi NCR</span>
+                <span class="region-tag">Pan-India</span>
+              </div>
+            </div>
+            <div class="coverage-divider"></div>
+            <div class="coverage-col">
+              <div class="coverage-col-header">
+                <span class="coverage-flag">🇦🇪</span>
+                <h3 class="coverage-title">UAE</h3>
+              </div>
+              <div class="coverage-body">
+                <p>SAZS Apps ERP supports contractors and subcontractors operating across the UAE — from large infrastructure projects in Dubai and Abu Dhabi to mid-scale civil works in Sharjah, Ajman, and beyond.</p>
+                <p>The platform is built to handle UAE-specific requirements including VAT compliance, WPS (Wage Protection System) integration, and FIDIC-based contract structures commonly used in Gulf construction projects.</p>
+                <p>With multi-currency support and cloud deployment, Indian contractors expanding into the UAE can manage both their domestic and Gulf subcontract billing from a single, unified ERP.</p>
+              </div>
+              <div class="compliance-tags">
+                <span class="ctag">UAE VAT 5%</span>
+                <span class="ctag">WPS Integration</span>
+                <span class="ctag">FIDIC Contracts</span>
+                <span class="ctag">Multi-Currency</span>
+              </div>
+              <div class="region-tags" style="margin-top:1rem;">
+                <span class="region-tag">Dubai</span>
+                <span class="region-tag">Abu Dhabi</span>
+                <span class="region-tag">Sharjah</span>
+                <span class="region-tag">Ajman</span>
+                <span class="region-tag">RAK</span>
+                <span class="region-tag">Fujairah</span>
+                <span class="region-tag">Al Ain</span>
+                <span class="region-tag">Pan-UAE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <h2>Ready to Automate Your Subcontract Billing?</h2>
+    <p>Streamline every RA bill, work order, and final settlement with SAZS Apps ERP.</p>
+    <button class="btn-black">Get Started Today</button>
+  </section>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 70);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => io.observe(el));
+
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('mousedown', function() { this.style.transform = 'scale(0.97)'; });
+      btn.addEventListener('mouseup', function() { this.style.transform = ''; });
+    });
+
+    // Tab switching
+    document.querySelectorAll('.hero-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.hero-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

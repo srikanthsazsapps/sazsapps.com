@@ -1,0 +1,448 @@
+<!-- ===================== PASTE THIS REPLACING YOUR ENTIRE FOOTER ===================== -->
+
+<style>
+/* ========== SAZS FOOTER – BLACK THEME ========== */
+
+.sazs-footer {
+    background: #0d0d0d;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ---- TOP STRIP ---- */
+.sazs-footer-ratings {
+    border-bottom: 1px solid #1f1f1f;
+    padding: 18px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sazs-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.sazs-footer-brand img {
+    height: 28px;
+    width: auto;
+}
+
+.sazs-footer-brand span {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.sazs-rating-group {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.sazs-rating-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sazs-rating-icon {
+    font-size: 15px;
+}
+
+.sazs-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.sazs-stars span {
+    color: #f97316;
+    font-size: 13px;
+}
+
+.sazs-rating-score {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.sazs-rating-count {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+/* ---- MAIN COLUMNS ---- */
+.sazs-footer-cols {
+    padding: 64px 80px 72px;
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr 1fr 1fr;
+    gap: 0;
+}
+
+/* Company column */
+.sazs-col-company {
+    padding-right: 48px;
+}
+
+.sazs-col-company .col-heading {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 28px;
+    letter-spacing: 0;
+}
+
+.sazs-col-company .company-address {
+    font-size: 13px;
+    color: #9ca3af;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.sazs-col-company .company-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sazs-col-company .company-links a {
+    font-size: 13px;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.sazs-col-company .company-links a:hover {
+    color: #ffffff;
+}
+
+/* Nav columns */
+.sazs-col-nav {
+    padding: 0 24px;
+}
+
+.sazs-col-nav .col-heading {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 28px;
+    letter-spacing: 0;
+}
+
+.sazs-col-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sazs-col-nav ul li a {
+    font-size: 13px;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sazs-col-nav ul li a:hover {
+    color: #ffffff;
+}
+
+.sazs-col-nav ul li a.active-link {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ---- BOTTOM BAR ---- */
+.sazs-footer-bottom {
+    border-top: 1px solid #1f1f1f;
+    padding: 20px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.sazs-footer-bottom-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.sazs-footer-bottom-left a,
+.sazs-footer-bottom-left span {
+    font-size: 13px;
+    color: #9ca3af;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s;
+}
+
+.sazs-footer-bottom-left a {
+    margin-right: 28px;
+}
+
+.sazs-footer-bottom-left a:hover {
+    color: #ffffff;
+}
+
+.sazs-footer-bottom-left span {
+    margin-right: 28px;
+}
+
+.sazs-footer-bottom-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sazs-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: transparent;
+    transition: opacity 0.2s;
+    text-decoration: none;
+}
+
+.sazs-social-icon:hover {
+    opacity: 0.7;
+}
+
+.sazs-social-icon img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.sazs-social-icon:hover img {
+    opacity: 1;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1100px) {
+    .sazs-footer-cols {
+        padding: 48px 40px 60px;
+        grid-template-columns: 180px 1fr 1fr 1fr 1fr 1fr;
+        gap: 0;
+    }
+
+    .sazs-footer-ratings,
+    .sazs-footer-bottom {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 860px) {
+    .sazs-footer-ratings {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 24px;
+    }
+
+    .sazs-rating-group {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .sazs-footer-cols {
+        padding: 40px 24px 48px;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 24px;
+    }
+
+    .sazs-col-company {
+        grid-column: 1 / -1;
+        padding-right: 0;
+    }
+
+    .sazs-col-nav {
+        padding: 0;
+    }
+
+    .sazs-footer-bottom {
+        padding: 20px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .sazs-footer-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.footerbottom {
+    padding: 20px 0;
+    background: #080808;
+    color: #6b7280;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #1a1a1a;
+}
+
+.footerbottom span {
+    font-size: 13px;
+}
+</style>
+
+<!-- ===================== FOOTER HTML ===================== -->
+
+<footer class="sazs-footer">
+
+    <!-- TOP: Logo + Ratings -->
+    <div class="sazs-footer-ratings">
+        <a href="index.html" class="sazs-footer-brand">
+            <img src="src/assets/images/logo.png" alt="SAZS Apps">
+            <span>SAZS Apps</span>
+        </a>
+    </div>
+
+    <!-- MAIN COLUMNS -->
+    <div class="sazs-footer-cols">
+
+        <!-- Col 1: Company -->
+        <div class="sazs-col-company">
+            <div class="col-heading">Company</div>
+            <div class="company-address">
+                SAZS Apps Pvt. Ltd.<br>
+                Cloud ERP for Quarry,<br>
+                Crusher &amp; RMC Plants<br>
+                India | UAE | Middle East
+            </div>
+            <ul class="company-links">
+                <li><a href="aboutus.html">About Us ↗</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 2: Products -->
+        <div class="sazs-col-nav">
+            <div class="col-heading">Products</div>
+            <ul>
+                <li><a href="crusher.html">Stone Crusher ERP</a></li>
+                <li><a href="quarry.html">Stone Quarry ERP</a></li>
+                <li><a href="rmc.html">RMC Billing Software</a></li>
+                <li><a href="brick.html">Brick &amp; Paver ERP</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 3: Features -->
+        <div class="sazs-col-nav">
+            <div class="col-heading">Features</div>
+            <ul>
+                <li><a href="features.html#anpr">ANPR Camera</a></li>
+                <li><a href="features.html#weighbridge">Weighbridge</a></li>
+                <li><a href="features.html#einvoice">E-Invoice (GST)</a></li>
+                <li><a href="features.html#boom-barrier">Boom Barrier</a></li>
+                <li><a href="features.html#biometrics">Biometrics</a></li>
+                <li><a href="features.html#smart-tech">Smart Tech</a></li>
+                <li><a href="schwing-stetter-integration.html">Schwing Stetter Integration</a></li>
+                <li><a href="fleet-management-software.html">Fleet Management (Fuel, GPS, Tyres)</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 4: Media & Blogs -->
+        <div class="sazs-col-nav">
+            <div class="col-heading">Media &amp; Blogs</div>
+            <ul>
+                <li><a href="/media-events/Jharkhand_2026.html">Jharkhand Mining &amp; Construction Show 2026</a></li>
+                <li><a href="/media-events/EXCON_2025.html">EXCON 2025 – CII</a></li>
+                <li><a href="/media-events/IEMS_2024.html">IEMS – International Mining Expo 2024</a></li>
+                <li><a href="/media-events/TNMSA_2024.html">TNMSA – Chennai Zone Meet 2024</a></li>
+                <li><a href="/media-events/EXCON_2023.html">EXCON 2023 – CII</a></li>
+                <li><a href="/media-events/CODDISSIA.html">CODDISSIA – Stone Quarry Expo 2023</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 4b: Case Studies -->
+        <div class="sazs-col-nav">
+            <div class="col-heading">Case Studies</div>
+            <ul>
+                <li><a href="/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html">Quarry Profitability &amp; Theft Prevention</a></li>
+                <li><a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html">Customer Experience &amp; Order Speed</a></li>
+                <li><a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html">E-Invoicing &amp; GST Compliance</a></li>
+                <li><a href="/case-studies/Real-Time_Vehicle_Trip_Management.html">Vehicle &amp; Trip Management</a></li>
+                <li><a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html">Financial Control &amp; Profit Analysis</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 5: Resources -->
+        <div class="sazs-col-nav">
+            <div class="col-heading">Resources</div>
+            <ul>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="profitcalc.html">Profit Calculator</a></li>
+                <li><a href="Signup.html">Request a Demo</a></li>
+                <li><a href="whytochoose.html">Why to Choose</a></li>
+                <li><a href="https://youtube.com/@sazsapps" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="subcontract-billing.html">Subcontract Billing</a></li>
+                <li><a href="financial-management.html">Financial Management</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="sazs-footer-bottom">
+        <div class="sazs-footer-bottom-left">
+            <a href="termsofService.html">Terms of Service</a>
+            <a href="privacyPolicy.html">Privacy Policy</a>
+            <a href="dataProtectionPolicy.html">Data Protection Policy</a>
+            <a href="careers.html">Careers</a>
+        </div>
+        <div class="sazs-footer-bottom-right">
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="Twitter">
+                <img loading="lazy" src="../../src/assets/images/xlogo.svg" alt="Twitter">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="Facebook">
+                <img loading="lazy" src="../../src/assets/contentImages/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="YouTube">
+                <img loading="lazy" src="../../src/assets/images/youtube.svg" alt="YouTube">
+            </a>
+            <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="LinkedIn">
+                <img loading="lazy" src="../../src/assets/contentImages/LinkedIn_icon.svg" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YnA2eWNmdGsy" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="Instagram">
+                <img loading="lazy" src="../../src/assets/contentImages/instagram.svg" alt="Instagram">
+            </a>
+        </div>
+    </div>
+
+</footer>
+
+<footer class="footerbottom">
+    <div><span>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</span></div>
+</footer>
+
+<!-- WhatsApp button (unchanged) -->
+<a href="https://wa.me/7666628000?text=Hi%20SAZS%20Apps%20Team%2C%20I%20have%20a%20question%20about%20your%20ERP."
+    target="_blank"
+    style="position:fixed;bottom:30px;right:30px;z-index:9999;background:#ffffff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);"
+    aria-label="Chat on WhatsApp">
+    <img src="./src/assets/images/whatsappiconm.avif" width="52" height="52" alt="WhatsApp" loading="lazy" />
+</a>

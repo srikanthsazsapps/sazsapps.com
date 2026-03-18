@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Search Optimization Masterclass</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      max-width: 1425px;
+      min-height: 500px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #0d0c0b;
+    }
+
+    /* Background layers */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 78% 55%, rgba(160,75,18,0.55) 0%, transparent 48%),
+        radial-gradient(ellipse at 90% 15%, rgba(90,40,8,0.3) 0%, transparent 32%),
+        linear-gradient(130deg, #1a0f08 0%, #0f0f0f 38%, #1c1008 65%, #0a0a0a 100%);
+    }
+
+    /* Brick texture right side */
+    .hero-texture {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 58%;
+      opacity: 0.055;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255,255,255,1) 20px, rgba(255,255,255,1) 21px),
+        repeating-linear-gradient(90deg, transparent, transparent 42px, rgba(255,255,255,1) 42px, rgba(255,255,255,1) 43px);
+    }
+
+    /* Left content fade */
+    .hero-fade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(13,12,11,1) 0%,
+        rgba(13,12,11,0.96) 28%,
+        rgba(13,12,11,0.75) 46%,
+        rgba(13,12,11,0.15) 62%,
+        transparent 78%
+      );
+    }
+
+    /* Person SVG area */
+    .person-area {
+      position: absolute;
+      right: 0; bottom: 0; top: 0;
+      width: 54%;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    /* Content */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 52px 40px;
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Brand */
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 34px;
+    }
+
+    .logo-icon {
+      width: 26px; height: 26px;
+      background: #2563eb;
+      border-radius: 5px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      padding: 5px;
+    }
+
+    .logo-dot { background: #fff; border-radius: 1px; }
+
+    .brand-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.06em;
+    }
+
+    .brand-sep {
+      width: 1px; height: 13px;
+      background: rgba(255,255,255,0.22);
+      margin: 0 2px;
+    }
+
+    .brand-tagline {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 58px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 18px;
+    }
+
+    .sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.68;
+      max-width: 390px;
+      margin-bottom: 34px;
+    }
+
+    .btn-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 42px;
+      flex-wrap: wrap;
+    }
+
+    .btn-purple {
+      background: #7c3aed;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 15px 30px;
+      border-radius: 9px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 3px 22px rgba(124,58,237,0.48);
+      transition: background .18s, transform .12s;
+    }
+    .btn-purple:hover { background: #6d28d9; transform: translateY(-1px); }
+
+    .btn-watch {
+      background: rgba(255,255,255,0.065);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 14px 22px;
+      border-radius: 9px;
+      border: 1px solid rgba(255,255,255,0.14);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .18s, border-color .18s;
+    }
+    .btn-watch:hover { background: rgba(255,255,255,0.11); border-color: rgba(255,255,255,0.26); }
+
+    .play-btn {
+      width: 27px; height: 27px;
+      background: rgba(255,255,255,0.11);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .play-btn::after {
+      content: '';
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 5px 0 5px 9px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 2px;
+    }
+
+    .watch-label strong { font-weight: 700; }
+    .watch-label span { color: rgba(255,255,255,0.55); }
+
+    .proof { display: flex; flex-direction: column; gap: 6px; }
+
+    .proof-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+    .proof-text strong { color: #fff; font-weight: 700; }
+
+    .stars-row { display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+    .stars { display: flex; gap: 1px; }
+    .star { font-size: 15px; color: #2563eb; }
+    .star.dim { opacity: 0.4; }
+    .rating-num { font-size: 13px; font-weight: 600; color: #fff; }
+
+    @media (max-width: 900px) {
+      .hero-content { padding: 36px 26px; }
+      .btn-row { flex-direction: column; align-items: flex-start; }
+      .btn-purple, .btn-watch { width: 100%; justify-content: center; }
+      .person-area { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+
+  <!-- Person drawn in SVG -->
+  <div class="person-area">
+    <svg viewBox="0 0 560 500" xmlns="http://www.w3.org/2000/svg"
+         style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="xMidYMax meet">
+      <defs>
+        <radialGradient id="sg" cx="50%" cy="38%" r="55%">
+          <stop offset="0%" stop-color="#c88050"/>
+          <stop offset="55%" stop-color="#a06030"/>
+          <stop offset="100%" stop-color="#6b3618"/>
+        </radialGradient>
+        <radialGradient id="hg" cx="50%" cy="30%" r="65%">
+          <stop offset="0%" stop-color="#8B4513"/>
+          <stop offset="45%" stop-color="#5a2808"/>
+          <stop offset="100%" stop-color="#280f02"/>
+        </radialGradient>
+        <linearGradient id="shg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#1a1e2e"/>
+          <stop offset="100%" stop-color="#0d0f18"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="52%" cy="48%" r="50%">
+          <stop offset="0%" stop-color="rgba(195,105,35,0.42)"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+        <linearGradient id="dg" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#1e1008"/>
+          <stop offset="100%" stop-color="#050505"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Warm glow -->
+      <ellipse cx="290" cy="255" rx="230" ry="250" fill="url(#glow)"/>
+
+      <!-- Brick wall lines -->
+      <g stroke="rgba(255,255,255,0.07)" stroke-width="0.8">
+        <line x1="0" y1="45" x2="560" y2="45"/>
+        <line x1="0" y1="90" x2="560" y2="90"/>
+        <line x1="0" y1="135" x2="560" y2="135"/>
+        <line x1="0" y1="180" x2="560" y2="180"/>
+        <line x1="0" y1="225" x2="560" y2="225"/>
+        <line x1="0" y1="270" x2="560" y2="270"/>
+        <line x1="0" y1="315" x2="560" y2="315"/>
+        <line x1="0" y1="360" x2="560" y2="360"/>
+        <!-- vertical separators alternating -->
+        <line x1="70" y1="0" x2="70" y2="45"/><line x1="70" y1="90" x2="70" y2="135"/>
+        <line x1="150" y1="45" x2="150" y2="90"/><line x1="150" y1="135" x2="150" y2="180"/>
+        <line x1="230" y1="0" x2="230" y2="45"/><line x1="230" y1="90" x2="230" y2="135"/>
+        <line x1="310" y1="45" x2="310" y2="90"/><line x1="310" y1="135" x2="310" y2="180"/>
+        <line x1="390" y1="0" x2="390" y2="45"/><line x1="390" y1="90" x2="390" y2="135"/>
+        <line x1="470" y1="45" x2="470" y2="90"/><line x1="470" y1="135" x2="470" y2="180"/>
+        <line x1="530" y1="0" x2="530" y2="45"/>
+      </g>
+
+      <!-- Plant top-right -->
+      <g opacity="0.65">
+        <ellipse cx="490" cy="55" rx="42" ry="17" fill="#193a19" transform="rotate(-28 490 55)"/>
+        <ellipse cx="520" cy="35" rx="35" ry="14" fill="#142e14" transform="rotate(-48 520 35)"/>
+        <ellipse cx="465" cy="75" rx="32" ry="13" fill="#1c3c1c" transform="rotate(-8 465 75)"/>
+        <ellipse cx="505" cy="88" rx="26" ry="10" fill="#162816" transform="rotate(22 505 88)"/>
+        <ellipse cx="478" cy="100" rx="22" ry="9" fill="#183218" transform="rotate(5 478 100)"/>
+        <line x1="492" y1="80" x2="492" y2="140" stroke="#182818" stroke-width="3"/>
+      </g>
+
+      <!-- Desk -->
+      <rect x="40" y="392" width="510" height="108" rx="0" fill="url(#dg)" opacity="0.98"/>
+      <rect x="40" y="392" width="510" height="3" fill="#3a2010" opacity="0.7"/>
+
+      <!-- Chair back -->
+      <rect x="175" y="215" width="185" height="185" rx="14" fill="#111111" opacity="0.65"/>
+
+      <!-- Shirt / body -->
+      <path d="M120 500 C120 435 168 368 280 348 C392 368 440 435 440 500 Z" fill="url(#shg)"/>
+      <ellipse cx="280" cy="435" rx="145" ry="75" fill="url(#shg)"/>
+
+      <!-- Emoji patch buttons on shirt -->
+      <g opacity="0.75">
+        <rect x="224" y="372" width="18" height="18" rx="4" fill="#2563eb"/>
+        <rect x="248" y="382" width="16" height="16" rx="3" fill="#3b82f6"/>
+        <rect x="272" y="370" width="17" height="17" rx="4" fill="#10b981"/>
+        <rect x="295" y="380" width="16" height="16" rx="3" fill="#f59e0b"/>
+        <rect x="316" y="369" width="17" height="17" rx="4" fill="#8b5cf6"/>
+        <rect x="232" y="396" width="16" height="16" rx="3" fill="#06b6d4"/>
+        <rect x="256" y="406" width="17" height="17" rx="4" fill="#ef4444"/>
+        <rect x="280" y="396" width="16" height="16" rx="3" fill="#84cc16"/>
+        <rect x="303" y="405" width="17" height="17" rx="4" fill="#f97316"/>
+        <rect x="326" y="395" width="16" height="16" rx="3" fill="#a855f7"/>
+      </g>
+
+      <!-- Neck -->
+      <rect x="255" y="308" width="50" height="50" rx="14" fill="url(#sg)"/>
+
+      <!-- Face base -->
+      <ellipse cx="280" cy="272" rx="76" ry="82" fill="url(#sg)"/>
+
+      <!-- Hair - layered curly blobs -->
+      <!-- base cap -->
+      <ellipse cx="280" cy="204" rx="86" ry="65" fill="url(#hg)"/>
+      <!-- right curls -->
+      <circle cx="348" cy="228" r="38" fill="#5a2808"/>
+      <circle cx="362" cy="258" r="32" fill="#4a2006"/>
+      <circle cx="352" cy="286" r="26" fill="#3d1a05"/>
+      <circle cx="340" cy="308" r="20" fill="#340f02"/>
+      <!-- left curls -->
+      <circle cx="212" cy="226" r="36" fill="#5a2808"/>
+      <circle cx="198" cy="256" r="30" fill="#4a2006"/>
+      <circle cx="208" cy="284" r="24" fill="#3d1a05"/>
+      <circle cx="220" cy="306" r="18" fill="#340f02"/>
+      <!-- top curls -->
+      <circle cx="248" cy="188" r="27" fill="#6b3010"/>
+      <circle cx="278" cy="180" r="26" fill="#7a3812"/>
+      <circle cx="308" cy="185" r="28" fill="#6b3010"/>
+      <circle cx="264" cy="170" r="22" fill="#8B4513"/>
+      <circle cx="292" cy="168" r="21" fill="#8B4513"/>
+      <circle cx="278" cy="160" r="18" fill="#9a4a18"/>
+
+      <!-- Glasses frame -->
+      <rect x="238" y="260" width="36" height="26" rx="7" fill="rgba(80,160,255,0.06)" stroke="#2a2a2a" stroke-width="2.2"/>
+      <rect x="282" y="260" width="36" height="26" rx="7" fill="rgba(80,160,255,0.06)" stroke="#2a2a2a" stroke-width="2.2"/>
+      <!-- Bridge -->
+      <line x1="274" y1="272" x2="282" y2="272" stroke="#2a2a2a" stroke-width="2"/>
+      <!-- Arms -->
+      <line x1="238" y1="272" x2="212" y2="270" stroke="#2a2a2a" stroke-width="2"/>
+      <line x1="318" y1="272" x2="342" y2="270" stroke="#2a2a2a" stroke-width="2"/>
+
+      <!-- Eyes -->
+      <ellipse cx="256" cy="274" rx="8" ry="7" fill="#180a04"/>
+      <ellipse cx="300" cy="274" rx="8" ry="7" fill="#180a04"/>
+      <circle cx="258" cy="271" r="2" fill="rgba(255,255,255,0.55)"/>
+      <circle cx="302" cy="271" r="2" fill="rgba(255,255,255,0.55)"/>
+
+      <!-- Nose -->
+      <path d="M274 285 Q280 298 286 285" fill="none" stroke="rgba(80,38,10,0.45)" stroke-width="2"/>
+
+      <!-- Mouth (slightly open, talking) -->
+      <path d="M263 304 Q280 316 297 304" fill="none" stroke="rgba(100,48,18,0.65)" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="280" cy="308" rx="12" ry="5" fill="#8a3818" opacity="0.35"/>
+
+      <!-- Ears -->
+      <ellipse cx="204" cy="272" rx="10" ry="15" fill="#b07038"/>
+      <ellipse cx="356" cy="272" rx="10" ry="15" fill="#b07038"/>
+
+      <!-- Microphone Shure SM7B style -->
+      <g>
+        <!-- Boom arm -->
+        <line x1="268" y1="500" x2="268" y2="374" stroke="#161616" stroke-width="7" stroke-linecap="round"/>
+        <line x1="210" y1="382" x2="295" y2="382" stroke="#161616" stroke-width="5" stroke-linecap="round"/>
+        <!-- Mic body -->
+        <rect x="242" y="324" width="52" height="96" rx="15" fill="#1c1c1c"/>
+        <rect x="245" y="328" width="46" height="84" rx="13" fill="#222222"/>
+        <!-- Grille -->
+        <rect x="248" y="332" width="40" height="64" rx="10" fill="#2a2a2a"/>
+        <g stroke="#1a1a1a" stroke-width="0.9" opacity="0.7">
+          <line x1="248" y1="344" x2="288" y2="344"/>
+          <line x1="248" y1="356" x2="288" y2="356"/>
+          <line x1="248" y1="368" x2="288" y2="368"/>
+          <line x1="248" y1="380" x2="288" y2="380"/>
+          <line x1="258" y1="332" x2="258" y2="396"/>
+          <line x1="268" y1="332" x2="268" y2="396"/>
+          <line x1="278" y1="332" x2="278" y2="396"/>
+        </g>
+        <!-- Shure text -->
+        <rect x="250" y="400" width="36" height="9" rx="3" fill="#111"/>
+        <text x="268" y="407.5" text-anchor="middle" font-size="5.5" fill="#555" font-family="Inter" font-weight="700" letter-spacing="0.05em">SHURE</text>
+        <!-- Mount clip -->
+        <rect x="256" y="412" width="24" height="8" rx="3" fill="#181818"/>
+      </g>
+
+      <!-- Left hand on desk -->
+      <ellipse cx="196" cy="402" rx="40" ry="19" fill="#b07038"/>
+      <ellipse cx="166" cy="400" rx="12" ry="9" fill="#a86830" transform="rotate(-12 166 400)"/>
+      <ellipse cx="178" cy="390" rx="11" ry="8" fill="#a86830" transform="rotate(-22 178 390)"/>
+      <!-- Right hand -->
+      <ellipse cx="364" cy="402" rx="40" ry="19" fill="#b07038"/>
+      <ellipse cx="394" cy="400" rx="12" ry="9" fill="#a86830" transform="rotate(12 394 400)"/>
+      <ellipse cx="382" cy="390" rx="11" ry="8" fill="#a86830" transform="rotate(22 382 390)"/>
+
+      <!-- Bottom desk shadow -->
+      <rect x="40" y="415" width="510" height="85" fill="url(#dg)" opacity="0.75"/>
+    </svg>
+  </div>
+
+  <div class="hero-fade"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+
+    <div class="brand-row">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="logo-icon">
+          <div class="logo-dot"></div>
+          <div class="logo-dot"></div>
+          <div class="logo-dot"></div>
+          <div class="logo-dot"></div>
+        </div>
+        <span class="brand-name">SAZS</span>
+      </div>
+      <div class="brand-sep"></div>
+      <span class="brand-tagline">Live Integration · UAE Deployment</span>
+    </div>
+
+    <h1>Schwing Stetter RMC Plant<br>Meets Cloud ERP.</h1>
+
+    <p class="sub">We have successfully integrated a Schwing Stetter Ready Mix Concrete Plant PLC in the United Arab Emirates with SAZS Cloud ERP for RMC — digitally connecting the entire plant operation.</p>
+
+    <div class="btn-row">
+      <a href="#" class="btn-purple">Request Free Demo ↗</a>
+      <a href="#" class="btn-watch">
+        <div class="play-btn"></div>
+        <div class="watch-label">
+          <strong>See What's Integrated</strong><span> →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="proof">
+      <p class="proof-text"><strong>From mix design &amp; order booking</strong> to dispatch and<br>batch-wise material consumption tracking</p>
+      <div class="stars-row">
+        <div class="stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+        <span class="rating-num">Trusted in UAE</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     WHO IS THIS COURSE FOR?
+════════════════════════════════════════════ -->
+<section class="section-who">
+  <div class="section-inner">
+    <div class="who-left">
+      <h2 class="section-heading">What does this integration cover?</h2>
+      <a href="#" class="btn-purple" style="margin-top:28px;display:inline-flex;align-items:center;gap:6px;">Request Free Demo ↗</a>
+    </div>
+    <div class="who-right">
+      <ul class="check-list">
+        <li><span class="check-icon">✔</span> Mix Design Management</li>
+        <li><span class="check-icon">✔</span> Customer Order Entry &amp; Pricing</li>
+        <li><span class="check-icon">✔</span> Dispatch Planning &amp; Vehicle Allocation</li>
+        <li><span class="check-icon">✔</span> Batch-wise Production from PLC</li>
+        <li><span class="check-icon">✔</span> Material Consumption per Batch</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     WHAT'S INSIDE?
+════════════════════════════════════════════ -->
+<section class="section-inside">
+  <div class="section-inner inside-grid">
+
+    <!-- Left col -->
+    <div class="inside-left">
+      <h2 class="section-heading">What's inside?</h2>
+      <ul class="feature-list" style="margin-top:38px;">
+        <li>
+          <span class="feat-icon check">✔</span>
+          <span><strong>100%</strong> automated batch data — no manual entry needed</span>
+        </li>
+        <li>
+          <span class="feat-icon plus">⊕</span>
+          <span><strong>Zero</strong> manual entries or Excel sheets required</span>
+        </li>
+        <li>
+          <span class="feat-icon check">✔</span>
+          <span><strong>24/7</strong> cloud-based visibility from any device</span>
+        </li>
+        <li>
+          <span class="feat-icon plus">⊕</span>
+          <span><strong>End-to-end</strong> linked functions in one integration</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right col -->
+    <div class="inside-right">
+      <!-- Stats row -->
+      <div class="stats-row">
+        <div class="stat-block">
+          <span class="stat-num">100%</span>
+          <span class="stat-sub">Batch data automated</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-num">24/7</span>
+          <span class="stat-sub">Cloud visibility</span>
+        </div>
+      </div>
+      <!-- Feature list right -->
+      <ul class="feature-list" style="margin-top:36px;">
+        <li>
+          <span class="feat-icon plus">⊕</span>
+          <span><strong>Mix Design Management</strong> linked to production</span>
+        </li>
+        <li>
+          <span class="feat-icon check">✔</span>
+          <span><strong>Customer Order Entry &amp; Pricing</strong> in real time</span>
+        </li>
+        <li>
+          <span class="feat-icon chat">🚛</span>
+          <span><strong>Dispatch Planning &amp; Vehicle Allocation</strong> automated</span>
+        </li>
+        <li>
+          <span class="feat-icon plus">⊕</span>
+          <span><strong>Material Consumption per Batch</strong> tracked from PLC</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ── Page wrapper reset for new sections ── */
+  body {
+    display: block !important;
+    align-items: unset !important;
+    justify-content: unset !important;
+    padding: 0 !important;
+    background: #0a0a0a !important;
+  }
+
+  .hero {
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    margin: 0 auto;
+  }
+
+  /* ── Shared section styles ── */
+  .section-who,
+  .section-inside {
+    background: #0a0a0a;
+    width: 100%;
+    padding: 72px 0;
+  }
+
+  .section-inner {
+    max-width: 1425px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .section-divider {
+    max-width: 1425px;
+    margin: 0 auto;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  /* ── Section heading ── */
+  .section-heading {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  /* ── Check list (who section) ── */
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .check-icon {
+    width: 28px;
+    height: 28px;
+    background: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  /* ── What's inside grid ── */
+  .inside-grid {
+    align-items: start !important;
+  }
+
+  /* ── Stats ── */
+  .stats-row {
+    display: flex;
+    gap: 48px;
+  }
+
+  .stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stat-num {
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .stat-sub {
+    font-size: 14px;
+    color: #2563eb;
+    font-weight: 500;
+  }
+
+  /* ── Feature list ── */
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 15.5px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.55;
+  }
+
+  .feature-list li strong {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .feat-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .feat-icon.plus {
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .feat-icon.check {
+    background: #2563eb;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  .feat-icon.lock,
+  .feat-icon.chat {
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(255,255,255,0.18);
+    font-size: 12px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .section-inner { grid-template-columns: 1fr; padding: 0 24px; gap: 36px; }
+    .stats-row { gap: 28px; }
+  }
+</style>
+
+
+</body>
+</html>

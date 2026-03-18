@@ -1444,7 +1444,6 @@ a {
 
 
 
-/* Footer: "Together We Grow" Section */
 .footer-container {
     position: relative;
     background-color: rgb(255, 255, 253);
@@ -1470,6 +1469,7 @@ a {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    padding-bottom: 30px;
 }
 
 .heading {
@@ -1499,8 +1499,10 @@ a {
     background-color: #333;
 }
 
-/* Social Links & Navigation Section */
-.a {
+
+
+
+/* .a {
     background-color: rgb(255, 255, 253);
     color: #333;
     text-align: center;
@@ -1559,7 +1561,6 @@ a {
     color: #333;
 }
 
-/* Animations for footer links and icons */
 .c,
 .f {
     animation: fadeIn 1s ease-out;
@@ -1577,7 +1578,6 @@ a {
     }
 }
 
-/* Bottom Footer (Copyright + Help Button) */
 .footerbottom {
     padding: 40px 0 40px;
     background: #0b0d1f;
@@ -1592,7 +1592,6 @@ a {
     font-size: 14px;
 }
 
-/* WhatsApp Help Button */
 .help-btn {
     position: absolute;
     bottom: 20px;
@@ -1671,7 +1670,7 @@ a {
     .d {
         width: 28px;
     }
-}
+} */
 
 
 /* #wa-float {
