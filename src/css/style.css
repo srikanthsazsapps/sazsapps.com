@@ -591,7 +591,6 @@ p {
     .hero-features-grid { grid-template-columns: repeat(2, 1fr); }
     .ringing-icon { font-size: 15px !important; color: white; animation: ring 1s infinite ease-in-out; margin: 0 !important; }
     .scroll-top { display: none; }
-    .footer-container { padding: 12px 15px; }
     .heading { font-size: 28px; }
     .join-button { padding: 10px 24px; font-size: 14px; margin: auto; }
     .heading { font-size: 36px; }

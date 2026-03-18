@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAZS RMC Integration</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+/* Glow */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 90vw;
+  height: 90vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* CONTENT */
+.hero-content {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* TAG */
+.tag {
+  color: #4d8eff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+/* TITLE */
+h1 {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* HIGHLIGHT */
+.highlight {
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline */
+.underline {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+}
+
+.underline path {
+  fill: none;
+  stroke: #4d94ff;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+/* DESC */
+.desc {
+  margin-top: 20px;
+  font-size: clamp(14px, 2vw, 18px);
+  color: #bbb;
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: auto;
+}
+
+/* Primary */
+.primary {
+  background: linear-gradient(135deg, #5c7dff, #558bf7);
+  color: #fff;
+  border: none;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+}
+
+/* Secondary */
+.secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.secondary:hover {
+  background: #111;
+}
+
+/* FEATURES */
+.features {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.features span {
+  border: 1px solid #222;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* MOBILE FIX */
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .features {
+    justify-content: center;
+  }
+
+  .features span {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* TABLET */
+@media (min-width: 481px) and (max-width: 768px) {
+  .features span {
+    font-size: 13px;
+  }
+}
+
+/* LARGE SCREENS */
+@media (min-width: 1400px) {
+  .hero-content {
+    max-width: 1200px;
+  }
+}
+</style>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <p class="tag">Live Integration · UAE Deployment</p>
+
+    <h1>
+      Schwing Stetter
+      RMC Plant Meets
+      <span class="highlight">
+        Cloud ERP.
+        <svg viewBox="0 0 300 30" class="underline">
+          <path d="M5 20 Q150 40 295 20"></path>
+        </svg>
+      </span>
+    </h1>
+
+    <p class="desc">
+      We have successfully integrated a Schwing Stetter Ready Mix Concrete Plant PLC in the United Arab Emirates with SAZS Cloud ERP for RMC. This integration digitally connects the entire plant operation, from mix design and customer order booking to dispatch and batch-wise material consumption tracking.
+    </p>
+
+    <div class="buttons">
+      <button class="btn primary">Request Free Demo</button>
+      <button class="btn secondary">See What's Integrated →</button>
+    </div>
+
+    <div class="features">
+      <span>✔ Automated batch data — no manual entry needed</span>
+      <span>✔ Cloud-based visibility from any device</span>
+      <span>✔ End-to-end linked functions in one integration</span>
+      <span>Mix Design Management</span>
+      <span>Customer Order Entry & Pricing</span>
+      <span>Dispatch Planning & Vehicle Allocation</span>
+      <span>Batch-wise Production from PLC</span>
+      <span>Material Consumption per Batch</span>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// Underline animation
+window.addEventListener("load", () => {
+  const path = document.querySelector(".underline path");
+  const length = path.getTotalLength();
+
+  path.style.strokeDasharray = length;
+  path.style.strokeDashoffset = length;
+
+  setTimeout(() => {
+    path.style.transition = "stroke-dashoffset 1s ease";
+    path.style.strokeDashoffset = "0";
+  }, 300);
+});
+</script>
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* WRAPPER */
+.wrapper {
+  background: #f5f5f5;
+  border-radius: 30px;
+  padding: 60px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* TOP */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* LEFT */
+.left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.tag {
+  color: #4d82ff;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000;
+}
+
+.title span {
+  display: block;
+  color: #9e9e9e;
+}
+
+.desc {
+  margin-top: 15px;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* BUTTON */
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+
+/* RIGHT */
+.right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.video {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.video img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* FEATURES GRID */
+.features {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.card {
+  background: #eeeeee;
+  padding: 25px;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.card.active {
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  background: #fff;
+  transform: translateY(-5px);
+}
+
+/* ICON NUMBER */
+.icon {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* TEXT */
+.card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* LARGE LAPTOP */
+@media (max-width: 1200px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .wrapper {
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .wrapper {
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .features {
+    margin-top: 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+</style>
+
+<section class="wrapper">
+
+  <div class="top">
+
+    <!-- LEFT -->
+    <div class="left">
+      <p class="tag">Overview</p>
+
+      <h1 class="title">
+        One Integration.<br>
+        Your Entire Plant<br>
+        <span>Connected.</span>
+      </h1>
+
+      <p class="desc">
+        With this setup, production and consumption data flow automatically from the plant PLC into the ERP system, giving real-time visibility, accurate costing, and higher profitability for plant owners.
+      </p>
+
+      <p class="desc">
+        Our integration connects the Schwing Stetter batching plant PLC directly with SAZS Cloud ERP. This removes the need for manual entries or Excel sheets and ensures that plant data and ERP data are always in sync.
+      </p>
+
+      <a href="#" class="cta-btn">See What's Integrated →</a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <div class="video">
+        <img src="https://images.unsplash.com/photo-1581092919534-ec8a0c2c1d44?auto=format&fit=crop&w=800&q=80">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features">
+
+    <div class="card active">
+      <div class="icon">01</div>
+      <h3 style="color: #000000;">Mix design management and control</h3>
+      <p>Manage and control concrete mix designs directly from ERP, linked to plant production.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">02</div>
+      <h3 style="color: #000000;">Customer order entry and pricing</h3>
+      <p>Orders and pricing entered once in ERP and matched automatically to actual plant batches.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">03</div>
+      <h3 style="color: #000000;">Dispatch planning and vehicle allocation</h3>
+      <p>Dispatch, trip sheets, and delivery challans generated from the same system — no re-entry.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">04</div>
+      <h3 style="color: #000000;">Batch-wise production details from the PLC</h3>
+      <p>Every batch produced by the PLC is automatically captured in SAZS ERP in real time.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">05</div>
+      <h3 style="color: #000000;">Cement, aggregate, water, and admixture consumption per batch</h3>
+      <p>All material consumption data posted to stock, costing, and project reports automatically.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #ffffff;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+    }
+
+    .ca-section-wrap {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    /* Header */
+    .ca-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px 60px;
+      margin-bottom: 80px;
+    }
+
+    .ca-main-title {
+      font-size: clamp(2.5rem, 6.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 880px;
+    }
+
+    .ca-highlight-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* .ca-highlight-text::after {
+      content: "";
+      position: absolute;
+      inset: 0 -12px 4px -12px;
+      height: 26px;
+      background: #ff620033;           
+      border: 3px solid #ff6200;
+      border-radius: 999px;
+      z-index: -1;
+    } */
+
+    .ca-description-text {
+      margin-top: 1.6rem;
+      font-size: 1.18rem;
+      color: #cccccc;
+      max-width: 640px;
+      line-height: 1.7;
+    }
+
+    /* ─── Blue Button ─── */
+    .ca-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 240px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, #0066cc, #0099ff);   /* cobalt → bright blue */
+      border-radius: 12px;
+      color: white;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .ca-primary-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(0, 102, 204, 0.45);        /* blue shadow */
+    }
+
+    /* Cards */
+    .ca-card-grid-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .ca-card-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .ca-feature-card {
+      background: #0a0a12;
+      border-radius: 18px;
+      padding: 34px 30px;
+      position: relative;
+      transition: all 0.28s ease;
+      overflow: hidden;
+    }
+
+    /* Blue glow border */
+    .ca-feature-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      padding: 1px;
+      background: linear-gradient(135deg, #0066cc, #00aaff, transparent 70%);
+      -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .ca-feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+    }
+
+    .ca-card-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+      line-height: 1;
+    }
+
+    .ca-card-text {
+      font-size: 1.24rem;
+      color: #bbbbbb;
+    }
+
+    .ca-card-text strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .ca-large-card {
+      grid-column: span 2;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .ca-card-grid-top {
+        grid-template-columns: 1fr;
+      }
+      .ca-large-card {
+        grid-column: span 1;
+      }
+      .ca-card-grid-bottom {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .ca-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .ca-card-grid-bottom {
+        grid-template-columns: 1fr;
+      }
+      .ca-primary-btn {
+        width: 100%;
+      }
+    }
+  </style>
+
+<section class="ca-section-wrap">
+
+  <!-- Header -->
+  <div class="ca-header-flex">
+
+    <div>
+      <h1 class="ca-main-title">
+        What Exactly Is<br>
+        <span class="ca-highlight-text">Integrated Five Functions</span>?
+      </h1>
+
+      <p class="ca-description-text">
+        Fully Linked. End-to-End.<br>
+        Our integration connects the Schwing Stetter batching plant PLC directly with SAZS Cloud ERP — removing the need for manual entries or Excel sheets.
+      </p>
+    </div>
+
+    <a href="#" class="ca-primary-btn">Get Integrated Today →</a>
+
+  </div>
+
+  <!-- Top cards -->
+  <div class="ca-card-grid-top">
+
+    <div class="ca-feature-card ca-large-card">
+      <!-- <div class="ca-card-icon">🔗</div> -->
+      <p class="ca-card-text">
+        <strong>Always in Sync</strong> — Plant data and ERP data stay perfectly aligned. No manual entries. No Excel sheets. No mismatches. Real-time accuracy across the entire operation.
+      </p>
+    </div>
+
+    <div class="ca-feature-card">
+      <!-- <div class="ca-card-icon">⚙️</div> -->
+      <p class="ca-card-text">
+        <strong>Mix Design Management</strong> — Full end-to-end control. Mix designs in ERP flow directly to the batching plant PLC and link back with actual production records.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Bottom cards -->
+  <div class="ca-card-grid-bottom">
+
+    <div class="ca-feature-card">
+      <!-- <div class="ca-card-icon">📋</div> -->
+      <p class="ca-card-text">
+        <strong>Customer Order Entry & Pricing</strong> — Orders and pricing managed in ERP — automatically linked to real plant batches. No duplication.
+      </p>
+    </div>
+
+    <div class="ca-feature-card">
+      <!-- <div class="ca-card-icon">🚚</div> -->
+      <p class="ca-card-text">
+        <strong>Dispatch Planning & Vehicle Allocation</strong> — Trip sheets, delivery challans, and vehicle allocation — all generated from one integrated system.
+      </p>
+    </div>
+
+    <div class="ca-feature-card">
+      <!-- <div class="ca-card-icon">📦</div> -->
+      <p class="ca-card-text">
+        <strong>Batch Production + Material Consumption</strong> — Every batch auto-captured from PLC. Cement, aggregate, water & admixture usage posted directly to stock, costing & project reports.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+} */
+
+/* SECTION */
+.section-wrap{
+  background:#fff;
+  padding:30px 15px;
+}
+
+/* HERO CARD */
+.hero-box{
+  background:#000;
+  border-radius:24px;
+  padding:60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  max-width:1200px;
+  margin:auto;
+  position:relative;
+  overflow:hidden;
+}
+
+/* LEFT */
+.left-content{
+  flex:1;
+  color:#fff;
+}
+
+/* TITLE */
+.main-title{
+  font-size:clamp(28px, 5vw, 60px);
+  font-weight:700;
+  line-height:1.1;
+}
+
+/* SCRIBBLE */
+.mark-text{
+  position:relative;
+  display:inline-block;
+}
+
+.mark-text svg{
+  position:absolute;
+  left:-5px;
+  bottom:-8px;
+  width:105%;
+  height:25px;
+}
+
+/* TEXT */
+.desc-text{
+  margin-top:16px;
+  color:#aaa;
+  font-size:clamp(14px, 2vw, 16px);
+  line-height:1.6;
+}
+
+/* LIST */
+.problem-list{
+  margin-top:16px;
+  color:#9a9a9a;
+  line-height:1.7;
+  padding-left:18px;
+  font-size:clamp(13px, 2vw, 15px);
+}
+
+/* BUTTON */
+.cta-btn{
+  margin-top:24px;
+  padding:12px 26px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(45deg,#6c3df4,#9f5cff);
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(120,70,255,0.4);
+}
+
+/* RIGHT IMAGE */
+.right-img{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.right-img img{
+  width:100%;
+  max-width:500px;
+  height:auto;
+}
+
+/* GLOW */
+.glow{
+  position:absolute;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(15px);
+}
+
+.glow1{
+  width:70px;
+  height:70px;
+  top:40px;
+  left:55%;
+}
+
+.glow2{
+  width:100px;
+  height:100px;
+  bottom:20px;
+  left:60%;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+@media(max-width:992px){
+  .hero-box{
+    padding:40px;
+    gap:30px;
+  }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+@media(max-width:768px){
+  .hero-box{
+    flex-direction:column;
+    text-align:center;
+    padding:30px 20px;
+  }
+
+  .problem-list{
+    text-align:left;
+  }
+
+  .right-img{
+    margin-top:20px;
+  }
+}
+
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+@media(max-width:480px){
+  .hero-box{
+    padding:20px 15px;
+  }
+
+  .cta-btn{
+    width:100%;
+  }
+}
+
+</style>
+
+<section class="section-wrap">
+
+  <div class="hero-box">
+
+    <!-- LEFT -->
+    <div class="left-content">
+
+      <h1 class="main-title">
+        Typical Problems <br>
+        <span class="mark-text">
+          Without Integration
+
+          <svg viewBox="0 0 300 40">
+            <path d="M10 25 Q150 5 290 25" 
+                  stroke="#ff3b3b" 
+                  stroke-width="5" 
+                  fill="none" 
+                  stroke-linecap="round"/>
+          </svg>
+
+        </span>
+      </h1>
+
+      <p class="desc-text">
+        Sound Familiar? Many RMC and batching plants still operate with little or no integration between plant and ERP.
+      </p>
+
+      <ul class="problem-list">
+        <li>Manual tracking of production, raw materials, and returns</li>
+        <li>Lack of real-time visibility on what is produced, loaded, and delivered</li>
+        <li>Material wastage and leakages due to no batch-wise consumption control</li>
+        <li>Delayed MIS reports and mismatches between plant reports and accounts</li>
+        <li>Difficulty in calculating accurate cost per cubic meter, per site, or per project</li>
+      </ul>
+
+      <button class="cta-btn">Get Solution ↗</button>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-img">
+      <img src="https://i.imgur.com/8Km9tLL.png" alt="image">
+    </div>
+
+    <!-- GLOW -->
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
+
+  </div>
+
+</section>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* SECTION */
+.solutions-section{
+  background:#fff;
+  padding:60px 20px;
+}
+
+/* CONTAINER */
+.solutions-wrap{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* HEADER */
+.solutions-header{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.solutions-title{
+  font-size:clamp(28px,5vw,48px);
+  font-weight:700;
+  color:#000;
+  line-height:1.2;
+}
+
+.solutions-sub{
+  margin-top:15px;
+  color:#666;
+  font-size:16px;
+}
+
+/* GRID */
+.solutions-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+/* CARD */
+.solution-card{
+  background:#000;
+  color:#fff;
+  padding:25px;
+  border-radius:18px;
+  transition:0.3s;
+  position:relative;
+}
+
+.solution-card:hover{
+  transform:translateY(-5px);
+}
+
+/* NUMBER */
+.solution-number{
+  font-size:20px;
+  font-weight:600;
+  color:#9f5cff;
+  margin-bottom:10px;
+}
+
+/* TITLE */
+.solution-title{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+/* TEXT */
+.solution-text{
+  font-size:14px;
+  color:#aaa;
+  line-height:1.6;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .solutions-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .solutions-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+
+<section class="solutions-section">
+
+  <div class="solutions-wrap">
+
+    <!-- HEADER -->
+    <div class="solutions-header">
+      <h2 class="solutions-title">
+        How SAZS Cloud ERP + Schwing Stetter Integration Solves This
+      </h2>
+
+      <p class="solutions-sub">
+        Our industry-focused ERP integration addresses these pain points.  
+        Five targeted solutions built specifically for ready mix concrete plant operations.
+      </p>
+    </div>
+
+    <!-- GRID -->
+    <div class="solutions-grid">
+
+      <!-- 01 -->
+      <div class="solution-card">
+        <div class="solution-number">01</div>
+        <div class="solution-title">Real-time production monitoring</div>
+        <div class="solution-text">
+          Live production quantity, batches, and plant status are visible on ERP dashboards. Management can monitor plant activity without delays.
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="solution-card">
+        <div class="solution-number">02</div>
+        <div class="solution-title">Automated batch-wise material tracking</div>
+        <div class="solution-text">
+          Every batch captures cement, aggregates, water, and admixtures. Data flows directly into stock, costing, and project reports.
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="solution-card">
+        <div class="solution-number">03</div>
+        <div class="solution-title">Integrated order & dispatch management</div>
+        <div class="solution-text">
+          Orders, pricing, and delivery schedules are linked to plant batches. Dispatch and delivery documents are generated seamlessly.
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="solution-card">
+        <div class="solution-number">04</div>
+        <div class="solution-title">Accurate costing & financial control</div>
+        <div class="solution-text">
+          Monitor cost per cubic meter, customer, and project with real-time data. Quickly identify deviations and losses.
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="solution-card">
+        <div class="solution-number">05</div>
+        <div class="solution-title">Cloud-based access from anywhere</div>
+        <div class="solution-text">
+          Access ERP securely from office, home, or on the go. Manage multiple plants from a single cloud platform.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+/* SECTION */
+.benefits-section{
+  background:#fff;
+  padding:60px 20px;
+}
+
+/* CONTAINER */
+.benefits-wrap{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* HEADER */
+.benefits-header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.benefits-title{
+  font-size:clamp(28px,5vw,46px);
+  font-weight:700;
+  color:#000;
+}
+
+.benefits-sub{
+  margin-top:10px;
+  color:#666;
+  font-size:16px;
+}
+
+/* BUTTON */
+.demo-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 28px;
+  background:linear-gradient(45deg,#6c3df4,#9f5cff);
+  color:#fff;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:15px;
+}
+
+/* GRID */
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+
+/* CARD */
+.benefit-card{
+  background:#000;
+  color:#fff;
+  padding:25px;
+  border-radius:16px;
+  transition:0.3s;
+}
+
+.benefit-card:hover{
+  transform:translateY(-5px);
+}
+
+/* TITLE */
+.benefit-title{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+/* TEXT */
+.benefit-text{
+  font-size:14px;
+  color:#aaa;
+  line-height:1.6;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .benefits-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .benefits-grid{
+    grid-template-columns:1fr;
+  }
+
+  .demo-btn{
+    width:100%;
+    text-align:center;
+  }
+}
+</style>
+
+
+<section class="benefits-section">
+
+  <div class="benefits-wrap">
+
+    <!-- HEADER -->
+    <div class="benefits-header">
+      <h2 class="benefits-title">
+        Key Business Benefits for Plant Owners
+      </h2>
+
+      <p class="benefits-sub">
+        By integrating your Schwing Stetter plant PLC with SAZS Cloud ERP, you get:
+      </p>
+
+      <a href="#" class="demo-btn">Request Free Demo</a>
+    </div>
+
+    <!-- GRID -->
+    <div class="benefits-grid">
+
+      <div class="benefit-card">
+        <div class="benefit-title">Transparent material consumption</div>
+        <div class="benefit-text">
+          Transparent, batch-wise material consumption and reduced wastage.
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-title">Fewer stock leakages</div>
+        <div class="benefit-text">
+          Better control over raw materials with reduced stock losses.
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-title">Accurate billing</div>
+        <div class="benefit-text">
+          Faster and more accurate billing with fewer disputes and adjustments.
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-title">Real-time dashboards</div>
+        <div class="benefit-text">
+          Monitor production, dispatch, stock, and cost instantly.
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-title">Single source of truth</div>
+        <div class="benefit-text">
+          Unified data for plant team, accounts team, and management.
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-title">Improved decision-making</div>
+        <div class="benefit-text">
+          Stronger ROI with better insights into operations and performance.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="tech-dark-section">
+
+<style>
+.tech-dark-section{
+  background:#000;
+  color:#fff;
+  padding:80px 20px;
+  font-family:'Inter',sans-serif;
+}
+
+.tech-wrap{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* HEADER */
+.tech-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:30px;
+  flex-wrap:wrap;
+  margin-bottom:50px;
+}
+
+.tech-title{
+  font-size:clamp(28px,5vw,50px);
+  font-weight:700;
+  line-height:1.2;
+}
+
+.tech-sub{
+  margin-top:15px;
+  color:#aaa;
+  max-width:600px;
+  line-height:1.6;
+}
+
+/* GRID */
+.tech-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+}
+
+/* CARD */
+.tech-card{
+  background:linear-gradient(145deg,#0a0a0a,#050505);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  padding:25px;
+  transition:0.3s;
+}
+
+.tech-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 25px rgba(120,70,255,0.2);
+}
+
+/* PROFILE */
+.profile-card{
+  text-align:center;
+}
+
+.avatar{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  margin:auto;
+  background:linear-gradient(45deg,#6c3df4,#9f5cff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  font-weight:700;
+}
+
+.profile-name{
+  margin-top:15px;
+  font-weight:600;
+}
+
+.profile-role{
+  font-size:14px;
+  color:#aaa;
+  margin-top:5px;
+}
+
+/* TEXT */
+.card-text{
+  color:#bbb;
+  line-height:1.6;
+  font-size:14px;
+}
+
+.card-text b{
+  color:#fff;
+}
+
+/* SMALL GRID */
+.small-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:20px;
+}
+
+/* RIGHT STACK */
+.right-stack{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .tech-grid{
+    grid-template-columns:1fr;
+  }
+
+  .small-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+<div class="tech-wrap">
+
+  <!-- HEADER -->
+  <div class="tech-header">
+    <div>
+      <h2 class="tech-title">
+        Technology and Team Behind the Integration
+      </h2>
+
+      <p class="tech-sub">
+        Built on a robust, scalable technical framework.  
+        This integration is designed by our CTO, Mr. Zeno Allwin, and implemented by the SAZS development team.
+      </p>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="tech-grid">
+
+    <!-- LEFT SIDE -->
+    <div>
+
+      <!-- PROFILE -->
+      <div class="tech-card profile-card">
+        <div class="avatar">ZA</div>
+        <div class="profile-name">Mr. Zeno Allwin</div>
+        <div class="profile-role">
+          CTO, SAZS Apps · Integration Architect
+        </div>
+      </div>
+
+      <!-- FEATURES -->
+      <div class="small-grid">
+
+        <div class="tech-card">
+          <p class="card-text">
+            Secure integration with <b>Schwing Stetter PLC controllers</b>
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <p class="card-text">
+            <b>Scalable architecture</b> suitable for multiple plants and locations
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right-stack">
+
+      <div class="tech-card">
+        <p class="card-text">
+          Purpose-built for <b>ready mix and batching plant operations</b>
+        </p>
+      </div>
+
+      <div class="tech-card">
+        <p class="card-text">
+          Flexible configuration for <b>reports, tax rules, and regional requirements</b>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+<section class="integration-highlight">
+
+<style>
+.integration-highlight{
+  background:#000;
+  padding:80px 20px;
+  font-family:'Inter',sans-serif;
+  color:#fff;
+}
+
+/* CONTAINER */
+.highlight-wrap{
+  max-width:1000px;
+  margin:auto;
+}
+
+/* CARD */
+.highlight-box{
+  background:linear-gradient(145deg,#0a0a0a,#050505);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:40px;
+  line-height:1.7;
+  font-size:clamp(15px,2vw,18px);
+  color:#bbb;
+  position:relative;
+}
+
+/* HIGHLIGHT TEXT */
+.highlight-box b{
+  color:#fff;
+}
+
+/* LEFT BORDER ACCENT */
+.highlight-box::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:20px;
+  bottom:20px;
+  width:4px;
+  border-radius:10px;
+  background:linear-gradient(180deg,#285ba3,#5c90ff);
+}
+
+/* SPACING */
+.highlight-box p{
+  margin-bottom:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .highlight-box{
+    padding:25px;
+  }
+}
+</style>
+
+<div class="highlight-wrap">
+
+  <div class="highlight-box">
+
+    <p>
+      We have successfully integrated <b>Schwing Stetter Ready Mix Concrete Plant PLCs</b> with 
+      <b>SAZS Cloud ERP for RMC</b>. With this integration, your entire plant operation becomes 
+      <b>digitally connected</b> — from mix design and customer order booking to dispatch and 
+      batch-wise material consumption tracking.
+    </p>
+
+    <p>
+      You get <b>real-time visibility</b> of production, material usage, and cost per cubic meter, 
+      directly from the plant to ERP, <b>without manual data entry</b>. This helps you 
+      <b>reduce wastage</b>, avoid stock leakages, improve billing accuracy, and increase the 
+      <b>overall profitability</b> of your ready mix business.
+    </p>
+
+  </div>
+
+</div>
+
+</section>
+
+<section class="faq-section" id="faq">
+
+<style>
+.faq-section{
+  background:#000;
+  color:#fff;
+  padding:80px 20px;
+  font-family:'Inter',sans-serif;
+}
+
+.wrap{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* LAYOUT */
+.faq-layout{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:40px;
+}
+
+/* LEFT */
+.faq-sticky{
+  position:sticky;
+  top:100px;
+}
+
+.sec-tag{
+  font-size:12px;
+  letter-spacing:2px;
+  color:#5c8aff;
+  margin-bottom:10px;
+}
+
+.sec-rule{
+  width:50px;
+  height:3px;
+  background:#5cabff;
+  margin-bottom:15px;
+}
+
+.faq-title{
+  font-size:clamp(28px,5vw,42px);
+  font-weight:700;
+}
+
+.faq-sub{
+  margin-top:15px;
+  color:#aaa;
+  line-height:1.6;
+}
+
+.btn-fill{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  background:linear-gradient(45deg,#3d7df4,#5ca0ff);
+  border-radius:10px;
+  color:#fff;
+  text-decoration:none;
+}
+
+/* RIGHT LIST */
+.faq-list{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+/* ITEM */
+.faq-item{
+  background:linear-gradient(145deg,#0a0a0a,#050505);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+/* QUESTION */
+.faq-q{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+  cursor:pointer;
+}
+
+.faq-q-text{
+  font-size:15px;
+}
+
+/* ICON */
+.faq-toggle svg{
+  width:14px;
+  height:14px;
+  stroke:#fff;
+  stroke-width:2;
+}
+
+/* BODY */
+.faq-body{
+  max-height:0;
+  overflow:hidden;
+  transition:0.3s ease;
+  padding:0 20px;
+}
+
+.faq-body p{
+  color:#aaa;
+  font-size:14px;
+  line-height:1.6;
+  padding-bottom:15px;
+}
+
+/* OPEN STATE */
+.faq-item.open .faq-body{
+  max-height:300px;
+}
+
+.faq-item.open{
+  border-color:#5c9bff;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .faq-layout{
+    grid-template-columns:1fr;
+  }
+
+  .faq-sticky{
+    position:static;
+  }
+}
+</style>
+
+<div class="wrap">
+
+  <div class="faq-layout">
+
+    <!-- LEFT -->
+    <div class="faq-sticky">
+      <div class="sec-tag">FAQ</div>
+      <div class="sec-rule"></div>
+
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+
+      <p class="faq-sub">
+        Everything you need to know about the SAZS Cloud ERP + Schwing Stetter RMC integration.
+      </p>
+
+      <a href="#contact" class="btn-fill">Request Demo</a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="faq-list">
+
+      <!-- ITEM -->
+      <div class="faq-item open">
+        <div class="faq-q">
+          <span class="faq-q-text">What exactly is integrated between Schwing Stetter PLC and SAZS ERP?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-body">
+          <p>
+            Our integration connects the Schwing Stetter batching plant PLC directly with SAZS Cloud ERP, covering mix design, order entry, dispatch, and batch-wise production and material consumption.
+          </p>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">What problems does this integration solve?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-body">
+          <p>
+            It eliminates manual tracking, improves real-time visibility, reduces wastage, prevents stock leakages, and ensures accurate costing and reporting.
+          </p>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Can I monitor cost per cubic meter automatically?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-body">
+          <p>
+            Yes. Data flows directly into costing and accounts, enabling real-time monitoring of cost per cubic meter, project, and customer.
+          </p>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Is this available in India and Middle East?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-body">
+          <p>
+            Yes. The solution supports UAE, Middle East, and India with flexible configurations for regional compliance.
+          </p>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">How does dispatch and billing work?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-body">
+          <p>
+            Orders, dispatch, and billing are integrated, ensuring accurate delivery tracking and faster invoicing with fewer errors.
+          </p>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Who built this integration?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-body">
+          <p>
+            Designed by CTO Mr. Zeno Allwin and implemented by the SAZS development team for real-world plant operations.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- JS -->
+<script>
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click', function(){
+    const item = q.parentElement;
+
+    document.querySelectorAll('.faq-item').forEach(function(el){
+      if(el !== item){
+        el.classList.remove('open');
+      }
+    });
+
+    item.classList.toggle('open');
+  });
+});
+</script>
+
+</section>
+<section class="cta-section">
+
+<style>
+.cta-section{
+  background:#fff;
+  padding:80px 20px;
+  font-family:'Inter',sans-serif;
+}
+
+/* CONTAINER */
+.cta-wrap{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+/* TITLE */
+.cta-title{
+  font-size:clamp(30px,5vw,52px);
+  font-weight:700;
+  color:#000;
+  line-height:1.2;
+}
+
+/* SUBTEXT */
+.cta-text{
+  margin-top:20px;
+  color:#555;
+  line-height:1.7;
+  font-size:16px;
+}
+
+/* BUTTON GROUP */
+.cta-actions{
+  margin-top:35px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+/* PRIMARY BUTTON */
+.cta-btn-primary{
+  padding:14px 30px;
+  background:linear-gradient(45deg,#3d62f4,#5c77ff);
+  color:#fff;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:15px;
+  box-shadow:0 8px 20px rgba(70, 135, 255, 0.3);
+}
+
+/* SECONDARY BUTTON */
+.cta-btn-secondary{
+  padding:14px 30px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  text-decoration:none;
+  color:#000;
+  font-size:15px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .cta-actions{
+    flex-direction:column;
+  }
+
+  .cta-btn-primary,
+  .cta-btn-secondary{
+    width:100%;
+  }
+}
+</style>
+
+<div class="cta-wrap">
+
+  <!-- TITLE -->
+  <h2 class="cta-title">
+    Get Started <br>
+    Still Running on 
+    Spreadsheets?
+  </h2>
+
+  <!-- TEXT -->
+  <p class="cta-text">
+    If you are still running your RMC plant on spreadsheets or disconnected systems, this is the right time to upgrade. 
+    Let us help you automate, optimize, and grow your plant with a smart, industry-specific ERP designed for Schwing Stetter 
+    and other leading batching plants.
+  </p>
+
+  <!-- BUTTONS -->
+  <div class="cta-actions">
+    <a href="#contact" class="cta-btn-primary">Contact Us Today</a>
+    <a href="https://sazsapps.com" target="_blank" class="cta-btn-secondary">
+      Visit sazsapps.com →
+    </a>
+  </div>
+
+</div>
+
+</section>
+
+
+
+</body>
+</html>

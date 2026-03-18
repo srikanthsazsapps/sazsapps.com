@@ -250,59 +250,6 @@ body {
       display: block;
       margin-bottom: 0.5rem;
     }
-
-    /* Footer */
-    .footer {
-      background: var(--gray-50);
-      border-top: 1px solid var(--gray-200);
-      padding: 3rem 2rem 2rem;
-      margin-top: 4rem;
-    }
-
-    .footer-content {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
-
-    .footer-column h3 {
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--dark);
-    }
-
-    .footer-column ul {
-      list-style: none;
-    }
-
-    .footer-column li {
-      margin-bottom: 0.625rem;
-    }
-
-    .footer-column a {
-      color: var(--gray-600);
-      text-decoration: none;
-      font-size: 0.875rem;
-      transition: color 0.2s;
-    }
-
-    .footer-column a:hover {
-      color: var(--dark);
-    }
-
-    .footer-bottom {
-      max-width: 1280px;
-      margin: 2rem auto 0;
-      padding-top: 2rem;
-      border-top: 1px solid var(--gray-200);
-      text-align: center;
-      color: var(--gray-600);
-      font-size: 0.875rem;
-    }
-
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 {
