@@ -1,28 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Construction ERP — Subcontract Billing Software</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="../src/css/minified/comman.min.css" as="style">
-  <link href="../src/css/minified/comman.min.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="../src/assets/css/all.min.css"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../src/assets/logo/logoblack.png">
+    <!-- ═══════════════════════════════════════════
+         PRIMARY META TAGS
+    ═══════════════════════════════════════════ -->
+    <title>Subcontract Billing Software for Construction & Quarry ERP | SAZS Apps</title>
 
-  <!-- Scripts (existing, unchanged) -->
-  <link rel="preload" href="../src/js/comman.js" as="script">
-  <script src="../src/js/comman.js" defer></script>
+    <meta name="description"
+        content="SAZS Apps Subcontract Billing Software manages BOQ-linked work orders, Running Account (RA) bills, GST, TDS, retention and multi-level approvals — built for construction contractors in India and UAE. Trusted by 303+ businesses.">
 
-<style>
+    <meta name="keywords"
+        content="subcontract billing software, subcontractor management erp, ra billing software construction, boq work order software, running account billing erp, construction subcontract erp india, subcontract erp uae, tds 194c billing software, gst subcontract billing, retention billing software construction, multi level approval erp construction, digital measurement book software, subcontract erp tamil nadu, subcontract billing quarry crusher, sazs subcontract billing, construction erp india, subcontractor payment software, project costing erp india, construction billing automation, fidic contract billing software">
+
+    <meta name="author" content="SAZS Apps Private Limited">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- ═══════════════════════════════════════════
+         CANONICAL
+    ═══════════════════════════════════════════ -->
+    <link rel="canonical" href="https://sazsapps.com/features/subcontract-billing.html">
+
+    <!-- ═══════════════════════════════════════════
+         OPEN GRAPH
+    ═══════════════════════════════════════════ -->
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://sazsapps.com/features/subcontract-billing.html">
+    <meta property="og:title"       content="Subcontract Billing Software for Construction & Quarry ERP | SAZS Apps">
+    <meta property="og:description" content="BOQ-linked work orders, RA billing, auto GST/TDS/retention, digital measurement books and multi-level approvals for construction contractors. India & UAE.">
+    <meta property="og:image"       content="https://sazsapps.com/src/assets/logo/logoblack.png">
+    <meta property="og:site_name"   content="SAZS Apps">
+    <meta property="og:locale"      content="en_IN">
+
+    <!-- ═══════════════════════════════════════════
+         TWITTER CARD
+    ═══════════════════════════════════════════ -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Subcontract Billing Software for Construction & Quarry ERP | SAZS Apps">
+    <meta name="twitter:description" content="Manage BOQ work orders, RA bills, GST, TDS, retention and multi-level approvals for construction subcontractors — SAZS Apps ERP, India & UAE.">
+    <meta name="twitter:image"       content="https://sazsapps.com/src/assets/logo/logoblack.png">
+
+    <!-- ═══════════════════════════════════════════
+         FAVICON — LINK UNCHANGED
+    ═══════════════════════════════════════════ -->
+    <link rel="icon" type="image/x-icon" href="../src/assets/logo/logoblack.png">
+
+    <!-- ═══════════════════════════════════════════
+         STYLESHEETS & SCRIPTS — ALL LINKS UNCHANGED
+    ═══════════════════════════════════════════ -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../src/css/minified/comman.min.css" as="style">
+    <link href="../src/css/minified/comman.min.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="../src/assets/logo/logoblack.png">
+
+    <link rel="preload" href="../src/js/comman.js" as="script">
+    <script src="../src/js/comman.js" defer></script>
+
+    <!-- ═══════════════════════════════════════════
+         JSON-LD SCHEMA — ORGANIZATION
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://sazsapps.com/#organization",
+        "name": "SAZS Apps Private Limited",
+        "url": "https://sazsapps.com",
+        "logo": "https://sazsapps.com/src/assets/logo/logoblack.png",
+        "description": "SAZS Apps provides ERP and management software for quarry, crusher, RMC, bricks, construction material and subcontract billing businesses.",
+        "foundingDate": "2017",
+        "telephone": "+91 76666 28000",
+        "email": "info@sazsapps.com",
+        "areaServed": ["India", "UAE"],
+        "knowsAbout": [
+            "Subcontract Billing Software",
+            "Construction ERP",
+            "BOQ Work Orders",
+            "Running Account Billing",
+            "Quarry Management Software",
+            "Crusher ERP Software",
+            "RMC ERP",
+            "GST TDS Automation"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "303",
+            "bestRating": "5"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "No. 8B, Arunachalam Pettai Street, Kovilpatti Town",
+            "addressLocality": "Kovilpatti",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "628501",
+            "addressCountry": "IN"
+        },
+        "sameAs": [
+            "https://play.google.com/store/apps/details?id=com.SazsApps",
+            "https://www.facebook.com/p/Sazs-Apps-100075849583725",
+            "https://www.linkedin.com/company/sazs-apps-erp",
+            "https://www.instagram.com/sazsapps",
+            "https://youtube.com/sazsapps"
+        ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         JSON-LD SCHEMA — WEBPAGE + BREADCRUMB
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://sazsapps.com/features/subcontract-billing.html",
+        "url": "https://sazsapps.com/features/subcontract-billing.html",
+        "name": "Subcontract Billing Software for Construction & Quarry ERP | SAZS Apps",
+        "description": "BOQ-linked work orders, Running Account billing, automatic GST, TDS, retention deductions, digital measurement books and multi-level approval workflows for construction contractors in India and UAE.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://sazsapps.com/#website",
+            "url": "https://sazsapps.com",
+            "name": "SAZS ERP | No.1 Quarry, Crusher, RMC Management Software",
+            "publisher": { "@id": "https://sazsapps.com/#organization" }
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://sazsapps.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Features",
+                    "item": "https://sazsapps.com/features/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Subcontract Billing",
+                    "item": "https://sazsapps.com/features/subcontract-billing.html"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         JSON-LD SCHEMA — SERVICE
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Subcontract Billing Software",
+        "name": "SAZS Apps — Subcontract Billing Module",
+        "provider": { "@id": "https://sazsapps.com/#organization" },
+        "areaServed": ["India", "UAE"],
+        "description": "SAZS Apps Subcontract Billing Software manages the complete subcontractor billing lifecycle — from BOQ-linked work orders and digital measurement books to Running Account bills with automatic GST, TDS, retention, advance recovery, multi-level approvals and final settlement — for construction contractors in India and UAE.",
+        "url": "https://sazsapps.com/features/subcontract-billing.html",
+        "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "areaServed": ["IN", "AE"],
+            "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "INR"
+            }
+        }
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         JSON-LD SCHEMA — FAQ (AEO / SGE READY)
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://sazsapps.com/features/subcontract-billing.html#faq",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is subcontract billing software for construction?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Subcontract billing software for construction is an ERP module that manages the complete billing lifecycle between a main contractor and subcontractors — from creating BOQ-linked work orders to raising Running Account (RA) bills, applying GST, TDS and retention deductions automatically, obtaining multi-level digital approvals, and closing the final account with full reconciliation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a Running Account (RA) bill in construction?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A Running Account bill is a periodic payment claim raised by a subcontractor for work completed up to a certain date. It includes cumulative quantities measured, rate per BOQ item, gross amount, and deductions for advance recovery, retention, TDS, and GST. SAZS Apps calculates all these automatically from the work order terms."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does SAZS Apps handle TDS and GST on subcontractor bills?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SAZS Apps automatically calculates TDS under Section 194C of the Income Tax Act, GST under the Reverse Charge Mechanism (RCM) where applicable, and GST TDS as per the GST Act on every subcontractor bill. Deductions are applied at the configured rates and posted directly to the relevant ledgers without manual entry."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a digital measurement book in SAZS Apps?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A digital measurement book in SAZS Apps replaces the traditional paper MB. Site engineers record measured quantities against each BOQ item on the system. The software validates that quantities do not exceed the work order sanctioned limits, and the measurements form the basis for generating RA bills — eliminating manual errors and creating a clear audit trail."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can SAZS Apps manage subcontract billing for UAE construction projects?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. SAZS Apps supports UAE-specific requirements including UAE VAT at 5%, Wage Protection System (WPS) integration, FIDIC-based contract billing structures, and multi-currency. Contractors operating in Dubai, Abu Dhabi, Sharjah, and across the UAE can manage their subcontractor billing from the same platform used for Indian projects."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the multi-level approval workflow work for RA bills?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SAZS Apps provides a configurable approval workflow where an RA bill moves from the site engineer for measurement verification, to the project manager for review, to the accounts team for financial checks, and finally to management for payment authorisation. Each stage is digitally signed with a full audit trail of who approved what and when."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does SAZS subcontract billing integrate with the accounts module?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Every approved subcontractor payment automatically posts the corresponding purchase, GST, TDS and cash-flow entries to the accounts module. Project cost reports and cash-flow forecasts update in real time — there is no double data entry between the billing and accounts teams."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens at final settlement in SAZS subcontract billing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "At final settlement, SAZS Apps generates a complete reconciliation of all RA bills raised, advances paid and recovered, retention deducted and to be released, and the net amount payable to the subcontractor. All ledger entries are automatically posted and the work order is closed with a full financial history."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         JSON-LD SCHEMA — HOWTO (AEO — SGE FEATURE SNIPPET)
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How SAZS Apps Automates Subcontract Billing from Work Order to Final Settlement",
+        "description": "Step-by-step process showing how SAZS Apps ERP manages the complete subcontractor billing cycle for construction projects.",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Create a BOQ-linked Work Order",
+                "text": "A subcontract work order is created in SAZS Apps with each item linked to the Bill of Quantities, project, and cost centre. The contract value, payment terms, retention percentage, advance amount, and applicable tax rates are all defined at this stage."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Record measurements in the digital measurement book",
+                "text": "The site engineer logs measured quantities for each BOQ item directly in the digital measurement book. The system validates that quantities do not exceed the work order limits and flags any discrepancy before the bill is raised."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "System generates the RA bill automatically",
+                "text": "Based on the measured quantities, SAZS Apps generates the Running Account bill with gross amount, GST under RCM, TDS under Section 194C, retention deduction, and advance recovery — all calculated automatically from the work order terms."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Multi-level approval workflow completes",
+                "text": "The RA bill passes through the configured approval chain — site engineer, project manager, accounts, and management. Each stage provides a digital sign-off. The bill cannot proceed to payment until all approvals are completed."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Payment posts to accounts and updates project cost",
+                "text": "Once approved, the net payment is released and the corresponding purchase, GST, TDS and cash-flow entries post automatically to the accounts module. Project cost reports update in real time."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 6,
+                "name": "Final settlement and account closure",
+                "text": "At project completion, SAZS Apps generates the final reconciliation statement showing all RA bills, advances, retentions and the final payable amount. The retention holdback is released, all entries are posted, and the work order is closed with a complete audit trail."
+            }
+        ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         JSON-LD SCHEMA — ITEMLIST (AEO — Key Capabilities)
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "SAZS Subcontract Billing — Key Capabilities",
+        "description": "The six core capabilities of SAZS Apps Subcontract Billing Software for construction contractors.",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 6,
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "BOQ-Based Work Orders",
+                "description": "Create subcontract work orders directly linked to the Bill of Quantities, project, and cost centre. Every rupee is traceable to a project activity."
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Digital Measurement Book",
+                "description": "Record site measurements digitally with quantity validation. Eliminates manual errors and ensures billing stays within sanctioned quantities."
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "RA Billing and Advances",
+                "description": "Raise Running Account bills with auto-computed advance recovery, retention deductions, price variation, TDS and GST — all mapped to the work order."
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "GST, TDS and Retention Auto-Calculation",
+                "description": "All statutory deductions — GST under RCM, TDS under the Income Tax and GST Acts, and retention holdbacks — calculated automatically on every bill."
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Multi-Level Approvals",
+                "description": "Configurable approval workflows from site engineer to project manager to accounts to management, with digital sign-off and full audit trail at every stage."
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Integrated Project Costing",
+                "description": "Every payment posts directly to accounts and updates project cost reports and cash-flow forecasts in real time — no double data entry."
+            }
+        ]
+    }
+    </script>
+
+</head><style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
   --bg: #000000;
-  --purple: #7c3aed;
-  --purple-hover: #6d28d9;
+  /* --purple: #7c3aed; */
+  /* --purple-hover: #6d28d9; */
   --red: #2563eb;
   --white: #ffffff;
   --gray: #888888;
@@ -251,7 +595,7 @@ h1 {
   .tab-pill { font-size: 11px; padding: 5px 10px; }
 }
 </style>
-</head>
+
 <body>
 
   <nav class="sazs-header">
