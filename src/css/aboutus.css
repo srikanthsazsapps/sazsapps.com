@@ -157,19 +157,7 @@ h1 {
     border-radius: 8px;
 
     }}
-  footer {
-    margin-top: 20px;
-    text-align: center;
-  }
   
-  footer p {
-    font-size: 1.3srem;
-    color: #555;
-  }
-  
-  footer strong {
-    color: #007bff;
-  }
   
 
 
@@ -505,9 +493,6 @@ h1 {
 }
 
 @media (max-width: 768px) {
-    .footer-container {
-        padding: 12px 15px;
-    }
 
     .heading {
         font-size: 28px;

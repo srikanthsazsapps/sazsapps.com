@@ -103,7 +103,7 @@ p {
 
 .hero-text-highlight {
     color: #3E89EC;
-    text-shadow: 0 4px 12px rgba(62,137,236,0.6);
+    /* text-shadow: 0 4px 12px rgba(62,137,236,0.6); */
     position: relative;
     display: inline-block;
 }

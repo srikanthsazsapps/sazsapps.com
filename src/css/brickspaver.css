@@ -330,7 +330,7 @@ p {
 
 .hero-text-highlight {
     color: #3E89EC;
-    text-shadow: 0 3px 6px rgba(62,137,236,0.5);
+    /* text-shadow: 0 3px 6px rgba(62,137,236,0.5); */
 }
 
 .hero-subheadline {
@@ -374,7 +374,7 @@ p {
 }
 
 .hero-highlight {
-    color: #3E89EC;
+    /* color: #3E89EC; */
     font-weight: 600;
     background: rgba(62,137,236,0.18);
     padding: 2px 6px;

@@ -22,7 +22,7 @@ body {
     max-width: 1200px;
     width: 95%;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 100px 0 60px 0;
     gap: 60px;
     min-height: 100vh;
 }
@@ -397,7 +397,7 @@ h1 {
 
     .hero {
         flex-direction: column;
-        padding: 36px 20px 48px;
+        padding: 79px 20px 48px;
         gap: 0;
         min-height: unset;
         width: 100%;

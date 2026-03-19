@@ -132,6 +132,8 @@ a {
 .sazs-submenu.active {
     max-height: 1000px;
     opacity: 1;
+        padding: 2rem;
+
     visibility: visible;
     transform: translateY(0);
     transition: max-height .6s cubic-bezier(.4, 0, .2, 1), opacity .5s cubic-bezier(.4, 0, .2, 1), padding .5s cubic-bezier(.4, 0, .2, 1), visibility 0s linear 0s, transform .5s cubic-bezier(.4, 0, .2, 1)
@@ -150,9 +152,9 @@ a {
 }
 
 /* =====================
-   PRODUCT CARDS — base state (hidden, shifted down)
+   PRODUCT cardsS — base state (hidden, shifted down)
    ===================== */
-.sazs-product-card {
+.sazs-product-cards {
     background: 0 0;
     border: none;
     border-radius: 12px;
@@ -166,39 +168,39 @@ a {
 }
 
 /* =====================
-   PRODUCT CARDS — animate in (staggered like feature cards)
+   PRODUCT cardsS — animate in (staggered like feature cardss)
    ===================== */
-.sazs-submenu.active .sazs-product-card {
+.sazs-submenu.active .sazs-product-cards {
     opacity: 1;
     transform: translateY(0) scale(1)
 }
 
-.sazs-submenu.active .sazs-submenu-col:nth-child(1) .sazs-product-card {
+.sazs-submenu.active .sazs-submenu-col:nth-child(1) .sazs-product-cards {
     transition-delay: .08s
 }
 
-.sazs-submenu.active .sazs-submenu-col:nth-child(2) .sazs-product-card {
+.sazs-submenu.active .sazs-submenu-col:nth-child(2) .sazs-product-cards {
     transition-delay: .14s
 }
 
-.sazs-submenu.active .sazs-submenu-col:nth-child(3) .sazs-product-card {
+.sazs-submenu.active .sazs-submenu-col:nth-child(3) .sazs-product-cards {
     transition-delay: .20s
 }
 
-.sazs-submenu.active .sazs-submenu-col:nth-child(4) .sazs-product-card {
+.sazs-submenu.active .sazs-submenu-col:nth-child(4) .sazs-product-cards {
     transition-delay: .26s
 }
 
 /* =====================
-   PRODUCT CARDS — hover
+   PRODUCT cardsS — hover
    ===================== */
-.sazs-product-card:hover {
+.sazs-product-cards:hover {
     transform: translateY(-6px) scale(1.02);
     opacity: 1;
     transition: all .3s cubic-bezier(.4, 0, .2, 1)
 }
 
-.sazs-card-img-wrapper {
+.sazs-cards-img-wrapper {
     width: 100%;
     height: 120px;
     background: #000;
@@ -208,11 +210,11 @@ a {
     transition: transform .4s cubic-bezier(.4, 0, .2, 1)
 }
 
-.sazs-product-card:hover .sazs-card-img-wrapper {
+.sazs-product-cards:hover .sazs-cards-img-wrapper {
     transform: scale(1.05)
 }
 
-.sazs-card-img-wrapper img {
+.sazs-cards-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -220,11 +222,11 @@ a {
     transition: transform .4s cubic-bezier(.4, 0, .2, 1)
 }
 
-.sazs-product-card:hover .sazs-card-img-wrapper img {
+.sazs-product-cards:hover .sazs-cards-img-wrapper img {
     transform: scale(1.1)
 }
 
-.sazs-card-heading {
+.sazs-cards-heading {
     color: #000;
     font-size: .95rem;
     font-weight: 600;
@@ -236,7 +238,7 @@ a {
     transition: color .3s cubic-bezier(.4, 0, .2, 1)
 }
 
-.sazs-card-text {
+.sazs-cards-text {
     color: rgba(0, 0, 0, .5);
     font-size: .85rem;
     line-height: 1.5;
@@ -541,7 +543,7 @@ a {
     gap: 1rem
 }
 
-.media-event-card {
+.media-event-cards {
     background: #fff;
     border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 16px;
@@ -554,18 +556,18 @@ a {
     transition: opacity .5s cubic-bezier(.4, 0, .2, 1), transform .5s cubic-bezier(.4, 0, .2, 1)
 }
 
-.sazs-submenu.active .media-event-card {
+.sazs-submenu.active .media-event-cards {
     opacity: 1;
     transform: translateY(0) scale(1)
 }
 
-.sazs-submenu.active .media-events-grid .media-event-card:nth-child(1) { transition-delay: .15s }
-.sazs-submenu.active .media-events-grid .media-event-card:nth-child(2) { transition-delay: .18s }
-.sazs-submenu.active .media-events-grid .media-event-card:nth-child(3) { transition-delay: .21s }
-.sazs-submenu.active .media-events-grid .media-event-card:nth-child(4) { transition-delay: .24s }
-.sazs-submenu.active .media-events-grid .media-event-card:nth-child(5) { transition-delay: .27s }
+.sazs-submenu.active .media-events-grid .media-event-cards:nth-child(1) { transition-delay: .15s }
+.sazs-submenu.active .media-events-grid .media-event-cards:nth-child(2) { transition-delay: .18s }
+.sazs-submenu.active .media-events-grid .media-event-cards:nth-child(3) { transition-delay: .21s }
+.sazs-submenu.active .media-events-grid .media-event-cards:nth-child(4) { transition-delay: .24s }
+.sazs-submenu.active .media-events-grid .media-event-cards:nth-child(5) { transition-delay: .27s }
 
-.media-event-card:hover {
+.media-event-cards:hover {
     transform: translateY(-8px) scale(1.02);
     border-color: rgba(0, 0, 0, .2);
     background: #fafafa;
@@ -573,7 +575,7 @@ a {
     transition: all .3s cubic-bezier(.4, 0, .2, 1)
 }
 
-.media-card-image {
+.media-cards-image {
     height: 160px;
     background: linear-gradient(135deg, #f5f5f5, #e5e5e5);
     border-radius: 12px;
@@ -583,9 +585,9 @@ a {
     transition: transform .4s cubic-bezier(.4, 0, .2, 1)
 }
 
-.media-event-card:hover .media-card-image { transform: scale(1.05) }
+.media-event-cards:hover .media-cards-image { transform: scale(1.05) }
 
-.media-card-image img {
+.media-cards-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -593,11 +595,11 @@ a {
     transition: transform .4s cubic-bezier(.4, 0, .2, 1)
 }
 
-.media-event-card:hover .media-card-image img { transform: scale(1.1) }
+.media-event-cards:hover .media-cards-image img { transform: scale(1.1) }
 
-.media-card-content { padding: 0 1.5rem 0.5rem }
+.media-cards-content { padding: 0 1.5rem 0.5rem }
 
-.media-card-title {
+.media-cards-title {
     color: #000;
     font-size: 1rem;
     font-weight: 600;
@@ -606,20 +608,20 @@ a {
     transition: color .3s cubic-bezier(.4, 0, .2, 1)
 }
 
-.media-event-card:hover .media-card-title { color: #4285f4 }
+.media-event-cards:hover .media-cards-title { color: #4285f4 }
 
 .blogs-dropdown-container {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.blogs-cards-grid {
+.blogs-cardss-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem
 }
 
-.blog-card {
+.blog-cards {
     background: 0 0;
     border-radius: 20px;
     overflow: hidden;
@@ -630,23 +632,23 @@ a {
     transition: opacity .5s cubic-bezier(.4, 0, .2, 1), transform .5s cubic-bezier(.4, 0, .2, 1)
 }
 
-.sazs-submenu.active .blog-card {
+.sazs-submenu.active .blog-cards {
     opacity: 1;
     transform: translateY(0) scale(1)
 }
 
-.sazs-submenu.active .blogs-cards-grid .blog-card:nth-child(1) { transition-delay: .1s }
-.sazs-submenu.active .blogs-cards-grid .blog-card:nth-child(2) { transition-delay: .15s }
-.sazs-submenu.active .blogs-cards-grid .blog-card:nth-child(3) { transition-delay: .2s }
-.sazs-submenu.active .blogs-cards-grid .blog-card:nth-child(4) { transition-delay: .25s }
-.sazs-submenu.active .blogs-cards-grid .blog-card:nth-child(5) { transition-delay: .3s }
+.sazs-submenu.active .blogs-cardss-grid .blog-cards:nth-child(1) { transition-delay: .1s }
+.sazs-submenu.active .blogs-cardss-grid .blog-cards:nth-child(2) { transition-delay: .15s }
+.sazs-submenu.active .blogs-cardss-grid .blog-cards:nth-child(3) { transition-delay: .2s }
+.sazs-submenu.active .blogs-cardss-grid .blog-cards:nth-child(4) { transition-delay: .25s }
+.sazs-submenu.active .blogs-cardss-grid .blog-cards:nth-child(5) { transition-delay: .3s }
 
-.blog-card:hover {
+.blog-cards:hover {
     transform: translateY(-8px) scale(1.02);
     transition: all .3s cubic-bezier(.4, 0, .2, 1)
 }
 
-.blog-card-image {
+.blog-cards-image {
     width: 100%;
     height: 220px;
     border-radius: 20px;
@@ -655,9 +657,9 @@ a {
     transition: transform .4s cubic-bezier(.4, 0, .2, 1)
 }
 
-.blog-card:hover .blog-card-image { transform: scale(1.02) }
+.blog-cards:hover .blog-cards-image { transform: scale(1.02) }
 
-.blog-card-image img {
+.blog-cards-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -665,9 +667,9 @@ a {
     transition: transform .4s cubic-bezier(.4, 0, .2, 1)
 }
 
-.blog-card:hover .blog-card-image img { transform: scale(1.05) }
+.blog-cards:hover .blog-cards-image img { transform: scale(1.05) }
 
-.blog-card-overlay {
+.blog-cards-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -688,7 +690,7 @@ a {
     transition: transform .3s cubic-bezier(.4, 0, .2, 1)
 }
 
-.blog-card:hover .blog-overlay-title { transform: translateY(-4px) }
+.blog-cards:hover .blog-overlay-title { transform: translateY(-4px) }
 
 .blog-overlay-explore {
     color: #fff;
@@ -700,7 +702,7 @@ a {
     transition: all .3s cubic-bezier(.4, 0, .2, 1)
 }
 
-.blog-card:hover .blog-overlay-explore { gap: .75rem }
+.blog-cards:hover .blog-overlay-explore { gap: .75rem }
 
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px) }
@@ -728,7 +730,7 @@ a {
 }
 
 /* =====================
-   FEATURES GRID — 5×2 product-card style
+   FEATURES GRID — 5×2 product-cards style
    ===================== */
 .bento-container {
     display: grid;
@@ -738,7 +740,7 @@ a {
     margin: 0 auto
 }
 
-.card {
+.cards {
     background: none !important;
     border: none !important;
     border-radius: 0 !important;
@@ -754,23 +756,23 @@ a {
     transition: opacity .5s cubic-bezier(.4,0,.2,1), transform .5s cubic-bezier(.4,0,.2,1) !important;
 }
 
-.sazs-submenu.active .card { opacity: 1; transform: translateY(0) scale(1) }
-.sazs-submenu.active .card:nth-child(1)  { transition-delay: .08s }
-.sazs-submenu.active .card:nth-child(2)  { transition-delay: .11s }
-.sazs-submenu.active .card:nth-child(3)  { transition-delay: .14s }
-.sazs-submenu.active .card:nth-child(4)  { transition-delay: .17s }
-.sazs-submenu.active .card:nth-child(5)  { transition-delay: .20s }
-.sazs-submenu.active .card:nth-child(6)  { transition-delay: .23s }
-.sazs-submenu.active .card:nth-child(7)  { transition-delay: .26s }
-.sazs-submenu.active .card:nth-child(8)  { transition-delay: .29s }
-.sazs-submenu.active .card:nth-child(9)  { transition-delay: .32s }
-.sazs-submenu.active .card:nth-child(10) { transition-delay: .35s }
+.sazs-submenu.active .cards { opacity: 1; transform: translateY(0) scale(1) }
+.sazs-submenu.active .cards:nth-child(1)  { transition-delay: .08s }
+.sazs-submenu.active .cards:nth-child(2)  { transition-delay: .11s }
+.sazs-submenu.active .cards:nth-child(3)  { transition-delay: .14s }
+.sazs-submenu.active .cards:nth-child(4)  { transition-delay: .17s }
+.sazs-submenu.active .cards:nth-child(5)  { transition-delay: .20s }
+.sazs-submenu.active .cards:nth-child(6)  { transition-delay: .23s }
+.sazs-submenu.active .cards:nth-child(7)  { transition-delay: .26s }
+.sazs-submenu.active .cards:nth-child(8)  { transition-delay: .29s }
+.sazs-submenu.active .cards:nth-child(9)  { transition-delay: .32s }
+.sazs-submenu.active .cards:nth-child(10) { transition-delay: .35s }
 
-.card:hover { transform: translateY(-4px) !important; opacity: 1 !important }
+.cards:hover { transform: translateY(-4px) !important; opacity: 1 !important }
 
-.card::before { display: none }
+.cards::before { display: none }
 
-.card-img-wrap {
+.cards-img-wrap {
     width: 100%;
     height: 130px;
     border-radius: 12px;
@@ -779,9 +781,9 @@ a {
     transition: transform .4s cubic-bezier(.4,0,.2,1)
 }
 
-.card:hover .card-img-wrap { transform: scale(1.03) }
+.cards:hover .cards-img-wrap { transform: scale(1.03) }
 
-.card-img-wrap img {
+.cards-img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -789,9 +791,9 @@ a {
     transition: transform .4s cubic-bezier(.4,0,.2,1)
 }
 
-.card:hover .card-img-wrap img { transform: scale(1.07) }
+.cards:hover .cards-img-wrap img { transform: scale(1.07) }
 
-.card h2 {
+.cards h2 {
     font-size: .95rem !important;
     font-weight: 600 !important;
     color: #000 !important;
@@ -800,7 +802,7 @@ a {
     animation: none !important;
 }
 
-.card p {
+.cards p {
     font-size: .82rem !important;
     font-weight: 400 !important;
     color: rgba(0,0,0,.5) !important;
@@ -810,7 +812,7 @@ a {
     animation: none !important;
 }
 
-.card:hover h2 { color: #000 !important }
+.cards:hover h2 { color: #000 !important }
 
 .anpr, .einvoice, .weighbridge, .boom, .biometrics,
 .smarttech, .subcontract, .fleet, .financial, .schwing {
@@ -818,12 +820,12 @@ a {
     border: none !important;
 }
 
-.card-bg-image { display: none }
-.card-content  { display: contents }
+.cards-bg-image { display: none }
+.cards-content  { display: contents }
 .shine-effect, .feature-container, .feature-pill,
 .status-panel, .info-box, .status-badge { display: none !important }
 
-.card .card-img-wrap {
+.cards .cards-img-wrap {
     display: block !important;
     width: 100% !important;
     height: 130px !important;
@@ -832,7 +834,7 @@ a {
     margin-bottom: 1rem !important;
 }
 
-.card .card-img-wrap img {
+.cards .cards-img-wrap img {
     display: block !important;
     width: 100% !important;
     height: 100% !important;
@@ -854,8 +856,8 @@ a {
     .sazs-submenu-grid { gap: 1.5rem }
     .media-events-grid { grid-template-columns: repeat(3, 1fr) }
     .media-events-title { font-size: 1.75rem }
-    .blogs-cards-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem }
-    .blog-card-image { height: 300px }
+    .blogs-cardss-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem }
+    .blog-cards-image { height: 300px }
 }
 
 @media (max-width:1100px) {
@@ -874,16 +876,16 @@ a {
     .sazs-submenu-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem }
     .sazs-submenu { padding: 0 1rem }
     .sazs-submenu.active { padding: 1.5rem 1rem }
-    .sazs-card-img-wrapper { height: 180px }
-    .sazs-card-heading { font-size: .9rem }
-    .sazs-card-text { font-size: .8rem }
+    .sazs-cards-img-wrapper { height: 180px }
+    .sazs-cards-heading { font-size: .9rem }
+    .sazs-cards-text { font-size: .8rem }
     .media-events-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem }
-    .media-card-image { height: 130px; margin: .75rem }
-    .media-card-content { padding: 0 1rem 1rem }
-    .media-card-title { font-size: .9rem }
+    .media-cards-image { height: 130px; margin: .75rem }
+    .media-cards-content { padding: 0 1rem 1rem }
+    .media-cards-title { font-size: .9rem }
     .media-events-title { font-size: 1.5rem }
-    .blogs-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem }
-    .blog-card-image { height: 280px }
+    .blogs-cardss-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem }
+    .blog-cards-image { height: 280px }
     .blog-overlay-title { font-size: .95rem }
     .blog-overlay-explore { font-size: .9rem }
 }
@@ -893,15 +895,15 @@ a {
     .sazs-brand-image { width: 100px; height: 52px }
     .sazs-submenu-grid { grid-template-columns: 1fr; gap: 1.5rem }
     .sazs-submenu.active { max-height: 2000px; padding: 1rem }
-    .sazs-card-img-wrapper { height: 160px }
-    .sazs-card-heading { font-size: .85rem; padding: 0 .5rem }
-    .sazs-card-text { font-size: .75rem; padding: 0 .5rem .5rem }
+    .sazs-cards-img-wrapper { height: 160px }
+    .sazs-cards-heading { font-size: .85rem; padding: 0 .5rem }
+    .sazs-cards-text { font-size: .75rem; padding: 0 .5rem .5rem }
     .media-events-grid { grid-template-columns: 1fr; gap: 1rem }
-    .media-card-image { height: 140px }
+    .media-cards-image { height: 140px }
     .media-events-header { margin-bottom: 2rem }
     .media-events-title { font-size: 1.25rem }
-    .blogs-cards-grid { grid-template-columns: 1fr; gap: 1.5rem }
-    .blog-card-image { height: 300px }
+    .blogs-cardss-grid { grid-template-columns: 1fr; gap: 1.5rem }
+    .blog-cards-image { height: 300px }
     .blog-overlay-title { font-size: 1.1rem }
     .blog-overlay-explore { font-size: 1rem }
 }
@@ -919,20 +921,20 @@ a {
     .sazs-brand-image { width: 120px; height: 50px }
     .sazs-hamburger { padding: .25rem }
     .sazs-submenu.active { padding: .75rem }
-    .sazs-card-img-wrapper { height: 140px; border-radius: 8px }
-    .sazs-product-card { border-radius: 8px }
-    .sazs-card-heading { font-size: .8rem }
-    .sazs-card-text { font-size: .7rem; line-height: 1.4 }
-    .media-card-image { height: 120px; margin: .5rem; border-radius: 8px }
-    .media-card-content { padding: 0 .75rem .75rem }
-    .media-card-title { font-size: .85rem }
+    .sazs-cards-img-wrapper { height: 140px; border-radius: 8px }
+    .sazs-product-cards { border-radius: 8px }
+    .sazs-cards-heading { font-size: .8rem }
+    .sazs-cards-text { font-size: .7rem; line-height: 1.4 }
+    .media-cards-image { height: 120px; margin: .5rem; border-radius: 8px }
+    .media-cards-content { padding: 0 .75rem .75rem }
+    .media-cards-title { font-size: .85rem }
     .media-events-title { font-size: 1.1rem }
-    .blog-card-image { height: 250px; border-radius: 16px }
-    .blog-card { border-radius: 16px }
-    .blog-card-overlay { padding: 1.25rem 1rem 1rem }
+    .blog-cards-image { height: 250px; border-radius: 16px }
+    .blog-cards { border-radius: 16px }
+    .blog-cards-overlay { padding: 1.25rem 1rem 1rem }
     .blog-overlay-title { font-size: .95rem }
     .blog-overlay-explore { font-size: .9rem }
-    .card-bg-image { height: 120px; margin-bottom: 10px }
+    .cards-bg-image { height: 120px; margin-bottom: 10px }
 }
 </style>
 
@@ -1192,39 +1194,39 @@ window.addEventListener('pagehide', () => {
                     <div class="product-grid-title">Our Products</div>
                     <div class="sazs-submenu-grid">
                         <div class="sazs-submenu-col">
-                            <a href="/products/crusher-management-software.html" class="sazs-product-card">
-                                <div class="sazs-card-img-wrapper">
+                            <a href="/products/crusher-management-software.html" class="sazs-product-cards">
+                                <div class="sazs-cards-img-wrapper">
                                     <img loading="lazy" src="/src/assets/contentImages/crusherdroneview.avif" alt="Stone Crusher Management Software"/>
                                 </div>
-                                <div class="sazs-card-heading">Stone Crusher Software for End-to-End Operations</div>
-                                <div class="sazs-card-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
+                                <div class="sazs-cards-heading">Stone Crusher Software for End-to-End Operations</div>
+                                <div class="sazs-cards-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
                             </a>
                         </div>
                         <div class="sazs-submenu-col">
-                            <a href="/products/Quarry-management-software.html" class="sazs-product-card">
-                                <div class="sazs-card-img-wrapper">
+                            <a href="/products/Quarry-management-software.html" class="sazs-product-cards">
+                                <div class="sazs-cards-img-wrapper">
                                     <img loading="lazy" src="/src/assets/contentImages/quarrydroneview.avif" alt="Brick Manufacturing ERP Software"/>
                                 </div>
-                                <div class="sazs-card-heading">End-to-End Management Software for Stone Quarries</div>
-                                <div class="sazs-card-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
+                                <div class="sazs-cards-heading">End-to-End Management Software for Stone Quarries</div>
+                                <div class="sazs-cards-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
                             </a>
                         </div>
                         <div class="sazs-submenu-col">
-                            <a href="/products/Rmc-billing-software.html" class="sazs-product-card">
-                                <div class="sazs-card-img-wrapper">
+                            <a href="/products/Rmc-billing-software.html" class="sazs-product-cards">
+                                <div class="sazs-cards-img-wrapper">
                                     <img loading="lazy" src="/src/assets/contentImages/RMCdroneview.avif" alt="Brick Manufacturing ERP Software"/>
                                 </div>
-                                <div class="sazs-card-heading">Next-Gen Billing Software for Ready Mix Concrete (RMC) Plants</div>
-                                <div class="sazs-card-text">The Future of Fast, Accurate & Automated RMC Billing</div>
+                                <div class="sazs-cards-heading">Next-Gen Billing Software for Ready Mix Concrete (RMC) Plants</div>
+                                <div class="sazs-cards-text">The Future of Fast, Accurate & Automated RMC Billing</div>
                             </a>
                         </div>
                         <div class="sazs-submenu-col">
-                            <a href="/products/brickspaver-management-software.html" class="sazs-product-card">
-                                <div class="sazs-card-img-wrapper">
+                            <a href="/products/brickspaver-management-software.html" class="sazs-product-cards">
+                                <div class="sazs-cards-img-wrapper">
                                     <img loading="lazy" src="/src/assets/contentImages/bricksdrone.avif" alt="Brick Manufacturing ERP Software"/>
                                 </div>
-                                <div class="sazs-card-heading">Complete ERP Solution for Brick & Paver Manufacturing Plants</div>
-                                <div class="sazs-card-text">From Raw Materials to Finished Products—Manage Every Stage of Your Production</div>
+                                <div class="sazs-cards-heading">Complete ERP Solution for Brick & Paver Manufacturing Plants</div>
+                                <div class="sazs-cards-text">From Raw Materials to Finished Products—Manage Every Stage of Your Production</div>
                             </a>
                         </div>
                     </div>
@@ -1232,87 +1234,87 @@ window.addEventListener('pagehide', () => {
             </div>
         </div>
 
-        <!-- FEATURES DROPDOWN — 5×2 BENTO GRID (10 cards) -->
+        <!-- FEATURES DROPDOWN — 5×2 BENTO GRID (10 cardss) -->
         <div class="sazs-submenu" id="Features">
             <div class="media-events-header">
                 <h2 class="media-events-title">Features <span class="media-title-separator">—</span> <span class="media-title-subtitle">tailored to every Crushers & Quarries, RMC, Brick & Paver</span></h2>
             </div>
             <div class="bento-container">
 
-                <a href="/features/anpr-camera-integration.html" class="card anpr">
-                    <div class="card-img-wrap">
+                <a href="/features/anpr-camera-integration.html" class="cards anpr">
+                    <div class="cards-img-wrap">
                         <img loading="lazy" src="/src/assets/contentImages/ANPR.avif" alt="ANPR Camera Integration">
                     </div>
                     <h2>ANPR Camera Integration</h2>
                     <p>Automatic number plate recognition for vehicle entry & exit logging</p>
                 </a>
 
-                <a href="/features/e-invoice-gst-billing.html" class="card einvoice">
-                    <div class="card-img-wrap">
+                <a href="/features/e-invoice-gst-billing.html" class="cards einvoice">
+                    <div class="cards-img-wrap">
                         <img loading="lazy" src="/src/assets/contentImages/e-invoice.avif" alt="E-Invoice GST Billing">
                     </div>
                     <h2>E-Invoice & GST Billing</h2>
                     <p>Fully GST compliant automated invoicing for Crushers, RMC & Brick plants</p>
                 </a>
 
-                <a href="/features/weighbridge-automation-software.html" class="card weighbridge">
-                    <div class="card-img-wrap">
+                <a href="/features/weighbridge-automation-software.html" class="cards weighbridge">
+                    <div class="cards-img-wrap">
                         <img loading="lazy" src="/src/assets/contentImages/Weighbridge.avif" alt="Weighbridge Automation">
                     </div>
                     <h2>Weighbridge Automation</h2>
                     <p>Real-time weight capture with camera integration & automated slip printing</p>
                 </a>
 
-                <a href="/features/boom-barrier-integration.html" class="card boom">
-                    <div class="card-img-wrap">
+                <a href="/features/boom-barrier-integration.html" class="cards boom">
+                    <div class="cards-img-wrap">
                         <img loading="lazy" src="/src/assets/contentImages/BoomBarrier.avif" alt="Boom Barrier Integration">
                     </div>
                     <h2>Boom Barrier Integration</h2>
                     <p>Automated gate control linked to weighbridge for secure vehicle movement</p>
                 </a>
 
-                <a href="/features/biometric-access-control.html" class="card biometrics">
-                    <div class="card-img-wrap">
+                <a href="/features/biometric-access-control.html" class="cards biometrics">
+                    <div class="cards-img-wrap">
                         <img loading="lazy" src="/src/assets/contentImages/BioMetric.avif" alt="Biometric Access Control">
                     </div>
                     <h2>Biometric Access Control</h2>
                     <p>Fingerprint, face recognition & RFID for secure site access management</p>
                 </a>
 
-                <a href="/features/subcontract-billing.html" class="card subcontract">
-                    <div class="card-img-wrap">
+                <a href="/features/subcontract-billing.html" class="cards subcontract">
+                    <div class="cards-img-wrap">
                         <img loading="lazy" src="/src/assets/contentImages/Subcontract.avif" alt="Subcontract Billing">
                     </div>
                     <h2>Subcontract Billing</h2>
                     <p>Contractor-wise rate management, work orders & automated billing settlement</p>
                 </a>
 
-                <a href="/features/fleet-management-software.html" class="card fleet">
-                    <div class="card-img-wrap">
+                <a href="/features/fleet-management-software.html" class="cards fleet">
+                    <div class="cards-img-wrap">
                         <img loading="lazy" src="/src/assets/contentImages/Fleet.avif" alt="Fleet Management">
                     </div>
                     <h2>Fleet Management</h2>
                     <p>Vehicle tracking, trip management & fuel monitoring for quarry fleets</p>
                 </a>
 
-                <a href="/features/financial-management.html" class="card financial">
-                    <div class="card-img-wrap">
+                <a href="/features/financial-management.html" class="cards financial">
+                    <div class="cards-img-wrap">
                         <img loading="lazy" src="/src/assets/contentImages/Financial.avif" alt="Financial Management">
                     </div>
                     <h2>Financial Management</h2>
                     <p>P&amp;L reports, ledger, cost analysis & real-time financial dashboards</p>
                 </a>
 
-                <a href="/features/schwing-stetter-integration.html" class="card schwing">
-                    <div class="card-img-wrap">
+                <a href="/features/schwing-stetter-integration.html" class="cards schwing">
+                    <div class="cards-img-wrap">
                         <img loading="lazy" src="/src/assets/contentImages/SchwingStetter.avif" alt="Schwing Stetter Integration">
                     </div>
                     <h2>Schwing Stetter Integration</h2>
                     <p>Direct RMC plant integration with Schwing Stetter batching controllers</p>
                 </a>
 
-                <a href="/features/smart-tech.html" class="card smarttech">
-                    <div class="card-img-wrap">
+                <a href="#" class="cards smarttech">
+                    <div class="cards-img-wrap">
                         <img loading="lazy" src="/src/assets/contentImages/SmartTech.avif" alt="Smart Tech Integration">
                     </div>
                     <h2>Smart Tech Integration</h2>
@@ -1334,52 +1336,52 @@ window.addEventListener('pagehide', () => {
                     </div>
                 </div>
                 <div class="media-events-grid">
-                    <a href="/media-events/Jharkhand_2026.html" class="media-event-card">
-                        <div class="media-card-image">
+                    <a href="/media-events/Jharkhand_2026.html" class="media-event-cards">
+                        <div class="media-cards-image">
                             <img loading="lazy" src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026"/>
                         </div>
-                        <div class="media-card-content">
-                            <div class="media-card-title">Jharkhand Mining & Construction Show 2026</div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">Jharkhand Mining & Construction Show 2026</div>
                         </div>
                     </a>
-                    <a href="/media-events/EXCON_2025.html" class="media-event-card">
-                        <div class="media-card-image">
+                    <a href="/media-events/EXCON_2025.html" class="media-event-cards">
+                        <div class="media-cards-image">
                             <img loading="lazy" src="/src/assets/images/excon25.avif" alt="EXCON_2025"/>
                         </div>
-                        <div class="media-card-content">
-                            <div class="media-card-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
                         </div>
                     </a>
-                    <a href="/media-events/IEMS_2024.html" class="media-event-card">
-                        <div class="media-card-image">
+                    <a href="/media-events/IEMS_2024.html" class="media-event-cards">
+                        <div class="media-cards-image">
                             <img loading="lazy" src="/src/assets/images/iems24.avif" alt="IEMS_2024"/>
                         </div>
-                        <div class="media-card-content">
-                            <div class="media-card-title">IEMS – International Mining Expo & Conclave 2024</div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">IEMS – International Mining Expo & Conclave 2024</div>
                         </div>
                     </a>
-                    <a href="/media-events/TNMSA_2024.html" class="media-event-card">
-                        <div class="media-card-image">
+                    <a href="/media-events/TNMSA_2024.html" class="media-event-cards">
+                        <div class="media-cards-image">
                             <img loading="lazy" src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024"/>
                         </div>
-                        <div class="media-card-content">
-                            <div class="media-card-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</div>
                         </div>
                     </a>
-                    <a href="/media-events/EXCON_2023.html" class="media-event-card">
-                        <div class="media-card-image">
+                    <a href="/media-events/EXCON_2023.html" class="media-event-cards">
+                        <div class="media-cards-image">
                             <img loading="lazy" src="/src/assets/images/excon23.avif" alt="EXCON_2023"/>
                         </div>
-                        <div class="media-card-content">
-                            <div class="media-card-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
                         </div>
                     </a>
-                    <a href="/media-events/CODDISSIA.html" class="media-event-card">
-                        <div class="media-card-image">
+                    <a href="/media-events/CODDISSIA.html" class="media-event-cards">
+                        <div class="media-cards-image">
                             <img loading="lazy" src="/src/assets/images/codisia22.avif" alt="CODDISSIA"/>
                         </div>
-                        <div class="media-card-content">
-                            <div class="media-card-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</div>
                         </div>
                     </a>
                 </div>
@@ -1397,51 +1399,51 @@ window.addEventListener('pagehide', () => {
                         <span class="ai-tracker-text">Industry Proven Results</span>
                     </div>
                 </div>
-                <div class="blogs-cards-grid">
-                    <a href="/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-card">
-                        <div class="blog-card-image">
+                <div class="blogs-cardss-grid">
+                    <a href="/case-studies/Optimizing_Quarry_Profitability_Theft_Prevention.html" class="blog-cards">
+                        <div class="blog-cards-image">
                             <img loading="lazy" src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability"/>
-                            <div class="blog-card-overlay">
+                            <div class="blog-cards-overlay">
                                 <div class="blog-overlay-title">Optimizing Quarry Profitability & Theft Prevention</div>
                                 <div class="blog-overlay-explore">Explore →</div>
                                 <div class="pubdate"><span>Published: January 2024</span></div>
                             </div>
                         </div>
                     </a>
-                    <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-card">
-                        <div class="blog-card-image">
+                    <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-cards">
+                        <div class="blog-cards-image">
                             <img loading="lazy" src="/src/assets/contentImages/tran2.webp" alt="Customer Experience"/>
-                            <div class="blog-card-overlay">
+                            <div class="blog-cards-overlay">
                                 <div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
                                 <div class="blog-overlay-explore">Explore →</div>
                                 <div class="pubdate"><span>Published: March 2025</span></div>
                             </div>
                         </div>
                     </a>
-                    <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-card">
-                        <div class="blog-card-image">
+                    <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-cards">
+                        <div class="blog-cards-image">
                             <img loading="lazy" src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing"/>
-                            <div class="blog-card-overlay">
+                            <div class="blog-cards-overlay">
                                 <div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
                                 <div class="blog-overlay-explore">Explore →</div>
                                 <div class="pubdate"><span>Published: May 2025</span></div>
                             </div>
                         </div>
                     </a>
-                    <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-card">
-                        <div class="blog-card-image">
+                    <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-cards">
+                        <div class="blog-cards-image">
                             <img loading="lazy" src="/src/assets/contentImages/real4.webp" alt="Vehicle Management"/>
-                            <div class="blog-card-overlay">
+                            <div class="blog-cards-overlay">
                                 <div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
                                 <div class="blog-overlay-explore">Explore →</div>
                                 <div class="pubdate"><span>Published: August 2025</span></div>
                             </div>
                         </div>
                     </a>
-                    <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-card">
-                        <div class="blog-card-image">
+                    <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-cards">
+                        <div class="blog-cards-image">
                             <img loading="lazy" src="/src/assets/contentImages/comp5.webp" alt="Financial Control"/>
-                            <div class="blog-card-overlay">
+                            <div class="blog-cards-overlay">
                                 <div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
                                 <div class="blog-overlay-explore">Explore →</div>
                                 <div class="pubdate"><span>Published: December 2025</span></div>
