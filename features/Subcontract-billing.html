@@ -360,7 +360,8 @@
     }
     </script>
 
-</head><style>
+</head>
+<style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -382,11 +383,11 @@ html, body {
 }
 
 /* ── Background SVG arcs ── */
-.bg-arcs {
+/* .bg-arcs {
   position: fixed; inset: 0;
   pointer-events: none; z-index: 0;
   width: 100%; height: 100%;
-}
+} */
 
 /* ── Hero ── */
 .hero {
@@ -988,11 +989,11 @@ h1 {
 </div>
 
 
-<svg class="bg-arcs" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<!-- <svg class="bg-arcs" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
   <path d="M-180 780 Q 80 480 340 760 Q 480 920 160 980" stroke="rgba(255,255,255,0.035)" stroke-width="90" fill="none"/>
   <path d="M1620 740 Q 1360 440 1100 720 Q 960 880 1280 960" stroke="rgba(255,255,255,0.035)" stroke-width="90" fill="none"/>
   <ellipse cx="720" cy="380" rx="420" ry="180" fill="rgba(40,20,60,0.18)"/>
-</svg>
+</svg> -->
 
 <section class="hero">
   <p class="label">Construction ERP</p>
@@ -1625,7 +1626,21 @@ h1 {
     <div class="proc-right-col">
       <div class="proc-visual-card">
         <div class="proc-visual-img">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Construction site work order management"/>
+          <!-- <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Construction site work order management"/> -->
+                                       <picture>
+                            <!-- Mobile -->
+                            <source media="(max-width: 600px)"
+                                srcset="../src/assets/images/sub/mobile/subcontmob1.avif">
+
+                            <!-- Tablet -->
+                            <source media="(max-width: 1024px)"
+                                srcset="../src/assets/images/sub/tablet/subconttab1.avif">
+
+                            <!-- Desktop (default) -->
+                            <img src="../src/assets/images/sub/desktop/subcontdes1.avif"
+                                alt="Construction site work order management" loading="lazy">
+                        </picture>
+
         </div>
         <div class="proc-visual-caption">Billing &amp;<br>Settlement</div>
       </div>
@@ -1800,7 +1815,7 @@ h1 {
   display: flex; align-items: center; justify-content: center;
   text-align: center; padding: 100px 24px 120px;
 }
-.cta-hero-section::before {
+/* .cta-hero-section::before {
   content: ''; position: absolute;
   width: 900px; height: 600px; border-radius: 50%;
   border: 120px solid rgba(255,255,255,0.05);
@@ -1811,7 +1826,7 @@ h1 {
   width: 780px; height: 580px; border-radius: 50%;
   border: 120px solid rgba(255,255,255,0.05);
   bottom: -300px; right: -240px; pointer-events: none;
-}
+} */
 .cta-hero-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
 .cta-hero-label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #2563eb; text-transform: uppercase; margin-bottom: 22px; }
 .cta-hero-title {

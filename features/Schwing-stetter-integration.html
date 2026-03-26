@@ -1231,7 +1231,21 @@ window.addEventListener("load", () => {
     <!-- RIGHT -->
     <div class="right">
       <div class="video">
-        <img src="https://images.unsplash.com/photo-1581092919534-ec8a0c2c1d44?auto=format&fit=crop&w=800&q=80">
+        <!-- <img src="https://images.unsplash.com/photo-1581092919534-ec8a0c2c1d44?auto=format&fit=crop&w=800&q=80"> -->
+                                               <picture>
+                            <!-- Mobile -->
+                            <source media="(max-width: 600px)"
+                                srcset="../src/assets/images/schwing/mobile/schwingmob1.avif">
+
+                            <!-- Tablet -->
+                            <source media="(max-width: 1024px)"
+                                srcset="../src/assets/images/schwing/tablet/schwingtab1.avif">
+
+                            <!-- Desktop (default) -->
+                            <img src="../src/assets/images/schwing/desktop/schwingdes1.avif"
+                                alt="Construction site work order management" loading="lazy">
+                        </picture>
+
       </div>
     </div>
 
@@ -1731,7 +1745,22 @@ window.addEventListener("load", () => {
 
     <!-- RIGHT -->
     <div class="right-img">
-      <img src="https://i.imgur.com/8Km9tLL.png" alt="image">
+      <!-- <img src="https://i.imgur.com/8Km9tLL.png" alt="image"> -->
+                                                      <picture>
+                            <!-- Mobile -->
+                            <source media="(max-width: 600px)"
+                                srcset="../src/assets/images/schwing/mobile/schwingmob2.avif">
+
+                            <!-- Tablet -->
+                            <source media="(max-width: 1024px)"
+                                srcset="../src/assets/images/schwing/tablet/schwingtab2.avif">
+
+                            <!-- Desktop (default) -->
+                            <img src="../src/assets/images/schwing/desktop/schwingdes2.avif"
+                                alt="Construction site work order management" 
+                                loading="lazy">
+                        </picture>
+
     </div>
 
     <!-- GLOW -->
