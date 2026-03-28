@@ -969,7 +969,7 @@ h1 {
       Schwing Stetter
       RMC Plant Meets
       <span class="highlight">
-        Cloud ERP.
+        SAZS ERP.
         <svg viewBox="0 0 300 30" class="underline">
           <path d="M5 20 Q150 40 295 20"></path>
         </svg>
@@ -1485,7 +1485,7 @@ window.addEventListener("load", () => {
       </p>
     </div>
 
-    <a href="#" class="ca-primary-btn">Get Integrated Today →</a>
+    <a href="../Signup.html" class="ca-primary-btn">Get Integrated Today →</a>
 
   </div>
 
@@ -2059,7 +2059,7 @@ window.addEventListener("load", () => {
         By integrating your Schwing Stetter plant PLC with SAZS Cloud ERP, you get:
       </p>
 
-      <a href="#" class="demo-btn">Request Free Demo</a>
+      <a href="../Signup.html" class="demo-btn">Request Free Demo</a>
     </div>
 
     <!-- GRID -->
@@ -2175,6 +2175,8 @@ window.addEventListener("load", () => {
 
 /* PROFILE */
 .profile-card{
+  position:relative;
+  overflow:hidden;
   text-align:center;
 }
 
@@ -2200,6 +2202,69 @@ window.addEventListener("load", () => {
   font-size:14px;
   color:#aaa;
   margin-top:5px;
+}
+
+/* LINKEDIN OVERLAY */
+.li-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(145deg,#0a1628ee,#0d1f3cee);
+  border-radius:18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  opacity:0;
+  transition:opacity 0.3s ease;
+}
+
+.profile-card:hover .li-overlay{
+  opacity:1;
+}
+
+.linkedin-badge{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  font-size:11px;
+  color:#0a66c2;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  margin-bottom:6px;
+}
+
+.li-name{
+  font-weight:700;
+  font-size:15px;
+  color:#fff;
+}
+
+.li-title{
+  font-size:12px;
+  color:#aaa;
+}
+
+.li-company{
+  font-size:12px;
+  color:#0a66c2;
+}
+
+.li-btn{
+  margin-top:8px;
+  padding:6px 16px;
+  background:#0a66c2;
+  color:#fff;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+  text-decoration:none;
+  transition:background 0.2s;
+}
+
+.li-btn:hover{
+  background:#378fe9;
 }
 
 /* TEXT */
@@ -2248,9 +2313,8 @@ window.addEventListener("load", () => {
       <h2 class="tech-title">
         Technology and Team Behind the Integration
       </h2>
-
       <p class="tech-sub">
-        Built on a robust, scalable technical framework.  
+        Built on a robust, scalable technical framework.
         This integration is designed by our CTO, Mr. Zeno Allwin, and implemented by the SAZS development team.
       </p>
     </div>
@@ -2266,8 +2330,18 @@ window.addEventListener("load", () => {
       <div class="tech-card profile-card">
         <div class="avatar">ZA</div>
         <div class="profile-name">Mr. Zeno Allwin</div>
-        <div class="profile-role">
-          CTO, SAZS Apps · Integration Architect
+        <div class="profile-role">CTO, SAZS Apps · Integration Architect</div>
+
+        <!-- HOVER OVERLAY -->
+        <div class="li-overlay">
+          <div class="linkedin-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn</span>
+          </div>
+          <div class="li-name">Zeno Allwin</div>
+          <div class="li-title">Chief Technology Officer</div>
+          <div class="li-company">SAZS Apps Pvt. Ltd.</div>
+          <a class="li-btn" href="https://www.linkedin.com/posts/zenoallwin_erpsoftwareforreadymixplant-readymixerp-rmcerp-activity-7430875546819035136-5VNg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADvWNlwBTv3_pUYN0nXIdm-kfCUh4EFocPA" target="_blank">View Profile →</a>
         </div>
       </div>
 
@@ -2312,6 +2386,7 @@ window.addEventListener("load", () => {
 </div>
 
 </section>
+
 <section class="integration-highlight">
 
 <style>
@@ -2545,7 +2620,7 @@ window.addEventListener("load", () => {
         Everything you need to know about the SAZS Cloud ERP + Schwing Stetter RMC integration.
       </p>
 
-      <a href="#contact" class="btn-fill">Request Demo</a>
+      <a href="../Signup.html" class="btn-fill">Request Demo</a>
     </div>
 
     <!-- RIGHT -->
@@ -2746,7 +2821,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 
   <!-- BUTTONS -->
   <div class="cta-actions">
-    <a href="#contact" class="cta-btn-primary">Contact Us Today</a>
+    <a href="../Signup.html" class="cta-btn-primary">Contact Us Today</a>
     <a href="https://sazsapps.com" target="_blank" class="cta-btn-secondary">
       Visit sazsapps.com →
     </a>
