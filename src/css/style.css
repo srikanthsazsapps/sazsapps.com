@@ -738,7 +738,7 @@ p {
 .accent-text { color: #3b82f6; }
 .hero-subtitle { max-width: 650px; margin: 0 auto; font-size: 15px; color: #d1d5db !important; }
 .primary-button { display: inline-block; margin-top: 26px; padding: 14px 36px; background: linear-gradient(135deg, #2563eb, #3b82f6); color: #f9fafb; text-decoration: none; border-radius: 999px; font-size: 16px; font-weight: 600; box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.primary-button:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37, 99, 235, 0.55); }
+.primary-button:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37, 99, 235, 0.55); color: #ffffff;}
 .hero-layout { display: flex; justify-content: center; }
 .features { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px; max-width: 1100px; }
 .feature-bar { border-radius: 999px; padding: 14px 26px; background: linear-gradient(120deg, rgba(15, 23, 42, 0.9), rgba(30, 64, 175, 0.9)); box-shadow: 0 10px 35px rgba(15, 23, 42, 0.75); color: #e5e7eb; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; backdrop-filter: blur(10px); }
