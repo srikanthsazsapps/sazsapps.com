@@ -47,7 +47,7 @@ linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) ),
     font-weight: 800;
     margin-bottom: 1.5rem;
     line-height: 1.1;
-    color: var(--primary);
+    color: var(--bg);
 }
 
 .anpr-highlight {
