@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Partner with SAZS Apps</title>
+
+
+    <link rel="stylesheet" href="src/css/minified/comman.min.css">
+    <script type="module" src="src/js/comman.js" defer></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,36 +39,14 @@ body {
 }
 
 /* NAV */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(10,10,10,0.88);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border-dark);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 6vw; height: 64px;
-}
-.nav-logo {
-  display: flex; align-items: center; gap: 10px;
-  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.15rem;
-  letter-spacing: -0.02em; color: var(--paper); text-decoration: none;
-}
-.nav-logo svg { width: 32px; height: 32px; flex-shrink: 0; }
-.nav-cta {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: var(--red); color: white;
-  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.85rem;
-  padding: 10px 22px; border-radius: 8px; text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
-}
-.nav-cta:hover { background: var(--red2); transform: translateY(-1px); }
 
 /* HERO */
-.hero {
+.sz-hero {
   padding: 110px 6vw 100px; position: relative; overflow: hidden;
   min-height: 90vh; display: flex; flex-direction: column;
   align-items: center; justify-content: center; text-align: center;
 }
-.hero-arc {
+.sz-hero-arc {
   position: absolute;
   bottom: -2%;
   left: 50%;
@@ -74,7 +57,7 @@ nav {
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   pointer-events: none;
 }
-.hero-arc2 {
+.sz-hero-arc2 {
   position: absolute;
   bottom: -2%;
   left: 50%;
@@ -85,118 +68,118 @@ nav {
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   pointer-events: none;
 }
-.hero-glow {
+.sz-hero-glow {
   position: absolute; top: -15%; left: 50%; transform: translateX(-50%);
   width: 800px; height: 600px;
   background: radial-gradient(ellipse, rgba(28, 103, 232, 0.1) 0%, transparent 65%);
   pointer-events: none;
 }
-.hero-glow2 {
+.sz-hero-glow2 {
   position: absolute; bottom: -10%; left: -5%;
   width: 400px; height: 400px;
   background: radial-gradient(ellipse, rgba(232,57,28,0.05) 0%, transparent 60%);
   pointer-events: none;
 }
-.eyebrow {
+.sz-eyebrow {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--red2); margin-bottom: 28px;
-  opacity: 0; animation: fadeUp .7s ease .05s forwards;
+  opacity: 0; animation: sz-fadeUp .7s ease .05s forwards;
 }
-.eyebrow-line { display: block; width: 32px; height: 1.5px; background: var(--red2); border-radius: 2px; }
+.sz-eyebrow-line { display: block; width: 32px; height: 1.5px; background: var(--red2); border-radius: 2px; }
 
 h1 {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(2.6rem, 6.5vw, 3.8rem);
   font-weight: 800; line-height: 1.03; letter-spacing: -0.04em;
   max-width: 920px; margin: 0 auto 28px;
-  opacity: 0; animation: fadeUp .7s ease .15s forwards;
+  opacity: 0; animation: sz-fadeUp .7s ease .15s forwards;
 }
 h1 em { font-style: normal; color: var(--red2); }
 
-.hero-sub {
+.sz-hero-sub {
   font-size: 1.05rem; color: var(--muted-dark);
   max-width: 1000px; line-height: 1.75; margin: 0 auto 48px;
-  opacity: 0; animation: fadeUp .7s ease .25s forwards;
+  opacity: 0; animation: sz-fadeUp .7s ease .25s forwards;
 }
 
-.hero-actions {
+.sz-hero-actions {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px;
   margin-bottom: 56px;
-  opacity: 0; animation: fadeUp .7s ease .35s forwards;
+  opacity: 0; animation: sz-fadeUp .7s ease .35s forwards;
 }
-.btn-primary {
+.sz-btn-primary {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--red); color: white;
   font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.95rem;
   padding: 15px 32px; border-radius: 10px; text-decoration: none;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
 }
-.btn-primary:hover { background: var(--red2); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(232,57,28,0.35); }
-.btn-ghost {
+.sz-btn-primary:hover { background: var(--red2); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(232,57,28,0.35); }
+.sz-btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
   color: var(--muted-dark); font-size: 0.92rem; text-decoration: none;
   transition: color 0.2s;
 }
-.btn-ghost:hover { color: var(--paper); }
+.sz-btn-ghost:hover { color: var(--paper); }
 
-.hero-proof {
+.sz-hero-proof {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 24px;
-  opacity: 0; animation: fadeUp .7s ease .45s forwards;
+  opacity: 0; animation: sz-fadeUp .7s ease .45s forwards;
 }
-.proof-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--muted-dark); }
-.proof-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
-.proof-divider { width: 1px; height: 16px; background: var(--border-dark); }
+.sz-proof-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--muted-dark); }
+.sz-proof-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+.sz-proof-divider { width: 1px; height: 16px; background: var(--border-dark); }
 
 /* MARQUEE */
-.marquee-wrap {
+.sz-marquee-wrap {
   background: var(--surface); border-top: 1px solid var(--border-dark);
   border-bottom: 1px solid var(--border-dark); padding: 28px 0;
   overflow: hidden; position: relative;
 }
-.marquee-label {
+.sz-marquee-label {
   position: absolute; left: 0; top: 0; bottom: 0; width: 140px;
   background: linear-gradient(to right, var(--surface) 60%, transparent);
   z-index: 2; display: flex; align-items: center; padding-left: 6vw;
   font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--muted-dark);
 }
-.marquee-track { display: flex; gap: 0; animation: marquee 24s linear infinite; width: max-content; }
-.marquee-item {
+.sz-marquee-track { display: flex; gap: 0; animation: sz-marquee 24s linear infinite; width: max-content; }
+.sz-marquee-item {
   padding: 0 40px; border-right: 1px solid var(--border-dark);
   white-space: nowrap; font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.9rem; font-weight: 600; letter-spacing: -0.01em; color: #444;
+  font-size: 0.9rem; font-weight: 600; letter-spacing: -0.01em; color: #969696;
 }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes sz-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* STATS */
-.stats-section {
+.sz-stats-section {
   display: grid; grid-template-columns: repeat(4, 1fr);
   border-bottom: 1px solid var(--border-dark);
 }
-.stat {
+.sz-stat {
   padding: 48px 40px; border-right: 1px solid var(--border-dark);
   position: relative; overflow: hidden;
 }
-.stat:last-child { border-right: none; }
-.stat::after {
+.sz-stat:last-child { border-right: none; }
+.sz-stat::after {
   content: ''; position: absolute; bottom: 0; left: 0;
   width: 100%; height: 2px; background: var(--red);
   transform: scaleX(0); transform-origin: left; transition: transform .4s ease;
 }
-.stat:hover::after { transform: scaleX(1); }
-.stat-num {
+.sz-stat:hover::after { transform: scaleX(1); }
+.sz-stat-num {
   font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.4rem, 4vw, 3.5rem);
   font-weight: 800; letter-spacing: -0.05em; color: var(--paper);
   line-height: 1; display: block; margin-bottom: 8px;
 }
-.stat-num span { color: var(--red); }
-.stat-label { font-size: 0.85rem; color: var(--muted-dark); line-height: 1.5; max-width: 180px; }
+.sz-stat-num span { color: var(--red); }
+.sz-stat-label { font-size: 0.85rem; color: var(--muted-dark); line-height: 1.5; max-width: 180px; }
 
 /* SECTIONS */
-.section-pad { padding: 96px 6vw; }
-.section-light { background: var(--paper); color: var(--ink); }
-.section-eyebrow {
+.sz-section-pad { padding: 96px 6vw; }
+.sz-section-light { background: var(--paper); color: var(--ink); }
+.sz-section-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--red); margin-bottom: 18px;
@@ -206,302 +189,686 @@ h2 {
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 800; letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 16px;
 }
-h2 .fade { color: #b0b0b0; font-weight: 400; }
+h2 .sz-fade { color: #b0b0b0; font-weight: 400; }
 
 /* BENTO */
-.why-header {
+.sz-why-header {
   display: flex; align-items: flex-end; justify-content: space-between;
   margin-bottom: 56px; flex-wrap: wrap; gap: 24px;
 }
-.why-header h2 { margin-bottom: 0; }
+.sz-why-header h2 { margin-bottom: 0; }
 
-.bento {
-  display: grid; grid-template-columns: repeat(3, 1fr);
+.sz-bento {
+  display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1.5px; background: rgba(0,0,0,0.07);
   border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(0,0,0,0.07);
 }
-.bento-card {
+.sz-bento-card {
   background: var(--paper); padding: 40px 36px;
   position: relative; overflow: hidden; transition: background 0.25s;
 }
-.bento-card:hover { background: #fafaf8; }
-.bento-wide { grid-column: span 2; }
-.bento-badge {
+.sz-bento-card:hover { background: #fafaf8; }
+.sz-bento-wide { grid-column: span 2; }
+.sz-bento-badge {
   display: inline-flex; align-items: center;
-  background: rgba(232,57,28,0.08); color: var(--red);
+  background: rgba(255, 255, 255, 0.08); color: var(--red);
   font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em;
   text-transform: uppercase; padding: 5px 12px; border-radius: 100px;
-  border: 1px solid rgba(232,57,28,0.15); margin-bottom: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.15); margin-bottom: 24px;
 }
-.bento-num {
+.sz-bento-num {
   font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.8rem; font-weight: 800;
   letter-spacing: -0.05em; color: var(--ink); line-height: 1;
   margin-bottom: 10px; display: block;
 }
-.bento-num em { font-style: normal; color: var(--red); }
-.bento-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 12px; }
-.bento-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
-.bento-icon { font-size: 2rem; margin-bottom: 18px; display: block; line-height: 1; }
+.sz-bento-num em { font-style: normal; color: var(--red); }
+.sz-bento-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 12px; }
+.sz-bento-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+.sz-bento-icon { font-size: 2rem; margin-bottom: 18px; display: block; line-height: 1; }
 
 /* TESTIMONIALS */
-.testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
-.testimonial-card { border-radius: 16px; padding: 40px; position: relative; overflow: hidden; }
-.testimonial-card.dark { background: var(--ink); color: var(--paper); }
-.testimonial-card.coral { background: var(--red); color: white; }
-.testi-tag {
+.sz-testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+.sz-testimonial-card { border-radius: 16px; padding: 40px; position: relative; overflow: hidden; }
+.sz-testimonial-card.sz-dark { background: var(--ink); color: var(--paper); }
+.sz-testimonial-card.sz-coral { background: var(--red); color: white; }
+.sz-testi-tag {
   display: inline-flex; align-items: center;
   background: rgba(255,255,255,0.1); color: inherit;
   font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em;
   text-transform: uppercase; padding: 5px 12px; border-radius: 100px;
   margin-bottom: 28px; border: 1px solid rgba(255,255,255,0.12);
 }
-.dark .testi-tag { background: rgba(255,255,255,0.06); }
-.testi-quote {
+.sz-dark .sz-testi-tag { background: rgba(255,255,255,0.06); }
+.sz-testi-quote {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 700;
   line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 32px;
 }
-.testi-author { display: flex; align-items: center; gap: 14px; }
-.testi-avatar {
+.sz-testi-author { display: flex; align-items: center; gap: 14px; }
+.sz-testi-avatar {
   width: 42px; height: 42px; border-radius: 50%;
   background: rgba(255,255,255,0.15);
   display: flex; align-items: center; justify-content: center;
   font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1rem; flex-shrink: 0;
 }
-.coral .testi-avatar { background: rgba(255,255,255,0.2); }
-.testi-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: -0.01em; margin-bottom: 2px; }
-.testi-role { font-size: 0.78rem; opacity: 0.55; }
-.stars { display: flex; gap: 3px; margin-bottom: 20px; }
-.star { color: #FFB800; font-size: 0.9rem; }
+.sz-coral .sz-testi-avatar { background: rgba(255,255,255,0.2); }
+.sz-testi-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: -0.01em; margin-bottom: 2px; }
+.sz-testi-role { font-size: 0.78rem; opacity: 0.55; }
+.sz-stars { display: flex; gap: 3px; margin-bottom: 20px; }
+.sz-star { color: #FFB800; font-size: 0.9rem; }
 
 /* CONTACT */
-.contact-section { background: var(--ink); padding: 96px 6vw; }
-.contact-inner {
+.sz-contact-section { background: var(--ink); padding: 96px 6vw; }
+.sz-contact-inner {
   border: 1px solid var(--border-dark); border-radius: 24px;
   padding: 64px 56px; position: relative; overflow: hidden;
   background: var(--surface);
 }
-.contact-inner::before {
+.sz-contact-inner::before {
   content: ''; position: absolute; top: -30%; right: -5%;
   width: 500px; height: 500px;
   background: radial-gradient(ellipse, rgba(28, 127, 232, 0.08) 0%, transparent 65%);
   pointer-events: none;
 }
-.contact-header { max-width: 540px; margin-bottom: 48px; position: relative; z-index: 1; }
-.contact-header p { color: var(--muted-dark); font-size: 1rem; line-height: 1.7; margin-top: 12px; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; z-index: 1; }
-.contact-card {
+.sz-contact-header { max-width: 540px; margin-bottom: 48px; position: relative; z-index: 1; }
+.sz-contact-header p { color: var(--muted-dark); font-size: 1rem; line-height: 1.7; margin-top: 12px; }
+.sz-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; z-index: 1; }
+.sz-contact-card {
   background: rgba(255,255,255,0.03); border: 1px solid var(--border-dark);
   border-radius: 16px; padding: 36px; transition: border-color 0.25s, background 0.25s;
 }
-.contact-card:hover { border-color: rgba(232,57,28,0.3); background: rgba(232,57,28,0.03); }
-.contact-role { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
-.contact-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 24px; }
-.contact-link { display: flex; align-items: center; gap: 11px; color: var(--muted-dark); text-decoration: none; font-size: 0.9rem; margin-bottom: 12px; transition: color 0.2s; }
-.contact-link:hover { color: var(--paper); }
-.contact-link svg { width: 15px; height: 15px; flex-shrink: 0; opacity: 0.4; transition: opacity 0.2s; }
-.contact-link:hover svg { opacity: 1; }
+.sz-contact-card:hover { border-color: rgba(232,57,28,0.3); background: rgba(232,57,28,0.03); }
+.sz-contact-role { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+.sz-contact-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 24px; }
+.sz-contact-link { display: flex; align-items: center; gap: 11px; color: var(--muted-dark); text-decoration: none; font-size: 0.9rem; margin-bottom: 12px; transition: color 0.2s; }
+.sz-contact-link:hover { color: var(--paper); }
+.sz-contact-link svg { width: 15px; height: 15px; flex-shrink: 0; opacity: 0.4; transition: opacity 0.2s; }
+.sz-contact-link:hover svg { opacity: 1; }
 
-/* FOOTER */
-footer {
-  background: var(--surface); border-top: 1px solid var(--border-dark);
-  padding: 32px 6vw; display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 16px;
-}
-.footer-brand { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 0.92rem; letter-spacing: -0.01em; color: var(--paper); }
-.footer-copy { font-size: 0.78rem; color: var(--muted-dark); }
 
 /* ANIMATIONS */
-@keyframes fadeUp {
+@keyframes sz-fadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.in { opacity: 1; transform: translateY(0); }
+.sz-reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.sz-reveal.sz-in { opacity: 1; transform: translateY(0); }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .stats-section { grid-template-columns: 1fr 1fr; }
-  .stat { border-right: none; border-bottom: 1px solid var(--border-dark); }
-  .stat:nth-child(odd) { border-right: 1px solid var(--border-dark); }
-  .bento { grid-template-columns: 1fr; }
-  .bento-wide { grid-column: span 1; }
-  .testimonial-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-inner { padding: 36px 24px; }
-  .why-header { flex-direction: column; align-items: flex-start; }
-  footer { flex-direction: column; align-items: flex-start; }
+  .sz-stats-section { grid-template-columns: 1fr 1fr; }
+  .sz-stat { border-right: none; border-bottom: 1px solid var(--border-dark); }
+  .sz-stat:nth-child(odd) { border-right: 1px solid var(--border-dark); }
+  .sz-bento { grid-template-columns: 1fr; }
+  .sz-bento-wide { grid-column: span 1; }
+  .sz-testimonial-grid { grid-template-columns: 1fr; }
+  .sz-contact-grid { grid-template-columns: 1fr; }
+  .sz-contact-inner { padding: 36px 24px; }
+  .sz-why-header { flex-direction: column; align-items: flex-start; }
   h1 { font-size: clamp(2.4rem, 8vw, 4rem); }
 }
 @media (max-width: 560px) {
-  .hero { padding: 72px 5vw 56px; }
-  .section-pad { padding: 64px 5vw; }
-  .marquee-label { display: none; }
+  .sz-hero { padding: 72px 5vw 56px; }
+  .sz-section-pad { padding: 64px 5vw; }
+  .sz-marquee-label { display: none; }
 }
 </style>
 </head>
 <body>
+  <nav class="sazs-header">
+    <div class="sazs-header-wrapper">
+        <div class="sazs-header-main">
+            <a href="/" class="sazs-brand">
+                <div class="sazs-brand-image">
+                    <img src="./src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo" class="sazs-brand-logo" loading="lazy">
+                </div>
+            </a>
+            <ul class="sazs-menu-list">
+                <li class="sazs-menu-item">
+                    <a class="sazs-menu-link" data-dropdown="platform">Product<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+                </li>
+                <li class="sazs-menu-item">
+                    <a class="sazs-menu-link" data-dropdown="Features">Features<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+                </li>
+                <li class="sazs-menu-item">
+                    <a class="sazs-menu-link" data-dropdown="resources">Media & Events<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+                </li>
+                <li class="sazs-menu-item">
+                    <a class="sazs-menu-link" data-dropdown="blogs">Blogs<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
+                </li>
+            </ul>
+            <div class="sazs-cta-group">
+                <a href="Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
+            </div>
+            <div class="sazs-hamburger">
+                <a href="javascript:void(0);" onclick="toggleNav()" aria-label="Open navigation menu">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="3" y1="6" x2="21" y2="6" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="3" y1="12" x2="21" y2="12" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="3" y1="18" x2="21" y2="18" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
 
+        <!-- PRODUCT DROPDOWN -->
+        <div class="sazs-submenu" id="platform">
+            <div class="product-dropdown">
+                <div class="product-left">
+                    <div class="product-section-title">Quick Links</div>
+                    <a href="index.html" class="product-link">Home</a>
+                    <a href="aboutus.html" class="product-link">About Us</a>
+                    <a href="WhytoChoose.html" class="product-link">Why to Choose</a>
+                    <a href="careers.html" class="product-link">Careers</a>
+                    <a href="QuarryCrusherRMCProfitCalculator.html" class="product-link">Profit Calc</a>
+                    <a href="Questions.html" class="product-link">FAQ</a>
+                </div>
+                <div class="product-right">
+                    <div class="product-grid-title">Our Products</div>
+                    <div class="sazs-submenu-grid">
+                        <div class="sazs-submenu-col">
+                            <a href="/products/crusher-management-software&ERP.html" class="sazs-product-cards">
+                                <div class="sazs-cards-img-wrapper">
+                                    <img loading="lazy" src="/src/assets/contentImages/crusherdroneview.avif" alt="Stone Crusher Management Software"/>
+                                </div>
+                                <div class="sazs-cards-heading">Stone Crusher Software for End-to-End Operations</div>
+                                <div class="sazs-cards-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
+                            </a>
+                        </div>
+                        <div class="sazs-submenu-col">
+                            <a href="/products/Quarry-management-software&ERP.html" class="sazs-product-cards">
+                                <div class="sazs-cards-img-wrapper">
+                                    <img loading="lazy" src="/src/assets/contentImages/quarrydroneview.avif" alt="Brick Manufacturing ERP Software"/>
+                                </div>
+                                <div class="sazs-cards-heading">End-to-End Management Software for Stone Quarries</div>
+                                <div class="sazs-cards-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
+                            </a>
+                        </div>
+                        <div class="sazs-submenu-col">
+                            <a href="/products/Rmc-billing-software&ERP.html" class="sazs-product-cards">
+                                <div class="sazs-cards-img-wrapper">
+                                    <img loading="lazy" src="/src/assets/contentImages/RMCdroneview.avif" alt="Brick Manufacturing ERP Software"/>
+                                </div>
+                                <div class="sazs-cards-heading">Next-Gen Billing Software for Ready Mix Concrete (RMC) Plants</div>
+                                <div class="sazs-cards-text">The Future of Fast, Accurate & Automated RMC Billing</div>
+                            </a>
+                        </div>
+                        <div class="sazs-submenu-col">
+                            <a href="/products/brickspaver-management-software&ERP.html" class="sazs-product-cards">
+                                <div class="sazs-cards-img-wrapper">
+                                    <img loading="lazy" src="/src/assets/contentImages/bricksdrone.avif" alt="Brick Manufacturing ERP Software"/>
+                                </div>
+                                <div class="sazs-cards-heading">Complete ERP Solution for Brick & Paver Manufacturing Plants</div>
+                                <div class="sazs-cards-text">From Raw Materials to Finished Products—Manage Every Stage of Your Production</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FEATURES DROPDOWN — 5×2 BENTO GRID (10 cardss) -->
+        <div class="sazs-submenu" id="Features">
+            <div class="media-events-header">
+                <h2 class="media-events-title">Features <span class="media-title-separator">—</span> <span class="media-title-subtitle">tailored to every Crushers & Quarries, RMC, Brick & Paver</span></h2>
+            </div>
+            <div class="bento-container">
+
+                <a href="/features/anpr-camera-integration.html" class="cards anpr">
+                    <div class="cards-img-wrap">
+                        <img loading="lazy" src="/src/assets/images/menu/anprintegration.avif" alt="ANPR Camera Integration">
+                    </div>
+                    <h2>ANPR Camera Integration</h2>
+                    <p>Automatic number plate recognition for vehicle entry & exit logging</p>
+                </a>
+
+                <a href="/features/e-invoice-gst-billing.html" class="cards einvoice">
+                    <div class="cards-img-wrap">
+                        <img loading="lazy" src="/src/assets/images/menu/einvoice&gst.avif" alt="E-Invoice GST Billing">
+                    </div>
+                    <h2>E-Invoice & GST Billing</h2>
+                    <p>Fully GST compliant automated invoicing for Crushers, RMC & Brick plants</p>
+                </a>
+
+                <a href="/features/weighbridge-automation-software.html" class="cards weighbridge">
+                    <div class="cards-img-wrap">
+                        <img loading="lazy" src="/src/assets/images/menu/weighbridge.avif" alt="Weighbridge Automation">
+                    </div>
+                    <h2>Weighbridge Automation</h2>
+                    <p>Real-time weight capture with camera integration & automated slip printing</p>
+                </a>
+
+                <a href="/features/boom-barrier-integration.html" class="cards boom">
+                    <div class="cards-img-wrap">
+                        <img loading="lazy" src="/src/assets/images/menu/boombarrier.avif" alt="Boom Barrier Integration">
+                    </div>
+                    <h2>Boom Barrier Integration</h2>
+                    <p>Automated gate control linked to weighbridge for secure vehicle movement</p>
+                </a>
+
+                <a href="/features/biometric-access-control.html" class="cards biometrics">
+                    <div class="cards-img-wrap">
+                        <img loading="lazy" src="/src/assets/images/menu/biiometric.avif" alt="Biometric Access Control">
+                    </div>
+                    <h2>Biometric Access Control</h2>
+                    <p>Fingerprint, face recognition & RFID for secure site access management</p>
+                </a>
+
+                <a href="/features/Subcontract-billing.html" class="cards subcontract">
+                    <div class="cards-img-wrap">
+                        <img loading="lazy" src="/src/assets/images/menu/subcontract.avif" alt="Subcontract Billing">
+                    </div>
+                    <h2>Subcontract Billing</h2>
+                    <p>Contractor-wise rate management, work orders & automated billing settlement</p>
+                </a>
+
+                <a href="/features/fleet-Management-software.html" class="cards fleet">
+                    <div class="cards-img-wrap">
+                        <img loading="lazy" src="/src/assets/images/menu/fleetmanagement.avif" alt="Fleet Management">
+                    </div>
+                    <h2>Fleet Management</h2>
+                    <p>Vehicle tracking, trip management & fuel monitoring for quarry fleets</p>
+                </a>
+
+                <a href="/features/financial-management.html" class="cards financial">
+                    <div class="cards-img-wrap">
+                        <img loading="lazy" src="/src/assets/images/menu/financialmanagement.avif" alt="Financial Management">
+                    </div>
+                    <h2>Financial Management</h2>
+                    <p>P&amp;L reports, ledger, cost analysis & real-time financial dashboards</p>
+                </a>
+
+                <a href="/features/Schwing-stetter-integration.html" class="cards schwing">
+                    <div class="cards-img-wrap">
+                        <img loading="lazy" src="/src/assets/images/menu/Schwingstetter.avif" alt="Schwing Stetter Integration">
+                    </div>
+                    <h2>Schwing Stetter Integration</h2>
+                    <p>Direct RMC plant integration with Schwing Stetter batching controllers</p>
+                </a>
+
+                <a href="#" class="cards smarttech">
+                    <div class="cards-img-wrap">
+                        <img loading="lazy" src="/src/assets/contentImages/SmartTech.avif" alt="Smart Tech Integration">
+                    </div>
+                    <h2>Smart Tech Integration</h2>
+                    <p>IoT-ready smart technology tailored for Crushers, Quarries & RMC plants</p>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- MEDIA & EVENTS DROPDOWN -->
+        <div class="sazs-submenu" id="resources">
+            <div class="media-events-dropdown">
+                <div class="media-events-header">
+                    <h2 class="media-events-title">Media & Events <span class="media-title-separator">—</span> <span class="media-title-subtitle">Stay Connected, Stay Informed</span></h2>
+                    <div class="media-events-ai-tracker">
+                        <span class="ai-tracker-label">Latest Updates</span>
+                        <span class="ai-tracker-beta">NEW</span>
+                        <span class="ai-tracker-text">Industry Insights & Success Stories</span>
+                    </div>
+                </div>
+                <div class="media-events-grid">
+                    <a href="/media-events/Jharkhand_2026.html" class="media-event-cards">
+                        <div class="media-cards-image">
+                            <img loading="lazy" src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026"/>
+                        </div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">Jharkhand Mining & Construction Show 2026</div>
+                        </div>
+                    </a>
+                    <a href="/media-events/EXCON_2025.html" class="media-event-cards">
+                        <div class="media-cards-image">
+                            <img loading="lazy" src="/src/assets/images/excon25.avif" alt="EXCON_2025"/>
+                        </div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
+                        </div>
+                    </a>
+                    <a href="/media-events/IEMS_2024.html" class="media-event-cards">
+                        <div class="media-cards-image">
+                            <img loading="lazy" src="/src/assets/images/iems24.avif" alt="IEMS_2024"/>
+                        </div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">IEMS – International Mining Expo & Conclave 2024</div>
+                        </div>
+                    </a>
+                    <a href="/media-events/TNMSA_2024.html" class="media-event-cards">
+                        <div class="media-cards-image">
+                            <img loading="lazy" src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024"/>
+                        </div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</div>
+                        </div>
+                    </a>
+                    <a href="/media-events/EXCON_2023.html" class="media-event-cards">
+                        <div class="media-cards-image">
+                            <img loading="lazy" src="/src/assets/images/excon23.avif" alt="EXCON_2023"/>
+                        </div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
+                        </div>
+                    </a>
+                    <a href="/media-events/CODDISSIA.html" class="media-event-cards">
+                        <div class="media-cards-image">
+                            <img loading="lazy" src="/src/assets/images/codisia22.avif" alt="CODDISSIA"/>
+                        </div>
+                        <div class="media-cards-content">
+                            <div class="media-cards-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOGS / CASE STUDIES DROPDOWN -->
+        <div class="sazs-submenu" id="blogs">
+            <div class="blogs-dropdown-container">
+                <div class="media-events-header">
+                    <h2 class="media-events-title">Case Studies <span class="media-title-separator">—</span> <span class="media-title-subtitle">Real-World Success Stories</span></h2>
+                    <div class="media-events-ai-tracker">
+                        <span class="ai-tracker-label">Latest Insights</span>
+                        <span class="ai-tracker-beta">NEW</span>
+                        <span class="ai-tracker-text">Industry Proven Results</span>
+                    </div>
+                </div>
+                <div class="blogs-cardss-grid">
+                    <a href="/case-studies/Optimizing_Profitability_Theft_Prevention.html" class="blog-cards">
+                        <div class="blog-cards-image">
+                            <img loading="lazy" src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability"/>
+                            <div class="blog-cards-overlay">
+                                <div class="blog-overlay-title">Optimizing  Profitability & Theft Prevention</div>
+                                <div class="blog-overlay-explore">Explore →</div>
+                                <div class="pubdate"><span>Published: January 2024</span></div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-cards">
+                        <div class="blog-cards-image">
+                            <img loading="lazy" src="/src/assets/contentImages/tran2.webp" alt="Customer Experience"/>
+                            <div class="blog-cards-overlay">
+                                <div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
+                                <div class="blog-overlay-explore">Explore →</div>
+                                <div class="pubdate"><span>Published: March 2025</span></div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-cards">
+                        <div class="blog-cards-image">
+                            <img loading="lazy" src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing"/>
+                            <div class="blog-cards-overlay">
+                                <div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
+                                <div class="blog-overlay-explore">Explore →</div>
+                                <div class="pubdate"><span>Published: May 2025</span></div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-cards">
+                        <div class="blog-cards-image">
+                            <img loading="lazy" src="/src/assets/contentImages/real4.webp" alt="Vehicle Management"/>
+                            <div class="blog-cards-overlay">
+                                <div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
+                                <div class="blog-overlay-explore">Explore →</div>
+                                <div class="pubdate"><span>Published: August 2025</span></div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-cards">
+                        <div class="blog-cards-image">
+                            <img loading="lazy" src="/src/assets/contentImages/comp5.webp" alt="Financial Control"/>
+                            <div class="blog-cards-overlay">
+                                <div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
+                                <div class="blog-overlay-explore">Explore →</div>
+                                <div class="pubdate"><span>Published: December 2025</span></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+<!-- SIDENAV (MOBILE) -->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/"><img loading="lazy" src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page" class="sidenav-logo"></a>
+    <a href="/">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <div class="mobile-dropdown">
+        <a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products
+            <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <div class="mobile-dropdown-content">
+            <a href="/products/Quarry-management-software&ERP.html">Quarry</a>
+            <a href="/products/crusher-management-software&ERP.html">Crusher</a>
+            <a href="/products/Rmc-billing-software&ERP.html">Ready Mix Concrete</a>
+            <a href="/products/brickspaver-management-software&ERP.html">Bricks & Pavers</a>
+        </div>
+    </div>
+    <div class="mobile-dropdown">
+        <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Explore Features
+            <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <div class="mobile-dropdown-content">
+            <a href="/features/anpr-camera-integration.html">ANPR Camera Integration</a>
+            <a href="/features/e-invoice-gst-billing.html">E-Invoice Integration</a>
+            <a href="/features/weighbridge-automation-software.html">Weighbridge and Camera Integration</a>
+            <a href="/features/boom-barrier-integration.html">Boom Barrier Integration</a>
+            <a href="/features/biometric-access-control.html">Biometrics</a>
+            <a href="/features/subcontract-billing.html">Subcontract Billing</a>
+            <a href="/features/fleet-management-software.html">Fleet Management</a>
+            <a href="/features/financial-management.html">Financial Management</a>
+            <a href="/features/schwing-stetter-integration.html">Schwing Stetter Integration</a>
+        </div>
+    </div>
+    <div class="mobile-dropdown">
+        <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Case Studies
+            <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <div class="mobile-dropdown-content">
+            <a href="/case-studies/Optimizing_Profitability_Theft_Prevention.html">Optimizing  Profitability & Theft Prevention</a>
+            <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html">Transforming Customer Experience & Order Speed</a>
+            <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html">Automating E-Invoicing & GST Compliance</a>
+            <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html">Real-Time Vehicle & Trip Management</a>
+            <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html">Complete Financial Control & Profit Analysis</a>
+        </div>
+    </div>
+    <div class="mobile-dropdown">
+        <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Events
+            <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <div class="mobile-dropdown-content">
+            <a href="/media-events/Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
+            <a href="/media-events/EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
+            <a href="/media-events/IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
+            <a href="/media-events/TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
+            <a href="/media-events/EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
+            <a href="/media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
+        </div>
+    </div>
+    <a href="QuarryCrusherRMCProfitCalculator.html">Profit Calc</a>
+    <a href="careers.html">Careers</a>
+    <a href="Signup.html">Sign Up</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="WhytoChoose.html">Why to Choose Sazs</a>
+    <a href="Questions.html">FAQ</a>
+</div>  
+
+
+
+
+  
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
-  <div class="hero-arc"></div>
-  <div class="hero-arc2"></div>
+<section class="sz-hero">
+  
+  <div class="sz-hero-glow"></div>
+  <div class="sz-hero-glow2"></div>
+  <div class="sz-hero-arc"></div>
+  <div class="sz-hero-arc2"></div>
 
   <h1>Grow with India's Leading<br>Niche <em>ERP</em> for Quarry,<br>RMC &amp; Bricks.</h1>
 
-  <p class="hero-sub">Become an exclusive marketing partner of SAZS Apps and earn on every sale — with full 24/7 technical support from our team so you can focus entirely on selling.</p>
+  <p class="sz-hero-sub">Become an exclusive marketing partner of SAZS Apps and earn on every sale — with full 24/7 technical support from our team so you can focus entirely on selling.</p>
 
-  <div class="hero-actions">
-    <a href="#contact" class="btn-primary">
+  <div class="sz-hero-actions">
+    <a href="#contact" class="sz-btn-primary">
       Become a Partner
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
 
-  <div class="hero-proof">
-    <div class="proof-item">
+  <div class="sz-hero-proof">
+    <div class="sz-proof-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" style="color:var(--red);opacity:0.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       4.8 · 500+ Reviews
     </div>
-    <div class="proof-divider"></div>
-    <div class="proof-item"><span class="proof-dot"></span>You bring the leads. We handle the rest.</div>
-    <div class="proof-divider"></div>
-    <div class="proof-item"><span class="proof-dot"></span>303+ satisfied customers since 2018</div>
+    <div class="sz-proof-divider"></div>
+    <div class="sz-proof-item"><span class="sz-proof-dot"></span>You bring the leads. We handle the rest.</div>
+    <div class="sz-proof-divider"></div>
+    <div class="sz-proof-item"><span class="sz-proof-dot"></span>303+ satisfied customers since 2018</div>
   </div>
 </section>
 
 <!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-label">Serving</div>
-  <div class="marquee-track">
-    <span class="marquee-item">Quarry &amp; Crusher</span>
-    <span class="marquee-item">Ready-Mix Concrete</span>
-    <span class="marquee-item">Brick Manufacturers</span>
-    <span class="marquee-item">Stone Crushing Units</span>
-    <span class="marquee-item">Aggregate Suppliers</span>
-    <span class="marquee-item">South India</span>
-    <span class="marquee-item">303+ Clients</span>
-    <span class="marquee-item">Since 2018</span>
-    <span class="marquee-item">Quarry &amp; Crusher</span>
-    <span class="marquee-item">Ready-Mix Concrete</span>
-    <span class="marquee-item">Brick Manufacturers</span>
-    <span class="marquee-item">Stone Crushing Units</span>
-    <span class="marquee-item">Aggregate Suppliers</span>
-    <span class="marquee-item">South India</span>
-    <span class="marquee-item">303+ Clients</span>
-    <span class="marquee-item">Since 2018</span>
+<div class="sz-marquee-wrap">
+  <div class="sz-marquee-label">Serving</div>
+  <div class="sz-marquee-track">
+    <span class="sz-marquee-item">Quarry &amp; Crusher</span>
+    <span class="sz-marquee-item">Ready-Mix Concrete</span>
+    <span class="sz-marquee-item">Brick Manufacturers</span>
+    <span class="sz-marquee-item">Stone Crushing Units</span>
+    <span class="sz-marquee-item">Aggregate Suppliers</span>
+    <span class="sz-marquee-item">South India</span>
+    <span class="sz-marquee-item">303+ Clients</span>
+    <span class="sz-marquee-item">Since 2018</span>
+    <span class="sz-marquee-item">Quarry &amp; Crusher</span>
+    <span class="sz-marquee-item">Ready-Mix Concrete</span>
+    <span class="sz-marquee-item">Brick Manufacturers</span>
+    <span class="sz-marquee-item">Stone Crushing Units</span>
+    <span class="sz-marquee-item">Aggregate Suppliers</span>
+    <span class="sz-marquee-item">South India</span>
+    <span class="sz-marquee-item">303+ Clients</span>
+    <span class="sz-marquee-item">Since 2018</span>
   </div>
 </div>
 
 <!-- STATS -->
-<div class="stats-section reveal">
-  <div class="stat">
-    <span class="stat-num"><span>303</span>+</span>
-    <span class="stat-label">Satisfied customers across South India since 2018</span>
+<div class="sz-stats-section sz-reveal">
+  <div class="sz-stat">
+    <span class="sz-stat-num"><span>303</span>+</span>
+    <span class="sz-stat-label">Satisfied customers across South India since 2018</span>
   </div>
-  <div class="stat">
-    <span class="stat-num">24<span>/7</span></span>
-    <span class="stat-label">Full technical support — you focus entirely on sales</span>
+  <div class="sz-stat">
+    <span class="sz-stat-num">24<span>/7</span></span>
+    <span class="sz-stat-label">Full technical support — you focus entirely on sales</span>
   </div>
-  <div class="stat">
-    <span class="stat-num">₹<span>0</span></span>
-    <span class="stat-label">No hidden costs — no annual, training or server fees</span>
+  <div class="sz-stat">
+    <span class="sz-stat-num">₹<span>0</span></span>
+    <span class="sz-stat-label">No hidden costs — no annual, training or server fees</span>
   </div>
-  <div class="stat">
-    <span class="stat-num"><span>#1</span></span>
-    <span class="stat-label">Niche market leader with no generic ERP head-to-head</span>
+  <div class="sz-stat">
+    <span class="sz-stat-num"><span>#1</span></span>
+    <span class="sz-stat-label">Niche market leader with no generic ERP head-to-head</span>
   </div>
 </div>
 
 <!-- WHY PARTNERS -->
-<section class="section-light section-pad" id="why">
-  <div class="why-header reveal">
+<section class="sz-section-light sz-section-pad" id="why">
+  <div class="sz-why-header sz-reveal">
     <div>
-      <div class="section-eyebrow">Why Partners Choose Us</div>
-      <h2>Six reasons to build<br><span class="fade">your business with SAZS.</span></h2>
+      <div class="sz-section-eyebrow">Why Partners Choose Us</div>
+      <h2>Six reasons to build<br><span class="sz-fade">your business with SAZS.</span></h2>
     </div>
   </div>
 
-  <div class="bento reveal">
-    <div class="bento-card bento-wide">
-      <div class="bento-badge">Proven Track Record</div>
-      <span class="bento-num"><em>303</em>+</span>
-      <div class="bento-title">Satisfied customers across South India since 2018</div>
-      <p class="bento-desc">You're selling a product that already works — with a proven reputation your prospects can verify. 303+ live deployments across quarry, crusher, RMC and bricks give you instant credibility at every door you knock.</p>
+  <div class="sz-bento sz-reveal">
+    <div class="sz-bento-card sz-bento-wide">
+      <div class="sz-bento-badge">Proven Track Record</div>
+      <span class="sz-bento-num"><em>303</em>+</span>
+      <div class="sz-bento-title">Satisfied customers across South India since 2018</div>
+      <p class="sz-bento-desc">You're selling a product that already works — with a proven reputation your prospects can verify. 303+ live deployments across quarry, crusher, RMC and bricks give you instant credibility at every door you knock.</p>
     </div>
-    <div class="bento-card">
-      <span class="bento-icon">🛠</span>
-      <span class="bento-num">24<em>/7</em></span>
-      <div class="bento-title">Full Support Provided</div>
-      <p class="bento-desc">SAZS handles all technical support end-to-end. You focus entirely on sales. Zero tech expertise required from your side.</p>
+    <div class="sz-bento-card">
+      <span class="sz-bento-icon">🛠</span>
+      <span class="sz-bento-num">24<em>/7</em></span>
+      <div class="sz-bento-title">Full Support Provided</div>
+      <p class="sz-bento-desc">SAZS handles all technical support end-to-end. You focus entirely on sales. Zero tech expertise required from your side.</p>
     </div>
-    <div class="bento-card">
-      <span class="bento-icon">💸</span>
-      <span class="bento-num">₹<em>0</em></span>
-      <div class="bento-title">No Hidden Costs</div>
-      <p class="bento-desc">No annual, training, server or user restriction charges for your customers. Makes it incredibly easy to close deals faster.</p>
+    <div class="sz-bento-card">
+      <span class="sz-bento-icon">💸</span>
+      <span class="sz-bento-num">₹<em>0</em></span>
+      <div class="sz-bento-title">No Hidden Costs</div>
+      <p class="sz-bento-desc">No annual, training, server or user restriction charges for your customers. Makes it incredibly easy to close deals faster.</p>
     </div>
-    <div class="bento-card">
-      <span class="bento-icon">📈</span>
-      <span class="bento-num">↑<em>↑</em></span>
-      <div class="bento-title">Attractive Commission</div>
-      <p class="bento-desc">Earn more as you sell more. Hit your targets and unlock bigger reward tiers — a structure built to scale with your ambitions.</p>
+    <div class="sz-bento-card">
+      <span class="sz-bento-icon">📈</span>
+      <span class="sz-bento-num">↑<em>↑</em></span>
+      <div class="sz-bento-title">Attractive Commission</div>
+      <p class="sz-bento-desc">Earn more as you sell more. Hit your targets and unlock bigger reward tiers — a structure built to scale with your ambitions.</p>
     </div>
-    <div class="bento-card bento-wide">
-      <div class="bento-badge">Market Leadership</div>
-      <span class="bento-num"><em>#1</em></span>
-      <div class="bento-title">Niche Market Leader — No Generic Competition in This Space</div>
-      <p class="bento-desc">Specialized ERP for quarry, crusher &amp; bricks with no generic ERP competing head-to-head. You own the conversation from the moment you walk in. Pair that with monthly AMC from existing clients and your income compounds — long after the first sale is closed.</p>
+    <div class="sz-bento-card sz-bento-wide">
+      <div class="sz-bento-badge">Market Leadership</div>
+      <span class="sz-bento-num"><em>#1</em></span>
+      <div class="sz-bento-title">Niche Market Leader — No Generic Competition in This Space</div>
+      <p class="sz-bento-desc">Specialized ERP for quarry, crusher &amp; bricks with no generic ERP competing head-to-head. You own the conversation from the moment you walk in. Pair that with monthly AMC from existing clients and your income compounds — long after the first sale is closed.</p>
     </div>
-    <div class="bento-card">
-      <span class="bento-icon">🔄</span>
-      <span class="bento-num">∞</span>
-      <div class="bento-title">Recurring Opportunity</div>
-      <p class="bento-desc">Monthly AMC from existing clients builds long-term recurring income well beyond the initial sale. Your portfolio earns while you sleep.</p>
+    <div class="sz-bento-card">
+      <span class="sz-bento-icon">🔄</span>
+      <span class="sz-bento-num">∞</span>
+      <div class="sz-bento-title">Recurring Opportunity</div>
+      <p class="sz-bento-desc">Monthly AMC from existing clients builds long-term recurring income well beyond the initial sale. Your portfolio earns while you sleep.</p>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="section-light section-pad" style="padding-top:0">
-  <div class="reveal">
-    <div class="section-eyebrow">What Our Customers Say</div>
-    <h2>Trusted by quarry &amp; RMC<br><span class="fade">businesses across South India.</span></h2>
+<section class="sz-section-light sz-section-pad" style="padding-top:0">
+  <div class="sz-reveal">
+    <div class="sz-section-eyebrow">What Our Customers Say</div>
+    <h2>Trusted by quarry &amp; RMC<br><span class="sz-fade">businesses across South India.</span></h2>
   </div>
 
-  <div class="testimonial-grid reveal">
-    <div class="testimonial-card dark">
-      <div class="testi-tag">Quarry Owner</div>
-      <div class="stars">
-        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+  <div class="sz-testimonial-grid sz-reveal">
+    <div class="sz-testimonial-card sz-dark">
+      <div class="sz-testi-tag">Quarry Owner</div>
+      <div class="sz-stars">
+        <span class="sz-star">★</span><span class="sz-star">★</span><span class="sz-star">★</span><span class="sz-star">★</span><span class="sz-star">★</span>
       </div>
-      <p class="testi-quote">"Before SAZS, everything was manual and errors were constant. Now our royalty tracking, vehicle trips and billing are fully automated. Best investment we made for our quarry."</p>
-      <div class="testi-author">
-        <div class="testi-avatar" style="background:rgba(28,113,232,0.15);color:#40a3ff">M</div>
+      <p class="sz-testi-quote">"Before SAZS, everything was manual and errors were constant. Now our royalty tracking, vehicle trips and billing are fully automated. Best investment we made for our quarry."</p>
+      <div class="sz-testi-author">
+        <div class="sz-testi-avatar" style="background:rgba(28,113,232,0.15);color:#40a3ff">M</div>
         <div>
-          <div class="testi-name">Murugan S.</div>
-          <div class="testi-role">Quarry Owner · Madurai, Tamil Nadu</div>
+          <div class="sz-testi-name">Murugan S.</div>
+          <div class="sz-testi-role">Quarry Owner · Madurai, Tamil Nadu</div>
         </div>
       </div>
     </div>
 
-    <div class="testimonial-card coral">
-      <div class="testi-tag">RMC Plant Manager</div>
-      <div class="stars">
-        <span class="star" style="color:rgba(255,255,255,0.8)">★</span>
-        <span class="star" style="color:rgba(255,255,255,0.8)">★</span>
-        <span class="star" style="color:rgba(255,255,255,0.8)">★</span>
-        <span class="star" style="color:rgba(255,255,255,0.8)">★</span>
-        <span class="star" style="color:rgba(255,255,255,0.8)">★</span>
+    <div class="sz-testimonial-card sz-coral">
+      <div class="sz-testi-tag">RMC Plant Manager</div>
+      <div class="sz-stars">
+        <span class="sz-star" style="color:rgba(255,255,255,0.8)">★</span>
+        <span class="sz-star" style="color:rgba(255,255,255,0.8)">★</span>
+        <span class="sz-star" style="color:rgba(255,255,255,0.8)">★</span>
+        <span class="sz-star" style="color:rgba(255,255,255,0.8)">★</span>
+        <span class="sz-star" style="color:rgba(255,255,255,0.8)">★</span>
       </div>
-      <p class="testi-quote">"SAZS understands RMC operations like no other software. Mix design, delivery tracking, customer statements — everything in one place. Their support team responds within minutes."</p>
-      <div class="testi-author">
-        <div class="testi-avatar">A</div>
+      <p class="sz-testi-quote">"SAZS understands RMC operations like no other software. Mix design, delivery tracking, customer statements — everything in one place. Their support team responds within minutes."</p>
+      <div class="sz-testi-author">
+        <div class="sz-testi-avatar">A</div>
         <div>
-          <div class="testi-name">Anand R.</div>
-          <div class="testi-role">RMC Plant Manager · Coimbatore, Tamil Nadu</div>
+          <div class="sz-testi-name">Anand R.</div>
+          <div class="sz-testi-role">RMC Plant Manager · Coimbatore, Tamil Nadu</div>
         </div>
       </div>
     </div>
@@ -509,36 +876,36 @@ footer {
 </section>
 
 <!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="contact-inner">
-    <div class="contact-header reveal">
-      <div class="section-eyebrow">Ready to get started?</div>
+<section class="sz-contact-section" id="contact">
+  <div class="sz-contact-inner">
+    <div class="sz-contact-header sz-reveal">
+      <div class="sz-section-eyebrow">Ready to get started?</div>
       <h2 style="color:var(--paper)">Let's talk<br>partnership.</h2>
       <p>Reach out to our team. We'll walk you through the programme, territories, and commissions — no commitments, no fine print surprises.</p>
     </div>
 
-    <div class="contact-grid reveal">
-      <div class="contact-card">
-        <div class="contact-role">Primary Contact</div>
-        <div class="contact-name">Mohamed Bilal</div>
-        <a href="tel:+916383943114" class="contact-link">
+    <div class="sz-contact-grid sz-reveal">
+      <div class="sz-contact-card">
+        <div class="sz-contact-role">Primary Contact</div>
+        <div class="sz-contact-name">Mohamed Bilal</div>
+        <a href="tel:+916383943114" class="sz-contact-link">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.5 2.22 2 2 0 012.5.04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.04-.88a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           +91 63839 43114
         </a>
-        <a href="mailto:Bilal@sazsapps.com" class="contact-link">
+        <a href="mailto:Bilal@sazsapps.com" class="sz-contact-link">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Bilal@sazsapps.com
         </a>
       </div>
 
-      <div class="contact-card">
-        <div class="contact-role">Team / General Enquiry</div>
-        <div class="contact-name">SAZS Apps Team</div>
-        <a href="tel:+917666628000" class="contact-link">
+      <div class="sz-contact-card">
+        <div class="sz-contact-role">Team / General Enquiry</div>
+        <div class="sz-contact-name">SAZS Apps Team</div>
+        <a href="tel:+917666628000" class="sz-contact-link">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.5 2.22 2 2 0 012.5.04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.04-.88a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           +91 76666 28000
         </a>
-        <a href="mailto:Info@sazsapps.com" class="contact-link">
+        <a href="mailto:Info@sazsapps.com" class="sz-contact-link">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Info@sazsapps.com
         </a>
@@ -547,22 +914,233 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">SAZS Apps</div>
-  <div class="footer-copy">© 2025 SAZS Apps. India's leading niche ERP for quarry, RMC &amp; bricks.</div>
-</footer>
 
 <script>
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('in'), i * 80);
+        setTimeout(() => e.target.classList.add('sz-in'), i * 80);
         io.unobserve(e.target);
       }
     });
   }, { threshold: 0.07 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('.sz-reveal').forEach(el => io.observe(el));
 </script>
+
+<section style="padding-top: 30px;">
+<footer class="sazs-footer">
+
+    <!-- DESKTOP: MAIN COLUMNS GRID -->
+    <div class="sazs-footer-cols">
+
+        <!-- Col 1: Company -->
+        <div class="sazs-col-company">
+            <div class="col-heading">Sazs Apps</div>
+            <div class="company-address">
+                SAZS Apps Pvt. Ltd.
+                Cloud ERP for Quarry,
+                Crusher &amp; RMC Plants
+                India | UAE | Middle East
+            </div>
+            <ul class="company-links">
+                <li><a href="aboutus.html">About Us ↗</a></li>
+                <li><a href="contact.html">Request a Demo</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="careers.html">Careers</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 2: Products -->
+        <div class="sazs-col-nav">
+            <div class="col-heading">Products</div>
+            <ul>
+                <li><a href="products/crusher-management-software&ERP.html">Crusher Management Software & ERP</a></li>
+                <li><a href="products/Quarry-management-software&ERP.html">Quarry Management Software & ERP</a></li>
+                <li><a href="products/Rmc-billing-software&ERP.html">RMC Billing Software & ERP</a></li>
+                <li><a href="products/brickspaver-management-software&ERP.html">Brick &amp; Paver ERP</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 3: Features -->
+        <div class="sazs-col-nav">
+            <div class="col-heading">Features</div>
+            <ul>
+                <li><a href="features/anpr-camera-integration.html">ANPR Camera Integration</a></li>
+                <li><a href="features/weighbridge-automation-software.html">Weighbridge Integration</a></li>
+                <li><a href="features/e-invoice-gst-billing.html">E-Invoice (GST) Integration</a></li>
+                <li><a href="features/boom-barrier-integration.html">Boom Barrier Integration</a></li>
+                <li><a href="features/biometric-access-control.html">Biometrics Integration</a></li>
+                <li><a href="features/Schwing-stetter-integration.html">Schwing Stetter Integration</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 4: Resources -->
+        <div class="sazs-col-nav">
+            <div class="col-heading">Resources</div>
+            <ul>
+                <li><a href="features/financial-management.html">Financial Management</a></li>
+                <li><a href="features/fleet-Management-software.html">Fleet Management (Fuel, GPS, Tyres)</a></li>
+                <li><a href="features/Subcontract-billing.html">Subcontract Billing</a></li>
+                <li><a href="QuarryCrusherRMCProfitCalculator.html">Profit Calculator</a></li>
+                <li><a href="WhytoChoose.html">Why to Choose</a></li>
+                <li><a href="Questions.html">FAQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 5: Case Studies -->
+        <div class="sazs-col-nav">
+            <div class="col-heading">Case Studies</div>
+            <ul>
+                <li><a href="/case-studies/Optimizing_Profitability_Theft_Prevention.html">Profitability &amp; Theft Prevention</a></li>
+                <li><a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html">Customer Experience &amp; Order Speed</a></li>
+                <li><a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html">E-Invoicing &amp; GST Compliance</a></li>
+                <li><a href="/case-studies/Real-Time_Vehicle_Trip_Management.html">Vehicle &amp; Trip Management</a></li>
+                <li><a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html">Financial Control &amp; Profit Analysis</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 6: Media & Blogs -->
+        <div class="sazs-col-nav">
+            <div class="col-heading">Media &amp; Blogs</div>
+            <ul>
+                <li><a href="/media-events/Jharkhand_2026.html">Jharkhand Mining &amp; Construction Show 2026</a></li>
+                <li><a href="/media-events/EXCON_2025.html">EXCON 2025 – CII</a></li>
+                <li><a href="/media-events/IEMS_2024.html">IEMS – International Mining Expo 2024</a></li>
+                <li><a href="/media-events/TNMSA_2024.html">TNMSA – Chennai Zone Meet 2024</a></li>
+                <li><a href="/media-events/EXCON_2023.html">EXCON 2023 – CII</a></li>
+                <li><a href="/media-events/CODDISSIA.html">CODDISSIA – Stone Quarry Expo 2023</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- MOBILE LAYOUT -->
+    <div class="sazs-footer-mobile">
+
+        <!-- Company – centered -->
+        <div class="sazs-mobile-company">
+            <div class="col-heading">Sazs Apps</div>
+            <div class="company-address">
+                SAZS Apps Pvt. Ltd.
+                Cloud ERP for Quarry,
+                Crusher &amp; RMC Plants
+                India | UAE | Middle East
+            </div>
+            <ul class="company-links">
+                <li><a href="aboutus.html">About Us ↗</a></li>
+                <li><a href="contact.html">Request a Demo</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="careers.html">Careers</a></li>
+            </ul>
+        </div>
+
+        <!-- 2-col nav grid -->
+        <div class="sazs-mobile-nav-grid">
+
+            <div class="sazs-mobile-nav-col">
+                <div class="col-heading">Products</div>
+                <ul>
+                <li><a href="products/crusher-management-software&ERP.html">Crusher Management Software & ERP</a></li>
+                <li><a href="products/Quarry-management-software&ERP.html">Quarry Management Software & ERP</a></li>
+                <li><a href="products/Rmc-billing-software&ERP.html">RMC Billing Software & ERP</a></li>
+                <li><a href="products/brickspaver-management-software&ERP.html">Brick &amp; Paver ERP</a></li>
+                </ul>
+            </div>
+
+            <div class="sazs-mobile-nav-col">
+                <div class="col-heading">Features</div>
+                <ul>
+                <li><a href="features/anpr-camera-integration.html">ANPR Camera Integration</a></li>
+                <li><a href="features/weighbridge-automation-software.html">Weighbridge Integration</a></li>
+                <li><a href="features/e-invoice-gst-billing.html">E-Invoice (GST) Integration</a></li>
+                <li><a href="features/boom-barrier-integration.html">Boom Barrier Integration</a></li>
+                <li><a href="features/biometric-access-control.html">Biometrics Integration</a></li>
+                <li><a href="features/Schwing-stetter-integration.html">Schwing Stetter Integration</a></li>
+                </ul>
+            </div>
+
+            <div class="sazs-mobile-nav-col">
+                <div class="col-heading">Resources</div>
+                <ul>
+                <li><a href="features/financial-management.html">Financial Management</a></li>
+                <li><a href="features/fleet-Management-software.html">Fleet Management (Fuel, GPS, Tyres)</a></li>
+                <li><a href="features/Subcontract-billing.html">Subcontract Billing</a></li>
+                <li><a href="QuarryCrusherRMCProfitCalculator.html">Profit Calculator</a></li>
+                <li><a href="WhytoChoose.html">Why to Choose</a></li>
+                <li><a href="Questions.html">FAQ</a></li>
+                
+                
+                </ul>
+            </div>
+
+            <div class="sazs-mobile-nav-col">
+                <div class="col-heading">Case Studies</div>
+                <ul>
+                    <li><a href="/case-studies/Optimizing_Profitability_Theft_Prevention.html">Profitability &amp; Theft Prevention</a></li>
+                    <li><a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html">Customer Experience &amp; Order Speed</a></li>
+                    <li><a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html">E-Invoicing &amp; GST Compliance</a></li>
+                    <li><a href="/case-studies/Real-Time_Vehicle_Trip_Management.html">Vehicle &amp; Trip Management</a></li>
+                    <li><a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html">Financial Control &amp; Profit Analysis</a></li>
+                </ul>
+            </div>
+
+            <div class="sazs-mobile-nav-col">
+                <div class="col-heading">Media &amp; Blogs</div>
+                <ul>
+                    <li><a href="/media-events/Jharkhand_2026.html">Jharkhand Mining &amp; Construction Show 2026</a></li>
+                    <li><a href="/media-events/EXCON_2025.html">EXCON 2025 – CII</a></li>
+                    <li><a href="/media-events/IEMS_2024.html">IEMS – International Mining Expo 2024</a></li>
+                    <li><a href="/media-events/TNMSA_2024.html">TNMSA – Chennai Zone Meet 2024</a></li>
+                    <li><a href="/media-events/EXCON_2023.html">EXCON 2023 – CII</a></li>
+                    <li><a href="/media-events/CODDISSIA.html">CODDISSIA – Stone Quarry Expo 2023</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="sazs-footer-bottom">
+        <div class="sazs-footer-bottom-left">
+            <a href="termsofService.html">Terms of Service</a>
+            <a href="privacyPolicy.html">Privacy Policy</a>
+            <a href="dataProtectionPolicy.html">Data Protection Policy</a>
+        </div>
+        <div class="sazs-footer-bottom-right">
+            <a href="https://x.com/SazsApps" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="Twitter">
+                <img loading="lazy" src="../../src/assets/images/x.png" alt="Twitter">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100075849583725&mibextid=ZbWKwL" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="Facebook">
+                <img loading="lazy" src="../../src/assets/images/Facebook.png" alt="Facebook">
+            </a>
+            <a href="https://youtube.com/@sazsapps?si=0CPqHj-h-GcEJaNI" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="YouTube">
+                <img loading="lazy" src="../../src/assets/images/Youtube.png" alt="YouTube">
+            </a>
+            <a href="https://www.linkedin.com/company/sazs-apps-erp/" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="LinkedIn">
+                <img loading="lazy" src="../../src/assets/images/Linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/sazs_apps?igsh=cmN6YbWKwL" target="_blank" rel="noopener" class="sazs-social-icon" aria-label="Instagram">
+                <img loading="lazy" src="../../src/assets/images/instagram.png" alt="Instagram">
+            </a>
+        </div>
+    </div>
+
+</footer>
+
+<footer class="footerbottom">
+    <div><span>© 2026, Sazs Apps Pvt. Ltd. All Rights Reserved.</span></div>
+</footer>
+
+<!-- WhatsApp button (unchanged) -->
+<a href="https://wa.me/7666628000?text=Hi%20SAZS%20Apps%20Team%2C%20I%20have%20a%20question%20about%20your%20ERP."
+    target="_blank"
+    style="position:fixed;bottom:30px;right:30px;z-index:9999;background:#ffffff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);"
+    aria-label="Chat on WhatsApp">
+    <img src="./src/assets/images/whatsappiconm.avif" width="52" height="52" alt="WhatsApp" loading="lazy" />
+</a>
+</section>
+
+
 </body>
 </html>
