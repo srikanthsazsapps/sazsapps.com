@@ -75,399 +75,490 @@
 
 <body>
 
-<nav class="sazs-header">
-    <div class="sazs-header-wrapper">
-        <div class="sazs-header-main">
-            <a href="/" class="sazs-brand">
-                <div class="sazs-brand-image">
-                    <img src="../src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo" class="sazs-brand-logo" loading="lazy">
+    <nav class="sazs-header">
+        <div class="sazs-header-wrapper">
+            <div class="sazs-header-main">
+                <a href="/" class="sazs-brand">
+                    <div class="sazs-brand-image">
+                        <img src="../src/assets/images/sazslogo.avif" alt="SAZS ERP App Logo" class="sazs-brand-logo"
+                            loading="lazy">
+                    </div>
+                </a>
+                <ul class="sazs-menu-list">
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="platform">Product<svg class="sazs-arrow-svg"
+                                viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg></a>
+                    </li>
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="Features">Features<svg class="sazs-arrow-svg"
+                                viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg></a>
+                    </li>
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="resources">Media & Events<svg class="sazs-arrow-svg"
+                                viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg></a>
+                    </li>
+                    <li class="sazs-menu-item">
+                        <a class="sazs-menu-link" data-dropdown="blogs">Blogs<svg class="sazs-arrow-svg"
+                                viewBox="0 0 10 10" fill="currentColor">
+                                <path
+                                    d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z" />
+                            </svg></a>
+                    </li>
+                    <li class="sazs-menu-item">
+                        <a href="../partner.html" class="sazs-menu-link">Sazs Ally</a>
+                    </li>
+
+                </ul>
+                <div class="sazs-cta-group">
+                    <a href="../Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
                 </div>
+                <div class="sazs-hamburger">
+                    <a href="javascript:void(0);" onclick="toggleNav()" aria-label="Open navigation menu">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="3" y1="6" x2="21" y2="6" stroke="#000" stroke-width="2" stroke-linecap="round" />
+                            <line x1="3" y1="12" x2="21" y2="12" stroke="#000" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="3" y1="18" x2="21" y2="18" stroke="#000" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PRODUCT DROPDOWN -->
+            <div class="sazs-submenu" id="platform">
+                <div class="product-dropdown">
+                    <div class="product-left">
+                        <div class="product-section-title">Quick Links</div>
+                        <a href="../index.html" class="product-link">Home</a>
+                        <a href="../aboutus.html" class="product-link">About Us</a>
+                        <a href="../WhytoChoose.html" class="product-link">Why to Choose</a>
+                        <a href="../careers.html" class="product-link">Careers</a>
+                        <a href="../QuarryCrusherRMCProfitCalculator.html" class="product-link">Profit Calc</a>
+                        <a href="../Questions.html" class="product-link">FAQ</a>
+                    </div>
+                    <div class="product-right">
+                        <div class="product-grid-title">Our Products</div>
+                        <div class="sazs-submenu-grid">
+                            <div class="sazs-submenu-col">
+                                <a href="/products/crusher-management-software-erp.html" class="sazs-product-cards">
+                                    <div class="sazs-cards-img-wrapper">
+                                        <img loading="lazy" src="/src/assets/contentImages/crusherdroneview.avif"
+                                            alt="Stone Crusher Management Software" />
+                                    </div>
+                                    <div class="sazs-cards-heading">Sazs Crusher ERP</div>
+                                    <!-- <div class="sazs-cards-heading">Stone Crusher Software for End-to-End Operations</div> -->
+                                    <div class="sazs-cards-text"> Stone Crusher Software for End-to-End Operations In
+                                        the rugged environment of stone crushing, efficiency is currency. Transform your
+                                        quarry operations with intelligent automation.</div>
+                                </a>
+                            </div>
+                            <div class="sazs-submenu-col">
+                                <a href="/products/Quarry-management-software-erp.html" class="sazs-product-cards">
+                                    <div class="sazs-cards-img-wrapper">
+                                        <img loading="lazy" src="/src/assets/contentImages/quarrydroneview.avif"
+                                            alt="Brick Manufacturing ERP Software" />
+                                    </div>
+                                    <div class="sazs-cards-heading">Sazs Quarry ERP</div>
+                                    <!-- <div class="sazs-cards-heading">End-to-End Management Software for Stone Quarries</div> -->
+                                    <div class="sazs-cards-text">End-to-End Management Software for Stone Quarries In
+                                        the rugged environment of stone crushing, efficiency is currency. Transform your
+                                        quarry operations with intelligent automation.</div>
+                                </a>
+                            </div>
+                            <div class="sazs-submenu-col">
+                                <a href="/products/Rmc-billing-software-erp.html" class="sazs-product-cards">
+                                    <div class="sazs-cards-img-wrapper">
+                                        <img loading="lazy" src="/src/assets/contentImages/RMCdroneview.avif"
+                                            alt="Brick Manufacturing ERP Software" />
+                                    </div>
+                                    <div class="sazs-cards-heading">Sazs RMC ERP</div>
+                                    <!-- <div class="sazs-cards-heading">Next-Gen Billing Software for Ready Mix Concrete (RMC) Plants</div> -->
+                                    <div class="sazs-cards-text"> Next-Gen Billing Software for Ready Mix Concrete (RMC)
+                                        Plants The Future of Fast, Accurate & Automated RMC Billing</div>
+                                </a>
+                            </div>
+                            <div class="sazs-submenu-col">
+                                <a href="/products/brickspaver-management-software-erp.html" class="sazs-product-cards">
+                                    <div class="sazs-cards-img-wrapper">
+                                        <img loading="lazy" src="/src/assets/contentImages/bricksdrone.avif"
+                                            alt="Brick Manufacturing ERP Software" />
+                                    </div>
+                                    <div class="sazs-cards-heading">Sazs Brick & Paver ERP</div>
+                                    <!-- <div class="sazs-cards-heading">Complete ERP Solution for Brick & Paver Manufacturing Plants</div> -->
+                                    <div class="sazs-cards-text"> Complete ERP Solution for Brick & Paver Manufacturing
+                                        Plants From Raw Materials to Finished Products—Manage Every Stage of Your
+                                        Production</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURES DROPDOWN — 5×2 BENTO GRID (10 cardss) -->
+            <div class="sazs-submenu" id="Features">
+                <div class="media-events-header">
+                    <h2 class="media-events-title">Features <span class="media-title-separator">—</span> <span
+                            class="media-title-subtitle">tailored to every Crushers & Quarries, RMC, Brick &
+                            Paver</span></h2>
+                </div>
+                <div class="bento-container">
+
+                    <a href="/features/anpr-camera-integration.html" class="cards anpr">
+                        <div class="cards-img-wrap">
+                            <img loading="lazy" src="/src/assets/images/menu/anprintegration.avif"
+                                alt="ANPR Camera Integration">
+                        </div>
+                        <h2>ANPR Camera Integration</h2>
+                        <p>Automatic number plate recognition for vehicle entry & exit logging</p>
+                    </a>
+
+                    <a href="/features/e-invoice-gst-billing.html" class="cards einvoice">
+                        <div class="cards-img-wrap">
+                            <img loading="lazy" src="/src/assets/images/menu/einvoice&gst.avif"
+                                alt="E-Invoice GST Billing">
+                        </div>
+                        <h2>E-Invoice & GST Billing</h2>
+                        <p>Fully GST compliant automated invoicing for Crushers, RMC & Brick plants</p>
+                    </a>
+
+                    <a href="/features/weighbridge-automation-software.html" class="cards weighbridge">
+                        <div class="cards-img-wrap">
+                            <img loading="lazy" src="/src/assets/images/menu/weighbridge.avif"
+                                alt="Weighbridge Automation">
+                        </div>
+                        <h2>Weighbridge Automation</h2>
+                        <p>Real-time weight capture with camera integration & automated slip printing</p>
+                    </a>
+
+                    <a href="/features/boom-barrier-integration.html" class="cards boom">
+                        <div class="cards-img-wrap">
+                            <img loading="lazy" src="/src/assets/images/menu/boombarrier.avif"
+                                alt="Boom Barrier Integration">
+                        </div>
+                        <h2>Boom Barrier Integration</h2>
+                        <p>Automated gate control linked to weighbridge for secure vehicle movement</p>
+                    </a>
+
+                    <a href="/features/biometric-access-control.html" class="cards biometrics">
+                        <div class="cards-img-wrap">
+                            <img loading="lazy" src="/src/assets/images/menu/biiometric.avif"
+                                alt="Biometric Access Control">
+                        </div>
+                        <h2>Biometric Access Control</h2>
+                        <p>Fingerprint, face recognition & RFID for secure site access management</p>
+                    </a>
+
+                    <a href="/features/Subcontract-billing.html" class="cards subcontract">
+                        <div class="cards-img-wrap">
+                            <img loading="lazy" src="/src/assets/images/menu/subcontract.avif"
+                                alt="Subcontract Billing">
+                        </div>
+                        <h2>Subcontract Billing</h2>
+                        <p>Contractor-wise rate management, work orders & automated billing settlement</p>
+                    </a>
+
+                    <a href="/features/fleet-Management-software.html" class="cards fleet">
+                        <div class="cards-img-wrap">
+                            <img loading="lazy" src="/src/assets/images/menu/fleetmanagement.avif"
+                                alt="Fleet Management">
+                        </div>
+                        <h2>Fleet Management</h2>
+                        <p>Vehicle tracking, trip management & fuel monitoring for quarry fleets</p>
+                    </a>
+
+                    <a href="/features/financial-management.html" class="cards financial">
+                        <div class="cards-img-wrap">
+                            <img loading="lazy" src="/src/assets/images/menu/financialmanagement.avif"
+                                alt="Financial Management">
+                        </div>
+                        <h2>Financial Management</h2>
+                        <p>P&amp;L reports, ledger, cost analysis & real-time financial dashboards</p>
+                    </a>
+
+                    <a href="/features/Schwing-stetter-integration.html" class="cards schwing">
+                        <div class="cards-img-wrap">
+                            <img loading="lazy" src="/src/assets/images/menu/Schwingstetter.avif"
+                                alt="Schwing Stetter Integration">
+                        </div>
+                        <h2>Schwing Stetter Integration</h2>
+                        <p>Direct RMC plant integration with Schwing Stetter batching controllers</p>
+                    </a>
+
+                    <a href="#" class="cards smarttech">
+                        <div class="cards-img-wrap">
+                            <img loading="lazy" src="/src/assets/contentImages/SmartTech.avif"
+                                alt="Smart Tech Integration">
+                        </div>
+                        <h2>Smart Tech Integration</h2>
+                        <p>IoT-ready smart technology tailored for Crushers, Quarries & RMC plants</p>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- MEDIA & EVENTS DROPDOWN -->
+            <div class="sazs-submenu" id="resources">
+                <div class="media-events-dropdown">
+                    <div class="media-events-header">
+                        <h2 class="media-events-title">Media & Events <span class="media-title-separator">—</span> <span
+                                class="media-title-subtitle">Stay Connected, Stay Informed</span></h2>
+                        <div class="media-events-ai-tracker">
+                            <span class="ai-tracker-label">Latest Updates</span>
+                            <span class="ai-tracker-beta">NEW</span>
+                            <span class="ai-tracker-text">Industry Insights & Success Stories</span>
+                        </div>
+                    </div>
+                    <div class="media-events-grid">
+                        <a href="/media-events/Jharkhand_2026.html" class="media-event-cards">
+                            <div class="media-cards-image">
+                                <img loading="lazy" src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026" />
+                            </div>
+                            <div class="media-cards-content">
+                                <div class="media-cards-title">Jharkhand Mining & Construction Show 2026</div>
+                            </div>
+                        </a>
+                        <a href="/media-events/EXCON_2025.html" class="media-event-cards">
+                            <div class="media-cards-image">
+                                <img loading="lazy" src="/src/assets/images/excon25.avif" alt="EXCON_2025" />
+                            </div>
+                            <div class="media-cards-content">
+                                <div class="media-cards-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
+                            </div>
+                        </a>
+                        <a href="/media-events/IEMS_2024.html" class="media-event-cards">
+                            <div class="media-cards-image">
+                                <img loading="lazy" src="/src/assets/images/iems24.avif" alt="IEMS_2024" />
+                            </div>
+                            <div class="media-cards-content">
+                                <div class="media-cards-title">IEMS – International Mining Expo & Conclave 2024</div>
+                            </div>
+                        </a>
+                        <a href="/media-events/TNMSA_2024.html" class="media-event-cards">
+                            <div class="media-cards-image">
+                                <img loading="lazy" src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024" />
+                            </div>
+                            <div class="media-cards-content">
+                                <div class="media-cards-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet
+                                    2024</div>
+                            </div>
+                        </a>
+                        <a href="/media-events/EXCON_2023.html" class="media-event-cards">
+                            <div class="media-cards-image">
+                                <img loading="lazy" src="/src/assets/images/excon23.avif" alt="EXCON_2023" />
+                            </div>
+                            <div class="media-cards-content">
+                                <div class="media-cards-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
+                            </div>
+                        </a>
+                        <a href="/media-events/CODDISSIA.html" class="media-event-cards">
+                            <div class="media-cards-image">
+                                <img loading="lazy" src="/src/assets/images/codisia22.avif" alt="CODDISSIA" />
+                            </div>
+                            <div class="media-cards-content">
+                                <div class="media-cards-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners
+                                    Association Expo 2023</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOGS / CASE STUDIES DROPDOWN -->
+            <div class="sazs-submenu" id="blogs">
+                <div class="blogs-dropdown-container">
+                    <div class="media-events-header">
+                        <h2 class="media-events-title">Case Studies <span class="media-title-separator">—</span> <span
+                                class="media-title-subtitle">Real-World Success Stories</span></h2>
+                        <div class="media-events-ai-tracker">
+                            <span class="ai-tracker-label">Latest Insights</span>
+                            <span class="ai-tracker-beta">NEW</span>
+                            <span class="ai-tracker-text">Industry Proven Results</span>
+                        </div>
+                    </div>
+                    <div class="blogs-cardss-grid">
+                        <a href="/case-studies/Optimizing_Profitability_Theft_Prevention.html" class="blog-cards">
+                            <div class="blog-cards-image">
+                                <img loading="lazy" src="/src/assets/contentImages/opt1.webp"
+                                    alt="Quarry Profitability" />
+                                <div class="blog-cards-overlay">
+                                    <div class="blog-overlay-title">Optimizing Profitability & Theft Prevention</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                    <div class="pubdate"><span>Published: January 2024</span></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-cards">
+                            <div class="blog-cards-image">
+                                <img loading="lazy" src="/src/assets/contentImages/tran2.webp"
+                                    alt="Customer Experience" />
+                                <div class="blog-cards-overlay">
+                                    <div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                    <div class="pubdate"><span>Published: March 2025</span></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-cards">
+                            <div class="blog-cards-image">
+                                <img loading="lazy" src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing" />
+                                <div class="blog-cards-overlay">
+                                    <div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                    <div class="pubdate"><span>Published: May 2025</span></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-cards">
+                            <div class="blog-cards-image">
+                                <img loading="lazy" src="/src/assets/contentImages/real4.webp"
+                                    alt="Vehicle Management" />
+                                <div class="blog-cards-overlay">
+                                    <div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                    <div class="pubdate"><span>Published: August 2025</span></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-cards">
+                            <div class="blog-cards-image">
+                                <img loading="lazy" src="/src/assets/contentImages/comp5.webp"
+                                    alt="Financial Control" />
+                                <div class="blog-cards-overlay">
+                                    <div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                    <div class="pubdate"><span>Published: December 2025</span></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/case-studies/Quarry360.html" class="blog-cards">
+                            <div class="blog-cards-image">
+                                <img loading="lazy" src="change11" alt="Quarry 360 with Sazs ERP from Sazs Apps" />
+                                <div class="blog-cards-overlay">
+                                    <div class="blog-overlay-title">Quarry 360 with Sazs ERP from Sazs Apps</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                    <div class="pubdate"><span>Published: December 2025</span></div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="/case-studies/Crusher360.html" class="blog-cards">
+                            <div class="blog-cards-image">
+                                <img loading="lazy" src="change22" alt="Managing a Crusher Plant in 360°" />
+                                <div class="blog-cards-overlay">
+                                    <div class="blog-overlay-title">Managing a Crusher Plant in 360°</div>
+                                    <div class="blog-overlay-explore">Explore →</div>
+                                    <div class="pubdate"><span>Published: December 2025</span></div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- SIDENAV (MOBILE) -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/"><img loading="lazy" src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page"
+                class="sidenav-logo"></a>
+        <a href="/">Home</a>
+        <a href="../aboutus.html">About Us</a>
+        <div class="mobile-dropdown">
+            <a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
             </a>
-            <ul class="sazs-menu-list">
-                <li class="sazs-menu-item">
-                    <a class="sazs-menu-link" data-dropdown="platform">Product<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
-                </li>
-                <li class="sazs-menu-item">
-                    <a class="sazs-menu-link" data-dropdown="Features">Features<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
-                </li>
-                <li class="sazs-menu-item">
-                    <a class="sazs-menu-link" data-dropdown="resources">Media & Events<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
-                </li>
-                <li class="sazs-menu-item">
-                    <a class="sazs-menu-link" data-dropdown="blogs">Blogs<svg class="sazs-arrow-svg" viewBox="0 0 10 10" fill="currentColor"><path d="M9.392 0.602V9.398H0.619L0.608 7.96H6.909L0.608 1.648L1.648 0.602L7.955 6.92L7.943 0.602H9.392Z"/></svg></a>
-                </li>
-                <li class="sazs-menu-item">
-                    <a  href="../partner.html" class="sazs-menu-link" >Sazs Ally</a>
-                </li>
-
-            </ul>
-            <div class="sazs-cta-group">
-                <a href="../Signup.html" class="sazs-button sazs-button-outline">Contact / Sign in</a>
-            </div>
-            <div class="sazs-hamburger">
-                <a href="javascript:void(0);" onclick="toggleNav()" aria-label="Open navigation menu">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="3" y1="6" x2="21" y2="6" stroke="#000" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="3" y1="12" x2="21" y2="12" stroke="#000" stroke-width="2" stroke-linecap="round"/>
-                        <line x1="3" y1="18" x2="21" y2="18" stroke="#000" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </a>
+            <div class="mobile-dropdown-content">
+                <a href="/products/Quarry-management-software-erp.html">Quarry</a>
+                <a href="/products/crusher-management-software-erp.html">Crusher</a>
+                <a href="/products/Rmc-billing-software-erp.html">Ready Mix Concrete</a>
+                <a href="/products/brickspaver-management-software-erp.html">Bricks & Pavers</a>
             </div>
         </div>
-
-        <!-- PRODUCT DROPDOWN -->
-        <div class="sazs-submenu" id="platform">
-            <div class="product-dropdown">
-                <div class="product-left">
-                    <div class="product-section-title">Quick Links</div>
-                    <a href="../index.html" class="product-link">Home</a>
-                    <a href="../aboutus.html" class="product-link">About Us</a>
-                    <a href="../WhytoChoose.html" class="product-link">Why to Choose</a>
-                    <a href="../careers.html" class="product-link">Careers</a>
-                    <a href="../QuarryCrusherRMCProfitCalculator.html" class="product-link">Profit Calc</a>
-                    <a href="../Questions.html" class="product-link">FAQ</a>
-                </div>
-                <div class="product-right">
-                    <div class="product-grid-title">Our Products</div>
-                    <div class="sazs-submenu-grid">
-                        <div class="sazs-submenu-col">
-                            <a href="/products/crusher-management-software-erp.html" class="sazs-product-cards">
-                                <div class="sazs-cards-img-wrapper">
-                                    <img loading="lazy" src="/src/assets/contentImages/crusherdroneview.avif" alt="Stone Crusher Management Software"/>
-                                </div>
-                                <div class="sazs-cards-heading">Stone Crusher Software for End-to-End Operations</div>
-                                <div class="sazs-cards-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
-                            </a>
-                        </div>
-                        <div class="sazs-submenu-col">
-                            <a href="/products/Quarry-management-software-erp.html" class="sazs-product-cards">
-                                <div class="sazs-cards-img-wrapper">
-                                    <img loading="lazy" src="/src/assets/contentImages/quarrydroneview.avif" alt="Brick Manufacturing ERP Software"/>
-                                </div>
-                                <div class="sazs-cards-heading">End-to-End Management Software for Stone Quarries</div>
-                                <div class="sazs-cards-text">In the rugged environment of stone crushing, efficiency is currency. Transform your quarry operations with intelligent automation.</div>
-                            </a>
-                        </div>
-                        <div class="sazs-submenu-col">
-                            <a href="/products/Rmc-billing-software-erp.html" class="sazs-product-cards">
-                                <div class="sazs-cards-img-wrapper">
-                                    <img loading="lazy" src="/src/assets/contentImages/RMCdroneview.avif" alt="Brick Manufacturing ERP Software"/>
-                                </div>
-                                <div class="sazs-cards-heading">Next-Gen Billing Software for Ready Mix Concrete (RMC) Plants</div>
-                                <div class="sazs-cards-text">The Future of Fast, Accurate & Automated RMC Billing</div>
-                            </a>
-                        </div>
-                        <div class="sazs-submenu-col">
-                            <a href="/products/brickspaver-management-software-erp.html" class="sazs-product-cards">
-                                <div class="sazs-cards-img-wrapper">
-                                    <img loading="lazy" src="/src/assets/contentImages/bricksdrone.avif" alt="Brick Manufacturing ERP Software"/>
-                                </div>
-                                <div class="sazs-cards-heading">Complete ERP Solution for Brick & Paver Manufacturing Plants</div>
-                                <div class="sazs-cards-text">From Raw Materials to Finished Products—Manage Every Stage of Your Production</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
+                class="mobile-dropdown-trigger">Explore Features
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+            <div class="mobile-dropdown-content">
+                <a href="/features/anpr-camera-integration.html">ANPR Camera Integration</a>
+                <a href="/features/e-invoice-gst-billing.html">E-Invoice Integration</a>
+                <a href="/features/weighbridge-automation-software.html">Weighbridge and Camera Integration</a>
+                <a href="/features/boom-barrier-integration.html">Boom Barrier Integration</a>
+                <a href="/features/biometric-access-control.html">Biometrics</a>
+                <a href="/features/subcontract-billing.html">Subcontract Billing</a>
+                <a href="/features/fleet-management-software.html">Fleet Management</a>
+                <a href="/features/financial-management.html">Financial Management</a>
+                <a href="/features/schwing-stetter-integration.html">Schwing Stetter Integration</a>
             </div>
         </div>
-
-        <!-- FEATURES DROPDOWN — 5×2 BENTO GRID (10 cardss) -->
-        <div class="sazs-submenu" id="Features">
-            <div class="media-events-header">
-                <h2 class="media-events-title">Features <span class="media-title-separator">—</span> <span class="media-title-subtitle">tailored to every Crushers & Quarries, RMC, Brick & Paver</span></h2>
-            </div>
-            <div class="bento-container">
-
-                <a href="/features/anpr-camera-integration.html" class="cards anpr">
-                    <div class="cards-img-wrap">
-                        <img loading="lazy" src="/src/assets/images/menu/anprintegration.avif" alt="ANPR Camera Integration">
-                    </div>
-                    <h2>ANPR Camera Integration</h2>
-                    <p>Automatic number plate recognition for vehicle entry & exit logging</p>
-                </a>
-
-                <a href="/features/e-invoice-gst-billing.html" class="cards einvoice">
-                    <div class="cards-img-wrap">
-                        <img loading="lazy" src="/src/assets/images/menu/einvoice&gst.avif" alt="E-Invoice GST Billing">
-                    </div>
-                    <h2>E-Invoice & GST Billing</h2>
-                    <p>Fully GST compliant automated invoicing for Crushers, RMC & Brick plants</p>
-                </a>
-
-                <a href="/features/weighbridge-automation-software.html" class="cards weighbridge">
-                    <div class="cards-img-wrap">
-                        <img loading="lazy" src="/src/assets/images/menu/weighbridge.avif" alt="Weighbridge Automation">
-                    </div>
-                    <h2>Weighbridge Automation</h2>
-                    <p>Real-time weight capture with camera integration & automated slip printing</p>
-                </a>
-
-                <a href="/features/boom-barrier-integration.html" class="cards boom">
-                    <div class="cards-img-wrap">
-                        <img loading="lazy" src="/src/assets/images/menu/boombarrier.avif" alt="Boom Barrier Integration">
-                    </div>
-                    <h2>Boom Barrier Integration</h2>
-                    <p>Automated gate control linked to weighbridge for secure vehicle movement</p>
-                </a>
-
-                <a href="/features/biometric-access-control.html" class="cards biometrics">
-                    <div class="cards-img-wrap">
-                        <img loading="lazy" src="/src/assets/images/menu/biiometric.avif" alt="Biometric Access Control">
-                    </div>
-                    <h2>Biometric Access Control</h2>
-                    <p>Fingerprint, face recognition & RFID for secure site access management</p>
-                </a>
-
-                <a href="/features/Subcontract-billing.html" class="cards subcontract">
-                    <div class="cards-img-wrap">
-                        <img loading="lazy" src="/src/assets/images/menu/subcontract.avif" alt="Subcontract Billing">
-                    </div>
-                    <h2>Subcontract Billing</h2>
-                    <p>Contractor-wise rate management, work orders & automated billing settlement</p>
-                </a>
-
-                <a href="/features/fleet-Management-software.html" class="cards fleet">
-                    <div class="cards-img-wrap">
-                        <img loading="lazy" src="/src/assets/images/menu/fleetmanagement.avif" alt="Fleet Management">
-                    </div>
-                    <h2>Fleet Management</h2>
-                    <p>Vehicle tracking, trip management & fuel monitoring for quarry fleets</p>
-                </a>
-
-                <a href="/features/financial-management.html" class="cards financial">
-                    <div class="cards-img-wrap">
-                        <img loading="lazy" src="/src/assets/images/menu/financialmanagement.avif" alt="Financial Management">
-                    </div>
-                    <h2>Financial Management</h2>
-                    <p>P&amp;L reports, ledger, cost analysis & real-time financial dashboards</p>
-                </a>
-
-                <a href="/features/Schwing-stetter-integration.html" class="cards schwing">
-                    <div class="cards-img-wrap">
-                        <img loading="lazy" src="/src/assets/images/menu/Schwingstetter.avif" alt="Schwing Stetter Integration">
-                    </div>
-                    <h2>Schwing Stetter Integration</h2>
-                    <p>Direct RMC plant integration with Schwing Stetter batching controllers</p>
-                </a>
-
-                <a href="#" class="cards smarttech">
-                    <div class="cards-img-wrap">
-                        <img loading="lazy" src="/src/assets/contentImages/SmartTech.avif" alt="Smart Tech Integration">
-                    </div>
-                    <h2>Smart Tech Integration</h2>
-                    <p>IoT-ready smart technology tailored for Crushers, Quarries & RMC plants</p>
-                </a>
-
+        <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
+                class="mobile-dropdown-trigger">Case Studies
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+            <div class="mobile-dropdown-content">
+                <a href="/case-studies/Optimizing_Profitability_Theft_Prevention.html">Optimizing Profitability & Theft
+                    Prevention</a>
+                <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html">Transforming Customer
+                    Experience & Order Speed</a>
+                <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html">Automating E-Invoicing & GST
+                    Compliance</a>
+                <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html">Real-Time Vehicle & Trip Management</a>
+                <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html">Complete Financial Control &
+                    Profit Analysis</a>
+                <a href="/case-studies/Quarry360.html">Quarry 360 with Sazs ERP from Sazs Apps</a>
+                <a href="/case-studies/Crusher360.html">Managing a Crusher Plant in 360°</a>
             </div>
         </div>
-
-        <!-- MEDIA & EVENTS DROPDOWN -->
-        <div class="sazs-submenu" id="resources">
-            <div class="media-events-dropdown">
-                <div class="media-events-header">
-                    <h2 class="media-events-title">Media & Events <span class="media-title-separator">—</span> <span class="media-title-subtitle">Stay Connected, Stay Informed</span></h2>
-                    <div class="media-events-ai-tracker">
-                        <span class="ai-tracker-label">Latest Updates</span>
-                        <span class="ai-tracker-beta">NEW</span>
-                        <span class="ai-tracker-text">Industry Insights & Success Stories</span>
-                    </div>
-                </div>
-                <div class="media-events-grid">
-                    <a href="/media-events/Jharkhand_2026.html" class="media-event-cards">
-                        <div class="media-cards-image">
-                            <img loading="lazy" src="/src/assets/images/Jharkand26.avif" alt="Jharkhand _2026"/>
-                        </div>
-                        <div class="media-cards-content">
-                            <div class="media-cards-title">Jharkhand Mining & Construction Show 2026</div>
-                        </div>
-                    </a>
-                    <a href="/media-events/EXCON_2025.html" class="media-event-cards">
-                        <div class="media-cards-image">
-                            <img loading="lazy" src="/src/assets/images/excon25.avif" alt="EXCON_2025"/>
-                        </div>
-                        <div class="media-cards-content">
-                            <div class="media-cards-title">EXCON 2025 – Confederation of Indian Industry (CII)</div>
-                        </div>
-                    </a>
-                    <a href="/media-events/IEMS_2024.html" class="media-event-cards">
-                        <div class="media-cards-image">
-                            <img loading="lazy" src="/src/assets/images/iems24.avif" alt="IEMS_2024"/>
-                        </div>
-                        <div class="media-cards-content">
-                            <div class="media-cards-title">IEMS – International Mining Expo & Conclave 2024</div>
-                        </div>
-                    </a>
-                    <a href="/media-events/TNMSA_2024.html" class="media-event-cards">
-                        <div class="media-cards-image">
-                            <img loading="lazy" src="/src/assets/images/TMSA24.avif" alt="TNMSA_2024"/>
-                        </div>
-                        <div class="media-cards-content">
-                            <div class="media-cards-title">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</div>
-                        </div>
-                    </a>
-                    <a href="/media-events/EXCON_2023.html" class="media-event-cards">
-                        <div class="media-cards-image">
-                            <img loading="lazy" src="/src/assets/images/excon23.avif" alt="EXCON_2023"/>
-                        </div>
-                        <div class="media-cards-content">
-                            <div class="media-cards-title">EXCON 2023 – Confederation of Indian Industry (CII)</div>
-                        </div>
-                    </a>
-                    <a href="/media-events/CODDISSIA.html" class="media-event-cards">
-                        <div class="media-cards-image">
-                            <img loading="lazy" src="/src/assets/images/codisia22.avif" alt="CODDISSIA"/>
-                        </div>
-                        <div class="media-cards-content">
-                            <div class="media-cards-title">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</div>
-                        </div>
-                    </a>
-                </div>
+        <div class="mobile-dropdown">
+            <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)"
+                class="mobile-dropdown-trigger">Events
+                <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+            <div class="mobile-dropdown-content">
+                <a href="/media-events/Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
+                <a href="/media-events/EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
+                <a href="/media-events/IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
+                <a href="/media-events/TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
+                <a href="/media-events/EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
+                <a href="/media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association
+                    Expo 2023</a>
             </div>
         </div>
-
-        <!-- BLOGS / CASE STUDIES DROPDOWN -->
-        <div class="sazs-submenu" id="blogs">
-            <div class="blogs-dropdown-container">
-                <div class="media-events-header">
-                    <h2 class="media-events-title">Case Studies <span class="media-title-separator">—</span> <span class="media-title-subtitle">Real-World Success Stories</span></h2>
-                    <div class="media-events-ai-tracker">
-                        <span class="ai-tracker-label">Latest Insights</span>
-                        <span class="ai-tracker-beta">NEW</span>
-                        <span class="ai-tracker-text">Industry Proven Results</span>
-                    </div>
-                </div>
-                <div class="blogs-cardss-grid">
-                    <a href="/case-studies/Optimizing_Profitability_Theft_Prevention.html" class="blog-cards">
-                        <div class="blog-cards-image">
-                            <img loading="lazy" src="/src/assets/contentImages/opt1.webp" alt="Quarry Profitability"/>
-                            <div class="blog-cards-overlay">
-                                <div class="blog-overlay-title">Optimizing  Profitability & Theft Prevention</div>
-                                <div class="blog-overlay-explore">Explore →</div>
-                                <div class="pubdate"><span>Published: January 2024</span></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html" class="blog-cards">
-                        <div class="blog-cards-image">
-                            <img loading="lazy" src="/src/assets/contentImages/tran2.webp" alt="Customer Experience"/>
-                            <div class="blog-cards-overlay">
-                                <div class="blog-overlay-title">Transforming Customer Experience & Order Speed</div>
-                                <div class="blog-overlay-explore">Explore →</div>
-                                <div class="pubdate"><span>Published: March 2025</span></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html" class="blog-cards">
-                        <div class="blog-cards-image">
-                            <img loading="lazy" src="/src/assets/contentImages/aut3.webp" alt="E-Invoicing"/>
-                            <div class="blog-cards-overlay">
-                                <div class="blog-overlay-title">Automating E-Invoicing & GST Compliance</div>
-                                <div class="blog-overlay-explore">Explore →</div>
-                                <div class="pubdate"><span>Published: May 2025</span></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html" class="blog-cards">
-                        <div class="blog-cards-image">
-                            <img loading="lazy" src="/src/assets/contentImages/real4.webp" alt="Vehicle Management"/>
-                            <div class="blog-cards-overlay">
-                                <div class="blog-overlay-title">Real-Time Vehicle & Trip Management</div>
-                                <div class="blog-overlay-explore">Explore →</div>
-                                <div class="pubdate"><span>Published: August 2025</span></div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html" class="blog-cards">
-                        <div class="blog-cards-image">
-                            <img loading="lazy" src="/src/assets/contentImages/comp5.webp" alt="Financial Control"/>
-                            <div class="blog-cards-overlay">
-                                <div class="blog-overlay-title">Complete Financial Control & Profit Analysis</div>
-                                <div class="blog-overlay-explore">Explore →</div>
-                                <div class="pubdate"><span>Published: December 2025</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
+        <a href="../partner.html">Sazs Ally</a>
+        <a href="../QuarryCrusherRMCProfitCalculator.html">Profit Calc</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../Signup.html">Sign Up</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../WhytoChoose.html">Why to Choose Sazs</a>
+        <a href="../Questions.html">FAQ</a>
     </div>
-</nav>
-
-<!-- SIDENAV (MOBILE) -->
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/"><img loading="lazy" src="/src/assets/logo/sazslogowhite.svg" alt="SAZS ERP App Logo Home page" class="sidenav-logo"></a>
-    <a href="/">Home</a>
-    <a href="../aboutus.html">About Us</a>
-    <div class="mobile-dropdown">
-        <a href="products.html" onclick="toggleMobileDropdown(this,event);return false">Products
-            <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </a>
-        <div class="mobile-dropdown-content">
-            <a href="/products/Quarry-management-software-erp.html">Quarry</a>
-            <a href="/products/crusher-management-software-erp.html">Crusher</a>
-            <a href="/products/Rmc-billing-software-erp.html">Ready Mix Concrete</a>
-            <a href="/products/brickspaver-management-software-erp.html">Bricks & Pavers</a>
-        </div>
-    </div>
-    <div class="mobile-dropdown">
-        <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Explore Features
-            <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </a>
-        <div class="mobile-dropdown-content">
-            <a href="/features/anpr-camera-integration.html">ANPR Camera Integration</a>
-            <a href="/features/e-invoice-gst-billing.html">E-Invoice Integration</a>
-            <a href="/features/weighbridge-automation-software.html">Weighbridge and Camera Integration</a>
-            <a href="/features/boom-barrier-integration.html">Boom Barrier Integration</a>
-            <a href="/features/biometric-access-control.html">Biometrics</a>
-            <a href="/features/subcontract-billing.html">Subcontract Billing</a>
-            <a href="/features/fleet-management-software.html">Fleet Management</a>
-            <a href="/features/financial-management.html">Financial Management</a>
-            <a href="/features/schwing-stetter-integration.html">Schwing Stetter Integration</a>
-        </div>
-    </div>
-    <div class="mobile-dropdown">
-        <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Case Studies
-            <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </a>
-        <div class="mobile-dropdown-content">
-            <a href="/case-studies/Optimizing_Profitability_Theft_Prevention.html">Optimizing  Profitability & Theft Prevention</a>
-            <a href="/case-studies/Transforming_Customer_Experience_Order_Speed.html">Transforming Customer Experience & Order Speed</a>
-            <a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html">Automating E-Invoicing & GST Compliance</a>
-            <a href="/case-studies/Real-Time_Vehicle_Trip_Management.html">Real-Time Vehicle & Trip Management</a>
-            <a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html">Complete Financial Control & Profit Analysis</a>
-        </div>
-    </div>
-    <div class="mobile-dropdown">
-        <a href="javascript:void(0);" onclick="toggleMobileDropdown(this,event)" class="mobile-dropdown-trigger">Events
-            <svg class="icon-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </a>
-        <div class="mobile-dropdown-content">
-            <a href="/media-events/Jharkhand_2026.html">Jharkhand Mining & Construction Show 2026</a>
-            <a href="/media-events/EXCON_2025.html">EXCON 2025 – Confederation of Indian Industry (CII)</a>
-            <a href="/media-events/IEMS_2024.html">IEMS – International Mining Expo & Conclave 2024</a>
-            <a href="/media-events/TNMSA_2024.html">Tamil Nadu Mines Safety Association – Chennai Zone Meet 2024</a>
-            <a href="/media-events/EXCON_2023.html">EXCON 2023 – Confederation of Indian Industry (CII)</a>
-            <a href="/media-events/CODDISSIA.html">CODDISSIA – Stone Quarry, Crushers & Lorry Owners Association Expo 2023</a>
-        </div>
-    </div>
-    <a href="../partner.html">Sazs Ally</a>
-    <a href="../QuarryCrusherRMCProfitCalculator.html">Profit Calc</a>
-    <a href="../careers.html">Careers</a>
-    <a href="../Signup.html">Sign Up</a>
-    <a href="../contact.html">Contact Us</a>
-    <a href="../WhytoChoose.html">Why to Choose Sazs</a>
-    <a href="../Questions.html">FAQ</a>
-</div>
 
 
 
@@ -879,6 +970,8 @@
                 <li><a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html">E-Invoicing &amp; GST Compliance</a></li>
                 <li><a href="/case-studies/Real-Time_Vehicle_Trip_Management.html">Vehicle &amp; Trip Management</a></li>
                 <li><a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html">Financial Control &amp; Profit Analysis</a></li>
+                <li><a href="/case-studies/Quarry360.html">Quarry360</a></li>
+                <li><a href="/case-studies/Crusher360.html">Crusher360</a></li>
             </ul>
         </div>
 
@@ -963,6 +1056,8 @@
                     <li><a href="/case-studies/Automating_E-Invoicing_GST_Compliance.html">E-Invoicing &amp; GST Compliance</a></li>
                     <li><a href="/case-studies/Real-Time_Vehicle_Trip_Management.html">Vehicle &amp; Trip Management</a></li>
                     <li><a href="/case-studies/Complete_Financial_Control_Profit_Analysis.html">Financial Control &amp; Profit Analysis</a></li>
+                    <li><a href="/case-studies/Quarry360.html">Quarry360</a></li>
+                    <li><a href="/case-studies/Crusher360.html">Crusher360</a></li>
                 </ul>
             </div>
 
