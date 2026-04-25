@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quarry 360 with Sazs ERP</title>
+  <meta name="description" content="Managing a Quarry in 360° with Sazs ERP from Sazs Apps — a modern blog-style page covering production, inventory, dispatch, finance, compliance, and growth." />
+  <meta property="og:title" content="Quarry 360 with Sazs ERP" />
+  <meta property="og:description" content="A complete 360° quarry management blog page for Sazs ERP from Sazs Apps." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=zodiak@400,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --color-bg: #ffffff;
+      --color-surface: #ffffff;
+      --color-surface-2: #ffffff;
+      --color-surface-offset: #ffffff;
+      --color-border: rgba(0, 0, 0, 0.12);
+      --color-divider: rgba(0, 0, 0, 0.08);
+      --color-text: #000000;
+      --color-text-muted: #333333;
+      --color-text-faint: #666666;
+      --color-primary: #000000;
+      --color-primary-hover: #1a1a1a;
+      --color-primary-soft: rgba(0, 0, 0, 0.08);
+      --color-success: #000000;
+      --color-gold: #000000;
+      --color-warning: #000000;
+      --color-text-inverse: #ffffff;
+      --radius-sm: 0.5rem;
+      --radius-md: 0.875rem;
+      --radius-lg: 1.25rem;
+      --radius-xl: 1.75rem;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 12px 30px rgba(0,0,0,0.08);
+      --shadow-lg: 0 24px 60px rgba(0,0,0,0.12);
+      --font-display: 'Zodiak', Georgia, serif;
+      --font-body: 'Satoshi', Inter, sans-serif;
+      --content-narrow: 760px;
+      --content-wide: 1180px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body {
+      min-height: 100dvh;
+      background: #ffffff;
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.7;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+    .skip-link {
+      position: absolute;
+      left: var(--space-4);
+      top: -40px;
+      background: var(--color-primary);
+      color: #ffffff;
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-sm);
+      z-index: 100;
+    }
+    .skip-link:focus { top: var(--space-4); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: #ffffff;
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .nav {
+      max-width: var(--content-wide);
+      margin: 0 auto;
+      padding: var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .brand-mark {
+      width: 2.4rem;
+      height: 2.4rem;
+      padding: 0.55rem;
+      border-radius: 0.8rem;
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      color: var(--color-primary);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    .hero {
+      /* max-width: var(--content-wide); */
+      margin: 0 60px;
+      padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-4) var(--space-12);
+      /* display: grid; */
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--space-8);
+      align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+      font-weight: 700;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 0.96;
+      /* max-width: 11ch; */
+      margin-bottom: var(--space-5);
+    }
+    .hero p {
+      color: var(--color-text-muted);
+      /* max-width: 62ch; */
+      margin-bottom: var(--space-6);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
+    .btn {
+      min-height: 44px;
+      padding: 0.85rem 1.1rem;
+      border-radius: 999px;
+      font-size: var(--text-sm);
+      font-weight: 700;
+      transition: transform var(--transition-interactive), background var(--transition-interactive), color var(--transition-interactive), border-color var(--transition-interactive);
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--color-primary);
+      color: #ffffff;
+      box-shadow: var(--shadow-md);
+    }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary {
+      background: var(--color-surface);
+      border-color: var(--color-border);
+      color: var(--color-text);
+    }
+
+    .hero-panel {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -20% auto;
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      background: none;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-5);
+    }
+    .stat {
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+    }
+    .stat strong {
+      display: block;
+      font-size: var(--text-lg);
+      line-height: 1.1;
+      margin-bottom: var(--space-2);
+    }
+    .stat span {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    main {
+      margin: 0 60px;
+      padding: 0 var(--space-4) var(--space-20);
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 250px) minmax(0, 1fr);
+      gap: var(--space-8);
+      align-items: start;
+    }
+    .toc {
+      position: sticky;
+      top: 88px;
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      box-shadow: var(--shadow-sm);
+    }
+    .toc h2 {
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-4);
+      color: var(--color-text);
+    }
+    .toc ul {
+      list-style: none;
+      display: grid;
+      gap: var(--space-3);
+    }
+    .toc a {
+      padding: 2px 0 2px 10px;
+      border-left: 2px solid transparent;
+      transition: color 180ms ease, border-color 180ms ease;
+      font-size: var(--text-sm);
+    }
+    /* active state */
+    .toc a.toc-active {
+      color: var(--color-primary);
+      font-weight: 700;
+      border-left-color: var(--color-primary);
+    }
+    .toc a:hover { color: var(--color-primary); }
+
+    .article {
+      display: grid;
+      gap: var(--space-10);
+    }
+    .intro-card,
+    .section-card,
+    .benefit-strip,
+    .future-panel,
+    .cta-banner {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-sm);
+    }
+    .intro-card,
+    .section-card,
+    .future-panel,
+    .cta-banner {
+      padding: clamp(var(--space-5), 5vw, var(--space-8));
+    }
+    .intro-card p + p,
+    .section-card p + p,
+    .future-panel p + p,
+    .cta-banner p + p {
+      margin-top: var(--space-4);
+    }
+    .kicker {
+      display: inline-block;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+      margin-bottom: var(--space-3);
+      font-weight: 700;
+    }
+    .section-title {
+      font-size: var(--text-xl);
+      font-family: var(--font-display);
+      margin-bottom: var(--space-4);
+    }
+    .section-card p,
+    .intro-card p,
+    .future-panel p,
+    .cta-banner p {
+      color: var(--color-text-muted);
+      max-width: 66ch;
+    }
+
+    .challenge-grid,
+    .feature-grid,
+    .benefits-grid,
+    .future-grid {
+      display: grid;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+    .challenge-grid,
+    .benefits-grid,
+    .future-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .chip,
+    .mini-card,
+    .benefit,
+    .future-item {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      background: #ffffff;
+      padding: var(--space-5);
+    }
+    .chip {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+    .chip-icon,
+    .mini-number {
+      flex: none;
+      width: 2.4rem;
+      height: 2.4rem;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: var(--text-sm);
+    }
+    .chip p,
+    .mini-card p,
+    .benefit p,
+    .future-item p { color: var(--color-text-muted); }
+    .mini-card h3,
+    .benefit h3,
+    .future-item h3 {
+      font-size: var(--text-lg);
+      line-height: 1.2;
+      margin-bottom: var(--space-3);
+    }
+    .mini-card ul,
+    .benefit ul,
+    .future-item ul {
+      list-style: none;
+      display: grid;
+      gap: var(--space-2);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .mini-card li::before,
+    .benefit li::before,
+    .future-item li::before {
+      content: "• ";
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    .section-card + .section-card { margin-top: calc(var(--space-8) * -1); }
+    .quote-band {
+      padding: clamp(var(--space-6), 7vw, var(--space-10));
+      border-radius: var(--radius-xl);
+      background: #000000;
+      color: #ffffff;
+      box-shadow: var(--shadow-lg);
+    }
+    .quote-band p {
+      font-size: var(--text-lg);
+      /* max-width: 36ch; */
+      color: inherit;
+    }
+
+    .benefit-strip {
+      padding: clamp(var(--space-5), 5vw, var(--space-8));
+      background: #ffffff;
+    }
+
+    .cta-banner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: var(--space-5);
+      background: #ffffff;
+    }
+
+    .site-footer {
+      max-width: var(--content-wide);
+      margin: 0 auto;
+      padding: 0 var(--space-4) var(--space-10);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    /* ── SECTION IMAGE STYLES (only addition) ── */
+    .section-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-6);
+      display: block;
+    }
+    .cta-banner .section-img {
+      height: 200px;
+      margin-bottom: 0;
+      border-radius: var(--radius-lg);
+      width: 260px;
+      flex-shrink: 0;
+      object-position: center;
+    }
+
+    /* Enhanced Responsive Design */
+    @media (max-width: 1200px) {
+      .content-grid {
+        grid-template-columns: minmax(0, 200px) minmax(0, 1fr);
+        gap: var(--space-6);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .content-grid,
+      .cta-banner {
+        grid-template-columns: 1fr;
+      }
+      .toc {
+        position: static;
+        order: 2;
+      }
+      .article {
+        order: 1;
+      }
+      .nav {
+        padding: var(--space-3) var(--space-4);
+      }
+      .cta-banner .section-img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav { 
+        padding-inline: var(--space-4);
+        padding-block: var(--space-3);
+      }
+      .nav-links { display: none; }
+      .challenge-grid,
+      .feature-grid,
+      .benefits-grid,
+      .future-grid,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: var(--space-8);
+        padding-bottom: var(--space-8);
+      }
+      .hero h1 { 
+        max-width: 100%;
+        line-height: 1.05;
+      }
+      .hero p {
+        max-width: 100%;
+      }
+      .hero-panel,
+      .intro-card,
+      .section-card,
+      .benefit-strip,
+      .future-panel,
+      .cta-banner,
+      .toc,
+      .quote-band { 
+        border-radius: var(--radius-lg); 
+      }
+      .chip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cta-banner {
+        text-align: center;
+      }
+      .btn {
+        width: 100%;
+      }
+      .section-img { height: 180px; }
+    }
+
+    @media (max-width: 480px) {
+      .brand {
+        font-size: 0.9rem;
+      }
+      .brand-mark {
+        width: 2rem;
+        height: 2rem;
+        padding: 0.45rem;
+      }
+      .hero-panel,
+      .intro-card,
+      .section-card,
+      .benefit-strip,
+      .future-panel,
+      .cta-banner {
+        padding: var(--space-4);
+      }
+      .quote-band {
+        padding: var(--space-5);
+      }
+      .stat {
+        padding: var(--space-3);
+      }
+      .chip,
+      .mini-card,
+      .benefit,
+      .future-item {
+        padding: var(--space-4);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero" id="top">
+    <div>
+      <span class="eyebrow">Managing a Quarry in 360°</span>
+      <h1>Quarry 360 with Sazs ERP from Sazs Apps</h1>
+      <p>Quarry management now stretches far beyond excavation. Production, logistics, finance, compliance, workforce operations, and customer commitments all move at once, and managing them through disconnected tools often creates costly blind spots.</p>
+      <div class="hero-actions">
+        <!-- <a class="btn btn-primary" href="#management">Explore features</a>
+        <a class="btn btn-secondary" href="#conclusion">Read conclusion</a> -->
+      </div>
+    </div>
+
+    <aside class="hero-panel" aria-label="Highlights">
+      <span class="kicker">What Sazs ERP brings together</span>
+      <h2 class="section-title" style="font-size: var(--text-lg); font-family: var(--font-body);">One platform for the entire quarry lifecycle</h2>
+      <p>From extraction and stock movement to dispatch, billing, maintenance, payroll, and compliance, the platform is positioned as a unified operating layer for quarry businesses that need clarity and control.</p>
+      <div class="stat-grid">
+        <div class="stat"><strong>360°</strong><span>Operational visibility across departments</span></div>
+        <div class="stat"><strong>Zero guesswork</strong><span>Live production, stock, and dispatch tracking</span></div>
+        <div class="stat"><strong>Faster billing</strong><span>Instant invoicing with customer-specific pricing</span></div>
+        <div class="stat"><strong>Lower downtime</strong><span>Preventive maintenance and spare tracking</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <main id="main-content">
+    <div class="content-grid">
+      <aside class="toc" aria-label="Table of contents">
+        <h2>On this page</h2>
+        <ul>
+          <li><a href="#overview">Why unified ERP matters</a></li>
+          <li><a href="#management">360° quarry management</a></li>
+          <li><a href="#benefits">Key business benefits</a></li>
+          <li><a href="#future">Future-ready capabilities</a></li>
+          <li><a href="#conclusion">Closing note</a></li>
+        </ul>
+      </aside>
+
+      <article class="article">
+
+        <section class="intro-card" id="overview">
+          <!-- Section image: quarry aerial overview -->
+          <img
+            class="section-img"
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=80"
+            alt="Aerial view of an open-pit quarry"
+            loading="lazy"
+          />
+          <span class="kicker">Overview</span>
+          <h2 class="section-title">Why quarry businesses need a unified ERP like Sazs ERP</h2>
+          <p>Quarry operations come with tightly connected moving parts, yet many businesses still run them through fragmented systems, manual registers, spreadsheets, and isolated software. That disconnect leads to inefficiency, revenue leakage, poor stock visibility, maintenance delays, and compliance stress.</p>
+          <div class="challenge-grid">
+            <div class="chip"><span class="chip-icon">01</span><div><strong>Fragmented data</strong><p>Teams work in silos, making it hard to see the real operational picture.</p></div></div>
+            <div class="chip"><span class="chip-icon">02</span><div><strong>Dispatch errors</strong><p>Manual weighbridge entries and trip logs increase mistakes and loss.</p></div></div>
+            <div class="chip"><span class="chip-icon">03</span><div><strong>Stock blind spots</strong><p>Without live inventory, planning and fulfillment become unreliable.</p></div></div>
+            <div class="chip"><span class="chip-icon">04</span><div><strong>Maintenance delays</strong><p>Downtime rises when machine care is reactive instead of planned.</p></div></div>
+          </div>
+        </section>
+
+        <div class="quote-band" role="note" aria-label="Key message">
+          <p>Managing a quarry in 360° is not just about moving material. It is about connecting production, logistics, finance, compliance, equipment, and people into one visible operating system.</p>
+        </div>
+
+        <section class="section-card" id="management">
+          <!-- Section image: heavy excavation machinery -->
+          <img
+            class="section-img"
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80"
+            alt="Heavy machinery working at a quarry site"
+            loading="lazy"
+          />
+          <span class="kicker">360° management</span>
+          <h2 class="section-title">Core modules that bring quarry operations together</h2>
+          <div class="feature-grid">
+            <div class="mini-card">
+              <div class="mini-number">1</div>
+              <h3>Smart production and extraction tracking</h3>
+              <ul>
+                <li>Track drilling, blasting, crushing, and screening.</li>
+                <li>Measure output by material type and grade.</li>
+                <li>Review machine-wise productivity analytics and live dashboards.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-number">2</div>
+              <h3>Real-time inventory and stock control</h3>
+              <ul>
+                <li>Maintain yard-wise and location-based stock visibility.</li>
+                <li>Categorize material by size, grade, and quality.</li>
+                <li>Auto-update stock from production and dispatch activity.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-number">3</div>
+              <h3>Weighbridge integration for accuracy</h3>
+              <ul>
+                <li>Capture weight automatically from connected systems.</li>
+                <li>Track inward and outward vehicles with trip-wise monitoring.</li>
+                <li>Reduce manual intervention and revenue leakage.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-number">4</div>
+              <h3>Advanced dispatch and logistics management</h3>
+              <ul>
+                <li>Schedule vehicles and plan trips efficiently.</li>
+                <li>Support GPS integration and route optimization.</li>
+                <li>See real-time delivery status for better customer service.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-number">5</div>
+              <h3>Automated sales and billing</h3>
+              <ul>
+                <li>Generate invoices instantly.</li>
+                <li>Apply customer-specific pricing, contracts, and credit limits.</li>
+                <li>Support GST-ready billing and reporting.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-number">6</div>
+              <h3>Equipment and maintenance control</h3>
+              <ul>
+                <li>Schedule preventive maintenance.</li>
+                <li>Track breakdowns, alerts, and spare parts inventory.</li>
+                <li>Use equipment insights to reduce downtime.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-number">7</div>
+              <h3>Complete financial visibility</h3>
+              <ul>
+                <li>Monitor real-time profit and loss.</li>
+                <li>Analyze cost per ton and operating expenses.</li>
+                <li>Keep accounting fully integrated with operations.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-number">8</div>
+              <h3>Workforce and payroll management</h3>
+              <ul>
+                <li>Track attendance through biometric or GPS workflows.</li>
+                <li>Manage shifts, labor allocation, and payroll automation.</li>
+                <li>Handle contractor and vendor administration in one place.</li>
+              </ul>
+            </div>
+            <div class="mini-card" style="grid-column: 1 / -1;">
+              <div class="mini-number">9</div>
+              <h3>Compliance and MIS reporting</h3>
+              <ul>
+                <li>Prepare mining and environmental compliance reports.</li>
+                <li>Maintain audit-ready documentation and custom MIS dashboards.</li>
+                <li>Support government reporting with stronger operational confidence.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="benefit-strip" id="benefits">
+          <!-- Section image: quarry operations at scale -->
+          <img
+            class="section-img"
+            src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?w=1000&q=80"
+            alt="Large-scale quarry rock extraction operations"
+            loading="lazy"
+          />
+          <span class="kicker">Benefits</span>
+          <h2 class="section-title">Key benefits of Sazs ERP for quarry management</h2>
+          <div class="benefits-grid">
+            <div class="benefit">
+              <h3>360° visibility</h3>
+              <p>Managers can monitor production, stock, dispatch, billing, and workforce activity in one connected environment.</p>
+            </div>
+            <div class="benefit">
+              <h3>Data accuracy</h3>
+              <p>Automated capture and system-driven workflows reduce manual errors across operational touchpoints.</p>
+            </div>
+            <div class="benefit">
+              <h3>Cost control</h3>
+              <p>Variance monitoring, cost-per-ton analysis, and maintenance planning help reduce waste and hidden losses.</p>
+            </div>
+            <div class="benefit">
+              <h3>Operational efficiency</h3>
+              <p>Integrated workflows streamline extraction, dispatch, invoicing, and workforce coordination.</p>
+            </div>
+            <div class="benefit">
+              <h3>Scalability</h3>
+              <p>The platform is framed to support quarry businesses as they expand without relying on disconnected systems.</p>
+            </div>
+            <div class="benefit">
+              <h3>Better decisions</h3>
+              <p>Live dashboards and MIS reporting give leaders the data they need to act faster and with more confidence.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="future-panel" id="future">
+          <!-- Section image: mining technology and innovation -->
+          <img
+            class="section-img"
+            src="https://images.unsplash.com/photo-1581094651181-35942459ef62?w=1000&q=80"
+            alt="Modern technology and data analytics for mining operations"
+            loading="lazy"
+          />
+          <span class="kicker">What comes next</span>
+          <h2 class="section-title">The future of quarry management with Sazs ERP</h2>
+          <p>Sazs ERP from Sazs Apps is presented as a platform that can evolve with the business through advanced integrations such as IoT, GPS, and analytics. That makes it suitable not just for current operations, but also for a more connected and predictive future.</p>
+          <div class="future-grid">
+            <div class="future-item">
+              <h3>Predictive maintenance</h3>
+              <p>Use system intelligence to identify service needs before breakdowns disrupt production.</p>
+            </div>
+            <div class="future-item">
+              <h3>Demand forecasting</h3>
+              <p>Improve planning with smarter projections tied to sales and dispatch activity.</p>
+            </div>
+            <div class="future-item">
+              <h3>Automated dispatch flows</h3>
+              <p>Reduce manual coordination through more intelligent trip planning and execution.</p>
+            </div>
+            <div class="future-item">
+              <h3>Operational intelligence</h3>
+              <p>Bring real-time analytics into day-to-day quarry decisions for stronger control and profitability.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-banner" id="conclusion">
+          <div>
+            <span class="kicker">Conclusion</span>
+            <h2 class="section-title">Built for complete control, built for growth</h2>
+            <p>Managing a quarry in 360° requires more than effort. It requires technology that connects extraction, inventory, weighbridge activity, logistics, billing, maintenance, finance, workforce operations, and compliance into one seamless workflow. This layout presents your content as a polished blog-style landing page that you can publish directly or customize further.</p>
+          </div>
+          <!-- Section image: quarry landscape, conclusion -->
+          <img
+            class="section-img"
+            src="https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=600&q=80"
+            alt="Quarry landscape showcasing growth and scale"
+            loading="lazy"
+          />
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const sectionIds = ['overview', 'management', 'benefits', 'future', 'conclusion'];
+      const tocLinks   = sectionIds.map(id =>
+        document.querySelector(`.toc a[href="#${id}"]`)
+      );
+
+      function setActive(id) {
+        tocLinks.forEach((link, i) => {
+          if (!link) return;
+          link.classList.toggle('toc-active', sectionIds[i] === id);
+        });
+      }
+
+      function onScroll() {
+        let current = sectionIds[0];
+        for (const id of sectionIds) {
+          const el = document.getElementById(id);
+          if (!el) continue;
+          const top = el.getBoundingClientRect().top;
+          if (top <= window.innerHeight * 0.35) current = id;
+        }
+        setActive(current);
+      }
+
+      setActive('overview');
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+</body>
+</html>

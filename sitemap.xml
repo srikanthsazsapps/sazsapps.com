@@ -9,12 +9,6 @@
     <priority>1.0</priority>
   </url>
 
-  <url>
-    <loc>https://sazsapps.com/index.html</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
 
   <url>
     <loc>https://sazsapps.com/Signup.html</loc>
@@ -96,28 +90,28 @@
 
 
   <url>
-    <loc>https://sazsapps.com/products/crusher-management-software&amp;ERP.html</loc>
+    <loc>https://sazsapps.com/products/crusher-management-software-erp.html</loc>
     <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
-    <loc>https://sazsapps.com/products/Quarry-management-software&amp;ERP.html</loc>
+    <loc>https://sazsapps.com/products/Quarry-management-software-erp.html</loc>
     <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
-    <loc>https://sazsapps.com/products/Rmc-billing-software&amp;ERP.html</loc>
+    <loc>https://sazsapps.com/products/Rmc-billing-software-erp.html</loc>
     <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
-    <loc>https://sazsapps.com/products/brickspaver-management-software&amp;ERP.html</loc>
+    <loc>https://sazsapps.com/products/brickspaver-management-software-erp.html</loc>
     <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
